@@ -4,6 +4,159 @@
   "data": {
     "items": [
       {
+        "id": "Volendrung_Cheater",
+        "name": "Volendrung_Cheater",
+        "customDescription": "Cheat weapon for quick testing.",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Volendrung.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 1,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [
+        ],
+        "equipRequirements": [
+        ],
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 1000
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 1200
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 1600
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 1000
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 1200
+          },
+          {
+            "key": "damageReduction",
+            "value": 90
+          }
+        ],
+        "modifiers": {
+          "bigRon": 50,
+          "increasedLifesteal": 100,
+          "increasedDamageToAllMonsters": 10000
+        },
+        "attackType": "melee",
+        "itemType": "Weapon"
+      },
+      {
+        "id": "Volendrung",
+        "name": "Volendrung",
+        "customDescription": "Who now knows the tale of how this Dwemer hammer came to embody the power of one of their most bitter foes?",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Volendrung.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 3600000,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [
+          "Shield"
+        ],
+        "equipRequirements": [
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Strength",
+            "level": 90
+          }
+        ],
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2200
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 90
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 70
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 50
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 400
+          }
+        ],
+        "modifiers": {
+          "increasedDamageBasedOnCurrentHitpoints": 10,
+          "increasedDamageBasedOnMaxHitpoints": 5,
+          "increasedGPOnEnemyHit": 1
+        },
+        "specialAttacks": [
+          "tes:Volendrung_Slam"
+        ],
+        "attackType": "melee",
+        "itemType": "Weapon"
+      },
+      {
+        "id": "Cuirass_of_the_Saviors_Hide",
+        "name": "Cuirass of the Savior's Hide",
+        "customDescription": "Legend has it that Hircine rewarded his peeled hide to the first and only mortal to have ever escaped his hunting grounds. This unknown mortal had the hide tailored into this magical Cuirass for his future adventures. The Savior's Hide has a tendency to travel from hero to hero as though it has a mind of its own.",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Cuirass_of_the_Saviors_Hide.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 3600000,
+        "tier": "none",
+        "validSlots": [
+          "Platebody"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [],
+        "equipmentStats": [
+          {
+            "key": "meleeDefenceBonus",
+            "value": 80
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 110
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 100
+          },
+          {
+            "key": "damageReduction",
+            "value": 2
+          }
+        ],
+        "modifiers": {
+          "increasedRangedMaxHitBonusAgainstMagic": 10,
+          "increasedEvasionAgainstMagic": 30,
+          "gainSlayerCoinsBasedOnEnemyCombatLevelMagic": 1
+        },
+        "itemType": "Equipment"
+      },
+      {
         "id": "Sigil_Stone",
         "name": "Sigil Stone",
         "category": "Dungeons",
@@ -445,7 +598,8 @@
           "tes:Azura",
           "tes:Boethiah",
           "tes:Clavicus_Vile",
-          "tes:Hermaeus_Mora"
+          "tes:Hermaeus_Mora",
+          "tes:Hircine"
         ],
         "entryRequirements": [
           {
@@ -467,6 +621,151 @@
       }
     ],
     "monsters": [
+      {
+        "id": "Malacath",
+        "name": "Malacath",
+        "media": "assets/monsters/Malacath.png",
+        "levels": {
+          "Attack": 1500,
+          "Defence": 500,
+          "Hitpoints": 900,
+          "Magic": 1,
+          "Ranged": 1,
+          "Strength": 1100
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2000
+          },
+          {
+            "key": "damageReduction",
+            "value": 5
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+        ],
+        "passives": [
+          "melvorD:BigBoi",
+          "melvorD:Stronk",
+          "melvorF:Purity"
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Ancient_Rune",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 49
+          },
+          {
+            "itemID": "melvorD:Strawberry_Cupcake",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Dragonite_Ore",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 30
+          },
+          {
+            "itemID": "melvorD:Dragonite_Bar",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "tes:Volendrung",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          }
+        ],
+        "gpDrops": {
+          "min": 230,
+          "max": 900
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindStrike"
+      },
+      {
+        "id": "Hircine",
+        "name": "Hircine",
+        "media": "assets/monsters/Hircine.png",
+        "levels": {
+          "Attack": 700,
+          "Defence": 600,
+          "Hitpoints": 700,
+          "Magic": 1,
+          "Ranged": 700,
+          "Strength": 100
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 1100
+          },
+          {
+            "key": "damageReduction",
+            "value": 5
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "ranged",
+        "specialAttacks": [
+          "melvorD:PoisonRanged",
+          "melvorD:PiercingArrow",
+          "melvorF:Agility",
+          "melvorF:Elusiveness"
+        ],
+        "passives": [
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Ancient_Rune",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 49
+          },
+          {
+            "itemID": "melvorD:Strawberry_Cupcake",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Dragonite_Ore",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 30
+          },
+          {
+            "itemID": "melvorD:Dragonite_Bar",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "tes:Cuirass_of_the_Saviors_Hide",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          }
+        ],
+        "gpDrops": {
+          "min": 230,
+          "max": 900
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindStrike"
+      },
       {
         "id": "Meridia",
         "name": "Meridia",
@@ -495,8 +794,32 @@
           "tes:Meridias_True_Retribution"
         ],
         "passives": [],
-        "lootChance": 1,
+        "lootChance": 100,
         "lootTable": [
+          {
+            "itemID": "melvorD:Ancient_Rune",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 49
+          },
+          {
+            "itemID": "melvorD:Strawberry_Cupcake",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Dragonite_Ore",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 30
+          },
+          {
+            "itemID": "melvorD:Dragonite_Bar",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
           {
             "itemID": "tes:Dawnbreaker",
             "minQuantity": 1,
@@ -541,8 +864,32 @@
           "tes:Mother_of_the_Rose"
         ],
         "passives": [],
-        "lootChance": 1,
+        "lootChance": 100,
         "lootTable": [
+          {
+            "itemID": "melvorD:Ancient_Rune",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 49
+          },
+          {
+            "itemID": "melvorD:Strawberry_Cupcake",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Dragonite_Ore",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 30
+          },
+          {
+            "itemID": "melvorD:Dragonite_Bar",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
           {
             "itemID": "tes:Azuras_Star",
             "minQuantity": 1,
@@ -586,8 +933,32 @@
           "tes:Tournament_of_Ten_Bloods"
         ],
         "passives": [],
-        "lootChance": 3,
+        "lootChance": 100,
         "lootTable": [
+          {
+            "itemID": "melvorD:Ancient_Rune",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 47
+          },
+          {
+            "itemID": "melvorD:Strawberry_Cupcake",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Dragonite_Ore",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 30
+          },
+          {
+            "itemID": "melvorD:Dragonite_Bar",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
           {
             "itemID": "tes:Ebony_Mail",
             "minQuantity": 1,
@@ -644,13 +1015,37 @@
         ],
         "passives": [
         ],
-        "lootChance": 2,
+        "lootChance": 100,
         "lootTable": [
+          {
+            "itemID": "melvorD:Ancient_Rune",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 47
+          },
+          {
+            "itemID": "melvorD:Strawberry_Cupcake",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Dragonite_Ore",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 30
+          },
+          {
+            "itemID": "melvorD:Dragonite_Bar",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
           {
             "itemID": "tes:Umbra_Sword",
             "minQuantity": 1,
             "maxQuantity": 1,
-            "weight": 10
+            "weight": 2
           },
           {
             "itemID": "tes:Masque_of_Clavicus_Vile",
@@ -699,13 +1094,37 @@
           ],
         "passives": [
         ],
-        "lootChance": 1,
+        "lootChance": 100,
         "lootTable": [
+          {
+            "itemID": "melvorD:Ancient_Rune",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 49
+          },
+          {
+            "itemID": "melvorD:Strawberry_Cupcake",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Dragonite_Ore",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 30
+          },
+          {
+            "itemID": "melvorD:Dragonite_Bar",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
           {
             "itemID": "tes:Oghma_Infinium",
             "minQuantity": 1,
             "maxQuantity": 1,
-            "weight": 10
+            "weight": 1
           }
         ],
         "gpDrops": {
@@ -749,7 +1168,7 @@
           "melvorF:Purity",
           "melvorF:Rebirth"
         ],
-        "lootChance": 1,
+        "lootChance": 0,
         "lootTable": [
         ],
         "gpDrops": {
@@ -762,6 +1181,36 @@
       }
     ],
     "attacks": [
+      {
+        "id": "Volendrung_Slam",
+        "name": "Volendrung Slam",
+        "defaultChance": 40,
+        "damage": [
+          {
+            "damageType": "Normal",
+            "amplitude": 200
+          }
+        ],
+        "prehitEffects": [],
+        "onhitEffects": [
+          {
+            "effectType": "Custom",
+            "type": "Stun",
+            "turns": 1,
+            "chance": 100,
+            "flavour": "Stun"
+          }
+        ],
+        "cantMiss": false,
+        "attackCount": 1,
+        "attackInterval": 2000,
+        "lifesteal": 10,
+        "description": "Volendrung dealings ${attackDamageMaxValue0}% of your normal damage and apply stun & life steal effect.",
+        "attackTypes": [
+          "melee"
+        ],
+        "descriptionGenerator": "Volendrung dealings <damage> and apply a stun & lifesteal effect."
+      },
       {
         "id": "Meridias_Retribution",
         "name": "Meridia's Retribution",
