@@ -4,6 +4,63 @@
   "data": {
     "items": [
       {
+        "id": "Sigil_Stone",
+        "name": "Sigil Stone",
+        "category": "Dungeons",
+        "type": "Item",
+        "media": "assets/items/Sigil_Stone.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 2500,
+        "itemType": "Openable",
+        "dropTable": [
+          {
+            "itemID": "melvorD:Runite_Bar",
+            "minQuantity": 15,
+            "maxQuantity": 25,
+            "weight": 73
+          },
+          {
+            "itemID": "melvorD:Dragonite_Bar",
+            "minQuantity": 10,
+            "maxQuantity": 10,
+            "weight": 25
+          },
+          {
+            "itemID": "melvorF:Ancient_Dhide_Chaps",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorF:Ancient_Dhide_Body",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorF:Ancient_Dhide_Vambraces",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorF:Ancient_Dhide_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorF:Redwood_Shortbow",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 20
+          }
+        ],
+        "customDescription": "A Sigil Stone is the object that keeps Oblivion Gates open. They are found inside the Sigilium Sanguis, at the top of the largest tower, in the planes of Oblivion."
+      },
+      {
         "id": "Dawnbreaker",
         "name": "Dawnbreaker",
         "customDescription": "Mortals call it Dawnbreaker, for it was forged in a holy light that breaks upon my foes, burning away corruption and false life.",
@@ -41,7 +98,7 @@
           },
           {
             "key": "blockAttackBonus",
-            "value": 0
+            "value": 100
           },
           {
             "key": "meleeStrengthBonus",
@@ -92,6 +149,18 @@
             "value": 20
           },
           {
+            "key": "magicDamageBonus",
+            "value": 20
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 20
+          },
+          {
+            "key": "rangedStrengthBonus",
+            "value": 20
+          },
+          {
             "key": "meleeStrengthBonus",
             "value": 35
           },
@@ -134,19 +203,23 @@
         "equipmentStats": [
           {
             "key": "meleeDefenceBonus",
-            "value": 200
+            "value": 150
           },
           {
             "key": "rangedDefenceBonus",
-            "value": 200
+            "value": 110
           },
           {
             "key": "magicDefenceBonus",
-            "value": 200
+            "value": 100
           },
           {
             "key": "damageReduction",
             "value": 4
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 10
           }
         ],
         "modifiers": {
@@ -187,7 +260,7 @@
           },
           {
             "key": "blockAttackBonus",
-            "value": 0
+            "value": 80
           },
           {
             "key": "meleeStrengthBonus",
@@ -198,7 +271,8 @@
           "increasedChanceToApplyBurn": 100,
           "increasedBurnDOTDamage": 10
         },
-        "itemType": "Equipment"
+        "itemType": "Weapon",
+        "attackType": "melee"
       },
       {
         "id": "Fearstruck",
@@ -226,6 +300,90 @@
         "equipmentStats": [
           {
             "key": "meleeDefenceBonus",
+            "value": 40
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 40
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 20
+          },
+          {
+            "key": "damageReduction",
+            "value": 4
+          }
+        ],
+        "modifiers": {
+          "decreasedDragonBreathDamage": -20
+        },
+        "itemType": "Equipment"
+      },
+      {
+        "id": "Umbra_Sword",
+        "name": "Umbra Sword",
+        "customDescription": "Umbra is my blade. It is who I am. Who I was meant to be.",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Umbra.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 3600000,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [],
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2200
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 120
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 160
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 0
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 120
+          }
+        ],
+        "modifiers": {
+          "increasedSlayerAreaEffectNegationFlat": 10
+        },
+        "itemType": "Equipment"
+      },
+      {
+        "id": "Masque_of_Clavicus_Vile",
+        "name": "Masque of Clavicus Vile Sword",
+        "customDescription": "Umbra is my blade. It is who I am. Who I was meant to be.",
+        "category": "Combat",
+        "type": "Helmet",
+        "media": "assets/items/Masque_of_Clavicus_Vile.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 3600000,
+        "tier": "none",
+        "validSlots": [
+          "Helmet"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [],
+        "equipmentStats": [
+          {
+            "key": "meleeDefenceBonus",
             "value": 20
           },
           {
@@ -242,7 +400,34 @@
           }
         ],
         "modifiers": {
-          "increasedDamageTakenIfCursed": 15
+          "increasedOffItemChance": 10
+        },
+        "itemType": "Equipment"
+      },
+      {
+        "id": "Oghma_Infinium",
+        "name": "Oghma Infinium",
+        "customDescription": "Not many could resist the temptation of the Oghma Infinium. Now it is my turn to be put to the test!",
+        "category": "Misc",
+        "type": "Armour",
+        "media": "assets/items/Oghma_Infinium.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 3600000,
+        "tier": "none",
+        "validSlots": [
+          "Shield",
+          "Passive"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [],
+        "equipmentStats": [
+        ],
+        "modifiers": {
+          "increasedGlobalMasteryXP": 10,
+          "increasedGlobalSkillXP": 10,
+          "increasedChanceToLocateSkillPet": 1
         },
         "itemType": "Equipment"
       }
@@ -258,7 +443,9 @@
         "monsterIDs": [
           "tes:Meridia",
           "tes:Azura",
-          "tes:Boethiah"
+          "tes:Boethiah",
+          "tes:Clavicus_Vile",
+          "tes:Hermaeus_Mora"
         ],
         "entryRequirements": [
           {
@@ -369,7 +556,7 @@
         },
         "canSlayer": true,
         "isBoss": false,
-        "selectedSpell": "melvorD:WindStrike"
+        "selectedSpell": "melvorD:WindSurge"
       },
       {
         "id": "Boethiah",
@@ -427,6 +614,151 @@
         "canSlayer": true,
         "isBoss": false,
         "selectedSpell": "melvorD:WindStrike"
+      },
+      {
+        "id": "Clavicus_Vile",
+        "name": "Clavicus Vile",
+        "media": "assets/monsters/Clavicus_Vile.png",
+        "levels": {
+          "Attack": 1,
+          "Defence": 500,
+          "Hitpoints": 500,
+          "Magic": 701,
+          "Ranged": 1,
+          "Strength": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 1800
+          },
+          {
+            "key": "damageReduction",
+            "value": 10
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "tes:Barbas"
+        ],
+        "passives": [
+        ],
+        "lootChance": 2,
+        "lootTable": [
+          {
+            "itemID": "tes:Umbra_Sword",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "tes:Masque_of_Clavicus_Vile",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          }
+        ],
+        "gpDrops": {
+          "min": 230,
+          "max": 900
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:FireSurge"
+      },
+      {
+        "id": "Hermaeus_Mora",
+        "name": "Hermaeus Mora",
+        "media": "assets/monsters/Hermaeus_Mora.png",
+        "levels": {
+          "Attack": 1000,
+          "Defence": 500,
+          "Hitpoints": 500,
+          "Magic": 700,
+          "Ranged": 700,
+          "Strength": 1000
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 1200
+          },
+          {
+            "key": "damageReduction",
+            "value": 10
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "tes:tentacles",
+          "melvorD:PoisonMelee",
+          "melvorD:Firebreathing",
+          "melvorD:PiercingArrow"
+          ],
+        "passives": [
+        ],
+        "lootChance": 1,
+        "lootTable": [
+          {
+            "itemID": "tes:Oghma_Infinium",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 230,
+          "max": 900
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:FireSurge"
+      },
+      {
+        "id": "Sheogorath",
+        "name": "Sheogorath",
+        "media": "assets/monsters/Sheogorath.png",
+        "levels": {
+          "Attack": 1000,
+          "Defence": 1000,
+          "Hitpoints": 10000,
+          "Magic": 1000,
+          "Ranged": 1000,
+          "Strength": 1000
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 1000
+          },
+          {
+            "key": "damageReduction",
+            "value": 40
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "tes:maddness",
+          "tes:order"
+          ],
+        "passives": [
+          "melvorD:JustAScratch",
+          "melvorF:Purity",
+          "melvorF:Rebirth"
+        ],
+        "lootChance": 1,
+        "lootTable": [
+        ],
+        "gpDrops": {
+          "min": 0,
+          "max": 0
+        },
+        "canSlayer": false,
+        "isBoss": true,
+        "selectedSpell": "melvorD:FireSurge"
       }
     ],
     "attacks": [
@@ -515,7 +847,7 @@
       {
         "id": "Mother_of_the_Rose",
         "name": "Mother of the Rose",
-        "defaultChance": 50,
+        "defaultChance": 20,
         "damage": [
           {
             "damageType": "Normal",
@@ -583,6 +915,189 @@
         "attackTypes": [
           "melee"
         ]
+      },
+      {
+        "id": "Barbas",
+        "name": "Barbas",
+        "defaultChance": 20,
+        "damage": [
+          {
+            "damageType": "Normal",
+            "amplitude": 300
+          }
+        ],
+        "prehitEffects": [
+          {
+            "effectType": "Custom",
+            "type": "Modifier",
+            "modifiers": {
+              "increasedMeleeMaxHit": 1
+            },
+            "maxStacks": 1000,
+            "stacksToAdd": 1,
+            "character": "Attacker",
+            "turns": "Infinity",
+            "countsOn": "Attacker",
+            "media": "assets/icons/DaedricBuff.png"
+          }
+        ],
+        "onhitEffects": [],
+        "cantMiss": true,
+        "attackCount": 1,
+        "attackInterval": 50,
+        "lifesteal": 0,
+        "description": "Barbas smacks you.",
+        "attackTypes": [
+          "melee"
+        ]
+      },
+      {
+        "id": "tentacles",
+        "name": "tentacles",
+        "defaultChance": 50,
+        "damage": [
+          {
+            "damageType": "Normal",
+            "amplitude": 300
+          }
+        ],
+        "prehitEffects": [
+          {
+            "effectType": "Custom",
+            "type": "Modifier",
+            "modifiers": {
+              "increasedMeleeMaxHit": 1
+            },
+            "maxStacks": 1000,
+            "stacksToAdd": 1,
+            "character": "Attacker",
+            "turns": "Infinity",
+            "countsOn": "Attacker",
+            "media": "assets/icons/DaedricBuff.png"
+          }
+        ],
+        "onhitEffects": [
+          {
+            "effectType": "Custom",
+            "type": "Stun",
+            "turns": 1,
+            "chance": 100,
+            "flavour": "Stun"
+          }
+        ],
+        "cantMiss": true,
+        "attackCount": 1,
+        "attackInterval": 50,
+        "lifesteal": 0,
+        "description": "Barbas smacks you.",
+        "attackTypes": [
+          "melee"
+        ]
+      },
+      {
+        "id": "maddness",
+        "name": "Maddness",
+        "defaultChance": 50,
+        "damage": [
+          {
+            "damageType": "Normal",
+            "amplitude": 200
+          }
+        ],
+        "prehitEffects": [
+          {
+            "effectType": "Custom",
+            "type": "Modifier",
+            "modifiers": {
+              "increasedMeleeMaxHit": 1
+            },
+            "maxStacks": 1000,
+            "stacksToAdd": 1,
+            "character": "Attacker",
+            "turns": "Infinity",
+            "countsOn": "Attacker",
+            "media": "assets/icons/DaedricBuff.png"
+          }
+        ],
+        "onhitEffects": [
+          {
+            "effectType": "Poison",
+            "chance": 30
+          },
+          {
+            "effectType": "DeadlyPoison",
+            "chance": 10
+          },
+          {
+            "effectType": "Burn",
+            "chance": 10
+          }
+        ],
+        "cantMiss": true,
+        "attackCount": 3,
+        "attackInterval": 50,
+        "lifesteal": 0,
+        "description": "Maddness.",
+        "attackTypes": [
+          "magic"
+        ]
+      },
+      {
+        "id": "order",
+        "name": "Order",
+        "defaultChance": 50,
+        "damage": [
+          {
+            "damageType": "Normal",
+            "amplitude": 200
+          }
+        ],
+        "prehitEffects": [
+          {
+            "effectType": "Custom",
+            "type": "Modifier",
+            "modifiers": {
+              "increasedMagicMaxHit": 1
+            },
+            "maxStacks": 1000,
+            "stacksToAdd": 1,
+            "character": "Attacker",
+            "turns": "Infinity",
+            "countsOn": "Attacker",
+            "media": "assets/icons/DaedricBuff.png"
+          },
+          {
+            "effectType": "Custom",
+            "type": "Modifier",
+            "modifiers": {
+              "healOnHitBasedOnTargetDR": 1
+            },
+            "maxStacks": 1,
+            "stacksToAdd": 1,
+            "character": "Attacker",
+            "turns": 1,
+            "countsOn": "Attacker",
+            "media": "assets/icons/DaedricBuff.png"
+          }
+        ],
+        "onhitEffects": [
+          {
+            "effectType": "Slow",
+            "magnitude": 25,
+            "turns": 1
+          },
+          {
+            "effectType": "Affliction"
+          }
+        ],
+        "cantMiss": true,
+        "attackCount": 1,
+        "attackInterval": 50,
+        "lifesteal": 10,
+        "description": "Order.",
+        "attackTypes": [
+          "melee"
+        ]
       }
     ],
     "slayerAreaDisplayOrder": [
@@ -607,6 +1122,90 @@
         "activeInRaid": false,
         "hint": "Oblivion",
         "customDescription": "By Azura, by Azura, by Azura! It's the Grand Champion! I can't believe it's you! Standing here! Next to me!"
+      },
+      {
+        "id": "Haskill",
+        "name": "Haskill",
+        "media": "assets/pets/Haskill.png",
+        "scaleChanceWithMasteryPool": false,
+        "ignoreCompletion": true,
+        "modifiers": {
+          "increasedGPFromRawFishSales": 7
+        },
+        "activeInRaid": false,
+        "hint": "Shivering Isles",
+        "customDescription": "You approach the Shivering Isles. Through the door behind me lies the realm of Sheogorath, Prince of Madness, Lord of the Never-There."
+      }
+    ],
+    "combatAreas": [
+      {
+        "id": "Skyrim",
+        "name": "Skyrim",
+        "media": "assets/locations/Skyrim.png",
+        "monsterIDs": [
+          "melvorD:Bandit"
+        ],
+        "difficulty": [
+          0
+        ],
+        "entryRequirements": []
+      }
+    ],
+    "combatAreaDisplayOrder": [
+      {
+        "insertAt": "After",
+        "afterID": "melvorD:Goblin_Village",
+        "ids": [
+          "tes:Skyrim"
+        ]
+      } 
+    ],
+    "dungeons": [
+      {
+        "id": "Shivering_Isles",
+        "name": "Shivering Isles",
+        "media": "assets/locations/Shivering_Isles.png",
+        "monsterIDs": [
+          "melvorD:Bat",
+          "melvorD:Bat",
+          "tes:Sheogorath"
+        ],
+        "difficulty": [
+          6
+        ],
+        "entryRequirements": [
+          {
+            "type": "DungeonCompletion",
+            "dungeonID": "melvorF:Fire_God_Dungeon",
+            "count": 1
+          }
+        ],
+        "unlockRequirement": [
+          {
+            "type": "DungeonCompletion",
+            "dungeonID": "melvorF:Fire_God_Dungeon",
+            "count": 1
+          }
+        ],
+        "rewardItemIDs": [
+          "tes:Sigil_Stone"
+        ],
+        "dropBones": false,
+        "pet": {
+          "petID": "tes:Haskill",
+          "weight": 750
+        },
+        "fixedPetClears": false,
+        "pauseOnBosses": false
+      }
+    ],
+    "dungeonDisplayOrder": [
+      {
+        "insertAt": "After",
+        "afterID": "melvorF:Fire_God_Dungeon",
+        "ids": [
+          "tes:Shivering_Isles"
+        ]
       }
     ]
   }
