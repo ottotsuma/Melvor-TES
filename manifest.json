@@ -1,0 +1,6 @@
+{
+    "namespace": "TES",
+    "icon": "assets/Preview.png",
+    "setup": "setup.mjs",
+    "load": "data.json"
+  }

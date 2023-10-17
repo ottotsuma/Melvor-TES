@@ -1,0 +1,173 @@
+{
+  "$schema": "https://melvoridle.com/assets/schema/gameData.json",
+  "namespace": "tes",
+  "data": {
+    "items": [
+      {
+        "id": "Dawnbreaker",
+        "name": "Dawnbreaker",
+        "customDescription": "Mortals call it Dawnbreaker, for it was forged in a holy light that breaks upon my foes, burning away corruption and false life.",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Dawnbreaker.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 3600000,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Attack",
+            "level": 99
+          }
+        ],
+        "equipmentStats": [
+          { "key": "attackSpeed", "value": 2200 },
+          { "key": "stabAttackBonus", "value": 120 },
+          { "key": "slashAttackBonus", "value": 160 },
+          { "key": "blockAttackBonus", "value": 0 },
+          { "key": "meleeStrengthBonus", "value": 120 }
+        ],
+        "itemType": "Weapon",
+        "attackType": "melee",
+        "specialAttacks": [ "tes:Meridias_Retribution" ],
+        "overrideSpecialChances": [ 100 ]
+      }
+    ],
+    "slayerAreas": [
+      {
+        "id": "Oblivion",
+        "name": "Oblivion",
+        "media": "assets/locations/Oblivion.png",
+        "difficulty": [
+          6
+        ],
+        "monsterIDs": [
+          "tes:Meridia"
+        ],
+        "entryRequirements": [
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Slayer",
+            "level": 99
+          }
+        ],
+        "areaEffect": {
+          "target": "Enemy",
+          "modifier": "decreasedDamageTaken",
+          "magnitude": 120
+        },
+        "areaEffectDescription": "Enemies are ${effectValue}% more resistant to damage.",
+        "pet": {
+          "petID": "tes:Adoring_Fan",
+          "weight": 750
+        }
+      }
+    ],
+    "monsters": [
+      {
+        "id": "Meridia",
+        "name": "Meridia",
+        "media": "assets/monsters/Meridia.png",
+        "levels": {
+          "Attack": 1,
+          "Defence": 500,
+          "Hitpoints": 500,
+          "Magic": 1,
+          "Ranged": 700,
+          "Strength": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 1800
+          },
+          {
+            "key": "damageReduction",
+            "value": 10
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "ranged",
+        "specialAttacks": [
+          "tes:Meridias_Retribution"
+        ],
+        "passives": [],
+        "lootChance": 1,
+        "lootTable": [
+          {
+            "itemID": "tes:Dawnbreaker",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          }
+        ],
+        "gpDrops": {
+          "min": 230,
+          "max": 900
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindStrike"
+      }
+    ],
+    "attacks": [
+      {
+        "id": "Meridias_Retribution",
+        "name": "Meridia's Retribution",
+        "defaultChance": 100,
+        "damage": [
+          {
+            "damageType": "Normal",
+            "amplitude": 200
+          }
+        ],
+        "prehitEffects": [],
+        "onhitEffects": [
+          {
+            "effectType": "Burn",
+            "chance": 100
+          }
+        ],
+        "cantMiss": true,
+        "attackCount": 1,
+        "attackInterval": 50,
+        "lifesteal": 0,
+        "description": "Dawnbreaker unleashes Meridia's Retribution dealing ${attackDamageMaxValue0}% of your normal damage and apply a burn effect.",
+        "attackTypes": [
+          "melee"
+        ],
+        "descriptionGenerator": "Dawnbreaker unleashes Meridia's Retribution dealing <damage> and apply a burn effect."
+      }
+    ],
+    "slayerAreaDisplayOrder": [
+      {
+        "insertAt": "After",
+        "ids": [
+          "tes:Oblivion"
+        ],
+        "afterID": "melvorF:UnhallowedWasteland"
+      }
+    ],
+    "pets": [
+      {
+        "id": "Adoring_Fan",
+        "name": "Adoring Fan",
+        "media": "assets/pets/Adoring_Fan.png",
+        "scaleChanceWithMasteryPool": false,
+        "ignoreCompletion": true,
+        "modifiers": {
+          "increasedAutoEatEfficiency": 1
+        },
+        "activeInRaid": false,
+        "hint": "Oblivion",
+        "customDescription": "By Azura, by Azura, by Azura! It's the Grand Champion! I can't believe it's you! Standing here! Next to me!"
+      }
+    ]
+  }
+}
