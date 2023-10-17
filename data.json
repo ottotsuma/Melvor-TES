@@ -10,7 +10,7 @@
         "category": "Combat",
         "type": "Weapon",
         "media": "assets/items/Dawnbreaker.png",
-        "ignoreCompletion": false,
+        "ignoreCompletion": true,
         "obtainFromItemLog": false,
         "golbinRaidExclusive": false,
         "sellsFor": 3600000,
@@ -27,16 +27,224 @@
           }
         ],
         "equipmentStats": [
-          { "key": "attackSpeed", "value": 2200 },
-          { "key": "stabAttackBonus", "value": 120 },
-          { "key": "slashAttackBonus", "value": 160 },
-          { "key": "blockAttackBonus", "value": 0 },
-          { "key": "meleeStrengthBonus", "value": 120 }
+          {
+            "key": "attackSpeed",
+            "value": 2200
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 120
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 160
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 0
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 120
+          }
         ],
         "itemType": "Weapon",
         "attackType": "melee",
-        "specialAttacks": [ "tes:Meridias_Retribution" ],
-        "overrideSpecialChances": [ 100 ]
+        "specialAttacks": [
+          "tes:Meridias_Retribution"
+        ],
+        "overrideSpecialChances": [
+          50
+        ]
+      },
+      {
+        "id": "Azuras_Star",
+        "name": "Azura's Star",
+        "customDescription": "Ah, Azura's Star... as beautiful as all the tales tell.",
+        "category": "Misc",
+        "type": "Armour",
+        "media": "assets/items/Azura's_Star.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 3600000,
+        "tier": "none",
+        "validSlots": [
+          "Passive"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [],
+        "equipmentStats": [
+          {
+            "key": "stabAttackBonus",
+            "value": 45
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 45
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 45
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 20
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 35
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 20
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 20
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 20
+          },
+          {
+            "key": "damageReduction",
+            "value": 4
+          }
+        ],
+        "itemType": "Equipment"
+      },
+      {
+        "id": "Ebony_Mail",
+        "name": "Ebony Mail",
+        "customDescription": "The Ebony Mail is an artifact created before recorded history, according to legend, by the Dark Elven goddess Boethiah. It is she who determines who should possess the Mail and for how long a time. If judged worthy, its power grants the wearer invulnerability to all common magical attacks that drain talents and health. It is Boethiah alone who determines when a person is ineligible to bear the Ebony Mail any longer, and the goddess can be very capricious...",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Ebony_Mail.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 3600000,
+        "tier": "none",
+        "validSlots": [
+          "Platebody"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [],
+        "equipmentStats": [
+          {
+            "key": "meleeDefenceBonus",
+            "value": 200
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 200
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 200
+          },
+          {
+            "key": "damageReduction",
+            "value": 4
+          }
+        ],
+        "modifiers": {
+          "increasedChanceToApplyDeadlyPoison": 10,
+          "increasedThievingStealth": 50
+        },
+        "itemType": "Equipment"
+      },
+      {
+        "id": "Goldbrand",
+        "name": "Goldbrand",
+        "customDescription": "This blade has slain many a hero over the years. Tamriel will be better off without it for a while.",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Goldbrand.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 3600000,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [],
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2200
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 120
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 160
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 0
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 120
+          }
+        ],
+        "modifiers": {
+          "increasedChanceToApplyBurn": 100,
+          "increasedBurnDOTDamage": 10
+        },
+        "itemType": "Equipment"
+      },
+      {
+        "id": "Fearstruck",
+        "name": "Fearstruck",
+        "customDescription": "Fearstruck was an artifact used by Lyrisius in his battle against the Akaviri invasion. It was a shield given to him by Boethiah, for reasons currently unknown. What is known of this shield, however, is that it was destroyed in a single breath by a wyrm (dragon), when fighting Lyrisius.",
+        "category": "Combat",
+        "type": "Shield",
+        "media": "assets/items/Fearstruck.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 3600000,
+        "tier": "none",
+        "validSlots": [
+          "Shield"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Defence",
+            "level": 50
+          }
+        ],
+        "equipmentStats": [
+          {
+            "key": "meleeDefenceBonus",
+            "value": 20
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 20
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 20
+          },
+          {
+            "key": "damageReduction",
+            "value": 4
+          }
+        ],
+        "modifiers": {
+          "increasedDamageTakenIfCursed": 15
+        },
+        "itemType": "Equipment"
       }
     ],
     "slayerAreas": [
@@ -48,7 +256,9 @@
           6
         ],
         "monsterIDs": [
-          "tes:Meridia"
+          "tes:Meridia",
+          "tes:Azura",
+          "tes:Boethiah"
         ],
         "entryRequirements": [
           {
@@ -95,7 +305,7 @@
         "ignoreCompletion": true,
         "attackType": "ranged",
         "specialAttacks": [
-          "tes:Meridias_Retribution"
+          "tes:Meridias_True_Retribution"
         ],
         "passives": [],
         "lootChance": 1,
@@ -114,13 +324,116 @@
         "canSlayer": true,
         "isBoss": false,
         "selectedSpell": "melvorD:WindStrike"
+      },
+      {
+        "id": "Azura",
+        "name": "Azura",
+        "media": "assets/monsters/Azura.png",
+        "levels": {
+          "Attack": 1,
+          "Defence": 500,
+          "Hitpoints": 500,
+          "Magic": 700,
+          "Ranged": 1,
+          "Strength": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 1800
+          },
+          {
+            "key": "damageReduction",
+            "value": 10
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "tes:Queen_of_the_Night_Sky",
+          "tes:Mother_of_the_Rose"
+        ],
+        "passives": [],
+        "lootChance": 1,
+        "lootTable": [
+          {
+            "itemID": "tes:Azuras_Star",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          }
+        ],
+        "gpDrops": {
+          "min": 230,
+          "max": 900
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindStrike"
+      },
+      {
+        "id": "Boethiah",
+        "name": "Boethiah",
+        "media": "assets/monsters/Boethiah.png",
+        "levels": {
+          "Attack": 700,
+          "Defence": 500,
+          "Hitpoints": 500,
+          "Magic": 1,
+          "Ranged": 1,
+          "Strength": 700
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 1800
+          },
+          {
+            "key": "damageReduction",
+            "value": 10
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "tes:Tournament_of_Ten_Bloods"
+        ],
+        "passives": [],
+        "lootChance": 3,
+        "lootTable": [
+          {
+            "itemID": "tes:Ebony_Mail",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID": "tes:Goldbrand",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 5
+          },
+          {
+            "itemID": "tes:Fearstruck",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 230,
+          "max": 900
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindStrike"
       }
     ],
     "attacks": [
       {
         "id": "Meridias_Retribution",
         "name": "Meridia's Retribution",
-        "defaultChance": 100,
+        "defaultChance": 50,
         "damage": [
           {
             "damageType": "Normal",
@@ -143,6 +456,133 @@
           "melee"
         ],
         "descriptionGenerator": "Dawnbreaker unleashes Meridia's Retribution dealing <damage> and apply a burn effect."
+      },
+      {
+        "id": "Meridias_True_Retribution",
+        "name": "Meridia's Retribution",
+        "defaultChance": 100,
+        "damage": [
+          {
+            "damageType": "Normal",
+            "amplitude": 300
+          }
+        ],
+        "prehitEffects": [],
+        "onhitEffects": [
+          {
+            "effectType": "Burn",
+            "chance": 100
+          }
+        ],
+        "cantMiss": true,
+        "attackCount": 1,
+        "attackInterval": 50,
+        "lifesteal": 0,
+        "description": "Meridia uses the true power of her retribution on you.",
+        "attackTypes": [
+          "ranged"
+        ]
+      },
+      {
+        "id": "Queen_of_the_Night_Sky",
+        "name": "Queen of the Night Sky",
+        "defaultChance": 50,
+        "damage": [
+          {
+            "damageType": "Normal",
+            "amplitude": 300
+          }
+        ],
+        "prehitEffects": [],
+        "onhitEffects": [
+          {
+            "effectType": "Custom",
+            "type": "Stun",
+            "turns": 1,
+            "chance": 100,
+            "flavour": "Stun"
+          }
+        ],
+        "cantMiss": true,
+        "attackCount": 1,
+        "attackInterval": 50,
+        "lifesteal": 0,
+        "description": "Azura is Queen of the Night Sky.",
+        "attackTypes": [
+          "magic"
+        ]
+      },
+      {
+        "id": "Mother_of_the_Rose",
+        "name": "Mother of the Rose",
+        "defaultChance": 50,
+        "damage": [
+          {
+            "damageType": "Normal",
+            "amplitude": 300
+          }
+        ],
+        "prehitEffects": [
+          {
+            "effectType": "Custom",
+            "type": "Modifier",
+            "modifiers": {
+              "increasedMagicAccuracyBonus": 25,
+              "increasedMagicMaxHit": 15,
+              "decreasedAttackIntervalPercent": 20
+            },
+            "maxStacks": 1,
+            "stacksToAdd": 1,
+            "character": "Attacker",
+            "turns": "Infinity",
+            "countsOn": "Attacker",
+            "media": "assets/icons/DaedricBuff.png"
+          }
+        ],
+        "onhitEffects": [],
+        "cantMiss": true,
+        "attackCount": 1,
+        "attackInterval": 50,
+        "lifesteal": 0,
+        "description": "Azura is Mother of the Rose.",
+        "attackTypes": [
+          "magic"
+        ]
+      },
+      {
+        "id": "Tournament_of_Ten_Bloods",
+        "name": "Tournament of Ten Bloods",
+        "defaultChance": 50,
+        "damage": [
+          {
+            "damageType": "Normal",
+            "amplitude": 300
+          }
+        ],
+        "prehitEffects": [
+          {
+            "effectType": "Custom",
+            "type": "Modifier",
+            "modifiers": {
+              "increasedMeleeMaxHit": 1
+            },
+            "maxStacks": 1000,
+            "stacksToAdd": 1,
+            "character": "Attacker",
+            "turns": "Infinity",
+            "countsOn": "Attacker",
+            "media": "assets/icons/DaedricBuff.png"
+          }
+        ],
+        "onhitEffects": [],
+        "cantMiss": true,
+        "attackCount": 1,
+        "attackInterval": 50,
+        "lifesteal": 0,
+        "description": "Boethiah's realm often holds the Tournament of Ten Bloods.",
+        "attackTypes": [
+          "melee"
+        ]
       }
     ],
     "slayerAreaDisplayOrder": [
