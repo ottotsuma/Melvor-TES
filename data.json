@@ -4,6 +4,188 @@
   "data": {
     "items": [
       {
+        "id": "Ring_of_Khajiit",
+        "name": "Ring of Khajiit",
+        "customDescription": "Thieves everywhere will curse us both for the loss of this ring, my friend. So be it.",
+        "category": "Misc",
+        "type": "Ring",
+        "media": "assets/items/Ring_of_Khajiit.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 3600000,
+        "tier": "none",
+        "validSlots": [
+          "Ring"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [],
+        "equipmentStats": [ ],
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedThievingStealth": 150,
+          "increasedThievingAreaUniqueChance": 10,
+          "increasedGPFromThieving": 100,
+          "increasedMinThievingGP": 150,
+          "increasedChanceToAvoidThievingStuns": 35
+        }
+      },
+      {
+        "id": "Ebony_Blade",
+        "name": "Ebony Blade",
+        "customDescription": "I wonder if Mephala herself knows how many lives this foul blade has taken over the years? I will be glad to give the world a respite from it.",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Ebony_Blade.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 6512,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Attack",
+            "level": 70
+          }
+        ],
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2000
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 120
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 120
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 120
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 120
+          }
+        ],
+        "itemType": "Weapon",
+        "attackType": "melee",
+        "specialAttacks": [
+          "melvorD:LifeLeech"
+        ]
+      },
+      {
+        "id": "Mehrunes_Razor",
+        "name": "Mehrunes Razor",
+        "customDescription": "You found my razor. Good. Can you feel its hunger? Can you feel its..Frustration? Now I will make it again what it once was, what it shall always be. Draw a line of blood across the land in the name of Mehrunes Dagon!",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Mehrunes_Razor.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 3600000,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Attack",
+            "level": 99
+          }
+        ],
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2000
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 60
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 30
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 60
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 50
+          }
+        ],
+        "itemType": "Weapon",
+        "attackType": "melee",
+        "specialAttacks": [
+          "melvorF:DeadlyCut"
+        ]
+      },
+      {
+        "id": "Daedric_Crescent",
+        "name": "Daedric Crescent",
+        "customDescription": "Probably the most rare and even outlawed item of all the great prizes is the Daedric Crescent Blade.",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Daedric_Crescent.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 3600000,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [
+          "Shield"
+        ],
+        "equipRequirements": [
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Attack",
+            "level": 99
+          }
+        ],
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 1250
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 80
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 120
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 80
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 50
+          }
+        ],
+        "itemType": "Weapon",
+        "attackType": "melee",
+        "specialAttacks": [
+          "melvorF:DualAttack"
+        ]
+      },
+      {
         "id": "Volendrung_Cheater",
         "name": "Volendrung_Cheater",
         "customDescription": "Cheat weapon for quick testing.",
@@ -272,7 +454,7 @@
         "name": "Azura's Star",
         "customDescription": "Ah, Azura's Star... as beautiful as all the tales tell.",
         "category": "Misc",
-        "type": "Armour",
+        "type": "Special",
         "media": "assets/items/Azura's_Star.png",
         "ignoreCompletion": true,
         "obtainFromItemLog": false,
@@ -377,7 +559,9 @@
         ],
         "modifiers": {
           "increasedChanceToApplyDeadlyPoison": 10,
-          "increasedThievingStealth": 50
+          "increasedChanceToApplyDeadlyPoisonWhenPoisoned": 10,
+          "increasedChanceToApplyPoison": 20,
+          "increasedThievingStealth": 150
         },
         "itemType": "Equipment"
       },
@@ -599,7 +783,9 @@
           "tes:Boethiah",
           "tes:Clavicus_Vile",
           "tes:Hermaeus_Mora",
-          "tes:Hircine"
+          "tes:Hircine",
+          "tes:Malacath",
+          "tes:Mehrunes_Dagon"
         ],
         "entryRequirements": [
           {
@@ -621,6 +807,163 @@
       }
     ],
     "monsters": [
+      {
+        "id": "Mephala",
+        "name": "Mephala",
+        "media": "assets/monsters/Mephala.png",
+        "levels": {
+          "Attack": 700,
+          "Defence": 500,
+          "Hitpoints": 900,
+          "Magic": 700,
+          "Ranged": 900,
+          "Strength": 700
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 1800
+          },
+          {
+            "key": "damageReduction",
+            "value": 5
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "ranged",
+        "specialAttacks": [
+          "melvorF:Webshot",
+          "melvorD:TripleDamage",
+          "melvorF:MarkofDeath"
+        ],
+        "passives": [
+          "melvorF:Purity"
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Ancient_Rune",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 48
+          },
+          {
+            "itemID": "melvorD:Strawberry_Cupcake",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Dragonite_Ore",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 30
+          },
+          {
+            "itemID": "melvorD:Dragonite_Bar",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "tes:Ring_of_Khajiit",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID": "tes:Ebony_Blade",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          }
+        ],
+        "gpDrops": {
+          "min": 230,
+          "max": 900
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindStrike"
+      },
+      {
+        "id": "Mehrunes_Dagon",
+        "name": "Mehrunes Dagon",
+        "media": "assets/monsters/Mehrunes_Dagon.png",
+        "levels": {
+          "Attack": 1500,
+          "Defence": 500,
+          "Hitpoints": 900,
+          "Magic": 900,
+          "Ranged": 1,
+          "Strength": 1100
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2000
+          },
+          {
+            "key": "damageReduction",
+            "value": 50
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "melvorF:BurningFireball",
+          "melvorF:InfernalVolley"
+        ],
+        "passives": [
+          "melvorF:Purity"
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Ancient_Rune",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 48
+          },
+          {
+            "itemID": "melvorD:Strawberry_Cupcake",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Dragonite_Ore",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 30
+          },
+          {
+            "itemID": "melvorD:Dragonite_Bar",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "tes:Mehrunes_Razor",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID": "tes:Daedric_Crescent",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          }
+        ],
+        "gpDrops": {
+          "min": 230,
+          "max": 900
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindStrike"
+      },
       {
         "id": "Malacath",
         "name": "Malacath",
