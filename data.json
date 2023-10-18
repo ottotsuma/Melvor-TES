@@ -4,6 +4,378 @@
   "data": {
     "items": [
       {
+        "id": "Wabbajack",
+        "name": "Wabbajack",
+        "customDescription": "And as for you, my little mortal minion... feel free to keep the Wabbajack. As a symbol of my... Oh, just take the damn thing.",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Wabbajack.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 1680,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [
+          "Shield"
+        ],
+        "equipRequirements": [
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Magic",
+            "level": 70
+          }
+        ],
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2000
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 40
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 40
+          },
+          {
+            "key": "summoningMaxhit",
+            "value": 40
+          }
+        ],
+        "itemType": "Weapon",
+        "attackType": "magic",
+        "specialAttacks": [
+          "melvorF:Quake",
+          "melvorF:Gust",
+          "melvorF:Ignite",
+          "melvorF:Frostbite",
+          "melvorF:IcicleVolley",
+          "melvorF:SlicingWinds"
+        ]
+      },
+      {
+        "id": "Skeleton_Key",
+        "name": "Skeleton Key",
+        "customDescription": "The merchants of Cyrodiil would sleep more soundly, knowing this Key is gone from the world. But why tell them?",
+        "category": "Misc",
+        "type": "Special",
+        "media": "assets/items/Skeleton_Key.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 5000,
+        "tier": "none",
+        "validSlots": [
+          "Passive"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [],
+        "equipmentStats": [
+        ],
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedThievingStealth": 150,
+          "increasedThievingAreaUniqueChance": 10,
+          "increasedGPFromThieving": 100,
+          "increasedMinThievingGP": 150,
+          "increasedChanceToAvoidThievingStuns": 35
+        }
+      },
+      {
+        "id": "Gray_Cowl_of_Nocturnal",
+        "name": "Gray Cowl of Nocturnal",
+        "customDescription": "The Gray Cowl of Nocturnal shrouds the wearer's face in shadow. No light or magic of detection can penetrate its depths. To look upon Nocturnal's face without the cowl is to view the depths of the void. A man would lose his mind to see it.",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Gray_Cowl_of_Nocturnal.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 0,
+        "tier": "none",
+        "validSlots": [
+          "Helmet"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [],
+        "equipmentStats": [
+          {
+            "key": "meleeDefenceBonus",
+            "value": 12
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 12
+          },
+          {
+            "key": "damageReduction",
+            "value": 2
+          }
+         ],
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedThievingStealth": 150,
+          "increasedThievingAreaUniqueChance": 10,
+          "increasedGPFromThieving": 100,
+          "increasedMinThievingGP": 150,
+          "increasedChanceToAvoidThievingStuns": 35
+        }
+      },
+      {
+        "id": "Skull_of_Corruption",
+        "name": "Skull of Corruption",
+        "customDescription": "What a foul and unnatural weapon you wield, never have I seen its like.",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Skull_of_Corruption.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 1680,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [
+          "Shield"
+        ],
+        "equipRequirements": [
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Magic",
+            "level": 70
+          }
+        ],
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2000
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 40
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 40
+          },
+          {
+            "key": "summoningMaxhit",
+            "value": 40
+          }
+        ],
+        "itemType": "Weapon",
+        "attackType": "magic",
+        "specialAttacks": [
+          "melvorF:Infernum",
+          "melvorF:Inferno",
+          "melvorF:InfernalVolley"
+        ]
+      },
+      {
+        "id": "Sanguine_Rose",
+        "name": "Sanguine Rose",
+        "customDescription": "I  never thought to see this again. I once possessed it, briefly ... a lifetime ago, it seems now ... To obtain it, and then give it up... I honor your dedication to our cause.",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Sanguine_Rose.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 6512,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [
+          "Shield"
+        ],
+        "equipRequirements": [
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Magic",
+            "level": 70
+          }
+        ],
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2000
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 40
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 40
+          },
+          {
+            "key": "summoningMaxhit",
+            "value": 40
+          }
+        ],
+        "itemType": "Weapon",
+        "attackType": "magic",
+        "specialAttacks": [
+          "melvorF:DrowsySpores",
+          "melvorF:Spores"
+        ]
+      },
+      {
+        "id": "Spell_Breaker",
+        "name": "Spell Breaker",
+        "customDescription": "Ah, now there's a fine shield. And not mere Dwarven, is it?",
+        "category": "Combat",
+        "type": "Shield",
+        "media": "assets/items/Spell_Breaker.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 227,
+        "tier": "none",
+        "validSlots": [
+          "Shield"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Defence",
+            "level": 50
+          }
+        ],
+        "equipmentStats": [
+          {
+            "key": "meleeDefenceBonus",
+            "value": 38
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 38
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 38
+          },
+          {
+            "key": "damageReduction",
+            "value": 4
+          }
+        ],
+        "modifiers": {
+          "increasedFlatMagicDefenceBonus": 50,
+          "increasedFlatReflectDamage": 50
+        },
+        "itemType": "Equipment"
+      },
+      {
+        "id": "Ring_of_Namira",
+        "name": "Ring of Namira",
+        "customDescription": "Ugh. Your breath is foul. What've you been eating?",
+        "category": "Misc",
+        "type": "Ring",
+        "media": "assets/items/Ring_of_Namira.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 870,
+        "tier": "none",
+        "validSlots": [
+          "Ring"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [],
+        "equipmentStats": [
+          {
+            "key": "stabAttackBonus",
+            "value": 5
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 5
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 5
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 5
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 5
+          },
+          {
+            "key": "damageReduction",
+            "value": -5
+          }
+         ],
+        "itemType": "Equipment",
+        "modifiers": {
+          "decreasedFoodHealingValue": 25,
+          "increasedHealingWhenHit": 50,
+          "increasedHealingOnAttackBasedOnDR": 50
+        }
+      },
+      {
+        "id": "Mace_of_Molag_Bal",
+        "name": "Mace of Molag Bal",
+        "customDescription": "The Mace of Molag Bal! I give you its true power, mortal. When your enemies lie broken and bloody before you, know that I will be watching.",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Mace_of_Molag_Bal.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 1257,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Attack",
+            "level": 90
+          }
+        ],
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2200
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 80
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 60
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 120
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 160
+          }
+        ],
+        "itemType": "Weapon",
+        "attackType": "melee",
+        "specialAttacks": [
+          "melvorD:LifeLeech",
+          "melvorF:BoneCrush"
+        ]
+      },
+      {
         "id": "Ring_of_Khajiit",
         "name": "Ring of Khajiit",
         "customDescription": "Thieves everywhere will curse us both for the loss of this ring, my friend. So be it.",
@@ -83,7 +455,7 @@
       },
       {
         "id": "Mehrunes_Razor",
-        "name": "Mehrunes Razor",
+        "name": "Mehrunes' Razor",
         "customDescription": "You found my razor. Good. Can you feel its hunger? Can you feel its..Frustration? Now I will make it again what it once was, what it shall always be. Draw a line of blood across the land in the name of Mehrunes Dagon!",
         "category": "Combat",
         "type": "Weapon",
@@ -351,16 +723,22 @@
         "itemType": "Openable",
         "dropTable": [
           {
+            "itemID": "melvorD:Bread_Perfect",
+            "minQuantity": 15,
+            "maxQuantity": 25,
+            "weight": 40
+          },
+          {
             "itemID": "melvorD:Runite_Bar",
             "minQuantity": 15,
             "maxQuantity": 25,
-            "weight": 73
+            "weight": 20
           },
           {
             "itemID": "melvorD:Dragonite_Bar",
             "minQuantity": 10,
             "maxQuantity": 10,
-            "weight": 25
+            "weight": 20
           },
           {
             "itemID": "melvorF:Ancient_Dhide_Chaps",
@@ -387,11 +765,11 @@
             "weight": 20
           },
           {
-            "itemID": "melvorF:Redwood_Shortbow",
+            "itemID": "tes:Wabbajack",
             "minQuantity": 1,
             "maxQuantity": 1,
-            "weight": 20
-          }
+            "weight": 1
+          }          
         ],
         "customDescription": "A Sigil Stone is the object that keeps Oblivion Gates open. They are found inside the Sigilium Sanguis, at the top of the largest tower, in the planes of Oblivion."
       },
@@ -785,7 +1163,13 @@
           "tes:Hermaeus_Mora",
           "tes:Hircine",
           "tes:Malacath",
-          "tes:Mehrunes_Dagon"
+          "tes:Mehrunes_Dagon",
+          "tes:Molag_Bal",
+          "tes:Namira",
+          "tes:Peryite",
+          "tes:Sanguine",
+          "tes:Vaermina",
+          "tes:Nocturnal"
         ],
         "entryRequirements": [
           {
@@ -807,6 +1191,425 @@
       }
     ],
     "monsters": [
+      {
+        "id": "Nocturnal",
+        "name": "Nocturnal",
+        "media": "assets/monsters/Nocturnal.png",
+        "levels": {
+          "Attack": 700,
+          "Defence": 700,
+          "Hitpoints": 880,
+          "Magic": 900,
+          "Ranged": 700,
+          "Strength": 700
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "melvorF:ShadowBurst",
+          "melvorF:Shadowstep",
+          "melvorF:CursedFrostShards"
+        ],
+        "passives": [
+          "melvorF:Purity",
+          "melvorF:MagicProficiency"
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Ancient_Rune",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 48
+          },
+          {
+            "itemID": "melvorD:Strawberry_Cupcake",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Dragonite_Ore",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 30
+          },
+          {
+            "itemID": "melvorD:Dragonite_Bar",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "tes:Gray_Cowl_of_Nocturnal",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID": "tes:Skeleton_Key",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          }
+        ],
+        "gpDrops": {
+          "min": 230,
+          "max": 900
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindSurge"
+      },
+      {
+        "id": "Vaermina",
+        "name": "Vaermina",
+        "media": "assets/monsters/Vaermina.png",
+        "levels": {
+          "Attack": 1,
+          "Defence": 700,
+          "Hitpoints": 880,
+          "Magic": 900,
+          "Ranged": 1,
+          "Strength": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "melvorF:GraspingRoots",
+          "melvorF:Cataclysm"
+        ],
+        "passives": [
+          "melvorF:Purity",
+          "melvorF:MagicProficiency"
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Ancient_Rune",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 49
+          },
+          {
+            "itemID": "melvorD:Strawberry_Cupcake",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Dragonite_Ore",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 30
+          },
+          {
+            "itemID": "melvorD:Dragonite_Bar",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "tes:Skull_of_Corruption",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          }
+        ],
+        "gpDrops": {
+          "min": 230,
+          "max": 900
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorF:NaturesWrath"
+      },
+      {
+        "id": "Sanguine",
+        "name": "Sanguine",
+        "media": "assets/monsters/Sanguine.png",
+        "levels": {
+          "Attack": 700,
+          "Defence": 700,
+          "Hitpoints": 880,
+          "Magic": 700,
+          "Ranged": 1,
+          "Strength": 700
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "melvorF:Cyclone",
+          "melvorF:MistWalk"
+        ],
+        "passives": [
+          "melvorF:Purity",
+          "melvorF:MagicProficiency"
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Ancient_Rune",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 49
+          },
+          {
+            "itemID": "melvorD:Strawberry_Cupcake",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Dragonite_Ore",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 30
+          },
+          {
+            "itemID": "melvorD:Dragonite_Bar",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "tes:Sanguine_Rose",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          }
+        ],
+        "gpDrops": {
+          "min": 230,
+          "max": 900
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindStrike"
+      },
+      {
+        "id": "Peryite",
+        "name": "Peryite",
+        "media": "assets/monsters/Peryite.png",
+        "levels": {
+          "Attack": 700,
+          "Defence": 700,
+          "Hitpoints": 880,
+          "Magic": 700,
+          "Ranged": 1,
+          "Strength": 700
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 1000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "melvorD:Dragonbreath",
+          "melvorF:BurningClaws",
+          "melvorF:PenetratingClaws",
+          "melvorF:QuadSwipe"
+        ],
+        "passives": [
+          "melvorF:Purity"
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Ancient_Rune",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 49
+          },
+          {
+            "itemID": "melvorD:Strawberry_Cupcake",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Dragonite_Ore",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 30
+          },
+          {
+            "itemID": "melvorD:Dragonite_Bar",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "tes:Spell_Breaker",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          }
+        ],
+        "gpDrops": {
+          "min": 230,
+          "max": 900
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindStrike"
+      },
+      {
+        "id": "Namira",
+        "name": "Namira",
+        "media": "assets/monsters/Namira.png",
+        "levels": {
+          "Attack": 700,
+          "Defence": 700,
+          "Hitpoints": 880,
+          "Magic": 700,
+          "Ranged": 1,
+          "Strength": 700
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 1000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "melvorF:Desecration",
+          "melvorF:PoisonBreath"
+        ],
+        "passives": [
+          "melvorF:Purity"
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Ancient_Rune",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 49
+          },
+          {
+            "itemID": "melvorD:Strawberry_Cupcake",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Dragonite_Ore",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 30
+          },
+          {
+            "itemID": "melvorD:Dragonite_Bar",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "tes:Ring_of_Namira",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          }
+        ],
+        "gpDrops": {
+          "min": 230,
+          "max": 900
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindStrike"
+      },
+      {
+        "id": "Molag_Bal",
+        "name": "Molag Bal",
+        "media": "assets/monsters/Molag_Bal.png",
+        "levels": {
+          "Attack": 1700,
+          "Defence": 300,
+          "Hitpoints": 1000,
+          "Magic": 1,
+          "Ranged": 1,
+          "Strength": 1700
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 1000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "melvorD:TripleDamage"
+        ],
+        "passives": [
+          "melvorF:Purity"
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Ancient_Rune",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 49
+          },
+          {
+            "itemID": "melvorD:Strawberry_Cupcake",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Dragonite_Ore",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 30
+          },
+          {
+            "itemID": "melvorD:Dragonite_Bar",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 10
+          },
+          {
+            "itemID": "tes:Mace_of_Molag_Bal",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          }
+        ],
+        "gpDrops": {
+          "min": 230,
+          "max": 900
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindStrike"
+      },
       {
         "id": "Mephala",
         "name": "Mephala",
@@ -1485,10 +2288,97 @@
         "levels": {
           "Attack": 1000,
           "Defence": 1000,
-          "Hitpoints": 10000,
+          "Hitpoints": 14000,
           "Magic": 1000,
           "Ranged": 1000,
           "Strength": 1000
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2000
+          },
+          {
+            "key": "damageReduction",
+            "value": 40
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "tes:maddness",
+          "tes:order",
+          "melvorF:FragileMind"
+          ],
+        "passives": [
+          "melvorD:JustAScratch",
+          "melvorF:Purity",
+          "melvorF:Rebirth"
+        ],
+        "lootChance": 0,
+        "lootTable": [
+        ],
+        "gpDrops": {
+          "min": 0,
+          "max": 0
+        },
+        "canSlayer": false,
+        "isBoss": true,
+        "selectedSpell": "melvorD:FireSurge"
+      },
+      {
+        "id": "Golden_Saint",
+        "name": "Golden Saint",
+        "media": "assets/monsters/Golden_Saint.png",
+        "levels": {
+          "Attack": 480,
+          "Defence": 480,
+          "Hitpoints": 5500,
+          "Magic": 300,
+          "Ranged": 300,
+          "Strength": 530
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 1000
+          },
+          {
+            "key": "damageReduction",
+            "value": 40
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "tes:order",
+          "melvorF:MarkofDeath"
+          ],
+        "passives": [
+          "melvorF:Afflicted"
+        ],
+        "lootChance": 0,
+        "lootTable": [
+        ],
+        "gpDrops": {
+          "min": 0,
+          "max": 0
+        },
+        "canSlayer": false,
+        "isBoss": true,
+        "selectedSpell": "melvorD:FireSurge"
+      },
+      {
+        "id": "Dark_Seducer",
+        "name": "Dark Seducer",
+        "media": "assets/monsters/Dark_Seducer.png",
+        "levels": {
+          "Attack": 480,
+          "Defence": 480,
+          "Hitpoints": 5500,
+          "Magic": 300,
+          "Ranged": 300,
+          "Strength": 530
         },
         "equipmentStats": [
           {
@@ -1504,12 +2394,270 @@
         "attackType": "melee",
         "specialAttacks": [
           "tes:maddness",
-          "tes:order"
+          "melvorF:MarkofDeath"
           ],
         "passives": [
-          "melvorD:JustAScratch",
-          "melvorF:Purity",
-          "melvorF:Rebirth"
+          "melvorF:Afflicted"
+        ],
+        "lootChance": 0,
+        "lootTable": [
+        ],
+        "gpDrops": {
+          "min": 0,
+          "max": 0
+        },
+        "canSlayer": false,
+        "isBoss": true,
+        "selectedSpell": "melvorD:FireSurge"
+      },
+      {
+        "id": "Baliwog",
+        "name": "Baliwog",
+        "media": "assets/monsters/Baliwog.png",
+        "levels": {
+          "Attack": 480,
+          "Defence": 480,
+          "Hitpoints": 4000,
+          "Magic": 300,
+          "Ranged": 300,
+          "Strength": 530
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "melvorD:PoisonMelee"
+          ],
+        "passives": [
+          "melvorF:Afflicted"
+        ],
+        "lootChance": 0,
+        "lootTable": [
+        ],
+        "gpDrops": {
+          "min": 0,
+          "max": 0
+        },
+        "canSlayer": false,
+        "isBoss": true,
+        "selectedSpell": "melvorD:FireSurge"
+      },
+      {
+        "id": "Scalon",
+        "name": "Scalon",
+        "media": "assets/monsters/Scalon.png",
+        "levels": {
+          "Attack": 480,
+          "Defence": 480,
+          "Hitpoints": 5000,
+          "Magic": 300,
+          "Ranged": 300,
+          "Strength": 530
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "melvorD:PoisonMelee"
+          ],
+        "passives": [
+          "melvorF:Afflicted"
+        ],
+        "lootChance": 0,
+        "lootTable": [
+        ],
+        "gpDrops": {
+          "min": 0,
+          "max": 0
+        },
+        "canSlayer": false,
+        "isBoss": true,
+        "selectedSpell": "melvorD:FireSurge"
+      },
+      {
+        "id": "Grummite",
+        "name": "Grummite",
+        "media": "assets/monsters/Grummite.png",
+        "levels": {
+          "Attack": 480,
+          "Defence": 480,
+          "Hitpoints": 4000,
+          "Magic": 300,
+          "Ranged": 300,
+          "Strength": 530
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "ranged",
+        "specialAttacks": [
+          "melvorD:PoisonRanged"
+          ],
+        "passives": [
+          "melvorF:Afflicted"
+        ],
+        "lootChance": 0,
+        "lootTable": [
+        ],
+        "gpDrops": {
+          "min": 0,
+          "max": 0
+        },
+        "canSlayer": false,
+        "isBoss": true,
+        "selectedSpell": "melvorD:FireSurge"
+      },
+      {
+        "id": "Elytra",
+        "name": "Elytra",
+        "media": "assets/monsters/Elytra.png",
+        "levels": {
+          "Attack": 480,
+          "Defence": 480,
+          "Hitpoints": 7000,
+          "Magic": 300,
+          "Ranged": 300,
+          "Strength": 530
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "melvorF:DeadlyCut"
+          ],
+        "passives": [
+          "melvorF:Afflicted"
+        ],
+        "lootChance": 0,
+        "lootTable": [
+        ],
+        "gpDrops": {
+          "min": 0,
+          "max": 0
+        },
+        "canSlayer": false,
+        "isBoss": true,
+        "selectedSpell": "melvorD:FireSurge"
+      },
+      {
+        "id": "Skinned_Hound",
+        "name": "Skinned Hound",
+        "media": "assets/monsters/Skinned_Hound.png",
+        "levels": {
+          "Attack": 680,
+          "Defence": 580,
+          "Hitpoints": 3000,
+          "Magic": 300,
+          "Ranged": 300,
+          "Strength": 530
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 1600
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "melvorF:ToxicBite"
+          ],
+        "passives": [
+          "melvorF:Afflicted"
+        ],
+        "lootChance": 0,
+        "lootTable": [
+        ],
+        "gpDrops": {
+          "min": 0,
+          "max": 0
+        },
+        "canSlayer": false,
+        "isBoss": true,
+        "selectedSpell": "melvorD:FireSurge"
+      },
+      {
+        "id": "Shambles",
+        "name": "Shambles",
+        "media": "assets/monsters/Shambles.png",
+        "levels": {
+          "Attack": 480,
+          "Defence": 480,
+          "Hitpoints": 7000,
+          "Magic": 300,
+          "Ranged": 300,
+          "Strength": 530
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "melvorF:BoneCrush"
+          ],
+        "passives": [
+          "melvorF:Afflicted"
+        ],
+        "lootChance": 0,
+        "lootTable": [
+        ],
+        "gpDrops": {
+          "min": 0,
+          "max": 0
+        },
+        "canSlayer": false,
+        "isBoss": true,
+        "selectedSpell": "melvorD:FireSurge"
+      },
+      {
+        "id": "Flesh_Atronach",
+        "name": "Flesh Atronach",
+        "media": "assets/monsters/Flesh_Atronach.png",
+        "levels": {
+          "Attack": 700,
+          "Defence": 800,
+          "Hitpoints": 10000,
+          "Magic": 1,
+          "Ranged": 1,
+          "Strength": 800
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 4000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "melvorF:BoneCrush",
+          "melvorF:Ram"
+          ],
+        "passives": [
+          "melvorF:Afflicted"
         ],
         "lootChance": 0,
         "lootTable": [
@@ -1935,10 +3083,16 @@
         "name": "Skyrim",
         "media": "assets/locations/Skyrim.png",
         "monsterIDs": [
-          "melvorD:Bandit"
+          "melvorD:Chicken",
+          "melvorD:Bandit",
+          "melvorD:SteelKnight",
+          "melvorD:FrozenArcher",
+          "melvorD:HillGiant",
+          "melvorD:BlackDragon"
         ],
         "difficulty": [
-          0
+          0,
+          2
         ],
         "entryRequirements": []
       }
@@ -1958,8 +3112,19 @@
         "name": "Shivering Isles",
         "media": "assets/locations/Shivering_Isles.png",
         "monsterIDs": [
-          "melvorD:Bat",
-          "melvorD:Bat",
+          "tes:Baliwog",
+          "tes:Scalon",
+          "tes:Grummite",
+          "tes:Elytra",
+          "tes:Skinned_Hound",
+          "tes:Shambles",
+          "tes:Flesh_Atronach",
+          "tes:Dark_Seducer",
+          "tes:Golden_Saint",
+          "tes:Dark_Seducer",
+          "tes:Golden_Saint",
+          "tes:Dark_Seducer",
+          "tes:Golden_Saint",
           "tes:Sheogorath"
         ],
         "difficulty": [
