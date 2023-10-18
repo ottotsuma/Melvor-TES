@@ -5,16 +5,23 @@
     "items": [
       {
         "id": "The_Black_Horse_Courier_Waterfront",
-        "name": "Waterfront Raid Fails!, The Black Horse Courier",
+        "name": "Waterfront Raid Fails!",
         "category": "Misc",
-        "type": "Item",
+        "type": "Special",
         "media": "assets/items/The_Black_Horse_Courier.png",
         "ignoreCompletion": true,
         "obtainFromItemLog": false,
         "golbinRaidExclusive": false,
         "sellsFor": 1,
-        "itemType": "Item",
-        "customDescription": "Stymied in his attempts to capture the legendary thief, the Gray Fox, Captain Hieronymus Lex of the Imperial Watch raided the Waterfront. Extra Watchmen were pulled from duty in other parts of the city to search the slums of the Waterfront. A small amount of contraband was confiscated, but the Gray Fox escaped. The Arcane University has filed a formal complaint against Captain Hieronymus Lex for dereliction of duty. The guards normally posted at the Arcane University were sent to the Waterfront during the raid. An attempted break-in at the University was foiled. University spokesmen insist that nothing was taken. They scoffed at the idea that any mere thief could make off with one of their treasures."
+        "itemType": "Readable",
+        "customDescription": "The Black Horse Courier is Cyrodiil's only newspaper.",
+        "swalData": {
+          "title": {
+            "category":"LORE",
+            "id": "Waterfront_Raid_Fails"
+          },
+          "htmlTemplateID": "The_Black_Horse_Courier_Waterfront_HTML"
+        }
       },
       {
         "id": "Wabbajack",
@@ -3121,34 +3128,6 @@
     ],
     "dungeons": [
       {
-        "id": "Thieves_Guild",
-        "name": "Thieves Guild",
-        "media": "assets/locations/Thieves_Guild.png",
-        "monsterIDs": [
-          "melvorD:Bandit"
-        ],
-        "difficulty": [
-          2
-        ],
-        "entryRequirements": [
-        ],
-        "unlockRequirement": [
-          {
-            "type": "DungeonCompletion",
-            "dungeonID": "melvorD:Chicken_Coop",
-            "count": 1
-          }
-        ],
-        "rewardItemIDs": [
-          "melvorF:Chest_Of_Gems"
-        ],
-        "dropBones": false,
-        "fixedPetClears": false,
-        "pauseOnBosses": false,
-        "pet": {
-        }
-      },
-      {
         "id": "Shivering_Isles",
         "name": "Shivering Isles",
         "media": "assets/locations/Shivering_Isles.png",
@@ -3200,13 +3179,6 @@
     "dungeonDisplayOrder": [
       {
         "insertAt": "After",
-        "afterID": "MelvorF:Infernal_Stronghold",
-        "ids": [
-          "tes:Thieves_Guild"
-        ]
-      },
-      {
-        "insertAt": "After",
         "afterID": "melvorF:Fire_God_Dungeon",
         "ids": [
           "tes:Shivering_Isles"
@@ -3214,229 +3186,235 @@
       }
     ],
     "skillData": [
-    {
-      "skillID": "melvorD:Thieving",
-      "data": {
-        "areas": [
-          {
-            "id": "Imperial_City",
-            "name": "Imperial City",
-            "npcIDs": [
-              "tes:Jensine",
-              "tes:Hieronymus_Lex",
-              "tes:Servatius_Quintilius",
-              "tes:Adamus_Phillida"
-            ],
-            "uniqueDrops": [
-              {
-                "id": "tes:The_Black_Horse_Courier_Waterfront",
-                "quantity": 1
-              }
-            ]
-          }
-        ],
-        "npcs": [
-          {
-            "id": "Adamus_Phillida",
-            "name": "Adamus Phillida",
-            "media": "assets/thief/Adamus_Phillida.png",
-            "baseExperience": 50,
-            "level": 50,
-            "maxGP": 450,
-            "maxHit": 151,
-            "perception": 450,
-            "lootTable": [
-              {
-                "itemID": "melvorD:Standard_Chest",
-                "maxQuantity": 1,
-                "minQuantity": 1,
-                "weight": 1
-              },
-              {
-                "itemID": "melvorD:Mithril_Platebody",
-                "maxQuantity": 1,
-                "minQuantity": 1,
-                "weight": 100
-              },
-              {
-                "itemID": "melvorD:Mithril_Platelegs",
-                "maxQuantity": 1,
-                "minQuantity": 1,
-                "weight": 100
-              },
-              {
-                "itemID": "melvorD:Mithril_2H_Sword",
-                "maxQuantity": 1,
-                "minQuantity": 1,
-                "weight": 100
-              },
-              {
-                "itemID": "melvorD:Mithril_Shield",
-                "maxQuantity": 10,
-                "minQuantity": 1,
-                "weight": 100
-              },
-              {
-                "itemID": "melvorD:Mithril_Helmet",
-                "maxQuantity": 10,
-                "minQuantity": 1,
-                "weight": 100
-              }
-            ]
-          },
-          {
-            "id": "Servatius_Quintilius",
-            "name": "Servatius Quintilius",
-            "media": "assets/thief/Servatius_Quintilius.png",
-            "baseExperience": 50,
-            "level": 50,
-            "maxGP": 450,
-            "maxHit": 151,
-            "perception": 450,
-            "lootTable": [
-              {
-                "itemID": "melvorD:Standard_Chest",
-                "maxQuantity": 1,
-                "minQuantity": 1,
-                "weight": 1
-              },
-              {
-                "itemID": "melvorD:Mithril_Platebody",
-                "maxQuantity": 1,
-                "minQuantity": 1,
-                "weight": 100
-              },
-              {
-                "itemID": "melvorD:Mithril_Platelegs",
-                "maxQuantity": 1,
-                "minQuantity": 1,
-                "weight": 100
-              },
-              {
-                "itemID": "melvorD:Mithril_2H_Sword",
-                "maxQuantity": 1,
-                "minQuantity": 1,
-                "weight": 100
-              },
-              {
-                "itemID": "melvorD:Mithril_Shield",
-                "maxQuantity": 10,
-                "minQuantity": 1,
-                "weight": 100
-              },
-              {
-                "itemID": "melvorD:Mithril_Helmet",
-                "maxQuantity": 10,
-                "minQuantity": 1,
-                "weight": 100
-              }
-            ]
-          },
-          {
-            "id": "Hieronymus_Lex",
-            "name": "Hieronymus Lex",
-            "media": "assets/thief/Hieronymus_Lex.png",
-            "baseExperience": 50,
-            "level": 50,
-            "maxGP": 450,
-            "maxHit": 151,
-            "perception": 450,
-            "lootTable": [
-              {
-                "itemID": "melvorD:Standard_Chest",
-                "maxQuantity": 1,
-                "minQuantity": 1,
-                "weight": 1
-              },
-              {
-                "itemID": "melvorD:Mithril_Platebody",
-                "maxQuantity": 1,
-                "minQuantity": 1,
-                "weight": 100
-              },
-              {
-                "itemID": "melvorD:Mithril_Platelegs",
-                "maxQuantity": 1,
-                "minQuantity": 1,
-                "weight": 100
-              },
-              {
-                "itemID": "melvorD:Mithril_2H_Sword",
-                "maxQuantity": 1,
-                "minQuantity": 1,
-                "weight": 100
-              },
-              {
-                "itemID": "melvorD:Mithril_Shield",
-                "maxQuantity": 10,
-                "minQuantity": 1,
-                "weight": 100
-              },
-              {
-                "itemID": "melvorD:Mithril_Helmet",
-                "maxQuantity": 10,
-                "minQuantity": 1,
-                "weight": 100
-              }
-            ]
-          },
-          {
-            "id": "Jensine",
-            "name": "Jensine",
-            "media": "assets/thief/Jensine.png",
-            "baseExperience": 40,
-            "level": 40,
-            "lootTable": [
-              {
-                "itemID": "melvorF:Basic_Bag",
-                "maxQuantity": 10,
-                "minQuantity": 1,
-                "weight": 50
-              },
-              {
-                "itemID": "melvorD:Standard_Chest",
-                "maxQuantity": 1,
-                "minQuantity": 1,
-                "weight": 1
-              },
-              {
-                "itemID": "melvorD:Mithril_Bar",
-                "maxQuantity": 10,
-                "minQuantity": 1,
-                "weight": 60
-              },
-              {
-                "itemID": "melvorD:Steel_2H_Sword",
-                "maxQuantity": 1,
-                "minQuantity": 1,
-                "weight": 100
-              },
-              {
-                "itemID": "melvorD:Steel_Arrows",
-                "maxQuantity": 12,
-                "minQuantity": 1,
-                "weight": 100
-              },
-              {
-                "itemID": "melvorD:Steel_Platebody",
-                "maxQuantity": 1,
-                "minQuantity": 1,
-                "weight": 100
-              },
-              {
-                "itemID": "melvorD:Mithril_Dagger",
-                "maxQuantity": 1,
-                "minQuantity": 1,
-                "weight": 50
-              }
-            ],
-            "maxGP": 350,
-            "maxHit": 120,
-            "perception": 375
-          }
-        ]
+      {
+        "skillID": "melvorD:Thieving",
+        "data": {
+          "areas": [
+            {
+              "id": "Imperial_City",
+              "name": "Imperial City",
+              "npcIDs": [
+                "tes:Jensine",
+                "tes:Hieronymus_Lex",
+                "tes:Servatius_Quintilius",
+                "tes:Adamus_Phillida"
+              ],
+              "uniqueDrops": [
+                {
+                  "id": "tes:The_Black_Horse_Courier_Waterfront",
+                  "quantity": 1
+                }
+              ]
+            }
+          ],
+          "npcs": [
+            {
+              "id": "Adamus_Phillida",
+              "name": "Adamus Phillida",
+              "media": "assets/thief/Adamus_Phillida.png",
+              "baseExperience": 50,
+              "level": 50,
+              "maxGP": 450,
+              "maxHit": 151,
+              "perception": 450,
+              "lootTable": [
+                {
+                  "itemID": "melvorD:Standard_Chest",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 1
+                },
+                {
+                  "itemID": "melvorD:Mithril_Platebody",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Mithril_Platelegs",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Mithril_2H_Sword",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Mithril_Shield",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Mithril_Helmet",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                }
+              ]
+            },
+            {
+              "id": "Servatius_Quintilius",
+              "name": "Servatius Quintilius",
+              "media": "assets/thief/Servatius_Quintilius.png",
+              "baseExperience": 50,
+              "level": 50,
+              "maxGP": 450,
+              "maxHit": 151,
+              "perception": 450,
+              "lootTable": [
+                {
+                  "itemID": "melvorD:Standard_Chest",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 1
+                },
+                {
+                  "itemID": "melvorD:Mithril_Platebody",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Mithril_Platelegs",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Mithril_2H_Sword",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Mithril_Shield",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Mithril_Helmet",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                }
+              ]
+            },
+            {
+              "id": "Hieronymus_Lex",
+              "name": "Hieronymus Lex",
+              "media": "assets/thief/Hieronymus_Lex.png",
+              "baseExperience": 50,
+              "level": 50,
+              "maxGP": 450,
+              "maxHit": 151,
+              "perception": 450,
+              "lootTable": [
+                {
+                  "itemID": "melvorD:Standard_Chest",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 1
+                },
+                {
+                  "itemID": "melvorD:Mithril_Platebody",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Mithril_Platelegs",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Mithril_2H_Sword",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Mithril_Shield",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Mithril_Helmet",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                }
+              ]
+            },
+            {
+              "id": "Jensine",
+              "name": "Jensine",
+              "media": "assets/thief/Jensine.png",
+              "baseExperience": 40,
+              "level": 40,
+              "lootTable": [
+                {
+                  "itemID": "melvorF:Basic_Bag",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 50
+                },
+                {
+                  "itemID": "melvorD:Standard_Chest",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 1
+                },
+                {
+                  "itemID": "melvorD:Mithril_Bar",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 60
+                },
+                {
+                  "itemID": "melvorD:Steel_2H_Sword",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Steel_Arrows",
+                  "maxQuantity": 12,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Steel_Platebody",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Mithril_Dagger",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 50
+                }
+              ],
+              "maxGP": 350,
+              "maxHit": 120,
+              "perception": 375
+            }
+          ]
+        }
       }
-    }
-  ]
+    ],
+    "lore": [{
+      "id": "Waterfront_Raid_Fails",
+      "media": "assets/items/The_Black_Horse_Courier.png",
+      "title": "Waterfront Raid Fails!",
+      "unlockRequirements": []
+    }]
   }
 }
