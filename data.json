@@ -578,6 +578,35 @@
         ]
       },
       {
+        "id": "cheat_gloves",
+        "name": "cheat_gloves",
+        "customDescription": "cheat_gloves",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Wabbajack.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 1680,
+        "tier": "none",
+        "validSlots": [
+          "Gloves"
+        ],
+        "occupiesSlots": [
+        ],
+        "equipRequirements": [
+        ],
+        "equipmentStats": [
+        ],
+        "itemType": "Weapon",
+        "attackType": "magic",
+        "modifiers": {
+          "increasedHPRegenFlat": 1000,
+          "increasedMaxHitpoints": 10000,
+          "increasedDamageToAllMonsters": 100
+        }
+      },
+      {
         "id": "Volendrung_Cheater",
         "name": "Volendrung_Cheater",
         "customDescription": "Cheat weapon for quick testing.",
@@ -761,25 +790,37 @@
             "weight": 20
           },
           {
-            "itemID": "melvorF:Ancient_Dhide_Chaps",
+            "itemID": "melvorD:Dragonite_Ore",
             "minQuantity": 1,
             "maxQuantity": 1,
             "weight": 20
           },
           {
-            "itemID": "melvorF:Ancient_Dhide_Body",
+            "itemID": "melvorD:Throwing_Dragon_Sword",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Dragon_Battleaxe",
             "minQuantity": 1,
             "maxQuantity": 1,
             "weight": 20
           },
           {
-            "itemID": "melvorF:Ancient_Dhide_Vambraces",
+            "itemID": "melvorD:Dragon_Platebody_T_S",
             "minQuantity": 1,
             "maxQuantity": 1,
-            "weight": 20
+            "weight": 10
           },
           {
-            "itemID": "melvorF:Ancient_Dhide_Shield",
+            "itemID": "melvorD:Dragon_Platebody_T_G",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 5
+          },
+          {
+            "itemID": "melvorD:Dragon_Platebody",
             "minQuantity": 1,
             "maxQuantity": 1,
             "weight": 20
@@ -1246,7 +1287,7 @@
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
             "maxQuantity": 11,
-            "weight": 48
+            "weight": 50
           },
           {
             "itemID": "melvorD:Strawberry_Cupcake",
@@ -1321,7 +1362,7 @@
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
             "maxQuantity": 11,
-            "weight": 49
+            "weight": 50
           },
           {
             "itemID": "melvorD:Strawberry_Cupcake",
@@ -1340,6 +1381,12 @@
             "minQuantity": 1,
             "maxQuantity": 11,
             "weight": 10
+          },
+          {
+            "itemID": "melvorD:Amulet_Of_Poison_Leech",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 1
           },
           {
             "itemID": "tes:Skull_of_Corruption",
@@ -1390,7 +1437,7 @@
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
             "maxQuantity": 11,
-            "weight": 49
+            "weight": 50
           },
           {
             "itemID": "melvorD:Strawberry_Cupcake",
@@ -1409,6 +1456,12 @@
             "minQuantity": 1,
             "maxQuantity": 11,
             "weight": 10
+          },
+          {
+            "itemID": "melvorD:Sword_Of_Some_Reliability",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 1
           },
           {
             "itemID": "tes:Sanguine_Rose",
@@ -1460,7 +1513,7 @@
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
             "maxQuantity": 11,
-            "weight": 49
+            "weight": 50
           },
           {
             "itemID": "melvorD:Strawberry_Cupcake",
@@ -1479,6 +1532,12 @@
             "minQuantity": 1,
             "maxQuantity": 11,
             "weight": 10
+          },
+          {
+            "itemID": "melvorD:Dragon_Head_Helmet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
           },
           {
             "itemID": "tes:Spell_Breaker",
@@ -1528,7 +1587,7 @@
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
             "maxQuantity": 11,
-            "weight": 49
+            "weight": 50
           },
           {
             "itemID": "melvorD:Strawberry_Cupcake",
@@ -1547,6 +1606,12 @@
             "minQuantity": 1,
             "maxQuantity": 11,
             "weight": 10
+          },
+          {
+            "itemID": "melvorD:Magic_Crit_Amulet",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 1
           },
           {
             "itemID": "tes:Ring_of_Namira",
@@ -1595,7 +1660,7 @@
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
             "maxQuantity": 11,
-            "weight": 49
+            "weight": 50
           },
           {
             "itemID": "melvorD:Strawberry_Cupcake",
@@ -1614,6 +1679,12 @@
             "minQuantity": 1,
             "maxQuantity": 11,
             "weight": 10
+          },
+          {
+            "itemID": "melvorD:Melee_Crit_Amulet",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 1
           },
           {
             "itemID": "tes:Mace_of_Molag_Bal",
@@ -1668,7 +1739,7 @@
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
             "maxQuantity": 11,
-            "weight": 48
+            "weight": 50
           },
           {
             "itemID": "melvorD:Strawberry_Cupcake",
@@ -1746,7 +1817,7 @@
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
             "maxQuantity": 11,
-            "weight": 48
+            "weight": 50
           },
           {
             "itemID": "melvorD:Strawberry_Cupcake",
@@ -1824,7 +1895,7 @@
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
             "maxQuantity": 11,
-            "weight": 49
+            "weight": 50
           },
           {
             "itemID": "melvorD:Strawberry_Cupcake",
@@ -1843,6 +1914,12 @@
             "minQuantity": 1,
             "maxQuantity": 11,
             "weight": 10
+          },
+          {
+            "itemID": "melvorD:Stonewall_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 1
           },
           {
             "itemID": "tes:Volendrung",
@@ -1897,7 +1974,7 @@
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
             "maxQuantity": 11,
-            "weight": 49
+            "weight": 50
           },
           {
             "itemID": "melvorD:Strawberry_Cupcake",
@@ -1916,6 +1993,12 @@
             "minQuantity": 1,
             "maxQuantity": 11,
             "weight": 10
+          },
+          {
+            "itemID": "melvorD:Impossible_Longbow",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
           },
           {
             "itemID": "tes:Cuirass_of_the_Saviors_Hide",
@@ -1966,7 +2049,7 @@
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
             "maxQuantity": 11,
-            "weight": 49
+            "weight": 50
           },
           {
             "itemID": "melvorD:Strawberry_Cupcake",
@@ -1985,6 +2068,12 @@
             "minQuantity": 1,
             "maxQuantity": 11,
             "weight": 10
+          },
+          {
+            "itemID": "melvorD:Mystery_Wand",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 1
           },
           {
             "itemID": "tes:Dawnbreaker",
@@ -2036,7 +2125,7 @@
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
             "maxQuantity": 11,
-            "weight": 49
+            "weight": 50
           },
           {
             "itemID": "melvorD:Strawberry_Cupcake",
@@ -2055,6 +2144,12 @@
             "minQuantity": 1,
             "maxQuantity": 11,
             "weight": 10
+          },
+          {
+            "itemID": "melvorD:Frostburn_Wand",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 1
           },
           {
             "itemID": "tes:Azuras_Star",
@@ -2105,7 +2200,7 @@
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
             "maxQuantity": 11,
-            "weight": 47
+            "weight": 50
           },
           {
             "itemID": "melvorD:Strawberry_Cupcake",
@@ -2187,7 +2282,7 @@
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
             "maxQuantity": 11,
-            "weight": 47
+            "weight": 50
           },
           {
             "itemID": "melvorD:Strawberry_Cupcake",
@@ -2266,7 +2361,7 @@
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
             "maxQuantity": 11,
-            "weight": 49
+            "weight": 50
           },
           {
             "itemID": "melvorD:Strawberry_Cupcake",
@@ -2285,6 +2380,12 @@
             "minQuantity": 1,
             "maxQuantity": 11,
             "weight": 10
+          },
+          {
+            "itemID": "melvorD:Poison_Ring",
+            "minQuantity": 1,
+            "maxQuantity": 11,
+            "weight": 1
           },
           {
             "itemID": "tes:Oghma_Infinium",
@@ -3205,9 +3306,64 @@
                   "quantity": 1
                 }
               ]
+            },
+            {
+              "id": "Skingrad",
+              "name": "Skingrad",
+              "npcIDs": [
+                "tes:Janus_Hassildor"
+              ],
+              "uniqueDrops": [
+                {
+                  "id": "melvorD:Bloodthirst_Amulet",
+                  "quantity": 1
+                }
+              ]
             }
           ],
           "npcs": [
+            {
+              "id": "Janus_Hassildor",
+              "name": "Janus Hassildor",
+              "media": "assets/thief/Janus_Hassildor.png",
+              "baseExperience": 503,
+              "level": 99,
+              "maxGP": 1700,
+              "maxHit": 600,
+              "perception": 1400,
+              "lootTable": [
+                {
+                  "itemID": "melvorD:Blood_Rune",
+                  "maxQuantity": 100,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorF:Famished_Potion_I",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorF:Necromancer_Potion_IV",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorF:Lethal_Toxins_Potion_IV",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorF:Secret_Stardust_Potion_IV",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                }
+              ]
+            },
             {
               "id": "Adamus_Phillida",
               "name": "Adamus Phillida",
