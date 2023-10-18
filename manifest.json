@@ -2,5 +2,5 @@
     "namespace": "tes",
     "icon": "assets/Preview.png",
     "setup": "setup.mjs",
-    "load": ["templates.html","data.json"]
+    "load": ["The_Black_Horse_Courier_Waterfront_HTML.html","data.json"]
   }
