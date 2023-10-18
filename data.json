@@ -621,10 +621,10 @@
           "allowSignetDrops": 1,
           "allowAttackAugmentingMagic": 1,
           "allowNonMagicCurses": 1,
-          "magicImmunity": 1,
-          "meleeImmunity": 1,
-          "rangedImmunity": 1,
-          "shadowCloak": 1,
+          "magicImmunity": 0,
+          "meleeImmunity": 0,
+          "rangedImmunity": 0,
+          "shadowCloak": 0,
           "momentInTimePassive": 1
         }
       },
