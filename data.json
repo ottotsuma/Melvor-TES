@@ -712,7 +712,7 @@
         "category": "Dungeons",
         "type": "Item",
         "media": "assets/items/Sigil_Stone.png",
-        "ignoreCompletion": false,
+        "ignoreCompletion": true,
         "obtainFromItemLog": false,
         "golbinRaidExclusive": false,
         "sellsFor": 2500,
