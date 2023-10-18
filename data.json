@@ -621,10 +621,6 @@
           "allowSignetDrops": 1,
           "allowAttackAugmentingMagic": 1,
           "allowNonMagicCurses": 1,
-          "magicImmunity": 0,
-          "meleeImmunity": 0,
-          "rangedImmunity": 0,
-          "shadowCloak": 0,
           "momentInTimePassive": 1
         }
       },
@@ -1222,6 +1218,212 @@
     ],
     "monsters": [
       {
+        "id": "Bandit",
+        "name": "Bandit",
+        "media": "assets/monsters/Bandit.png",
+        "levels": {
+          "Attack": 10,
+          "Defence": 10,
+          "Hitpoints": 10,
+          "Magic": 1,
+          "Ranged": 10,
+          "Strength": 10
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2300
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "ranged",
+        "specialAttacks": [
+        ],
+        "passives": [
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Steel_Boots",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_2H_Sword",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Dagger",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Helmet",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Gloves",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Battleaxe",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Arrows",
+            "maxQuantity": 25,
+            "minQuantity": 10,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Platebody",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Platelegs",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Throwing_Knife",
+            "maxQuantity": 10,
+            "minQuantity": 5,
+            "weight": 10
+          }
+        ],
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "gpDrops": {
+          "min": 1,
+          "max": 15
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindSurge"
+      },
+      {
+        "id": "Draugr",
+        "name": "Draugr",
+        "media": "assets/monsters/Draugr.png",
+        "levels": {
+          "Attack": 90,
+          "Defence": 80,
+          "Hitpoints": 5,
+          "Magic": 1,
+          "Ranged": 1,
+          "Strength": 90
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2500
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+        ],
+        "passives": [
+        ],
+        "lootChance": 40,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Black_Platebody",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Black_Sword",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Black_Battleaxe",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Air_Rune",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Arrows",
+            "maxQuantity": 25,
+            "minQuantity": 10,
+            "weight": 10
+          }
+        ],
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "gpDrops": {
+          "min": 10,
+          "max": 80
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindSurge"
+      },
+      {
+        "id": "Thief",
+        "name": "Thief",
+        "media": "assets/monsters/Thief.png",
+        "levels": {
+          "Attack": 1,
+          "Defence": 105,
+          "Hitpoints": 55,
+          "Magic": 1,
+          "Ranged": 95,
+          "Strength": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "ranged",
+        "specialAttacks": [
+
+        ],
+        "passives": [
+
+        ],
+        "lootChance": 100,
+        "lootTable": [
+
+        ],
+        "gpDrops": {
+          "min": 0,
+          "max": 0
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindSurge"
+      },
+      {
         "id": "Nocturnal",
         "name": "Nocturnal",
         "media": "assets/monsters/Nocturnal.png",
@@ -1322,8 +1524,7 @@
           "melvorF:Cataclysm"
         ],
         "passives": [
-          "melvorF:Purity",
-          "melvorF:MagicProficiency"
+          "melvorF:Purity"
         ],
         "lootChance": 100,
         "lootTable": [
@@ -1397,8 +1598,7 @@
           "melvorF:MistWalk"
         ],
         "passives": [
-          "melvorF:Purity",
-          "melvorF:MagicProficiency"
+          "melvorF:Purity"
         ],
         "lootChance": 100,
         "lootTable": [
@@ -2378,7 +2578,7 @@
         "levels": {
           "Attack": 1000,
           "Defence": 1000,
-          "Hitpoints": 14000,
+          "Hitpoints": 1400,
           "Magic": 1000,
           "Ranged": 1000,
           "Strength": 1000
@@ -2423,7 +2623,7 @@
         "levels": {
           "Attack": 480,
           "Defence": 480,
-          "Hitpoints": 5500,
+          "Hitpoints": 550,
           "Magic": 300,
           "Ranged": 300,
           "Strength": 530
@@ -2465,7 +2665,7 @@
         "levels": {
           "Attack": 480,
           "Defence": 480,
-          "Hitpoints": 5500,
+          "Hitpoints": 550,
           "Magic": 300,
           "Ranged": 300,
           "Strength": 530
@@ -2507,7 +2707,7 @@
         "levels": {
           "Attack": 480,
           "Defence": 480,
-          "Hitpoints": 4000,
+          "Hitpoints": 400,
           "Magic": 300,
           "Ranged": 300,
           "Strength": 530
@@ -2544,7 +2744,7 @@
         "levels": {
           "Attack": 480,
           "Defence": 480,
-          "Hitpoints": 5000,
+          "Hitpoints": 500,
           "Magic": 300,
           "Ranged": 300,
           "Strength": 530
@@ -2581,7 +2781,7 @@
         "levels": {
           "Attack": 480,
           "Defence": 480,
-          "Hitpoints": 4000,
+          "Hitpoints": 400,
           "Magic": 300,
           "Ranged": 300,
           "Strength": 530
@@ -2618,7 +2818,7 @@
         "levels": {
           "Attack": 480,
           "Defence": 480,
-          "Hitpoints": 7000,
+          "Hitpoints": 700,
           "Magic": 300,
           "Ranged": 300,
           "Strength": 530
@@ -2655,7 +2855,7 @@
         "levels": {
           "Attack": 680,
           "Defence": 580,
-          "Hitpoints": 3000,
+          "Hitpoints": 300,
           "Magic": 300,
           "Ranged": 300,
           "Strength": 530
@@ -2692,7 +2892,7 @@
         "levels": {
           "Attack": 480,
           "Defence": 480,
-          "Hitpoints": 7000,
+          "Hitpoints": 700,
           "Magic": 300,
           "Ranged": 300,
           "Strength": 530
@@ -2729,7 +2929,7 @@
         "levels": {
           "Attack": 700,
           "Defence": 800,
-          "Hitpoints": 10000,
+          "Hitpoints": 1000,
           "Magic": 1,
           "Ranged": 1,
           "Strength": 800
@@ -3165,6 +3365,19 @@
         "activeInRaid": false,
         "hint": "Shivering Isles",
         "customDescription": "You approach the Shivering Isles. Through the door behind me lies the realm of Sheogorath, Prince of Madness, Lord of the Never-There."
+      },
+      {
+        "id": "Doyen",
+        "name": "Doyen",
+        "media": "assets/pets/Doyen.png",
+        "scaleChanceWithMasteryPool": false,
+        "ignoreCompletion": true,
+        "modifiers": {
+          "increasedGPFromSales": 3
+        },
+        "activeInRaid": false,
+        "hint": "Thieves Guild",
+        "customDescription": "Members of the Thieves Guild are assisted by a designated handler called a Doyen. A Doyen is a lieutenant of the Thieves Guild."
       }
     ],
     "combatAreas": [
@@ -3174,9 +3387,10 @@
         "media": "assets/locations/Skyrim.png",
         "monsterIDs": [
           "melvorD:Chicken",
-          "melvorD:Bandit",
+          "tes:Bandit",
           "melvorD:SteelKnight",
           "melvorD:FrozenArcher",
+          "tes:Draugr",
           "melvorD:HillGiant",
           "melvorD:BlackDragon"
         ],
@@ -3244,6 +3458,30 @@
         },
         "fixedPetClears": false,
         "pauseOnBosses": false
+      },
+      {
+        "id": "Thieves_Guild",
+        "name": "Thieves Guild",
+        "media": "assets/locations/Thieves_Guild.png",
+        "monsterIDs": [
+          "melvorF:Thief",
+          "tes:Thief"
+        ],
+        "difficulty": [
+          1
+        ],
+        "entryRequirements": [
+        ],
+        "rewardItemIDs": [
+          "melvorF:Chest_Of_Gems"
+        ],
+        "dropBones": false,
+        "pet": {
+          "petID": "tes:Doyen",
+          "weight": 750
+        },
+        "fixedPetClears": true,
+        "pauseOnBosses": false
       }
     ],
     "dungeonDisplayOrder": [
@@ -3251,7 +3489,8 @@
         "insertAt": "After",
         "afterID": "melvorF:Fire_God_Dungeon",
         "ids": [
-          "tes:Shivering_Isles"
+          "tes:Shivering_Isles",
+          "tes:Thieves_Guild"
         ]
       }
     ],
@@ -3298,38 +3537,38 @@
               "baseExperience": 503,
               "level": 99,
               "maxGP": 1700,
-              "maxHit": 600,
+              "maxHit": 60,
               "perception": 1400,
               "lootTable": [
                 {
                   "itemID": "melvorD:Blood_Rune",
                   "maxQuantity": 100,
                   "minQuantity": 1,
-                  "weight": 100
+                  "weight": 60
                 },
                 {
                   "itemID": "melvorF:Famished_Potion_I",
                   "maxQuantity": 10,
                   "minQuantity": 1,
-                  "weight": 100
+                  "weight": 10
                 },
                 {
                   "itemID": "melvorF:Necromancer_Potion_IV",
                   "maxQuantity": 10,
                   "minQuantity": 1,
-                  "weight": 100
+                  "weight": 10
                 },
                 {
                   "itemID": "melvorF:Lethal_Toxins_Potion_IV",
                   "maxQuantity": 10,
                   "minQuantity": 1,
-                  "weight": 100
+                  "weight": 10
                 },
                 {
                   "itemID": "melvorF:Secret_Stardust_Potion_IV",
                   "maxQuantity": 10,
                   "minQuantity": 1,
-                  "weight": 100
+                  "weight": 10
                 }
               ]
             },
@@ -3340,7 +3579,7 @@
               "baseExperience": 50,
               "level": 50,
               "maxGP": 450,
-              "maxHit": 151,
+              "maxHit": 15,
               "perception": 450,
               "lootTable": [
                 {
@@ -3388,7 +3627,7 @@
               "baseExperience": 50,
               "level": 50,
               "maxGP": 450,
-              "maxHit": 151,
+              "maxHit": 15,
               "perception": 450,
               "lootTable": [
                 {
@@ -3436,7 +3675,7 @@
               "baseExperience": 50,
               "level": 50,
               "maxGP": 450,
-              "maxHit": 151,
+              "maxHit": 15,
               "perception": 450,
               "lootTable": [
                 {
@@ -3528,7 +3767,7 @@
                 }
               ],
               "maxGP": 350,
-              "maxHit": 120,
+              "maxHit": 12,
               "perception": 375
             }
           ]
