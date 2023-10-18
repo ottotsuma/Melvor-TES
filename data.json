@@ -607,59 +607,6 @@
         }
       },
       {
-        "id": "Volendrung_Cheater",
-        "name": "Volendrung_Cheater",
-        "customDescription": "Cheat weapon for quick testing.",
-        "category": "Combat",
-        "type": "Weapon",
-        "media": "assets/items/Volendrung.png",
-        "ignoreCompletion": true,
-        "obtainFromItemLog": false,
-        "golbinRaidExclusive": false,
-        "sellsFor": 1,
-        "tier": "none",
-        "validSlots": [
-          "Weapon"
-        ],
-        "occupiesSlots": [
-        ],
-        "equipRequirements": [
-        ],
-        "equipmentStats": [
-          {
-            "key": "attackSpeed",
-            "value": 1000
-          },
-          {
-            "key": "stabAttackBonus",
-            "value": 1200
-          },
-          {
-            "key": "slashAttackBonus",
-            "value": 1600
-          },
-          {
-            "key": "blockAttackBonus",
-            "value": 1000
-          },
-          {
-            "key": "meleeStrengthBonus",
-            "value": 1200
-          },
-          {
-            "key": "damageReduction",
-            "value": 90
-          }
-        ],
-        "modifiers": {
-          "bigRon": 50,
-          "increasedLifesteal": 100,
-          "increasedDamageToAllMonsters": 10000
-        },
-        "attackType": "melee",
-        "itemType": "Weapon"
-      },
-      {
         "id": "Volendrung",
         "name": "Volendrung",
         "customDescription": "Who now knows the tale of how this Dwemer hammer came to embody the power of one of their most bitter foes?",
