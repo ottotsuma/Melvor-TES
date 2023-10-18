@@ -603,7 +603,29 @@
         "modifiers": {
           "increasedHPRegenFlat": 1000,
           "increasedMaxHitpoints": 10000,
-          "increasedDamageToAllMonsters": 100
+          "increasedDamageToAllMonsters": 100,
+          "doubleBoneDrops": 1,
+          "autoBurying": 1,
+          "applyDespairCurseOnSpawn": 50,
+          "applyMadnessCurseOnSpawn": 50,
+          "bleedImmunity": 1,
+          "burnImmunity": 1,
+          "slowImmunity": 1,
+          "stunImmunity": 1,
+          "curseImmunity": 1,
+          "sleepImmunity": 1,
+          "debuffImmunity": 1,
+          "freezeImmunity": 1,
+          "poisonImmunity": 1,
+          "frostBurnImmunity": 1,
+          "allowSignetDrops": 1,
+          "allowAttackAugmentingMagic": 1,
+          "allowNonMagicCurses": 1,
+          "magicImmunity": 1,
+          "meleeImmunity": 1,
+          "rangedImmunity": 1,
+          "shadowCloak": 1,
+          "momentInTimePassive": 1
         }
       },
       {
