@@ -847,7 +847,7 @@
         "cost": {
           "gp": {
             "type": "Fixed",
-            "cost": 100
+            "cost": 5000
           },
           "slayerCoins": {
             "type": "Fixed",
@@ -1209,6 +1209,48 @@
         "showBuyLimit": false,
         "customName": "Nightingale Orb",
         "customDescription": "A shadowy orb with a high chance of bursting into shadowy explosive copies."
+      },
+      {
+        "id": "Summoning_Familiar_Leprechaun_Shop",
+        "media": "assets/icons/Cache.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "melvorF:Summoning_Familiar_Leprechaun",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 10000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Shadowfoot_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Leprechaun",
+        "customDescription": "+50 GP From Thieving."
       }
     ],
     "shopDisplayOrder": [
@@ -1225,6 +1267,7 @@
           "tes:Gray_Fox_Rank",
           "tes:Lockpick_Shop",
           "tes:Thiefs_Moneysack_Shop",
+          "tes:Summoning_Familiar_Leprechaun_Shop",
           "tes:Gentle_Hands_Potion_I_Shop",
           "tes:Thieves_Guild_Hood_Shop",
           "tes:Thieves_Guild_Boots_Shop",
@@ -3843,6 +3886,210 @@
     ],
     "monsters": [
       {
+        "id": "Giant",
+        "name": "Giant",
+        "media": "assets/monsters/Giant.png",
+        "levels": {
+          "Attack": 15,
+          "Defence": 20,
+          "Hitpoints": 50,
+          "Magic": 1,
+          "Ranged": 1,
+          "Strength": 30
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 5000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "tes:Space_Program"
+        ],
+        "passives": [
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Steel_Boots",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_2H_Sword",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Dagger",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Helmet",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Gloves",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Battleaxe",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Arrows",
+            "maxQuantity": 25,
+            "minQuantity": 10,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Platebody",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Platelegs",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Throwing_Knife",
+            "maxQuantity": 10,
+            "minQuantity": 5,
+            "weight": 10
+          }
+        ],
+        "bones": {
+          "itemID": "melvorD:Big_Bones",
+          "quantity": 5
+        },
+        "gpDrops": {
+          "min": 1,
+          "max": 500
+        },
+        "canSlayer": false,
+        "isBoss": true,
+        "selectedSpell": "melvorD:FireSurge"
+      },
+      {
+        "id": "Alduin",
+        "name": "Alduin",
+        "media": "assets/monsters/Alduin.png",
+        "levels": {
+          "Attack": 700,
+          "Defence": 400,
+          "Hitpoints": 700,
+          "Magic": 600,
+          "Ranged": 500,
+          "Strength": 650
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3200
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "melvorF:TailWhip",
+          "melvorF:PenetratingClaws",
+          "melvorF:Inferno",
+          "tes:World_Eater"
+        ],
+        "passives": [
+          "melvorF:Purity"
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Steel_Boots",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_2H_Sword",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Dagger",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Helmet",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Gloves",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Battleaxe",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Arrows",
+            "maxQuantity": 25,
+            "minQuantity": 10,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Platebody",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Platelegs",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Throwing_Knife",
+            "maxQuantity": 10,
+            "minQuantity": 5,
+            "weight": 10
+          }
+        ],
+        "bones": {
+          "itemID": "melvorD:Dragon_Bones",
+          "quantity": 10
+        },
+        "gpDrops": {
+          "min": 500,
+          "max": 1000
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:FireSurge"
+      },
+      {
         "id": "Bandit",
         "name": "Bandit",
         "media": "assets/monsters/Bandit.png",
@@ -5563,6 +5810,78 @@
       }
     ],
     "attacks": [
+      {
+        "id": "Space_Program",
+        "name": "Space Program",
+        "defaultChance": 1,
+        "damage": [
+          {
+            "damageType": "Normal",
+            "amplitude": 1000
+          }
+        ],
+        "prehitEffects": [
+        ],
+        "onhitEffects": [
+        ],
+        "cantMiss": false,
+        "attackCount": 1,
+        "attackInterval": 5000,
+        "lifesteal": 0,
+        "description": "Space Program deals ${attackDamageMaxValue0}% of your normal damage and briefly sends you to space.",
+        "attackTypes": [
+          "melee"
+        ],
+        "descriptionGenerator": "Space Program deals <damage> and sends you on a brief trip to space."
+      },
+      {
+        "id": "World_Eater",
+        "name": "World Eater",
+        "defaultChance": 10,
+        "damage": [
+          {
+            "maxRoll":"MaxHitScaledByHP2x",
+            "character":"Attacker",
+            "attackCount": 10,
+            "damageType": "Custom",
+            "minRoll":"CurrentHP",
+            "maxPercent": 100,
+            "minPercent": 10,
+            "roll": true
+          }
+        ],
+        "prehitEffects": [
+          {
+            "character":"Target",
+            "turns": 5,
+            "countsOn":"Target",
+            "maxStacks": 1,
+            "stacksToAdd": 1,
+            "modifiers":{
+              "decreasedAttackRolls": 10,
+              "decreasedLifesteal": 50,
+              "decreasedReflectDamage": 100,
+              "disableHPRegeneration": 1,
+              "halveDamageReduction": 1
+            },
+            "effectType": "Custom",
+            "media": "assets/icons/DaedricBuff.png",
+            "name": "",
+            "type": "Modifier"
+          }
+        ],
+        "onhitEffects": [
+        ],
+        "cantMiss": false,
+        "attackCount": 1,
+        "attackInterval": 2000,
+        "lifesteal": 10,
+        "description": "Volendrung dealings ${attackDamageMaxValue0}% of your normal damage and apply stun & life steal effect.",
+        "attackTypes": [
+          "melee"
+        ],
+        "descriptionGenerator": "Volendrung dealings <damage> and apply a stun & lifesteal effect."
+      },
       {
         "id": "Volendrung_Slam",
         "name": "Volendrung Slam",
