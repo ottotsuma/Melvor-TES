@@ -3839,6 +3839,147 @@
           "increasedChanceToLocateSkillPet": 1
         },
         "itemType": "Equipment"
+      },
+      {
+        "id": "Elder_Scrolls",
+        "name": "Elder Scrolls",
+        "category": "Dungeons",
+        "type": "Item",
+        "media": "assets/items/Elder_Scrolls.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 0,
+        "itemType": "Openable",
+        "dropTable": [
+          {
+						"itemID": "melvorD:Rune_Essence",
+						"minQuantity": 1,
+						"maxQuantity": 10000,
+						"weight": 50
+					},
+					{
+						"itemID": "melvorD:Air_Rune",
+						"minQuantity": 1,
+						"maxQuantity": 10000,
+						"weight": 50
+					},
+					{
+						"itemID": "melvorD:Mind_Rune",
+						"minQuantity": 1,
+						"maxQuantity": 10000,
+						"weight": 50
+					},
+					{
+						"itemID": "melvorD:Water_Rune",
+						"minQuantity": 1,
+						"maxQuantity": 10000,
+						"weight": 50
+					},
+					{
+						"itemID": "melvorD:Earth_Rune",
+						"minQuantity": 1,
+						"maxQuantity": 10000,
+						"weight": 50
+					},
+					{
+						"itemID": "melvorD:Fire_Rune",
+						"minQuantity": 1,
+						"maxQuantity": 10000,
+						"weight": 50
+					},
+					{
+						"itemID": "melvorD:Light_Rune",
+						"minQuantity": 1,
+						"maxQuantity": 10000,
+						"weight": 50
+					},
+					{
+						"itemID": "melvorD:Body_Rune",
+						"minQuantity": 1,
+						"maxQuantity": 10000,
+						"weight": 50
+					},
+					{
+						"itemID": "melvorD:Chaos_Rune",
+						"minQuantity": 1,
+						"maxQuantity": 10000,
+						"weight": 50
+					},
+					{
+						"itemID": "melvorF:Nature_Rune",
+						"minQuantity": 1,
+						"maxQuantity": 10000,
+						"weight": 50
+					},
+					{
+						"itemID": "melvorF:Havoc_Rune",
+						"minQuantity": 1,
+						"maxQuantity": 10000,
+						"weight": 50
+					},
+					{
+						"itemID": "melvorD:Death_Rune",
+						"minQuantity": 1,
+						"maxQuantity": 10000,
+						"weight": 50
+					},
+					{
+						"itemID": "melvorD:Blood_Rune",
+						"minQuantity": 1,
+						"maxQuantity": 10000,
+						"weight": 50
+					},
+					{
+						"itemID": "melvorF:Spirit_Rune",
+						"minQuantity": 1,
+						"maxQuantity": 10000,
+						"weight": 50
+					},
+					{
+						"itemID": "melvorD:Ancient_Rune",
+						"minQuantity": 1,
+						"maxQuantity": 10000,
+						"weight": 50
+					},
+					{
+						"itemID": "melvorD:Mist_Rune",
+						"minQuantity": 1,
+						"maxQuantity": 10000,
+						"weight": 50
+					},
+					{
+						"itemID": "melvorD:Dust_Rune",
+						"minQuantity": 1,
+						"maxQuantity": 10000,
+						"weight": 50
+					},
+					{
+						"itemID": "melvorF:Mud_Rune",
+						"minQuantity": 1,
+						"maxQuantity": 10000,
+						"weight": 50
+					},
+					{
+						"itemID": "melvorD:Smoke_Rune",
+						"minQuantity": 1,
+						"maxQuantity": 10000,
+						"weight": 50
+					},
+					{
+						"itemID": "melvorF:Steam_Rune",
+						"minQuantity": 1,
+						"maxQuantity": 10000,
+						"weight": 50
+					},
+					{
+						"itemID": "melvorF:Lava_Rune",
+						"minQuantity": 1,
+						"maxQuantity": 10000,
+						"weight": 50
+					}
+        ],
+        "customDescription": "The Elder Scrolls are artifacts of unknown origin and quantity, being simultaneously archives of historic, past and future events. This one must be faulty, it drops random items."
       }
     ],
     "slayerAreas": [
