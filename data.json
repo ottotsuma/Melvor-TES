@@ -914,7 +914,301 @@
         "buyLimitOverrides": [],
         "showBuyLimit": false,
         "customName": "Gentle Hands Potion I",
-        "customDescription": "+15 Stealth while Thieving"
+        "customDescription": "+15 Stealth while Thieving."
+      },
+      {
+        "id": "Nightingale_Armour_Shop",
+        "media": "assets/items/Nightingale_Armour.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Nightingale_Armour",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 100000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Gray_Fox_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Nightingale Armour",
+        "customDescription": "The armor is the trademark of the Nightingales, a shadowy faction dedicated to the service of the Daedric Prince Nocturnal."
+      },
+      {
+        "id": "Nightingale_Hood_Shop",
+        "media": "assets/items/Nightingale_Hood.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Nightingale_Hood",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 100000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Gray_Fox_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Nightingale Hood",
+        "customDescription": "The piece bears an enchantment, the magnitude of which is dependent on character level."
+      },
+      {
+        "id": "Nightingale_Boots_Shop",
+        "media": "assets/items/Nightingale_Boots.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Nightingale_Boots",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 100000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Gray_Fox_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Nightingale Boots",
+        "customDescription": "Nightingale Boots offer great synergy while burning. Alternativly they keep your feet warm while asleep."
+      },
+      {
+        "id": "Nightingale_Gloves_Shop",
+        "media": "assets/items/Nightingale_Gloves.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Nightingale_Gloves",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 100000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Gray_Fox_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Nightingale Gloves",
+        "customDescription": "Nightingale Gloves are not reflective at all, or are they?"
+      },
+      {
+        "id": "Nightingale_Bow_Shop",
+        "media": "assets/items/Nightingale_Bow.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Nightingale_Bow",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 100000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Gray_Fox_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Nightingale Bow",
+        "customDescription": "A silent bow with a higher chance of freezing opponents."
+      },
+      {
+        "id": "Nightingale_Blade_Shop",
+        "media": "assets/items/Nightingale_Blade.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Nightingale_Blade",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 100000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Gray_Fox_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Nightingale Blade",
+        "customDescription": "A silent blade with a high chance of leeching life from opponents."
+      },
+      {
+        "id": "Nightingale_Orb_Shop",
+        "media": "assets/items/Nightingale_Orb.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Nightingale_Orb",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 200000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Gray_Fox_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Nightingale Orb",
+        "customDescription": "A shadowy orb with a high chance of bursting into shadowy explosive copies."
       }
     ],
     "shopDisplayOrder": [
@@ -940,7 +1234,14 @@
           "tes:Guild_Masters_Boots_Shop",
           "tes:Guild_Masters_Gloves_Shop",
           "tes:Guild_Masters_Armour_Shop",
-          "tes:Amulet_of_Articulation_Shop"
+          "tes:Amulet_of_Articulation_Shop",
+          "tes:Nightingale_Hood_Shop",
+          "tes:Nightingale_Boots_Shop",
+          "tes:Nightingale_Gloves_Shop",
+          "tes:Nightingale_Armour_Shop",
+          "tes:Nightingale_Bow_Shop",
+          "tes:Nightingale_Blade_Shop",
+          "tes:Nightingale_Orb_Shop"
         ]
       }
     ],
