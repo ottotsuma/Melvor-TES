@@ -3886,6 +3886,106 @@
     ],
     "monsters": [
       {
+        "id": "Imperial_Watch",
+        "name": "Imperial_Watch",
+        "media": "assets/monsters/Imperial_Watch.png",
+        "levels": {
+          "Attack": 20,
+          "Defence": 20,
+          "Hitpoints": 20,
+          "Magic": 1,
+          "Ranged": 1,
+          "Strength": 30
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2600
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "tes:Space_Program"
+        ],
+        "passives": [
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Steel_Boots",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_2H_Sword",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Dagger",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Helmet",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Gloves",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Battleaxe",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Arrows",
+            "maxQuantity": 25,
+            "minQuantity": 10,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Platebody",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Platelegs",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Steel_Throwing_Knife",
+            "maxQuantity": 10,
+            "minQuantity": 5,
+            "weight": 10
+          }
+        ],
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 5
+        },
+        "gpDrops": {
+          "min": 10,
+          "max": 50
+        },
+        "canSlayer": false,
+        "isBoss": true,
+        "selectedSpell": "melvorD:WindStrike"
+      },
+      {
         "id": "Giant",
         "name": "Giant",
         "media": "assets/monsters/Giant.png",
@@ -6308,15 +6408,25 @@
         "monsterIDs": [
           "melvorD:Chicken",
           "tes:Bandit",
-          "melvorD:SteelKnight",
-          "melvorD:FrozenArcher",
           "tes:Draugr",
-          "melvorD:HillGiant",
-          "melvorD:BlackDragon"
+          "tes:Giant",
+          "tes:Alduin"
         ],
         "difficulty": [
           0,
-          2
+          7
+        ],
+        "entryRequirements": []
+      },
+      {
+        "id": "Cyrodiil",
+        "name": "Cyrodiil",
+        "media": "assets/locations/Cyrodiil.png",
+        "monsterIDs": [
+          "tes:Imperial_Watch"
+        ],
+        "difficulty": [
+          0
         ],
         "entryRequirements": []
       }
@@ -6326,7 +6436,8 @@
         "insertAt": "After",
         "afterID": "melvorD:Goblin_Village",
         "ids": [
-          "tes:Skyrim"
+          "tes:Skyrim",
+          "tes:Cyrodiil"
         ]
       }
     ],
