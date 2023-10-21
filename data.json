@@ -2,7 +2,2332 @@
   "$schema": "https://melvoridle.com/assets/schema/gameData.json",
   "namespace": "tes",
   "data": {
+    "shopCategories": [
+      {
+        "id": "Thieves_Guild_Shop",
+        "name": "Thieves Guild",
+        "media": "assets/icons/Fence.png"
+      }
+    ],
+    "shopPurchases": [
+      {
+        "id": "Lockpick_Shop",
+        "media": "assets/items/Lockpick.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Lockpick",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 10
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Pickpocket_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Lockpick",
+        "customDescription": "Used to open locks."
+      },
+      {
+        "id": "Pickpocket_Rank",
+        "media": "assets/icons/Pickpocket.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [],
+          "modifiers": {
+            "increasedThievingStealth": 1
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 100
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "melvorF:Bobbys_Pocket",
+              "quantity": 1
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "skillID": "melvorD:Thieving",
+            "level": 10,
+            "type": "SkillLevel"
+          }
+        ],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Rank - Pickpocket",
+        "customDescription": "Joined the Thieves Guild"
+      },
+      {
+        "id": "Footpad_Rank",
+        "media": "assets/icons/Footpad.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [],
+          "modifiers": {
+            "increasedThievingStealth": 1
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 2000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:JeweledCandlestick",
+              "quantity": 1
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [
+          {
+            "type": "ShopPurchase",
+            "purchaseID": "tes:Pickpocket_Rank",
+            "count": 1
+          }
+        ],
+        "purchaseRequirements": [
+          {
+            "skillID": "melvorD:Thieving",
+            "level": 25,
+            "type": "SkillLevel"
+          }
+        ],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Rank - Footpad",
+        "customDescription": "Reached Footpad rank in the Thieves Guild"
+      },
+      {
+        "id": "Bandit_Rank",
+        "media": "assets/icons/Bandit.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [],
+          "modifiers": {
+            "increasedThievingStealth": 1
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 10000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:JeweledFlagon",
+              "quantity": 1
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [
+          {
+            "type": "ShopPurchase",
+            "purchaseID": "tes:Footpad_Rank",
+            "count": 1
+          }
+        ],
+        "purchaseRequirements": [
+          {
+            "skillID": "melvorD:Thieving",
+            "level": 40,
+            "type": "SkillLevel"
+          }
+        ],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Rank - Bandit",
+        "customDescription": "Reached Bandit rank in the Thieves Guild"
+      },
+      {
+        "id": "Prowler_Rank",
+        "media": "assets/icons/Prowler.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [],
+          "modifiers": {
+            "increasedThievingStealth": 1
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 50000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:JeweledGoblet",
+              "quantity": 1
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [
+          {
+            "type": "ShopPurchase",
+            "purchaseID": "tes:Bandit_Rank",
+            "count": 1
+          }
+        ],
+        "purchaseRequirements": [
+          {
+            "skillID": "melvorD:Thieving",
+            "level": 50,
+            "type": "SkillLevel"
+          }
+        ],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Rank - Prowler",
+        "customDescription": "Reached Prowler rank in the Thieves Guild"
+      },
+      {
+        "id": "Cat_Burglar_Rank",
+        "media": "assets/icons/Cat_Burglar.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [],
+          "modifiers": {
+            "increasedThievingStealth": 1
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 200000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:GoldenShipModel",
+              "quantity": 1
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [
+          {
+            "type": "ShopPurchase",
+            "purchaseID": "tes:Prowler_Rank",
+            "count": 1
+          }
+        ],
+        "purchaseRequirements": [
+          {
+            "skillID": "melvorD:Thieving",
+            "level": 60,
+            "type": "SkillLevel"
+          }
+        ],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Rank - Cat Burglar",
+        "customDescription": "Reached Cat Burglar rank in the Thieves Guild"
+      },
+      {
+        "id": "Shadowfoot_Rank",
+        "media": "assets/icons/Shadowfoot.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [],
+          "modifiers": {
+            "increasedThievingStealth": 1
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 1000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:JeweledPitcher",
+              "quantity": 1
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [
+          {
+            "type": "ShopPurchase",
+            "purchaseID": "tes:Cat_Burglar_Rank",
+            "count": 1
+          }
+        ],
+        "purchaseRequirements": [
+          {
+            "skillID": "melvorD:Thieving",
+            "level": 70,
+            "type": "SkillLevel"
+          }
+        ],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Rank - Shadowfoot",
+        "customDescription": "Reached Shadowfoot rank in the Thieves Guild"
+      },
+      {
+        "id": "Master_Thief_Rank",
+        "media": "assets/icons/Master_Thief.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [],
+          "modifiers": {
+            "increasedThievingStealth": 1
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 5000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:GoldenUrn",
+              "quantity": 1
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [
+          {
+            "type": "ShopPurchase",
+            "purchaseID": "tes:Shadowfoot_Rank",
+            "count": 1
+          }
+        ],
+        "purchaseRequirements": [
+          {
+            "skillID": "melvorD:Thieving",
+            "level": 90,
+            "type": "SkillLevel"
+          }
+        ],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Rank - Master Thief",
+        "customDescription": "Reached Master Thief rank in the Thieves Guild"
+      },
+      {
+        "id": "Gray_Fox_Rank",
+        "media": "assets/icons/Gray_Fox.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [],
+          "modifiers": {
+            "increasedThievingStealth": 1
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 10000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:Gray_Cowl_of_Nocturnal",
+              "quantity": 1
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [
+          {
+            "type": "ShopPurchase",
+            "purchaseID": "tes:Master_Thief_Rank",
+            "count": 1
+          }
+        ],
+        "purchaseRequirements": [
+          {
+            "skillID": "melvorD:Thieving",
+            "level": 99,
+            "type": "SkillLevel"
+          }
+        ],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Rank - Gray Fox",
+        "customDescription": "Reached Gray Fox rank in the Thieves Guild"
+      },
+      {
+        "id": "Thieves_Guild_Hood_Shop",
+        "media": "assets/items/Thieves_Guild_Hood.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Thieves_Guild_Hood",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 1000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Pickpocket_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Thieves Guild Hood",
+        "customDescription": "A Thieves Guild Hood serves as the helmet for the set of Armour used by Thieves Guild members."
+      },
+      {
+        "id": "Thieves_Guild_Boots_Shop",
+        "media": "assets/items/Thieves_Guild_Boots.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Thieves_Guild_Boots",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 1000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Footpad_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Thieves Guild Boots",
+        "customDescription": "Thieves Guild Boots are the shoes for the set of Armour used by Thieves Guild members."
+      },
+      {
+        "id": "Thieves_Guild_Gloves_Shop",
+        "media": "assets/items/Thieves_Guild_Gloves.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Thieves_Guild_Gloves",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 1000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Bandit_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Thieves Guild Gloves",
+        "customDescription": "Thieves Guild Gloves are the gauntlets for the set of Armour used by Thieves Guild members."
+      },
+      {
+        "id": "Thieves_Guild_Armour_Shop",
+        "media": "assets/items/Thieves_Guild_Armour.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Thieves_Guild_Armour",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 1000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Prowler_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Thieves Guild Armour",
+        "customDescription": "Thieves Guild Armour serves as the chest piece for the set of Armour used by Thieves Guild members."
+      },
+      {
+        "id": "Guild_Masters_Hood_Shop",
+        "media": "assets/items/GuildMastersHood.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Guild_Masters_Hood",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 1000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Master_Thief_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Guild Masters Hood",
+        "customDescription": "The Guild Master's Hood is the headwear for the unique set of equipment given to the Guild Master of the Thieves Guild."
+      },
+      {
+        "id": "Guild_Masters_Boots_Shop",
+        "media": "assets/items/GuildMastersBoots.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Guild_Masters_Boots",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 1000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Master_Thief_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Guild Masters Boots",
+        "customDescription": "The Guild Master's Boots serve as the foot protection for the unique set of equipment given to the Guild Master of the Thieves Guild."
+      },
+      {
+        "id": "Guild_Masters_Gloves_Shop",
+        "media": "assets/items/GuildMastersGloves.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Guild_Masters_Gloves",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 1000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Master_Thief_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Guild Masters Gloves",
+        "customDescription": "The Guild Master's Gloves are the gauntlets for the unique set of equipment given to the Guild Master of the Thieves Guild."
+      },
+      {
+        "id": "Guild_Masters_Armour_Shop",
+        "media": "assets/items/Guild_Master_Armour.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Guild_Master_Armour",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 1000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Master_Thief_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Guild Master Armour",
+        "customDescription": "The Guild Master's Armor is the chest piece of the unique set of equipment given to the Guild Master of the Thieves Guild."
+      },
+      {
+        "id": "Amulet_of_Articulation_Shop",
+        "media": "assets/items/Amulet_of_Articulation.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Amulet_of_Articulation",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 10000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Master_Thief_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Amulet of Articulation",
+        "customDescription": "The sign of the Thieves Guild's current master."
+      },
+      {
+        "id": "Thiefs_Moneysack_Shop",
+        "media": "assets/icons/Cache.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "melvorF:Thiefs_Moneysack",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 100
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Cat_Burglar_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Thief's Moneysack",
+        "customDescription": "+20% minimum GP from Thieving. One item is consumed per Thieving action."
+      },
+      {
+        "id": "Gentle_Hands_Potion_I_Shop",
+        "media": "assets/icons/Cache.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "melvorF:Gentle_Hands_Potion_I",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 2000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Shadowfoot_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Gentle Hands Potion I",
+        "customDescription": "+15 Stealth while Thieving"
+      }
+    ],
+    "shopDisplayOrder": [
+      {
+        "insertAt": "Start",
+        "ids": [
+          "tes:Pickpocket_Rank",
+          "tes:Footpad_Rank",
+          "tes:Bandit_Rank",
+          "tes:Prowler_Rank",
+          "tes:Cat_Burglar_Rank",
+          "tes:Shadowfoot_Rank",
+          "tes:Master_Thief_Rank",
+          "tes:Gray_Fox_Rank",
+          "tes:Lockpick_Shop",
+          "tes:Thiefs_Moneysack_Shop",
+          "tes:Gentle_Hands_Potion_I_Shop",
+          "tes:Thieves_Guild_Hood_Shop",
+          "tes:Thieves_Guild_Boots_Shop",
+          "tes:Thieves_Guild_Gloves_Shop",
+          "tes:Thieves_Guild_Armour_Shop",
+          "tes:Guild_Masters_Hood_Shop",
+          "tes:Guild_Masters_Boots_Shop",
+          "tes:Guild_Masters_Gloves_Shop",
+          "tes:Guild_Masters_Armour_Shop",
+          "tes:Amulet_of_Articulation_Shop"
+        ]
+      }
+    ],
+    "shopUpgradeChains": [
+      {
+        "id": "Thieves_Guild_Ranks",
+        "chainName": "Thieves Guild Rank",
+        "rootUpgradeID": "tes:Gray_Fox_Rank",
+        "defaultName": "Pickpocket_Rank",
+        "defaultDescription": "Ranks for the Thieves Guild."
+      }
+    ],
+    "shopCategoryOrder": [
+      {
+        "insertAt": "End",
+        "ids": [
+          "tes:Thieves_Guild_Shop"
+        ]
+      }
+    ],
     "items": [
+      {
+        "id": "Nightingale_Gloves",
+        "name": "Nightingale Gloves",
+        "customDescription": "Nightingale Gloves are not reflective at all, or are they?",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Nightingale_Gloves.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 0,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedThievingStealth": 50,
+          "rangedProtection": 5,
+          "decreasedDamageTakenWhenStunned": 5,
+          "increasedBleedReflectChance": 5,
+          "increasedBurnReflectChance": 5,
+          "increasedPoisonReflectChance": 5,
+          "increasedReflectDamage": 5,
+          "increasedFrostburnReflectChance": 5,
+          "increasedFlatReflectDamage": 10
+        },
+        "equipmentStats": [
+          {
+            "key": "stabAttackBonus",
+            "value": 10
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 10
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 10
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 10
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 0
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 12
+          },
+          {
+            "key": "rangedStrengthBonus",
+            "value": 0
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 12
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 10
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 3
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 10
+          },
+          {
+            "key": "damageReduction",
+            "value": 5
+          }
+        ],
+        "tier": "dragon",
+        "validSlots": [
+          "Gloves"
+        ],
+        "equipRequirements": [
+          {
+            "skillID": "melvorD:Thieving",
+            "level": 99,
+            "type": "SkillLevel"
+          },
+            {
+              "skillID": "melvorD:Defence",
+              "level": 99,
+              "type": "SkillLevel"
+            }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Nightingale_Boots",
+        "name": "Nightingale Boots",
+        "customDescription": "Nightingale Boots offer great synergy while burning. Alternativly they keep your feet warm while asleep.",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Nightingale_Boots.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 0,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedThievingStealth": 50,
+          "magicProtection": 5,
+          "summoningSynergy_1_15": 5,
+          "increasedHealWhenSleep": 5,
+          "increasedChanceToApplySleepToTargetWhenHit": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "stabAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 0
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedStrengthBonus",
+            "value": 0
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 12
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 22
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 6
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 9
+          },
+          {
+            "key": "damageReduction",
+            "value": 5
+          }
+        ],
+        "tier": "dragon",
+        "validSlots": [
+          "Boots"
+        ],
+        "equipRequirements": [
+          {
+            "skillID": "melvorD:Defence",
+            "level": 99,
+            "type": "SkillLevel"
+          },
+          {
+            "skillID": "melvorD:Thieving",
+            "level": 99,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Nightingale_Hood",
+        "name": "Nightingale Hood",
+        "customDescription": "The piece bears an enchantment, the magnitude of which is dependent on character level.",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Nightingale_Hood.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 0,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedThievingStealth": 50,
+          "meleeProtection": 5,
+          "increasedHiddenSkillLevelPer2Levels":[
+            {
+              "skillID":"melvorD:Summoning",
+              "value": 1
+            },
+            {
+              "skillID":"melvorD:Defence",
+              "value": 2
+            },
+            {
+              "skillID":"melvorD:Hitpoints",
+              "value": 2
+            }
+          ]
+        },
+        "equipmentStats": [
+          {
+            "key": "stabAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 0
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedStrengthBonus",
+            "value": 0
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 12
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 66
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 50
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 9
+          },
+          {
+            "key": "damageReduction",
+            "value": 5
+          }
+        ],
+        "tier": "dragon",
+        "validSlots": [
+          "Helmet"
+        ],
+        "equipRequirements": [
+          {
+            "skillID": "melvorD:Thieving",
+            "level": 99,
+            "type": "SkillLevel"
+          },
+          {
+            "skillID": "melvorD:Defence",
+            "level": 99,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Nightingale_Armour",
+        "name": "Nightingale Armour",
+        "customDescription": "The armor is the trademark of the Nightingales, a shadowy faction dedicated to the service of the Daedric Prince Nocturnal.",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Nightingale_Armour.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 0,
+        "itemType": "Equipment",
+        "modifiers": {
+          "autoLooting": 1,
+          "itemProtection": 1,
+          "increasedThievingStealth": 200,
+          "increasedChanceToAvoidThievingStuns": 50,
+          "increasedMaxHitpoints": 40,
+          "increasedDamageDealtIfPoisoned": 10
+        },
+        "equipmentStats": [
+          {
+            "key": "stabAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedStrengthBonus",
+            "value": 3
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 3
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 120
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 100
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 50
+          },
+          {
+            "key": "damageReduction",
+            "value": 5
+          }
+        ],
+        "tier": "dragon",
+        "validSlots": [
+          "Platebody"
+        ],
+        "equipRequirements": [
+          {
+            "skillID": "melvorD:Thieving",
+            "level": 99,
+            "type": "SkillLevel"
+          },
+          {
+            "skillID": "melvorD:Defence",
+            "level": 99,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Nightingale_Orb",
+        "name": "Nightingale Orb",
+        "customDescription": "A shadowy orb with a high chance of bursting into shadowy explosive copies.",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Shadow_Orb.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 0,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [
+        ],
+        "equipRequirements": [
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Magic",
+            "level": 99
+          },
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Thieving",
+            "level": 99
+          }
+        ],
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2400
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 38
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 60
+          }
+        ],
+        "itemType": "Weapon",
+        "attackType": "magic",
+        "specialAttacks": [
+            "melvorF:ShadowBurst"
+        ],
+        "modifiers":{
+          "increasedMagicMaxHitBonusAgainstMelee": 10,
+          "increasedThievingStealth": 150
+        }
+      },
+      {
+        "id": "Nightingale_Blade",
+        "name": "Nightingale Blade",
+        "customDescription": "A silent blade with a high chance of leeching life from opponents.",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Nightingale_Blade.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 0,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [
+        ],
+        "equipRequirements": [
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Attack",
+            "level": 99
+          },
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Thieving",
+            "level": 99
+          }
+        ],
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2400
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 100
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 120
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 89
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 89
+          }
+        ],
+        "itemType": "Weapon",
+        "attackType": "melee",
+        "specialAttacks": [
+          "melvorD:LifeLeech"
+        ],
+        "modifiers":{
+          "doubleLifesteal": 1,
+          "increasedThievingStealth": 150
+        }
+      },
+      {
+        "id": "Nightingale_Bow",
+        "name": "Nightingale Bow",
+        "customDescription": "A silent bow with a higher chance of freezing opponents.",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Nightingale_Bow.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 0,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [
+          "Shield"
+        ],
+        "equipRequirements": [
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Ranged",
+            "level": 99
+          },
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Thieving",
+            "level": 99
+          }
+        ],
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2500
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 93
+          },
+          {
+            "key": "rangedStrengthBonus",
+            "value": 100
+          }
+        ],
+        "itemType": "Weapon",
+        "attackType": "ranged",
+        "specialAttacks": [
+          "melvorF:Shockwave",
+          "melvorD:FrozenShot"
+        ],
+        "modifiers":{
+          "increasedGlobalFreezeChance": 10,
+          "increasedThievingStealth": 150
+        }
+      },
+      {
+        "id": "Amulet_of_Articulation",
+        "name": "Amulet of Articulation",
+        "customDescription": "The sign of the Thieves Guild's current master.",
+        "category": "Thieving",
+        "type": "Armour",
+        "media": "assets/items/Amulet_of_Articulation.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 0,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedSkillMasteryXPPerKo":[
+            {
+              "skillID":"melvorD:Thieving",
+              "value": 1
+            }
+          ],
+          "increasedGPFromThievingFlat": 100,
+          "increasedGPBasedOnEnemyCombatLevel": 1,
+          "increasedThievingAutoSellPrice": 1.1,
+          "decreasedAgilityPillarCost": 10,
+          "increasedMinThievingGP": 10
+        },
+        "equipmentStats": [
+          {
+            "key": "meleeDefenceBonus",
+            "value": 3
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 3
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Amulet",
+          "Passive"
+        ],
+        "equipRequirements": [
+          {
+            "skillID": "melvorD:Thieving",
+            "level": 90,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Guild_Master_Armour",
+        "name": "Guild Master Armour",
+        "customDescription": "The Guild Master's Armor is the chest piece of the unique set of equipment given to the Guild Master of the Thieves Guild.",
+        "category": "Thieving",
+        "type": "Armour",
+        "media": "assets/items/Guild_Master_Armour.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 0,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedChanceToDoubleItemsSkill": [
+            {
+              "skillID": "melvorD:Thieving",
+              "value": 10
+            }
+          ],
+          "increasedThievingAreaUniqueChance": 0.2,
+          "autoLooting": 1,
+          "itemProtection": 1,
+          "increasedTownshipMaxStorage": 10,
+          "increasedOffItemChance": 5
+        },
+        "equipmentStats": [
+          {
+            "key": "stabAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedStrengthBonus",
+            "value": 3
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 3
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 120
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 100
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 50
+          },
+          {
+            "key": "damageReduction",
+            "value": 5
+          }
+        ],
+        "tier": "Leather",
+        "validSlots": [
+          "Platebody"
+        ],
+        "equipRequirements": [
+          {
+            "skillID": "melvorD:Thieving",
+            "level": 60,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Guild_Masters_Hood",
+        "name": "Guild Masters Hood",
+        "customDescription": "The Guild Master's Hood is the headwear for the unique set of equipment given to the Guild Master of the Thieves Guild.",
+        "category": "Thieving",
+        "type": "Armour",
+        "media": "assets/items/GuildMastersHood.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 0,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedGPFromSales": 20,
+          "increasedThievingStealth": 50,
+          "increasedGPFromThieving": 10,
+          "meleeProtection": 5
+        },
+        "equipmentStats": [
+          {
+            "key": "stabAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 0
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedStrengthBonus",
+            "value": 0
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 12
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 66
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 50
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 9
+          },
+          {
+            "key": "damageReduction",
+            "value": 5
+          }
+        ],
+        "tier": "dragon",
+        "validSlots": [
+          "Helmet"
+        ],
+        "equipRequirements": [
+          {
+            "skillID": "melvorD:Thieving",
+            "level": 90,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Guild_Masters_Gloves",
+        "name": "Guild Masters Gloves",
+        "customDescription": "The Guild Master's Gloves are the gauntlets for the unique set of equipment given to the Guild Master of the Thieves Guild.",
+        "category": "Thieving",
+        "type": "Armour",
+        "media": "assets/items/GuildMastersGloves.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 0,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedThievingStealth": 50,
+          "increasedGPFromThieving": 5,
+          "increasedMinThievingGP": 200,
+          "decreasedSkillInterval": [
+            {
+              "skillID": "melvorD:Thieving",
+              "value": 0.2
+            }
+          ],
+          "rangedProtection": 5
+        },
+        "equipmentStats": [
+          {
+            "key": "stabAttackBonus",
+            "value": 10
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 10
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 10
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 10
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 0
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 12
+          },
+          {
+            "key": "rangedStrengthBonus",
+            "value": 0
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 12
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 10
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 3
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 10
+          },
+          {
+            "key": "damageReduction",
+            "value": 5
+          }
+        ],
+        "tier": "dragon",
+        "validSlots": [
+          "Gloves"
+        ],
+        "equipRequirements": [
+          {
+            "skillID": "melvorD:Thieving",
+            "level": 90,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Guild_Masters_Boots",
+        "name": "Guild Masters Boots",
+        "customDescription": "The Guild Master's Boots serve as the foot protection for the unique set of equipment given to the Guild Master of the Thieves Guild.",
+        "category": "Thieving",
+        "type": "Armour",
+        "media": "assets/items/GuildMastersBoots.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 0,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedGPFromSales": 5,
+          "increasedThievingStealth": 50,
+          "increasedGPFromThieving": 5,
+          "increasedMinThievingGP": 100,
+          "magicProtection": 5,
+          "increasedHiddenSkillLevelPer2Levels":[{
+            "skillID":"melvorD:Thieving",
+            "value": 1
+          }]
+        },
+        "equipmentStats": [
+          {
+            "key": "stabAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 0
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedStrengthBonus",
+            "value": 0
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 12
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 22
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 6
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 9
+          },
+          {
+            "key": "damageReduction",
+            "value": 5
+          }
+        ],
+        "tier": "dragon",
+        "validSlots": [
+          "Boots"
+        ],
+        "equipRequirements": [
+          {
+            "skillID": "melvorD:Thieving",
+            "level": 90,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Thieves_Guild_Boots",
+        "name": "Thieves Guild Boots",
+        "customDescription": "Thieves Guild Boots are the shoes for the set of Armour used by Thieves Guild members.",
+        "category": "Thieving",
+        "type": "Armour",
+        "media": "assets/items/Thieves_Guild_Boots.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 500,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedGPFromSales": 5,
+          "increasedThievingStealth": 40,
+          "increasedGPFromThieving": 5
+        },
+        "equipmentStats": [
+          {
+            "key": "stabAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 0
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedStrengthBonus",
+            "value": 0
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 3
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 3
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 3
+          },
+          {
+            "key": "damageReduction",
+            "value": 0
+          }
+        ],
+        "tier": "Leather",
+        "validSlots": [
+          "Boots"
+        ],
+        "equipRequirements": [
+          {
+            "skillID": "melvorD:Thieving",
+            "level": 25,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Thieves_Guild_Gloves",
+        "name": "Thieves Guild Gloves",
+        "customDescription": "Thieves Guild Gloves are the gauntlets for the set of Armour used by Thieves Guild members.",
+        "category": "Thieving",
+        "type": "Armour",
+        "media": "assets/items/Thieves_Guild_Gloves.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 500,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedThievingStealth": 15,
+          "increasedGPFromThieving": 5,
+          "increasedMinThievingGP": 150,
+          "decreasedSkillInterval": [
+            {
+              "skillID": "melvorD:Thieving",
+              "value": 0.1
+            }
+          ]
+        },
+        "equipmentStats": [
+          {
+            "key": "stabAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 0
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedStrengthBonus",
+            "value": 0
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 3
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 3
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 3
+          },
+          {
+            "key": "damageReduction",
+            "value": 0
+          }
+        ],
+        "tier": "Leather",
+        "validSlots": [
+          "Gloves"
+        ],
+        "equipRequirements": [
+          {
+            "skillID": "melvorD:Thieving",
+            "level": 40,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Thieves_Guild_Armour",
+        "name": "Thieves Guild Armour",
+        "customDescription": "Thieves Guild Armour serves as the chest piece for the set of Armour used by Thieves Guild members.",
+        "category": "Thieving",
+        "type": "Armour",
+        "media": "assets/items/Thieves_Guild_Armour.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 500,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedChanceToDoubleItemsSkill": [
+            {
+              "skillID": "melvorD:Thieving",
+              "value": 5
+            }
+          ],
+          "increasedThievingAreaUniqueChance": 0.1,
+          "autoLooting": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "stabAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 0
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedStrengthBonus",
+            "value": 0
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 3
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 3
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 3
+          },
+          {
+            "key": "damageReduction",
+            "value": 0
+          }
+        ],
+        "tier": "Leather",
+        "validSlots": [
+          "Platebody"
+        ],
+        "equipRequirements": [
+          {
+            "skillID": "melvorD:Thieving",
+            "level": 60,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Thieves_Guild_Hood",
+        "name": "Thieves Guild Hood",
+        "customDescription": "A Thieves Guild Hood serves as the helmet for the set of Armour used by Thieves Guild members.",
+        "category": "Thieving",
+        "type": "Armour",
+        "media": "assets/items/Thieves_Guild_Hood.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 500,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedGPFromSales": 10,
+          "increasedThievingStealth": 10,
+          "increasedGPFromThieving": 10
+        },
+        "equipmentStats": [
+          {
+            "key": "stabAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 0
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedStrengthBonus",
+            "value": 0
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 3
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 3
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 3
+          },
+          {
+            "key": "damageReduction",
+            "value": 0
+          }
+        ],
+        "tier": "Leather",
+        "validSlots": [
+          "Helmet"
+        ],
+        "equipRequirements": [
+          {
+            "skillID": "melvorD:Thieving",
+            "level": 10,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "GoldenShipModel",
+        "name": "Golden ShipModel",
+        "customDescription": "Shiney.",
+        "category": "Thieving",
+        "type": "Misc",
+        "media": "assets/items/GoldenShipModel.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 500,
+        "itemType": "Item"
+      },
+      {
+        "id": "GoldenUrn",
+        "name": "Golden Urn",
+        "customDescription": "Shiney.",
+        "category": "Thieving",
+        "type": "Misc",
+        "media": "assets/items/GoldenUrn.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 500,
+        "itemType": "Item"
+      },
+      {
+        "id": "JeweledPitcher",
+        "name": "Jeweled Pitcher",
+        "customDescription": "Shiney.",
+        "category": "Thieving",
+        "type": "Misc",
+        "media": "assets/items/JeweledPitcher.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 500,
+        "itemType": "Item"
+      },
+      {
+        "id": "JeweledGoblet",
+        "name": "Jeweled Goblet",
+        "customDescription": "Shiney.",
+        "category": "Thieving",
+        "type": "Misc",
+        "media": "assets/items/JeweledGoblet.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 500,
+        "itemType": "Item"
+      },
+      {
+        "id": "JeweledFlagon",
+        "name": "Jeweled Flagon",
+        "customDescription": "Shiney.",
+        "category": "Thieving",
+        "type": "Misc",
+        "media": "assets/items/JeweledFlagon.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 500,
+        "itemType": "Item"
+      },
+      {
+        "id": "JeweledCandlestick",
+        "name": "Jeweled Candlestick",
+        "customDescription": "Shiney.",
+        "category": "Thieving",
+        "type": "Misc",
+        "media": "assets/items/JeweledCandlestick.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 500,
+        "itemType": "Item"
+      },
+      {
+        "id": "Lockpick",
+        "name": "Lockpick",
+        "customDescription": "Used to open locks.",
+        "category": "Thieving",
+        "type": "Consumable",
+        "media": "assets/items/Lockpick.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 3,
+        "tier": "none",
+        "validSlots": [
+          "Consumable"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Thieving",
+            "level": 10
+          }
+        ],
+        "modifiers": {
+          "increasedThievingStealth": 20
+        },
+        "equipmentStats": [],
+        "itemType": "Equipment"
+      },
       {
         "id": "The_Black_Horse_Courier_Waterfront",
         "name": "Waterfront Raid Fails!",
@@ -17,7 +2342,7 @@
         "customDescription": "The Black Horse Courier is Cyrodiil's only newspaper.",
         "swalData": {
           "title": {
-            "category":"LORE",
+            "category": "MISC_STRING",
             "id": "Waterfront_Raid_Fails"
           },
           "htmlTemplateID": "The_Black_Horse_Courier_Waterfront_HTML"
@@ -75,6 +2400,9 @@
           "melvorF:Frostbite",
           "melvorF:IcicleVolley",
           "melvorF:SlicingWinds"
+        ],
+        "overrideSpecialChances": [
+          15, 15, 15, 15, 15, 15
         ]
       },
       {
@@ -94,12 +2422,11 @@
         ],
         "occupiesSlots": [],
         "equipRequirements": [],
-        "equipmentStats": [
-        ],
+        "equipmentStats": [],
         "itemType": "Equipment",
         "modifiers": {
           "increasedThievingStealth": 150,
-          "increasedThievingAreaUniqueChance": 10,
+          "increasedThievingAreaUniqueChance": 0.1,
           "increasedGPFromThieving": 100,
           "increasedMinThievingGP": 150,
           "increasedChanceToAvoidThievingStuns": 35
@@ -135,11 +2462,11 @@
             "key": "damageReduction",
             "value": 2
           }
-         ],
+        ],
         "itemType": "Equipment",
         "modifiers": {
           "increasedThievingStealth": 150,
-          "increasedThievingAreaUniqueChance": 10,
+          "increasedThievingAreaUniqueChance": 0.1,
           "increasedGPFromThieving": 100,
           "increasedMinThievingGP": 150,
           "increasedChanceToAvoidThievingStuns": 35
@@ -335,7 +2662,7 @@
             "key": "damageReduction",
             "value": -5
           }
-         ],
+        ],
         "itemType": "Equipment",
         "modifiers": {
           "decreasedFoodHealingValue": 25,
@@ -412,11 +2739,11 @@
         ],
         "occupiesSlots": [],
         "equipRequirements": [],
-        "equipmentStats": [ ],
+        "equipmentStats": [],
         "itemType": "Equipment",
         "modifiers": {
           "increasedThievingStealth": 150,
-          "increasedThievingAreaUniqueChance": 10,
+          "increasedThievingAreaUniqueChance": 0.1,
           "increasedGPFromThieving": 100,
           "increasedMinThievingGP": 150,
           "increasedChanceToAvoidThievingStuns": 35
@@ -592,12 +2919,9 @@
         "validSlots": [
           "Gloves"
         ],
-        "occupiesSlots": [
-        ],
-        "equipRequirements": [
-        ],
-        "equipmentStats": [
-        ],
+        "occupiesSlots": [],
+        "equipRequirements": [],
+        "equipmentStats": [],
         "itemType": "Weapon",
         "attackType": "magic",
         "modifiers": {
@@ -621,7 +2945,8 @@
           "allowSignetDrops": 1,
           "allowAttackAugmentingMagic": 1,
           "allowNonMagicCurses": 1,
-          "momentInTimePassive": 1
+          "momentInTimePassive": 1,
+          "decreasedMonsterRespawnTimer": 10
         }
       },
       {
@@ -795,7 +3120,7 @@
             "minQuantity": 1,
             "maxQuantity": 1,
             "weight": 1
-          }          
+          }
         ],
         "customDescription": "A Sigil Stone is the object that keeps Oblivion Gates open. They are found inside the Sigilium Sanguis, at the top of the largest tower, in the planes of Oblivion."
       },
@@ -1163,8 +3488,7 @@
         ],
         "occupiesSlots": [],
         "equipRequirements": [],
-        "equipmentStats": [
-        ],
+        "equipmentStats": [],
         "modifiers": {
           "increasedGlobalMasteryXP": 10,
           "increasedGlobalSkillXP": 10,
@@ -1237,10 +3561,8 @@
         ],
         "ignoreCompletion": true,
         "attackType": "ranged",
-        "specialAttacks": [
-        ],
-        "passives": [
-        ],
+        "specialAttacks": [],
+        "passives": [],
         "lootChance": 100,
         "lootTable": [
           {
@@ -1336,10 +3658,8 @@
         ],
         "ignoreCompletion": true,
         "attackType": "melee",
-        "specialAttacks": [
-        ],
-        "passives": [
-        ],
+        "specialAttacks": [],
+        "passives": [],
         "lootChance": 40,
         "lootTable": [
           {
@@ -1405,16 +3725,10 @@
         ],
         "ignoreCompletion": true,
         "attackType": "ranged",
-        "specialAttacks": [
-
-        ],
-        "passives": [
-
-        ],
+        "specialAttacks": [],
+        "passives": [],
         "lootChance": 100,
-        "lootTable": [
-
-        ],
+        "lootTable": [],
         "gpDrops": {
           "min": 0,
           "max": 0
@@ -1627,7 +3941,7 @@
             "weight": 10
           },
           {
-            "itemID": "melvorD:Sword_Of_Some_Reliability",
+            "itemID": "melvorD:Almighty_Ring",
             "minQuantity": 1,
             "maxQuantity": 11,
             "weight": 1
@@ -2051,8 +4365,7 @@
         ],
         "ignoreCompletion": true,
         "attackType": "melee",
-        "specialAttacks": [
-        ],
+        "specialAttacks": [],
         "passives": [
           "melvorD:BigBoi",
           "melvorD:Stronk",
@@ -2135,8 +4448,7 @@
           "melvorF:Agility",
           "melvorF:Elusiveness"
         ],
-        "passives": [
-        ],
+        "passives": [],
         "lootChance": 100,
         "lootTable": [
           {
@@ -2443,8 +4755,7 @@
         "specialAttacks": [
           "tes:Barbas"
         ],
-        "passives": [
-        ],
+        "passives": [],
         "lootChance": 100,
         "lootTable": [
           {
@@ -2521,9 +4832,8 @@
           "melvorD:PoisonMelee",
           "melvorD:Firebreathing",
           "melvorD:PiercingArrow"
-          ],
-        "passives": [
         ],
+        "passives": [],
         "lootChance": 100,
         "lootTable": [
           {
@@ -2599,15 +4909,14 @@
           "tes:maddness",
           "tes:order",
           "melvorF:FragileMind"
-          ],
+        ],
         "passives": [
           "melvorD:JustAScratch",
           "melvorF:Purity",
           "melvorF:Rebirth"
         ],
         "lootChance": 0,
-        "lootTable": [
-        ],
+        "lootTable": [],
         "gpDrops": {
           "min": 0,
           "max": 0
@@ -2643,13 +4952,12 @@
         "specialAttacks": [
           "tes:order",
           "melvorF:MarkofDeath"
-          ],
+        ],
         "passives": [
           "melvorF:Afflicted"
         ],
         "lootChance": 0,
-        "lootTable": [
-        ],
+        "lootTable": [],
         "gpDrops": {
           "min": 0,
           "max": 0
@@ -2685,13 +4993,12 @@
         "specialAttacks": [
           "tes:maddness",
           "melvorF:MarkofDeath"
-          ],
+        ],
         "passives": [
           "melvorF:Afflicted"
         ],
         "lootChance": 0,
-        "lootTable": [
-        ],
+        "lootTable": [],
         "gpDrops": {
           "min": 0,
           "max": 0
@@ -2722,13 +5029,12 @@
         "attackType": "melee",
         "specialAttacks": [
           "melvorD:PoisonMelee"
-          ],
+        ],
         "passives": [
           "melvorF:Afflicted"
         ],
         "lootChance": 0,
-        "lootTable": [
-        ],
+        "lootTable": [],
         "gpDrops": {
           "min": 0,
           "max": 0
@@ -2759,13 +5065,12 @@
         "attackType": "melee",
         "specialAttacks": [
           "melvorD:PoisonMelee"
-          ],
+        ],
         "passives": [
           "melvorF:Afflicted"
         ],
         "lootChance": 0,
-        "lootTable": [
-        ],
+        "lootTable": [],
         "gpDrops": {
           "min": 0,
           "max": 0
@@ -2796,13 +5101,12 @@
         "attackType": "ranged",
         "specialAttacks": [
           "melvorD:PoisonRanged"
-          ],
+        ],
         "passives": [
           "melvorF:Afflicted"
         ],
         "lootChance": 0,
-        "lootTable": [
-        ],
+        "lootTable": [],
         "gpDrops": {
           "min": 0,
           "max": 0
@@ -2833,13 +5137,12 @@
         "attackType": "melee",
         "specialAttacks": [
           "melvorF:DeadlyCut"
-          ],
+        ],
         "passives": [
           "melvorF:Afflicted"
         ],
         "lootChance": 0,
-        "lootTable": [
-        ],
+        "lootTable": [],
         "gpDrops": {
           "min": 0,
           "max": 0
@@ -2870,13 +5173,12 @@
         "attackType": "melee",
         "specialAttacks": [
           "melvorF:ToxicBite"
-          ],
+        ],
         "passives": [
           "melvorF:Afflicted"
         ],
         "lootChance": 0,
-        "lootTable": [
-        ],
+        "lootTable": [],
         "gpDrops": {
           "min": 0,
           "max": 0
@@ -2907,13 +5209,12 @@
         "attackType": "melee",
         "specialAttacks": [
           "melvorF:BoneCrush"
-          ],
+        ],
         "passives": [
           "melvorF:Afflicted"
         ],
         "lootChance": 0,
-        "lootTable": [
-        ],
+        "lootTable": [],
         "gpDrops": {
           "min": 0,
           "max": 0
@@ -2945,13 +5246,12 @@
         "specialAttacks": [
           "melvorF:BoneCrush",
           "melvorF:Ram"
-          ],
+        ],
         "passives": [
           "melvorF:Afflicted"
         ],
         "lootChance": 0,
-        "lootTable": [
-        ],
+        "lootTable": [],
         "gpDrops": {
           "min": 0,
           "max": 0
@@ -3408,7 +5708,7 @@
         "ids": [
           "tes:Skyrim"
         ]
-      } 
+      }
     ],
     "dungeons": [
       {
@@ -3470,8 +5770,7 @@
         "difficulty": [
           1
         ],
-        "entryRequirements": [
-        ],
+        "entryRequirements": [],
         "rewardItemIDs": [
           "melvorF:Chest_Of_Gems"
         ],
@@ -3500,6 +5799,152 @@
         "data": {
           "areas": [
             {
+              "id": "Windhelm",
+              "name": "Windhelm",
+              "npcIDs": [
+                "tes:Helgird"
+              ],
+              "uniqueDrops": [{
+                "id":"melvorD:Frost_Arrows",
+                "quantity": 1
+              }]
+            },
+            {
+              "id": "Whiterun",
+              "name": "Whiterun",
+              "npcIDs": [
+                "tes:Ysolda"
+              ],
+              "uniqueDrops": [{
+                "id":"melvorD:Fire_Arrows",
+                "quantity": 1
+              }]
+            },
+            {
+              "id": "Markarth",
+              "name": "Markarth",
+              "npcIDs": [
+                "tes:Grisvar_the_Unlucky"
+              ],
+              "uniqueDrops": [{
+                "id":"melvorD:Amulet_Of_Burning_Leech",
+                "quantity": 1
+              }]
+            },
+            {
+              "id": "Bravil",
+              "name": "Bravil",
+              "npcIDs": [
+                "tes:City_Swimmer"
+              ],
+              "uniqueDrops": [{
+                "id":"melvorD:Amulet_Of_Healing",
+                "quantity": 1
+              }]
+            },
+            {
+              "id": "Leyawiin",
+              "name": "Leyawiin",
+              "npcIDs": [
+                "tes:Maglir"
+              ],
+              "uniqueDrops": [
+                {
+                  "id": "tes:JeweledCandlestick",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "id": "Kvatch",
+              "name": "Kvatch",
+              "npcIDs": [
+                "tes:Batul_gra_Sharob"
+              ],
+              "uniqueDrops": [
+                {
+                  "id": "tes:JeweledFlagon",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "id": "Bruma",
+              "name": "Bruma",
+              "npcIDs": [
+                "tes:Jskar"
+              ],
+              "uniqueDrops": [
+                {
+                  "id": "tes:JeweledGoblet",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "id": "Riften",
+              "name": "Riften",
+              "npcIDs": [
+                "tes:Maven_Black"
+              ],
+              "uniqueDrops": [
+                {
+                  "id": "tes:GoldenShipModel",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "id": "Chorrol",
+              "name": "Chorrol",
+              "npcIDs": [
+                "tes:Modryn_Oreyn"
+              ],
+              "uniqueDrops": [
+                {
+                  "id": "tes:JeweledPitcher",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "id": "Cheydinhal",
+              "name": "Cheydinhal",
+              "npcIDs": [
+                "tes:Hil_the_Tall"
+              ],
+              "uniqueDrops": [
+                {
+                  "id": "tes:GoldenUrn",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
+              "id": "Anvil",
+              "name": "Anvil",
+              "npcIDs": [
+                "tes:Corvus_Umbranox"
+              ],
+              "uniqueDrops": [{
+                "id":"melvorD:Ring_Of_Balance",
+                "quantity": 1
+              }]
+            },
+            {
+              "id": "Skingrad",
+              "name": "Skingrad",
+              "npcIDs": [
+                "tes:Janus_Hassildor"
+              ],
+              "uniqueDrops": [
+                {
+                  "id": "melvorD:Bloodthirst_Amulet",
+                  "quantity": 1
+                }
+              ]
+            },
+            {
               "id": "Imperial_City",
               "name": "Imperial City",
               "npcIDs": [
@@ -3514,22 +5959,523 @@
                   "quantity": 1
                 }
               ]
-            },
-            {
-              "id": "Skingrad",
-              "name": "Skingrad",
-              "npcIDs": [
-                "tes:Janus_Hassildor"
-              ],
-              "uniqueDrops": [
-                {
-                  "id": "melvorD:Bloodthirst_Amulet",
-                  "quantity": 1
-                }
-              ]
             }
           ],
           "npcs": [
+          {
+            "id": "City_Swimmer",
+            "name": "City-Swimmer",
+            "media": "assets/thief/City-Swimmer.png",
+            "baseExperience": 26,
+            "level": 26,
+            "maxGP": 150,
+            "maxHit": 8.6,
+            "perception": 275,
+            "uniqueDrop":{
+              "id":"melvorD:Sword_Of_Some_Reliability",
+              "quantity": 1
+            },
+            "lootTable": [
+              {
+                "itemID": "melvorD:Raw_Lobster",
+                "maxQuantity": 1,
+                "minQuantity": 1,
+                "weight": 100
+              },
+              {
+                "itemID": "melvorD:Raw_Poison_Fish",
+                "maxQuantity": 1,
+                "minQuantity": 1,
+                "weight": 100
+              }
+            ]
+          },
+            {
+              "id": "Ysolda",
+              "name": "Ysolda",
+              "media": "assets/thief/Ysolda.png",
+              "baseExperience": 7,
+              "level": 5,
+              "maxGP": 150,
+              "maxHit": 3,
+              "perception": 140,
+              "lootTable": [
+                {
+                  "itemID": "melvorD:Iron_Dagger",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorF:Apple",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Tomatoes",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Potatoes",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Cheese",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Cabbage",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorF:Silver_Diamond_Ring",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 1
+                }
+              ]
+            },
+            {
+              "id": "Helgird",
+              "name": "Helgird",
+              "media": "assets/thief/Helgird.png",
+              "baseExperience": 5,
+              "level": 1,
+              "maxGP": 100,
+              "maxHit": 2,
+              "perception": 100,
+              "lootTable": [
+                {
+                  "itemID": "melvorD:Bones",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Burnt_Shrimp",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorF:Ash",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Rusty_Key",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                }
+              ]
+            },
+            {
+              "id": "Corvus_Umbranox",
+              "name": "Corvus Umbranox",
+              "media": "assets/thief/Corvus_Umbranox.png",
+              "baseExperience": 1,
+              "level": 99,
+              "maxGP": 2000,
+              "maxHit": 100,
+              "perception": 2000,
+              "lootTable": [
+                {
+                  "itemID": "melvorF:Mastery_Token_Thieving",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 1
+                },
+                {
+                  "itemID": "melvorF:Thiefs_Moneysack",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorF:Consumable_Enhancer",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorF:Wizards_Scroll",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorF:Seed_Pouch",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorF:Alchemists_Bag",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                }
+              ]
+            },
+            {
+              "id": "Hil_the_Tall",
+              "name": "Hil the Tall",
+              "media": "assets/thief/Hil_the_Tall.png",
+              "baseExperience": 120,
+              "level": 90,
+              "maxGP": 850,
+              "maxHit": 28,
+              "perception": 890,
+              "lootTable": [
+                {
+                  "itemID": "melvorD:Poison_Arrows",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Warding_Shield",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 1
+                },
+                {
+                  "itemID": "melvorD:Ultimate_Speed_Boots",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 1
+                },
+                {
+                  "itemID": "melvorD:Flying_Cape",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 1
+                },
+                {
+                  "itemID": "melvorD:Heavy_Gloves",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 1
+                },
+                {
+                  "itemID": "melvorD:Punching_Bag_Platebody",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 1
+                }
+              ]
+            },
+            {
+              "id": "Modryn_Oreyn",
+              "name": "Modryn Oreyn",
+              "media": "assets/thief/Modryn_Oreyn.png",
+              "baseExperience": 73,
+              "level": 70,
+              "maxGP": 550,
+              "maxHit": 18,
+              "perception": 600,
+              "lootTable": [
+                {
+                  "itemID": "melvorD:Enchanted_Jadestone_Bolts",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Enchanted_Diamond_Bolts",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Enchanted_Emerald_Bolts",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Enchanted_Ruby_Bolts",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Enchanted_Sapphire_Bolts",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Enchanted_Topaz_Bolts",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Tilted_Crossbow",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 10
+                }
+              ]
+            },
+            {
+              "id": "Jskar",
+              "name": "J'skar",
+              "media": "assets/thief/Jskar.png",
+              "baseExperience": 50,
+              "level": 50,
+              "maxGP": 450,
+              "maxHit": 15,
+              "perception": 450,
+              "lootTable": [
+                {
+                  "itemID": "melvorD:Standard_Chest",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 1
+                },
+                {
+                  "itemID": "melvorD:Rune_Essence",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Air_Rune",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Mind_Rune",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Water_Rune",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Fire_Rune",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Earth_Rune",
+                  "maxQuantity": 10,
+                  "minQuantity": 1,
+                  "weight": 100
+                }
+              ]
+            },
+            {
+              "id": "Batul_gra_Sharob",
+              "name": "Batul gra-Sharob",
+              "media": "assets/thief/Batul_gra_Sharob.png",
+              "baseExperience": 36,
+              "level": 40,
+              "maxGP": 400,
+              "maxHit": 12,
+              "perception": 420,
+              "lootTable": [
+                {
+                  "itemID": "melvorD:Adamantite_Bar",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Adamant_Boots_T_S",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 10
+                },
+                {
+                  "itemID": "melvorD:Adamant_Helmet_T_S",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 10
+                },
+                {
+                  "itemID": "melvorD:Adamant_Platebody_T_S",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 10
+                },
+                {
+                  "itemID": "melvorD:Adamant_Platelegs_T_S",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 10
+                },
+                {
+                  "itemID": "melvorD:Adamant_Shield_T_S",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 10
+                }
+              ]
+            },
+            {
+              "id": "Maglir",
+              "name": "Maglir",
+              "media": "assets/thief/Maglir.png",
+              "baseExperience": 27,
+              "level": 25,
+              "maxGP": 250,
+              "maxHit": 9,
+              "perception": 275,
+              "lootTable": [
+                {
+                  "itemID": "melvorD:Mithril_Throwing_Knife",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Mithril_Platelegs_T_S",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 10
+                },
+                {
+                  "itemID": "melvorD:Mithril_Platebody_T_S",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 10
+                },
+                {
+                  "itemID": "melvorD:Mithril_Boots_T_S",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 10
+                },
+                {
+                  "itemID": "melvorD:Mithril_Helmet_T_S",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 10
+                },
+                {
+                  "itemID": "melvorD:Mithril_Gloves",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 10
+                }
+              ]
+            },
+            {
+              "id": "Grisvar_the_Unlucky",
+              "name": "Grisvar the Unlucky",
+              "media": "assets/thief/Grisvar_the_Unlucky.png",
+              "baseExperience": 14,
+              "level": 10,
+              "maxGP": 200,
+              "maxHit": 5,
+              "perception": 220,
+              "lootTable": [
+                {
+                  "itemID": "melvorD:Mithril_Ore",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 1
+                },
+                {
+                  "itemID": "melvorD:Coal_Ore",
+                  "maxQuantity": 3,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Iron_Ore",
+                  "maxQuantity": 5,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Tin_Ore",
+                  "maxQuantity": 5,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Copper_Ore",
+                  "maxQuantity": 5,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Iron_Throwing_Knife",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 100
+                }
+              ]
+            },
+            {
+              "id": "Maven_Black",
+              "name": "Maven Black-Briar",
+              "media": "assets/thief/Maven_Black-Briar.png",
+              "baseExperience": 60,
+              "level": 60,
+              "maxGP": 500,
+              "maxHit": 16,
+              "perception": 500,
+              "lootTable": [
+                {
+                  "itemID": "melvorD:Standard_Chest",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 1
+                },
+                {
+                  "itemID": "melvorD:Silver_Bar",
+                  "maxQuantity": 3,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Mahogany_Logs",
+                  "maxQuantity": 5,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Raw_Crab",
+                  "maxQuantity": 5,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorD:Raw_Herring",
+                  "maxQuantity": 5,
+                  "minQuantity": 1,
+                  "weight": 100
+                },
+                {
+                  "itemID": "melvorF:Gold_Ruby_Ring",
+                  "maxQuantity": 1,
+                  "minQuantity": 1,
+                  "weight": 100
+                }
+              ]
+            },
             {
               "id": "Janus_Hassildor",
               "name": "Janus Hassildor",
@@ -3589,32 +6535,32 @@
                   "weight": 1
                 },
                 {
-                  "itemID": "melvorD:Mithril_Platebody",
+                  "itemID": "melvorD:Steel_Helmet_T_S",
                   "maxQuantity": 1,
                   "minQuantity": 1,
                   "weight": 100
                 },
                 {
-                  "itemID": "melvorD:Mithril_Platelegs",
+                  "itemID": "melvorD:Steel_Platebody_T_S",
                   "maxQuantity": 1,
                   "minQuantity": 1,
                   "weight": 100
                 },
                 {
-                  "itemID": "melvorD:Mithril_2H_Sword",
+                  "itemID": "melvorD:Steel_Platebody_T_S",
                   "maxQuantity": 1,
                   "minQuantity": 1,
                   "weight": 100
                 },
                 {
-                  "itemID": "melvorD:Mithril_Shield",
-                  "maxQuantity": 10,
+                  "itemID": "melvorD:Steel_Boots_T_S",
+                  "maxQuantity": 1,
                   "minQuantity": 1,
                   "weight": 100
                 },
                 {
-                  "itemID": "melvorD:Mithril_Helmet",
-                  "maxQuantity": 10,
+                  "itemID": "melvorD:Steel_Gloves",
+                  "maxQuantity": 1,
                   "minQuantity": 1,
                   "weight": 100
                 }
@@ -3637,31 +6583,31 @@
                   "weight": 1
                 },
                 {
-                  "itemID": "melvorD:Mithril_Platebody",
+                  "itemID": "melvorD:Iron_Platebody_T_G",
                   "maxQuantity": 1,
                   "minQuantity": 1,
                   "weight": 100
                 },
                 {
-                  "itemID": "melvorD:Mithril_Platelegs",
+                  "itemID": "melvorD:Iron_Platelegs_T_G",
                   "maxQuantity": 1,
                   "minQuantity": 1,
                   "weight": 100
                 },
                 {
-                  "itemID": "melvorD:Mithril_2H_Sword",
+                  "itemID": "melvorD:Iron_Helmet_T_G",
                   "maxQuantity": 1,
                   "minQuantity": 1,
                   "weight": 100
                 },
                 {
-                  "itemID": "melvorD:Mithril_Shield",
+                  "itemID": "melvorD:Iron_Boots_T_G",
                   "maxQuantity": 10,
                   "minQuantity": 1,
                   "weight": 100
                 },
                 {
-                  "itemID": "melvorD:Mithril_Helmet",
+                  "itemID": "melvorD:Iron_Gloves",
                   "maxQuantity": 10,
                   "minQuantity": 1,
                   "weight": 100
@@ -3685,32 +6631,32 @@
                   "weight": 1
                 },
                 {
-                  "itemID": "melvorD:Mithril_Platebody",
+                  "itemID": "melvorD:Steel_Boots_T_G",
                   "maxQuantity": 1,
                   "minQuantity": 1,
                   "weight": 100
                 },
                 {
-                  "itemID": "melvorD:Mithril_Platelegs",
+                  "itemID": "melvorD:Steel_Helmet_T_G",
                   "maxQuantity": 1,
                   "minQuantity": 1,
                   "weight": 100
                 },
                 {
-                  "itemID": "melvorD:Mithril_2H_Sword",
+                  "itemID": "melvorD:Steel_Platelegs_T_G",
                   "maxQuantity": 1,
                   "minQuantity": 1,
                   "weight": 100
                 },
                 {
-                  "itemID": "melvorD:Mithril_Shield",
-                  "maxQuantity": 10,
+                  "itemID": "melvorD:Steel_Platebody_T_G",
+                  "maxQuantity": 1,
                   "minQuantity": 1,
                   "weight": 100
                 },
                 {
-                  "itemID": "melvorD:Mithril_Helmet",
-                  "maxQuantity": 10,
+                  "itemID": "melvorD:Steel_Gloves",
+                  "maxQuantity": 1,
                   "minQuantity": 1,
                   "weight": 100
                 }
@@ -3766,6 +6712,10 @@
                   "weight": 50
                 }
               ],
+              "uniqueDrop": {
+                "id": "tes:Lockpick",
+                "quantity": 50
+              },
               "maxGP": 350,
               "maxHit": 12,
               "perception": 375
@@ -3774,11 +6724,13 @@
         }
       }
     ],
-    "lore": [{
-      "id": "Waterfront_Raid_Fails",
-      "media": "assets/items/The_Black_Horse_Courier.png",
-      "title": "Waterfront Raid Fails!",
-      "unlockRequirements": []
-    }]
+    "lore": [
+      {
+        "id": "Waterfront_Raid_Fails",
+        "media": "assets/items/The_Black_Horse_Courier.png",
+        "title": "Waterfront Raid Fails!",
+        "unlockRequirements": []
+      }
+    ]
   }
 }
