@@ -4027,6 +4027,88 @@
     ],
     "monsters": [
       {
+        "id": "Divine_Crusader",
+        "name": "Crusader Pelinal Whitestrake",
+        "media": "assets/monsters/Divine_Crusader.png",
+        "levels": {
+          "Attack": 1600,
+          "Defence": 1600,
+          "Hitpoints": 10000,
+          "Magic": 1000,
+          "Ranged": 1000,
+          "Strength": 1600
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2600
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "melvorF:IntotheMist",
+          "melvorF:FallenLight",
+          "melvorF:MistWalk"
+        ],
+        "passives": [
+          "melvorF:Purity",
+          "melvorF:MeleeProficiency"
+        ],
+        "lootChance": 100,
+        "lootTable": [
+
+        ],
+        "gpDrops": {
+          "min": 0,
+          "max": 0
+        },
+        "canSlayer": false,
+        "isBoss": true,
+        "selectedSpell": "melvorD:WindSurge"
+      },
+      {
+        "id": "Pelinal_Whitestrake",
+        "name": "Pelinal Whitestrake",
+        "media": "assets/monsters/Pelinal_Whitestrake.png",
+        "levels": {
+          "Attack": 1600,
+          "Defence": 1600,
+          "Hitpoints": 10000,
+          "Magic": 1000,
+          "Ranged": 1000,
+          "Strength": 1600
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2600
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "tes:Space_Program"
+        ],
+        "passives": [
+          "melvorF:Purity",
+          "melvorD:CheatsEnabled",
+          "melvorD:NerfThisGuy",
+          "melvorF:MeleeProficiency"
+        ],
+        "lootChance": 100,
+        "lootTable": [
+
+        ],
+        "gpDrops": {
+          "min": 0,
+          "max": 0
+        },
+        "canSlayer": false,
+        "isBoss": true,
+        "selectedSpell": "melvorD:WindSurge"
+      },
+      {
         "id": "Imperial_Watch",
         "name": "Imperial_Watch",
         "media": "assets/monsters/Imperial_Watch.png",
@@ -6539,6 +6621,19 @@
         "activeInRaid": false,
         "hint": "Thieves Guild",
         "customDescription": "Members of the Thieves Guild are assisted by a designated handler called a Doyen. A Doyen is a lieutenant of the Thieves Guild."
+      },
+      {
+        "id": "Felldir_the_Old",
+        "name": "Felldir the Old",
+        "media": "assets/pets/Felldir_the_Old.png",
+        "scaleChanceWithMasteryPool": false,
+        "ignoreCompletion": true,
+        "modifiers": {
+          "increasedDamageToBosses": 1
+        },
+        "activeInRaid": false,
+        "hint": "Thieves Guild",
+        "customDescription": "Alduin escaped us long ago. Today we take our well-tempered revenge."
       }
     ],
     "combatAreas": [
@@ -6653,6 +6748,48 @@
         },
         "fixedPetClears": true,
         "pauseOnBosses": false
+      },
+      {
+        "id": "Dragon_Break",
+        "name": "Dragon Break",
+        "media": "assets/locations/Dragon_Break.png",
+        "monsterIDs": [
+          "melvorD:Chicken",
+          "melvorD:RedDragon",
+          "melvorD:BlueDragon",
+          "melvorD:GreenDragon",
+          "melvorD:BlackDragon",
+          "melvorF:ElderDragon",
+          "melvorF:WickedGreaterDragon",
+          "melvorF:ChaoticGreaterDragon",
+          "melvorF:HuntingGreaterDragon",
+          "melvorF:GreaterSkeletalDragon",
+          "melvorD:PratTheProtectorOfSecrets",
+          "melvorD:MalcsTheGuardianOfMelvor",
+          "melvorF:PratTheGuardianOfSecrets",
+          "melvorF:MalcsTheLeaderOfDragons",
+          "tes:Alduin",
+          "tes:Pelinal_Whitestrake",
+          "tes:Divine_Crusader"
+        ],
+        "difficulty": [
+          6
+        ],
+        "entryRequirements": [{
+          "monsterID":"tes:Alduin",
+          "type": "MonsterKilled",
+          "count": 1
+        }],
+        "rewardItemIDs": [
+          "tes:Elder_Scrolls"
+        ],
+        "dropBones": true,
+        "pet": {
+          "petID": "tes:Felldir_the_Old",
+          "weight": 750
+        },
+        "fixedPetClears": true,
+        "pauseOnBosses": true
       }
     ],
     "dungeonDisplayOrder": [
@@ -6661,7 +6798,8 @@
         "afterID": "melvorF:Fire_God_Dungeon",
         "ids": [
           "tes:Shivering_Isles",
-          "tes:Thieves_Guild"
+          "tes:Thieves_Guild",
+          "tes:Dragon_Break"
         ]
       }
     ],
