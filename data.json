@@ -1170,7 +1170,7 @@
       },
       {
         "id": "Nightingale_Orb_Shop",
-        "media": "assets/items/Nightingale_Orb.png",
+        "media": "assets/items/Shadow_Orb.png",
         "category": "tes:Thieves_Guild_Shop",
         "contains": {
           "items": [
