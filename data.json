@@ -4020,7 +4020,7 @@
         },
         "areaEffectDescription": "Enemies are ${effectValue}% more resistant to damage.",
         "pet": {
-          "petID": "tes:Adoring_Fan",
+          "petID": "tes:Doyen",
           "weight": 750
         }
       }
@@ -6659,6 +6659,7 @@
         "name": "Cyrodiil",
         "media": "assets/locations/Cyrodiil.png",
         "monsterIDs": [
+          "tes:Thief",
           "tes:Imperial_Watch"
         ],
         "difficulty": [
@@ -6727,11 +6728,14 @@
         "pauseOnBosses": false
       },
       {
-        "id": "Thieves_Guild",
-        "name": "Thieves Guild",
-        "media": "assets/locations/Thieves_Guild.png",
+        "id": "Arena",
+        "name": "Arena",
+        "media": "assets/locations/Arena.png",
         "monsterIDs": [
           "melvorF:Thief",
+          "tes:Thief",
+          "tes:Thief",
+          "tes:Thief",
           "tes:Thief"
         ],
         "difficulty": [
@@ -6743,7 +6747,7 @@
         ],
         "dropBones": false,
         "pet": {
-          "petID": "tes:Doyen",
+          "petID": "tes:Adoring_Fan",
           "weight": 750
         },
         "fixedPetClears": true,
@@ -6798,8 +6802,14 @@
         "afterID": "melvorF:Fire_God_Dungeon",
         "ids": [
           "tes:Shivering_Isles",
-          "tes:Thieves_Guild",
           "tes:Dragon_Break"
+        ]
+      },
+      {
+        "insertAt": "After",
+        "afterID": "melvorD:Bandit_Base",
+        "ids": [
+          "tes:Arena"
         ]
       }
     ],
