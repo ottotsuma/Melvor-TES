@@ -11,7 +11,7 @@ export async function setup({ onCharacterLoaded, onInterfaceReady }) {
             "Lemonade_Full": true,
             "Locked_Chest": true,
             "Locked_Chest_Key": true,
-            
+            "I_Cant_See_Helmet": true
         }
 
         const bannedNameSpace = {
@@ -31,6 +31,9 @@ export async function setup({ onCharacterLoaded, onInterfaceReady }) {
                     )) {
                     // Skip the item if its localID is in the bannedList
                     if (bannedList[equipment.localID]) {
+                        return;
+                    }
+                    if(bannedNameSpace[equipment.namespace]){
                         return;
                     }
                     itemPackage.items.modify({
@@ -53,6 +56,9 @@ export async function setup({ onCharacterLoaded, onInterfaceReady }) {
                     (weapon.validSlots[0] === 'Weapon')) {
                     // Skip the item if its localID is in the bannedList
                     if (bannedList[weapon.localID]) {
+                        return;
+                    }
+                    if(bannedNameSpace[weapon.namespace]){
                         return;
                     }
                     itemPackage.items.modify({
@@ -78,6 +84,9 @@ export async function setup({ onCharacterLoaded, onInterfaceReady }) {
                     if (bannedList[food.localID]) {
                         return;
                     }
+                    if(bannedNameSpace[food.namespace]){
+                        return;
+                    }
                     itemPackage.items.modify({
                         id: "tes:Elder_Scrolls",
                         dropTable: {
@@ -98,6 +107,9 @@ export async function setup({ onCharacterLoaded, onInterfaceReady }) {
                 if (bones) {
                     // Skip the item if its localID is in the bannedList
                     if (bannedList[bones.localID]) {
+                        return;
+                    }
+                    if(bannedNameSpace[bones.namespace]){
                         return;
                     }
                     itemPackage.items.modify({
@@ -122,6 +134,9 @@ export async function setup({ onCharacterLoaded, onInterfaceReady }) {
                     if (bannedList[potions.localID]) {
                         return;
                     }
+                    if(bannedNameSpace[potions.namespace]){
+                        return;
+                    }
                     itemPackage.items.modify({
                         id: "tes:Elder_Scrolls",
                         dropTable: {
@@ -142,6 +157,9 @@ export async function setup({ onCharacterLoaded, onInterfaceReady }) {
                 if (openables) {
                     // Skip the item if its localID is in the bannedList
                     if (bannedList[openables.localID]) {
+                        return;
+                    }
+                    if(bannedNameSpace[openables.namespace]){
                         return;
                     }
                     itemPackage.items.modify({
@@ -166,6 +184,9 @@ export async function setup({ onCharacterLoaded, onInterfaceReady }) {
                     if (bannedList[composts.localID]) {
                         return;
                     }
+                    if(bannedNameSpace[composts.namespace]){
+                        return;
+                    }
                     itemPackage.items.modify({
                         id: "tes:Elder_Scrolls",
                         dropTable: {
@@ -186,6 +207,9 @@ export async function setup({ onCharacterLoaded, onInterfaceReady }) {
                 if (tokens) {
                     // Skip the item if its localID is in the bannedList
                     if (bannedList[tokens.localID]) {
+                        return;
+                    }
+                    if(bannedNameSpace[tokens.namespace]){
                         return;
                     }
                     itemPackage.items.modify({
