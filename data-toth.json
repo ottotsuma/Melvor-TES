@@ -1,0 +1,713 @@
+{
+  "$schema": "https://melvoridle.com/assets/schema/gameData.json",
+  "namespace": "tes",
+  "data": {
+    "shopPurchases": [
+      {
+        "id": "Poison_Rune",
+        "media": "melvor:assets/media/bank/poison_rune.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "melvorTotH:Poison_Rune",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 2000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Arch_Mage_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          },
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Runecrafting",
+            "level": 100
+          },
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Magic",
+            "level": 100
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customDescription": ""
+      },
+      {
+        "id": "Decay_Rune",
+        "media": "melvor:assets/media/bank/decay_rune.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "melvorTotH:Decay_Rune",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 2100
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Arch_Mage_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          },
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Runecrafting",
+            "level": 102
+          },
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Magic",
+            "level": 102
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customDescription": ""
+      },
+      {
+        "id": "Infernal_Rune",
+        "media": "melvor:assets/media/bank/infernal_rune.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "melvorTotH:Infernal_Rune",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 2200
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Arch_Mage_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          },
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Runecrafting",
+            "level": 104
+          },
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Magic",
+            "level": 104
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customDescription": ""
+      },
+      {
+        "id": "Despair_Rune",
+        "media": "melvor:assets/media/bank/despair_rune.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "melvorTotH:Despair_Rune",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 2300
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Arch_Mage_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          },
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Runecrafting",
+            "level": 106
+          },
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Magic",
+            "level": 106
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customDescription": ""
+      },
+      {
+        "id": "Soul_Rune",
+        "media": "melvor:assets/media/bank/soul_rune.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "melvorTotH:Soul_Rune",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 2400
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Arch_Mage_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          },
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Runecrafting",
+            "level": 108
+          },
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Magic",
+            "level": 108
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customDescription": ""
+      },
+      {
+        "id": "Lightning_Rune",
+        "media": "melvor:assets/media/bank/lightning_rune.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "melvorTotH:Lightning_Rune",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 2500
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Arch_Mage_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          },
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Runecrafting",
+            "level": 110
+          },
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Magic",
+            "level": 110
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customDescription": ""
+      },
+      {
+        "id": "Archaic_Rune",
+        "media": "melvor:assets/media/bank/archaic_rune.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "melvorTotH:Archaic_Rune",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 2600
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Arch_Mage_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          },
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Runecrafting",
+            "level": 112
+          },
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Magic",
+            "level": 112
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customDescription": ""
+      },
+      {
+        "id": "Calamity_Rune",
+        "media": "melvor:assets/media/bank/calamity_rune.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "melvorTotH:Calamity_Rune",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 2700
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Arch_Mage_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          },
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Runecrafting",
+            "level": 115
+          },
+          {
+            "type": "SkillLevel",
+            "skillID": "melvorD:Magic",
+            "level": 115
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customDescription": ""
+      },
+      {
+        "id": "AncientChest",
+        "media": "assets/items/AncientChest.png",
+        "category": "tes:Fighters_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "melvorTotH:Ancient_Chest",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 2500000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Master_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          },
+          {
+            "type": "DungeonCompletion",
+            "dungeonID": "melvorTotH:Ancient_Sanctuary",
+            "count": 100
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customDescription": "Test Your Luck!"
+      },
+      {
+        "id": "BurningChest",
+        "media": "assets/items/BurningChest.png",
+        "category": "tes:Fighters_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "melvorTotH:Burning_Chest",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 2500000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Master_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          },
+          {
+            "type": "DungeonCompletion",
+            "dungeonID": "melvorTotH:Underground_Lava_Lake",
+            "count": 50
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customDescription": "Test Your Luck!"
+      },
+      {
+        "id": "StaticChest",
+        "media": "assets/items/StaticChest.png",
+        "category": "tes:Fighters_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "melvorTotH:Static_Chest",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 2500000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Master_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          },
+          {
+            "type": "DungeonCompletion",
+            "dungeonID": "melvorTotH:Lightning_Region",
+            "count": 50
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customDescription": "Test Your Luck!"
+      },
+      {
+        "id": "WebbedChest",
+        "media": "assets/items/WebbedChest.png",
+        "category": "tes:Fighters_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "melvorTotH:Webbed_Chest",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 5000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Master_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          },
+          {
+            "type": "DungeonCompletion",
+            "dungeonID": "melvorTotH:Lair_of_the_Spider_Queen",
+            "count": 50
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customDescription": "Test Your Luck!"
+      },
+      {
+        "id": "CursedChest",
+        "media": "assets/items/CursedChest.png",
+        "category": "tes:Fighters_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "melvorTotH:Cursed_Chest",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 5000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Master_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          },
+          {
+            "type": "DungeonCompletion",
+            "dungeonID": "melvorTotH:Cursed_Forest",
+            "count": 50
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customDescription": "Test Your Luck!"
+      },
+      {
+        "id": "BoneChest",
+        "media": "assets/items/BoneChest.png",
+        "category": "tes:Fighters_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "melvorTotH:Bone_Chest",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 5000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Master_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          },
+          {
+            "type": "DungeonCompletion",
+            "dungeonID": "melvorTotH:Necromancers_Palace",
+            "count": 50
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customDescription": "Test Your Luck!"
+      }
+    ],
+    "shopDisplayOrder": [
+      {
+        "insertAt": "End",
+        "ids": [
+          "tes:Poison_Rune",
+          "tes:Decay_Rune",
+          "tes:Infernal_Rune",
+          "tes:Despair_Rune",
+          "tes:Soul_Rune",
+          "tes:Lightning_Rune",
+          "tes:Archaic_Rune",
+          "tes:Calamity_Rune",
+          "tes:AncientChest",
+          "tes:BurningChest",
+          "tes:StaticChest",
+          "tes:WebbedChest",
+          "tes:CursedChest",
+          "tes:BoneChest"
+        ]
+      }
+    ]
+  }
+}
