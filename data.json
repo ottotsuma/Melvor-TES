@@ -2,6 +2,33 @@
   "$schema": "https://melvoridle.com/assets/schema/gameData.json",
   "namespace": "tes",
   "data": {
+    "curseSpells": [
+      {
+        "id": "PeryitesPresence",
+        "level": 99,
+        "media": "assets/icons/DaedricBuff.png",
+        "name": "Peryites Presence",
+        "runesRequired": [
+          {
+            "id": "melvorD:Blood_Rune",
+            "quantity": 1
+          },
+          {
+            "id": "melvorD:Mind_Rune",
+            "quantity": 3
+          },
+          {
+            "id": "melvorD:Body_Rune",
+            "quantity": 5
+          }
+        ],
+        "targetModifiers": {
+          "increasedDamageTakenIfCursed": 5,
+          "decreasedChanceToAvoidSleep": 20,
+          "increasedDamageTakenWhenAsleep": 20
+        }
+      }
+    ],
     "combatPassives": [
       {
         "id": "Wardsave_10",
@@ -5206,6 +5233,216 @@
         "buyLimitOverrides": [],
         "showBuyLimit": false,
         "customName": "Mage Apprentice"
+      },
+      {
+        "id": "Arch_MagesHood_Shop",
+        "media": "assets/items/Arch-Mage'sHood.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Arch_MagesRobe",
+              "quantity": 1
+            }
+          ],
+          "modifiers": {}
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 2000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Arch_Mage_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Arch-Mage's Hood"
+      },
+      {
+        "id": "Arch_MagesRobe_Shop",
+        "media": "assets/items/Arch-Mage'sRobe.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Arch_MagesRobe",
+              "quantity": 1
+            }
+          ],
+          "modifiers": {}
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 2000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Arch_Mage_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Arch-Mage's Robe"
+      },
+      {
+        "id": "Calipers_Shop",
+        "media": "assets/items/Calipers.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Calipers",
+              "quantity": 1
+            }
+          ],
+          "modifiers": {}
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 2000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Journeyman_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Calipers"
+      },
+      {
+        "id": "WelkyndStone_Shop",
+        "media": "assets/items/WelkyndStone.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:WelkyndStone",
+              "quantity": 1
+            }
+          ],
+          "modifiers": {}
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 1000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Magician_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Welkynd Stone"
+      },
+      {
+        "id": "VarlaStone_Shop",
+        "media": "assets/items/VarlaStone.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:VarlaStone",
+              "quantity": 1
+            }
+          ],
+          "modifiers": {}
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 10000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Master_Wizard_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Varla Stone"
       }
     ],
     "shopDisplayOrder": [
@@ -5279,6 +5516,11 @@
           "tes:Master_Wizard_Mage_Rank",
           "tes:Arch_Mage_Mage_Rank",
           "tes:recommendation_letter_Shop",
+          "tes:Calipers_Shop",
+          "tes:WelkyndStone_Shop",
+          "tes:VarlaStone_Shop",
+          "tes:Arch_MagesHood_Shop",
+          "tes:Arch_MagesRobe_Shop",
           "tes:Summoning_Mage_Apprentice_Shop",
           "tes:AirRune",
           "tes:MindRune",
@@ -5376,6 +5618,211 @@
       }
     ],
     "items": [
+      {
+        "id": "BloodPotion",
+        "name": "Blood Potion",
+        "media": "assets/items/BloodPotion.png",
+        "category": "Herblore",
+        "type": "Potion",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 4500,
+        "itemType": "Potion",
+        "modifiers": {
+          "increasedLifesteal": 100
+        },
+        "charges": 25,
+        "tier": 3,
+        "action": "melvorD:Combat",
+        "consumesOn": [
+          {
+            "type": "PlayerAttack"
+          }
+        ]
+      },
+      {
+        "id": "Calipers",
+        "name": "Calipers",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Calipers.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 15,
+        "itemType": "Weapon",
+        "attackType": "magic",
+        "modifiers": {
+          "increasedFlatMinHit": 10
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2600
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 12
+          },
+          {
+            "key": "damageReduction",
+            "value": 3
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "equipRequirements": [
+          {
+            "purchaseID": "tes:Journeyman_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "WelkyndStone",
+        "name": "Welkynd Stone",
+        "category": "Combat",
+        "type": "Consumable",
+        "itemType": "Equipment",
+        "consumesOn": [
+          {
+            "type": "PlayerAttack"
+          }
+        ],
+        "media": "assets/items/WelkyndStone.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 150,
+        "modifiers": {
+          "increasedMagicDamageBonus": 10
+        },
+        "equipmentStats": [],
+        "tier": "none",
+        "validSlots": [
+          "Consumable"
+        ],
+        "equipRequirements": [
+          {
+            "purchaseID": "tes:Magician_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "VarlaStone",
+        "name": "VarlaStone",
+        "category": "Combat",
+        "type": "Consumable",
+        "itemType": "Equipment",
+        "consumesOn": [
+          {
+            "type": "PlayerAttack"
+          }
+        ],
+        "media": "assets/items/VarlaStone.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 5000,
+        "modifiers": {
+          "increasedMagicDamageBonus": 20
+        },
+        "equipmentStats": [],
+        "tier": "none",
+        "validSlots": [
+          "Consumable"
+        ],
+        "equipRequirements": [
+          {
+            "purchaseID": "tes:Master_Wizard_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Arch_MagesRobe",
+        "name": "Arch-Mage's Robe",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Arch-Mage'sRobe.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 115,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedMagicLifesteal": 50,
+          "increasedMagicMaxHit": 50,
+          "increasedRunePreservation": 20
+        },
+        "equipmentStats": [
+          {
+            "key": "magicAttackBonus",
+            "value": 30
+          },
+          {
+            "key": "damageReduction",
+            "value": 6
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Helmet"
+        ],
+        "equipRequirements": [
+          {
+            "purchaseID": "tes:Arch_Mage_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Arch_MagesHood",
+        "name": "Arch-Mage's Hood",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Arch-Mage'sHood.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 115,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedMagicLifesteal": 20,
+          "increasedMagicMaxHit": 20,
+          "increasedRunePreservation": 50
+        },
+        "equipmentStats": [
+          {
+            "key": "magicAttackBonus",
+            "value": 7
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Helmet"
+        ],
+        "equipRequirements": [
+          {
+            "purchaseID": "tes:Arch_Mage_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "occupiesSlots": []
+      },
       {
         "itemType": "Equipment",
         "id": "Summoning_Mage_Apprentice",
@@ -5641,7 +6088,7 @@
         "sellsFor": 115,
         "itemType": "Equipment",
         "modifiers": {
-          "increasedFlatDamageWhileTargetHasMaxHP": 30
+          "increasedFlatDamageWhileTargetHasMaxHP": 10
         },
         "customDescription": "Deal a flat damage increase of 30 while the target is fully healed.",
         "equipmentStats": [
@@ -5683,7 +6130,7 @@
         "sellsFor": 115,
         "itemType": "Equipment",
         "modifiers": {
-          "increasedFlatDamageWhileTargetHasMaxHP": 60
+          "increasedFlatDamageWhileTargetHasMaxHP": 30
         },
         "customDescription": "Deal a flat damage increase of 60 while the target is fully healed.",
         "equipmentStats": [
@@ -5725,7 +6172,7 @@
         "sellsFor": 115,
         "itemType": "Equipment",
         "modifiers": {
-          "increasedFlatDamageWhileTargetHasMaxHP": 60,
+          "increasedFlatDamageWhileTargetHasMaxHP": 30,
           "increasedPercDamageWhileTargetHasMaxHP": 60
         },
         "customDescription": "Increase damage while target is fully healed by 60% and deal a flat damage increase of 60 while the target is fully healed.",
@@ -5772,7 +6219,7 @@
         "sellsFor": 115,
         "itemType": "Equipment",
         "modifiers": {
-          "increasedFlatDamageWhileTargetHasMaxHP": 30,
+          "increasedFlatDamageWhileTargetHasMaxHP": 15,
           "increasedPercDamageWhileTargetHasMaxHP": 30
         },
         "customDescription": "Increase damage while target is fully healed by 30% and deal a flat damage increase of 30 while the target is fully healed.",
@@ -6201,7 +6648,7 @@
         "sellsFor": 315,
         "itemType": "Weapon",
         "modifiers": {
-          "increasedFlatDamageWhileTargetHasMaxHP": 100,
+          "increasedFlatDamageWhileTargetHasMaxHP": 50,
           "increasedPercDamageWhileTargetHasMaxHP": 40
         },
         "customDescription": "Increase damage while target is fully healed by 100% and deal a flat damage increase of 40 while the target is fully healed.",
@@ -8994,7 +9441,1678 @@
         }
       }
     ],
-    "monsters": [
+    "monsters": [  
+      {
+        "id": "Nereid",
+        "name": "Nereid",
+        "media": "assets/monsters/Nereid.png",
+        "levels": {
+          "Attack": 120,
+          "Defence": 120,
+          "Hitpoints": 200,
+          "Magic": 200,
+          "Ranged": 120,
+          "Strength": 120
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2400
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "melvorF:IcyChill",
+          "melvorF:FrozenSpears"
+        ],
+        "passives": [
+          
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Feathers",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Raw_Shrimp",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Raw_Sardine",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Raw_Herring",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 1,
+          "max": 410
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindBolt"
+      },
+      {
+        "id": "Spriggan",
+        "name": "Spriggan",
+        "media": "assets/monsters/Spriggan.png",
+        "levels": {
+          "Attack": 480,
+          "Defence": 480,
+          "Hitpoints": 600,
+          "Magic": 480,
+          "Ranged": 480,
+          "Strength": 480
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2400
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "melvorF:GraspingRoots"
+        ],
+        "passives": [
+          
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Feathers",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Raw_Shrimp",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Raw_Sardine",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Raw_Herring",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 1,
+          "max": 410
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindBolt"
+      },
+      {
+        "id": "Echatere",
+        "name": "Echatere",
+        "media": "assets/monsters/Echatere.png",
+        "levels": {
+          "Attack": 75,
+          "Defence": 75,
+          "Hitpoints": 90,
+          "Magic": 75,
+          "Ranged": 75,
+          "Strength": 75
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2400
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+        ],
+        "passives": [
+          
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Feathers",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Raw_Shrimp",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Raw_Sardine",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Raw_Herring",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 1,
+          "max": 170
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindBolt"
+      },      
+      {
+        "id": "Riekr",
+        "name": "Riekr",
+        "media": "assets/monsters/Riekr.png",
+        "levels": {
+          "Attack": 200,
+          "Defence": 200,
+          "Hitpoints": 230,
+          "Magic": 1,
+          "Ranged": 200,
+          "Strength": 250
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2400
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "melvorD:PebbleShot"
+        ],
+        "passives": [
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Feathers",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Raw_Shrimp",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Raw_Sardine",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Raw_Herring",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 1,
+          "max": 170
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindBolt"
+      },
+      {
+        "id": "Heron",
+        "name": "Heron",
+        "media": "assets/monsters/Heron.png",
+        "levels": {
+          "Attack": 5,
+          "Defence": 5,
+          "Hitpoints": 5,
+          "Magic": 1,
+          "Ranged": 1,
+          "Strength": 5
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+        ],
+        "passives": [
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Feathers",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Raw_Shrimp",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Raw_Sardine",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Raw_Herring",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 1,
+          "max": 10
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindBolt"
+      },
+      {
+        "id": "Assassin_Beetle",
+        "name": "Assassin Beetle",
+        "media": "assets/monsters/Assassin_Beetle.png",
+        "levels": {
+          "Attack": 25,
+          "Defence": 25,
+          "Hitpoints": 5,
+          "Magic": 1,
+          "Ranged": 1,
+          "Strength": 25
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+        ],
+        "passives": [
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Potato_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Onion_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Cabbage_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Tomato_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 10,
+          "max": 15
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindBolt"
+      },
+      {
+        "id": "Giant_Scorpion",
+        "name": "Giant Scorpion",
+        "media": "assets/monsters/Giant_Scorpion.png",
+        "levels": {
+          "Attack": 50,
+          "Defence": 95,
+          "Hitpoints": 7,
+          "Magic": 30,
+          "Ranged": 80,
+          "Strength": 120
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "tes:Claw"
+        ],
+        "passives": [
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Snape_Grass",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Snape_Grass_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Strawberries",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Strawberry_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 10,
+          "max": 50
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindBolt"
+      },
+      {
+        "id": "Shrieking_Harpy",
+        "name": "Shrieking Harpy",
+        "media": "assets/monsters/Shrieking_Harpy.png",
+        "levels": {
+          "Attack": 1,
+          "Defence": 25,
+          "Hitpoints": 10,
+          "Magic": 1,
+          "Ranged": 20,
+          "Strength": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "ranged",
+        "specialAttacks": [
+        ],
+        "passives": [
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Potato_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Onion_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Cabbage_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Tomato_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 10,
+          "max": 15
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindBolt"
+      },
+      {
+        "id": "Lamia",
+        "name": "Lamia",
+        "media": "assets/monsters/Lamia.png",
+        "levels": {
+          "Attack": 75,
+          "Defence": 95,
+          "Hitpoints": 6,
+          "Magic": 84,
+          "Ranged": 85,
+          "Strength": 75
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+        ],
+        "passives": [
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Potato_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Onion_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Cabbage_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Tomato_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 10,
+          "max": 15
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindBolt"
+      },
+      {
+        "id": "Welwa",
+        "name": "Welwa",
+        "media": "assets/monsters/Welwa.png",
+        "levels": {
+          "Attack": 5,
+          "Defence": 5,
+          "Hitpoints": 5,
+          "Magic": 5,
+          "Ranged": 5,
+          "Strength": 5
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+        ],
+        "passives": [
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Potato_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Onion_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Cabbage_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Tomato_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 10,
+          "max": 15
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindBolt"
+      },
+      {
+        "id": "Duneripper",
+        "name": "Duneripper",
+        "media": "assets/monsters/Duneripper.png",
+        "levels": {
+          "Attack": 10,
+          "Defence": 45,
+          "Hitpoints": 15,
+          "Magic": 5,
+          "Ranged": 5,
+          "Strength": 10
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+        ],
+        "passives": [
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Potato_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Onion_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Cabbage_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Tomato_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 10,
+          "max": 15
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindBolt"
+      },
+      {
+        "id": "Den_Mother",
+        "name": "Den Mother",
+        "media": "assets/monsters/Den_Mother.png",
+        "levels": {
+          "Attack": 60,
+          "Defence": 65,
+          "Hitpoints": 65,
+          "Magic": 5,
+          "Ranged": 5,
+          "Strength": 60
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+        ],
+        "passives": [
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Potato_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Onion_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Cabbage_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Tomato_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 10,
+          "max": 15
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindBolt"
+      },
+      {
+        "id": "Blue_Oasis_Dragon_Frog",
+        "name": "Blue Oasis Dragon Frog",
+        "media": "assets/monsters/Blue_Oasis_Dragon_Frog.png",
+        "levels": {
+          "Attack": 60,
+          "Defence": 200,
+          "Hitpoints": 125,
+          "Magic": 105,
+          "Ranged": 85,
+          "Strength": 60
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "melvorD:LesserDragonbreath"
+        ],
+        "passives": [
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Potato_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Onion_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Cabbage_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Tomato_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 10,
+          "max": 15
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindBolt"
+      },
+      {
+        "id": "Infernal_Sep_Adder",
+        "name": "Infernal Sep Adder",
+        "media": "assets/monsters/Infernal_Sep_Adder.png",
+        "levels": {
+          "Attack": 60,
+          "Defence": 70,
+          "Hitpoints": 70,
+          "Magic": 70,
+          "Ranged": 85,
+          "Strength": 60
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2200
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "ranged",
+        "specialAttacks": [
+          "melvorF:PoisonedHit"
+        ],
+        "passives": [
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Potato_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Onion_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Cabbage_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Tomato_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 10,
+          "max": 15
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindBolt"
+      },
+      {
+        "id": "Gravelclaw",
+        "name": "Gravelclaw",
+        "media": "assets/monsters/Gravelclaw.png",
+        "levels": {
+          "Attack": 6,
+          "Defence": 5,
+          "Hitpoints": 6,
+          "Magic": 1,
+          "Ranged": 1,
+          "Strength": 6
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2600
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+        ],
+        "passives": [
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Potato_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Onion_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Cabbage_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Tomato_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 10,
+          "max": 15
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindBolt"
+      },
+      {
+        "id": "Guzzard",
+        "name": "Guzzard",
+        "media": "assets/monsters/Guzzard.png",
+        "levels": {
+          "Attack": 40,
+          "Defence": 45,
+          "Hitpoints": 12,
+          "Magic": 1,
+          "Ranged": 1,
+          "Strength": 46
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2100
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+        ],
+        "passives": [
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Potato_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Onion_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Cabbage_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Tomato_Seed",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 10,
+          "max": 15
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindBolt"
+      },
+      {
+        "id": "Elsweyr_Dragon",
+        "name": "Elsweyr Dragon",
+        "media": "assets/Preview.png",
+        "levels": {
+          "Attack": 600,
+          "Defence": 400,
+          "Hitpoints": 600,
+          "Magic": 400,
+          "Ranged": 300,
+          "Strength": 600
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+        ],
+        "passives": [
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Red_Dragonhide",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 100
+          }
+        ],
+        "gpDrops": {
+          "min": 10,
+          "max": 1500
+        },
+        "bones": {
+          "itemID": "melvorD:Dragon_Bones",
+          "quantity": 10
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindBolt"
+      },
+      {
+        "id": "Voriplasm",
+        "name": "Voriplasm",
+        "media": "assets/monsters/Voriplasm.png",
+        "levels": {
+          "Attack": 1,
+          "Defence": 5,
+          "Hitpoints": 10,
+          "Magic": 5,
+          "Ranged": 1,
+          "Strength": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3000
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+        ],
+        "passives": [
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Feathers",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Raw_Beef",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Leather",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Iron_Sword",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Iron_Boots",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Iron_Dagger",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Iron_Scimitar",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorF:Goo",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 10,
+          "max": 50
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindBolt"
+      },
+      {
+        "id": "Wamasu",
+        "name": "Wamasu",
+        "media": "assets/monsters/Wamasu.png",
+        "levels": {
+          "Attack": 10,
+          "Defence": 5,
+          "Hitpoints": 30,
+          "Magic": 5,
+          "Ranged": 1,
+          "Strength": 10
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2800
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+        ],
+        "passives": [
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Feathers",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Raw_Beef",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Leather",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Iron_Sword",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Iron_Boots",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Iron_Dagger",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Iron_Scimitar",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorF:Goo",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 10,
+          "max": 50
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindBolt"
+      },
+      {
+        "id": "Death_Hopper",
+        "name": "Death Hopper",
+        "media": "assets/monsters/Death_Hopper.png",
+        "levels": {
+          "Attack": 30,
+          "Defence": 25,
+          "Hitpoints": 90,
+          "Magic": 5,
+          "Ranged": 1,
+          "Strength": 30
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2800
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+        ],
+        "passives": [
+        ],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Feathers",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Raw_Beef",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Leather",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Iron_Sword",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Iron_Boots",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Iron_Dagger",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Iron_Scimitar",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 100
+          }
+        ],
+        "gpDrops": {
+          "min": 10,
+          "max": 50
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindBolt"
+      },
+
+      {
+        "id": "Umaril",
+        "name": "Umaril the Unfeathered",
+        "media": "assets/monsters/Umaril.png",
+        "levels": {
+          "Attack": 690,
+          "Defence": 400,
+          "Hitpoints": 690,
+          "Magic": 540,
+          "Ranged": 500,
+          "Strength": 669
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3200
+          },
+          {
+            "key": "damageReduction",
+            "value": 25
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "melvorF:Confusion",
+          "melvorF:FrigidWaves"
+        ],
+        "passives": [
+          "melvorF:Purity"
+        ],
+        "lootChance": 1,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Feathers",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 1
+          }
+        ],
+        "gpDrops": {
+          "min": 10,
+          "max": 50
+        },
+        "bones": {
+          "itemID": "melvorD:Magic_Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": true,
+        "selectedSpell": "melvorD:EarthSurge"
+      },
+      {
+        "id": "Laloriaran",
+        "name": "King Laloriaran Dynar",
+        "media": "assets/monsters/Laloriaran.png",
+        "levels": {
+          "Attack": 690,
+          "Defence": 400,
+          "Hitpoints": 690,
+          "Magic": 540,
+          "Ranged": 500,
+          "Strength": 669
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3200
+          },
+          {
+            "key": "damageReduction",
+            "value": 25
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "melee",
+        "specialAttacks": [
+          "melvorF:Desecration",
+          "melvorF:Ram"
+        ],
+        "passives": [
+          "melvorF:Purity"
+        ],
+        "lootChance": 1,
+        "lootTable": [
+          {
+            "itemID": "melvorF:Iron_Crossbow",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 1
+          }
+        ],
+        "gpDrops": {
+          "min": 10,
+          "max": 50
+        },
+        "bones": {
+          "itemID": "melvorD:Magic_Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": true,
+        "selectedSpell": "melvorD:EarthSurge"
+      },
+      {
+        "id": "Lich",
+        "name": "Lich",
+        "media": "assets/monsters/Lich.png",
+        "levels": {
+          "Attack": 1,
+          "Defence": 700,
+          "Hitpoints": 700,
+          "Magic": 600,
+          "Ranged": 1,
+          "Strength": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2600
+          },
+          {
+            "key": "damageReduction",
+            "value": 40
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "melvorF:CurseofFear"
+        ],
+        "passives": [
+          "melvorF:Rebirth",
+          "melvorF:CursedRobes"
+        ],
+        "lootChance": 1,
+        "lootTable": [
+          {
+            "itemID": "melvorF:Iron_Crossbow",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 1
+          }
+        ],
+        "gpDrops": {
+          "min": 10,
+          "max": 50
+        },
+        "bones": {
+          "itemID": "melvorD:Magic_Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:EarthSurge"
+      },
+      {
+        "id": "Necromancer",
+        "name": "Necromancer",
+        "media": "assets/monsters/Necromancer.png",
+        "levels": {
+          "Attack": 1,
+          "Defence": 500,
+          "Hitpoints": 650,
+          "Magic": 700,
+          "Ranged": 1,
+          "Strength": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2600
+          },
+          {
+            "key": "damageReduction",
+            "value": 5
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "melvorF:CurseofFear"
+        ],
+        "passives": [
+          "melvorF:CursedRobes"
+        ],
+        "lootChance": 1,
+        "lootTable": [
+          {
+            "itemID": "tes:Necromancer_Robes_Novice",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 1
+          }
+        ],
+        "gpDrops": {
+          "min": 10,
+          "max": 50
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:EarthSurge"
+      },
+      {
+        "id": "Zombie",
+        "name": "Zombie",
+        "media": "assets/monsters/Zombie.png",
+        "levels": {
+          "Attack": 650,
+          "Defence": 468,
+          "Hitpoints": 690,
+          "Magic": 1,
+          "Ranged": 1,
+          "Strength": 650
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3000
+          },
+          {
+            "key": "damageReduction",
+            "value": 25
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+
+        ],
+        "passives": [
+          "melvorF:EventPassive1"
+        ],
+        "lootChance": 1,
+        "lootTable": [
+
+        ],
+        "gpDrops": {
+          "min": 10,
+          "max": 50
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:EarthSurge"
+      },
+
+      {
+        "id": "Harkon2",
+        "name": "Harkon",
+        "media": "assets/monsters/Harkon2.png",
+        "levels": {
+          "Attack": 305,
+          "Defence": 120,
+          "Hitpoints": 490,
+          "Magic": 1,
+          "Ranged": 1,
+          "Strength": 305
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2400
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "melvorF:TripleSwipe"
+        ],
+        "passives": [
+          "melvorF:Purity",
+          "melvorF:EventPassive4",
+          "melvorTotH:Intimidation10"
+        ],
+        "lootChance": 1,
+        "lootTable": [
+          {
+            "itemID": "tes:Cruelty_Heart",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 1
+          }
+        ],
+        "gpDrops": {
+          "min": 10,
+          "max": 50
+        },
+        "bones": {
+          "itemID": "melvorD:Magic_Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": true,
+        "selectedSpell": "melvorD:EarthSurge"
+      },
+      {
+        "id": "Harkon",
+        "name": "Harkon",
+        "media": "assets/monsters/Harkon.png",
+        "levels": {
+          "Attack": 1,
+          "Defence": 160,
+          "Hitpoints": 490,
+          "Magic": 305,
+          "Ranged": 1,
+          "Strength": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2600
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "melvorF:CurseofFear"
+        ],
+        "passives": [
+          "melvorF:Purity",
+          "melvorF:EventPassive3",
+          "melvorTotH:Intimidation7"
+        ],
+        "lootChance": 1,
+        "lootTable": [
+          {
+            "itemID": "tes:Cruelty_Heart",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 1
+          }
+        ],
+        "gpDrops": {
+          "min": 10,
+          "max": 50
+        },
+        "bones": {
+          "itemID": "melvorD:Magic_Bones",
+          "quantity": 1
+        },
+        "canSlayer": false,
+        "isBoss": true,
+        "selectedSpell": "melvorD:EarthSurge"
+      },
       {
         "id": "Ungolim",
         "name": "Ungolim",
@@ -9666,6 +11784,10 @@
           {
             "key": "attackSpeed",
             "value": 2600
+          },
+          {
+            "key":"damageReduction",
+            "value": 20
           }
         ],
         "ignoreCompletion": true,
@@ -9706,6 +11828,10 @@
           {
             "key": "attackSpeed",
             "value": 2600
+          },
+          {
+            "key":"damageReduction",
+            "value": 10
           }
         ],
         "ignoreCompletion": true,
@@ -9750,7 +11876,7 @@
         "ignoreCompletion": true,
         "attackType": "melee",
         "specialAttacks": [
-          "tes:Space_Program"
+          "tes:Stop_Right_There"
         ],
         "passives": [],
         "lootChance": 100,
@@ -11762,7 +13888,212 @@
         "selectedSpell": "melvorD:FireSurge"
       }
     ],
+    "ancientSpells": [
+      {
+        "id": "Finger_of_the_Mountain",
+        "name": "Finger of the Mountain",
+        "level": 60,
+        "media": "assets/items/WelkyndStone.png",
+        "requiredItemID": "tes:WelkyndStone",
+        "requirements": [
+          {
+            "purchaseID": "tes:Magician_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "runesRequired": [
+          {
+            "id": "melvorD:Earth_Rune",
+            "quantity": 5
+          }
+        ],
+        "specialAttackID": "tes:Finger_of_the_Mountain_Spell"
+      },
+      {
+        "id": "Wizards_Fury",
+        "name": "Wizard's Fury",
+        "level": 90,
+        "media": "assets/items/VarlaStone.png",
+        "requiredItemID": "tes:VarlaStone",
+        "requirements": [
+          {
+            "purchaseID": "tes:Master_Wizard_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "runesRequired": [
+          {
+            "id": "melvorD:Earth_Rune",
+            "quantity": 1
+          },
+          {
+            "id": "melvorD:Water_Rune",
+            "quantity": 1
+          },
+          {
+            "id": "melvorD:Fire_Rune",
+            "quantity": 1
+          }
+        ],
+        "specialAttackID": "tes:Wizards_Fury_Spell"
+      }
+    ],
     "attacks": [
+      {
+        "id": "Claw",
+        "name": "Claw",
+        "description": "${attackDamageMaxValue0} damage and causes stun.",
+        "defaultChance": 20,
+        "damage": [
+          {
+            "damageType": "Custom",
+            "character": "Attacker",
+            "maxRoll": "Fixed",
+            "maxPercent": 5,
+            "roll": false
+          }
+        ],
+        "prehitEffects": [],
+        "onhitEffects": [
+          {
+            "effectType": "Custom",
+            "type": "Stun",
+            "turns": 1,
+            "chance": 100,
+            "flavour": "Stun"
+          }
+        ],
+        "cantMiss": false,
+        "attackCount": 1,
+        "attackInterval": 3000,
+        "lifesteal": 0
+      },
+      {
+        "id": "Stop_Right_There",
+        "name": "Stop Right There, Criminal Scum",
+        "description": "${attackDamageMaxValue0} damage and causes stun and 50% slow.",
+        "defaultChance": 20,
+        "damage": [
+          {
+            "damageType": "Custom",
+            "character": "Attacker",
+            "maxRoll": "Fixed",
+            "maxPercent": 20,
+            "roll": false
+          }
+        ],
+        "prehitEffects": [],
+        "onhitEffects": [
+          {
+            "effectType": "Custom",
+            "type": "Stun",
+            "turns": 1,
+            "chance": 100,
+            "flavour": "Stun"
+          },
+          {
+            "effectType": "Slow",
+            "turns": 5,
+            "magnitude": 50
+          }
+        ],
+        "cantMiss": false,
+        "attackCount": 1,
+        "attackInterval": 3000,
+        "lifesteal": 0
+      },
+      {
+        "id": "Wizards_Fury_Spell",
+        "name": "Wizard's Fury",
+        "description": "${attackDamageMaxValue0} damage and causes the target to attack 20% slower and burn.",
+        "defaultChance": 100,
+        "damage": [
+          {
+            "damageType": "Custom",
+            "character": "Attacker",
+            "maxRoll": "Fixed",
+            "maxPercent": 100,
+            "roll": false
+          }
+        ],
+        "prehitEffects": [
+          {
+            "character": "Attacker",
+            "modifiers": {
+              "increasedBurnDOTDamage": 100
+            },
+            "type": "Modifier",
+            "turns": 1,
+            "stacksToAdd": 1,
+            "countsOn": "Target",
+            "maxStacks": 1,
+            "name": "Wizard's Fury",
+            "effectType": "Custom",
+            "media": "assets/items/VarlaStone.png"
+          }
+        ],
+        "usesRunesPerProc": true,
+        "onhitEffects": [
+          {
+            "effectType": "Burn",
+            "chance": 100
+          },
+          {
+            "effectType": "Slow",
+            "turns": 1,
+            "magnitude": 20
+          }
+        ],
+        "cantMiss": false,
+        "attackCount": 1,
+        "attackInterval": 3000,
+        "lifesteal": 0,
+        "attackTypes": [
+          "magic"
+        ]
+      },
+      {
+        "id": "Finger_of_the_Mountain_Spell",
+        "name": "Finger of the Mountain",
+        "description": "${attackDamageMaxValue0} damage with a 50% boost to crit rate.",
+        "defaultChance": 100,
+        "damage": [
+          {
+            "damageType": "Custom",
+            "character": "Attacker",
+            "maxRoll": "Fixed",
+            "maxPercent": 20,
+            "roll": false
+          }
+        ],
+        "prehitEffects": [
+          {
+            "character": "Attacker",
+            "modifiers": {
+              "increasedMagicCritChance": 50
+            },
+            "type": "Modifier",
+            "turns": 1,
+            "stacksToAdd": 1,
+            "countsOn": "Attacker",
+            "maxStacks": 1,
+            "name": "Finger of the Mountain",
+            "effectType": "Custom",
+            "media": "assets/items/WelkyndStone.png"
+          }
+        ],
+        "usesRunesPerProc": true,
+        "onhitEffects": [],
+        "cantMiss": false,
+        "attackCount": 1,
+        "attackInterval": 3000,
+        "lifesteal": 0,
+        "attackTypes": [
+          "magic"
+        ]
+      },
       {
         "id": "Space_Program",
         "name": "Space Program",
@@ -12274,6 +14605,32 @@
         "activeInRaid": false,
         "hint": "Dark Brotherhood",
         "customDescription": "Why don't you hold onto Shadowmere a while longer? He's a fine steed, and hasn't been ridden nearly as much as he should lately."
+      },
+      {
+        "id": "CuSith",
+        "name": "CuSith",
+        "media": "assets/pets/CuSith.png",
+        "scaleChanceWithMasteryPool": false,
+        "ignoreCompletion": true,
+        "modifiers": {
+          "increasedChanceForDiamondFiremaking": 10
+        },
+        "activeInRaid": false,
+        "hint": "Volkihar",
+        "customDescription": "CuSith the Death Hound."
+      },
+      {
+        "id": "Undead_Ayleid",
+        "name": "Undead Ayleid",
+        "media": "assets/pets/undead_Ayleid.png",
+        "scaleChanceWithMasteryPool": false,
+        "ignoreCompletion": true,
+        "modifiers": {
+          "increasedMinNatureSpellDamageBasedOnMaxHit": 2
+        },
+        "activeInRaid": false,
+        "hint": "Ayleid Ruins",
+        "customDescription": "Undead Ayleid smells of something other then flowers."
       }
     ],
     "combatAreas": [
@@ -12318,6 +14675,106 @@
           4
         ],
         "entryRequirements": []
+      },
+      {
+        "id": "Black_Marsh",
+        "name": "Black Marsh",
+        "media": "assets/locations/Black_Marsh.png",
+        "monsterIDs": [
+          "tes:Voriplasm",
+          "tes:Wamasu",
+          "tes:Death_Hopper"
+        ],
+        "difficulty": [
+          0
+        ],
+        "entryRequirements": []
+      },
+      {
+        "id": "Elsweyr",
+        "name": "Elsweyr",
+        "media": "assets/locations/Elsweyr.png",
+        "monsterIDs": [
+          "tes:Elsweyr_Dragon"
+        ],
+        "difficulty": [
+          0
+        ],
+        "entryRequirements": []
+      },
+      {
+        "id": "Hammerfell",
+        "name": "Hammerfell",
+        "media": "assets/locations/Hammerfell.png",
+        "monsterIDs": [
+          "tes:Heron",
+          "tes:Assassin_Beetle",
+          "tes:Giant_Scorpion",
+          "tes:Shrieking_Harpy",
+          "tes:Lamia",
+          "tes:Welwa",
+          "tes:Duneripper",
+          "tes:Den_Mother",
+          "tes:Blue_Oasis_Dragon_Frog",
+          "tes:Infernal_Sep_Adder",
+          "tes:Gravelclaw",
+          "tes:Guzzard"
+        ],
+        "difficulty": [
+          0
+        ],
+        "entryRequirements": []
+      },
+      {
+        "id": "High_Rock",
+        "name": "High Rock",
+        "media": "assets/locations/High_Rock.png",
+        "monsterIDs": [
+          "tes:Nereid",
+          "tes:Spriggan",
+          "tes:Echatere",
+          "tes:Riekr"
+        ],
+        "difficulty": [
+          0
+        ],
+        "entryRequirements": []
+      },
+      {
+        "id": "Summerset_Isle",
+        "name": "Summerset Isle",
+        "media": "assets/locations/Summerset_Isle.png",
+        "monsterIDs": [
+          "melvorD:Chicken"
+        ],
+        "difficulty": [
+          0
+        ],
+        "entryRequirements": []
+      },
+      {
+        "id": "Valenwood",
+        "name": "Valenwood",
+        "media": "assets/locations/Valenwood.png",
+        "monsterIDs": [
+          "melvorD:Chicken"
+        ],
+        "difficulty": [
+          0
+        ],
+        "entryRequirements": []
+      },
+      {
+        "id": "Morrowind",
+        "name": "Morrowind",
+        "media": "assets/locations/Morrowind.png",
+        "monsterIDs": [
+          "melvorD:Chicken"
+        ],
+        "difficulty": [
+          0
+        ],
+        "entryRequirements": []
       }
     ],
     "combatAreaDisplayOrder": [
@@ -12326,7 +14783,14 @@
         "afterID": "melvorD:Goblin_Village",
         "ids": [
           "tes:Skyrim",
-          "tes:Cyrodiil"
+          "tes:Cyrodiil",
+          "tes:Valenwood",
+          "tes:Summerset_Isle",
+          "tes:High_Rock",
+          "tes:Hammerfell",
+          "tes:Elsweyr",
+          "tes:Black_Marsh",
+          "tes:Morrowind"
         ]
       }
     ],
@@ -12407,6 +14871,65 @@
         "pauseOnBosses": false
       },
       {
+        "id": "Ayleid_Ruins",
+        "name": "Ayleid Ruins",
+        "media": "assets/locations/Ayleid.png",
+        "monsterIDs": [
+          "tes:Zombie",
+          "tes:Zombie",
+          "tes:Zombie",
+          "tes:Zombie",
+          "tes:Necromancer",
+          "tes:Necromancer",
+          "tes:Lich",
+          "melvorF:CursedLich",
+          "tes:Laloriaran",
+          "tes:Umaril" 
+        ],
+        "difficulty": [
+          1
+        ],
+        "entryRequirements": [],
+        "rewardItemIDs": [
+          "tes:WelkyndStone"
+        ],
+        "dropBones": false,
+        "pet": {
+          "petID": "tes:Undead_Ayleid",
+          "weight": 300
+        },
+        "fixedPetClears": false,
+        "pauseOnBosses": false
+      },
+      {
+        "id": "Volkihar",
+        "name": "Volkihar",
+        "media": "assets/locations/volkihar.png",
+        "monsterIDs": [
+          "melvorF:Vampire",
+          "melvorF:Vampire",
+          "melvorF:Vampire",
+          "melvorF:ElderVampire",
+          "melvorF:ElderVampire",
+          "tes:Harkon",
+          "tes:Harkon2"
+        ],
+        "difficulty": [
+          1
+        ],
+        "entryRequirements": [],
+        "rewardItemIDs": [
+          "tes:BloodPotion"
+        ],
+        "dropBones": false,
+        "pet": {
+          "petID": "tes:CuSith",
+          "weight": 200
+        },
+        "fixedPetClears": false,
+        "pauseOnBosses": false
+      },
+      {
         "id": "Dragon_Break",
         "name": "Dragon Break",
         "media": "assets/locations/Dragon_Break.png",
@@ -12472,6 +14995,14 @@
         "afterID": "melvorD:Bandit_Base",
         "ids": [
           "tes:Arena"
+        ]
+      },
+      {
+        "insertAt": "After",
+        "afterID": "melvorF:Dragons_Den",
+        "ids": [
+          "tes:Volkihar",
+          "tes:Ayleid_Ruins"
         ]
       },
       {
@@ -13545,6 +16076,30 @@
               "scCost": 0
             },
             {
+              "id": "WelkyndStone",
+              "baseExperience": 300,
+              "baseQuantity": 1,
+              "categoryID": "tes:Alchemy",
+              "gpCost": 1000,
+              "itemCosts": [
+                {
+                  "id": "tes:Lockpick",
+                  "quantity": 1
+                },
+                {
+                  "id": "melvorD:Topaz",
+                  "quantity": 50
+                },
+                {
+                  "id": "melvorD:Light_Rune",
+                  "quantity": 10
+                }
+              ],
+              "level": 60,
+              "productID": "tes:WelkyndStone",
+              "scCost": 0
+            },
+            {
               "id": "Apprentice_Alchemy_Apparatus",
               "baseExperience": 100,
               "baseQuantity": 1,
@@ -13641,6 +16196,30 @@
               "scCost": 0
             },
             {
+              "id": "VarlaStone",
+              "baseExperience": 500,
+              "baseQuantity": 1,
+              "categoryID": "tes:Alchemy",
+              "gpCost": 1000,
+              "itemCosts": [
+                {
+                  "id": "tes:Lockpick",
+                  "quantity": 1
+                },
+                {
+                  "id": "melvorD:Emerald",
+                  "quantity": 50
+                },
+                {
+                  "id": "melvorD:Light_Rune",
+                  "quantity": 100
+                }
+              ],
+              "level": 60,
+              "productID": "tes:VarlaStone",
+              "scCost": 0
+            },
+            {
               "id": "Master_Alchemy_Apparatus",
               "baseExperience": 100,
               "baseQuantity": 1,
@@ -13671,6 +16250,42 @@
               "level": 99,
               "productID": "tes:Master_Alchemy_Apparatus",
               "scCost": 0
+            },
+            {
+              "id": "Iron_to_Gold",
+              "baseExperience": 1000,
+              "baseQuantity": 10,
+              "categoryID": "tes:Alchemy",
+              "gpCost": 0,
+              "itemCosts": [
+                {
+                  "id": "tes:Alembic",
+                  "quantity": 1
+                },
+                {
+                  "id": "tes:Calcinator",
+                  "quantity": 1
+                },
+                {
+                  "id": "tes:Retort",
+                  "quantity": 1
+                },
+                {
+                  "id": "tes:MortarAndPestle",
+                  "quantity": 1
+                },
+                {
+                  "id": "melvorF:Lava_Rune",
+                  "quantity": 1
+                },
+                {
+                  "id": "melvorD:Iron_Ore",
+                  "quantity": 1
+                }
+              ],
+              "level": 99,
+              "productID": "melvorD:Gold_Ore",
+              "scCost": 0
             }
           ]
         }
@@ -13680,25 +16295,33 @@
         "data": {
           "recipes": [
             {
-              "productID":"tes:Summoning_Mage_Apprentice",
+              "productID": "tes:Summoning_Mage_Apprentice",
               "id": "Mage_Apprentice",
               "baseExperience": 40,
               "baseQuantity": 25,
-              "categoryID":"melvorD:TabletsFamiliars",
+              "categoryID": "melvorD:TabletsFamiliars",
               "gpCost": 2000,
-              "itemCosts": [{
-                "id":"melvorF:Summoning_Shard_Blue",
-                "quantity": 50
-              },
-              {
-                "id": "melvorF:Summoning_Shard_Silver",
-                "quantity": 8
-            }],
+              "itemCosts": [
+                {
+                  "id": "melvorF:Summoning_Shard_Blue",
+                  "quantity": 50
+                },
+                {
+                  "id": "melvorF:Summoning_Shard_Silver",
+                  "quantity": 8
+                }
+              ],
               "level": 99,
               "markMedia": "assets/summoning/Mage_Apprentice.png",
-              "nonShardItemCosts": ["melvorD:Blue_Wizard_Robes", "melvorD:Blue_Wizard_Hat", "melvorD:Blue_Wizard_Boots"],
+              "nonShardItemCosts": [
+                "melvorD:Blue_Wizard_Robes",
+                "melvorD:Blue_Wizard_Hat",
+                "melvorD:Blue_Wizard_Boots"
+              ],
               "scCost": 0,
-              "skillIDs": ["melvorD:Magic"],
+              "skillIDs": [
+                "melvorD:Magic"
+              ],
               "tier": 3
             }
           ],
@@ -13742,10 +16365,100 @@
                   "quantity": 1
                 }
               ],
+              "fixedItemCosts": [
+                {
+                  "id": "melvorD:Leaping_Trout",
+                  "quantity": 1
+                }
+              ],
               "produces": "melvorD:Raw_Trout",
               "specialCost": {
                 "quantity": 1,
-                "type": "AnyNormalFood"
+                "type": "None"
+              },
+              "productionRatio": 1
+            },
+            {
+              "id": "Feather",
+              "level": 30,
+              "name": "Feather",
+              "media": "assets/icons/mages/Feather.png",
+              "baseExperience": 22,
+              "description": "Cast feather on a chicken to get feathers.",
+              "fixedItemCosts": [
+                {
+                  "id": "melvorD:Raw_Chicken",
+                  "quantity": 1
+                }
+              ],
+              "runesRequired": [
+                {
+                  "id": "melvorD:Air_Rune",
+                  "quantity": 1
+                },
+                {
+                  "id": "melvorD:Body_Rune",
+                  "quantity": 1
+                }
+              ],
+              "produces": "melvorD:Feathers",
+              "specialCost": {
+                "quantity": 1,
+                "type": "None"
+              },
+              "productionRatio": 1000
+            },
+            {
+              "id": "Open",
+              "level": 52,
+              "name": "Open",
+              "media": "assets/icons/mages/Open.png",
+              "baseExperience": 62,
+              "description": "Cast Open on an Elite Chest to get Crate of Basic Supplies.",
+              "fixedItemCosts": [
+                {
+                  "id": "melvorD:Elite_Chest",
+                  "quantity": 1
+                }
+              ],
+              "runesRequired": [
+                {
+                  "id": "melvorD:Earth_Rune",
+                  "quantity": 1
+                },
+                {
+                  "id": "melvorF:Spirit_Rune",
+                  "quantity": 1
+                }
+              ],
+              "produces": "melvorF:Crate_Of_Basic_Supplies",
+              "specialCost": {
+                "quantity": 1,
+                "type": "None"
+              },
+              "productionRatio": 1
+            },
+            {
+              "id": "Water_Breathing",
+              "level": 92,
+              "name": "Water Breathing",
+              "media": "assets/icons/mages/Water_Breathing.png",
+              "baseExperience": 72,
+              "description": "Dive into the ocean to fetch a treasure chest.",
+              "runesRequired": [
+                {
+                  "id": "melvorD:Air_Rune",
+                  "quantity": 100
+                },
+                {
+                  "id": "melvorF:Spirit_Rune",
+                  "quantity": 10
+                }
+              ],
+              "produces": "melvorD:Treasure_Chest",
+              "specialCost": {
+                "quantity": 1,
+                "type": "None"
               },
               "productionRatio": 1
             }

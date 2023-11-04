@@ -49,35 +49,48 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         }
     });
 
-    // manager,game,hitpoints,stun,sleep,nextAction,attackCount,stunImmunity,isAttacking,firstHit,slowCount,effectCount,frostBurnCount,barrier,maxBarrierPercent,barrierRegenTurns,barrierTurns,hasBarrier,modifierEffects,reflexiveEffects,reductiveEffects,incrementalEffects,stackingEffect,comboEffects,activeDOTs,bufferedRegen,target,equipmentStats,levels,stats,attackType,hitchance,availableAttacks,targetModifiers,canCurse,canAurora,passives,turnsTaken,timers,nextAttack,_events,on,off,state,modifiers,spellSelection,noun,rendersRequired,randomAttackType,isBoss,monster,curse
-
-    // _namespace,_localID,damage,prehitEffects,onhitEffects,usesRunesPerProc,usesPrayerPointsPerProc,usesPotionChargesPerProc,isDragonbreath,minAccuracy,defaultChance,cantMiss,attackCount,attackInterval,lifesteal,attackTypes,descriptionGenerator,_name,_description
-
     // Random attack?
-    // Cruelty_Heart
-    // Add summons for each guild, like hireing mage apprentiec?
     // While wearing a shit ring, kill x ?
-    // https://en.uesp.net/wiki/Oblivion:Alteration
-    // https://en.uesp.net/wiki/Oblivion:Alchemy
+    // One of each more area
 
     onCharacterLoaded(ctx => {
         ctx.patch(Character, 'modifyAttackDamage').after((damage, target, attack) => {
             let newDamage = damage
             // Remove all damage and return if wardsaved
             if (target && target.modifiers && target.modifiers.wardsave) {
-                let temp_save = target.modifiers.wardsave
-                if (temp_save > 90) {
-                    temp_save = 90
+                // let temp_save = target.modifiers.wardsave
+                // if (temp_save > 90) {
+                //     temp_save = 90
+                // }
+                // const roll = Math.floor(Math.random() * 100) + 1
+                // if (temp_save > roll) {
+                //     return 0;
+                // }
+
+                let wardsaveChance = Math.min(target.modifiers.wardsave, 90);
+                if (rollPercentage(wardsaveChance)) {
+                  return 0;
                 }
-                if (Math.floor(Math.random() * 100) + 1 > temp_save) {
-                    return 0;
-                }
+              
             }
-            // Add flat damage if target is all full hp
-            if (target.stats.maxHitpoints === target.hitpoints) {
+            // Add HP full damage
+            if (!target.monster && target.stats.maxHitpoints === target.hitpoints) {
+                // do damage to player
+                let percDamage = 0
+                if (game.combat.enemy.modifiers.increasedPercDamageWhileTargetHasMaxHP) {
+                    percDamage = newDamage * (game.combat.enemy.modifiers.increasedPercDamageWhileTargetHasMaxHP/100)
+                }
+                let flatDam = 0
+                if (game.combat.enemy.modifiers.increasedFlatDamageWhileTargetHasMaxHP) {
+                    flatDam = game.combat.enemy.modifiers.increasedFlatDamageWhileTargetHasMaxHP
+                }
+                newDamage = newDamage + flatDam + percDamage
+            }
+            if (target.monster && target.stats.maxHitpoints === target.hitpoints) {
+                // Do damage to monster
                 let percDamage = 0
                 if (game.combat.player.modifiers.increasedPercDamageWhileTargetHasMaxHP) {
-                    percDamage = newDamage * game.combat.player.modifiers.increasedPercDamageWhileTargetHasMaxHP
+                    percDamage = newDamage * (game.combat.player.modifiers.increasedPercDamageWhileTargetHasMaxHP/100)
                 }
                 let flatDam = 0
                 if (game.combat.player.modifiers.increasedFlatDamageWhileTargetHasMaxHP) {
@@ -87,11 +100,14 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
             }
             // If it's a dragon breath re-calc
             if (attack.isDragonbreath) {
+                // Flat calc
                 newDamage = newDamage + target.modifiers.increasedDragonBreathDamage
+
+                // % calc
+                // newDamage *= (1 - (target.modifiers.increasedDragonBreathDamage - target.modifiers.decreasedDragonBreathDamage)) / 100
             }
             // return re-calced damage
             return newDamage
-
         })
 
         const bannedList = {
