@@ -4,6 +4,48 @@
   "data": {
     "shopPurchases": [
       {
+        "id": "StaffOfMagnus_Shop",
+        "media": "assets/items/StaffOfMagnus.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:StaffOfMagnus",
+              "quantity": 1
+            }
+          ],
+          "modifiers": {}
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 45000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Arch_Mage_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Staff Of Magnus"
+      },
+      {
         "id": "Poison_Rune",
         "media": "melvor:assets/media/bank/poison_rune.png",
         "category": "tes:Mages_Guild_Shop",
@@ -705,7 +747,59 @@
           "tes:StaticChest",
           "tes:WebbedChest",
           "tes:CursedChest",
-          "tes:BoneChest"
+          "tes:BoneChest",
+          "tes:StaffOfMagnus_Shop"
+        ]
+      }
+    ],
+    "items": [
+      {
+        "id": "StaffOfMagnus",
+        "name": "Staff of Magnus",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/StaffOfMagnus.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 250000,
+        "itemType": "Weapon",
+        "attackType": "magic",
+        "modifiers": {
+          "increasedFlatMinHit": 20,
+          "increasedFlatMagicAttackBonus": 40
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2300
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 100
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 100
+          },
+          {
+            "key": "damageReduction",
+            "value": 5
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "equipRequirements": [
+          {
+            "level": 120,
+            "skillID":"melvorD:Magic",
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": [
+          "Shield"
         ]
       }
     ]

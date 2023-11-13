@@ -40,6 +40,16 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         tags: ['combat']
     };
 
+    modifierData.decreaseFlatDamageWhileTargetHasMaxHP = {
+        get langDescription() {
+            return getLangString('MODIFIER_DATA_decreaseFlatDamageWhileTargetHasMaxHP');
+        },
+        description: '-${value}% damage while you are fully healed.',
+        isSkill: false,
+        isNegative: false,
+        tags: ['combat']
+    };
+
     onModsLoaded(async (ctx) => {
         if (cloudManager.hasTotHEntitlement) {
             console.log('hasTotHEntitlement')
@@ -51,7 +61,10 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
 
     // Random attack?
     // While wearing a shit ring, kill x ?
-    // One of each more area
+    // One of each more area,
+    // Dialoge mod
+    // Monster category mod
+    // MonsterStats.KilledByPlayer
 
     onCharacterLoaded(ctx => {
         ctx.patch(Character, 'modifyAttackDamage').after((damage, target, attack) => {
@@ -69,16 +82,16 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
 
                 let wardsaveChance = Math.min(target.modifiers.wardsave, 90);
                 if (rollPercentage(wardsaveChance)) {
-                  return 0;
+                    return 0;
                 }
-              
+
             }
             // Add HP full damage
             if (!target.monster && target.stats.maxHitpoints === target.hitpoints) {
                 // do damage to player
                 let percDamage = 0
                 if (game.combat.enemy.modifiers.increasedPercDamageWhileTargetHasMaxHP) {
-                    percDamage = newDamage * (game.combat.enemy.modifiers.increasedPercDamageWhileTargetHasMaxHP/100)
+                    percDamage = newDamage * (game.combat.enemy.modifiers.increasedPercDamageWhileTargetHasMaxHP / 100)
                 }
                 let flatDam = 0
                 if (game.combat.enemy.modifiers.increasedFlatDamageWhileTargetHasMaxHP) {
@@ -90,13 +103,16 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                 // Do damage to monster
                 let percDamage = 0
                 if (game.combat.player.modifiers.increasedPercDamageWhileTargetHasMaxHP) {
-                    percDamage = newDamage * (game.combat.player.modifiers.increasedPercDamageWhileTargetHasMaxHP/100)
+                    percDamage = newDamage * (game.combat.player.modifiers.increasedPercDamageWhileTargetHasMaxHP / 100)
                 }
                 let flatDam = 0
                 if (game.combat.player.modifiers.increasedFlatDamageWhileTargetHasMaxHP) {
                     flatDam = game.combat.player.modifiers.increasedFlatDamageWhileTargetHasMaxHP
                 }
                 newDamage = newDamage + flatDam + percDamage
+            }
+            if (target && target.modifiers && target.modifiers.decreaseFlatDamageWhileTargetHasMaxHP && target.stats.maxHitpoints === target.hitpoints) {
+                newDamage = newDamage - target.modifiers.decreaseFlatDamageWhileTargetHasMaxHP
             }
             // If it's a dragon breath re-calc
             if (attack.isDragonbreath) {
@@ -200,6 +216,23 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
             })
         });
         initialPackage.add();
+
+        game.monsters.forEach(monster => {
+            if (monster && monster.localID && monster.localID === 'Goblin_Shaman') {
+                const killCount = game.stats.monsterKillCount(monster)
+                console.log(killCount, "dead ", monster.localID)
+                if (killCount < 1) {
+                    console.log('hiding Miscarcand')
+                    let elem = document.getElementById("tutorial-tes:Miscarcand")
+                    let name = ""
+                    while (name != "COMBAT-AREA-MENU") {
+                        name = elem.parentNode.nodeName
+                        elem = elem.parentNode
+                    }
+                    elem.style.display = 'none'
+                }
+            }
+        })
     });
     onInterfaceReady(() => {
         ui.createStatic('#modal-book--The_Black_Horse_Courier_Waterfront', document.body);
