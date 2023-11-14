@@ -496,8 +496,7 @@
         ],
         "defaultBuyLimit": 0,
         "buyLimitOverrides": [],
-        "showBuyLimit": false,
-        "customDescription": "Test Your Luck!"
+        "showBuyLimit": false
       },
       {
         "id": "BurningChest",
@@ -542,8 +541,7 @@
         ],
         "defaultBuyLimit": 0,
         "buyLimitOverrides": [],
-        "showBuyLimit": false,
-        "customDescription": "Test Your Luck!"
+        "showBuyLimit": false
       },
       {
         "id": "StaticChest",
@@ -588,8 +586,7 @@
         ],
         "defaultBuyLimit": 0,
         "buyLimitOverrides": [],
-        "showBuyLimit": false,
-        "customDescription": "Test Your Luck!"
+        "showBuyLimit": false
       },
       {
         "id": "WebbedChest",
@@ -634,8 +631,7 @@
         ],
         "defaultBuyLimit": 0,
         "buyLimitOverrides": [],
-        "showBuyLimit": false,
-        "customDescription": "Test Your Luck!"
+        "showBuyLimit": false
       },
       {
         "id": "CursedChest",
@@ -680,8 +676,7 @@
         ],
         "defaultBuyLimit": 0,
         "buyLimitOverrides": [],
-        "showBuyLimit": false,
-        "customDescription": "Test Your Luck!"
+        "showBuyLimit": false
       },
       {
         "id": "BoneChest",
@@ -726,8 +721,49 @@
         ],
         "defaultBuyLimit": 0,
         "buyLimitOverrides": [],
+        "showBuyLimit": false
+      },
+      {
+        "id": "Fighters_Guild_Banner_Shop",
+        "media": "assets/icons/Fighters_Guild.png",
+        "category": "tes:Fighters_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Fighters_Guild_Banner",
+              "quantity": 1
+            }
+          ],
+          "modifiers": {}
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 100000000
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Master_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
         "showBuyLimit": false,
-        "customDescription": "Test Your Luck!"
+        "customName": "Fighters Guild Banner"
       }
     ],
     "shopDisplayOrder": [
@@ -748,7 +784,8 @@
           "tes:WebbedChest",
           "tes:CursedChest",
           "tes:BoneChest",
-          "tes:StaffOfMagnus_Shop"
+          "tes:StaffOfMagnus_Shop",
+          "tes:Fighters_Guild_Banner_Shop"
         ]
       }
     ],
@@ -801,6 +838,37 @@
         "occupiesSlots": [
           "Shield"
         ]
+      },
+      {
+        "id": "Fighters_Guild_Banner",
+        "name": "Fighters Guild Banner",
+        "category": "Combat",
+        "type": "Misc",
+        "media": "assets/icons/Fighters_Guild.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 10000000,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedMeleeStrengthBonus": 10,
+          "increasedFlatStabAttackBonus": 10,
+          "increasedFlatSlashAttackBonus": 10,
+          "increasedFlatBlockAttackBonus": 10
+        },
+        "equipmentStats": [],
+        "tier": "none",
+        "validSlots": [
+          "Passive"
+        ],
+        "equipRequirements": [
+          {
+            "purchaseID": "tes:Master_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "occupiesSlots": []
       }
     ]
   }

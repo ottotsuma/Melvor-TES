@@ -218,12 +218,110 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         initialPackage.add();
 
         game.monsters.forEach(monster => {
-            if (monster && monster.localID && monster.localID === 'Goblin_Shaman') {
+            if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Bitterfish_Clan_Goblin_Shaman') {
                 const killCount = game.stats.monsterKillCount(monster)
                 console.log(killCount, "dead ", monster.localID)
-                if (killCount < 1) {
+                if (killCount > 0) {
                     console.log('hiding Miscarcand')
                     let elem = document.getElementById("tutorial-tes:Miscarcand")
+                    let name = ""
+                    while (name != "COMBAT-AREA-MENU") {
+                        name = elem.parentNode.nodeName
+                        elem = elem.parentNode
+                    }
+                    elem.style.display = 'none'
+                }
+            }
+            if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Bloody_Hand_Tribe_Goblin_Shaman') {
+                const killCount = game.stats.monsterKillCount(monster)
+                console.log(killCount, "dead ", monster.localID)
+                if (killCount > 0) {
+                    console.log('hiding Cracked_Wood_Cave')
+                    let elem = document.getElementById("tutorial-tes:Cracked_Wood_Cave")
+                    let name = ""
+                    while (name != "COMBAT-AREA-MENU") {
+                        name = elem.parentNode.nodeName
+                        elem = elem.parentNode
+                    }
+                    elem.style.display = 'none'
+                }
+            }
+            if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Dust_Eater_Clan_Goblin_Shaman') {
+                const killCount = game.stats.monsterKillCount(monster)
+                console.log(killCount, "dead ", monster.localID)
+                if (killCount > 0) {
+                    console.log('hiding Barren_Mine')
+                    let elem = document.getElementById("tutorial-tes:Barren_Mine")
+                    let name = ""
+                    while (name != "COMBAT-AREA-MENU") {
+                        name = elem.parentNode.nodeName
+                        elem = elem.parentNode
+                    }
+                    elem.style.display = 'none'
+                }
+            }
+            if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Rock_Biter_Clan_Goblin_Shaman') {
+                const killCount = game.stats.monsterKillCount(monster)
+                console.log(killCount, "dead ", monster.localID)
+                if (killCount > 0) {
+                    console.log('hiding Timberscar_Hollow')
+                    let elem = document.getElementById("tutorial-tes:Timberscar_Hollow")
+                    let name = ""
+                    while (name != "COMBAT-AREA-MENU") {
+                        name = elem.parentNode.nodeName
+                        elem = elem.parentNode
+                    }
+                    elem.style.display = 'none'
+                }
+            }
+            if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Sharp_Tooth_Clan_Goblin_Shaman') {
+                const killCount = game.stats.monsterKillCount(monster)
+                console.log(killCount, "dead ", monster.localID)
+                if (killCount > 0) {
+                    console.log('hiding Derelict_Mine')
+                    let elem = document.getElementById("tutorial-tes:Derelict_Mine")
+                    let name = ""
+                    while (name != "COMBAT-AREA-MENU") {
+                        name = elem.parentNode.nodeName
+                        elem = elem.parentNode
+                    }
+                    elem.style.display = 'none'
+                }
+            }
+            if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Skull_Breaker_Clan_Goblin_Shaman') {
+                const killCount = game.stats.monsterKillCount(monster)
+                console.log(killCount, "dead ", monster.localID)
+                if (killCount > 0) {
+                    console.log('hiding Wenderbek_Cave')
+                    let elem = document.getElementById("tutorial-tes:Wenderbek_Cave")
+                    let name = ""
+                    while (name != "COMBAT-AREA-MENU") {
+                        name = elem.parentNode.nodeName
+                        elem = elem.parentNode
+                    }
+                    elem.style.display = 'none'
+                }
+            }
+            if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Three_Feather_Clan_Goblin_Shaman') {
+                const killCount = game.stats.monsterKillCount(monster)
+                console.log(killCount, "dead ", monster.localID)
+                if (killCount > 0) {
+                    console.log('hiding Plundered_Mine')
+                    let elem = document.getElementById("tutorial-tes:Plundered_Mine")
+                    let name = ""
+                    while (name != "COMBAT-AREA-MENU") {
+                        name = elem.parentNode.nodeName
+                        elem = elem.parentNode
+                    }
+                    elem.style.display = 'none'
+                }
+            }
+            if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'White_Skin_Clan_Goblin_Shaman') {
+                const killCount = game.stats.monsterKillCount(monster)
+                console.log(killCount, "dead ", monster.localID)
+                if (killCount > 0) {
+                    console.log('hiding Goblin_Jims_Cave')
+                    let elem = document.getElementById("tutorial-tes:Goblin_Jims_Cave")
                     let name = ""
                     while (name != "COMBAT-AREA-MENU") {
                         name = elem.parentNode.nodeName
