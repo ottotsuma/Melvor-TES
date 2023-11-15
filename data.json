@@ -1847,24 +1847,44 @@
         "unlockRequirements": [],
         "purchaseRequirements": [
           {
-            "type": "DungeonCompletion",
-            "dungeonID": "melvorD:Chicken_Coop",
-            "count": 1
+            "dungeonID": "tes:Miscarcand",
+            "count": 1,
+            "type": "DungeonCompletion"
           },
           {
-            "skillID": "melvorD:Attack",
-            "level": 10,
-            "type": "SkillLevel"
+            "dungeonID": "tes:Cracked_Wood_Cave",
+            "count": 1,
+            "type": "DungeonCompletion"
           },
           {
-            "skillID": "melvorD:Defence",
-            "level": 10,
-            "type": "SkillLevel"
+            "dungeonID": "tes:Barren_Mine",
+            "count": 1,
+            "type": "DungeonCompletion"
           },
           {
-            "skillID": "melvorD:Strength",
-            "level": 10,
-            "type": "SkillLevel"
+            "dungeonID": "tes:Timberscar_Hollow",
+            "count": 1,
+            "type": "DungeonCompletion"
+          },
+          {
+            "dungeonID": "tes:Derelict_Mine",
+            "count": 1,
+            "type": "DungeonCompletion"
+          },
+          {
+            "dungeonID": "tes:Wenderbek_Cave",
+            "count": 1,
+            "type": "DungeonCompletion"
+          },
+          {
+            "dungeonID": "tes:Plundered_Mine",
+            "count": 1,
+            "type": "DungeonCompletion"
+          },
+          {
+            "dungeonID": "tes:Goblin_Jims_Cave",
+            "count": 1,
+            "type": "DungeonCompletion"
           }
         ],
         "defaultBuyLimit": 1,
@@ -1886,13 +1906,16 @@
         "cost": {
           "gp": {
             "type": "Fixed",
-            "cost": 2000
+            "cost": 0
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 0
+            "cost": 2000
           },
-          "items": [],
+          "items": [{
+            "id":"melvorD:Bones",
+            "quantity": 10
+          }],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -1947,11 +1970,11 @@
         "cost": {
           "gp": {
             "type": "Fixed",
-            "cost": 10000
+            "cost": 0
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 0
+            "cost": 10000
           },
           "items": [],
           "raidCoins": {
@@ -1970,7 +1993,7 @@
         "purchaseRequirements": [
           {
             "type": "DungeonCompletion",
-            "dungeonID": "melvorD:Bandit_Base",
+            "dungeonID": "tes:Arena",
             "count": 1
           },
           {
@@ -2008,13 +2031,30 @@
         "cost": {
           "gp": {
             "type": "Fixed",
-            "cost": 50000
+            "cost": 0
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 0
+            "cost": 50000
           },
-          "items": [],
+          "items": [
+            {
+            "id":"melvorD:Blue_Wizard_Hat",
+            "quantity": 1
+           },
+           {
+            "id":"melvorD:Blue_Wizard_Robes",
+            "quantity": 1
+           },
+           {
+            "id":"melvorD:Blue_Wizard_Bottoms",
+            "quantity": 1
+           },
+           {
+            "id":"melvorD:Blue_Wizard_Boots",
+            "quantity": 1
+           }
+        ],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -2069,13 +2109,16 @@
         "cost": {
           "gp": {
             "type": "Fixed",
-            "cost": 200000
+            "cost": 0
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 0
+            "cost": 200000
           },
-          "items": [],
+          "items": [{
+            "id":"melvorF:War_Axe",
+            "quantity": 1
+          }],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -2130,13 +2173,16 @@
         "cost": {
           "gp": {
             "type": "Fixed",
-            "cost": 1000000
+            "cost": 0
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 0
+            "cost": 1000000
           },
-          "items": [],
+          "items": [{
+            "id":"tes:HagravensClaw",
+            "quantity": 10
+          }],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -2191,13 +2237,16 @@
         "cost": {
           "gp": {
             "type": "Fixed",
-            "cost": 5000000
+            "cost": 0
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 0
+            "cost": 5000000
           },
-          "items": [],
+          "items": [{
+            "id":"tes:Eye",
+            "quantity": 1
+          }],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -2257,13 +2306,16 @@
         "cost": {
           "gp": {
             "type": "Fixed",
-            "cost": 10000000
+            "cost": 0
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 0
+            "cost": 10000000
           },
-          "items": [],
+          "items": [{
+            "id":"tes:BloodPotion",
+            "quantity": 1
+          }],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -2280,7 +2332,7 @@
         "purchaseRequirements": [
           {
             "type": "DungeonCompletion",
-            "dungeonID": "melvorF:Dragons_Den",
+            "dungeonID": "tes:Volkihar",
             "count": 1
           },
           {
@@ -2318,13 +2370,16 @@
         "cost": {
           "gp": {
             "type": "Fixed",
-            "cost": 50000000
+            "cost": 0
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 0
+            "cost": 50000000
           },
-          "items": [],
+          "items": [{
+            "id":"tes:WitchsHead",
+            "quantity": 5
+          }],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -2341,7 +2396,7 @@
         "purchaseRequirements": [
           {
             "type": "DungeonCompletion",
-            "dungeonID": "melvorD:Volcanic_Cave",
+            "dungeonID": "tes:Glenmoril_Coven",
             "count": 1
           },
           {
@@ -2379,11 +2434,11 @@
         "cost": {
           "gp": {
             "type": "Fixed",
-            "cost": 100000000
+            "cost": 0
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 0
+            "cost": 100000000
           },
           "items": [],
           "raidCoins": {
@@ -2400,6 +2455,11 @@
           }
         ],
         "purchaseRequirements": [
+          {
+            "monsterID":"tes:Ysmir_Iceheart",
+            "count": 1,
+            "type": "MonsterKilled"
+          },
           {
             "type": "DungeonCompletion",
             "dungeonID": "melvorF:Fire_God_Dungeon",
@@ -5516,7 +5576,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 45000000
+            "cost": 7000
           },
           "items": [],
           "raidCoins": {
@@ -5528,7 +5588,7 @@
         "unlockRequirements": [],
         "purchaseRequirements": [
           {
-            "purchaseID": "tes:Master_Rank",
+            "purchaseID": "tes:Swordsman_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -5559,7 +5619,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 45000000
+            "cost": 4000
           },
           "items": [],
           "raidCoins": {
@@ -5571,7 +5631,7 @@
         "unlockRequirements": [],
         "purchaseRequirements": [
           {
-            "purchaseID": "tes:Master_Rank",
+            "purchaseID": "tes:Apprentice_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -5602,7 +5662,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 45000000
+            "cost": 250000
           },
           "items": [],
           "raidCoins": {
@@ -5614,7 +5674,7 @@
         "unlockRequirements": [],
         "purchaseRequirements": [
           {
-            "purchaseID": "tes:Master_Rank",
+            "purchaseID": "tes:Guardian_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -5645,7 +5705,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 45000000
+            "cost": 520000
           },
           "items": [],
           "raidCoins": {
@@ -5657,7 +5717,7 @@
         "unlockRequirements": [],
         "purchaseRequirements": [
           {
-            "purchaseID": "tes:Master_Rank",
+            "purchaseID": "tes:Warder_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -5688,7 +5748,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 45000000
+            "cost": 15000000
           },
           "items": [],
           "raidCoins": {
@@ -5731,7 +5791,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 45000000
+            "cost": 15000000
           },
           "items": [],
           "raidCoins": {
@@ -5743,7 +5803,7 @@
         "unlockRequirements": [],
         "purchaseRequirements": [
           {
-            "purchaseID": "tes:Master_Rank",
+            "purchaseID": "tes:Champion_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -5774,7 +5834,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 45000000
+            "cost": 80000
           },
           "items": [],
           "raidCoins": {
@@ -5786,7 +5846,7 @@
         "unlockRequirements": [],
         "purchaseRequirements": [
           {
-            "purchaseID": "tes:Master_Rank",
+            "purchaseID": "tes:Guardian_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -5817,7 +5877,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 45000000
+            "cost": 1500
           },
           "items": [],
           "raidCoins": {
@@ -5829,7 +5889,7 @@
         "unlockRequirements": [],
         "purchaseRequirements": [
           {
-            "purchaseID": "tes:Master_Rank",
+            "purchaseID": "tes:Journeyman_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -5860,7 +5920,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 45000000
+            "cost": 55000
           },
           "items": [],
           "raidCoins": {
@@ -5872,7 +5932,7 @@
         "unlockRequirements": [],
         "purchaseRequirements": [
           {
-            "purchaseID": "tes:Master_Rank",
+            "purchaseID": "tes:Protector_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -5980,7 +6040,9 @@
               "quantity": 1
             }
           ],
-          "modifiers": {}
+          "modifiers": {
+            "increasedFlatStabAttackBonus": 10
+          }
         },
         "cost": {
           "gp": {
@@ -5989,9 +6051,12 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 45000000
+            "cost": 0
           },
-          "items": [],
+          "items": [{
+            "id":"tes:GoblinTotemStaff",
+            "quantity": 8
+          }],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -6001,12 +6066,12 @@
         "unlockRequirements": [],
         "purchaseRequirements": [
           {
-            "dungeonID": "tes:Miscarcand",
+            "purchaseID":"tes:Associate_Rank",
             "count": 1,
-            "type": "DungeonCompletion"
+            "type": "ShopPurchase"
           }
         ],
-        "defaultBuyLimit": 0,
+        "defaultBuyLimit": 1,
         "buyLimitOverrides": [],
         "showBuyLimit": false,
         "customName": "Goblin Furnishings"
@@ -6032,7 +6097,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 45000000
+            "cost": 10
           },
           "items": [],
           "raidCoins": {
@@ -6044,7 +6109,7 @@
         "unlockRequirements": [],
         "purchaseRequirements": [
           {
-            "purchaseID": "tes:Master_Rank",
+            "purchaseID": "tes:Associate_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -6099,18 +6164,18 @@
           "tes:Master_Rank",
           "tes:ElsweyrSpicedTea_Shop",
           "tes:GoblinFurnishings_Shop",
-          "tes:Chrysamere_Shop",
-          "tes:HelmetOfOreynBearclaw_Shop",
-          "tes:VampiricRing_Shop",
-          "tes:BootsoftheApostle_Shop",
+          "tes:RugdumphSword_Shop",
           "tes:FistsofRandagulf_Shop",
+          "tes:Sinweaver_Shop",
+          "tes:BootsoftheApostle_Shop",
           "tes:LordsMail_Shop",
-          "tes:GiantClub_Shop",
-          "tes:SkullCrusher_Shop",
           "tes:IceBladeOfTheMonarch_Shop",
           "tes:SpearOfBitterMercy_Shop",
-          "tes:RugdumphSword_Shop",
-          "tes:Sinweaver_Shop",
+          "tes:VampiricRing_Shop",
+          "tes:SkullCrusher_Shop",
+          "tes:GiantClub_Shop",
+          "tes:Chrysamere_Shop",
+          "tes:HelmetOfOreynBearclaw_Shop",
           "tes:EggChest",
           "tes:StandardChest",
           "tes:BanditChest",
@@ -6243,10 +6308,128 @@
     ],
     "items": [
       {
+        "itemType": "Equipment",
+        "id": "Hagraven_Summon",
+        "name": "Hagraven",
+        "category": "Summoning",
+        "type": "Familiar",
+        "media": "assets/summoning/Hagraven_Summon.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 0,
+        "tier": "Tier 3 Summon",
+        "validSlots": [
+          "Summon1",
+          "Summon2"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [],
+        "equipmentStats": [
+          {
+            "key": "summoningMaxhit",
+            "value": 10
+          }
+        ],
+        "modifiers": {
+          "increasedMagicCritChance": 10,
+          "increasedFlatMagicAccuracyBonusPerAttackInterval": 10
+        },
+        "consumesOn": [
+          {
+            "type": "AltMagicAction"
+          },
+          {
+            "type": "PlayerSummonAttack"
+          }
+        ]
+      },
+      {
+        "id": "Sinestral_Blade",
+        "name": "Sinestral Elven Blade",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Elvensword.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 450000,
+        "tier": "none",
+        "validSlots": [
+          "Shield"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [
+
+        ],
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3200
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 135
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 135
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 135
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 225
+          }
+        ],
+        "itemType": "Weapon",
+        "attackType": "melee"
+      },
+      {
+        "id": "Sinestral_Shield",
+        "name": "Sinestral Elven Shield",
+        "category": "Combat",
+        "type": "Shield",
+        "media": "assets/items/ArmorElvenShield.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 450000,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [
+        ],
+        "equipmentStats": [
+          {
+            "key": "meleeDefenceBonus",
+            "value": 40
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 40
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 20
+          },
+          {
+            "key": "damageReduction",
+            "value": 4
+          }
+        ],
+        "itemType": "Weapon",
+        "attackType": "melee"
+      },
+      {
         "id": "Goblin_Ear",
         "name": "Goblin Ear",
         "customDescription": "A stinky smell goblin ear.",
-        "category": "Ingredients",
+        "category": "Combat",
         "type": "Ear",
         "media": "assets/items/Goblin_Ear.png",
         "ignoreCompletion": true,
@@ -6280,23 +6463,23 @@
         "equipmentStats": [
           {
             "key": "attackSpeed",
-            "value": 2300
+            "value": 3200
           },
           {
             "key": "stabAttackBonus",
-            "value": 140
+            "value": 135
           },
           {
             "key": "slashAttackBonus",
-            "value": 180
+            "value": 135
           },
           {
             "key": "blockAttackBonus",
-            "value": 120
+            "value": -4
           },
           {
             "key": "meleeStrengthBonus",
-            "value": 140
+            "value": 225
           }
         ],
         "itemType": "Weapon",
@@ -6317,7 +6500,7 @@
         "ignoreCompletion": true,
         "obtainFromItemLog": false,
         "golbinRaidExclusive": false,
-        "sellsFor": 5000000,
+        "sellsFor": 700,
         "tier": "none",
         "validSlots": [
           "Weapon"
@@ -6325,36 +6508,31 @@
         "occupiesSlots": [],
         "equipRequirements": [
           {
-            "type": "SkillLevel",
-            "skillID": "melvorD:Attack",
-            "level": 98
-          },
-          {
-            "type": "SkillLevel",
-            "skillID": "melvorD:Strength",
-            "level": 95
+            "purchaseID":"tes:Swordsman_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "equipmentStats": [
           {
             "key": "attackSpeed",
-            "value": 2100
+            "value": 3100
           },
           {
             "key": "stabAttackBonus",
-            "value": 130
+            "value": 86
           },
           {
             "key": "slashAttackBonus",
-            "value": 170
+            "value": 86
           },
           {
             "key": "blockAttackBonus",
-            "value": 110
+            "value": 86
           },
           {
             "key": "meleeStrengthBonus",
-            "value": 150
+            "value": 126
           }
         ],
         "itemType": "Weapon",
@@ -6375,7 +6553,7 @@
         "ignoreCompletion": true,
         "obtainFromItemLog": false,
         "golbinRaidExclusive": false,
-        "sellsFor": 1500000,
+        "sellsFor": 400,
         "tier": "none",
         "validSlots": [
           "Weapon"
@@ -6383,9 +6561,9 @@
         "occupiesSlots": [],
         "equipRequirements": [
           {
-            "type": "SkillLevel",
-            "skillID": "melvorD:Attack",
-            "level": 90
+            "purchaseID":"tes:Apprentice_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "equipmentStats": [
@@ -6395,19 +6573,19 @@
           },
           {
             "key": "stabAttackBonus",
-            "value": 110
+            "value": 20
           },
           {
             "key": "slashAttackBonus",
-            "value": 150
+            "value": 20
           },
           {
             "key": "blockAttackBonus",
-            "value": 90
+            "value": 20
           },
           {
             "key": "meleeStrengthBonus",
-            "value": 110
+            "value": 20
           }
         ],
         "itemType": "Weapon",
@@ -6422,44 +6600,41 @@
         "ignoreCompletion": true,
         "obtainFromItemLog": false,
         "golbinRaidExclusive": false,
-        "sellsFor": 4800000,
+        "sellsFor": 25000,
         "tier": "none",
         "validSlots": [
           "Weapon"
         ],
-        "occupiesSlots": [],
+        "occupiesSlots": [
+          "Shield"
+        ],
         "equipRequirements": [
           {
-            "type": "SkillLevel",
-            "skillID": "melvorD:Attack",
-            "level": 94
-          },
-          {
-            "type": "SkillLevel",
-            "skillID": "melvorD:Strength",
-            "level": 92
+            "purchaseID":"tes:Guardian_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "equipmentStats": [
           {
             "key": "attackSpeed",
-            "value": 2150
+            "value": 3000
           },
           {
             "key": "stabAttackBonus",
-            "value": 130
+            "value": 70
           },
           {
             "key": "slashAttackBonus",
-            "value": 160
+            "value": -3
           },
           {
             "key": "blockAttackBonus",
-            "value": 110
+            "value": 70
           },
           {
             "key": "meleeStrengthBonus",
-            "value": 140
+            "value": 180
           }
         ],
         "itemType": "Weapon",
@@ -6480,7 +6655,7 @@
         "ignoreCompletion": true,
         "obtainFromItemLog": false,
         "golbinRaidExclusive": false,
-        "sellsFor": 4200000,
+        "sellsFor": 52000,
         "tier": "none",
         "validSlots": [
           "Weapon"
@@ -6488,14 +6663,9 @@
         "occupiesSlots": [],
         "equipRequirements": [
           {
-            "type": "SkillLevel",
-            "skillID": "melvorD:Attack",
-            "level": 96
-          },
-          {
-            "type": "SkillLevel",
-            "skillID": "melvorD:Magic",
-            "level": 94
+            "purchaseID":"tes:Warder_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "equipmentStats": [
@@ -6505,19 +6675,19 @@
           },
           {
             "key": "stabAttackBonus",
-            "value": 140
+            "value": 70
           },
           {
             "key": "slashAttackBonus",
-            "value": 170
+            "value": 70
           },
           {
             "key": "blockAttackBonus",
-            "value": 120
+            "value": 70
           },
           {
-            "key": "magicAttackBonus",
-            "value": 150
+            "key": "meleeStrengthBonus",
+            "value": 70
           }
         ],
         "itemType": "Weapon",
@@ -6538,40 +6708,41 @@
         "ignoreCompletion": true,
         "obtainFromItemLog": false,
         "golbinRaidExclusive": false,
-        "sellsFor": 3800000,
+        "sellsFor": 1500000,
         "tier": "none",
         "validSlots": [
           "Weapon"
         ],
-        "occupiesSlots": [],
+        "occupiesSlots": [
+          "Shield"
+        ],
         "equipRequirements": [
           {
-            "type": "SkillLevel",
-            "skillID": "melvorD:Attack",
-            "level": 93
-          },
-          {
-            "type": "SkillLevel",
-            "skillID": "melvorD:Strength",
-            "level": 91
+            "purchaseID":"tes:Champion_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "equipmentStats": [
           {
             "key": "attackSpeed",
-            "value": 2500
+            "value": 3500
           },
           {
             "key": "blockAttackBonus",
-            "value": 160
+            "value": 140
           },
           {
             "key": "stabAttackBonus",
-            "value": 110
+            "value": -10
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 140
           },
           {
             "key": "meleeStrengthBonus",
-            "value": 130
+            "value": 300
           }
         ],
         "itemType": "Weapon",
@@ -6592,40 +6763,41 @@
         "ignoreCompletion": true,
         "obtainFromItemLog": false,
         "golbinRaidExclusive": false,
-        "sellsFor": 3200000,
+        "sellsFor": 1500000,
         "tier": "none",
         "validSlots": [
           "Weapon"
         ],
-        "occupiesSlots": [],
+        "occupiesSlots": [
+          "Shield"
+        ],
         "equipRequirements": [
           {
-            "type": "SkillLevel",
-            "skillID": "melvorD:Attack",
-            "level": 90
-          },
-          {
-            "type": "SkillLevel",
-            "skillID": "melvorD:Strength",
-            "level": 88
+            "purchaseID":"tes:Champion_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "equipmentStats": [
           {
             "key": "attackSpeed",
-            "value": 2600
+            "value": 5300
           },
           {
             "key": "blockAttackBonus",
-            "value": 180
+            "value": 140
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": -10
           },
           {
             "key": "slashAttackBonus",
-            "value": 100
+            "value": 140
           },
           {
             "key": "meleeStrengthBonus",
-            "value": 150
+            "value": 500
           }
         ],
         "itemType": "Weapon",
@@ -6727,7 +6899,7 @@
           }
         ],
         "modifiers": {
-          "increasedMaxHitpoints": 80
+          "increasedFlatMaxHitpoints": 8
         },
         "tier": "none",
         "validSlots": [
@@ -6735,9 +6907,9 @@
         ],
         "equipRequirements": [
           {
-            "type": "SkillLevel",
-            "skillID": "melvorD:Defence",
-            "level": 95
+            "purchaseID":"tes:Guardian_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "occupiesSlots": []
@@ -6751,16 +6923,28 @@
         "ignoreCompletion": true,
         "obtainFromItemLog": false,
         "golbinRaidExclusive": false,
-        "sellsFor": 5000,
+        "sellsFor": 150,
         "itemType": "Equipment",
         "equipmentStats": [
           {
             "key": "meleeDefenceBonus",
-            "value": 40
+            "value": 5
           },
           {
             "key": "meleeStrengthBonus",
-            "value": 20
+            "value": 10
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 10
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 10
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 10
           }
         ],
         "tier": "none",
@@ -6769,14 +6953,9 @@
         ],
         "equipRequirements": [
           {
-            "type": "SkillLevel",
-            "skillID": "melvorD:Defence",
-            "level": 75
-          },
-          {
-            "type": "SkillLevel",
-            "skillID": "melvorD:Attack",
-            "level": 70
+            "type": "ShopPurchase",
+            "purchaseID": "tes:Journeyman_Rank",
+            "count": 1
           }
         ],
         "occupiesSlots": []
@@ -6795,15 +6974,27 @@
         "equipmentStats": [
           {
             "key": "meleeDefenceBonus",
-            "value": 35
-          },
-          {
-            "key": "magicDefenceBonus",
             "value": 20
           },
           {
+            "key": "magicDefenceBonus",
+            "value": 5
+          },
+          {
             "key": "rangedDefenceBonus",
-            "value": 15
+            "value": 5
+          },
+          {
+            "key":"damageReduction",
+            "value": 5
+          },
+          {
+            "key":"meleeStrengthBonus",
+            "value": 7
+          },
+          {
+            "key":"rangedStrengthBonus",
+            "value": 5
           }
         ],
         "tier": "none",
@@ -6812,14 +7003,9 @@
         ],
         "equipRequirements": [
           {
-            "type": "SkillLevel",
-            "skillID": "melvorD:Defence",
-            "level": 60
-          },
-          {
-            "type": "SkillLevel",
-            "skillID": "melvorD:Magic",
-            "level": 55
+            "purchaseID":"tes:Protector_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "occupiesSlots": []
@@ -6871,15 +7057,15 @@
         "equipmentStats": [
           {
             "key": "meleeDefenceBonus",
-            "value": 60
+            "value": 45
           },
           {
             "key": "rangedDefenceBonus",
-            "value": 30
+            "value": 45
           },
           {
             "key": "magicDefenceBonus",
-            "value": 40
+            "value": 20
           }
         ],
         "tier": "none",
@@ -6888,9 +7074,9 @@
         ],
         "equipRequirements": [
           {
-            "type": "SkillLevel",
-            "skillID": "melvorD:Defence",
-            "level": 80
+            "purchaseID":"tes:Master_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "occupiesSlots": []
@@ -6899,7 +7085,7 @@
         "id": "WitchsHead",
         "name": "Witch's Head",
         "customDescription": "The gruesome and eerie head of a witch.",
-        "category": "Misc",
+        "category": "Combat",
         "type": "Misc",
         "media": "assets/items/WitchsHead.png",
         "ignoreCompletion": true,
@@ -6912,7 +7098,7 @@
         "id": "Eye",
         "name": "Eye",
         "customDescription": "A cold, lifeless eye taken from the body of a fallen foe.",
-        "category": "Misc",
+        "category": "Combat",
         "type": "Misc",
         "media": "assets/items/Eye.png",
         "ignoreCompletion": true,
@@ -6952,7 +7138,7 @@
         "id": "HagravensClaw",
         "name": "Hagraven's Claw",
         "customDescription": "A talon from a powerful hagraven, known for its dark magical properties.",
-        "category": "Ingredients",
+        "category": "Combat",
         "type": "Claw",
         "media": "assets/items/HagravensClaw.png",
         "ignoreCompletion": true,
@@ -10751,6 +10937,7 @@
           6
         ],
         "monsterIDs": [
+          "tes:Xivilai",
           "tes:Meridia",
           "tes:Azura",
           "tes:Boethiah",
@@ -10786,6 +10973,939 @@
       }
     ],
     "monsters": [
+      {
+        "id": "Sload",
+        "name": "Sload",
+        "media": "assets/monsters/Sload.png",
+        "levels": {
+          "Attack": 1,
+          "Defence": 143,
+          "Hitpoints": 80,
+          "Magic": 230,
+          "Ranged": 1,
+          "Strength": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2800
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "melvorF:CurseofFear",
+          "tes:ShadowBlast"
+        ],
+        "passives": [
+        ],
+        "lootChance": 75,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Water_Rune",
+            "maxQuantity": 20,
+            "minQuantity": 1,
+            "weight": 60
+          },
+          {
+            "itemID": "tes:Eye",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 80,
+          "max": 200
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WaterStrike"
+      },
+      {
+        "id": "Lucerne",
+        "name": "Lucerne",
+        "media": "assets/monsters/Hagraven.png",
+        "levels": {
+          "Attack": 1,
+          "Defence": 380,
+          "Hitpoints": 250,
+          "Magic": 960,
+          "Ranged": 1,
+          "Strength": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2800
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "melvorF:CurseofFear",
+          "tes:ShadowBlast"
+        ],
+        "passives": [
+        ],
+        "lootChance": 75,
+        "lootTable": [
+          {
+            "itemID": "tes:HagravensClaw",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 60
+          },
+          {
+            "itemID": "tes:WitchsHead",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 80,
+          "max": 200
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindSurge"
+      },
+      {
+        "id": "Melka",
+        "name": "Melka",
+        "media": "assets/monsters/Hagraven.png",
+        "levels": {
+          "Attack": 1,
+          "Defence": 380,
+          "Hitpoints": 250,
+          "Magic": 960,
+          "Ranged": 1,
+          "Strength": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2800
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "melvorF:CurseofFear",
+          "tes:ShadowBlast"
+        ],
+        "passives": [
+        ],
+        "lootChance": 75,
+        "lootTable": [
+          {
+            "itemID": "tes:HagravensClaw",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 60
+          },
+          {
+            "itemID": "tes:WitchsHead",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 80,
+          "max": 200
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WaterSurge"
+      },
+      {
+        "id": "Moira",
+        "name": "Moira",
+        "media": "assets/monsters/Hagraven.png",
+        "levels": {
+          "Attack": 1,
+          "Defence": 380,
+          "Hitpoints": 250,
+          "Magic": 960,
+          "Ranged": 1,
+          "Strength": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2800
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "melvorF:CurseofFear",
+          "tes:ShadowBlast"
+        ],
+        "passives": [
+        ],
+        "lootChance": 75,
+        "lootTable": [
+          {
+            "itemID": "tes:HagravensClaw",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 60
+          },
+          {
+            "itemID": "tes:WitchsHead",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 80,
+          "max": 200
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:FireSurge"
+      },
+      {
+        "id": "Petra",
+        "name": "Petra",
+        "media": "assets/monsters/Hagraven.png",
+        "levels": {
+          "Attack": 1,
+          "Defence": 380,
+          "Hitpoints": 250,
+          "Magic": 960,
+          "Ranged": 1,
+          "Strength": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2800
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "melvorF:CurseofFear",
+          "tes:ShadowBlast"
+        ],
+        "passives": [
+        ],
+        "lootChance": 75,
+        "lootTable": [
+          {
+            "itemID": "tes:HagravensClaw",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 60
+          },
+          {
+            "itemID": "tes:WitchsHead",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 80,
+          "max": 200
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:EarthSurge"
+      },
+      {
+        "id": "Drascua",
+        "name": "Drascua",
+        "media": "assets/monsters/Hagraven.png",
+        "levels": {
+          "Attack": 1,
+          "Defence": 380,
+          "Hitpoints": 250,
+          "Magic": 960,
+          "Ranged": 1,
+          "Strength": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2800
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "melvorF:CurseofFear",
+          "tes:ShadowBlast"
+        ],
+        "passives": [
+        ],
+        "lootChance": 75,
+        "lootTable": [
+          {
+            "itemID": "tes:HagravensClaw",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 60
+          },
+          {
+            "itemID": "tes:WitchsHead",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 80,
+          "max": 200
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorF:NaturesWrath"
+      },
+      {
+        "id": "Hagraven",
+        "name": "Hagraven",
+        "media": "assets/monsters/Hagraven.png",
+        "levels": {
+          "Attack": 1,
+          "Defence": 150,
+          "Hitpoints": 55,
+          "Magic": 150,
+          "Ranged": 1,
+          "Strength": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2800
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "melvorF:Spores",
+          "tes:ShadowBlast"
+        ],
+        "passives": [
+        ],
+        "lootChance": 75,
+        "lootTable": [
+          {
+            "itemID": "tes:HagravensClaw",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 60
+          }
+        ],
+        "gpDrops": {
+          "min": 80,
+          "max": 200
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:EarthWave"
+      },
+      {
+        "id": "Bitterfish_Clan_Goblin_Shaman",
+        "name": "Goblin Shaman",
+        "media": "assets/monsters/Goblin_Shaman.png",
+        "levels": {
+          "Attack": 15,
+          "Defence": 10,
+          "Hitpoints": 18,
+          "Magic": 25,
+          "Ranged": 10,
+          "Strength": 12
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2800
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "tes:Goblin_Curse"
+        ],
+        "passives": [
+          "tes:Goblin_Buff"
+        ],
+        "lootChance": 75,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Water_Battlestaff",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorF:Golbin_Mask",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 15
+          },
+          {
+            "itemID": "melvorD:Red_Wizard_Robes",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Magic_Wand_Basic",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID": "tes:Goblin_Ear",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 60
+          }
+        ],
+        "gpDrops": {
+          "min": 8,
+          "max": 20
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:EarthWave"
+      },
+      {
+        "id": "Bloody_Hand_Tribe_Goblin_Shaman",
+        "name": "Goblin Shaman",
+        "media": "assets/monsters/Goblin_Shaman.png",
+        "levels": {
+          "Attack": 15,
+          "Defence": 10,
+          "Hitpoints": 18,
+          "Magic": 25,
+          "Ranged": 10,
+          "Strength": 12
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2800
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "tes:Goblin_Curse"
+        ],
+        "passives": [
+          "tes:Goblin_Buff"
+        ],
+        "lootChance": 75,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Water_Battlestaff",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorF:Golbin_Mask",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 15
+          },
+          {
+            "itemID": "melvorD:Red_Wizard_Robes",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Magic_Wand_Basic",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID": "tes:Goblin_Ear",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 60
+          }
+        ],
+        "gpDrops": {
+          "min": 8,
+          "max": 20
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:EarthWave"
+      },
+      {
+        "id": "Dust_Eater_Clan_Goblin_Shaman",
+        "name": "Goblin Shaman",
+        "media": "assets/monsters/Goblin_Shaman.png",
+        "levels": {
+          "Attack": 15,
+          "Defence": 10,
+          "Hitpoints": 18,
+          "Magic": 25,
+          "Ranged": 10,
+          "Strength": 12
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2800
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "tes:Goblin_Curse"
+        ],
+        "passives": [
+          "tes:Goblin_Buff"
+        ],
+        "lootChance": 75,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Water_Battlestaff",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorF:Golbin_Mask",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 15
+          },
+          {
+            "itemID": "melvorD:Red_Wizard_Robes",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Magic_Wand_Basic",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID": "tes:Goblin_Ear",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 60
+          }
+        ],
+        "gpDrops": {
+          "min": 8,
+          "max": 20
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:EarthWave"
+      },
+      {
+        "id": "Rock_Biter_Clan_Goblin_Shaman",
+        "name": "Goblin Shaman",
+        "media": "assets/monsters/Goblin_Shaman.png",
+        "levels": {
+          "Attack": 15,
+          "Defence": 10,
+          "Hitpoints": 18,
+          "Magic": 25,
+          "Ranged": 10,
+          "Strength": 12
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2800
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "tes:Goblin_Curse"
+        ],
+        "passives": [
+          "tes:Goblin_Buff"
+        ],
+        "lootChance": 75,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Water_Battlestaff",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorF:Golbin_Mask",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 15
+          },
+          {
+            "itemID": "melvorD:Red_Wizard_Robes",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Magic_Wand_Basic",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID": "tes:Goblin_Ear",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 60
+          }
+        ],
+        "gpDrops": {
+          "min": 8,
+          "max": 20
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:EarthWave"
+      },
+      {
+        "id": "Sharp_Tooth_Clan_Goblin_Shaman",
+        "name": "Goblin Shaman",
+        "media": "assets/monsters/Goblin_Shaman.png",
+        "levels": {
+          "Attack": 15,
+          "Defence": 10,
+          "Hitpoints": 18,
+          "Magic": 25,
+          "Ranged": 10,
+          "Strength": 12
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2800
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "tes:Goblin_Curse"
+        ],
+        "passives": [
+          "tes:Goblin_Buff"
+        ],
+        "lootChance": 75,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Water_Battlestaff",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorF:Golbin_Mask",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 15
+          },
+          {
+            "itemID": "melvorD:Red_Wizard_Robes",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Magic_Wand_Basic",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID": "tes:Goblin_Ear",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 60
+          }
+        ],
+        "gpDrops": {
+          "min": 8,
+          "max": 20
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:EarthWave"
+      },
+      {
+        "id": "Skull_Breaker_Clan_Goblin_Shaman",
+        "name": "Goblin Shaman",
+        "media": "assets/monsters/Goblin_Shaman.png",
+        "levels": {
+          "Attack": 15,
+          "Defence": 10,
+          "Hitpoints": 18,
+          "Magic": 25,
+          "Ranged": 10,
+          "Strength": 12
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2800
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "tes:Goblin_Curse"
+        ],
+        "passives": [
+          "tes:Goblin_Buff"
+        ],
+        "lootChance": 75,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Water_Battlestaff",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorF:Golbin_Mask",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 15
+          },
+          {
+            "itemID": "melvorD:Red_Wizard_Robes",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Magic_Wand_Basic",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID": "tes:Goblin_Ear",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 60
+          }
+        ],
+        "gpDrops": {
+          "min": 8,
+          "max": 20
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:EarthWave"
+      },
+      {
+        "id": "Three_Feather_Clan_Goblin_Shaman",
+        "name": "Goblin Shaman",
+        "media": "assets/monsters/Goblin_Shaman.png",
+        "levels": {
+          "Attack": 15,
+          "Defence": 10,
+          "Hitpoints": 18,
+          "Magic": 25,
+          "Ranged": 10,
+          "Strength": 12
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2800
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "tes:Goblin_Curse"
+        ],
+        "passives": [
+          "tes:Goblin_Buff"
+        ],
+        "lootChance": 75,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Water_Battlestaff",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorF:Golbin_Mask",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 15
+          },
+          {
+            "itemID": "melvorD:Red_Wizard_Robes",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Magic_Wand_Basic",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID": "tes:Goblin_Ear",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 60
+          }
+        ],
+        "gpDrops": {
+          "min": 8,
+          "max": 20
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:EarthWave"
+      },
+      {
+        "id": "White_Skin_Clan_Goblin_Shaman",
+        "name": "Goblin Shaman",
+        "media": "assets/monsters/Goblin_Shaman.png",
+        "levels": {
+          "Attack": 15,
+          "Defence": 10,
+          "Hitpoints": 18,
+          "Magic": 25,
+          "Ranged": 10,
+          "Strength": 12
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2800
+          }
+        ],
+        "ignoreCompletion": true,
+        "attackType": "magic",
+        "specialAttacks": [
+          "tes:Goblin_Curse"
+        ],
+        "passives": [
+          "tes:Goblin_Buff"
+        ],
+        "lootChance": 75,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Water_Battlestaff",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorF:Golbin_Mask",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 15
+          },
+          {
+            "itemID": "melvorD:Red_Wizard_Robes",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Magic_Wand_Basic",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID": "tes:Goblin_Ear",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 60
+          }
+        ],
+        "gpDrops": {
+          "min": 8,
+          "max": 20
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:EarthWave"
+      },
       {
         "id": "Goblin_War_Chief",
         "name": "Goblin War Chief",
@@ -10837,6 +11957,12 @@
             "maxQuantity": 3,
             "minQuantity": 1,
             "weight": 60
+          },
+          {
+            "itemID": "tes:Lockpick",
+            "maxQuantity": 2,
+            "minQuantity": 2,
+            "weight": 100
           }
         ],
         "gpDrops": {
@@ -11567,12 +12693,12 @@
         "name": "Ysmir Iceheart",
         "media": "assets/monsters/Ysmir_Iceheart.png",
         "levels": {
-          "Attack": 750,
+          "Attack": 300,
           "Defence": 450,
           "Hitpoints": 850,
-          "Magic": 300,
-          "Ranged": 200,
-          "Strength": 700
+          "Magic": 500,
+          "Ranged": 700,
+          "Strength": 300
         },
         "equipmentStats": [
           {
@@ -14473,6 +15599,26 @@
           {
             "key": "damageReduction",
             "value": 20
+          },
+          {
+            "key":"magicDamageBonus",
+            "value": 200
+          },
+          {
+            "key":"magicAttackBonus",
+            "value": 200
+          },
+          {
+            "key":"meleeDefenceBonus",
+            "value": 300
+          },
+          {
+            "key":"magicDefenceBonus",
+            "value": 200
+          },
+          {
+            "key":"rangedDefenceBonus",
+            "value": 300
           }
         ],
         "ignoreCompletion": true,
@@ -14517,6 +15663,22 @@
           {
             "key": "damageReduction",
             "value": 10
+          },
+          {
+            "key":"meleeStrengthBonus",
+            "value": 400
+          },
+          {
+            "key":"meleeDefenceBonus",
+            "value": 300
+          },
+          {
+            "key":"magicDefenceBonus",
+            "value": 200
+          },
+          {
+            "key":"rangedDefenceBonus",
+            "value": 300
           }
         ],
         "ignoreCompletion": true,
@@ -17523,6 +18685,19 @@
         "activeInRaid": false,
         "hint": "Goblin Caves",
         "customDescription": "May the Goblin Army protect you from Assassins"
+      },
+      {
+        "id": "Esmerelda",
+        "name": "Esmerelda",
+        "media": "assets/monsters/Hagraven.png",
+        "scaleChanceWithMasteryPool": false,
+        "ignoreCompletion": true,
+        "modifiers": {
+          "increasedChancePerfectCookGlobal": 5
+        },
+        "activeInRaid": false,
+        "hint": "Glenmoril Coven",
+        "customDescription": "What? Esmerelda, with the dark feathers?"
       }
     ],
     "combatAreas": [
@@ -17536,6 +18711,8 @@
           "tes:Giant",
           "tes:Draugr",
           "tes:Thief",
+          "tes:Hagraven",
+          "tes:Ysmir_Iceheart",
           "tes:Alduin"
         ],
         "difficulty": [
@@ -17653,7 +18830,8 @@
         "name": "Valenwood",
         "media": "assets/locations/Valenwood.png",
         "monsterIDs": [
-          "tes:Hoarvor"
+          "tes:Hoarvor",
+          "tes:Sload"
         ],
         "difficulty": [
           2
@@ -17697,6 +18875,38 @@
       }
     ],
     "dungeons": [
+      {
+        "id": "Glenmoril_Coven",
+        "name": "Glenmoril Coven",
+        "media": "assets/locations/Glenmoril_Coven.png",
+        "monsterIDs": [
+          "tes:Lucerne",
+          "tes:Drascua",
+          "tes:Petra",
+          "tes:Moira",
+          "tes:Melka"
+        ],
+        "difficulty": [
+          4
+        ],
+        "entryRequirements": [
+          {
+            "purchaseID":"tes:Guardian_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "rewardItemIDs": [
+          "tes:WitchsHead"
+        ],
+        "dropBones": true,
+        "pet": {
+          "petID": "tes:Esmerelda",
+          "weight": 6
+        },
+        "fixedPetClears": false,
+        "pauseOnBosses": false
+      },
       {
         "id": "Shivering_Isles",
         "name": "Shivering Isles",
@@ -17850,6 +19060,7 @@
           "melvorD:MalcsTheGuardianOfMelvor",
           "melvorF:PratTheGuardianOfSecrets",
           "melvorF:MalcsTheLeaderOfDragons",
+          "tes:Ysmir_Iceheart",
           "tes:Alduin",
           "tes:Pelinal_Whitestrake",
           "tes:Divine_Crusader"
@@ -17890,8 +19101,8 @@
         "monsterIDs": [
           "melvorD:Golbin",
           "tes:Goblin_Berserker",
-          "tes:Goblin_Shaman",
-          "tes:Goblin_Skirmisher"
+          "tes:Goblin_Skirmisher",
+          "tes:Bitterfish_Clan_Goblin_Shaman"
         ],
         "difficulty": [
           0
@@ -17909,7 +19120,233 @@
         "dropBones": true,
         "pet": {
           "petID": "tes:The_Goblin_Army",
-          "weight": 750
+          "weight": 6
+        },
+        "fixedPetClears": false,
+        "pauseOnBosses": false
+      },
+      {
+        "id": "Cracked_Wood_Cave",
+        "name": "Cracked Wood Cave",
+        "media": "assets/icons/Goblin_Bloody_Hand.png",
+        "monsterIDs": [
+          "melvorD:Golbin",
+          "tes:Goblin_Berserker",
+          "tes:Goblin_Chef",
+          "tes:Goblin_Rat_Farmer",
+          "tes:Goblin_Skirmisher",
+          "tes:Goblin_War_Chief",
+          "tes:Bloody_Hand_Tribe_Goblin_Shaman"
+        ],
+        "difficulty": [
+          0
+        ],
+        "entryRequirements": [
+          {
+            "monsterID": "melvorD:Golbin",
+            "type": "MonsterKilled",
+            "count": 1
+          }
+        ],
+        "rewardItemIDs": [
+          "tes:GoblinTotemStaff"
+        ],
+        "dropBones": true,
+        "pet": {
+          "petID": "tes:The_Goblin_Army",
+          "weight": 6
+        },
+        "fixedPetClears": false,
+        "pauseOnBosses": false
+      },
+      {
+        "id": "Barren_Mine",
+        "name": "Barren Mine",
+        "media": "assets/icons/Goblin_Dust_Eater.png",
+        "monsterIDs": [
+          "tes:Goblin_Berserker",
+          "tes:Goblin_Skirmisher",
+          "tes:Goblin_War_Chief",
+          "tes:Dust_Eater_Clan_Goblin_Shaman"
+        ],
+        "difficulty": [
+          0
+        ],
+        "entryRequirements": [
+          {
+            "monsterID": "melvorD:Golbin",
+            "type": "MonsterKilled",
+            "count": 1
+          }
+        ],
+        "rewardItemIDs": [
+          "tes:GoblinTotemStaff"
+        ],
+        "dropBones": true,
+        "pet": {
+          "petID": "tes:The_Goblin_Army",
+          "weight": 6
+        },
+        "fixedPetClears": false,
+        "pauseOnBosses": false
+      },
+      {
+        "id": "Timberscar_Hollow",
+        "name": "Timberscar Hollow",
+        "media": "assets/icons/Goblin_Rock_Biter.png",
+        "monsterIDs": [
+          "melvorD:Golbin",
+          "tes:Goblin_Berserker",
+          "tes:Goblin_Skirmisher",
+          "tes:Goblin_War_Chief",
+          "tes:Rock_Biter_Clan_Goblin_Shaman"
+        ],
+        "difficulty": [
+          0
+        ],
+        "entryRequirements": [
+          {
+            "monsterID": "melvorD:Golbin",
+            "type": "MonsterKilled",
+            "count": 1
+          }
+        ],
+        "rewardItemIDs": [
+          "tes:GoblinTotemStaff"
+        ],
+        "dropBones": true,
+        "pet": {
+          "petID": "tes:The_Goblin_Army",
+          "weight": 6
+        },
+        "fixedPetClears": false,
+        "pauseOnBosses": false
+      },
+      {
+        "id": "Derelict_Mine",
+        "name": "Derelict Mine",
+        "media": "assets/icons/Goblin_Sharp_Tooth.png",
+        "monsterIDs": [
+          "melvorD:Golbin",
+          "tes:Goblin_Berserker",
+          "tes:Goblin_Chef",
+          "tes:Goblin_Skirmisher",
+          "tes:Goblin_War_Chief",
+          "tes:Sharp_Tooth_Clan_Goblin_Shaman"
+        ],
+        "difficulty": [
+          0
+        ],
+        "entryRequirements": [
+          {
+            "monsterID": "melvorD:Golbin",
+            "type": "MonsterKilled",
+            "count": 1
+          }
+        ],
+        "rewardItemIDs": [
+          "tes:GoblinTotemStaff"
+        ],
+        "dropBones": true,
+        "pet": {
+          "petID": "tes:The_Goblin_Army",
+          "weight": 6
+        },
+        "fixedPetClears": false,
+        "pauseOnBosses": false
+      },
+      {
+        "id": "Wenderbek_Cave",
+        "name": "Wenderbek Cave",
+        "media": "assets/icons/Goblin_Skull_Breaker.png",
+        "monsterIDs": [
+          "melvorD:Golbin",
+          "tes:Goblin_Berserker",
+          "tes:Goblin_Skirmisher",
+          "tes:Goblin_War_Chief",
+          "tes:Skull_Breaker_Clan_Goblin_Shaman"
+        ],
+        "difficulty": [
+          0
+        ],
+        "entryRequirements": [
+          {
+            "monsterID": "melvorD:Golbin",
+            "type": "MonsterKilled",
+            "count": 1
+          }
+        ],
+        "rewardItemIDs": [
+          "tes:GoblinTotemStaff"
+        ],
+        "dropBones": true,
+        "pet": {
+          "petID": "tes:The_Goblin_Army",
+          "weight": 6
+        },
+        "fixedPetClears": false,
+        "pauseOnBosses": false
+      },
+      {
+        "id": "Plundered_Mine",
+        "name": "Plundered Mine",
+        "media": "assets/icons/Goblin_Three_Feather.png",
+        "monsterIDs": [
+          "melvorD:Golbin",
+          "tes:Goblin_Berserker",
+          "tes:Goblin_Skirmisher",
+          "tes:Goblin_War_Chief",
+          "tes:Three_Feather_Clan_Goblin_Shaman"
+        ],
+        "difficulty": [
+          0
+        ],
+        "entryRequirements": [
+          {
+            "monsterID": "melvorD:Golbin",
+            "type": "MonsterKilled",
+            "count": 1
+          }
+        ],
+        "rewardItemIDs": [
+          "tes:GoblinTotemStaff"
+        ],
+        "dropBones": true,
+        "pet": {
+          "petID": "tes:The_Goblin_Army",
+          "weight": 6
+        },
+        "fixedPetClears": false,
+        "pauseOnBosses": false
+      },
+      {
+        "id": "Goblin_Jims_Cave",
+        "name": "Goblin Jim's Cave",
+        "media": "assets/icons/Goblin_White_Skin.png",
+        "monsterIDs": [
+          "melvorD:Golbin",
+          "tes:Goblin_Berserker",
+          "tes:Goblin_Skirmisher",
+          "tes:Goblin_War_Chief",
+          "tes:White_Skin_Clan_Goblin_Shaman"
+        ],
+        "difficulty": [
+          0
+        ],
+        "entryRequirements": [
+          {
+            "monsterID": "melvorD:Golbin",
+            "type": "MonsterKilled",
+            "count": 1
+          }
+        ],
+        "rewardItemIDs": [
+          "tes:GoblinTotemStaff"
+        ],
+        "dropBones": true,
+        "pet": {
+          "petID": "tes:The_Goblin_Army",
+          "weight": 6
         },
         "fixedPetClears": false,
         "pauseOnBosses": false
@@ -17919,7 +19356,14 @@
       {
         "insertAt": "Start",
         "ids": [
-          "tes:Miscarcand"
+          "tes:Miscarcand",
+          "tes:Cracked_Wood_Cave",
+          "tes:Barren_Mine",
+          "tes:Timberscar_Hollow",
+          "tes:Derelict_Mine",
+          "tes:Wenderbek_Cave",
+          "tes:Plundered_Mine",
+          "tes:Goblin_Jims_Cave"
         ]
       },
       {
@@ -17941,7 +19385,8 @@
         "afterID": "melvorF:Dragons_Den",
         "ids": [
           "tes:Volkihar",
-          "tes:Ayleid_Ruins"
+          "tes:Ayleid_Ruins",
+          "tes:Glenmoril_Coven"
         ]
       },
       {
@@ -18127,9 +19572,63 @@
                   "quantity": 1
                 }
               ]
+            },
+            {
+              "id": "Twilight_Sepulcher",
+              "name": "Twilight Sepulcher",
+              "npcIDs": [
+                "tes:Nocturnal_Thieving"
+              ],
+              "uniqueDrops": [
+                {
+                  "id": "tes:Skeleton_Key",
+                  "quantity": 1
+                }
+              ]
             }
+            
           ],
           "npcs": [
+            {
+              "id": "Nocturnal_Thieving",
+              "name": "Nocturnal",
+              "media": "assets/monsters/Nocturnal.png",
+              "baseExperience": 1000,
+              "level": 99,
+              "maxGP": 2000,
+              "maxHit": 100,
+              "perception": 2000,
+              "uniqueDrop": {
+                "id": "tes:Gray_Cowl_of_Nocturnal",
+                "quantity": 1
+              },
+              "lootTable": [
+                {
+                  "itemID": "melvorD:Ancient_Rune",
+                  "minQuantity": 1,
+                  "maxQuantity": 11,
+                  "weight": 50
+                },
+                {
+                  "itemID": "tes:Sweetroll",
+                  "minQuantity": 1,
+                  "maxQuantity": 11,
+                  "weight": 10
+                },
+                {
+                  "itemID": "melvorD:Dragonite_Ore",
+                  "minQuantity": 1,
+                  "maxQuantity": 11,
+                  "weight": 30
+                },
+                {
+                  "itemID": "melvorD:Dragonite_Bar",
+                  "minQuantity": 1,
+                  "maxQuantity": 11,
+                  "weight": 10
+                }
+              ]
+            },
             {
               "id": "City_Swimmer",
               "name": "City-Swimmer",
@@ -19262,6 +20761,56 @@
                 "melvorD:Magic"
               ],
               "tier": 3
+            },
+            {
+              "productID": "tes:Hagraven_Summon",
+              "id": "Hagraven_Summon",
+              "baseExperience": 30,
+              "baseQuantity": 50,
+              "categoryID": "melvorD:TabletsFamiliars",
+              "gpCost": 1000,
+              "itemCosts": [
+                {
+                  "id": "melvorF:Summoning_Shard_Green",
+                  "quantity": 1
+                }
+              ],
+              "level": 50,
+              "markMedia": "assets/summoning/Hagraven_Summon.png",
+              "nonShardItemCosts": [
+                "tes:WitchsHead",
+                "tes:Eye",
+                "tes:HagravensClaw"
+              ],
+              "scCost": 0,
+              "skillIDs": [
+                "melvorD:Magic"
+              ],
+              "tier": 2
+            },
+            {
+              "productID": "melvorF:Summoning_Familiar_Golbin_Thief",
+              "id": "Goblin_Thief",
+              "baseExperience": 5,
+              "baseQuantity": 25,
+              "categoryID": "melvorD:TabletsFamiliars",
+              "gpCost": 0,
+              "itemCosts": [
+                {
+                  "id": "melvorF:Summoning_Shard_Red",
+                  "quantity": 3
+                }
+              ],
+              "level": 1,
+              "markMedia": "assets/summoning/Golbin_Thief_(item).svg",
+              "nonShardItemCosts": [
+                "tes:Goblin_Ear"
+              ],
+              "scCost": 0,
+              "skillIDs": [
+                "melvorD:Thieving"
+              ],
+              "tier": 1
             }
           ],
           "synergies": [
@@ -19278,6 +20827,21 @@
               "summonIDs": [
                 "tes:Mage_Apprentice",
                 "melvorF:Occultist"
+              ]
+            },
+            {
+              "modifiers": {
+                "increasedMagicMaxHitBonusAgainstMelee": 5,
+                "increasedEvasionAgainstRanged": 5
+              },
+              "consumesOn": [
+                {
+                  "type": "PlayerSummonAttack"
+                }
+              ],
+              "summonIDs": [
+                "tes:Mage_Apprentice",
+                "tes:Hagraven_Summon"
               ]
             }
           ]
@@ -19423,6 +20987,95 @@
         ],
         "playerModifiers": {
           "increasedSlayerAreaEffectNegationFlat": 20
+        }
+      },
+      {
+        "itemIDs": [
+          "tes:Guild_Master_Armour",
+          "tes:Guild_Masters_Boots",
+          "tes:Guild_Masters_Hood",
+          "tes:Guild_Masters_Gloves"
+        ],
+        "playerModifiers": {
+          "increasedMinThievingGP": 60
+        }
+      },
+      {
+        "itemIDs": [
+          "tes:Thieves_Guild_Armour",
+          "tes:Thieves_Guild_Boots",
+          "tes:Thieves_Guild_Hood",
+          "tes:Thieves_Guild_Gloves"
+        ],
+        "playerModifiers": {
+          "increasedMinThievingGP": 20
+        }
+      },
+      {
+        "itemIDs": [
+          "tes:Sinestral_Blade",
+          "tes:Sinestral_Shield"
+        ],
+        "playerModifiers": {
+          "increasedSummoningAttackLifesteal": 20
+        }
+      },
+      {
+        "itemIDs": [
+          "tes:Arch_MagesHood",
+          "tes:Arch_MagesRobe"
+        ],
+        "playerModifiers": {
+          "increasedSummoningMaxHit": 20
+        }
+      },
+      {
+        "itemIDs": [
+          "tes:ShroudedArmor",
+          "tes:ShroudedHood"
+        ],
+        "playerModifiers": {
+          "increasedThievingStealth": 60,
+          "increasedFlatDamageWhileTargetHasMaxHP": 100
+        }
+      },
+      {
+        "itemIDs": [
+          "tes:Black_Hand_Hood",
+          "tes:Black_Hand_Robe"
+        ],
+        "playerModifiers": {
+          "increasedThievingStealth": 120,
+          "increasedFlatDamageWhileTargetHasMaxHP": 200
+        }
+      }
+    ]
+  },
+  "modifications": {
+    "combatAreas": [
+      {
+        "id":"melvorD:Goblin_Village",
+        "monsters": {
+          "add": [
+            {
+              "monsterID":"tes:Goblin_Berserker"
+            },
+            {
+              "monsterID":"tes:Goblin_Chef"
+            },
+            {
+              "monsterID":"tes:Goblin_Rat_Farmer"
+            },
+            {
+              "monsterID":"tes:Goblin_Skirmisher"
+            },
+            {
+              "monsterID":"tes:Goblin_War_Chief"
+            },
+            {
+              "monsterID":"tes:Goblin_Shaman"
+            }
+          ]
         }
       }
     ]

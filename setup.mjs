@@ -218,20 +218,20 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         initialPackage.add();
 
         game.monsters.forEach(monster => {
-            if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Bitterfish_Clan_Goblin_Shaman') {
-                const killCount = game.stats.monsterKillCount(monster)
-                console.log(killCount, "dead ", monster.localID)
-                if (killCount > 0) {
-                    console.log('hiding Miscarcand')
-                    let elem = document.getElementById("tutorial-tes:Miscarcand")
-                    let name = ""
-                    while (name != "COMBAT-AREA-MENU") {
-                        name = elem.parentNode.nodeName
-                        elem = elem.parentNode
-                    }
-                    elem.style.display = 'none'
-                }
-            }
+            // if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Bitterfish_Clan_Goblin_Shaman') {
+            //     const killCount = game.stats.monsterKillCount(monster)
+            //     console.log(killCount, "dead ", monster.localID)
+            //     if (killCount > 0) {
+            //         console.log('hiding Miscarcand')
+            //         let elem = document.getElementById("tutorial-tes:Miscarcand")
+            //         let name = ""
+            //         while (name != "COMBAT-AREA-MENU") {
+            //             name = elem.parentNode.nodeName
+            //             elem = elem.parentNode
+            //         }
+            //         elem.style.display = 'none'
+            //     }
+            // }
             if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Bloody_Hand_Tribe_Goblin_Shaman') {
                 const killCount = game.stats.monsterKillCount(monster)
                 console.log(killCount, "dead ", monster.localID)
