@@ -61,7 +61,6 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
 
     // Random attack?
     // While wearing a shit ring, kill x ?
-    // One of each more area,
     // Dialoge mod
     // Monster category mod
     // MonsterStats.KilledByPlayer
@@ -220,9 +219,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         game.monsters.forEach(monster => {
             // if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Bitterfish_Clan_Goblin_Shaman') {
             //     const killCount = game.stats.monsterKillCount(monster)
-            //     console.log(killCount, "dead ", monster.localID)
             //     if (killCount > 0) {
-            //         console.log('hiding Miscarcand')
             //         let elem = document.getElementById("tutorial-tes:Miscarcand")
             //         let name = ""
             //         while (name != "COMBAT-AREA-MENU") {
@@ -234,9 +231,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
             // }
             if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Bloody_Hand_Tribe_Goblin_Shaman') {
                 const killCount = game.stats.monsterKillCount(monster)
-                console.log(killCount, "dead ", monster.localID)
                 if (killCount > 0) {
-                    console.log('hiding Cracked_Wood_Cave')
                     let elem = document.getElementById("tutorial-tes:Cracked_Wood_Cave")
                     let name = ""
                     while (name != "COMBAT-AREA-MENU") {
@@ -248,9 +243,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
             }
             if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Dust_Eater_Clan_Goblin_Shaman') {
                 const killCount = game.stats.monsterKillCount(monster)
-                console.log(killCount, "dead ", monster.localID)
                 if (killCount > 0) {
-                    console.log('hiding Barren_Mine')
                     let elem = document.getElementById("tutorial-tes:Barren_Mine")
                     let name = ""
                     while (name != "COMBAT-AREA-MENU") {
@@ -262,9 +255,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
             }
             if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Rock_Biter_Clan_Goblin_Shaman') {
                 const killCount = game.stats.monsterKillCount(monster)
-                console.log(killCount, "dead ", monster.localID)
                 if (killCount > 0) {
-                    console.log('hiding Timberscar_Hollow')
                     let elem = document.getElementById("tutorial-tes:Timberscar_Hollow")
                     let name = ""
                     while (name != "COMBAT-AREA-MENU") {
@@ -276,9 +267,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
             }
             if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Sharp_Tooth_Clan_Goblin_Shaman') {
                 const killCount = game.stats.monsterKillCount(monster)
-                console.log(killCount, "dead ", monster.localID)
                 if (killCount > 0) {
-                    console.log('hiding Derelict_Mine')
                     let elem = document.getElementById("tutorial-tes:Derelict_Mine")
                     let name = ""
                     while (name != "COMBAT-AREA-MENU") {
@@ -290,9 +279,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
             }
             if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Skull_Breaker_Clan_Goblin_Shaman') {
                 const killCount = game.stats.monsterKillCount(monster)
-                console.log(killCount, "dead ", monster.localID)
                 if (killCount > 0) {
-                    console.log('hiding Wenderbek_Cave')
                     let elem = document.getElementById("tutorial-tes:Wenderbek_Cave")
                     let name = ""
                     while (name != "COMBAT-AREA-MENU") {
@@ -304,9 +291,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
             }
             if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Three_Feather_Clan_Goblin_Shaman') {
                 const killCount = game.stats.monsterKillCount(monster)
-                console.log(killCount, "dead ", monster.localID)
                 if (killCount > 0) {
-                    console.log('hiding Plundered_Mine')
                     let elem = document.getElementById("tutorial-tes:Plundered_Mine")
                     let name = ""
                     while (name != "COMBAT-AREA-MENU") {
@@ -318,9 +303,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
             }
             if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'White_Skin_Clan_Goblin_Shaman') {
                 const killCount = game.stats.monsterKillCount(monster)
-                console.log(killCount, "dead ", monster.localID)
                 if (killCount > 0) {
-                    console.log('hiding Goblin_Jims_Cave')
                     let elem = document.getElementById("tutorial-tes:Goblin_Jims_Cave")
                     let name = ""
                     while (name != "COMBAT-AREA-MENU") {
@@ -332,11 +315,45 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
             }
         })
     });
+
+    // const myDialogBox = mod.api.dbox.create('my-dialog-box', {
+    //     title: 'My First Dialog Box',
+    //     startingDialogId: 'start-here',
+    //     characters: [{
+    //       id: 'golbin',
+    //       name: 'Friendly Golbin',
+    //       alignment: 'friendly',
+    //       media: game.monsters.getObjectByID('melvorD:Golbin').media
+    //     }],
+    //     dialogs: [{
+    //       id: 'start-here',
+    //       character: 'golbin',
+    //       text: ['Welcome to Melvor Idle!', 'This dialog was created in dbox.'],
+    //       options: [
+    //         { to: 'be-nice', text: 'Thank you, Golbin. Very cool!', isSpeech: true },
+    //         { to: 'be-mean', text: 'Who cares?', isSpeech: true }
+    //       ]
+    //     }, {
+    //       id: 'be-nice',
+    //       character: 'golbin',
+    //       text: 'Here\'s something to take with you on your journeys!',
+    //       options: [{ rewards: { gp: 100, items: { id: 'melvorD:Bronze_Dagger' } } }]
+    //     }, {
+    //       id: 'be-mean',
+    //       character: 'golbin',
+    //       text: ['Take this sword and stick it...', '...somewhere safe.'],
+    //       options: [{ rewards: { items: { id: 'melvorD:Bronze_Sword' } } }]
+    //     }]
+    //   }, ctx);
+
     onInterfaceReady(() => {
         ui.createStatic('#modal-book--The_Black_Horse_Courier_Waterfront', document.body);
         document.body.querySelector('.modal.The_Black_Horse_Courier_Waterfront').id = 'The_Black_Horse_Courier_Waterfront';
 
         ui.createStatic('#modal-book--recommendation_letter', document.body);
         document.body.querySelector('.modal.recommendation_letter').id = 'recommendation_letter';
+
+        // Dialog
+        // document.getElementById('woodcutting-container').firstElementChild.after(myDialogBox.root);
     });
 }

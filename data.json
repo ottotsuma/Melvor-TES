@@ -19593,11 +19593,11 @@
               "id": "Nocturnal_Thieving",
               "name": "Nocturnal",
               "media": "assets/monsters/Nocturnal.png",
-              "baseExperience": 1000,
+              "baseExperience": 200,
               "level": 99,
-              "maxGP": 2000,
-              "maxHit": 100,
-              "perception": 2000,
+              "maxGP": 2500,
+              "maxHit": 150,
+              "perception": 3000,
               "uniqueDrop": {
                 "id": "tes:Gray_Cowl_of_Nocturnal",
                 "quantity": 1
@@ -19607,7 +19607,7 @@
                   "itemID": "melvorD:Ancient_Rune",
                   "minQuantity": 1,
                   "maxQuantity": 11,
-                  "weight": 50
+                  "weight": 10
                 },
                 {
                   "itemID": "tes:Sweetroll",
@@ -19626,6 +19626,42 @@
                   "minQuantity": 1,
                   "maxQuantity": 11,
                   "weight": 10
+                },
+                {
+                  "itemID": "melvorD:Ruby",
+                  "minQuantity": 1,
+                  "maxQuantity": 11,
+                  "weight": 30
+                },
+                {
+                  "itemID": "melvorD:Topaz",
+                  "minQuantity": 1,
+                  "maxQuantity": 11,
+                  "weight": 30
+                },
+                {
+                  "itemID": "melvorD:Sapphire",
+                  "minQuantity": 1,
+                  "maxQuantity": 11,
+                  "weight": 30
+                },
+                {
+                  "itemID": "melvorD:Diamond",
+                  "minQuantity": 1,
+                  "maxQuantity": 11,
+                  "weight": 30
+                },
+                {
+                  "itemID": "melvorD:Emerald",
+                  "minQuantity": 1,
+                  "maxQuantity": 11,
+                  "weight": 30
+                },
+                {
+                  "itemID": "melvorF:Chest_Of_Gems",
+                  "minQuantity": 1,
+                  "maxQuantity": 1,
+                  "weight": 1
                 }
               ]
             },
@@ -19751,7 +19787,7 @@
               "id": "Corvus_Umbranox",
               "name": "Corvus Umbranox",
               "media": "assets/thief/Corvus_Umbranox.png",
-              "baseExperience": 1,
+              "baseExperience": 190,
               "level": 99,
               "maxGP": 2000,
               "maxHit": 100,
@@ -20692,7 +20728,7 @@
             {
               "id": "Iron_to_Gold",
               "baseExperience": 1000,
-              "baseQuantity": 10,
+              "baseQuantity": 1000,
               "categoryID": "tes:Alchemy",
               "gpCost": 0,
               "itemCosts": [
