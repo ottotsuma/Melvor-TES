@@ -1,8 +1,8 @@
 export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady }) {
 
-    modifierData.increasedDragonBreathDamage = {
+    modifierData.tes_increasedDragonBreathDamage = {
         get langDescription() {
-            return getLangString('MODIFIER_DATA_increasedDragonBreathDamage');
+            return getLangString('tes_increasedDragonBreathDamage');
         },
         description: '+${value}% damage taken from dragonbreath',
         isSkill: false,
@@ -10,9 +10,9 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         tags: ['combat']
     };
 
-    modifierData.wardsave = {
+    modifierData.tes_wardsave = {
         get langDescription() {
-            return getLangString('MODIFIER_DATA_wardsave');
+            return getLangString('tes_wardsave');
         },
         description: '+${value}% (MAX: 90%) to take 0 damage from a hit.',
         isSkill: false,
@@ -20,9 +20,9 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         tags: ['combat']
     };
 
-    modifierData.increasedFlatDamageWhileTargetHasMaxHP = {
+    modifierData.tes_increasedFlatDamageWhileTargetHasMaxHP = {
         get langDescription() {
-            return getLangString('MODIFIER_DATA_increasedFlatDamageWhileTargetHasMaxHP');
+            return getLangString('tes_increasedFlatDamageWhileTargetHasMaxHP');
         },
         description: '+${value} damage while the target is fully healed.',
         isSkill: false,
@@ -30,9 +30,9 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         tags: ['combat']
     };
 
-    modifierData.increasedPercDamageWhileTargetHasMaxHP = {
+    modifierData.tes_increasedPercDamageWhileTargetHasMaxHP = {
         get langDescription() {
-            return getLangString('MODIFIER_DATA_increasedPercDamageWhileTargetHasMaxHP');
+            return getLangString('tes_increasedPercDamageWhileTargetHasMaxHP');
         },
         description: '+${value}% damage while the target is fully healed.',
         isSkill: false,
@@ -40,9 +40,9 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         tags: ['combat']
     };
 
-    modifierData.decreaseFlatDamageWhileTargetHasMaxHP = {
+    modifierData.tes_decreaseFlatDamageWhileTargetHasMaxHP = {
         get langDescription() {
-            return getLangString('MODIFIER_DATA_decreaseFlatDamageWhileTargetHasMaxHP');
+            return getLangString('tes_decreaseFlatDamageWhileTargetHasMaxHP');
         },
         description: '-${value}% damage while you are fully healed.',
         isSkill: false,
@@ -51,26 +51,57 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
     };
 
     onModsLoaded(async (ctx) => {
+        const en_data = {
+            tes_increasedDragonBreathDamage: "Increase damage taken from dragon breaths by +${value}",
+            tes_wardsave: "+${value}% (MAX: 90%) to take 0 damage from a hit.",
+            tes_increasedFlatDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}.",
+            tes_increasedPercDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}%.",
+            tes_decreaseFlatDamageWhileTargetHasMaxHP: "Decrease damage taken while you are fully healed by +${value}.",
+            MISC_STRING_The_Five_Tenets: "The Five Tenets",
+            MISC_STRING_Dead_Drop_Orders_1: "Dead Drop Orders",
+            MISC_STRING_Dead_Drop_Orders_2: "Dead Drop Orders",
+            MISC_STRING_Dead_Drop_Orders_3: "Dead Drop Orders",
+            MISC_STRING_Dead_Drop_Orders_4: "Dead Drop Orders",
+            MISC_STRING_Dead_Drop_Orders_5: "Dead Drop Orders",
+            MISC_STRING_Dead_Drop_Orders_6: "Dead Drop Orders",
+            MISC_STRING_Dead_Drop_Orders_7: "Dead Drop Orders",
+            MISC_STRING_Dead_Drop_Orders_8: "Dead Drop Orders",
+        }
+        for (const [key, value] of Object.entries(en_data)) {
+            loadedLangJson[key] = value;
+        }
+
         if (cloudManager.hasTotHEntitlement) {
             console.log('hasTotHEntitlement')
             await ctx.gameData.addPackage('data-toth.json');
         } else {
-            console.log('Vinilla')
+            console.log('Vanilla')
+        }
+
+        if (mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')) {
+            const cmim = mod.api.customModifiersInMelvor;
+            if (!cmim) {
+                return;
+            }
+            cmim.addDragons(["tes:Ysmir_Iceheart", "tes:Alduin", "tes:Elsweyr_Dragon"]);
+            cmim.addHumans(["tes:Necromancer", "tes:Bandit", "tes:Thief", "tes:Havilstein_Hoar", "tes:Matthias_Draconis", "tes:Perennia_Draconis", "tes:Caelia_Draconis", "tes:Sibylla_Draconis", "tes:Andreas_Draconis", "tes:Celedaen", "tes:Imperial_Watch",]);
+            cmim.addUndeads(["tes:Harkon", "tes:Harkon2", "tes:Zombie", "tes:Lich",]);
         }
     });
-
-    // Random attack?
-    // While wearing a shit ring, kill x ?
-    // Dialoge mod
-    // Monster category mod
-    // MonsterStats.KilledByPlayer
+    let Khajiit_Item_1 = ""
+    let Khajiit_Item_1_Price = 100
+    let Khajiit_Item_1_qty = 1
+    let Khajiit_Item_2 = ""
+    let Khajiit_Item_2_Price = 100
+    let Khajiit_Item_3 = ""
+    let Khajiit_Item_3_Price = 100
 
     onCharacterLoaded(ctx => {
         ctx.patch(Character, 'modifyAttackDamage').after((damage, target, attack) => {
             let newDamage = damage
             // Remove all damage and return if wardsaved
-            if (target && target.modifiers && target.modifiers.wardsave) {
-                // let temp_save = target.modifiers.wardsave
+            if (target && target.modifiers && target.modifiers.tes_wardsave) {
+                // let temp_save = target.modifiers.tes_wardsave
                 // if (temp_save > 90) {
                 //     temp_save = 90
                 // }
@@ -79,7 +110,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                 //     return 0;
                 // }
 
-                let wardsaveChance = Math.min(target.modifiers.wardsave, 90);
+                let wardsaveChance = Math.min(target.modifiers.tes_wardsave, 90);
                 if (rollPercentage(wardsaveChance)) {
                     return 0;
                 }
@@ -89,37 +120,37 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
             if (!target.monster && target.stats.maxHitpoints === target.hitpoints) {
                 // do damage to player
                 let percDamage = 0
-                if (game.combat.enemy.modifiers.increasedPercDamageWhileTargetHasMaxHP) {
-                    percDamage = newDamage * (game.combat.enemy.modifiers.increasedPercDamageWhileTargetHasMaxHP / 100)
+                if (game.combat.enemy.modifiers.tes_increasedPercDamageWhileTargetHasMaxHP) {
+                    percDamage = newDamage * (game.combat.enemy.modifiers.tes_increasedPercDamageWhileTargetHasMaxHP / 100)
                 }
                 let flatDam = 0
-                if (game.combat.enemy.modifiers.increasedFlatDamageWhileTargetHasMaxHP) {
-                    flatDam = game.combat.enemy.modifiers.increasedFlatDamageWhileTargetHasMaxHP
+                if (game.combat.enemy.modifiers.tes_increasedFlatDamageWhileTargetHasMaxHP) {
+                    flatDam = game.combat.enemy.modifiers.tes_increasedFlatDamageWhileTargetHasMaxHP
                 }
                 newDamage = newDamage + flatDam + percDamage
             }
             if (target.monster && target.stats.maxHitpoints === target.hitpoints) {
                 // Do damage to monster
                 let percDamage = 0
-                if (game.combat.player.modifiers.increasedPercDamageWhileTargetHasMaxHP) {
-                    percDamage = newDamage * (game.combat.player.modifiers.increasedPercDamageWhileTargetHasMaxHP / 100)
+                if (game.combat.player.modifiers.tes_increasedPercDamageWhileTargetHasMaxHP) {
+                    percDamage = newDamage * (game.combat.player.modifiers.tes_increasedPercDamageWhileTargetHasMaxHP / 100)
                 }
                 let flatDam = 0
-                if (game.combat.player.modifiers.increasedFlatDamageWhileTargetHasMaxHP) {
-                    flatDam = game.combat.player.modifiers.increasedFlatDamageWhileTargetHasMaxHP
+                if (game.combat.player.modifiers.tes_increasedFlatDamageWhileTargetHasMaxHP) {
+                    flatDam = game.combat.player.modifiers.tes_increasedFlatDamageWhileTargetHasMaxHP
                 }
                 newDamage = newDamage + flatDam + percDamage
             }
-            if (target && target.modifiers && target.modifiers.decreaseFlatDamageWhileTargetHasMaxHP && target.stats.maxHitpoints === target.hitpoints) {
-                newDamage = newDamage - target.modifiers.decreaseFlatDamageWhileTargetHasMaxHP
+            if (target && target.modifiers && target.modifiers.tes_decreaseFlatDamageWhileTargetHasMaxHP && target.stats.maxHitpoints === target.hitpoints) {
+                newDamage = newDamage - target.modifiers.tes_decreaseFlatDamageWhileTargetHasMaxHP
             }
             // If it's a dragon breath re-calc
             if (attack.isDragonbreath) {
                 // Flat calc
-                newDamage = newDamage + target.modifiers.increasedDragonBreathDamage
+                newDamage = newDamage + target.modifiers.tes_increasedDragonBreathDamage
 
                 // % calc
-                // newDamage *= (1 - (target.modifiers.increasedDragonBreathDamage - target.modifiers.decreasedDragonBreathDamage)) / 100
+                // newDamage *= (1 - (target.modifiers.tes_increasedDragonBreathDamage - target.modifiers.decreasedDragonBreathDamage)) / 100
             }
             // return re-calced damage
             return newDamage
@@ -198,6 +229,18 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     if (item.swalData) {
                         return;
                     }
+                    if (!Khajiit_Item_1 && Math.random() < 0.01) {
+                        Khajiit_Item_1 = `${item.namespace}:${item.localID}`
+                        Khajiit_Item_1_Price = item.sellsFor * 4
+                        Khajiit_Item_1_qty = Math.floor(Math.random() * 10)
+                    } else if (!Khajiit_Item_2 && Math.random() < 0.1) {
+                        Khajiit_Item_2 = `${item.namespace}:${item.localID}`
+                        Khajiit_Item_2_Price = item.sellsFor * 3
+                    } else if (!Khajiit_Item_3 && Math.random() < 0.01) {
+                        Khajiit_Item_3 = `${item.namespace}:${item.localID}`
+                        Khajiit_Item_3_Price = item.sellsFor * 2
+                    }
+
                     itemPackage.items.modify({
                         id: "tes:Elder_Scrolls",
                         dropTable: {
@@ -229,7 +272,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
             //         elem.style.display = 'none'
             //     }
             // }
-            if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Bloody_Hand_Tribe_Goblin_Shaman') {
+            if (monster && monster.localID && monster.namespace === "tes" && monster.localID === 'Bloody_Hand_Tribe_Goblin_Shaman') {
                 const killCount = game.stats.monsterKillCount(monster)
                 if (killCount > 0) {
                     let elem = document.getElementById("tutorial-tes:Cracked_Wood_Cave")
@@ -241,7 +284,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     elem.style.display = 'none'
                 }
             }
-            if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Dust_Eater_Clan_Goblin_Shaman') {
+            if (monster && monster.localID && monster.namespace === "tes" && monster.localID === 'Dust_Eater_Clan_Goblin_Shaman') {
                 const killCount = game.stats.monsterKillCount(monster)
                 if (killCount > 0) {
                     let elem = document.getElementById("tutorial-tes:Barren_Mine")
@@ -253,7 +296,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     elem.style.display = 'none'
                 }
             }
-            if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Rock_Biter_Clan_Goblin_Shaman') {
+            if (monster && monster.localID && monster.namespace === "tes" && monster.localID === 'Rock_Biter_Clan_Goblin_Shaman') {
                 const killCount = game.stats.monsterKillCount(monster)
                 if (killCount > 0) {
                     let elem = document.getElementById("tutorial-tes:Timberscar_Hollow")
@@ -265,7 +308,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     elem.style.display = 'none'
                 }
             }
-            if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Sharp_Tooth_Clan_Goblin_Shaman') {
+            if (monster && monster.localID && monster.namespace === "tes" && monster.localID === 'Sharp_Tooth_Clan_Goblin_Shaman') {
                 const killCount = game.stats.monsterKillCount(monster)
                 if (killCount > 0) {
                     let elem = document.getElementById("tutorial-tes:Derelict_Mine")
@@ -277,7 +320,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     elem.style.display = 'none'
                 }
             }
-            if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Skull_Breaker_Clan_Goblin_Shaman') {
+            if (monster && monster.localID && monster.namespace === "tes" && monster.localID === 'Skull_Breaker_Clan_Goblin_Shaman') {
                 const killCount = game.stats.monsterKillCount(monster)
                 if (killCount > 0) {
                     let elem = document.getElementById("tutorial-tes:Wenderbek_Cave")
@@ -289,7 +332,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     elem.style.display = 'none'
                 }
             }
-            if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'Three_Feather_Clan_Goblin_Shaman') {
+            if (monster && monster.localID && monster.namespace === "tes" && monster.localID === 'Three_Feather_Clan_Goblin_Shaman') {
                 const killCount = game.stats.monsterKillCount(monster)
                 if (killCount > 0) {
                     let elem = document.getElementById("tutorial-tes:Plundered_Mine")
@@ -301,7 +344,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     elem.style.display = 'none'
                 }
             }
-            if (monster && monster.localID && monster.namespace === "tes" &&  monster.localID === 'White_Skin_Clan_Goblin_Shaman') {
+            if (monster && monster.localID && monster.namespace === "tes" && monster.localID === 'White_Skin_Clan_Goblin_Shaman') {
                 const killCount = game.stats.monsterKillCount(monster)
                 if (killCount > 0) {
                     let elem = document.getElementById("tutorial-tes:Goblin_Jims_Cave")
@@ -316,44 +359,146 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         })
     });
 
-    // const myDialogBox = mod.api.dbox.create('my-dialog-box', {
-    //     title: 'My First Dialog Box',
-    //     startingDialogId: 'start-here',
-    //     characters: [{
-    //       id: 'golbin',
-    //       name: 'Friendly Golbin',
-    //       alignment: 'friendly',
-    //       media: game.monsters.getObjectByID('melvorD:Golbin').media
-    //     }],
-    //     dialogs: [{
-    //       id: 'start-here',
-    //       character: 'golbin',
-    //       text: ['Welcome to Melvor Idle!', 'This dialog was created in dbox.'],
-    //       options: [
-    //         { to: 'be-nice', text: 'Thank you, Golbin. Very cool!', isSpeech: true },
-    //         { to: 'be-mean', text: 'Who cares?', isSpeech: true }
-    //       ]
-    //     }, {
-    //       id: 'be-nice',
-    //       character: 'golbin',
-    //       text: 'Here\'s something to take with you on your journeys!',
-    //       options: [{ rewards: { gp: 100, items: { id: 'melvorD:Bronze_Dagger' } } }]
-    //     }, {
-    //       id: 'be-mean',
-    //       character: 'golbin',
-    //       text: ['Take this sword and stick it...', '...somewhere safe.'],
-    //       options: [{ rewards: { items: { id: 'melvorD:Bronze_Sword' } } }]
-    //     }]
-    //   }, ctx);
 
-    onInterfaceReady(() => {
+
+    onInterfaceReady((ctx) => {
+        if (mod.manager.getLoadedModList().includes('dbox')) {
+            const dbox = mod.api.dbox;
+            if (!dbox) {
+                return;
+            }
+            const khajiit_merchant_risaad_box = mod.api.dbox.create('khajiit_merchant_risaad_box', {
+                title: 'Khajiit Merchant Risaad',
+                startingDialogId: '0',
+                characters: [{
+                    id: 'khajiit_merchant_risaad',
+                    name: 'Risaad',
+                    alignment: 'friendly',
+                    media: 'assets/dialog/Risaad.png'
+                    //   media: game.monsters.getObjectByID('melvorD:Golbin').media
+                }],
+                dialogs: [{
+                    id: '0',
+                    character: 'khajiit_merchant_risaad',
+                    text: ['Welcome. If I cannot serve you, I am sure that one of my other traders can do so.'],
+                    options: [
+                        { to: '3', text: 'What\'re ya sellin\'?', isSpeech: true },
+                        { to: '1', text: 'I\'m curious about your homeland.', isSpeech: true },
+                        { to: '2', text: 'Why sell your goods in Melvor?', isSpeech: true },
+                        { to: 'exit', text: 'Good bye', isSpeech: true },
+                    ]
+                }, {
+                    id: '1',
+                    character: 'khajiit_merchant_risaad',
+                    text: 'The Khajiit hail from a distant land called Elsweyr, bordered on the north by Cyrodiil and the south by the glistening blue waters of the sea. Elsweyr is an arid land of deserts and rocky canyons, where the sun shines warmly, always. There are cities so ancient, the sands have swallowed them whole. But now I will say no more, for I miss my home greatly.',
+                    options: [
+                        { to: '3', text: 'What\'re ya sellin\'?', isSpeech: true },
+                        { to: '2', text: 'Why sell your goods in Melvor?', isSpeech: true },
+                        { to: 'exit', text: 'Good bye', isSpeech: true },
+                    ]
+                },
+
+                {
+                    id: '2',
+                    character: 'khajiit_merchant_risaad',
+                    text: ['An astute question, for we are far from home and this is a cold, hard land. The wise trader finds the best opportunities, even if he must travel far to find them. Skyrim is a ripe opportunity indeed. The dragons and the war have scared many other traders away, but for those with courage, there is much profit to be made.'],
+                    options: [
+                        { to: '3', text: 'What\'re ya sellin\'?', isSpeech: true },
+                        { to: '1', text: 'I\'m curious about your homeland.', isSpeech: true },
+                        { to: 'exit', text: 'Good bye', isSpeech: true },
+                    ]
+                },
+
+                {
+                    id: '3',
+                    character: 'khajiit_merchant_risaad',
+                    text: ['What\'re ya buyin?'],
+                    options: [
+                        { to: 'exit', losses: { gp: Khajiit_Item_1_Price ? Khajiit_Item_1_Price * Khajiit_Item_1_qty : 100 * Khajiit_Item_1_qty }, rewards: { items: [{ id: Khajiit_Item_1 ? Khajiit_Item_1 : 'tes:Sweetroll', qty: Khajiit_Item_1_qty ? Khajiit_Item_1_qty : 1 }] } },
+                        { to: 'exit', losses: { gp: Khajiit_Item_2_Price ? Khajiit_Item_2_Price : 100 }, rewards: { items: [{ id: Khajiit_Item_2 ? Khajiit_Item_2 : 'tes:Sweetroll' }] } },
+                        { to: 'exit', losses: { gp: Khajiit_Item_3_Price ? Khajiit_Item_3_Price : 100 }, rewards: { items: [{ id: Khajiit_Item_3 ? Khajiit_Item_3 : 'tes:Sweetroll' }] } },
+                        { to: '0', text: 'What were we talking about again?', isSpeech: true },
+                        { to: 'exit', text: 'Good bye', isSpeech: true },
+                    ]
+                },
+
+                {
+                    id: 'exit',
+                    character: 'khajiit_merchant_risaad',
+                    text: ['May your road lead you to warm sands.'],
+                    options: [{ text: 'You too' }]
+                }]
+            }, ctx);
+
+            const atahbahChoices = ["melvorF:Hard_Leather_Body", "melvorF:Leather_Body", "melvorF:Hard_Leather_Chaps", "melvorF:Hard_Leather_Cowl", "melvorF:Hard_Leather_Boots", "melvorF:Hard_Leather_Gloves", "melvorF:Leather_Gloves" , "melvorF:Leather_Cowl","melvorF:Leather_Boots","melvorF:Leather_Chaps"]
+            const randomAtahbahItem = atahbahChoices[Math.floor(Math.random()*atahbahChoices.length)];
+            const khajiit_merchant_atahbah_box = mod.api.dbox.create('khajiit_merchant_atahbah_box', {
+                title: 'Khajiit Merchant Atahbah',
+                startingDialogId: '0',
+                characters: [{
+                    id: 'khajiit_merchant_atahbah',
+                    name: 'Atahbah',
+                    alignment: 'friendly',
+                    media: 'assets/dialog/Atahbah.png'
+                }],
+                dialogs: [{
+                    id: '0',
+                    character: 'khajiit_merchant_atahbah',
+                    text: ['We have been in this land for so long, I have forgotten what it feels like to walk on warm sand.'],
+                    options: [
+                        { to: '3', text: 'Whats for sale?', isSpeech: true },
+                        { to: '1', text: 'Do you reget coming to Melvor?', isSpeech: true },
+                        { to: 'exit', text: 'Good bye', isSpeech: true },
+                    ]
+                }, {
+                    id: '1',
+                    character: 'khajiit_merchant_atahbah',
+                    text: 'In truth I do not. I have always dreamed of seeing new lands, and it does not hurt that we are making a good profit.',
+                    options: [
+                        { to: '3', text: 'Whats for sale?', isSpeech: true },
+                        { to: 'exit', text: 'Good bye', isSpeech: true },
+                    ]
+                },
+
+                {
+                    id: '3',
+                    character: 'khajiit_merchant_atahbah',
+                    text: ['This and that.'],
+                    options: [
+                        { to: 'exit', losses: { gp: 50 }, rewards: { items: [{ id:'tes:Lockpick', qty: 10 }] } },
+                        { to: 'exit', losses: { gp: 200 }, rewards: { items: [{ id:  randomAtahbahItem || 'tes:Sweetroll', qty: 3 }] } },
+                        { to: 'exit', losses: { gp: Khajiit_Item_1_Price? Khajiit_Item_1_Price * 9 : 100 }, rewards: { items: [{ id:  Khajiit_Item_1 || 'tes:Sweetroll', qty: 10 }] } },
+                        { to: '0', text: 'What were we talking about again?', isSpeech: true },
+                        { to: 'exit', text: 'Good bye', isSpeech: true },
+                    ]
+                },
+
+                {
+                    id: 'exit',
+                    character: 'khajiit_merchant_atahbah',
+                    text: ['May your road lead you to warm sands.'],
+                    options: [{ text: 'You too' }]
+                }]
+            }, ctx);
+
+            // Ahkari
+
+            const melvorAreas = ["woodcutting", "fishing", "firemaking", "cooking", "mining", "smithing", "thieving", "farming", "fletching", "crafting", "runecrafting", "herblore", "agility", "summoning", "astrology", "township", "magic", "combat"]
+            if(mod.manager.getLoadedModList().includes("[Myth] Music")) {
+                melvorAreas.push("music")
+            }
+            const area = melvorAreas[Math.floor(Math.random()*melvorAreas.length)] + '-container'
+            if(Math.random() < 0.5) {
+                document.getElementById(area).firstElementChild.after(khajiit_merchant_atahbah_box.root);
+            } else {
+                document.getElementById(area).firstElementChild.after(khajiit_merchant_risaad_box.root);
+            }
+        }
+
         ui.createStatic('#modal-book--The_Black_Horse_Courier_Waterfront', document.body);
         document.body.querySelector('.modal.The_Black_Horse_Courier_Waterfront').id = 'The_Black_Horse_Courier_Waterfront';
 
         ui.createStatic('#modal-book--recommendation_letter', document.body);
         document.body.querySelector('.modal.recommendation_letter').id = 'recommendation_letter';
-
-        // Dialog
-        // document.getElementById('woodcutting-container').firstElementChild.after(myDialogBox.root);
     });
 }

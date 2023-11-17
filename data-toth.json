@@ -764,6 +764,90 @@
         "buyLimitOverrides": [],
         "showBuyLimit": false,
         "customName": "Fighters Guild Banner"
+      },
+      {
+        "id": "Mages_Guild_Banner_Shop",
+        "media": "assets/icons/Mages_Guild.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Mages_Guild_Banner",
+              "quantity": 1
+            }
+          ],
+          "modifiers": {}
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 100000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Arch_Mage_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Mages Guild Banner"
+      },
+      {
+        "id": "Dark_Brotherhood_Banner_Shop",
+        "media": "assets/icons/brotherhood/Dark_Brotherhood.png",
+        "category": "tes:Dark_Brotherhood_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Dark_Brotherhood_Banner",
+              "quantity": 1
+            }
+          ],
+          "modifiers": {}
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 100000000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Listener_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Dark Brotherhood Banner"
       }
     ],
     "shopDisplayOrder": [
@@ -785,7 +869,10 @@
           "tes:CursedChest",
           "tes:BoneChest",
           "tes:StaffOfMagnus_Shop",
-          "tes:Fighters_Guild_Banner_Shop"
+          "tes:Fighters_Guild_Banner_Shop",
+          "tes:Dark_Brotherhood_Banner_Shop",
+          "tes:Mages_Guild_Banner_Shop"
+
         ]
       }
     ],
@@ -864,6 +951,65 @@
         "equipRequirements": [
           {
             "purchaseID": "tes:Master_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Mages_Guild_Banner",
+        "name": "Mages Guild Banner",
+        "category": "Combat",
+        "type": "Misc",
+        "media": "assets/icons/Mages_Guild.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 10000000,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedMagicAccuracyBonus": 10,
+          "increasedMagicCritChance": 3,
+          "increasedMagicDamageBonus": 10
+        },
+        "equipmentStats": [],
+        "tier": "none",
+        "validSlots": [
+          "Passive"
+        ],
+        "equipRequirements": [
+          {
+            "purchaseID": "tes:Arch_Mage_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Dark_Brotherhood_Banner",
+        "name": "Dark Brotherhood Banner",
+        "category": "Combat",
+        "type": "Misc",
+        "media": "assets/icons/brotherhood/Dark_Brotherhood.png",
+        "ignoreCompletion": true,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 10000000,
+        "itemType": "Equipment",
+        "modifiers": {
+          "tes_increasedFlatDamageWhileTargetHasMaxHP": 10,
+          "tes_increasedPercDamageWhileTargetHasMaxHP": 10
+        },
+        "equipmentStats": [],
+        "tier": "none",
+        "validSlots": [
+          "Passive"
+        ],
+        "equipRequirements": [
+          {
+            "purchaseID": "tes:Listener_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }

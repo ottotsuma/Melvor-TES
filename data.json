@@ -35,7 +35,7 @@
         "name": "Mara's Protection",
         "customDescription": "Mara's Protection 10%.",
         "modifiers": {
-          "wardsave": 10
+          "tes_wardsave": 10
         }
       },
       {
@@ -4420,7 +4420,7 @@
             }
           ],
           "modifiers": {
-            "increasedFlatDamageWhileTargetHasMaxHP": 1
+            "tes_increasedFlatDamageWhileTargetHasMaxHP": 1
           }
         },
         "cost": {
@@ -4464,7 +4464,7 @@
             }
           ],
           "modifiers": {
-            "increasedFlatDamageWhileTargetHasMaxHP": 1
+            "tes_increasedFlatDamageWhileTargetHasMaxHP": 1
           }
         },
         "cost": {
@@ -4514,7 +4514,7 @@
             }
           ],
           "modifiers": {
-            "increasedFlatDamageWhileTargetHasMaxHP": 1
+            "tes_increasedFlatDamageWhileTargetHasMaxHP": 1
           }
         },
         "cost": {
@@ -4564,7 +4564,7 @@
             }
           ],
           "modifiers": {
-            "increasedFlatDamageWhileTargetHasMaxHP": 1
+            "tes_increasedFlatDamageWhileTargetHasMaxHP": 1
           }
         },
         "cost": {
@@ -4614,7 +4614,7 @@
             }
           ],
           "modifiers": {
-            "increasedFlatDamageWhileTargetHasMaxHP": 1
+            "tes_increasedFlatDamageWhileTargetHasMaxHP": 1
           }
         },
         "cost": {
@@ -4664,7 +4664,7 @@
             }
           ],
           "modifiers": {
-            "increasedFlatDamageWhileTargetHasMaxHP": 1
+            "tes_increasedFlatDamageWhileTargetHasMaxHP": 1
           }
         },
         "cost": {
@@ -4714,7 +4714,7 @@
             }
           ],
           "modifiers": {
-            "increasedFlatDamageWhileTargetHasMaxHP": 1
+            "tes_increasedFlatDamageWhileTargetHasMaxHP": 1
           }
         },
         "cost": {
@@ -4764,7 +4764,7 @@
             }
           ],
           "modifiers": {
-            "increasedFlatDamageWhileTargetHasMaxHP": 1
+            "tes_increasedFlatDamageWhileTargetHasMaxHP": 1
           }
         },
         "cost": {
@@ -7617,7 +7617,7 @@
         "sellsFor": 115,
         "itemType": "Equipment",
         "modifiers": {
-          "increasedFlatDamageWhileTargetHasMaxHP": 10
+          "tes_increasedFlatDamageWhileTargetHasMaxHP": 10
         },
         "customDescription": "Deal a flat damage increase of 30 while the target is fully healed.",
         "equipmentStats": [
@@ -7659,7 +7659,7 @@
         "sellsFor": 115,
         "itemType": "Equipment",
         "modifiers": {
-          "increasedFlatDamageWhileTargetHasMaxHP": 30
+          "tes_increasedFlatDamageWhileTargetHasMaxHP": 30
         },
         "customDescription": "Deal a flat damage increase of 60 while the target is fully healed.",
         "equipmentStats": [
@@ -7701,8 +7701,8 @@
         "sellsFor": 115,
         "itemType": "Equipment",
         "modifiers": {
-          "increasedFlatDamageWhileTargetHasMaxHP": 30,
-          "increasedPercDamageWhileTargetHasMaxHP": 60
+          "tes_increasedFlatDamageWhileTargetHasMaxHP": 30,
+          "tes_increasedPercDamageWhileTargetHasMaxHP": 60
         },
         "customDescription": "Increase damage while target is fully healed by 60% and deal a flat damage increase of 60 while the target is fully healed.",
         "equipmentStats": [
@@ -7748,8 +7748,8 @@
         "sellsFor": 115,
         "itemType": "Equipment",
         "modifiers": {
-          "increasedFlatDamageWhileTargetHasMaxHP": 15,
-          "increasedPercDamageWhileTargetHasMaxHP": 30
+          "tes_increasedFlatDamageWhileTargetHasMaxHP": 15,
+          "tes_increasedPercDamageWhileTargetHasMaxHP": 30
         },
         "customDescription": "Increase damage while target is fully healed by 30% and deal a flat damage increase of 30 while the target is fully healed.",
         "equipmentStats": [
@@ -7795,7 +7795,7 @@
         "sellsFor": 115,
         "itemType": "Equipment",
         "modifiers": {
-          "increasedPercDamageWhileTargetHasMaxHP": 50,
+          "tes_increasedPercDamageWhileTargetHasMaxHP": 50,
           "increasedMeleeStrengthBonus": 10,
           "increasedDamageTaken": 10
         },
@@ -8132,7 +8132,7 @@
         "itemType": "Equipment",
         "modifiers": {
           "increasedFlatSlashAttackBonus": 10,
-          "wardsave": 5
+          "tes_wardsave": 5
         },
         "customDescription": "+10 Slash Attack Bonus and 5% chance to take no damage from any attack.",
         "equipmentStats": [
@@ -8177,8 +8177,8 @@
         "sellsFor": 315,
         "itemType": "Weapon",
         "modifiers": {
-          "increasedFlatDamageWhileTargetHasMaxHP": 50,
-          "increasedPercDamageWhileTargetHasMaxHP": 40
+          "tes_increasedFlatDamageWhileTargetHasMaxHP": 50,
+          "tes_increasedPercDamageWhileTargetHasMaxHP": 40
         },
         "customDescription": "Increase damage while target is fully healed by 100% and deal a flat damage increase of 40 while the target is fully healed.",
         "equipmentStats": [
@@ -10780,7 +10780,7 @@
           }
         ],
         "modifiers": {
-          "increasedDragonBreathDamage": 20
+          "tes_increasedDragonBreathDamage": 20
         },
         "itemType": "Equipment",
         "customDescription": "High stats but takes more damage from dragon breath."
@@ -18680,7 +18680,7 @@
         "scaleChanceWithMasteryPool": false,
         "ignoreCompletion": true,
         "modifiers": {
-          "decreaseFlatDamageWhileTargetHasMaxHP": 10
+          "tes_decreaseFlatDamageWhileTargetHasMaxHP": 10
         },
         "activeInRaid": false,
         "hint": "Goblin Caves",
@@ -21072,7 +21072,7 @@
         ],
         "playerModifiers": {
           "increasedThievingStealth": 60,
-          "increasedFlatDamageWhileTargetHasMaxHP": 100
+          "tes_increasedFlatDamageWhileTargetHasMaxHP": 100
         }
       },
       {
@@ -21082,7 +21082,7 @@
         ],
         "playerModifiers": {
           "increasedThievingStealth": 120,
-          "increasedFlatDamageWhileTargetHasMaxHP": 200
+          "tes_increasedFlatDamageWhileTargetHasMaxHP": 200
         }
       }
     ]
