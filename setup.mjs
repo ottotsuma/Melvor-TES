@@ -79,6 +79,27 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
             MISC_STRING_Dead_Drop_Orders_6: "Dead Drop Orders",
             MISC_STRING_Dead_Drop_Orders_7: "Dead Drop Orders",
             MISC_STRING_Dead_Drop_Orders_8: "Dead Drop Orders",
+            PASSIVES_NAME_EventPassive1: "Unusual Passive",
+            PASSIVES_NAME_EventPassive2: "Unusual Passive",
+            PASSIVES_NAME_EventPassive3: "Unusual Passive",
+            PASSIVES_NAME_EventPassive4: "Unusual Passive",
+            PASSIVES_NAME_EventPassive5: "Unusual Passive",
+            PASSIVES_NAME_EventPassive6: "Unusual Passive",
+            PASSIVES_NAME_EventPassive7: "Unusual Passive",
+            PASSIVES_NAME_EventPassive8: "Unusual Passive",
+            PASSIVES_NAME_EventPassive9: "Unusual Passive",
+            PASSIVES_NAME_EventPassive10: "Unusual Passive",
+            PASSIVES_NAME_EventPassive11: "Unusual Passive",
+            PASSIVES_NAME_EventPassive12: "Unusual Passive"
+
+            // PAGE_NAME_Global_Droptable_Overview: "Global Droptable (Runescape)",
+            // Global_Droptable_Overview_General_Functionality: "Each item on the global droptable has its own roll. These rolls are separate from the regular droptable and do not replace any other loot",
+            // Global_Droptable_Overview_Item_Pickup_Info: "Items are not put in the loot container, but instead placed into the bank immediately. That is, if free space is available",
+            // Global_Droptable_Overview_Dungeon_Limitation: "In dungeons, the global droptable is only rolled for the last monster",
+            // Global_Droptable_Overview_Base_Droprate: "Base chance",
+            // Global_Droptable_Overview_Chance_Increase_Per_Cb_Info: "Chance increases against stronger enemies. The numerator increases (on average) once every ${averageCbPerNumerator} combat levels",
+            // Global_Droptable_Overview_Limitation_Dragons_Only: "Only dropped by Dragons",
+            // Global_Droptable_Overview_Limitation_Undead_Only: "Only dropped by Undead",
         }
         for (const [key, value] of Object.entries(en_data)) {
             loadedLangJson[key] = value;
@@ -104,8 +125,6 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
 
     onCharacterLoaded(ctx => {
         try {
-
-
             ctx.patch(Character, 'modifyAttackDamage').after((damage, target, attack) => {
                 let newDamage = damage
                 // Remove all damage and return if wardsaved
@@ -569,42 +588,55 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
 
             ui.createStatic('#modal-book--recommendation_letter', document.body);
             document.body.querySelector('.modal.recommendation_letter').id = 'recommendation_letter';
+                        
+            // Bards college
+            if (mod.manager.getLoadedModList().includes("[Myth] Music")) {
+                // increasedMusicHireCost: number;
+                // decreasedMusicHireCost: number;
+                // increasedMusicGP: number;
+                // decreasedMusicGP: number;
+                // bandPractice: number;
+                // masterAncientRelic: number;
+                // increasedChanceToObtainShrimpWhileTrainingMusic: number;
+                // decreasedChanceToObtainShrimpWhileTrainingMusic: number;
+                // increasedSheetMusicDropRate: number;
+                // decreasedSheetMusicDropRate: number;
+                // increasedMusicAdditionalRewardRoll: number;
+                // decreasedMusicAdditionalRewardRoll: number;
+                // increasedSkillMasteryXPPerVariel: number;
+
+                console.log(modifierData.increasedMusicGP.description)
+            }
+            ctx.patch(CombatManager, "onEnemyDeath").after(() => {
+                try {
+                    if (Math.random() < 0.1) {
+                        const itemId = "tes:Sweetroll"
+                        const item = game.items.getObjectByID(`${itemId}`);
+                        if (item === undefined) {
+                            throw new Error(`Invalid item ID ${itemId}`);
+                        }
+                        // item.baseChanceDenominator
+                        // item.chanceIncreaseInfo
+                        // item.limitation
+                        game.bank.addItem(item, 1, true, true, false);
+                    }
+                } catch (error) {
+                    console.log("onEnemyDeath patch " , error)
+                }
+            });
+            const bards_college_items = []
+            bards_college_items.push(game.items.getObjectByID(`tes:Sweetroll`))
+            function Bards_College_Overview () {
+                return {
+                    $template: '#tes_Bards_College__global-droptable-overview-container-template',
+                    items: bards_college_items
+                }
+            }
+            const contentContainerElement = document.getElementById('main-container');
+            ui.create(Bards_College_Overview(), contentContainerElement);
         } catch (error) {
             console.log('onInterfaceReady', error)
         }
     });
 }
 
-
-// this.context.patch(CombatManager, "onEnemyDeath").after(function () {
-//     this.enemy
-//     if ((this.selectedArea instanceof Dungeon)) {
-//         if (this.dungeonProgress === this.selectedArea.monsters.length) {
-//             GlobalDroptableManager.rollGlobalDroptable(this);
-//         }
-//     } else if (this.activeEvent === undefined) {
-//         GlobalDroptableManager.rollGlobalDroptable(this);
-//     }
-// });
-
-// // cm = CombatManager
-// const item = cm.game.items.getObjectByID(`${Constants.MOD_NAMESPACE}:${localItemId}`);
-// if (item === undefined) {
-//     throw new Error(`Invalid item ID ${localItemId}`);
-// }
-// cm.bank.addItem(item, 1, true, true, false);
-
-
-// ctx.onInterfaceReady(() => {
-//     // @ts-ignore: The container is guaranteed to exist
-//     const contentContainerElement: Element = document.getElementById('main-container');
-
-//     // Add template to container
-//     // Create overview by using component and template definitions
-//     ui.create(GlobalDroptableOverview(), contentContainerElement);
-// });
-
-// return {
-//     $template: '#runescape-Encounters-in-Melvor__global-droptable-overview-container-template',
-//     items: props.items
-// }

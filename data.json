@@ -2,6 +2,21 @@
   "$schema": "https://melvoridle.com/assets/schema/gameData.json",
   "namespace": "tes",
   "data": {
+    "pages": [
+      {
+        "id": "Bards_College_Overview",
+        "customName": "Bards College",
+        "media": "assets/icons/music/bongo.png",
+        "containerID": "tes_Bards_College__global-droptable-overview-container",
+        "headerBgClass": "bg-statistics",
+        "hasGameGuide": false,
+        "canBeDefault": false,
+        "sidebarItem": {
+          "categoryID": "Modding",
+          "icon": "assets/icons/music/bongo.png"
+        }
+      }
+    ],
     "curseSpells": [
       {
         "id": "PeryitesPresence",
@@ -1912,10 +1927,12 @@
             "type": "Fixed",
             "cost": 2000
           },
-          "items": [{
-            "id":"melvorD:Bones",
-            "quantity": 10
-          }],
+          "items": [
+            {
+              "id": "melvorD:Bones",
+              "quantity": 10
+            }
+          ],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -2039,22 +2056,22 @@
           },
           "items": [
             {
-            "id":"melvorD:Blue_Wizard_Hat",
-            "quantity": 1
-           },
-           {
-            "id":"melvorD:Blue_Wizard_Robes",
-            "quantity": 1
-           },
-           {
-            "id":"melvorD:Blue_Wizard_Bottoms",
-            "quantity": 1
-           },
-           {
-            "id":"melvorD:Blue_Wizard_Boots",
-            "quantity": 1
-           }
-        ],
+              "id": "melvorD:Blue_Wizard_Hat",
+              "quantity": 1
+            },
+            {
+              "id": "melvorD:Blue_Wizard_Robes",
+              "quantity": 1
+            },
+            {
+              "id": "melvorD:Blue_Wizard_Bottoms",
+              "quantity": 1
+            },
+            {
+              "id": "melvorD:Blue_Wizard_Boots",
+              "quantity": 1
+            }
+          ],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -2115,10 +2132,12 @@
             "type": "Fixed",
             "cost": 200000
           },
-          "items": [{
-            "id":"melvorF:War_Axe",
-            "quantity": 1
-          }],
+          "items": [
+            {
+              "id": "melvorF:War_Axe",
+              "quantity": 1
+            }
+          ],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -2179,10 +2198,12 @@
             "type": "Fixed",
             "cost": 1000000
           },
-          "items": [{
-            "id":"tes:HagravensClaw",
-            "quantity": 10
-          }],
+          "items": [
+            {
+              "id": "tes:HagravensClaw",
+              "quantity": 10
+            }
+          ],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -2243,10 +2264,12 @@
             "type": "Fixed",
             "cost": 5000000
           },
-          "items": [{
-            "id":"tes:Eye",
-            "quantity": 1
-          }],
+          "items": [
+            {
+              "id": "tes:Eye",
+              "quantity": 1
+            }
+          ],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -2312,10 +2335,12 @@
             "type": "Fixed",
             "cost": 10000000
           },
-          "items": [{
-            "id":"tes:BloodPotion",
-            "quantity": 1
-          }],
+          "items": [
+            {
+              "id": "tes:BloodPotion",
+              "quantity": 1
+            }
+          ],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -2376,10 +2401,12 @@
             "type": "Fixed",
             "cost": 50000000
           },
-          "items": [{
-            "id":"tes:WitchsHead",
-            "quantity": 5
-          }],
+          "items": [
+            {
+              "id": "tes:WitchsHead",
+              "quantity": 5
+            }
+          ],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -2456,7 +2483,7 @@
         ],
         "purchaseRequirements": [
           {
-            "monsterID":"tes:Ysmir_Iceheart",
+            "monsterID": "tes:Ysmir_Iceheart",
             "count": 1,
             "type": "MonsterKilled"
           },
@@ -6053,10 +6080,12 @@
             "type": "Fixed",
             "cost": 0
           },
-          "items": [{
-            "id":"tes:GoblinTotemStaff",
-            "quantity": 8
-          }],
+          "items": [
+            {
+              "id": "tes:GoblinTotemStaff",
+              "quantity": 8
+            }
+          ],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -6066,7 +6095,7 @@
         "unlockRequirements": [],
         "purchaseRequirements": [
           {
-            "purchaseID":"tes:Associate_Rank",
+            "purchaseID": "tes:Associate_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -6308,6 +6337,30 @@
     ],
     "items": [
       {
+        "id": "Bloodstone_Chalice",
+        "name": "Bloodstone Chalice",
+        "media": "assets/items/Bloodstone_Chalice.png",
+        "category": "Herblore",
+        "type": "Potion",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 450,
+        "itemType": "Potion",
+        "modifiers": {
+          "increasedLifesteal": 150,
+          "increasedLifestealDamageBasedOnCurrentHitpoints": 5
+        },
+        "charges": 25,
+        "tier": 3,
+        "action": "melvorD:Combat",
+        "consumesOn": [
+          {
+            "type": "PlayerAttack"
+          }
+        ]
+      },
+      {
         "id": "Blood_Pack",
         "name": "Blood Pack",
         "media": "assets/items/BloodPotion.png",
@@ -6382,9 +6435,7 @@
           "Shield"
         ],
         "occupiesSlots": [],
-        "equipRequirements": [
-
-        ],
+        "equipRequirements": [],
         "equipmentStats": [
           {
             "key": "attackSpeed",
@@ -6425,8 +6476,7 @@
           "Weapon"
         ],
         "occupiesSlots": [],
-        "equipRequirements": [
-        ],
+        "equipRequirements": [],
         "equipmentStats": [
           {
             "key": "meleeDefenceBonus",
@@ -6531,7 +6581,7 @@
         "occupiesSlots": [],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Swordsman_Rank",
+            "purchaseID": "tes:Swordsman_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -6584,7 +6634,7 @@
         "occupiesSlots": [],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Apprentice_Rank",
+            "purchaseID": "tes:Apprentice_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -6633,7 +6683,7 @@
         ],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Guardian_Rank",
+            "purchaseID": "tes:Guardian_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -6686,7 +6736,7 @@
         "occupiesSlots": [],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Warder_Rank",
+            "purchaseID": "tes:Warder_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -6741,7 +6791,7 @@
         ],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Champion_Rank",
+            "purchaseID": "tes:Champion_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -6796,7 +6846,7 @@
         ],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Champion_Rank",
+            "purchaseID": "tes:Champion_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -6930,7 +6980,7 @@
         ],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Guardian_Rank",
+            "purchaseID": "tes:Guardian_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -7008,15 +7058,15 @@
             "value": 5
           },
           {
-            "key":"damageReduction",
+            "key": "damageReduction",
             "value": 5
           },
           {
-            "key":"meleeStrengthBonus",
+            "key": "meleeStrengthBonus",
             "value": 7
           },
           {
-            "key":"rangedStrengthBonus",
+            "key": "rangedStrengthBonus",
             "value": 5
           }
         ],
@@ -7026,7 +7076,7 @@
         ],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Protector_Rank",
+            "purchaseID": "tes:Protector_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -7097,7 +7147,7 @@
         ],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Master_Rank",
+            "purchaseID": "tes:Master_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -7185,7 +7235,7 @@
           "increasedLifesteal": 100
         },
         "charges": 25,
-        "tier": 3,
+        "tier": 2,
         "action": "melvorD:Combat",
         "consumesOn": [
           {
@@ -10951,17 +11001,38 @@
         "customDescription": "The Elder Scrolls are artifacts of unknown origin and quantity, being simultaneously archives of historic, past and future events. This one must be faulty, it drops random items."
       }
     ],
-    "itemUpgrades": [{
-      "rootItemIDs": ["tes:Blood_Pack"],
-      "upgradedItemID": "tes:BloodPotion",
-      "gpCost": 0,
-      "scCost": 0,
-      "isDowngrade": false,
-      "itemCosts": [{
-        "id":"tes:Blood_Pack",
-        "quantity": 10
-      }]
-    }],
+    "itemUpgrades": [
+      {
+        "rootItemIDs": [
+          "tes:Blood_Pack"
+        ],
+        "upgradedItemID": "tes:BloodPotion",
+        "gpCost": 0,
+        "scCost": 0,
+        "isDowngrade": false,
+        "itemCosts": [
+          {
+            "id": "tes:Blood_Pack",
+            "quantity": 10
+          }
+        ]
+      },
+      {
+        "rootItemIDs": [
+          "tes:BloodPotion"
+        ],
+        "upgradedItemID": "tes:Bloodstone_Chalice",
+        "gpCost": 0,
+        "scCost": 0,
+        "isDowngrade": false,
+        "itemCosts": [
+          {
+            "id": "tes:BloodPotion",
+            "quantity": 10
+          }
+        ]
+      }
+    ],
     "slayerAreas": [
       {
         "id": "Oblivion",
@@ -11031,8 +11102,7 @@
           "melvorF:CurseofFear",
           "tes:ShadowBlast"
         ],
-        "passives": [
-        ],
+        "passives": [],
         "lootChance": 75,
         "lootTable": [
           {
@@ -11084,8 +11154,7 @@
           "melvorF:CurseofFear",
           "tes:ShadowBlast"
         ],
-        "passives": [
-        ],
+        "passives": [],
         "lootChance": 75,
         "lootTable": [
           {
@@ -11137,8 +11206,7 @@
           "melvorF:CurseofFear",
           "tes:ShadowBlast"
         ],
-        "passives": [
-        ],
+        "passives": [],
         "lootChance": 75,
         "lootTable": [
           {
@@ -11190,8 +11258,7 @@
           "melvorF:CurseofFear",
           "tes:ShadowBlast"
         ],
-        "passives": [
-        ],
+        "passives": [],
         "lootChance": 75,
         "lootTable": [
           {
@@ -11243,8 +11310,7 @@
           "melvorF:CurseofFear",
           "tes:ShadowBlast"
         ],
-        "passives": [
-        ],
+        "passives": [],
         "lootChance": 75,
         "lootTable": [
           {
@@ -11296,8 +11362,7 @@
           "melvorF:CurseofFear",
           "tes:ShadowBlast"
         ],
-        "passives": [
-        ],
+        "passives": [],
         "lootChance": 75,
         "lootTable": [
           {
@@ -11349,8 +11414,7 @@
           "melvorF:Spores",
           "tes:ShadowBlast"
         ],
-        "passives": [
-        ],
+        "passives": [],
         "lootChance": 75,
         "lootTable": [
           {
@@ -11390,7 +11454,7 @@
             "value": 2800
           }
         ],
-        "ignoreCompletion": false,
+        "ignoreCompletion": true,
         "attackType": "magic",
         "specialAttacks": [
           "tes:Goblin_Curse"
@@ -11461,7 +11525,7 @@
             "value": 2800
           }
         ],
-        "ignoreCompletion": false,
+        "ignoreCompletion": true,
         "attackType": "magic",
         "specialAttacks": [
           "tes:Goblin_Curse"
@@ -11532,7 +11596,7 @@
             "value": 2800
           }
         ],
-        "ignoreCompletion": false,
+        "ignoreCompletion": true,
         "attackType": "magic",
         "specialAttacks": [
           "tes:Goblin_Curse"
@@ -11603,7 +11667,7 @@
             "value": 2800
           }
         ],
-        "ignoreCompletion": false,
+        "ignoreCompletion": true,
         "attackType": "magic",
         "specialAttacks": [
           "tes:Goblin_Curse"
@@ -11674,7 +11738,7 @@
             "value": 2800
           }
         ],
-        "ignoreCompletion": false,
+        "ignoreCompletion": true,
         "attackType": "magic",
         "specialAttacks": [
           "tes:Goblin_Curse"
@@ -11745,7 +11809,7 @@
             "value": 2800
           }
         ],
-        "ignoreCompletion": false,
+        "ignoreCompletion": true,
         "attackType": "magic",
         "specialAttacks": [
           "tes:Goblin_Curse"
@@ -11816,7 +11880,7 @@
             "value": 2800
           }
         ],
-        "ignoreCompletion": false,
+        "ignoreCompletion": true,
         "attackType": "magic",
         "specialAttacks": [
           "tes:Goblin_Curse"
@@ -11887,7 +11951,7 @@
             "value": 2800
           }
         ],
-        "ignoreCompletion": false,
+        "ignoreCompletion": true,
         "attackType": "magic",
         "specialAttacks": [
           "tes:Goblin_Curse"
@@ -14885,8 +14949,7 @@
         ],
         "passives": [
           "melvorF:Purity",
-          "melvorF:EventPassive4",
-          "melvorTotH:Intimidation10"
+          "melvorF:EventPassive4"
         ],
         "lootChance": 1,
         "lootTable": [
@@ -14895,6 +14958,12 @@
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 1
+          },
+          {
+            "itemID": "tes:Blood_Pack",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 99
           }
         ],
         "gpDrops": {
@@ -14934,8 +15003,7 @@
         ],
         "passives": [
           "melvorF:Purity",
-          "melvorF:EventPassive3",
-          "melvorTotH:Intimidation7"
+          "melvorF:EventPassive3"
         ],
         "lootChance": 1,
         "lootTable": [
@@ -14944,6 +15012,12 @@
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 1
+          },
+          {
+            "itemID": "tes:Blood_Pack",
+            "maxQuantity": 10,
+            "minQuantity": 1,
+            "weight": 99
           }
         ],
         "gpDrops": {
@@ -15635,23 +15709,23 @@
             "value": 20
           },
           {
-            "key":"magicDamageBonus",
+            "key": "magicDamageBonus",
             "value": 200
           },
           {
-            "key":"magicAttackBonus",
+            "key": "magicAttackBonus",
             "value": 200
           },
           {
-            "key":"meleeDefenceBonus",
+            "key": "meleeDefenceBonus",
             "value": 300
           },
           {
-            "key":"magicDefenceBonus",
+            "key": "magicDefenceBonus",
             "value": 200
           },
           {
-            "key":"rangedDefenceBonus",
+            "key": "rangedDefenceBonus",
             "value": 300
           }
         ],
@@ -15699,19 +15773,19 @@
             "value": 10
           },
           {
-            "key":"meleeStrengthBonus",
+            "key": "meleeStrengthBonus",
             "value": 400
           },
           {
-            "key":"meleeDefenceBonus",
+            "key": "meleeDefenceBonus",
             "value": 300
           },
           {
-            "key":"magicDefenceBonus",
+            "key": "magicDefenceBonus",
             "value": 200
           },
           {
-            "key":"rangedDefenceBonus",
+            "key": "rangedDefenceBonus",
             "value": 300
           }
         ],
@@ -18925,7 +18999,7 @@
         ],
         "entryRequirements": [
           {
-            "purchaseID":"tes:Guardian_Rank",
+            "purchaseID": "tes:Guardian_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -19620,7 +19694,6 @@
                 }
               ]
             }
-            
           ],
           "npcs": [
             {
@@ -21124,26 +21197,26 @@
   "modifications": {
     "combatAreas": [
       {
-        "id":"melvorD:Goblin_Village",
+        "id": "melvorD:Goblin_Village",
         "monsters": {
           "add": [
             {
-              "monsterID":"tes:Goblin_Berserker"
+              "monsterID": "tes:Goblin_Berserker"
             },
             {
-              "monsterID":"tes:Goblin_Chef"
+              "monsterID": "tes:Goblin_Chef"
             },
             {
-              "monsterID":"tes:Goblin_Rat_Farmer"
+              "monsterID": "tes:Goblin_Rat_Farmer"
             },
             {
-              "monsterID":"tes:Goblin_Skirmisher"
+              "monsterID": "tes:Goblin_Skirmisher"
             },
             {
-              "monsterID":"tes:Goblin_War_Chief"
+              "monsterID": "tes:Goblin_War_Chief"
             },
             {
-              "monsterID":"tes:Goblin_Shaman"
+              "monsterID": "tes:Goblin_Shaman"
             }
           ]
         }
@@ -21151,11 +21224,11 @@
     ],
     "monsters": [
       {
-        "id": "Vampire",
+        "id": "melvorF:Vampire",
         "lootTable": {
           "add": [
             {
-              "itemID":"tes:Blood_Pack",
+              "itemID": "tes:Blood_Pack",
               "maxQuantity": 1,
               "minQuantity": 1,
               "weight": 1
@@ -21164,11 +21237,11 @@
         }
       },
       {
-        "id": "ElderVampire",
+        "id": "melvorF:ElderVampire",
         "lootTable": {
           "add": [
             {
-              "itemID":"tes:Blood_Pack",
+              "itemID": "tes:Blood_Pack",
               "maxQuantity": 1,
               "minQuantity": 1,
               "weight": 1

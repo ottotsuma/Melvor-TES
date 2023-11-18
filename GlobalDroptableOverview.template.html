@@ -1,0 +1,56 @@
+<template id="tes_Bards_College__global-droptable-overview-container-template">
+    <div class="content d-none" id="tes_Bards_College__global-droptable-overview-container">
+        <div class="row gutters-tiny dow-deck">
+            <div class="col-12">
+                <div class="block block-rounded block-content block-content-full">
+                    <div class="row no-gutters">
+                        <div class="col-12">
+                            <ul class="font-w600 text-warning">
+                                <li><lang-string lang-id="tes_Bards_College_Global_Droptable_Overview_General_Functionality"></lang-string></li>
+                                <li><lang-string lang-id="tes_Bards_College_Global_Droptable_Overview_Item_Pickup_Info"></lang-string></li>
+                                <li><lang-string lang-id="tes_Bards_College_Global_Droptable_Overview_Dungeon_Limitation"></lang-string></li>
+                            </ul>
+                            <div class="row">
+                                <div v-for="item in items"
+                                     class="col-12 col-lg-6 col-xl-6 p-2">
+                                    <div class="block block-content block-rounded block-link-pop border border-2x">
+                                        <div class="media d-flex align-items-center push">
+                                            <div class="mr-3">
+                                                <img class="global-droptable-overview-image"
+                                                     v-bind:title="item.name"
+                                                     v-bind:src="item.media">
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="font-w600">
+                                                    {{ item.name }}
+                                                </div>
+                                                <div class="font-size-sm">
+                                                    <lang-string lang-id="tes_Bards_College_Global_Droptable_Overview_Base_Droprate"></lang-string>: 1 / {{ item.baseChanceDenominator }}
+                                                </div>
+                                                <div class="font-size-sm d-none">
+                                                </div>
+                                                <div class="font-w600">
+                                                    <div class="font-w600">
+                                                        <small class="text-warning">
+                                                            {{ item.chanceIncreaseInfo }}
+                                                        </small>
+                                                        <template v-if="item.limitation">
+                                                            <br />
+                                                            <small class="text-danger">
+                                                                {{ item.limitation }}
+                                                            </small>
+                                                        </template>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
