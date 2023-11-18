@@ -593,3 +593,18 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
 //     throw new Error(`Invalid item ID ${localItemId}`);
 // }
 // cm.bank.addItem(item, 1, true, true, false);
+
+
+// ctx.onInterfaceReady(() => {
+//     // @ts-ignore: The container is guaranteed to exist
+//     const contentContainerElement: Element = document.getElementById('main-container');
+
+//     // Add template to container
+//     // Create overview by using component and template definitions
+//     ui.create(GlobalDroptableOverview(), contentContainerElement);
+// });
+
+// return {
+//     $template: '#runescape-Encounters-in-Melvor__global-droptable-overview-container-template',
+//     items: props.items
+// }
