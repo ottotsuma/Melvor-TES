@@ -574,3 +574,22 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         }
     });
 }
+
+
+// this.context.patch(CombatManager, "onEnemyDeath").after(function () {
+//     this.enemy
+//     if ((this.selectedArea instanceof Dungeon)) {
+//         if (this.dungeonProgress === this.selectedArea.monsters.length) {
+//             GlobalDroptableManager.rollGlobalDroptable(this);
+//         }
+//     } else if (this.activeEvent === undefined) {
+//         GlobalDroptableManager.rollGlobalDroptable(this);
+//     }
+// });
+
+// // cm = CombatManager
+// const item = cm.game.items.getObjectByID(`${Constants.MOD_NAMESPACE}:${localItemId}`);
+// if (item === undefined) {
+//     throw new Error(`Invalid item ID ${localItemId}`);
+// }
+// cm.bank.addItem(item, 1, true, true, false);
