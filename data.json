@@ -6308,6 +6308,29 @@
     ],
     "items": [
       {
+        "id": "Blood_Pack",
+        "name": "Blood Pack",
+        "media": "assets/items/BloodPotion.png",
+        "category": "Herblore",
+        "type": "Potion",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 450,
+        "itemType": "Potion",
+        "modifiers": {
+          "increasedLifesteal": 5
+        },
+        "charges": 25,
+        "tier": 1,
+        "action": "melvorD:Combat",
+        "consumesOn": [
+          {
+            "type": "PlayerAttack"
+          }
+        ]
+      },
+      {
         "itemType": "Equipment",
         "id": "Hagraven_Summon",
         "name": "Hagraven",
@@ -10928,6 +10951,17 @@
         "customDescription": "The Elder Scrolls are artifacts of unknown origin and quantity, being simultaneously archives of historic, past and future events. This one must be faulty, it drops random items."
       }
     ],
+    "itemUpgrades": [{
+      "rootItemIDs": ["tes:Blood_Pack"],
+      "upgradedItemID": "tes:BloodPotion",
+      "gpCost": 0,
+      "scCost": 0,
+      "isDowngrade": false,
+      "itemCosts": [{
+        "id":"tes:Blood_Pack",
+        "quantity": 10
+      }]
+    }],
     "slayerAreas": [
       {
         "id": "Oblivion",
@@ -21110,6 +21144,34 @@
             },
             {
               "monsterID":"tes:Goblin_Shaman"
+            }
+          ]
+        }
+      }
+    ],
+    "monsters": [
+      {
+        "id": "Vampire",
+        "lootTable": {
+          "add": [
+            {
+              "itemID":"tes:Blood_Pack",
+              "maxQuantity": 1,
+              "minQuantity": 1,
+              "weight": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "ElderVampire",
+        "lootTable": {
+          "add": [
+            {
+              "itemID":"tes:Blood_Pack",
+              "maxQuantity": 1,
+              "minQuantity": 1,
+              "weight": 1
             }
           ]
         }
