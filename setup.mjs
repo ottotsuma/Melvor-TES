@@ -567,12 +567,12 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     }]
                 }, ctx);
 
-                const melvorAreas = ["woodcutting", "fishing", "firemaking", "cooking", "mining", "smithing", "thieving", "farming", "fletching", "crafting", "runecrafting", "herblore", "agility", "summoning", "astrology", "township", "magic", "combat"]
+                const tes_melvorAreas = ["woodcutting", "fishing", "firemaking", "cooking", "mining", "smithing", "thieving", "farming", "fletching", "crafting", "runecrafting", "herblore", "agility", "summoning", "astrology", "township", "magic", "combat"]
                 if (mod.manager.getLoadedModList().includes("[Myth] Music")) {
-                    melvorAreas.push("music")
+                    tes_melvorAreas.push("music")
                 }
-                const area = melvorAreas[Math.floor(Math.random() * melvorAreas.length)] + '-container';
-                console.log('Merchant is at: ', area)
+                const tes_merchant_area = tes_melvorAreas[Math.floor(Math.random() * tes_melvorAreas.length)] + '-container';
+                console.log('Merchant is at: ', tes_merchant_area)
 
                 if (Math.random() < 0.3) {
                     document.getElementById(area).firstElementChild.after(khajiit_merchant_ahkari_box.root);
@@ -610,15 +610,15 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
             ctx.patch(CombatManager, "onEnemyDeath").after(() => {
                 try {
                     if (Math.random() < 0.1) {
-                        const itemId = "tes:Sweetroll"
-                        const item = game.items.getObjectByID(`${itemId}`);
+                        const tes_itemId = "tes:Sweetroll"
+                        const tes_item = game.items.getObjectByID(`${tes_itemId}`);
                         if (item === undefined) {
-                            throw new Error(`Invalid item ID ${itemId}`);
+                            throw new Error(`Invalid item ID ${tes_itemId}`);
                         }
                         // item.baseChanceDenominator
                         // item.chanceIncreaseInfo
                         // item.limitation
-                        game.bank.addItem(item, 1, true, true, false);
+                        game.bank.addItem(tes_item, 1, true, true, false);
                     }
                 } catch (error) {
                     console.log("onEnemyDeath patch " , error)
@@ -632,8 +632,8 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     items: bards_college_items
                 }
             }
-            const contentContainerElement = document.getElementById('main-container');
-            ui.create(Bards_College_Overview(), contentContainerElement);
+            const tes_contentContainerElement = document.getElementById('main-container');
+            ui.create(Bards_College_Overview(), tes_contentContainerElement);
         } catch (error) {
             console.log('onInterfaceReady', error)
         }
