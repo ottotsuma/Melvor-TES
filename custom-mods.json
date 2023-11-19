@@ -1,0 +1,24 @@
+{
+    "$schema": "https://melvoridle.com/assets/schema/gameData.json",
+    "namespace": "tes",
+    "modifications": {
+        "items": [
+            {
+                "id": "tes:Dawnbreaker",
+                "modifiers": {
+                    "add":{
+                        "increasedDamageAgainstUndead": 10
+                    }
+                }
+            },
+            {
+                "id": "tes:Bard_Drum",
+                "modifiers": {
+                    "add":{
+                        "increasedFlatMinHitAgainstHumans": 4
+                    }
+                }
+            }
+        ]
+    }
+  }

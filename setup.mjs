@@ -60,66 +60,63 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
 
     onModsLoaded(async (ctx) => {
         try {
+            const en_data = {
+                tes_increasedDragonBreathDamage: "Increase damage taken from dragon breaths by +${value}",
+                tes_wardsave: "+${value}% (MAX: 90%) to take 0 damage from a hit.",
+                tes_increasedFlatDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}.",
+                tes_increasedPercDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}%.",
+                tes_decreaseFlatDamageWhileTargetHasMaxHP: "Decrease damage taken while you are fully healed by +${value}.",
+                MISC_STRING_The_Five_Tenets: "The Five Tenets",
+                MISC_STRING_Dead_Drop_Orders_1: "Dead Drop Orders",
+                MISC_STRING_Dead_Drop_Orders_2: "Dead Drop Orders",
+                MISC_STRING_Dead_Drop_Orders_3: "Dead Drop Orders",
+                MISC_STRING_Dead_Drop_Orders_4: "Dead Drop Orders",
+                MISC_STRING_Dead_Drop_Orders_5: "Dead Drop Orders",
+                MISC_STRING_Dead_Drop_Orders_6: "Dead Drop Orders",
+                MISC_STRING_Dead_Drop_Orders_7: "Dead Drop Orders",
+                MISC_STRING_Dead_Drop_Orders_8: "Dead Drop Orders",
+                PASSIVES_NAME_EventPassive1: "Unusual Passive",
+                PASSIVES_NAME_EventPassive2: "Unusual Passive",
+                PASSIVES_NAME_EventPassive3: "Unusual Passive",
+                PASSIVES_NAME_EventPassive4: "Unusual Passive",
+                PASSIVES_NAME_EventPassive5: "Unusual Passive",
+                PASSIVES_NAME_EventPassive6: "Unusual Passive",
+                PASSIVES_NAME_EventPassive7: "Unusual Passive",
+                PASSIVES_NAME_EventPassive8: "Unusual Passive",
+                PASSIVES_NAME_EventPassive9: "Unusual Passive",
+                PASSIVES_NAME_EventPassive10: "Unusual Passive",
+                PASSIVES_NAME_EventPassive11: "Unusual Passive",
+                PASSIVES_NAME_EventPassive12: "Unusual Passive",
+                tes_Bards_College_Global_Droptable_Overview_General_Functionality: 'Each item on the global droptable has its own roll. These rolls are separate from the regular droptable and do not replace any other loot',
+                tes_Bards_College_Global_Droptable_Overview_Item_Pickup_Info: "Items are not put in the loot container, but instead placed into the bank immediately. That is, if free space is available",
+                // tes_Bards_College_Global_Droptable_Overview_Dungeon_Limitation: "In dungeons, the global droptable is only rolled for the last monster",
+                tes_Bards_College_Global_Droptable_Overview_Base_Droprate: "Base chance",
+                // Global_Droptable_Overview_Limitation_Dragons_Only: "Only dropped by Dragons",
+                // Global_Droptable_Overview_Limitation_Undead_Only: "Only dropped by Undead",
+            }
+            for (const [key, value] of Object.entries(en_data)) {
+                loadedLangJson[key] = value;
+            }
 
+            if (cloudManager.hasTotHEntitlement) {
+                console.log('hasTotHEntitlement')
+                await ctx.gameData.addPackage('data-toth.json');
+            } else {
+                console.log('Vanilla')
+            }
+
+            if (mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')) {
+                const cmim = mod.api.customModifiersInMelvor;
+                if (!cmim) {
+                    return;
+                }
+                await ctx.gameData.addPackage('custom-mods.json');
+                cmim.addDragons(["tes:Ysmir_Iceheart", "tes:Alduin", "tes:Elsweyr_Dragon"]);
+                cmim.addHumans(["tes:Necromancer", "tes:Bandit", "tes:Thief", "tes:Havilstein_Hoar", "tes:Matthias_Draconis", "tes:Perennia_Draconis", "tes:Caelia_Draconis", "tes:Sibylla_Draconis", "tes:Andreas_Draconis", "tes:Celedaen", "tes:Imperial_Watch",]);
+                cmim.addUndeads(["tes:Harkon", "tes:Harkon2", "tes:Zombie", "tes:Lich",]);
+            }
         } catch (error) {
             console.log("onModsLoaded", error)
-        }
-        const en_data = {
-            tes_increasedDragonBreathDamage: "Increase damage taken from dragon breaths by +${value}",
-            tes_wardsave: "+${value}% (MAX: 90%) to take 0 damage from a hit.",
-            tes_increasedFlatDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}.",
-            tes_increasedPercDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}%.",
-            tes_decreaseFlatDamageWhileTargetHasMaxHP: "Decrease damage taken while you are fully healed by +${value}.",
-            MISC_STRING_The_Five_Tenets: "The Five Tenets",
-            MISC_STRING_Dead_Drop_Orders_1: "Dead Drop Orders",
-            MISC_STRING_Dead_Drop_Orders_2: "Dead Drop Orders",
-            MISC_STRING_Dead_Drop_Orders_3: "Dead Drop Orders",
-            MISC_STRING_Dead_Drop_Orders_4: "Dead Drop Orders",
-            MISC_STRING_Dead_Drop_Orders_5: "Dead Drop Orders",
-            MISC_STRING_Dead_Drop_Orders_6: "Dead Drop Orders",
-            MISC_STRING_Dead_Drop_Orders_7: "Dead Drop Orders",
-            MISC_STRING_Dead_Drop_Orders_8: "Dead Drop Orders",
-            PASSIVES_NAME_EventPassive1: "Unusual Passive",
-            PASSIVES_NAME_EventPassive2: "Unusual Passive",
-            PASSIVES_NAME_EventPassive3: "Unusual Passive",
-            PASSIVES_NAME_EventPassive4: "Unusual Passive",
-            PASSIVES_NAME_EventPassive5: "Unusual Passive",
-            PASSIVES_NAME_EventPassive6: "Unusual Passive",
-            PASSIVES_NAME_EventPassive7: "Unusual Passive",
-            PASSIVES_NAME_EventPassive8: "Unusual Passive",
-            PASSIVES_NAME_EventPassive9: "Unusual Passive",
-            PASSIVES_NAME_EventPassive10: "Unusual Passive",
-            PASSIVES_NAME_EventPassive11: "Unusual Passive",
-            PASSIVES_NAME_EventPassive12: "Unusual Passive"
-
-            // PAGE_NAME_Global_Droptable_Overview: "Global Droptable (Runescape)",
-            // Global_Droptable_Overview_General_Functionality: "Each item on the global droptable has its own roll. These rolls are separate from the regular droptable and do not replace any other loot",
-            // Global_Droptable_Overview_Item_Pickup_Info: "Items are not put in the loot container, but instead placed into the bank immediately. That is, if free space is available",
-            // Global_Droptable_Overview_Dungeon_Limitation: "In dungeons, the global droptable is only rolled for the last monster",
-            // Global_Droptable_Overview_Base_Droprate: "Base chance",
-            // Global_Droptable_Overview_Chance_Increase_Per_Cb_Info: "Chance increases against stronger enemies. The numerator increases (on average) once every ${averageCbPerNumerator} combat levels",
-            // Global_Droptable_Overview_Limitation_Dragons_Only: "Only dropped by Dragons",
-            // Global_Droptable_Overview_Limitation_Undead_Only: "Only dropped by Undead",
-        }
-        for (const [key, value] of Object.entries(en_data)) {
-            loadedLangJson[key] = value;
-        }
-
-        if (cloudManager.hasTotHEntitlement) {
-            console.log('hasTotHEntitlement')
-            await ctx.gameData.addPackage('data-toth.json');
-        } else {
-            console.log('Vanilla')
-        }
-
-        if (mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')) {
-            const cmim = mod.api.customModifiersInMelvor;
-            if (!cmim) {
-                return;
-            }
-            cmim.addDragons(["tes:Ysmir_Iceheart", "tes:Alduin", "tes:Elsweyr_Dragon"]);
-            cmim.addHumans(["tes:Necromancer", "tes:Bandit", "tes:Thief", "tes:Havilstein_Hoar", "tes:Matthias_Draconis", "tes:Perennia_Draconis", "tes:Caelia_Draconis", "tes:Sibylla_Draconis", "tes:Andreas_Draconis", "tes:Celedaen", "tes:Imperial_Watch",]);
-            cmim.addUndeads(["tes:Harkon", "tes:Harkon2", "tes:Zombie", "tes:Lich",]);
         }
     });
 
@@ -386,9 +383,11 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         }
     });
 
-    onInterfaceReady((ctx) => {
+    onInterfaceReady(async (ctx) => {
+        const dboxLoaded = mod.manager.getLoadedModList().includes('dbox')
+        const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
         try {
-            if (mod.manager.getLoadedModList().includes('dbox')) {
+            if (dboxLoaded) {
                 const dbox = mod.api.dbox;
                 if (!dbox) {
                     return;
@@ -568,18 +567,18 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                 }, ctx);
 
                 const tes_melvorAreas = ["woodcutting", "fishing", "firemaking", "cooking", "mining", "smithing", "thieving", "farming", "fletching", "crafting", "runecrafting", "herblore", "agility", "summoning", "astrology", "township", "magic", "combat"]
-                if (mod.manager.getLoadedModList().includes("[Myth] Music")) {
+                if (mythLoaded) {
                     tes_melvorAreas.push("music")
                 }
                 const tes_merchant_area = tes_melvorAreas[Math.floor(Math.random() * tes_melvorAreas.length)] + '-container';
                 console.log('Merchant is at: ', tes_merchant_area)
 
                 if (Math.random() < 0.3) {
-                    document.getElementById(area).firstElementChild.after(khajiit_merchant_ahkari_box.root);
+                    document.getElementById(tes_merchant_area).firstElementChild.after(khajiit_merchant_ahkari_box.root);
                 } else if (Math.random() < 0.5) {
-                    document.getElementById(area).firstElementChild.after(khajiit_merchant_risaad_box.root);
+                    document.getElementById(tes_merchant_area).firstElementChild.after(khajiit_merchant_risaad_box.root);
                 } else {
-                    document.getElementById(area).firstElementChild.after(khajiit_merchant_atahbah_box.root);
+                    document.getElementById(tes_merchant_area).firstElementChild.after(khajiit_merchant_atahbah_box.root);
                 }
             }
 
@@ -588,9 +587,22 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
 
             ui.createStatic('#modal-book--recommendation_letter', document.body);
             document.body.querySelector('.modal.recommendation_letter').id = 'recommendation_letter';
-                        
+
             // Bards college
-            if (mod.manager.getLoadedModList().includes("[Myth] Music")) {
+            const bards_college_items = []
+            bards_college_items.push(game.items.getObjectByID(`tes:Sweetroll`))
+            // Sweetroll + baseChanceDenominator = "10"
+            bards_college_items.push(game.items.getObjectByID(`tes:Bard_Drum`))
+            bards_college_items.push(game.items.getObjectByID(`tes:Bard_Flute`))
+            bards_college_items.push(game.items.getObjectByID(`tes:Bard_Lute`))
+            if (mythLoaded) {
+                bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Topaz_Gem`))
+                // mythMusic:Polished_Ruby_Gem
+                // Polished_Sapphire_Gem
+                // "mythMusic:Diamond_String",
+                // "mythMusic:Pristine_Leather",
+                // "mythMusic:Mystic_Oil",
+
                 // increasedMusicHireCost: number;
                 // decreasedMusicHireCost: number;
                 // increasedMusicGP: number;
@@ -604,8 +616,8 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                 // increasedMusicAdditionalRewardRoll: number;
                 // decreasedMusicAdditionalRewardRoll: number;
                 // increasedSkillMasteryXPPerVariel: number;
-
-                console.log(modifierData.increasedMusicGP.description)
+                await ctx.gameData.addPackage('data-bard.json');
+                bards_college_items.push(game.items.getObjectByID(`tes:Dancers_Flute`))
             }
             ctx.patch(CombatManager, "onEnemyDeath").after(() => {
                 try {
@@ -615,18 +627,14 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                         if (item === undefined) {
                             throw new Error(`Invalid item ID ${tes_itemId}`);
                         }
-                        // item.baseChanceDenominator
-                        // item.chanceIncreaseInfo
-                        // item.limitation
                         game.bank.addItem(tes_item, 1, true, true, false);
                     }
                 } catch (error) {
-                    console.log("onEnemyDeath patch " , error)
+                    console.log("onEnemyDeath patch ", error)
                 }
             });
-            const bards_college_items = []
-            bards_college_items.push(game.items.getObjectByID(`tes:Sweetroll`))
-            function Bards_College_Overview () {
+
+            function Bards_College_Overview() {
                 return {
                     $template: '#tes_Bards_College__global-droptable-overview-container-template',
                     items: bards_college_items
@@ -634,6 +642,112 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
             }
             const tes_contentContainerElement = document.getElementById('main-container');
             ui.create(Bards_College_Overview(), tes_contentContainerElement);
+
+            if (dboxLoaded && mythLoaded) {
+                const dbox = mod.api.dbox;
+                if (!dbox) {
+                    return;
+                }
+                const Viarmo_box = mod.api.dbox.create('Viarmo_box', {
+                    title: 'Viarmo',
+                    startingDialogId: '0',
+                    characters: [{
+                        id: 'Viarmo',
+                        name: 'Risaad',
+                        alignment: 'friendly',
+                        media: 'assets/dialog/Viarmo.png'
+                    }],
+                    dialogs: [{
+                        id: '0',
+                        character: 'Viarmo',
+                        text: ['Welcome to the Bard\'s College. I am the headmaster here. How may I help you?'],
+                        options: [
+                            { to: 'shop', text: 'What\'re ya sellin\'?', isSpeech: true },
+                            { to: '1', text: 'I\'m looking to apply to the college.', isSpeech: true },
+                            { to: '2', text: 'What do you know about dragons?', isSpeech: true },
+                            { to: '3', text: 'So what is the Poetic Edda?', isSpeech: true },
+                            { to: '4', text: 'Why did Elisif forbid the festival?', isSpeech: true },
+                            { text: 'Good bye', isSpeech: true },
+                        ]
+                    },
+                    {
+                        id: '1',
+                        character: 'Viarmo',
+                        text: 'Always a pleasure to meet a prospective bard. You should be aware that many apply but we accept very few people. When possible, we ask applicants to perform tasks the college needs completed. In this case, I do have a task befitting an inspiring bard...',
+                        options: [
+                            { to: '0', text: 'Maybe not today then...', isSpeech: true },
+                            { to: '5', text: 'What do you need me to do?', isSpeech: true },
+                            { text: 'Good bye', isSpeech: true },
+                        ]
+                    },
+                    {
+                        id: '2',
+                        character: 'Viarmo',
+                        text: 'Not much, to be honest. Their return was a shock to us all. Giraud Gemane has some tomes about them in the library, if you\'re interested.',
+                        options: [
+                            { to: 'shop', text: 'What\'re ya sellin\'?', isSpeech: true },
+                            { to: '0', text: 'What were we talking about again?', isSpeech: true },
+                            { text: 'Good bye', isSpeech: true },
+                        ]
+                    },
+                    {
+                        id: '3',
+                        character: 'Viarmo',
+                        text: 'Not much. But as a bard, I find the whole affair depressing. There are no heroes in this war. No winners to be had and no real conclusion. If you want something a bard can dig into look to the dragons. A thousand years from now Skyrim will have changed rulers dozens of times but the return of the dragons, that story is once in an era. So what is the Poetic Edda?',
+                        options: [
+                            { to: 'shop', text: 'What\'re ya sellin\'?', isSpeech: true },
+                            { to: '0', text: 'What were we talking about again?', isSpeech: true },
+                            { text: 'Good bye', isSpeech: true },
+                        ]
+                    },
+                    {
+                        id: '4',
+                        character: 'Viarmo',
+                        text: 'As you may be aware Elisif\'s husband High King Torygg was recently killed. Elisif mourns her husband deeply and she feels that a festival that burns a King in effigy is... distasteful. I\'ve tried to convince her the festival is many centuries old and celebrates Solitude but I need proof. I believe King Olaf\'s verse will provide that proof.',
+                        options: [
+                            { to: 'shop', text: 'What\'re ya sellin\'?', isSpeech: true },
+                            { to: '0', text: 'What were we talking about again?', isSpeech: true },
+                            { text: 'Good bye', isSpeech: true },
+                        ]
+                    },
+                    {
+                        id: '5',
+                        character: 'Viarmo',
+                        text: 'Elisif has forbidden the Burning of King Olaf, a Festival put on by the Bards College. We need to change her mind. To convince her I want to read King Olaf\'s Verse. A part of the Poetic Edda, the living history of Skyrim. Unfortunately, the verse was lost long ago.',
+                        options: [
+                            { to: '0', text: 'Maybe not today then...', isSpeech: true },
+                            { to: '6', text: 'And that\'s where I come in?', isSpeech: true },
+                            { text: 'Good bye', isSpeech: true },
+                        ]
+                    },
+                    {
+                        id: '6',
+                        character: 'Viarmo',
+                        text: 'Yes. According to Giraud, our histories keeper, the portion of Edda dealing with King Olaf might still exist in Dead Man\'s respite. I need you to retrieve the poem.',
+                        options: [
+                            { to: '0', text: 'Maybe not today then...', isSpeech: true },
+                            { text: 'Okay! I am going right now!', isSpeech: true }
+                        ]
+                    },
+                    {
+                        id: 'shop',
+                        character: 'Viarmo',
+                        text: ['What\'re ya buyin?'],
+                        options: [
+                            { losses: { items: [{ id: "mythMusic:Polished_Topaz_Gem", qty: 1 }, { id: "mythMusic:Polished_Ruby_Gem", qty: 1 }, { id: "mythMusic:Polished_Sapphire_Gem", qty: 1 }, { id: "mythMusic:Pristine_Leather", qty: 5 }] }, rewards: { items: [{ id: 'tes:rjorns_drum' }] } },
+
+                            { losses: { items: [{ id: "mythMusic:Polished_Topaz_Gem", qty: 1 }, { id: "mythMusic:Polished_Ruby_Gem", qty: 1 }, { id: "mythMusic:Polished_Sapphire_Gem", qty: 1 }, { id: "mythMusic:Mystic_Oil", qty: 5 }] }, rewards: { items: [{ id: 'tes:Dancers_Flute' }] } },
+
+                            { losses: { items: [{ id: "mythMusic:Polished_Topaz_Gem", qty: 1 }, { id: "mythMusic:Polished_Ruby_Gem", qty: 1 }, { id: "mythMusic:Polished_Sapphire_Gem", qty: 1 }, { id: "mythMusic:Diamond_String", qty: 5 }] }, rewards: { items: [{ id: 'tes:finns_lute' }] } },
+                            { to: '0', text: 'What were we talking about again?', isSpeech: true },
+                            { text: 'Good bye', isSpeech: true },
+                        ]
+                    }
+                    // King_Olafs_Verse.png
+                ]
+                }, ctx);
+                document.getElementById('tes_Bards_College__global-droptable-overview-container').firstElementChild.after(Viarmo_box.root);
+            }
         } catch (error) {
             console.log('onInterfaceReady', error)
         }

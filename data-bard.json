@@ -1,0 +1,228 @@
+{
+    "$schema": "https://melvoridle.com/assets/schema/gameData.json",
+    "namespace": "tes",
+    "modifications": {
+        "items": [
+            {
+                "id": "tes:Bard_Drum",
+                "equipRequirements": {
+                    "add": [
+                        {
+                            "type": "SkillLevel",
+                            "skillID": "mythMusic:Music",
+                            "level": 10
+                        }
+                    ]
+                },
+                "modifiers": {
+                    "add":{
+                        "increasedMusicGP": 10
+                    }
+                }
+            },
+            {
+                "id": "tes:Bard_Flute",
+                "equipRequirements": {
+                    "add": [
+                        {
+                            "type": "SkillLevel",
+                            "skillID": "mythMusic:Music",
+                            "level": 10
+                        }
+                    ]
+                },
+                "modifiers": {
+                    "add":{
+                        "increasedMusicGP": 10
+                    }
+                }
+            },
+            {
+                "id": "tes:Bard_Lute",
+                "equipRequirements": {
+                    "add": [
+                        {
+                            "type": "SkillLevel",
+                            "skillID": "mythMusic:Music",
+                            "level": 10
+                        }
+                    ]
+                },
+                "modifiers": {
+                    "add":{
+                        "increasedMusicGP": 10
+                    }
+                }
+            }
+        ]
+    },
+    "data": {
+        "items": [
+            {
+                "itemType": "Weapon",
+                "attackType": "melee",
+                "id": "Dancers_Flute",
+                "name": "The Dancer's Flute",
+                "category": "Music",
+                "type": "Equipment",
+                "media": "assets/items/Flute.png",
+                "ignoreCompletion": true,
+                "obtainFromItemLog": false,
+                "golbinRaidExclusive": false,
+                "sellsFor": 100,
+                "tier": "none",
+                "validSlots": [
+                    "Weapon"
+                ],
+                "occupiesSlots": [
+                    "Shield"
+                ],
+                "equipRequirements": [
+                    {
+                        "type": "SkillLevel",
+                        "skillID": "melvorD:Attack",
+                        "level": 10
+                    },
+                    {
+                        "type": "SkillLevel",
+                        "skillID": "mythMusic:Music",
+                        "level": 10
+                    }
+                ],
+                "equipmentStats": [
+                    {
+                        "key": "attackSpeed",
+                        "value": 3600
+                    },
+                    {
+                        "key": "stabAttackBonus",
+                        "value": -4
+                    },
+                    {
+                        "key": "slashAttackBonus",
+                        "value": 42
+                    },
+                    {
+                        "key": "blockAttackBonus",
+                        "value": 42
+                    },
+                    {
+                        "key": "meleeStrengthBonus",
+                        "value": 47
+                    }
+                ],
+                "modifiers": {}
+            },
+            {
+                "itemType": "Weapon",
+                "attackType": "melee",
+                "id": "finns_lute",
+                "name": "Finn's Lute",
+                "category": "Music",
+                "type": "Equipment",
+                "media": "assets/items/Lute.png",
+                "ignoreCompletion": true,
+                "obtainFromItemLog": false,
+                "golbinRaidExclusive": false,
+                "sellsFor": 100,
+                "tier": "none",
+                "validSlots": [
+                    "Weapon"
+                ],
+                "occupiesSlots": [
+                    "Shield"
+                ],
+                "equipRequirements": [
+                    {
+                        "type": "SkillLevel",
+                        "skillID": "melvorD:Attack",
+                        "level": 10
+                    },
+                    {
+                        "type": "SkillLevel",
+                        "skillID": "mythMusic:Music",
+                        "level": 10
+                    }
+                ],
+                "equipmentStats": [
+                    {
+                        "key": "attackSpeed",
+                        "value": 3600
+                    },
+                    {
+                        "key": "stabAttackBonus",
+                        "value": -4
+                    },
+                    {
+                        "key": "slashAttackBonus",
+                        "value": 42
+                    },
+                    {
+                        "key": "blockAttackBonus",
+                        "value": 42
+                    },
+                    {
+                        "key": "meleeStrengthBonus",
+                        "value": 47
+                    }
+                ],
+                "modifiers": {}
+            },
+            {
+                "itemType": "Weapon",
+                "attackType": "melee",
+                "id": "rjorns_drum",
+                "name": "Rjorn's Drum",
+                "category": "Music",
+                "type": "Equipment",
+                "media": "assets/items/Drum.png",
+                "ignoreCompletion": true,
+                "obtainFromItemLog": false,
+                "golbinRaidExclusive": false,
+                "sellsFor": 100,
+                "tier": "none",
+                "validSlots": [
+                    "Weapon"
+                ],
+                "occupiesSlots": [
+                    "Shield"
+                ],
+                "equipRequirements": [
+                    {
+                        "type": "SkillLevel",
+                        "skillID": "melvorD:Attack",
+                        "level": 10
+                    },
+                    {
+                        "type": "SkillLevel",
+                        "skillID": "mythMusic:Music",
+                        "level": 10
+                    }
+                ],
+                "equipmentStats": [
+                    {
+                        "key": "attackSpeed",
+                        "value": 3600
+                    },
+                    {
+                        "key": "stabAttackBonus",
+                        "value": -4
+                    },
+                    {
+                        "key": "slashAttackBonus",
+                        "value": 42
+                    },
+                    {
+                        "key": "blockAttackBonus",
+                        "value": 42
+                    },
+                    {
+                        "key": "meleeStrengthBonus",
+                        "value": 47
+                    }
+                ],
+                "modifiers": {}
+            }
+        ]
+    }
+}

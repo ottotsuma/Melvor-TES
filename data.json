@@ -6,14 +6,14 @@
       {
         "id": "Bards_College_Overview",
         "customName": "Bards College",
-        "media": "assets/icons/music/bongo.png",
+        "media": "assets/items/Drum.png",
         "containerID": "tes_Bards_College__global-droptable-overview-container",
         "headerBgClass": "bg-statistics",
         "hasGameGuide": false,
         "canBeDefault": false,
         "sidebarItem": {
-          "categoryID": "Modding",
-          "icon": "assets/icons/music/bongo.png"
+          "categoryID": "Passive",
+          "icon": "assets/items/Drum.png"
         }
       }
     ],
@@ -6337,6 +6337,138 @@
     ],
     "items": [
       {
+        "id": "Bard_Lute",
+        "name": "Bard's Lute",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Lute.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 200,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [
+          "Shield"
+        ],
+        "equipRequirements": [
+        ],
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3600
+        },
+        {
+            "key": "stabAttackBonus",
+            "value": -4
+        },
+        {
+            "key": "slashAttackBonus",
+            "value": 42
+        },
+        {
+            "key": "blockAttackBonus",
+            "value": 42
+        },
+        {
+            "key": "meleeStrengthBonus",
+            "value": 47
+        }
+        ],
+        "itemType": "Weapon",
+        "attackType": "melee"
+      },
+      {
+        "id": "Bard_Flute",
+        "name": "Bard's Flute",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Flute.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 200,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [
+          "Shield"
+        ],
+        "equipRequirements": [
+        ],
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3600
+        },
+        {
+            "key": "stabAttackBonus",
+            "value": -4
+        },
+        {
+            "key": "slashAttackBonus",
+            "value": 42
+        },
+        {
+            "key": "blockAttackBonus",
+            "value": 42
+        },
+        {
+            "key": "meleeStrengthBonus",
+            "value": 47
+        }
+        ],
+        "itemType": "Weapon",
+        "attackType": "melee"
+      },
+      {
+        "id": "Bard_Drum",
+        "name": "Bard's Drum",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Drum.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 200,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [
+          "Shield"
+        ],
+        "equipRequirements": [
+        ],
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3600
+        },
+        {
+            "key": "stabAttackBonus",
+            "value": -4
+        },
+        {
+            "key": "slashAttackBonus",
+            "value": 42
+        },
+        {
+            "key": "blockAttackBonus",
+            "value": 42
+        },
+        {
+            "key": "meleeStrengthBonus",
+            "value": 47
+        }
+        ],
+        "itemType": "Weapon",
+        "attackType": "melee"
+      },
+      {
         "id": "Bloodstone_Chalice",
         "name": "Bloodstone Chalice",
         "media": "assets/items/Bloodstone_Chalice.png",
@@ -10601,7 +10733,6 @@
       {
         "id": "Dawnbreaker",
         "name": "Dawnbreaker",
-        "customDescription": "Mortals call it Dawnbreaker, for it was forged in a holy light that breaks upon my foes, burning away corruption and false life.",
         "category": "Combat",
         "type": "Weapon",
         "media": "assets/items/Dawnbreaker.png",
@@ -10610,6 +10741,9 @@
         "golbinRaidExclusive": false,
         "sellsFor": 3600000,
         "tier": "none",
+        "modifiers": {
+          "increasedChanceToApplyBurn": 10
+        },
         "validSlots": [
           "Weapon"
         ],
@@ -10806,8 +10940,7 @@
           }
         ],
         "modifiers": {
-          "increasedChanceToApplyBurn": 100,
-          "increasedBurnDOTDamage": 10
+          "increasedChanceToApplyBurn": 100
         },
         "itemType": "Weapon",
         "attackType": "melee"
@@ -18171,7 +18304,7 @@
           {
             "character": "Attacker",
             "modifiers": {
-              "increasedBurnDOTDamage": 100
+              "increasedChanceToApplyBurn": 100
             },
             "type": "Modifier",
             "turns": 1,
