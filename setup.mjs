@@ -88,8 +88,8 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                 PASSIVES_NAME_EventPassive10: "Unusual Passive",
                 PASSIVES_NAME_EventPassive11: "Unusual Passive",
                 PASSIVES_NAME_EventPassive12: "Unusual Passive",
-                tes_Bards_College_Global_Droptable_Overview_General_Functionality: 'Each item on the global droptable has its own roll. These rolls are separate from the regular droptable and do not replace any other loot',
-                tes_Bards_College_Global_Droptable_Overview_Item_Pickup_Info: "Items are not put in the loot container, but instead placed into the bank immediately. That is, if free space is available",
+                tes_Bards_College_Global_Droptable_Overview_General_Functionality: 'Each item on the global droptable has its own roll. These rolls are separate from the regular droptable and do not replace any other loot.',
+                tes_Bards_College_Global_Droptable_Overview_Item_Pickup_Info: "Items are not put in the loot container, but instead placed into the bank immediately. That is, if free space is available.",
                 tes_Bards_College_Global_Droptable_Overview_Dungeon_Limitation: "The drop rate for each item is inverse to the monsters combat level.",
                 tes_Bards_College_Global_Droptable_Overview_Base_Droprate: "Base chance",
                 // Global_Droptable_Overview_Limitation_Dragons_Only: "Only dropped by Dragons",
@@ -622,20 +622,21 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
             bards_college_items[2].baseChanceDenominator = "100000"
             bards_college_items.push(game.items.getObjectByID(`tes:Bard_Lute`))
             bards_college_items[3].baseChanceDenominator = "100000"
+            bards_college_items.push(game.items.getObjectByID(`tes:King_Olafs_Verse`))
+            bards_college_items[4].baseChanceDenominator = "1000000"
             if (mythLoaded) {
                 bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Topaz_Gem`))
-                bards_college_items[4].baseChanceDenominator = "10000"
-                bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Ruby_Gem`))
                 bards_college_items[5].baseChanceDenominator = "10000"
-                bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Sapphire_Gem`))
+                bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Ruby_Gem`))
                 bards_college_items[6].baseChanceDenominator = "10000"
+                bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Sapphire_Gem`))
+                bards_college_items[7].baseChanceDenominator = "10000"
             }
-            bards_college_items.push(game.items.getObjectByID(`tes:King_Olafs_Verse`))
-            bards_college_items[7].baseChanceDenominator = "1000000"
+
             ctx.patch(CombatManager, "onEnemyDeath").after(() => {
                 try {
                     // 1/10,000
-                    if (Math.random() < (0.0001 / game.combat.enemy.monster.combatLevel)) {
+                    if (mythLoaded && Math.random() < (0.0001 / game.combat.enemy.monster.combatLevel)) {
                         const tes_items = ["mythMusic:Polished_Topaz_Gem", "mythMusic:Polished_Ruby_Gem", "mythMusic:Polished_Sapphire_Gem"]
                         const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
                         console.log(tes_itemId)
@@ -734,7 +735,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                         text: 'Not much, to be honest. Their return was a shock to us all. Giraud Gemane has some tomes about them in the library, if you\'re interested.',
                         options: [
                             { to: '0', text: 'What were we talking about again?', isSpeech: true },
-                            { to: 'shop', text: 'I\'m looking for a new instrument.?', isSpeech: true },
+                            { to: 'shop', text: 'I\'m looking for a new instrument.', isSpeech: true },
                             { text: 'Good bye', isSpeech: true },
                         ]
                     },
@@ -744,7 +745,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                         text: 'Not much. But as a bard, I find the whole affair depressing. There are no heroes in this war. No winners to be had and no real conclusion. If you want something a bard can dig into look to the dragons. A thousand years from now Skyrim will have changed rulers dozens of times but the return of the dragons, that story is once in an era. So what is the Poetic Edda?',
                         options: [
                             { to: '0', text: 'What were we talking about again?', isSpeech: true },
-                            { to: 'shop', text: 'I\'m looking for a new instrument.?', isSpeech: true },
+                            { to: 'shop', text: 'I\'m looking for a new instrument.', isSpeech: true },
                             { text: 'Good bye', isSpeech: true },
                         ]
                     },
@@ -754,7 +755,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                         text: 'As you may be aware Elisif\'s husband High King Torygg was recently killed. Elisif mourns her husband deeply and she feels that a festival that burns a King in effigy is... distasteful. I\'ve tried to convince her the festival is many centuries old and celebrates Solitude but I need proof. I believe King Olaf\'s verse will provide that proof.',
                         options: [
                             { to: '0', text: 'What were we talking about again?', isSpeech: true },
-                            { to: 'shop', text: 'I\'m looking for a new instrument.?', isSpeech: true },
+                            { to: 'shop', text: 'I\'m looking for a new instrument.', isSpeech: true },
                             { text: 'Good bye', isSpeech: true },
                         ]
                     },
@@ -819,6 +820,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     ]
                 }, ctx);
                 document.getElementById('tes_Bards_College__global-droptable-overview-container').firstElementChild.after(Viarmo_box.root);
+                
                 ui.createStatic('#modal-book--King_Olafs_Verse', document.body);
                 document.body.querySelector('.modal.King_Olafs_Verse').id = 'King_Olafs_Verse';
             }
