@@ -1,5 +1,6 @@
 export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady }) {
 
+    // New modifiers
     modifierData.tes_increasedDragonBreathDamage = {
         get langDescription() {
             return getLangString('tes_increasedDragonBreathDamage');
@@ -9,7 +10,6 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         isNegative: true,
         tags: ['combat']
     };
-
     modifierData.tes_wardsave = {
         get langDescription() {
             return getLangString('tes_wardsave');
@@ -19,7 +19,6 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         isNegative: true,
         tags: ['combat']
     };
-
     modifierData.tes_increasedFlatDamageWhileTargetHasMaxHP = {
         get langDescription() {
             return getLangString('tes_increasedFlatDamageWhileTargetHasMaxHP');
@@ -29,7 +28,6 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         isNegative: true,
         tags: ['combat']
     };
-
     modifierData.tes_increasedPercDamageWhileTargetHasMaxHP = {
         get langDescription() {
             return getLangString('tes_increasedPercDamageWhileTargetHasMaxHP');
@@ -39,7 +37,6 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         isNegative: true,
         tags: ['combat']
     };
-
     modifierData.tes_decreaseFlatDamageWhileTargetHasMaxHP = {
         get langDescription() {
             return getLangString('tes_decreaseFlatDamageWhileTargetHasMaxHP');
@@ -49,7 +46,9 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         isNegative: false,
         tags: ['combat']
     };
+    // end new modifiers
 
+    // variables to move between load functions
     let Khajiit_Item_1 = ""
     let Khajiit_Item_1_Price = 100
     let Khajiit_Item_1_qty = 1
@@ -57,9 +56,11 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
     let Khajiit_Item_2_Price = 100
     let Khajiit_Item_3 = ""
     let Khajiit_Item_3_Price = 100
+    // end variables to move between load functions
 
     onModsLoaded(async (ctx) => {
         try {
+            // Translations
             const en_data = {
                 tes_increasedDragonBreathDamage: "Increase damage taken from dragon breaths by +${value}",
                 tes_wardsave: "+${value}% (MAX: 90%) to take 0 damage from a hit.",
@@ -89,7 +90,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                 PASSIVES_NAME_EventPassive12: "Unusual Passive",
                 tes_Bards_College_Global_Droptable_Overview_General_Functionality: 'Each item on the global droptable has its own roll. These rolls are separate from the regular droptable and do not replace any other loot',
                 tes_Bards_College_Global_Droptable_Overview_Item_Pickup_Info: "Items are not put in the loot container, but instead placed into the bank immediately. That is, if free space is available",
-                // tes_Bards_College_Global_Droptable_Overview_Dungeon_Limitation: "In dungeons, the global droptable is only rolled for the last monster",
+                tes_Bards_College_Global_Droptable_Overview_Dungeon_Limitation: "The drop rate for each item is inverse to the monsters combat level.",
                 tes_Bards_College_Global_Droptable_Overview_Base_Droprate: "Base chance",
                 // Global_Droptable_Overview_Limitation_Dragons_Only: "Only dropped by Dragons",
                 // Global_Droptable_Overview_Limitation_Undead_Only: "Only dropped by Undead",
@@ -97,14 +98,30 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
             for (const [key, value] of Object.entries(en_data)) {
                 loadedLangJson[key] = value;
             }
+            // End Translations
 
+            // Packages to load based on entitlement
             if (cloudManager.hasTotHEntitlement) {
                 console.log('hasTotHEntitlement')
                 await ctx.gameData.addPackage('data-toth.json');
             } else {
                 console.log('Vanilla')
             }
+            if (mod.manager.getLoadedModList().includes("[Myth] Music")) {
 
+                // increasedMusicHireCost: number;
+                // decreasedMusicHireCost: number;
+                // increasedMusicGP: number;
+                // decreasedMusicGP: number;
+                // increasedChanceToObtainShrimpWhileTrainingMusic: number;
+                // decreasedChanceToObtainShrimpWhileTrainingMusic: number;
+                // increasedSheetMusicDropRate: number;
+                // decreasedSheetMusicDropRate: number;
+                // increasedMusicAdditionalRewardRoll: number;
+                // decreasedMusicAdditionalRewardRoll: number;
+
+                await ctx.gameData.addPackage('data-bard.json');
+            }
             if (mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')) {
                 const cmim = mod.api.customModifiersInMelvor;
                 if (!cmim) {
@@ -115,6 +132,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                 cmim.addHumans(["tes:Necromancer", "tes:Bandit", "tes:Thief", "tes:Havilstein_Hoar", "tes:Matthias_Draconis", "tes:Perennia_Draconis", "tes:Caelia_Draconis", "tes:Sibylla_Draconis", "tes:Andreas_Draconis", "tes:Celedaen", "tes:Imperial_Watch",]);
                 cmim.addUndeads(["tes:Harkon", "tes:Harkon2", "tes:Zombie", "tes:Lich",]);
             }
+            // End Packages to load based on entitlement
         } catch (error) {
             console.log("onModsLoaded", error)
         }
@@ -122,6 +140,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
 
     onCharacterLoaded(ctx => {
         try {
+            // Patching skills for new modifiers
             ctx.patch(Character, 'modifyAttackDamage').after((damage, target, attack) => {
                 let newDamage = damage
                 // Remove all damage and return if wardsaved
@@ -180,7 +199,9 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                 // return re-calced damage
                 return newDamage
             })
+            // end patching skills for new modifiers
 
+            // Looping though all game items.
             const bannedList = {
                 "Sweetroll": true,
                 "Crown_of_Rhaelyx": true,
@@ -226,18 +247,15 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                 "Lemonade_Still_almost_full": true,
                 "Lemonade_Almost_full": true
             }
-
             const bannedNameSpace = {
                 "tes": true
             }
-
             const categoryBan = {
                 "Limes": true,
                 "Lemon": true,
                 "Events": true,
                 "Event": true
             }
-
             const initialPackage = ctx.gameData.buildPackage(itemPackage => {
                 game.items.registeredObjects.forEach(item => {
                     try {
@@ -287,7 +305,9 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                 })
             });
             initialPackage.add();
+            // end looping though all game items.
 
+            // looping though all game monsters
             game.monsters.forEach(monster => {
                 try {
                     if (monster && monster.localID && monster.namespace === "tes" && monster.localID === 'Bloody_Hand_Tribe_Goblin_Shaman') {
@@ -378,15 +398,17 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     console.log("onCharacterLoaded game.monsters.forEach", error)
                 }
             })
+            // end looping though all game monsters
         } catch (error) {
             console.log('onCharacterLoaded', error)
         }
     });
 
-    onInterfaceReady(async (ctx) => {
+    onInterfaceReady((ctx) => {
         const dboxLoaded = mod.manager.getLoadedModList().includes('dbox')
         const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
         try {
+            // khajiit_merchants
             if (dboxLoaded) {
                 const dbox = mod.api.dbox;
                 if (!dbox) {
@@ -581,48 +603,73 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     document.getElementById(tes_merchant_area).firstElementChild.after(khajiit_merchant_atahbah_box.root);
                 }
             }
+            // end khajiit_merchants
 
+            // Create HTML pages for items
             ui.createStatic('#modal-book--The_Black_Horse_Courier_Waterfront', document.body);
             document.body.querySelector('.modal.The_Black_Horse_Courier_Waterfront').id = 'The_Black_Horse_Courier_Waterfront';
-
             ui.createStatic('#modal-book--recommendation_letter', document.body);
             document.body.querySelector('.modal.recommendation_letter').id = 'recommendation_letter';
+            // end HTML for items
 
             // Bards college
             const bards_college_items = []
             bards_college_items.push(game.items.getObjectByID(`tes:Sweetroll`))
-            // Sweetroll + baseChanceDenominator = "10"
+            bards_college_items[0].baseChanceDenominator = "1000"
             bards_college_items.push(game.items.getObjectByID(`tes:Bard_Drum`))
+            bards_college_items[1].baseChanceDenominator = "100000"
             bards_college_items.push(game.items.getObjectByID(`tes:Bard_Flute`))
+            bards_college_items[2].baseChanceDenominator = "100000"
             bards_college_items.push(game.items.getObjectByID(`tes:Bard_Lute`))
+            bards_college_items[3].baseChanceDenominator = "100000"
             if (mythLoaded) {
                 bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Topaz_Gem`))
-                // mythMusic:Polished_Ruby_Gem
-                // Polished_Sapphire_Gem
-                // "mythMusic:Diamond_String",
-                // "mythMusic:Pristine_Leather",
-                // "mythMusic:Mystic_Oil",
-
-                // increasedMusicHireCost: number;
-                // decreasedMusicHireCost: number;
-                // increasedMusicGP: number;
-                // decreasedMusicGP: number;
-                // bandPractice: number;
-                // masterAncientRelic: number;
-                // increasedChanceToObtainShrimpWhileTrainingMusic: number;
-                // decreasedChanceToObtainShrimpWhileTrainingMusic: number;
-                // increasedSheetMusicDropRate: number;
-                // decreasedSheetMusicDropRate: number;
-                // increasedMusicAdditionalRewardRoll: number;
-                // decreasedMusicAdditionalRewardRoll: number;
-                // increasedSkillMasteryXPPerVariel: number;
-                await ctx.gameData.addPackage('data-bard.json');
-                bards_college_items.push(game.items.getObjectByID(`tes:Dancers_Flute`))
+                bards_college_items[4].baseChanceDenominator = "10000"
+                bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Ruby_Gem`))
+                bards_college_items[5].baseChanceDenominator = "10000"
+                bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Sapphire_Gem`))
+                bards_college_items[6].baseChanceDenominator = "10000"
             }
+            bards_college_items.push(game.items.getObjectByID(`tes:King_Olafs_Verse`))
+            bards_college_items[7].baseChanceDenominator = "1000000"
             ctx.patch(CombatManager, "onEnemyDeath").after(() => {
                 try {
-                    if (Math.random() < 0.1) {
-                        const tes_itemId = "tes:Sweetroll"
+                    // 1/10,000
+                    if (Math.random() < (0.0001 / game.combat.enemy.monster.combatLevel)) {
+                        const tes_items = ["mythMusic:Polished_Topaz_Gem", "mythMusic:Polished_Ruby_Gem", "mythMusic:Polished_Sapphire_Gem"]
+                        const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
+                        console.log(tes_itemId)
+                        const tes_item = game.items.getObjectByID(`${tes_itemId}`);
+                        if (item === undefined) {
+                            throw new Error(`Invalid item ID ${tes_itemId}`);
+                        }
+                        game.bank.addItem(tes_item, 1, true, true, false);
+                    }
+                    // 1/100,000
+                    else if (Math.random() < (0.00001 / game.combat.enemy.monster.combatLevel)) {
+                        const tes_items = ["tes:Bard_Drum", "tes:Bard_Flute", "tes:Bard_Lute"]
+                        const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
+                        console.log(tes_itemId)
+                        const tes_item = game.items.getObjectByID(`${tes_itemId}`);
+                        if (item === undefined) {
+                            throw new Error(`Invalid item ID ${tes_itemId}`);
+                        }
+                        game.bank.addItem(tes_item, 1, true, true, false);
+                    }
+                    // 1/1000
+                    else if (Math.random() < (0.001 / game.combat.enemy.monster.combatLevel)) {
+                        const tes_items = ["tes:Sweetroll"]
+                        const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
+                        const tes_item = game.items.getObjectByID(`${tes_itemId}`);
+                        if (item === undefined) {
+                            throw new Error(`Invalid item ID ${tes_itemId}`);
+                        }
+                        game.bank.addItem(tes_item, 1, true, true, false);
+                    }
+                    // 1 / 1000000 
+                    else if (Math.random() < (0.000001 / game.combat.enemy.monster.combatLevel)) {
+                        const tes_items = ["tes:King_Olafs_Verse"]
+                        const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
                         const tes_item = game.items.getObjectByID(`${tes_itemId}`);
                         if (item === undefined) {
                             throw new Error(`Invalid item ID ${tes_itemId}`);
@@ -662,11 +709,12 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                         character: 'Viarmo',
                         text: ['Welcome to the Bard\'s College. I am the headmaster here. How may I help you?'],
                         options: [
-                            { to: 'shop', text: 'What\'re ya sellin\'?', isSpeech: true },
+                            { to: 'shop', text: 'I\'m looking for a new instrument.', isSpeech: true },
                             { to: '1', text: 'I\'m looking to apply to the college.', isSpeech: true },
                             { to: '2', text: 'What do you know about dragons?', isSpeech: true },
                             { to: '3', text: 'So what is the Poetic Edda?', isSpeech: true },
                             { to: '4', text: 'Why did Elisif forbid the festival?', isSpeech: true },
+                            { to: '7', text: 'I found King Olaf\'s Verse.', isSpeech: true },
                             { text: 'Good bye', isSpeech: true },
                         ]
                     },
@@ -675,8 +723,8 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                         character: 'Viarmo',
                         text: 'Always a pleasure to meet a prospective bard. You should be aware that many apply but we accept very few people. When possible, we ask applicants to perform tasks the college needs completed. In this case, I do have a task befitting an inspiring bard...',
                         options: [
-                            { to: '0', text: 'Maybe not today then...', isSpeech: true },
                             { to: '5', text: 'What do you need me to do?', isSpeech: true },
+                            { to: '0', text: 'Maybe not today then...', isSpeech: true },
                             { text: 'Good bye', isSpeech: true },
                         ]
                     },
@@ -685,8 +733,8 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                         character: 'Viarmo',
                         text: 'Not much, to be honest. Their return was a shock to us all. Giraud Gemane has some tomes about them in the library, if you\'re interested.',
                         options: [
-                            { to: 'shop', text: 'What\'re ya sellin\'?', isSpeech: true },
                             { to: '0', text: 'What were we talking about again?', isSpeech: true },
+                            { to: 'shop', text: 'I\'m looking for a new instrument.?', isSpeech: true },
                             { text: 'Good bye', isSpeech: true },
                         ]
                     },
@@ -695,8 +743,8 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                         character: 'Viarmo',
                         text: 'Not much. But as a bard, I find the whole affair depressing. There are no heroes in this war. No winners to be had and no real conclusion. If you want something a bard can dig into look to the dragons. A thousand years from now Skyrim will have changed rulers dozens of times but the return of the dragons, that story is once in an era. So what is the Poetic Edda?',
                         options: [
-                            { to: 'shop', text: 'What\'re ya sellin\'?', isSpeech: true },
                             { to: '0', text: 'What were we talking about again?', isSpeech: true },
+                            { to: 'shop', text: 'I\'m looking for a new instrument.?', isSpeech: true },
                             { text: 'Good bye', isSpeech: true },
                         ]
                     },
@@ -705,8 +753,8 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                         character: 'Viarmo',
                         text: 'As you may be aware Elisif\'s husband High King Torygg was recently killed. Elisif mourns her husband deeply and she feels that a festival that burns a King in effigy is... distasteful. I\'ve tried to convince her the festival is many centuries old and celebrates Solitude but I need proof. I believe King Olaf\'s verse will provide that proof.',
                         options: [
-                            { to: 'shop', text: 'What\'re ya sellin\'?', isSpeech: true },
                             { to: '0', text: 'What were we talking about again?', isSpeech: true },
+                            { to: 'shop', text: 'I\'m looking for a new instrument.?', isSpeech: true },
                             { text: 'Good bye', isSpeech: true },
                         ]
                     },
@@ -715,8 +763,8 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                         character: 'Viarmo',
                         text: 'Elisif has forbidden the Burning of King Olaf, a Festival put on by the Bards College. We need to change her mind. To convince her I want to read King Olaf\'s Verse. A part of the Poetic Edda, the living history of Skyrim. Unfortunately, the verse was lost long ago.',
                         options: [
-                            { to: '0', text: 'Maybe not today then...', isSpeech: true },
                             { to: '6', text: 'And that\'s where I come in?', isSpeech: true },
+                            { to: '0', text: 'Maybe not today then...', isSpeech: true },
                             { text: 'Good bye', isSpeech: true },
                         ]
                     },
@@ -732,7 +780,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     {
                         id: 'shop',
                         character: 'Viarmo',
-                        text: ['What\'re ya buyin?'],
+                        text: ['You\'ve come to the right place.'],
                         options: [
                             { losses: { items: [{ id: "mythMusic:Polished_Topaz_Gem", qty: 1 }, { id: "mythMusic:Polished_Ruby_Gem", qty: 1 }, { id: "mythMusic:Polished_Sapphire_Gem", qty: 1 }, { id: "mythMusic:Pristine_Leather", qty: 5 }] }, rewards: { items: [{ id: 'tes:rjorns_drum' }] } },
 
@@ -742,12 +790,39 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                             { to: '0', text: 'What were we talking about again?', isSpeech: true },
                             { text: 'Good bye', isSpeech: true },
                         ]
-                    }
-                    // King_Olafs_Verse.png
-                ]
+                    },
+                    {
+                        id: '7',
+                        character: 'Viarmo',
+                        text: ['I have to admit I didn\'t think it would actually be there. Now let\'s take a look at this... Oh. Oh-no. This won\'t do at all. The copy is incomplete, it\'s aged to the point that parts are unreadable. And the parts that are readable... well... bardic verse has come a long way since ancient times.'],
+                        options: [
+                            { to: '8', losses: { items: [{ id: "tes:King_Olafs_Verse" }] }, rewards: { gp: 1000000 } },
+                            { to: '8', losses: { items: [{ id: "tes:King_Olafs_Verse" }], skillCheck: [{ id: 'mythMusic:Music', level: 20 }] }, rewards: { items: [{ id: 'mythMusic:Bards_Hat', qty: 1 }] } },
+                            { to: '8', losses: { items: [{ id: "tes:King_Olafs_Verse" }], skillCheck: [{ id: 'mythMusic:Music', level: 20 }] }, rewards: { items: [{ id: 'mythMusic:Bards_Body', qty: 1 }] } },
+                            { to: '8', losses: { items: [{ id: "tes:King_Olafs_Verse" }], skillCheck: [{ id: 'mythMusic:Music', level: 20 }] }, rewards: { items: [{ id: 'mythMusic:Bards_Boots', qty: 1 }] } },
+                            { to: '8', losses: { items: [{ id: "tes:King_Olafs_Verse" }], skillCheck: [{ id: 'mythMusic:Music', level: 20 }] }, rewards: { items: [{ id: 'mythMusic:Bards_Leggings', qty: 1 }] } },
+                            { to: '8', losses: { items: [{ id: "tes:King_Olafs_Verse" }], skillCheck: [{ id: 'mythMusic:Music', level: 50 }] }, rewards: { items: [{ id: 'mythMusic:Concert_Pass', qty: 5 }] } },
+                            { to: '0', text: 'What were we talking about again?', isSpeech: true }
+                        ]
+                    },
+                    {
+                        id: '8',
+                        character: 'Viarmo',
+                        text: 'I can\'t read it to the court. Without the verse I won\'t be able to convince Elisif of the importance of The Burning of King Olaf Festival. If she isn\'t convinced of the festival\'s importance then she won\'t reverse her decision to stop the effigy burning. It means that the Burning of King Olaf, which the Bards College has held for time immemorial, won\'t be happening.',
+                        options: [
+                            { to: '0', text: 'What were we talking about again?', isSpeech: true },
+                            { text: 'Good Luck!', isSpeech: true }
+                        ]
+                    },
+                        // https://elderscrolls.fandom.com/wiki/Viarmo
+                        // Maybe make a "bards rank as the first reward"
+                    ]
                 }, ctx);
                 document.getElementById('tes_Bards_College__global-droptable-overview-container').firstElementChild.after(Viarmo_box.root);
+                ui.createStatic('#modal-book--King_Olafs_Verse', document.body);
+                document.body.querySelector('.modal.King_Olafs_Verse').id = 'King_Olafs_Verse';
             }
+            // End bards college
         } catch (error) {
             console.log('onInterfaceReady', error)
         }

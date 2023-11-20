@@ -14,6 +14,9 @@
                         }
                     ]
                 },
+                "specialAttacks": {
+                    "add": ["mythMusic:Lesser_Prank"]
+                },
                 "modifiers": {
                     "add":{
                         "increasedMusicGP": 10
@@ -30,6 +33,9 @@
                             "level": 10
                         }
                     ]
+                },
+                "specialAttacks": {
+                    "add": ["mythMusic:Lesser_Prank"]
                 },
                 "modifiers": {
                     "add":{
@@ -48,10 +54,127 @@
                         }
                     ]
                 },
+                "specialAttacks": {
+                    "add": ["mythMusic:Lesser_Prank"]
+                },
                 "modifiers": {
                     "add":{
                         "increasedMusicGP": 10
                     }
+                }
+            },
+            {
+                "id": "tes:Jesters_Outfit",
+                "equipRequirements": {
+                    "add": [
+                        {
+                            "type": "SkillLevel",
+                            "skillID": "mythMusic:Music",
+                            "level": 10
+                        }
+                    ]
+                },
+                "modifiers": {
+                    "add":{
+                        "increasedMusicGP": 10
+                    }
+                }
+            },
+            {
+                "id": "tes:Jesters_Gloves",
+                "equipRequirements": {
+                    "add": [
+                        {
+                            "type": "SkillLevel",
+                            "skillID": "mythMusic:Music",
+                            "level": 10
+                        }
+                    ]
+                },
+                "modifiers": {
+                    "add":{
+                        "increasedMusicGP": 10
+                    }
+                }
+            },            {
+                "id": "tes:Jesters_Boots",
+                "equipRequirements": {
+                    "add": [
+                        {
+                            "type": "SkillLevel",
+                            "skillID": "mythMusic:Music",
+                            "level": 10
+                        }
+                    ]
+                },
+                "modifiers": {
+                    "add":{
+                        "increasedMusicGP": 10
+                    }
+                }
+            },
+            {
+                "id": "tes:Jesters_Hat",
+                "equipRequirements": {
+                    "add": [
+                        {
+                            "type": "SkillLevel",
+                            "skillID": "mythMusic:Music",
+                            "level": 10
+                        }
+                    ]
+                },
+                "modifiers": {
+                    "add":{
+                        "increasedMusicGP": 10
+                    }
+                }
+            }
+        ],
+        "monsters": [
+            {
+                "id": "mythMusic:Jester",
+                "lootTable": {
+                    "add": [
+                        {
+                            "itemID":"tes:Jesters_Hat",
+                            "maxQuantity": 1,
+                            "minQuantity": 1,
+                            "weight": 1
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "mythMusic:Enchanted_Jester",
+                "lootTable": {
+                    "add": [
+                        {
+                            "itemID":"tes:Jesters_Gloves",
+                            "maxQuantity": 1,
+                            "minQuantity": 1,
+                            "weight": 1
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "mythMusic:Mystic_Jester",
+                "lootTable": {
+                    "add": [
+                        {
+                            "itemID":"tes:Jesters_Outfit",
+                            "maxQuantity": 1,
+                            "minQuantity": 1,
+                            "weight": 1
+                        },
+                        {
+                            "itemID":"tes:Jesters_Boots",
+                            "maxQuantity": 1,
+                            "minQuantity": 1,
+                            "weight": 1
+                        }
+                    ]
                 }
             }
         ]
@@ -60,16 +183,16 @@
         "items": [
             {
                 "itemType": "Weapon",
-                "attackType": "melee",
+                "attackType": "magic",
                 "id": "Dancers_Flute",
                 "name": "The Dancer's Flute",
-                "category": "Music",
+                "category": "Combat",
                 "type": "Equipment",
                 "media": "assets/items/Flute.png",
                 "ignoreCompletion": true,
                 "obtainFromItemLog": false,
                 "golbinRaidExclusive": false,
-                "sellsFor": 100,
+                "sellsFor": 2000,
                 "tier": "none",
                 "validSlots": [
                     "Weapon"
@@ -81,50 +204,53 @@
                     {
                         "type": "SkillLevel",
                         "skillID": "melvorD:Attack",
-                        "level": 10
+                        "level": 50
                     },
                     {
                         "type": "SkillLevel",
                         "skillID": "mythMusic:Music",
-                        "level": 10
+                        "level": 50
                     }
                 ],
                 "equipmentStats": [
                     {
                         "key": "attackSpeed",
-                        "value": 3600
+                        "value": 3000
                     },
                     {
-                        "key": "stabAttackBonus",
-                        "value": -4
+                        "key": "magicAttackBonus",
+                        "value": 24
                     },
                     {
-                        "key": "slashAttackBonus",
-                        "value": 42
+                        "key": "magicDamageBonus",
+                        "value": 20
                     },
                     {
-                        "key": "blockAttackBonus",
-                        "value": 42
+                        "key": "magicDefenceBonus",
+                        "value": 22
                     },
                     {
-                        "key": "meleeStrengthBonus",
-                        "value": 47
+                        "key": "meleeDefenceBonus",
+                        "value": 1
                     }
                 ],
-                "modifiers": {}
+                "specialAttacks": ["mythMusic:Greater_Prank"],
+                "modifiers": {
+                    "increasedMusicGP": 20
+                }
             },
             {
                 "itemType": "Weapon",
-                "attackType": "melee",
+                "attackType": "ranged",
                 "id": "finns_lute",
                 "name": "Finn's Lute",
-                "category": "Music",
+                "category": "Combat",
                 "type": "Equipment",
                 "media": "assets/items/Lute.png",
                 "ignoreCompletion": true,
                 "obtainFromItemLog": false,
                 "golbinRaidExclusive": false,
-                "sellsFor": 100,
+                "sellsFor": 2000,
                 "tier": "none",
                 "validSlots": [
                     "Weapon"
@@ -136,50 +262,45 @@
                     {
                         "type": "SkillLevel",
                         "skillID": "melvorD:Attack",
-                        "level": 10
+                        "level": 50
                     },
                     {
                         "type": "SkillLevel",
                         "skillID": "mythMusic:Music",
-                        "level": 10
+                        "level": 50
                     }
                 ],
                 "equipmentStats": [
                     {
                         "key": "attackSpeed",
-                        "value": 3600
+                        "value": 3000
                     },
                     {
-                        "key": "stabAttackBonus",
-                        "value": -4
+                        "key": "rangedAttackBonus",
+                        "value": 88
                     },
                     {
-                        "key": "slashAttackBonus",
-                        "value": 42
-                    },
-                    {
-                        "key": "blockAttackBonus",
-                        "value": 42
-                    },
-                    {
-                        "key": "meleeStrengthBonus",
-                        "value": 47
+                        "key": "rangedStrengthBonus",
+                        "value": 90
                     }
                 ],
-                "modifiers": {}
+                "specialAttacks": ["mythMusic:Greater_Prank"],
+                "modifiers": {
+                    "increasedMusicGP": 20
+                }
             },
             {
                 "itemType": "Weapon",
                 "attackType": "melee",
                 "id": "rjorns_drum",
                 "name": "Rjorn's Drum",
-                "category": "Music",
+                "category": "Combat",
                 "type": "Equipment",
                 "media": "assets/items/Drum.png",
                 "ignoreCompletion": true,
                 "obtainFromItemLog": false,
                 "golbinRaidExclusive": false,
-                "sellsFor": 100,
+                "sellsFor": 2000,
                 "tier": "none",
                 "validSlots": [
                     "Weapon"
@@ -191,12 +312,12 @@
                     {
                         "type": "SkillLevel",
                         "skillID": "melvorD:Attack",
-                        "level": 10
+                        "level": 50
                     },
                     {
                         "type": "SkillLevel",
                         "skillID": "mythMusic:Music",
-                        "level": 10
+                        "level": 50
                     }
                 ],
                 "equipmentStats": [
@@ -206,22 +327,25 @@
                     },
                     {
                         "key": "stabAttackBonus",
-                        "value": -4
+                        "value": -20
                     },
                     {
                         "key": "slashAttackBonus",
-                        "value": 42
+                        "value": 128
                     },
                     {
                         "key": "blockAttackBonus",
-                        "value": 42
+                        "value": 80
                     },
                     {
                         "key": "meleeStrengthBonus",
-                        "value": 47
+                        "value": 182
                     }
                 ],
-                "modifiers": {}
+                "specialAttacks": ["mythMusic:Greater_Prank"],
+                "modifiers": {
+                    "increasedMusicGP": 20
+                }
             }
         ]
     }

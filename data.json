@@ -6337,6 +6337,188 @@
     ],
     "items": [
       {
+        "id": "Jesters_Gloves",
+        "name": "Jesters Gloves",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Jesters_Gloves.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 115,
+        "itemType": "Equipment",
+        "modifiers": {
+          "tes_increasedFlatDamageWhileTargetHasMaxHP": 10
+        },
+
+        "equipmentStats": [
+          {
+            "key": "magicAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 3
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Helmet"
+        ],
+        "equipRequirements": [
+          {
+            "purchaseID": "tes:Murderer_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Jesters_Hat",
+        "name": "Jesters Hat",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Jesters_Hat.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 115,
+        "itemType": "Equipment",
+        "modifiers": {
+          "tes_increasedFlatDamageWhileTargetHasMaxHP": 10
+        },
+
+        "equipmentStats": [
+          {
+            "key": "magicAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 3
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Helmet"
+        ],
+        "equipRequirements": [
+          {
+            "purchaseID": "tes:Murderer_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Jesters_Boots",
+        "name": "Jesters Boots",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Jesters_Boots.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 115,
+        "itemType": "Equipment",
+        "modifiers": {
+          "tes_increasedFlatDamageWhileTargetHasMaxHP": 10
+        },
+
+        "equipmentStats": [
+          {
+            "key": "magicAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 3
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Helmet"
+        ],
+        "equipRequirements": [
+          {
+            "purchaseID": "tes:Murderer_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Jesters_Outfit",
+        "name": "Jesters Outfit",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Jesters_Outfit.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 115,
+        "itemType": "Equipment",
+        "modifiers": {
+          "tes_increasedFlatDamageWhileTargetHasMaxHP": 30
+        },
+
+        "equipmentStats": [
+          {
+            "key": "magicAttackBonus",
+            "value": 5
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 5
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 5
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Platebody"
+        ],
+        "equipRequirements": [
+          {
+            "purchaseID": "tes:Murderer_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "King_Olafs_Verse",
+        "name": "King Olaf's Verse",
+        "category": "Misc",
+        "type": "Special",
+        "media": "assets/items/King_Olafs_Verse.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 0,
+        "itemType": "Readable",
+        "customDescription": "A very faded copy of the fabled work of the bard, Svaknir which is requested by the headmaster of the Bards College, Viarmo. The only remaining copy is sadly, mostly illegible.",
+        "modalID": "King_Olafs_Verse"
+      },
+      {
         "id": "Bard_Lute",
         "name": "Bard's Lute",
         "category": "Combat",
@@ -7328,7 +7510,7 @@
       {
         "id": "ElsweyrSpicedTea",
         "name": "Elsweyr Spiced Tea",
-        "category": "Food and Drink",
+        "category": "Cooking",
         "type": "Beverage",
         "media": "assets/items/teacup.png",
         "ignoreCompletion": false,
@@ -7812,7 +7994,7 @@
       },
       {
         "id": "ShroudedHood",
-        "name": "ShroudedHood",
+        "name": "Shrouded Hood",
         "category": "Combat",
         "type": "Armour",
         "media": "assets/items/ShroudedHood.png",
@@ -7824,7 +8006,7 @@
         "modifiers": {
           "tes_increasedFlatDamageWhileTargetHasMaxHP": 10
         },
-        "customDescription": "Deal a flat damage increase of 30 while the target is fully healed.",
+
         "equipmentStats": [
           {
             "key": "magicAttackBonus",
@@ -7854,7 +8036,7 @@
       },
       {
         "id": "ShroudedArmor",
-        "name": "ShroudedArmor",
+        "name": "Shrouded Armor",
         "category": "Combat",
         "type": "Armour",
         "media": "assets/items/ShroudedArmor.png",
@@ -7866,7 +8048,7 @@
         "modifiers": {
           "tes_increasedFlatDamageWhileTargetHasMaxHP": 30
         },
-        "customDescription": "Deal a flat damage increase of 60 while the target is fully healed.",
+
         "equipmentStats": [
           {
             "key": "magicAttackBonus",
