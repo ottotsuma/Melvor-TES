@@ -96,7 +96,8 @@
                         "increasedMusicGP": 10
                     }
                 }
-            },            {
+            },            
+            {
                 "id": "tes:Jesters_Boots",
                 "equipRequirements": {
                     "add": [
@@ -127,6 +128,14 @@
                 "modifiers": {
                     "add":{
                         "increasedMusicGP": 10
+                    }
+                }
+            },
+            {
+                "id": "tes:Crabbers_Charm",
+                "modifiers": {
+                    "add":{
+                        "increasedChanceToObtainShrimpWhileTrainingMusic": 100
                     }
                 }
             }

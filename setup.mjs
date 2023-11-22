@@ -1,4 +1,6 @@
 export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady }) {
+    // Changes to do:
+    // Thieviing needs notes on where to steal things for level up
 
     // New modifiers
     modifierData.tes_increasedDragonBreathDamage = {
@@ -56,6 +58,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
     let Khajiit_Item_2_Price = 100
     let Khajiit_Item_3 = ""
     let Khajiit_Item_3_Price = 100
+    const bards_college_items = []
     // end variables to move between load functions
 
     onModsLoaded(async (ctx) => {
@@ -101,14 +104,27 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
             // End Translations
 
             // Packages to load based on entitlement
+            const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
             if (cloudManager.hasTotHEntitlement) {
                 console.log('hasTotHEntitlement')
                 await ctx.gameData.addPackage('data-toth.json');
             } else {
                 console.log('Vanilla')
             }
-            if (mod.manager.getLoadedModList().includes("[Myth] Music")) {
-
+            // add items to bards college before mods load
+            bards_college_items.push(game.items.getObjectByID(`tes:Sweetroll`))
+            bards_college_items[0].baseChanceDenominator = "1000"
+            bards_college_items.push(game.items.getObjectByID(`tes:Bard_Drum`))
+            bards_college_items[1].baseChanceDenominator = "10000"
+            bards_college_items.push(game.items.getObjectByID(`tes:Bard_Flute`))
+            bards_college_items[2].baseChanceDenominator = "10000"
+            bards_college_items.push(game.items.getObjectByID(`tes:Bard_Lute`))
+            bards_college_items[3].baseChanceDenominator = "10000"
+            bards_college_items.push(game.items.getObjectByID(`tes:King_Olafs_Verse`))
+            bards_college_items[4].baseChanceDenominator = "Random (Hard)"
+            bards_college_items[4].chanceIncreaseInfo = "Monster combat level increases this items drop chance."
+            // add mods
+            if (mythLoaded) {
                 // increasedMusicHireCost: number;
                 // decreasedMusicHireCost: number;
                 // increasedMusicGP: number;
@@ -119,8 +135,13 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                 // decreasedSheetMusicDropRate: number;
                 // increasedMusicAdditionalRewardRoll: number;
                 // decreasedMusicAdditionalRewardRoll: number;
-
                 await ctx.gameData.addPackage('data-bard.json');
+                bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Topaz_Gem`))
+                bards_college_items[5].baseChanceDenominator = "1000"
+                bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Ruby_Gem`))
+                bards_college_items[6].baseChanceDenominator = "1000"
+                bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Sapphire_Gem`))
+                bards_college_items[7].baseChanceDenominator = "1000"
             }
             if (mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')) {
                 const cmim = mod.api.customModifiersInMelvor;
@@ -128,10 +149,81 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     return;
                 }
                 await ctx.gameData.addPackage('custom-mods.json');
-                cmim.addDragons(["tes:Ysmir_Iceheart", "tes:Alduin", "tes:Elsweyr_Dragon"]);
+                cmim.addDragons(["tes:Ysmir_Iceheart", "tes:Alduin", "tes:Elsweyr_Dragon", "tes:red_dragon", "tes:green_dragon", "tes:blue_dragon"]);
                 cmim.addHumans(["tes:Necromancer", "tes:Bandit", "tes:Thief", "tes:Havilstein_Hoar", "tes:Matthias_Draconis", "tes:Perennia_Draconis", "tes:Caelia_Draconis", "tes:Sibylla_Draconis", "tes:Andreas_Draconis", "tes:Celedaen", "tes:Imperial_Watch",]);
-                cmim.addUndeads(["tes:Harkon", "tes:Harkon2", "tes:Zombie", "tes:Lich",]);
+                cmim.addUndeads(["tes:Harkon", "tes:Harkon2", "tes:Zombie", "tes:Lich", "tes:skeleton_Archer"]);
             }
+            // Add items after moads load, and patch death
+            ctx.patch(CombatManager, "onEnemyDeath").after(() => {
+                try {
+                    // Inverse: 1 / 10,000
+                    if (game.combat.enemy.monster.combatLevel > 200 && Math.random() < ((game.combat.enemy.monster.combatLevel * Math.random()) / 10000)) {
+                        const tes_items = ["tes:King_Olafs_Verse"]
+                        const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
+                        const tes_item = game.items.getObjectByID(`${tes_itemId}`);
+                        if (tes_item === undefined) {
+                            throw new Error(`Invalid item ID ${tes_itemId}`);
+                        }
+                        game.bank.addItem(tes_item, 1, true, true, false);
+                    }
+                    // 1/10,000
+                    if (game.combat.enemy.monster.combatLevel < 200 && Math.random() < 100 / (10000 + game.combat.enemy.monster.combatLevel)) {
+                        const tes_items = ["tes:Bard_Drum", "tes:Bard_Flute", "tes:Bard_Lute"]
+                        const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
+                        const tes_item = game.items.getObjectByID(`${tes_itemId}`);
+                        if (tes_item === undefined) {
+                            throw new Error(`Invalid item ID ${tes_itemId}`);
+                        }
+                        game.bank.addItem(tes_item, 1, true, true, false);
+                    }
+                    // Myth & 1/1,000
+                    if (mythLoaded && Math.random() < 100 / (1000 + game.combat.enemy.monster.combatLevel)) {
+                        const tes_items = ["mythMusic:Polished_Topaz_Gem", "mythMusic:Polished_Ruby_Gem", "mythMusic:Polished_Sapphire_Gem"]
+                        const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
+                        const tes_item = game.items.getObjectByID(`${tes_itemId}`);
+                        if (tes_item === undefined) {
+                            throw new Error(`Invalid item ID ${tes_itemId}`);
+                        }
+                        game.bank.addItem(tes_item, 1, true, true, false);
+                    }
+                    // 1/1,000
+                    if (Math.random() < 100 / (1000 + game.combat.enemy.monster.combatLevel)) {
+                        const tes_items = ["tes:Sweetroll"]
+                        const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
+                        const tes_item = game.items.getObjectByID(tes_itemId);
+                        if (tes_item === undefined) {
+                            throw new Error(`Invalid item ID ${tes_itemId}`);
+                        }
+                        game.bank.addItem(tes_item, 1, true, true, false);
+                    }
+                } catch (error) {
+                    console.log("onEnemyDeath patch ", error)
+                }
+            });
+
+            ctx.patch(Skill, 'levelUp').after(() => {
+                // addXP
+                if(game && game.activeAction && game.activeAction._localID) {
+                    if (game.activeAction._localID === "Magic") {
+                        if (rollPercentage(10)) {
+                            const tes_item = game.items.getObjectByID("tes:magic_mask");
+                            if (tes_item === undefined) {
+                                throw new Error(`Invalid item ID "tes:magic_mask"`);
+                            }
+                            game.bank.addItem(tes_item, 1, true, true, false);
+                        }
+                    }
+                    if (game.activeAction._localID === "Combat") {
+                        if (rollPercentage(10)) {
+                            const tes_item = game.items.getObjectByID("tes:dragonbornhat");
+                            if (tes_item === undefined) {
+                                throw new Error(`Invalid item ID "tes:dragonbornhat"`);
+                            }
+                            game.bank.addItem(tes_item, 1, true, true, false);
+                        }
+                    }
+                }
+            })
             // End Packages to load based on entitlement
         } catch (error) {
             console.log("onModsLoaded", error)
@@ -139,26 +231,17 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
     });
 
     onCharacterLoaded(ctx => {
+        // Patching stuff spcific to the Character
         try {
             // Patching skills for new modifiers
             ctx.patch(Character, 'modifyAttackDamage').after((damage, target, attack) => {
                 let newDamage = damage
                 // Remove all damage and return if wardsaved
                 if (target && target.modifiers && target.modifiers.tes_wardsave) {
-                    // let temp_save = target.modifiers.tes_wardsave
-                    // if (temp_save > 90) {
-                    //     temp_save = 90
-                    // }
-                    // const roll = Math.floor(Math.random() * 100) + 1
-                    // if (temp_save > roll) {
-                    //     return 0;
-                    // }
-
                     let wardsaveChance = Math.min(target.modifiers.tes_wardsave, 90);
                     if (rollPercentage(wardsaveChance)) {
                         return 0;
                     }
-
                 }
                 // Add HP full damage
                 if (!target.monster && target.stats.maxHitpoints === target.hitpoints) {
@@ -273,14 +356,14 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                             if (item.swalData) {
                                 return;
                             }
-                            if (!Khajiit_Item_1 && Math.random() < 0.1) {
+                            if (!Khajiit_Item_1 && rollPercentage(1)) {
                                 Khajiit_Item_1 = `${item.namespace}:${item.localID}`
                                 Khajiit_Item_1_Price = item.sellsFor * 4
                                 Khajiit_Item_1_qty = Math.floor(Math.random() * 10)
-                            } else if (!Khajiit_Item_2 && Math.random() < 0.05) {
+                            } else if (!Khajiit_Item_2 && rollPercentage(0.5)) {
                                 Khajiit_Item_2 = `${item.namespace}:${item.localID}`
                                 Khajiit_Item_2_Price = item.sellsFor * 3
-                            } else if (!Khajiit_Item_3 && Math.random() < 0.01) {
+                            } else if (!Khajiit_Item_3 && rollPercentage(0.1)) {
                                 Khajiit_Item_3 = `${item.namespace}:${item.localID}`
                                 Khajiit_Item_3_Price = item.sellsFor * 2
                             }
@@ -405,6 +488,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
     });
 
     onInterfaceReady((ctx) => {
+        // Looks like this function should just be UI components like dbox and templates.
         const dboxLoaded = mod.manager.getLoadedModList().includes('dbox')
         const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
         try {
@@ -414,6 +498,8 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                 if (!dbox) {
                     return;
                 }
+                const KahjiitSpcificItems = ["tes:Fishing_Hat", "tes:Fishing_Boots", "tes:Fishing_Clothes", "tes:Fishing_Rod", "tes:ElsweyrSpicedTea"]
+                const TodaysItem = KahjiitSpcificItems[Math.floor(Math.random() * KahjiitSpcificItems.length)]
                 const khajiit_merchant_risaad_box = mod.api.dbox.create('khajiit_merchant_risaad_box', {
                     title: 'Khajiit Merchant Risaad',
                     startingDialogId: '0',
@@ -461,9 +547,12 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                         character: 'khajiit_merchant_risaad',
                         text: ['What\'re ya buyin?'],
                         options: [
-                            { to: 'exit', losses: { gp: Khajiit_Item_1_Price ? Khajiit_Item_1_Price * Khajiit_Item_1_qty : 100 * Khajiit_Item_1_qty }, rewards: { items: [{ id: Khajiit_Item_1 ? Khajiit_Item_1 : 'tes:Sweetroll', qty: Khajiit_Item_1_qty ? Khajiit_Item_1_qty : 1 }] } },
-                            { to: 'exit', losses: { gp: Khajiit_Item_2_Price ? Khajiit_Item_2_Price : 100 }, rewards: { items: [{ id: Khajiit_Item_2 ? Khajiit_Item_2 : 'tes:Sweetroll' }] } },
-                            { to: 'exit', losses: { gp: Khajiit_Item_3_Price ? Khajiit_Item_3_Price : 100 }, rewards: { items: [{ id: Khajiit_Item_3 ? Khajiit_Item_3 : 'tes:Sweetroll' }] } },
+                            { to: 'exit', losses: { gp: Khajiit_Item_1_Price ? Khajiit_Item_1_Price * Khajiit_Item_1_qty : 100 * Khajiit_Item_1_qty }, rewards: { items: [{ id: Khajiit_Item_1 ? Khajiit_Item_1 : 'tes:ElsweyrSpicedTea', qty: Khajiit_Item_1_qty ? Khajiit_Item_1_qty : 1 }] } },
+                            { to: 'exit', losses: { gp: Khajiit_Item_2_Price ? Khajiit_Item_2_Price : 100 }, rewards: { items: [{ id: Khajiit_Item_2 ? Khajiit_Item_2 : 'tes:ElsweyrSpicedTea' }] } },
+                            { to: 'exit', losses: { gp: Khajiit_Item_3_Price ? Khajiit_Item_3_Price : 100 }, rewards: { items: [{ id: Khajiit_Item_3 ? Khajiit_Item_3 : 'tes:ElsweyrSpicedTea' }] } },
+
+                            { to: 'exit', losses: { gp: 100 }, rewards: { items: [{ id: TodaysItem }] } },
+
                             { to: '0', text: 'What were we talking about again?', isSpeech: true },
                             { to: 'exit', text: 'Good bye', isSpeech: true },
                         ]
@@ -504,15 +593,15 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                             { to: 'exit', text: 'Good bye', isSpeech: true },
                         ]
                     },
-
                     {
                         id: '3',
                         character: 'khajiit_merchant_atahbah',
                         text: ['This and that.'],
                         options: [
                             { to: 'exit', losses: { gp: 50 }, rewards: { items: [{ id: 'tes:Lockpick', qty: 10 }] } },
-                            { to: 'exit', losses: { gp: Khajiit_Item_2_Price ? Khajiit_Item_2_Price : 100 }, rewards: { items: [{ id: Khajiit_Item_2 ? Khajiit_Item_2 : 'tes:Sweetroll' }] } },
-                            { to: 'exit', losses: { gp: Khajiit_Item_1_Price ? Khajiit_Item_1_Price * 9 : 100 }, rewards: { items: [{ id: Khajiit_Item_1 || 'tes:Sweetroll', qty: 10 }] } },
+                            { to: 'exit', losses: { gp: Khajiit_Item_2_Price ? Khajiit_Item_2_Price : 100 }, rewards: { items: [{ id: Khajiit_Item_2 ? Khajiit_Item_2 : 'tes:ElsweyrSpicedTea' }] } },
+                            { to: 'exit', losses: { gp: Khajiit_Item_1_Price ? Khajiit_Item_1_Price * 9 : 100 }, rewards: { items: [{ id: Khajiit_Item_1 || 'tes:ElsweyrSpicedTea', qty: 10 }] } },
+                            { to: 'exit', losses: { gp: 100 }, rewards: { items: [{ id: TodaysItem }] } },
                             { to: '0', text: 'What were we talking about again?', isSpeech: true },
                             { to: 'exit', text: 'Good bye', isSpeech: true },
                         ]
@@ -572,9 +661,16 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                         character: 'khajiit_merchant_ahkari',
                         text: ['This and that.'],
                         options: [
-                            { to: 'exit', losses: { gp: Khajiit_Item_1_Price ? Khajiit_Item_1_Price * Khajiit_Item_1_qty : 100 * Khajiit_Item_1_qty }, rewards: { items: [{ id: Khajiit_Item_1 ? Khajiit_Item_1 : 'tes:Sweetroll', qty: Khajiit_Item_1_qty ? Khajiit_Item_1_qty + 1 : 1 }] } },
-                            { to: 'exit', losses: { gp: Khajiit_Item_2_Price ? Khajiit_Item_2_Price * 1.1 : 100 }, rewards: { items: [{ id: Khajiit_Item_2 ? Khajiit_Item_2 : 'tes:Sweetroll' }] } },
-                            { to: 'exit', losses: { gp: Khajiit_Item_3_Price ? Khajiit_Item_3_Price * 0.9 : 100 }, rewards: { items: [{ id: Khajiit_Item_3 ? Khajiit_Item_3 : 'tes:Sweetroll' }] } },
+                            { to: 'exit', losses: { gp: 500 }, rewards: { items: [{ id: 'tes:ElsweyrSpicedTea', qty: 10 }] } },
+
+                            { to: 'exit', losses: { gp: Khajiit_Item_1_Price ? Khajiit_Item_1_Price * Khajiit_Item_1_qty : 100 * Khajiit_Item_1_qty }, rewards: { items: [{ id: Khajiit_Item_1 ? Khajiit_Item_1 : 'tes:ElsweyrSpicedTea', qty: Khajiit_Item_1_qty ? Khajiit_Item_1_qty + 1 : 1 }] } },
+
+                            { to: 'exit', losses: { gp: Khajiit_Item_2_Price ? Khajiit_Item_2_Price * 1.1 : 100 }, rewards: { items: [{ id: Khajiit_Item_2 ? Khajiit_Item_2 : 'tes:ElsweyrSpicedTea' }] } },
+
+                            { to: 'exit', losses: { gp: Khajiit_Item_3_Price ? Khajiit_Item_3_Price * 0.9 : 100 }, rewards: { items: [{ id: Khajiit_Item_3 ? Khajiit_Item_3 : 'tes:ElsweyrSpicedTea' }] } },
+
+                            { to: 'exit', losses: { gp: 100 }, rewards: { items: [{ id: TodaysItem }] } },
+
                             { to: '0', text: 'What were we talking about again?', isSpeech: true },
                             { to: 'exit', text: 'Good bye', isSpeech: true },
                         ]
@@ -595,9 +691,9 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                 const tes_merchant_area = tes_melvorAreas[Math.floor(Math.random() * tes_melvorAreas.length)] + '-container';
                 console.log('Merchant is at: ', tes_merchant_area)
 
-                if (Math.random() < 0.3) {
+                if (rollPercentage(0.3)) {
                     document.getElementById(tes_merchant_area).firstElementChild.after(khajiit_merchant_ahkari_box.root);
-                } else if (Math.random() < 0.5) {
+                } else if (rollPercentage(0.5)) {
                     document.getElementById(tes_merchant_area).firstElementChild.after(khajiit_merchant_risaad_box.root);
                 } else {
                     document.getElementById(tes_merchant_area).firstElementChild.after(khajiit_merchant_atahbah_box.root);
@@ -613,75 +709,6 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
             // end HTML for items
 
             // Bards college
-            const bards_college_items = []
-            bards_college_items.push(game.items.getObjectByID(`tes:Sweetroll`))
-            bards_college_items[0].baseChanceDenominator = "1000"
-            bards_college_items.push(game.items.getObjectByID(`tes:Bard_Drum`))
-            bards_college_items[1].baseChanceDenominator = "100000"
-            bards_college_items.push(game.items.getObjectByID(`tes:Bard_Flute`))
-            bards_college_items[2].baseChanceDenominator = "100000"
-            bards_college_items.push(game.items.getObjectByID(`tes:Bard_Lute`))
-            bards_college_items[3].baseChanceDenominator = "100000"
-            bards_college_items.push(game.items.getObjectByID(`tes:King_Olafs_Verse`))
-            bards_college_items[4].baseChanceDenominator = "1000000"
-            if (mythLoaded) {
-                bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Topaz_Gem`))
-                bards_college_items[5].baseChanceDenominator = "10000"
-                bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Ruby_Gem`))
-                bards_college_items[6].baseChanceDenominator = "10000"
-                bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Sapphire_Gem`))
-                bards_college_items[7].baseChanceDenominator = "10000"
-            }
-
-            ctx.patch(CombatManager, "onEnemyDeath").after(() => {
-                try {
-                    // 1/10,000
-                    if (mythLoaded && Math.random() < (0.0001 / game.combat.enemy.monster.combatLevel)) {
-                        const tes_items = ["mythMusic:Polished_Topaz_Gem", "mythMusic:Polished_Ruby_Gem", "mythMusic:Polished_Sapphire_Gem"]
-                        const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
-                        console.log(tes_itemId)
-                        const tes_item = game.items.getObjectByID(`${tes_itemId}`);
-                        if (item === undefined) {
-                            throw new Error(`Invalid item ID ${tes_itemId}`);
-                        }
-                        game.bank.addItem(tes_item, 1, true, true, false);
-                    }
-                    // 1/100,000
-                    else if (Math.random() < (0.00001 / game.combat.enemy.monster.combatLevel)) {
-                        const tes_items = ["tes:Bard_Drum", "tes:Bard_Flute", "tes:Bard_Lute"]
-                        const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
-                        console.log(tes_itemId)
-                        const tes_item = game.items.getObjectByID(`${tes_itemId}`);
-                        if (item === undefined) {
-                            throw new Error(`Invalid item ID ${tes_itemId}`);
-                        }
-                        game.bank.addItem(tes_item, 1, true, true, false);
-                    }
-                    // 1/1000
-                    else if (Math.random() < (0.001 / game.combat.enemy.monster.combatLevel)) {
-                        const tes_items = ["tes:Sweetroll"]
-                        const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
-                        const tes_item = game.items.getObjectByID(`${tes_itemId}`);
-                        if (item === undefined) {
-                            throw new Error(`Invalid item ID ${tes_itemId}`);
-                        }
-                        game.bank.addItem(tes_item, 1, true, true, false);
-                    }
-                    // 1 / 1000000 
-                    else if (Math.random() < (0.000001 / game.combat.enemy.monster.combatLevel)) {
-                        const tes_items = ["tes:King_Olafs_Verse"]
-                        const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
-                        const tes_item = game.items.getObjectByID(`${tes_itemId}`);
-                        if (item === undefined) {
-                            throw new Error(`Invalid item ID ${tes_itemId}`);
-                        }
-                        game.bank.addItem(tes_item, 1, true, true, false);
-                    }
-                } catch (error) {
-                    console.log("onEnemyDeath patch ", error)
-                }
-            });
-
             function Bards_College_Overview() {
                 return {
                     $template: '#tes_Bards_College__global-droptable-overview-container-template',
@@ -820,7 +847,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     ]
                 }, ctx);
                 document.getElementById('tes_Bards_College__global-droptable-overview-container').firstElementChild.after(Viarmo_box.root);
-                
+
                 ui.createStatic('#modal-book--King_Olafs_Verse', document.body);
                 document.body.querySelector('.modal.King_Olafs_Verse').id = 'King_Olafs_Verse';
             }

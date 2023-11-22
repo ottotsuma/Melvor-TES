@@ -6337,6 +6337,637 @@
     ],
     "items": [
       {
+        "id": "Flin",
+        "name": "Flin",
+        "media": "assets/items/Flin.png",
+        "category": "Herblore",
+        "type": "Potion",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 45,
+        "itemType": "Potion",
+        "modifiers": {
+          "decreasedSkillIntervalPercent": [
+            {
+              "skillID": "melvorD:Fishing",
+              "value": 10
+            }
+          ]
+        },
+        "charges": 10,
+        "tier": 1,
+        "action": "melvorD:Fishing",
+        "consumesOn": [
+          {
+            "type": "FishingAction"
+          }
+        ]
+      },
+      {
+        "id": "Vagrant_Hood",
+        "name": "Vagrant Hood",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Vagrant_Hood.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 115,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedChanceForGPFromFishing": 10
+        },
+        "equipmentStats": [
+          {
+            "key": "magicAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 3
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Helmet"
+        ],
+        "equipRequirements": [],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Vagrant_Boots",
+        "name": "Vagrant Boots",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Vagrant_Boots.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 115,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedChanceForGPFromFishing": 10
+        },
+        "equipmentStats": [
+          {
+            "key": "magicAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 3
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Boots"
+        ],
+        "equipRequirements": [],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Vagrant_Robes",
+        "name": "Vagrant Robes",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Vagrant_Robes.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 115,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedChanceForGPFromFishing": 10
+        },
+        "equipmentStats": [
+          {
+            "key": "magicAttackBonus",
+            "value": 5
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 5
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 5
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Platebody"
+        ],
+        "equipRequirements": [],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Fishing_Hat",
+        "name": "Fishing Hat",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Fishing_Hat.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 115,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedChanceToDoubleItemsSkill": [
+            {
+              "skillID": "melvorD:Fishing",
+              "value": 5
+            }
+          ]
+        },
+        "equipmentStats": [
+          {
+            "key": "magicAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 3
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Helmet"
+        ],
+        "equipRequirements": [],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Fishing_Boots",
+        "name": "Fishing Boots",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Fishing_Boots.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 115,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedChanceToDoubleItemsSkill": [
+            {
+              "skillID": "melvorD:Fishing",
+              "value": 5
+            }
+          ]
+        },
+        "equipmentStats": [
+          {
+            "key": "magicAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 3
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Boots"
+        ],
+        "equipRequirements": [],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Fishing_Clothes",
+        "name": "Fishing Clothes",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Fishing_Clothes.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 115,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedChanceToDoubleItemsSkill": [
+            {
+              "skillID": "melvorD:Fishing",
+              "value": 5
+            }
+          ]
+        },
+        "equipmentStats": [
+          {
+            "key": "magicAttackBonus",
+            "value": 5
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 5
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 5
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Platebody"
+        ],
+        "equipRequirements": [],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Juvenile_Mudcrab",
+        "name": "Juvenile Mudcrab",
+        "category": "Fishing",
+        "type": "Crab",
+        "media": "assets/items/Juvenile_Mudcrab.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 10,
+        "itemType": "Item"
+      },
+      {
+        "id": "Cooked_Juvenile_Mudcrab_Perfect",
+        "name": "Cooked Juvenile Mudcrab (Perfect)",
+        "category": "Cooking",
+        "type": "Food",
+        "media": "assets/items/Cooked_Juvenile_Mudcrab.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 50,
+        "itemType": "Food",
+        "healsFor": 25
+      },
+      {
+        "id": "Cooked_Juvenile_Mudcrab",
+        "name": "Cooked Juvenile Mudcrab",
+        "category": "Cooking",
+        "type": "Food",
+        "media": "assets/items/Cooked_Juvenile_Mudcrab.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 50,
+        "itemType": "Food",
+        "healsFor": 25
+      },
+      {
+        "id": "magic_mask",
+        "name": "Dragon Priests Mask",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/magic_mask.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 115,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedAltMagicSkillXP": 5,
+          "increasedAltMagicRunePreservation": 15
+        },
+        "equipmentStats": [
+          {
+            "key": "magicAttackBonus",
+            "value": 3
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 3
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 3
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Helmet"
+        ],
+        "equipRequirements": [],
+        "occupiesSlots": []
+      },
+      {
+        "id": "dragonbornhat",
+        "name": "Dragonborn Hat",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/dragonbornhat.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 115,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedHiddenSkillLevelBasedOnLevels":[
+            {
+              "skillID":"melvorD:Attack",
+              "value": 1
+            },
+            {
+              "skillID":"melvorD:Strength",
+              "value": 1
+            },
+            {
+              "skillID":"melvorD:Magic",
+              "value": 1
+            },
+            {
+              "skillID":"melvorD:Ranged",
+              "value": 1
+            }
+          ]
+        },
+        "equipmentStats": [
+          {
+            "key": "magicDefenceBonus",
+            "value": 12
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 12
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 12
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Helmet"
+        ],
+        "equipRequirements": [],
+        "occupiesSlots": []
+      },
+      {
+        "id": "gold_coin",
+        "name": "Gold Coin",
+        "customDescription": "The empire is law, The law is sacred",
+        "category": "Misc",
+        "type": "Coin",
+        "media": "assets/items/gold_coin.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 10,
+        "itemType": "Item"
+      },
+      {
+        "id": "Alikri_Fishing_Rod",
+        "name": "Alikri Fishing Rod",
+        "category": "Fishing",
+        "type": "Weapon",
+        "media": "assets/items/Alikri_Fishing_Rod.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 10,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [
+          "Shield"
+        ],
+        "equipRequirements": [],
+        "modifiers": {
+          "increasedChanceToDoubleItemsSkill": [
+            {
+              "skillID": "melvorD:Fishing",
+              "value": 10
+            }
+          ],
+          "increasedChanceForGPFromFishing": 10,
+          "increasedSkillIntervalPercent": [
+            {
+              "skillID": "melvorD:Fishing",
+              "value": 20
+            }
+          ]
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3600
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": -4
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 12
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 12
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 12
+          }
+        ],
+        "itemType": "Weapon",
+        "attackType": "melee"
+      },
+      {
+        "id": "Dwarven_Fishing_Rod",
+        "name": "Dwarven Fishing Rod",
+        "category": "Fishing",
+        "type": "Weapon",
+        "media": "assets/items/Dwarven_Fishing_Rod.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 10,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [
+          "Shield"
+        ],
+        "equipRequirements": [],
+        "modifiers": {
+          "decreasedSkillIntervalPercent": [
+            {
+              "skillID": "melvorD:Fishing",
+              "value": 30
+            }
+          ]
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3600
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": -4
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 12
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 12
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 12
+          }
+        ],
+        "itemType": "Weapon",
+        "attackType": "melee"
+      },
+      {
+        "id": "Fishing_Rod",
+        "name": "Fishing Rod",
+        "category": "Fishing",
+        "type": "Weapon",
+        "media": "assets/items/Fishing_Rod.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 10,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [
+          "Shield"
+        ],
+        "equipRequirements": [],
+        "modifiers": {
+          "decreasedSkillIntervalPercent": [
+            {
+              "skillID": "melvorD:Fishing",
+              "value": 5
+            }
+          ]
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3600
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": -4
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 12
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 12
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 12
+          }
+        ],
+        "itemType": "Weapon",
+        "attackType": "melee"
+      },
+      {
+        "id": "Crabbers_Charm",
+        "name": "Crabber's Charm",
+        "category": "Fishing",
+        "type": "Armour",
+        "media": "assets/items/Crabber's_Charm.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 15,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedFishingSpecialChance": 10
+        },
+        "equipmentStats": [],
+        "tier": "none",
+        "validSlots": [
+          "Amulet"
+        ],
+        "equipRequirements": [],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Argonian_Fishing_Rod",
+        "name": "Argonian Fishing Rod",
+        "category": "Fishing",
+        "type": "Weapon",
+        "media": "assets/items/Argonian_Fishing_Rod.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 10,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [
+          "Shield"
+        ],
+        "equipRequirements": [],
+        "modifiers": {
+          "increasedChanceToDoubleItemsSkill": [
+            {
+              "skillID": "melvorD:Fishing",
+              "value": 10
+            }
+          ],
+          "decreasedSkillIntervalPercent": [
+            {
+              "skillID": "melvorD:Fishing",
+              "value": 20
+            }
+          ]
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3600
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": -4
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 12
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 12
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 12
+          }
+        ],
+        "itemType": "Weapon",
+        "attackType": "melee"
+      },
+      {
         "id": "Jesters_Gloves",
         "name": "Jesters Gloves",
         "category": "Combat",
@@ -6350,7 +6981,6 @@
         "modifiers": {
           "tes_increasedFlatDamageWhileTargetHasMaxHP": 10
         },
-
         "equipmentStats": [
           {
             "key": "magicAttackBonus",
@@ -6392,7 +7022,6 @@
         "modifiers": {
           "tes_increasedFlatDamageWhileTargetHasMaxHP": 10
         },
-
         "equipmentStats": [
           {
             "key": "magicAttackBonus",
@@ -6434,7 +7063,6 @@
         "modifiers": {
           "tes_increasedFlatDamageWhileTargetHasMaxHP": 10
         },
-
         "equipmentStats": [
           {
             "key": "magicAttackBonus",
@@ -6476,7 +7104,6 @@
         "modifiers": {
           "tes_increasedFlatDamageWhileTargetHasMaxHP": 30
         },
-
         "equipmentStats": [
           {
             "key": "magicAttackBonus",
@@ -6513,7 +7140,7 @@
         "ignoreCompletion": false,
         "obtainFromItemLog": false,
         "golbinRaidExclusive": false,
-        "sellsFor": 0,
+        "sellsFor": 10000,
         "itemType": "Readable",
         "customDescription": "A very faded copy of the fabled work of the bard, Svaknir which is requested by the headmaster of the Bards College, Viarmo. The only remaining copy is sadly, mostly illegible.",
         "modalID": "King_Olafs_Verse"
@@ -6535,29 +7162,28 @@
         "occupiesSlots": [
           "Shield"
         ],
-        "equipRequirements": [
-        ],
+        "equipRequirements": [],
         "equipmentStats": [
           {
             "key": "attackSpeed",
             "value": 3600
-        },
-        {
+          },
+          {
             "key": "stabAttackBonus",
             "value": -4
-        },
-        {
+          },
+          {
             "key": "slashAttackBonus",
             "value": 42
-        },
-        {
+          },
+          {
             "key": "blockAttackBonus",
             "value": 42
-        },
-        {
+          },
+          {
             "key": "meleeStrengthBonus",
             "value": 47
-        }
+          }
         ],
         "itemType": "Weapon",
         "attackType": "melee"
@@ -6579,29 +7205,28 @@
         "occupiesSlots": [
           "Shield"
         ],
-        "equipRequirements": [
-        ],
+        "equipRequirements": [],
         "equipmentStats": [
           {
             "key": "attackSpeed",
             "value": 3600
-        },
-        {
+          },
+          {
             "key": "stabAttackBonus",
             "value": -4
-        },
-        {
+          },
+          {
             "key": "slashAttackBonus",
             "value": 42
-        },
-        {
+          },
+          {
             "key": "blockAttackBonus",
             "value": 42
-        },
-        {
+          },
+          {
             "key": "meleeStrengthBonus",
             "value": 47
-        }
+          }
         ],
         "itemType": "Weapon",
         "attackType": "melee"
@@ -6623,29 +7248,28 @@
         "occupiesSlots": [
           "Shield"
         ],
-        "equipRequirements": [
-        ],
+        "equipRequirements": [],
         "equipmentStats": [
           {
             "key": "attackSpeed",
             "value": 3600
-        },
-        {
+          },
+          {
             "key": "stabAttackBonus",
             "value": -4
-        },
-        {
+          },
+          {
             "key": "slashAttackBonus",
             "value": 42
-        },
-        {
+          },
+          {
             "key": "blockAttackBonus",
             "value": 42
-        },
-        {
+          },
+          {
             "key": "meleeStrengthBonus",
             "value": 47
-        }
+          }
         ],
         "itemType": "Weapon",
         "attackType": "melee"
@@ -7479,7 +8103,17 @@
         "obtainFromItemLog": false,
         "golbinRaidExclusive": false,
         "sellsFor": 2000,
-        "itemType": "Item"
+        "itemType": "Equipment",
+        "validSlots": [
+          "Gem"
+        ],
+        "modifiers":{
+          "applyRandomCurseOnSpawn": 1
+        },
+        "tier": "none",
+        "occupiesSlots": [],
+        "equipRequirements": [],
+        "equipmentStats": []
       },
       {
         "id": "Eye",
@@ -8006,7 +8640,6 @@
         "modifiers": {
           "tes_increasedFlatDamageWhileTargetHasMaxHP": 10
         },
-
         "equipmentStats": [
           {
             "key": "magicAttackBonus",
@@ -8048,7 +8681,6 @@
         "modifiers": {
           "tes_increasedFlatDamageWhileTargetHasMaxHP": 30
         },
-
         "equipmentStats": [
           {
             "key": "magicAttackBonus",
@@ -10695,26 +11327,25 @@
         ]
       },
       {
-        "id": "cheat_gloves",
-        "name": "cheat_gloves",
+        "id": "cheat",
+        "name": "cheat",
         "category": "Combat",
         "type": "Armour",
-        "media": "assets/items/GuildMastersGloves.png",
+        "media": "assets/items/WitchsHead.png",
         "ignoreCompletion": true,
         "obtainFromItemLog": false,
         "golbinRaidExclusive": false,
-        "sellsFor": 1680,
-        "tier": "none",
+        "sellsFor": 1,
         "validSlots": [
-          "Gloves"
+          "Gem"
         ],
-        "occupiesSlots": [],
+        "occupiesSlots": [
+        ],
+        "tier": "none",
         "equipRequirements": [],
         "equipmentStats": [],
-        "itemType": "Weapon",
-        "attackType": "magic",
+        "itemType": "Equipment",
         "modifiers": {
-          "increasedGPFromSales": 1000,
           "increasedHPRegenFlat": 1000,
           "increasedMaxHitpoints": 10000,
           "increasedDamageToAllMonsters": 100,
@@ -10722,21 +11353,22 @@
           "autoBurying": 1,
           "applyDespairCurseOnSpawn": 50,
           "applyMadnessCurseOnSpawn": 50,
-          "bleedImmunity": 1,
-          "burnImmunity": 1,
-          "slowImmunity": 1,
-          "stunImmunity": 1,
-          "curseImmunity": 1,
-          "sleepImmunity": 1,
-          "debuffImmunity": 1,
-          "freezeImmunity": 1,
-          "poisonImmunity": 1,
-          "frostBurnImmunity": 1,
+          "bleedImmunity": 100,
+          "burnImmunity": 100,
+          "slowImmunity": 100,
+          "stunImmunity": 100,
+          "curseImmunity": 100,
+          "sleepImmunity": 100,
+          "debuffImmunity": 100,
+          "freezeImmunity": 100,
+          "poisonImmunity": 100,
+          "frostBurnImmunity": 100,
           "allowSignetDrops": 1,
           "allowAttackAugmentingMagic": 1,
           "allowNonMagicCurses": 1,
-          "momentInTimePassive": 1,
-          "decreasedMonsterRespawnTimer": 10
+          "momentInTimePassive": 10,
+          "decreasedMonsterRespawnTimer": 100,
+          "tes_wardsave": 25
         }
       },
       {
@@ -10836,6 +11468,105 @@
           "gainSlayerCoinsBasedOnEnemyCombatLevelMagic": 1
         },
         "itemType": "Equipment"
+      },
+      {
+        "id": "lootbox",
+        "name": "Lootbox",
+        "category": "Dungeons",
+        "type": "Item",
+        "media": "assets/items/lootbox.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 250,
+        "itemType": "Openable",
+        "dropTable": [
+          {
+            "itemID": "tes:Fishing_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:Fishing_Clothes",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:Fishing_Hat",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:Fishing_Rod",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:Flin",
+            "minQuantity": 20,
+            "maxQuantity": 1,
+            "weight": 50
+          },
+          {
+            "itemID": "tes:Vagrant_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 15
+          },
+          {
+            "itemID": "tes:Vagrant_Hood",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 15
+          },
+          {
+            "itemID": "tes:Vagrant_Robes",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 15
+          },
+          {
+            "itemID": "tes:gold_coin",
+            "minQuantity": 20,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Alikri_Fishing_Rod",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 5
+          },
+          {
+            "itemID": "tes:Dwarven_Fishing_Rod",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 5
+          },
+          {
+            "itemID": "tes:Fishing_Rod",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "tes:Crabbers_Charm",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 5
+          },
+          {
+            "itemID": "tes:Argonian_Fishing_Rod",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 5
+          }
+        ],
+        "customDescription": "A box that must of fallen of the back of a ship on the way to Melvor."
       },
       {
         "id": "Sigil_Stone",
@@ -11393,6 +12124,618 @@
       }
     ],
     "monsters": [
+    {
+      "id": "skeleton_Archer",
+      "name": "Skeleton Archer",
+      "media": "assets/monsters/skeleton_Archer.png",
+      "levels": {
+        "Attack": 20,
+        "Defence": 30,
+        "Hitpoints": 80,
+        "Magic": 1,
+        "Ranged": 1,
+        "Strength": 20
+      },
+      "equipmentStats": [
+        {
+          "key": "attackSpeed",
+          "value": 2400
+        }
+      ],
+      "ignoreCompletion": false,
+      "attackType": "melee",
+      "specialAttacks": [
+      ],
+      "passives": [],
+      "lootChance": 75,
+      "lootTable": [
+        {
+          "itemID": "melvorD:Glass_Bottle",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Old_Boot",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Old_Hat",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Rope",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Rubber_Ducky",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 50
+        },
+        {
+          "itemID": "melvorD:Rusty_Key",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Seaweed",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Shell",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "tes:Juvenile_Mudcrab",
+          "maxQuantity": 1,
+          "minQuantity": 1,
+          "weight": 100
+        },
+        {
+          "itemID": "tes:gold_coin",
+          "maxQuantity": 100,
+          "minQuantity": 1,
+          "weight": 90
+        },
+        {
+          "itemID": "tes:lootbox",
+          "maxQuantity": 100,
+          "minQuantity": 1,
+          "weight": 20
+        }
+      ],
+      "gpDrops": {
+        "min": 20,
+        "max": 1
+      },
+      "bones": {
+        "itemID": "melvorD:Bones",
+        "quantity": 1
+      },
+      "canSlayer": true,
+      "isBoss": false,
+      "selectedSpell": "melvorD:WaterStrike"
+    },
+    {
+      "id": "red_dragon",
+      "name": "Fire Dragon",
+      "media": "assets/monsters/red_dragon.png",
+      "levels": {
+        "Attack": 20,
+        "Defence": 30,
+        "Hitpoints": 80,
+        "Magic": 1,
+        "Ranged": 1,
+        "Strength": 20
+      },
+      "equipmentStats": [
+        {
+          "key": "attackSpeed",
+          "value": 2400
+        }
+      ],
+      "ignoreCompletion": false,
+      "attackType": "melee",
+      "specialAttacks": [
+      ],
+      "passives": [],
+      "lootChance": 75,
+      "lootTable": [
+        {
+          "itemID": "melvorD:Glass_Bottle",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Old_Boot",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Old_Hat",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Rope",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Rubber_Ducky",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 50
+        },
+        {
+          "itemID": "melvorD:Rusty_Key",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Seaweed",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Shell",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "tes:Juvenile_Mudcrab",
+          "maxQuantity": 1,
+          "minQuantity": 1,
+          "weight": 100
+        },
+        {
+          "itemID": "tes:gold_coin",
+          "maxQuantity": 100,
+          "minQuantity": 1,
+          "weight": 90
+        },
+        {
+          "itemID": "tes:lootbox",
+          "maxQuantity": 100,
+          "minQuantity": 1,
+          "weight": 20
+        }
+      ],
+      "gpDrops": {
+        "min": 20,
+        "max": 1
+      },
+      "bones": {
+        "itemID": "melvorD:Bones",
+        "quantity": 1
+      },
+      "canSlayer": true,
+      "isBoss": false,
+      "selectedSpell": "melvorD:WaterStrike"
+    },
+    {
+      "id": "green_dragon",
+      "name": "Nature Dragon",
+      "media": "assets/monsters/green_dragon.png",
+      "levels": {
+        "Attack": 20,
+        "Defence": 30,
+        "Hitpoints": 80,
+        "Magic": 1,
+        "Ranged": 1,
+        "Strength": 20
+      },
+      "equipmentStats": [
+        {
+          "key": "attackSpeed",
+          "value": 2400
+        }
+      ],
+      "ignoreCompletion": false,
+      "attackType": "melee",
+      "specialAttacks": [
+      ],
+      "passives": [],
+      "lootChance": 75,
+      "lootTable": [
+        {
+          "itemID": "melvorD:Glass_Bottle",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Old_Boot",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Old_Hat",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Rope",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Rubber_Ducky",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 50
+        },
+        {
+          "itemID": "melvorD:Rusty_Key",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Seaweed",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Shell",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "tes:Juvenile_Mudcrab",
+          "maxQuantity": 1,
+          "minQuantity": 1,
+          "weight": 100
+        },
+        {
+          "itemID": "tes:gold_coin",
+          "maxQuantity": 100,
+          "minQuantity": 1,
+          "weight": 90
+        },
+        {
+          "itemID": "tes:lootbox",
+          "maxQuantity": 100,
+          "minQuantity": 1,
+          "weight": 20
+        }
+      ],
+      "gpDrops": {
+        "min": 20,
+        "max": 1
+      },
+      "bones": {
+        "itemID": "melvorD:Bones",
+        "quantity": 1
+      },
+      "canSlayer": true,
+      "isBoss": false,
+      "selectedSpell": "melvorD:WaterStrike"
+    },
+    {
+      "id": "blue_dragon",
+      "name": "Frost Dragon",
+      "media": "assets/monsters/blue_dragon.png",
+      "levels": {
+        "Attack": 20,
+        "Defence": 30,
+        "Hitpoints": 80,
+        "Magic": 1,
+        "Ranged": 1,
+        "Strength": 20
+      },
+      "equipmentStats": [
+        {
+          "key": "attackSpeed",
+          "value": 2400
+        }
+      ],
+      "ignoreCompletion": false,
+      "attackType": "melee",
+      "specialAttacks": [
+      ],
+      "passives": [],
+      "lootChance": 75,
+      "lootTable": [
+        {
+          "itemID": "melvorD:Glass_Bottle",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Old_Boot",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Old_Hat",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Rope",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Rubber_Ducky",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 50
+        },
+        {
+          "itemID": "melvorD:Rusty_Key",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Seaweed",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "melvorD:Shell",
+          "maxQuantity": 3,
+          "minQuantity": 1,
+          "weight": 75
+        },
+        {
+          "itemID": "tes:Juvenile_Mudcrab",
+          "maxQuantity": 1,
+          "minQuantity": 1,
+          "weight": 100
+        },
+        {
+          "itemID": "tes:gold_coin",
+          "maxQuantity": 100,
+          "minQuantity": 1,
+          "weight": 90
+        },
+        {
+          "itemID": "tes:lootbox",
+          "maxQuantity": 100,
+          "minQuantity": 1,
+          "weight": 20
+        }
+      ],
+      "gpDrops": {
+        "min": 20,
+        "max": 1
+      },
+      "bones": {
+        "itemID": "melvorD:Bones",
+        "quantity": 1
+      },
+      "canSlayer": true,
+      "isBoss": false,
+      "selectedSpell": "melvorD:WaterStrike"
+    },
+      {
+        "id": "Giant_Mudcrab",
+        "name": "Giant Mudcrab",
+        "media": "assets/monsters/mudcrab.png",
+        "levels": {
+          "Attack": 20,
+          "Defence": 30,
+          "Hitpoints": 80,
+          "Magic": 1,
+          "Ranged": 1,
+          "Strength": 20
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2400
+          }
+        ],
+        "ignoreCompletion": false,
+        "attackType": "melee",
+        "specialAttacks": [
+        ],
+        "passives": [],
+        "lootChance": 75,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Glass_Bottle",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "melvorD:Old_Boot",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "melvorD:Old_Hat",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "melvorD:Rope",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "melvorD:Rubber_Ducky",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 50
+          },
+          {
+            "itemID": "melvorD:Rusty_Key",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "melvorD:Seaweed",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "melvorD:Shell",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "tes:Juvenile_Mudcrab",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:gold_coin",
+            "maxQuantity": 100,
+            "minQuantity": 1,
+            "weight": 90
+          },
+          {
+            "itemID": "tes:lootbox",
+            "maxQuantity": 100,
+            "minQuantity": 1,
+            "weight": 20
+          }
+        ],
+        "gpDrops": {
+          "min": 20,
+          "max": 1
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WaterStrike"
+      },
+      {
+        "id": "mudcrab",
+        "name": "Mudcrab",
+        "media": "assets/monsters/mudcrab.png",
+        "levels": {
+          "Attack": 8,
+          "Defence": 8,
+          "Hitpoints": 20,
+          "Magic": 1,
+          "Ranged": 1,
+          "Strength": 8
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2400
+          }
+        ],
+        "ignoreCompletion": false,
+        "attackType": "melee",
+        "specialAttacks": [
+        ],
+        "passives": [],
+        "lootChance": 75,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Glass_Bottle",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "melvorD:Old_Boot",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "melvorD:Old_Hat",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "melvorD:Rope",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "melvorD:Rubber_Ducky",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 50
+          },
+          {
+            "itemID": "melvorD:Rusty_Key",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "melvorD:Seaweed",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "melvorD:Shell",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "tes:Juvenile_Mudcrab",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 100
+          }
+        ],
+        "gpDrops": {
+          "min": 20,
+          "max": 1
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WaterStrike"
+      },
       {
         "id": "Sload",
         "name": "Sload",
@@ -16452,61 +17795,61 @@
         "lootChance": 100,
         "lootTable": [
           {
-            "itemID": "melvorD:Steel_Boots",
+            "itemID": "melvorD:Iron_Boots",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID": "melvorD:Steel_2H_Sword",
+            "itemID": "melvorD:Iron_2H_Sword",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID": "melvorD:Steel_Dagger",
+            "itemID": "melvorD:Iron_Dagger",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID": "melvorD:Steel_Helmet",
+            "itemID": "melvorD:Iron_Helmet",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID": "melvorD:Steel_Gloves",
+            "itemID": "melvorD:Iron_Gloves",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID": "melvorD:Steel_Battleaxe",
+            "itemID": "melvorD:Iron_Battleaxe",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID": "melvorD:Steel_Arrows",
+            "itemID": "melvorD:Iron_Arrows",
             "maxQuantity": 25,
             "minQuantity": 10,
             "weight": 10
           },
           {
-            "itemID": "melvorD:Steel_Platebody",
+            "itemID": "melvorD:Iron_Platebody",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID": "melvorD:Steel_Platelegs",
+            "itemID": "melvorD:Iron_Platelegs",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID": "melvorD:Steel_Throwing_Knife",
+            "itemID": "melvorD:Iron_Throwing_Knife",
             "maxQuantity": 10,
             "minQuantity": 5,
             "weight": 10
@@ -19054,7 +20397,7 @@
           "increasedDamageToBosses": 1
         },
         "activeInRaid": false,
-        "hint": "Thieves Guild",
+        "hint": "Dragon Break",
         "customDescription": "Alduin escaped us long ago. Today we take our well-tempered revenge."
       },
       {
@@ -19515,7 +20858,7 @@
           "weight": 1
         },
         "fixedPetClears": true,
-        "pauseOnBosses": true
+        "pauseOnBosses": false
       },
       {
         "id": "Miscarcand",
@@ -21425,6 +22768,68 @@
             }
           ]
         }
+      },
+      {
+        "skillID": "melvorD:Fishing",
+        "data": {
+          "specialItems": [
+            {
+              "itemID": "tes:lootbox",
+              "maxQuantity": 1,
+              "minQuantity": 1,
+              "weight": 200
+            }
+          ],
+          "junkItemIDs": ["tes:gold_coin"],
+          "areas": [
+            {
+              "id": "Broken_Fang_Cave",
+              "fishChance": 95,
+              "specialChance": 3,
+              "fishIDs": [
+                "tes:Raw_Juvenile_Mudcrab"
+              ],
+              "name": "Broken Fang Cave",
+              "junkChance": 0
+            }
+          ],
+          "fish": [
+            {
+              "id": "Raw_Juvenile_Mudcrab",
+              "baseExperience": 8,
+              "baseMaxInterval": 6000,
+              "baseMinInterval": 3000,
+              "level": 3,
+              "productId": "tes:Juvenile_Mudcrab",
+              "strengthXP": 1
+            }
+          ]
+        }
+      },
+      {
+        "skillID": "melvorD:Cooking",
+        "data": {
+          "recipes": [
+            {
+              "id": "Cooked_Juvenile_Mudcrab",
+              "itemCosts": [
+                {
+                  "id": "tes:Juvenile_Mudcrab",
+                  "quantity": 1
+                }
+              ],
+              "productID": "tes:Cooked_Juvenile_Mudcrab",
+              "baseExperience": 18,
+              "baseInterval": 1700,
+              "baseQuantity": 1,
+              "categoryID": "melvorD:Fire",
+              "level": 3,
+              "perfectCookID": "tes:Cooked_Juvenile_Mudcrab_Perfect",
+              "gpCost": 0,
+              "scCost": 0
+            }
+          ]
+        }
       }
     ],
     "lore": [
@@ -21532,6 +22937,19 @@
             },
             {
               "monsterID": "tes:Goblin_Shaman"
+            }
+          ]
+        }
+      },
+      {
+        "id": "melvorD:Sandy_Shores",
+        "monsters": {
+          "add": [
+            {
+              "monsterID": "tes:mudcrab"
+            },
+            {
+              "monsterID": "tes:Giant_Mudcrab"
             }
           ]
         }
