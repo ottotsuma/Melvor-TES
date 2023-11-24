@@ -1,7 +1,10 @@
 export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady }) {
     // Changes to do:
-    // Thieviing needs notes on where to steal things for level up
+    // "tes:Moth_Priest"
+    // Mages shop is half empty
 
+    // game.testForOffline(1)
+    
     // New modifiers
     modifierData.tes_increasedDragonBreathDamage = {
         get langDescription() {
@@ -79,6 +82,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                 MISC_STRING_Dead_Drop_Orders_6: "Dead Drop Orders",
                 MISC_STRING_Dead_Drop_Orders_7: "Dead Drop Orders",
                 MISC_STRING_Dead_Drop_Orders_8: "Dead Drop Orders",
+                MISC_STRING_Thieves_Orders:"Thieves_Orders",
                 PASSIVES_NAME_EventPassive1: "Unusual Passive",
                 PASSIVES_NAME_EventPassive2: "Unusual Passive",
                 PASSIVES_NAME_EventPassive3: "Unusual Passive",
@@ -94,6 +98,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                 tes_Bards_College_Global_Droptable_Overview_General_Functionality: 'Each item on the global droptable has its own roll. These rolls are separate from the regular droptable and do not replace any other loot.',
                 tes_Bards_College_Global_Droptable_Overview_Item_Pickup_Info: "Items are not put in the loot container, but instead placed into the bank immediately. That is, if free space is available.",
                 tes_Bards_College_Global_Droptable_Overview_Dungeon_Limitation: "The drop rate for each item is inverse to the monsters combat level.",
+
                 tes_Bards_College_Global_Droptable_Overview_Base_Droprate: "Base chance",
                 // Global_Droptable_Overview_Limitation_Dragons_Only: "Only dropped by Dragons",
                 // Global_Droptable_Overview_Limitation_Undead_Only: "Only dropped by Undead",
@@ -105,11 +110,9 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
 
             // Packages to load based on entitlement
             const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
+            const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
             if (cloudManager.hasTotHEntitlement) {
-                console.log('hasTotHEntitlement')
                 await ctx.gameData.addPackage('data-toth.json');
-            } else {
-                console.log('Vanilla')
             }
             // add items to bards college before mods load
             bards_college_items.push(game.items.getObjectByID(`tes:Sweetroll`))
@@ -143,15 +146,15 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                 bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Sapphire_Gem`))
                 bards_college_items[7].baseChanceDenominator = "1000"
             }
-            if (mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')) {
+            if (kcm) {
                 const cmim = mod.api.customModifiersInMelvor;
                 if (!cmim) {
                     return;
                 }
                 await ctx.gameData.addPackage('custom-mods.json');
-                cmim.addDragons(["tes:Ysmir_Iceheart", "tes:Alduin", "tes:Elsweyr_Dragon", "tes:red_dragon", "tes:green_dragon", "tes:blue_dragon"]);
+                cmim.addDragons(["tes:Ysmir_Iceheart", "tes:Alduin", "tes:Elsweyr_Dragon", "tes:red_dragon", "tes:green_dragon", "tes:blue_dragon", "tes:MartinSeptim"]);
                 cmim.addHumans(["tes:Necromancer", "tes:Bandit", "tes:Thief", "tes:Havilstein_Hoar", "tes:Matthias_Draconis", "tes:Perennia_Draconis", "tes:Caelia_Draconis", "tes:Sibylla_Draconis", "tes:Andreas_Draconis", "tes:Celedaen", "tes:Imperial_Watch",]);
-                cmim.addUndeads(["tes:Harkon", "tes:Harkon2", "tes:Zombie", "tes:Lich", "tes:skeleton_Archer"]);
+                cmim.addUndeads(["tes:Harkon", "tes:Harkon2", "tes:Zombie", "tes:Lich", "tes:skeleton_Archer", "tes:Mannimarco"]);
             }
             // Add items after moads load, and patch death
             ctx.patch(CombatManager, "onEnemyDeath").after(() => {
@@ -231,11 +234,67 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
     });
 
     onCharacterLoaded(ctx => {
+        const bannedList = {
+            "Sweetroll": true,
+            "Crown_of_Rhaelyx": true,
+            "Cooking_Gloves": true,
+            "Mining_Gloves": true,
+            "Smithing_Gloves": true,
+            "Gem_Gloves": true,
+            "Thieving_Gloves": true,
+            "Empty_Food": true,
+            "Empty_Equipment": true,
+            "Meteorite_Dust": true,
+            "Lemonade_Full": true,
+            "Locked_Chest": true,
+            "Locked_Chest_Key": true,
+            "I_Cant_See_Helmet": true,
+            "Lemonade_Nope_this_is_half_full_now": true,
+            "Lemonade_Wow_this_is_slow": true,
+            "Lemonade_Maybe_this_is_half_full": true,
+            "Lemonade_Just_over_half_full": true,
+            "Lemonade_Half_full": true,
+            "Lemonade_A_little_bit_more_now": true,
+            "Lemonade_Has_a_bit_now": true,
+            "Lemonade_Not_much": true,
+            "Lemonade_Not_as_empty_as_before": true,
+            "Lemonade_Still_very_empty": true,
+            "Lemonade_Very_empty": true,
+            "Lemonade_Empty": true,
+            "Lemonade_Just_fill_it_up_already": true,
+            "Lemonade_Still_not_full": true,
+            "Lemonade_Again_still_not_full": true,
+            "Lemonade_Less_than_before_because_you_drank_some": true,
+            "Lemonade_Back_to_where_we_were_before": true,
+            "Lemonade_Haha_just_joking_hurry_up": true,
+            "Lemonade_Wait_for_it": true,
+            "Lemonade_Wait_for_it2": true,
+            "Lemonade_Oh_still_not_full": true,
+            "Lemonade_YAY_ITS_FINALLY_FULL": true,
+            "Lemonade_What_about_now": true,
+            "Lemonade_Now": true,
+            "Lemonade_Okay_this_looks_pretty_full_now": true,
+            "Lemonade_Wait_this_might_be_half_full_now": true,
+            "Lemonade_How_full_is_it_supposed_to_be": true,
+            "Lemonade_Still_almost_full": true,
+            "Lemonade_Almost_full": true
+        }
+        const bannedNameSpace = {
+            "tes": true
+        }
+        const categoryBan = {
+            "Limes": true,
+            "Lemon": true,
+            "Events": true,
+            "Event": true
+        }
         // Patching stuff spcific to the Character
         try {
             // Patching skills for new modifiers
             ctx.patch(Character, 'modifyAttackDamage').after((damage, target, attack) => {
-                let newDamage = damage
+                let newDamage = 0
+                const DR = target.modifiers.increasedDamageReduction - target.modifiers.decreasedDamageReduction
+
                 // Remove all damage and return if wardsaved
                 if (target && target.modifiers && target.modifiers.tes_wardsave) {
                     let wardsaveChance = Math.min(target.modifiers.tes_wardsave, 90);
@@ -243,7 +302,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                         return 0;
                     }
                 }
-                // Add HP full damage
+                // At HP full damage
                 if (!target.monster && target.stats.maxHitpoints === target.hitpoints) {
                     // do damage to player
                     let percDamage = 0
@@ -279,66 +338,14 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     // % calc
                     // newDamage *= (1 - (target.modifiers.tes_increasedDragonBreathDamage - target.modifiers.decreasedDragonBreathDamage)) / 100
                 }
+                // account for damage reduction
+                newDamage = newDamage - ((newDamage / 100) * DR)
                 // return re-calced damage
-                return newDamage
+                return Math.floor(damage + newDamage)
             })
             // end patching skills for new modifiers
 
             // Looping though all game items.
-            const bannedList = {
-                "Sweetroll": true,
-                "Crown_of_Rhaelyx": true,
-                "Cooking_Gloves": true,
-                "Mining_Gloves": true,
-                "Smithing_Gloves": true,
-                "Gem_Gloves": true,
-                "Thieving_Gloves": true,
-                "Empty_Food": true,
-                "Empty_Equipment": true,
-                "Meteorite_Dust": true,
-                "Lemonade_Full": true,
-                "Locked_Chest": true,
-                "Locked_Chest_Key": true,
-                "I_Cant_See_Helmet": true,
-                "Lemonade_Nope_this_is_half_full_now": true,
-                "Lemonade_Wow_this_is_slow": true,
-                "Lemonade_Maybe_this_is_half_full": true,
-                "Lemonade_Just_over_half_full": true,
-                "Lemonade_Half_full": true,
-                "Lemonade_A_little_bit_more_now": true,
-                "Lemonade_Has_a_bit_now": true,
-                "Lemonade_Not_much": true,
-                "Lemonade_Not_as_empty_as_before": true,
-                "Lemonade_Still_very_empty": true,
-                "Lemonade_Very_empty": true,
-                "Lemonade_Empty": true,
-                "Lemonade_Just_fill_it_up_already": true,
-                "Lemonade_Still_not_full": true,
-                "Lemonade_Again_still_not_full": true,
-                "Lemonade_Less_than_before_because_you_drank_some": true,
-                "Lemonade_Back_to_where_we_were_before": true,
-                "Lemonade_Haha_just_joking_hurry_up": true,
-                "Lemonade_Wait_for_it": true,
-                "Lemonade_Wait_for_it2": true,
-                "Lemonade_Oh_still_not_full": true,
-                "Lemonade_YAY_ITS_FINALLY_FULL": true,
-                "Lemonade_What_about_now": true,
-                "Lemonade_Now": true,
-                "Lemonade_Okay_this_looks_pretty_full_now": true,
-                "Lemonade_Wait_this_might_be_half_full_now": true,
-                "Lemonade_How_full_is_it_supposed_to_be": true,
-                "Lemonade_Still_almost_full": true,
-                "Lemonade_Almost_full": true
-            }
-            const bannedNameSpace = {
-                "tes": true
-            }
-            const categoryBan = {
-                "Limes": true,
-                "Lemon": true,
-                "Events": true,
-                "Event": true
-            }
             const initialPackage = ctx.gameData.buildPackage(itemPackage => {
                 game.items.registeredObjects.forEach(item => {
                     try {

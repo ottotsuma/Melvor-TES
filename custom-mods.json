@@ -1,6 +1,17 @@
 {
     "$schema": "https://melvoridle.com/assets/schema/gameData.json",
     "namespace": "tes",
+    "data": {
+        "combatPassives": [
+            {
+                "id": "Death_Mark_10",
+                "name": "Death Mark",
+                "modifiers":{
+                    "increasedChanceToApplyStackOfDeathMark": 10
+                }
+            }
+        ]
+    },
     "modifications": {
         "items": [
             {
@@ -12,13 +23,162 @@
                 }
             },
             {
-                "id": "tes:Bard_Drum",
+                "id": "tes:Blades_Sword",
                 "modifiers": {
                     "add":{
-                        "increasedFlatMinHitAgainstHumans": 4
+                        "increasedDamageAgainstDragons": 20
                     }
                 }
+            },
+            {
+                "id": "tes:Mace_of_the_Crusader",
+                "modifiers": {
+                    "add":{
+                        "increasedDamageAgainstUndead": 20,
+                        "decreasedDamageAgainstHumans": 10
+                    }
+                }
+            },
+            {
+                "id": "tes:Shield_of_the_Crusader",
+                "modifiers": {
+                    "add":{
+                        "increasedDamageAgainstUndead": 20,
+                        "decreasedDamageAgainstHumans": 10
+                    }
+                }
+            },
+            {
+                "id": "tes:Cuirass_of_the_Crusader",
+                "modifiers": {
+                    "add":{
+                        "increasedDeathMarkImmunity": 40,
+                        "decreasedDamageAgainstHumans": 10
+                    }
+                }
+            },
+            {
+                "id": "tes:Sword_of_the_Crusader",
+                "modifiers": {
+                    "add":{
+                        "increasedDamageAgainstUndead": 20,
+                        "decreasedDamageAgainstHumans": 10
+                    }
+                }
+            },
+            {
+                "id": "tes:Boots_of_the_Crusader",
+                "modifiers": {
+                    "add":{
+                        "increasedDeathMarkImmunity": 10,
+                        "decreasedDamageAgainstHumans": 5
+                    }
+                }
+            },   
+            {
+                "id": "tes:Helm_of_the_Crusader",
+                "modifiers": {
+                    "add":{
+                        "increasedDeathMarkImmunity": 10,
+                        "decreasedDamageAgainstHumans": 5
+                    }
+                }
+            },  
+            {
+                "id": "tes:Gauntlets_of_the_Crusader",
+                "modifiers": {
+                    "add":{
+                        "increasedDeathMarkImmunity": 10,
+                        "decreasedDamageAgainstHumans": 5
+                    }
+                }
+            },
+            {
+                "id": "tes:Imperial_Dragon_Shield",
+                "modifiers": {
+                    "add":{
+                        "increasedDamageAgainstHumans": 5
+                    }
+                }
+            },
+            {
+                "id": "tes:Imperial_Dragon_Helmet",
+                "modifiers": {
+                    "add":{
+                        "increasedDamageAgainstHumans": 5
+                    }
+                }
+            },
+            {
+                "id": "tes:Imperial_Dragon_Gauntlets",
+                "modifiers": {
+                    "add":{
+                        "increasedDamageAgainstHumans": 5
+                    }
+                }
+            },
+            {
+                "id": "tes:Imperial_Dragon_Armor",
+                "modifiers": {
+                    "add":{
+                        "increasedDamageAgainstHumans": 5
+                    }
+                }
+            },
+            {
+                "id": "tes:Imperial_Dragon_Boots",
+                "modifiers": {
+                    "add":{
+                        "increasedDamageAgainstHumans": 5
+                    }
+                }
+            },
+            {
+                "id": "tes:Imperial_Dragon_Cloak",
+                "modifiers": {
+                    "add":{
+                        "increasedDamageAgainstHumans": 5
+                    }
+                }
+            } 
+        ],
+        "monsters": [
+            {
+                "id": "tes:Divine_Crusader",
+                "passives": {
+                    "add": [
+                        "tes:Death_Mark_10"
+                    ]
+                },
+                "equipmentStats": {
+                    "add": [
+                            {
+                              "key": "attackSpeed",
+                              "value": 2600
+                            }
+                    ]
+                }
+            },
+            {
+                "id": "tes:MartinSeptim",
+                "passives": {
+                    "add": [
+                        "tes:Death_Mark_10"
+                    ]
+                },
+                "specialAttacks": {
+                    "add": [
+                        {
+                            "attackID":"melvorTotH:TorrentialDragonbreath",
+                            "chance": 10
+                        }
+                    ],
+                    "remove": [
+                        "melvorF:GreaterDragonbreath"
+                    ]
+                }
             }
+            
         ]
     }
-  }
+}

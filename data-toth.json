@@ -1016,6 +1016,225 @@
         ],
         "occupiesSlots": []
       }
+    ],
+    "monsters": [
+      {
+        "id": "Unedad_Junior_Farmer",
+        "name": "Unedad Junior Farmer",
+        "attackType":"ranged",
+        "bones": {
+          "itemID":"melvorD:Dragon_Bones",
+          "quantity": 1
+        },
+        "media": "assets/monsters/skeleton_Archer.png",
+        "passives": [
+        ],
+        "specialAttacks": [],
+        "lootChance": 0,
+        "lootTable": [],
+        "gpDrops": {
+          "min": 50000,
+          "max": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2000
+          },
+          {
+            "key": "damageReduction",
+            "value": 99
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 200
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 200
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 500
+          },
+          {
+            "key": "rangedStrengthBonus",
+            "value": 500
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 500
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 500
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 500
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 500
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 600
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 400
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 600
+          }
+        ],
+        "levels": {
+          "Attack": 600,
+          "Defence": 600,
+          "Hitpoints": 600,
+          "Magic": 600,
+          "Ranged": 600,
+          "Strength": 600
+        },
+        "ignoreCompletion": true,
+        "isBoss": true,
+        "canSlayer": true,
+        "selectedSpell":"melvorF:NaturesWrath"
+      },
+      {
+        "id": "Maiq_the_Liar",
+        "name": "M'aiq the Liar",
+        "attackType":"magic",
+        "bones": {
+          "itemID":"melvorD:Magic_Bones",
+          "quantity": 1
+        },
+        "media": "assets/monsters/Maiq_the_Liar.png",
+        "passives": [
+        ],
+        "specialAttacks": [],
+        "lootChance": 0,
+        "lootTable": [],
+        "gpDrops": {
+          "min": 1000000,
+          "max": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 900
+          },
+          {
+            "key": "damageReduction",
+            "value": 99
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 999
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 999
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 999
+          },
+          {
+            "key": "rangedStrengthBonus",
+            "value": 999
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": 999
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 999
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 999
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 999
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 999
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 999
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 999
+          }
+        ],
+        "levels": {
+          "Attack": 999,
+          "Defence": 999,
+          "Hitpoints": 999,
+          "Magic": 999,
+          "Ranged": 999,
+          "Strength": 999
+        },
+        "ignoreCompletion": true,
+        "isBoss": true,
+        "canSlayer": true,
+        "selectedSpell":"melvorF:NaturesWrath"
+      }
     ]
+  },
+  "modifications": {
+    "combatAreas": [
+      {
+        "id":"tes:Elsweyr",
+        "monsters": {
+          "add": [
+            {
+              "monsterID":"tes:Maiq_the_Liar",
+              "insertAt": 1
+            }
+          ]
+        }
+      }
+    ],
+    "slayerAreas": [{
+      "id":"melvorTotH:MidnightValley",
+      "monsters": {
+        "add": [{
+          "monsterID":"tes:Unedad_Junior_Farmer",
+          "insertAt": 3
+        }]
+      }
+    }],
+    "items": [{
+      "id": "tes:Staff_of_Worms",
+      "specialAttacks": {
+        "add": [
+          "melvorTotH:ShadeSummon",
+          "melvorTotH:PhantomSummon",
+          "melvorTotH:CurseTotemSummon",
+          "melvorTotH:GreaterShadeSummon"
+        ]
+      }
+    }],
+    "monsters": [{
+      "id": "tes:Mannimarco",
+      "passives": {
+        "remove": [
+          "tes:Assassin"
+        ],
+        "add": [
+          "melvorTotH:DarkBlade",
+          "melvorTotH:Decay"
+        ]
+      }
+    }]
   }
 }

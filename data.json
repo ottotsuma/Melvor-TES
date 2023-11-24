@@ -46,6 +46,14 @@
     ],
     "combatPassives": [
       {
+        "id": "Assassin",
+        "name": "Assassin",
+        "customDescription": "Hit hard, hit once.",
+        "modifiers": {
+          "tes_increasedPercDamageWhileTargetHasMaxHP": 30
+        }
+      },
+      {
         "id": "Wardsave_10",
         "name": "Mara's Protection",
         "customDescription": "Mara's Protection 10%.",
@@ -92,7 +100,7 @@
         "media": "assets/icons/brotherhood/Dark_Brotherhood.png"
       }
     ],
-    "shopPurchases": [
+    "shopPurchases": [      
       {
         "id": "Associate_Mage_Rank",
         "media": "assets/icons/mages/Associate.png",
@@ -5270,7 +5278,7 @@
               "quantity": 3
             },
             {
-              "id": "melvorD:Air_Battlestaff",
+              "id": "melvorF:Staff_of_Air",
               "quantity": 1
             }
           ],
@@ -5560,7 +5568,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 45000000
+            "cost": 5000000
           },
           "items": [],
           "raidCoins": {
@@ -5775,7 +5783,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 15000000
+            "cost": 1000000
           },
           "items": [],
           "raidCoins": {
@@ -5818,7 +5826,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 15000000
+            "cost": 1000000
           },
           "items": [],
           "raidCoins": {
@@ -5990,7 +5998,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 45000000
+            "cost": 5000000
           },
           "items": [],
           "raidCoins": {
@@ -6033,7 +6041,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 45000000
+            "cost": 5000000
           },
           "items": [],
           "raidCoins": {
@@ -6126,7 +6134,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 10
+            "cost": 1
           },
           "items": [],
           "raidCoins": {
@@ -6147,6 +6155,51 @@
         "buyLimitOverrides": [],
         "showBuyLimit": false,
         "customName": "Elsweyr Spiced Tea"
+      },
+      {
+        "id": "Thieves_Orders_Shop",
+        "media": "assets/items/Dead_Drop_Orders_bad.png",
+        "category": "tes:Thieves_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Thieves_Orders",
+              "quantity": 1
+            }
+          ],
+          "modifiers": {
+            "increasedThievingStealth": 10
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 1
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [
+        ],
+        "purchaseRequirements": [
+          {
+            "type": "ShopPurchase",
+            "purchaseID": "tes:Pickpocket_Rank",
+            "count": 1
+          }
+        ],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Thieves Orders"
       }
     ],
     "shopDisplayOrder": [
@@ -6161,6 +6214,7 @@
           "tes:Shadowfoot_Rank",
           "tes:Master_Thief_Rank",
           "tes:Gray_Fox_Rank",
+          "tes:Thieves_Orders_Shop",
           "tes:Lockpick_Shop",
           "tes:Thiefs_Moneysack_Shop",
           "tes:Summoning_Familiar_Leprechaun_Shop",
@@ -6336,6 +6390,785 @@
       }
     ],
     "items": [
+      {
+        "id": "Bloodworm_Helm",
+        "name": "Bloodworm Helm",
+        "category": "Combat",
+        "type": "Amulet",
+        "media": "assets/items/Helm_of_Oreyn_Bearclaw.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 15000000,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedSummoningShardCost": 50,
+          "increasedSummoningCreationCharges": 50,
+          "increasedGPBasedOnSummonDamage": 50
+        },
+        "equipmentStats": [
+          {
+            "key":"meleeDefenceBonus",
+            "value": 70
+          },
+          {
+            "key":"rangedDefenceBonus",
+            "value": 70
+          },
+          {
+            "key":"damageReduction",
+            "value": 11
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Helmet"
+        ],
+        "equipRequirements": [          {
+          "monsterID":"tes:Mannimarco",
+          "count": 1,
+          "type": "MonsterKilled"
+        }],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Necromanceramulet",
+        "name": "Necromancer Amulet",
+        "category": "Combat",
+        "type": "Amulet",
+        "media": "assets/items/Necromanceramulet.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 15000000,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedSummoningChargePreservation": 5,
+          "increasedSummoningCreationChargesForEquippedTablets": 10,
+          "increasedSummoningMaxHit": 300
+        },
+        "equipmentStats": [
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Amulet"
+        ],
+        "equipRequirements": [          {
+          "monsterID":"tes:Mannimarco",
+          "count": 1,
+          "type": "MonsterKilled"
+        }],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Staff_of_Worms",
+        "name": "Staff of Worms",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Staff_of_Worms.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 15000000,
+        "itemType": "Weapon",
+        "attackType": "magic",
+        "modifiers": {
+          "increasedSummoningChargePreservation": 5,
+          "increasedSummoningMaxHit": 100
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3000
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 40
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 70
+          },
+          {
+            "key": "damageReduction",
+            "value": 2
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 50
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "equipRequirements": [
+          {
+            "monsterID":"tes:Mannimarco",
+            "count": 1,
+            "type": "MonsterKilled"
+          }
+        ],
+        "occupiesSlots": [
+          "Shield"
+        ]
+      },
+      {
+        "id": "Necromancer_Robes",
+        "name": "Necromancer Robes",
+        "category": "Combat",
+        "type": "Magic_Armour",
+        "media": "assets/items/Necromancer_Robes.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 15000000,
+        "itemType": "Equipment",
+        "modifiers": {
+          "summoningSynergy_1_2": 5,
+          "decreasedSummoningAttackIntervalPercent": 10,
+          "increasedSummoningChargePreservation": 5
+        },
+        "equipmentStats": [
+          {
+            "key": "damageReduction",
+            "value": 2
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 5
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 20
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 40
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 40
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 40
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Platebody"
+        ],
+        "equipRequirements": [          {
+          "monsterID":"tes:Mannimarco",
+          "count": 1,
+          "type": "MonsterKilled"
+        }],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Imperial_Dragon_Helmet",
+        "name": "Imperial Dragon Helmet",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Imperial_Dragon_Helmet.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 1500,
+        "itemType": "Equipment",
+        "modifiers": {},
+        "equipmentStats": [
+          {
+            "key": "rangedDefenceBonus",
+            "value": 45
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 45
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Helmet"
+        ],
+        "equipRequirements": [
+          {
+            "skillID": "melvorD:Defence",
+            "level": 50,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Imperial_Dragon_Gauntlets",
+        "name": "Imperial Dragon Gauntlets",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Imperial_Dragon_Gauntlets.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 1500,
+        "itemType": "Equipment",
+        "modifiers": {},
+        "equipmentStats": [
+          {
+            "key": "rangedDefenceBonus",
+            "value": 9
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 9
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Gloves"
+        ],
+        "equipRequirements": [
+          {
+            "skillID": "melvorD:Defence",
+            "level": 50,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Imperial_Dragon_Armor",
+        "name": "Imperial Dragon Armor",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Imperial_Dragon_Armor.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 1500,
+        "itemType": "Equipment",
+        "modifiers": {},
+        "equipmentStats": [
+          {
+            "key": "rangedDefenceBonus",
+            "value": 110
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 110
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Platebody"
+        ],
+        "equipRequirements": [
+          {
+            "skillID": "melvorD:Defence",
+            "level": 50,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Imperial_Dragon_Boots",
+        "name": "Imperial Dragon Boots",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Imperial_Dragon_Boots.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 1500,
+        "itemType": "Equipment",
+        "modifiers": {},
+        "equipmentStats": [
+          {
+            "key": "rangedDefenceBonus",
+            "value": 16
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 16
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Boots"
+        ],
+        "equipRequirements": [
+          {
+            "skillID": "melvorD:Defence",
+            "level": 50,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Imperial_Dragon_Shield",
+        "name": "Imperial Dragon Shield",
+        "category": "Combat",
+        "type": "Shield",
+        "media": "assets/items/Imperial_Dragon_Shield.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 1500,
+        "tier": "none",
+        "validSlots": [
+          "Shield"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [
+          {
+            "skillID": "melvorD:Defence",
+            "level": 50,
+            "type": "SkillLevel"
+          }
+        ],
+        "equipmentStats": [
+          {
+            "key": "meleeDefenceBonus",
+            "value": 60
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 60
+          }
+        ],
+        "modifiers": {},
+        "itemType": "Equipment"
+      },
+      {
+        "id": "Imperial_Dragon_Cloak",
+        "name": "Imperial Dragon Cloak",
+        "category": "Combat",
+        "type": "Shield",
+        "media": "assets/items/Imperial_Dragon_Cloak.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 1500,
+        "tier": "none",
+        "validSlots": [
+          "Cape"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [
+          {
+            "skillID": "melvorD:Defence",
+            "level": 50,
+            "type": "SkillLevel"
+          }
+        ],
+        "equipmentStats": [],
+        "modifiers": {
+          "increasedFlatMagicDefenceBonus": 40,
+          "increasedFlatMeleeDefenceBonus": 40,
+          "increasedFlatRangedDefenceBonus": 40
+        },
+        "itemType": "Equipment"
+      },
+      {
+        "id": "Amulet_Of_Kings",
+        "name": "Amulet Of Kings",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Amulet_Of_Kings.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 15,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedDamageToBosses": 10,
+          "increasedDamageToAllMonsters": 5,
+          "increasedTownshipHappiness": 100
+        },
+        "equipmentStats": [],
+        "tier": "none",
+        "validSlots": [
+          "Amulet"
+        ],
+        "equipRequirements": [],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Helm_of_the_Crusader",
+        "name": "Helm of the Crusader",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Helm_of_the_Crusader.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 15000000,
+        "itemType": "Equipment",
+        "modifiers": {
+          "summoningSynergy_7_13": 10
+        },
+        "equipmentStats": [
+          {
+            "key": "magicDefenceBonus",
+            "value": 15
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 95
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 95
+          },
+          {
+            "key": "damageReduction",
+            "value": 10
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Helmet"
+        ],
+        "equipRequirements": [
+          {
+            "dungeonID": "tes:Dragon_Break",
+            "count": 1,
+            "type": "DungeonCompletion"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Gauntlets_of_the_Crusader",
+        "name": "Gauntlets of the Crusader",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Gauntlets_of_the_Crusader.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 15000000,
+        "itemType": "Equipment",
+        "modifiers": {
+          "poisonImmunity": 50
+        },
+        "equipmentStats": [
+          {
+            "key": "magicDefenceBonus",
+            "value": 15
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 12
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 12
+          },
+          {
+            "key": "damageReduction",
+            "value": 10
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Gloves"
+        ],
+        "equipRequirements": [
+          {
+            "dungeonID": "tes:Dragon_Break",
+            "count": 1,
+            "type": "DungeonCompletion"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Cuirass_of_the_Crusader",
+        "name": "Cuirass of the Crusader",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Cuirass_of_the_Crusader.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 15000000,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedFlatMaxHitpoints": 20
+        },
+        "equipmentStats": [
+          {
+            "key": "magicDefenceBonus",
+            "value": 50
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 250
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 250
+          },
+          {
+            "key": "damageReduction",
+            "value": 10
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Platebody"
+        ],
+        "equipRequirements": [
+          {
+            "dungeonID": "tes:Dragon_Break",
+            "count": 1,
+            "type": "DungeonCompletion"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Boots_of_the_Crusader",
+        "name": "Boots of the Crusader",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Boots_of_the_Crusader.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 15000000,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedFoodHealingValue": 60
+        },
+        "equipmentStats": [
+          {
+            "key": "magicDefenceBonus",
+            "value": 15
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 30
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 30
+          },
+          {
+            "key": "damageReduction",
+            "value": 10
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Boots"
+        ],
+        "equipRequirements": [
+          {
+            "dungeonID": "tes:Dragon_Break",
+            "count": 1,
+            "type": "DungeonCompletion"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Shield_of_the_Crusader",
+        "name": "Shield of the Crusader",
+        "category": "Combat",
+        "type": "Shield",
+        "media": "assets/items/Shield_of_the_Crusader.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 15000000,
+        "tier": "none",
+        "validSlots": [
+          "Shield"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [
+          {
+            "dungeonID": "tes:Dragon_Break",
+            "count": 1,
+            "type": "DungeonCompletion"
+          }
+        ],
+        "equipmentStats": [
+          {
+            "key": "meleeDefenceBonus",
+            "value": 310
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 210
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 30
+          },
+          {
+            "key": "damageReduction",
+            "value": 10
+          }
+        ],
+        "modifiers": {
+          "increasedReflectDamage": 18
+        },
+        "itemType": "Equipment"
+      },
+      {
+        "id": "Mace_of_the_Crusader",
+        "name": "Mace of the Crusader",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Mace_of_the_Crusader.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 15000000,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [],
+        "modifiers": {
+          "increasedDamageToBosses": 20,
+          "increasedChanceToApplyBurn": 10
+        },
+        "equipRequirements": [
+          {
+            "dungeonID": "tes:Dragon_Break",
+            "count": 1,
+            "type": "DungeonCompletion"
+          }
+        ],
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3200
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 10
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 10
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 160
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 300
+          }
+        ],
+        "itemType": "Weapon",
+        "attackType": "melee"
+      },
+      {
+        "id": "Sword_of_the_Crusader",
+        "name": "Sword of the Crusader",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/Sword_of_the_Crusader.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 15000000,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [],
+        "modifiers": {
+          "increasedDamageToBosses": 20,
+          "increasedChanceToApplyBurn": 10
+        },
+        "equipRequirements": [
+          {
+            "dungeonID": "tes:Dragon_Break",
+            "count": 1,
+            "type": "DungeonCompletion"
+          }
+        ],
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2400
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 200
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 80
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 60
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 200
+          }
+        ],
+        "itemType": "Weapon",
+        "attackType": "melee"
+      },
+      {
+        "id": "Blades_Sword",
+        "name": "Blades Sword",
+        "category": "Combat",
+        "type": "Weapon",
+        "media": "assets/items/BladesSword.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 170,
+        "tier": "none",
+        "validSlots": [
+          "Weapon"
+        ],
+        "occupiesSlots": [],
+        "equipRequirements": [
+          {
+            "monsterID": "melvorD:GreenDragon",
+            "count": 1,
+            "type": "MonsterKilled"
+          }
+        ],
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2400
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 6
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 40
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 6
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 40
+          }
+        ],
+        "itemType": "Weapon",
+        "attackType": "melee"
+      },
       {
         "id": "Flin",
         "name": "Flin",
@@ -6675,21 +7508,21 @@
         "sellsFor": 115,
         "itemType": "Equipment",
         "modifiers": {
-          "increasedHiddenSkillLevelBasedOnLevels":[
+          "increasedHiddenSkillLevelBasedOnLevels": [
             {
-              "skillID":"melvorD:Attack",
+              "skillID": "melvorD:Attack",
               "value": 1
             },
             {
-              "skillID":"melvorD:Strength",
+              "skillID": "melvorD:Strength",
               "value": 1
             },
             {
-              "skillID":"melvorD:Magic",
+              "skillID": "melvorD:Magic",
               "value": 1
             },
             {
-              "skillID":"melvorD:Ranged",
+              "skillID": "melvorD:Ranged",
               "value": 1
             }
           ]
@@ -7169,24 +8002,16 @@
             "value": 3600
           },
           {
-            "key": "stabAttackBonus",
-            "value": -4
+            "key": "rangedAttackBonus",
+            "value": 10
           },
           {
-            "key": "slashAttackBonus",
-            "value": 42
-          },
-          {
-            "key": "blockAttackBonus",
-            "value": 42
-          },
-          {
-            "key": "meleeStrengthBonus",
-            "value": 47
+            "key": "rangedStrengthBonus",
+            "value": 25
           }
         ],
         "itemType": "Weapon",
-        "attackType": "melee"
+        "attackType": "ranged"
       },
       {
         "id": "Bard_Flute",
@@ -7212,24 +8037,16 @@
             "value": 3600
           },
           {
-            "key": "stabAttackBonus",
-            "value": -4
+            "key": "magicAttackBonus",
+            "value": 10
           },
           {
-            "key": "slashAttackBonus",
-            "value": 42
-          },
-          {
-            "key": "blockAttackBonus",
-            "value": 42
-          },
-          {
-            "key": "meleeStrengthBonus",
-            "value": 47
+            "key": "magicDamageBonus",
+            "value": 5
           }
         ],
         "itemType": "Weapon",
-        "attackType": "melee"
+        "attackType": "magic"
       },
       {
         "id": "Bard_Drum",
@@ -7859,7 +8676,9 @@
           "Weapon"
         ],
         "equipRequirements": [],
-        "occupiesSlots": []
+        "occupiesSlots": [
+          "Shield"
+        ]
       },
       {
         "id": "Skooma",
@@ -8107,7 +8926,7 @@
         "validSlots": [
           "Gem"
         ],
-        "modifiers":{
+        "modifiers": {
           "applyRandomCurseOnSpawn": 1
         },
         "tier": "none",
@@ -8943,6 +9762,26 @@
         ],
         "equipRequirements": [],
         "occupiesSlots": []
+      },
+      {
+        "id": "Thieves_Orders",
+        "name": "Thieves Orders",
+        "category": "Misc",
+        "type": "Special",
+        "media": "assets/items/Dead_Drop_Orders_bad.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 0,
+        "itemType": "Readable",
+        "customDescription": "Progression guide",
+        "swalData": {
+          "title": {
+            "category": "MISC_STRING",
+            "id": "Thieves_Orders"
+          },
+          "htmlTemplateID": "Thieves_Orders"
+        }
       },
       {
         "id": "Dead_Drop_Orders_8",
@@ -11339,8 +12178,7 @@
         "validSlots": [
           "Gem"
         ],
-        "occupiesSlots": [
-        ],
+        "occupiesSlots": [],
         "tier": "none",
         "equipRequirements": [],
         "equipmentStats": [],
@@ -12121,425 +12959,214 @@
           "petID": "tes:Scamp",
           "weight": 750
         }
+      },
+      {
+        "id": "The_White_Gold_Tower",
+        "areaEffect":{
+          "magnitude": 100,
+          "modifier":"increasedMeleeCritChance",
+          "target": "Enemy"
+        },
+        "areaEffectDescription": "Enemies are ${effectValue}% more likely to crit.",
+        "difficulty": [6],
+        "entryRequirements": [],
+        "media": "assets/locations/White_gold_tower.png",
+        "pet":{
+          "petID":"tes:HolySymbol",
+          "weight": 50
+        },
+        "name": "The White Gold Tower",
+        "monsterIDs": [
+          "tes:MartinSeptim",
+          "tes:Mannimarco"
+        ]
       }
     ],
     "monsters": [
-    {
-      "id": "skeleton_Archer",
-      "name": "Skeleton Archer",
-      "media": "assets/monsters/skeleton_Archer.png",
-      "levels": {
-        "Attack": 20,
-        "Defence": 30,
-        "Hitpoints": 80,
-        "Magic": 1,
-        "Ranged": 1,
-        "Strength": 20
+      {
+        "id": "skeleton_Archer",
+        "name": "Skeleton Archer",
+        "media": "assets/monsters/skeleton_Archer.png",
+        "levels": {
+          "Attack": 1,
+          "Defence": 120,
+          "Hitpoints": 120,
+          "Magic": 1,
+          "Ranged": 170,
+          "Strength": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2400
+          }
+        ],
+        "ignoreCompletion": false,
+        "attackType": "ranged",
+        "specialAttacks": [],
+        "passives": [],
+        "lootChance": 50,
+        "lootTable": [
+          {
+            "itemID": "melvorD:Steel_Arrows",
+            "maxQuantity": 100,
+            "minQuantity": 5,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Rune_Arrows",
+            "maxQuantity": 100,
+            "minQuantity": 5,
+            "weight": 50
+          },
+          {
+            "itemID": "melvorD:Elite_Amulet_of_Accuracy",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 25
+          }
+        ],
+        "gpDrops": {
+          "min": 50,
+          "max": 1500
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WindStrike"
       },
-      "equipmentStats": [
-        {
-          "key": "attackSpeed",
-          "value": 2400
-        }
-      ],
-      "ignoreCompletion": false,
-      "attackType": "melee",
-      "specialAttacks": [
-      ],
-      "passives": [],
-      "lootChance": 75,
-      "lootTable": [
-        {
-          "itemID": "melvorD:Glass_Bottle",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
+      {
+        "id": "red_dragon",
+        "name": "Fire Dragon",
+        "media": "assets/monsters/red_dragon.png",
+        "levels": {
+          "Attack": 20,
+          "Defence": 30,
+          "Hitpoints": 80,
+          "Magic": 1,
+          "Ranged": 1,
+          "Strength": 20
         },
-        {
-          "itemID": "melvorD:Old_Boot",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2400
+          }
+        ],
+        "ignoreCompletion": false,
+        "attackType": "melee",
+        "specialAttacks": [],
+        "passives": [],
+        "lootChance": 75,
+        "lootTable": [
+          {
+            "itemID": "tes:gold_coin",
+            "maxQuantity": 100,
+            "minQuantity": 1,
+            "weight": 20
+          }
+        ],
+        "gpDrops": {
+          "min": 20,
+          "max": 1
         },
-        {
-          "itemID": "melvorD:Old_Hat",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
         },
-        {
-          "itemID": "melvorD:Rope",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "melvorD:Rubber_Ducky",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 50
-        },
-        {
-          "itemID": "melvorD:Rusty_Key",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "melvorD:Seaweed",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "melvorD:Shell",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "tes:Juvenile_Mudcrab",
-          "maxQuantity": 1,
-          "minQuantity": 1,
-          "weight": 100
-        },
-        {
-          "itemID": "tes:gold_coin",
-          "maxQuantity": 100,
-          "minQuantity": 1,
-          "weight": 90
-        },
-        {
-          "itemID": "tes:lootbox",
-          "maxQuantity": 100,
-          "minQuantity": 1,
-          "weight": 20
-        }
-      ],
-      "gpDrops": {
-        "min": 20,
-        "max": 1
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WaterStrike"
       },
-      "bones": {
-        "itemID": "melvorD:Bones",
-        "quantity": 1
+      {
+        "id": "green_dragon",
+        "name": "Nature Dragon",
+        "media": "assets/monsters/green_dragon.png",
+        "levels": {
+          "Attack": 20,
+          "Defence": 30,
+          "Hitpoints": 80,
+          "Magic": 1,
+          "Ranged": 1,
+          "Strength": 20
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2400
+          }
+        ],
+        "ignoreCompletion": false,
+        "attackType": "melee",
+        "specialAttacks": [],
+        "passives": [],
+        "lootChance": 75,
+        "lootTable": [
+          {
+            "itemID": "tes:gold_coin",
+            "maxQuantity": 100,
+            "minQuantity": 1,
+            "weight": 20
+          }
+        ],
+        "gpDrops": {
+          "min": 20,
+          "max": 1
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WaterStrike"
       },
-      "canSlayer": true,
-      "isBoss": false,
-      "selectedSpell": "melvorD:WaterStrike"
-    },
-    {
-      "id": "red_dragon",
-      "name": "Fire Dragon",
-      "media": "assets/monsters/red_dragon.png",
-      "levels": {
-        "Attack": 20,
-        "Defence": 30,
-        "Hitpoints": 80,
-        "Magic": 1,
-        "Ranged": 1,
-        "Strength": 20
+      {
+        "id": "blue_dragon",
+        "name": "Frost Dragon",
+        "media": "assets/monsters/blue_dragon.png",
+        "levels": {
+          "Attack": 20,
+          "Defence": 30,
+          "Hitpoints": 80,
+          "Magic": 1,
+          "Ranged": 1,
+          "Strength": 20
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2400
+          }
+        ],
+        "ignoreCompletion": false,
+        "attackType": "melee",
+        "specialAttacks": [],
+        "passives": [],
+        "lootChance": 75,
+        "lootTable": [
+          {
+            "itemID": "tes:gold_coin",
+            "maxQuantity": 100,
+            "minQuantity": 1,
+            "weight": 20
+          }
+        ],
+        "gpDrops": {
+          "min": 20,
+          "max": 1
+        },
+        "bones": {
+          "itemID": "melvorD:Bones",
+          "quantity": 1
+        },
+        "canSlayer": true,
+        "isBoss": false,
+        "selectedSpell": "melvorD:WaterStrike"
       },
-      "equipmentStats": [
-        {
-          "key": "attackSpeed",
-          "value": 2400
-        }
-      ],
-      "ignoreCompletion": false,
-      "attackType": "melee",
-      "specialAttacks": [
-      ],
-      "passives": [],
-      "lootChance": 75,
-      "lootTable": [
-        {
-          "itemID": "melvorD:Glass_Bottle",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "melvorD:Old_Boot",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "melvorD:Old_Hat",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "melvorD:Rope",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "melvorD:Rubber_Ducky",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 50
-        },
-        {
-          "itemID": "melvorD:Rusty_Key",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "melvorD:Seaweed",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "melvorD:Shell",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "tes:Juvenile_Mudcrab",
-          "maxQuantity": 1,
-          "minQuantity": 1,
-          "weight": 100
-        },
-        {
-          "itemID": "tes:gold_coin",
-          "maxQuantity": 100,
-          "minQuantity": 1,
-          "weight": 90
-        },
-        {
-          "itemID": "tes:lootbox",
-          "maxQuantity": 100,
-          "minQuantity": 1,
-          "weight": 20
-        }
-      ],
-      "gpDrops": {
-        "min": 20,
-        "max": 1
-      },
-      "bones": {
-        "itemID": "melvorD:Bones",
-        "quantity": 1
-      },
-      "canSlayer": true,
-      "isBoss": false,
-      "selectedSpell": "melvorD:WaterStrike"
-    },
-    {
-      "id": "green_dragon",
-      "name": "Nature Dragon",
-      "media": "assets/monsters/green_dragon.png",
-      "levels": {
-        "Attack": 20,
-        "Defence": 30,
-        "Hitpoints": 80,
-        "Magic": 1,
-        "Ranged": 1,
-        "Strength": 20
-      },
-      "equipmentStats": [
-        {
-          "key": "attackSpeed",
-          "value": 2400
-        }
-      ],
-      "ignoreCompletion": false,
-      "attackType": "melee",
-      "specialAttacks": [
-      ],
-      "passives": [],
-      "lootChance": 75,
-      "lootTable": [
-        {
-          "itemID": "melvorD:Glass_Bottle",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "melvorD:Old_Boot",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "melvorD:Old_Hat",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "melvorD:Rope",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "melvorD:Rubber_Ducky",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 50
-        },
-        {
-          "itemID": "melvorD:Rusty_Key",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "melvorD:Seaweed",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "melvorD:Shell",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "tes:Juvenile_Mudcrab",
-          "maxQuantity": 1,
-          "minQuantity": 1,
-          "weight": 100
-        },
-        {
-          "itemID": "tes:gold_coin",
-          "maxQuantity": 100,
-          "minQuantity": 1,
-          "weight": 90
-        },
-        {
-          "itemID": "tes:lootbox",
-          "maxQuantity": 100,
-          "minQuantity": 1,
-          "weight": 20
-        }
-      ],
-      "gpDrops": {
-        "min": 20,
-        "max": 1
-      },
-      "bones": {
-        "itemID": "melvorD:Bones",
-        "quantity": 1
-      },
-      "canSlayer": true,
-      "isBoss": false,
-      "selectedSpell": "melvorD:WaterStrike"
-    },
-    {
-      "id": "blue_dragon",
-      "name": "Frost Dragon",
-      "media": "assets/monsters/blue_dragon.png",
-      "levels": {
-        "Attack": 20,
-        "Defence": 30,
-        "Hitpoints": 80,
-        "Magic": 1,
-        "Ranged": 1,
-        "Strength": 20
-      },
-      "equipmentStats": [
-        {
-          "key": "attackSpeed",
-          "value": 2400
-        }
-      ],
-      "ignoreCompletion": false,
-      "attackType": "melee",
-      "specialAttacks": [
-      ],
-      "passives": [],
-      "lootChance": 75,
-      "lootTable": [
-        {
-          "itemID": "melvorD:Glass_Bottle",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "melvorD:Old_Boot",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "melvorD:Old_Hat",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "melvorD:Rope",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "melvorD:Rubber_Ducky",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 50
-        },
-        {
-          "itemID": "melvorD:Rusty_Key",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "melvorD:Seaweed",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "melvorD:Shell",
-          "maxQuantity": 3,
-          "minQuantity": 1,
-          "weight": 75
-        },
-        {
-          "itemID": "tes:Juvenile_Mudcrab",
-          "maxQuantity": 1,
-          "minQuantity": 1,
-          "weight": 100
-        },
-        {
-          "itemID": "tes:gold_coin",
-          "maxQuantity": 100,
-          "minQuantity": 1,
-          "weight": 90
-        },
-        {
-          "itemID": "tes:lootbox",
-          "maxQuantity": 100,
-          "minQuantity": 1,
-          "weight": 20
-        }
-      ],
-      "gpDrops": {
-        "min": 20,
-        "max": 1
-      },
-      "bones": {
-        "itemID": "melvorD:Bones",
-        "quantity": 1
-      },
-      "canSlayer": true,
-      "isBoss": false,
-      "selectedSpell": "melvorD:WaterStrike"
-    },
       {
         "id": "Giant_Mudcrab",
         "name": "Giant Mudcrab",
@@ -12560,8 +13187,7 @@
         ],
         "ignoreCompletion": false,
         "attackType": "melee",
-        "specialAttacks": [
-        ],
+        "specialAttacks": [],
         "passives": [],
         "lootChance": 75,
         "lootTable": [
@@ -12664,8 +13290,7 @@
         ],
         "ignoreCompletion": false,
         "attackType": "melee",
-        "specialAttacks": [
-        ],
+        "specialAttacks": [],
         "passives": [],
         "lootChance": 75,
         "lootTable": [
@@ -13161,7 +13786,7 @@
           "itemID": "melvorD:Bones",
           "quantity": 1
         },
-        "canSlayer": true,
+        "canSlayer": false,
         "isBoss": false,
         "selectedSpell": "melvorD:EarthWave"
       },
@@ -13232,7 +13857,7 @@
           "itemID": "melvorD:Bones",
           "quantity": 1
         },
-        "canSlayer": true,
+        "canSlayer": false,
         "isBoss": false,
         "selectedSpell": "melvorD:EarthWave"
       },
@@ -13303,7 +13928,7 @@
           "itemID": "melvorD:Bones",
           "quantity": 1
         },
-        "canSlayer": true,
+        "canSlayer": false,
         "isBoss": false,
         "selectedSpell": "melvorD:EarthWave"
       },
@@ -13374,7 +13999,7 @@
           "itemID": "melvorD:Bones",
           "quantity": 1
         },
-        "canSlayer": true,
+        "canSlayer": false,
         "isBoss": false,
         "selectedSpell": "melvorD:EarthWave"
       },
@@ -13445,7 +14070,7 @@
           "itemID": "melvorD:Bones",
           "quantity": 1
         },
-        "canSlayer": true,
+        "canSlayer": false,
         "isBoss": false,
         "selectedSpell": "melvorD:EarthWave"
       },
@@ -13516,7 +14141,7 @@
           "itemID": "melvorD:Bones",
           "quantity": 1
         },
-        "canSlayer": true,
+        "canSlayer": false,
         "isBoss": false,
         "selectedSpell": "melvorD:EarthWave"
       },
@@ -13587,7 +14212,7 @@
           "itemID": "melvorD:Bones",
           "quantity": 1
         },
-        "canSlayer": true,
+        "canSlayer": false,
         "isBoss": false,
         "selectedSpell": "melvorD:EarthWave"
       },
@@ -13658,7 +14283,7 @@
           "itemID": "melvorD:Bones",
           "quantity": 1
         },
-        "canSlayer": true,
+        "canSlayer": false,
         "isBoss": false,
         "selectedSpell": "melvorD:EarthWave"
       },
@@ -16712,7 +17337,8 @@
         "attackType": "ranged",
         "specialAttacks": [],
         "passives": [
-          "tes:Assassin_Target"
+          "tes:Assassin_Target",
+          "tes:Assassin"
         ],
         "lootChance": 100,
         "lootTable": [
@@ -16763,7 +17389,8 @@
         "attackType": "melee",
         "specialAttacks": [],
         "passives": [
-          "tes:Assassin_Target"
+          "tes:Assassin_Target",
+          "tes:Assassin"
         ],
         "lootChance": 100,
         "lootTable": [
@@ -16808,7 +17435,8 @@
         "attackType": "magic",
         "specialAttacks": [],
         "passives": [
-          "tes:Assassin_Target"
+          "tes:Assassin_Target",
+          "tes:Assassin"
         ],
         "lootChance": 100,
         "lootTable": [
@@ -16853,7 +17481,8 @@
         "attackType": "melee",
         "specialAttacks": [],
         "passives": [
-          "tes:Assassin_Target"
+          "tes:Assassin_Target",
+          "tes:Assassin"
         ],
         "lootChance": 100,
         "lootTable": [
@@ -16898,7 +17527,8 @@
         "attackType": "melee",
         "specialAttacks": [],
         "passives": [
-          "tes:Assassin_Target"
+          "tes:Assassin_Target",
+          "tes:Assassin"
         ],
         "lootChance": 100,
         "lootTable": [
@@ -17346,6 +17976,217 @@
         "selectedSpell": "melvorD:WindSurge"
       },
       {
+        "id": "Mannimarco",
+        "name": "Mannimarco",
+        "media": "assets/monsters/Mannimarco.png",
+        "levels": {
+          "Attack": 9999,
+          "Defence": 9999,
+          "Hitpoints": 40000,
+          "Magic": 9999,
+          "Ranged": 9999,
+          "Strength": 9999
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3000
+          },
+          {
+            "key": "damageReduction",
+            "value": 99
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 999
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 999
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 999
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 999
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 999
+          }
+        ],
+        "ignoreCompletion": false,
+        "attackType": "magic",
+        "specialAttacks": [
+          "tes:Skeleton_Army",
+          "melvorF:MarkofDeath"
+        ],
+        "overrideSpecialChances": [],
+        "passives": [
+          "melvorF:Purity",
+          "tes:Wardsave_10",
+          "tes:Assassin"
+        ],
+        "lootChance": 1,
+        "lootTable": [
+          {
+            "itemID":"tes:Necromancer_Robes",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID":"tes:Bloodworm_Helm",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID":"tes:Necromanceramulet",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID":"tes:Staff_of_Worms",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 1
+          }
+        ],
+        "gpDrops": {
+          "min": 0,
+          "max": 1000000
+        },
+        "bones": {
+          "itemID":"melvorD:Magic_Bones",
+          "quantity": 100
+        },
+        "canSlayer": false,
+        "isBoss": true,
+        "selectedSpell": "melvorD:EarthSurge"
+      },
+      {
+        "id": "MartinSeptim",
+        "name": "Martin Septim",
+        "media": "assets/monsters/MartinSeptim.png",
+        "levels": {
+          "Attack": 2000,
+          "Defence": 2000,
+          "Hitpoints": 20000,
+          "Magic": 2000,
+          "Ranged": 2000,
+          "Strength": 2000
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2400
+          },
+          {
+            "key": "damageReduction",
+            "value": 99
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 999
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 999
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 999
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 999
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 999
+          }
+        ],
+        "ignoreCompletion": false,
+        "attackType": "melee",
+        "specialAttacks": [
+          "tes:Blades_Bodyguard",
+          "melvorD:Heal",
+          "melvorF:MarkofDeath",
+          "melvorF:GreaterDragonbreath"
+        ],
+        "overrideSpecialChances": [20, 10, 30, 10],
+        "passives": [
+          "melvorF:Purity",
+          "tes:Wardsave_10"
+        ],
+        "lootChance": 1,
+        "lootTable": [
+          {
+            "itemID":"tes:Amulet_Of_Kings",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID":"tes:Helm_of_the_Crusader",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID":"tes:Shield_of_the_Crusader",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID":"tes:Boots_of_the_Crusader",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID":"tes:Cuirass_of_the_Crusader",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID":"tes:Gauntlets_of_the_Crusader",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID":"tes:Mace_of_the_Crusader",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID":"tes:Sword_of_the_Crusader",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          }
+        ],
+        "gpDrops": {
+          "min": 0,
+          "max": 1000000
+        },
+        "bones": {
+          "itemID":"melvorD:Dragon_Bones",
+          "quantity": 100
+        },
+        "canSlayer": false,
+        "isBoss": true,
+        "selectedSpell": "melvorD:WindSurge"
+      },
+      {
         "id": "Divine_Crusader",
         "name": "Crusader Pelinal Whitestrake",
         "media": "assets/monsters/Divine_Crusader.png",
@@ -17360,7 +18201,7 @@
         "equipmentStats": [
           {
             "key": "attackSpeed",
-            "value": 2600
+            "value": 2400
           },
           {
             "key": "damageReduction",
@@ -19555,6 +20396,47 @@
     ],
     "attacks": [
       {
+        "id": "Skeleton_Army",
+        "name": "Skeleton Army",
+        "description": "${attackDamageMaxValue0} damage ${hitCount} times.",
+        "defaultChance": 33,
+        "damage": [
+          {
+            "damageType": "Custom",
+            "character": "Attacker",
+            "maxRoll": "FixedPlusMaxHit50",
+            "maxPercent": 40,
+            "roll": false
+          }
+        ],
+        "prehitEffects": [],
+        "onhitEffects": [
+        ],
+        "cantMiss": false,
+        "attackCount": 10,
+        "attackInterval": 100,
+        "lifesteal": 0
+      },
+      {
+        "id": "Blades_Bodyguard",
+        "name": "Blades Bodyguard",
+        "description": "${attackDamageMaxValue0} damage ${hitCount} times.",
+        "defaultChance": 33,
+        "damage": [
+          {
+            "damageType": "Normal",
+            "amplitude": 300
+          }
+        ],
+        "prehitEffects": [],
+        "onhitEffects": [
+        ],
+        "cantMiss": false,
+        "attackCount": 5,
+        "attackInterval": 100,
+        "lifesteal": 0
+      },
+      {
         "id": "Goblin_Curse",
         "name": "Goblin_Curse",
         "description": "Curse you!",
@@ -20345,9 +21227,25 @@
           "tes:Oblivion"
         ],
         "afterID": "melvorF:UnhallowedWasteland"
+      },
+      {
+        "insertAt": "End",
+        "ids": ["tes:The_White_Gold_Tower"]
       }
     ],
     "pets": [
+      {
+        "id": "HolySymbol",
+        "name": "Holy Symbol",
+        "media": "assets/icons/HolySymbol.png",
+        "scaleChanceWithMasteryPool": false,
+        "ignoreCompletion": false,
+        "modifiers": {
+          "increasedHolyDustFromBlessedOffering": 20
+        },
+        "activeInRaid": false,
+        "hint": "The White Gold Tower"
+      },
       {
         "id": "Adoring_Fan",
         "name": "Adoring Fan",
@@ -22211,10 +23109,6 @@
               "itemCosts": [
                 {
                   "id": "melvorD:Air_Rune",
-                  "quantity": 4
-                },
-                {
-                  "id": "melvorD:Body_Rune",
                   "quantity": 2
                 }
               ],
@@ -22224,18 +23118,14 @@
             },
             {
               "id": "Calcinator",
-              "baseExperience": 35,
+              "baseExperience": 50,
               "baseQuantity": 1,
               "categoryID": "tes:Alchemy",
               "gpCost": 0,
               "itemCosts": [
                 {
-                  "id": "melvorD:Sapphire",
-                  "quantity": 1
-                },
-                {
                   "id": "melvorD:Fire_Rune",
-                  "quantity": 4
+                  "quantity": 2
                 }
               ],
               "level": 30,
@@ -22244,18 +23134,14 @@
             },
             {
               "id": "Retort",
-              "baseExperience": 45,
+              "baseExperience": 70,
               "baseQuantity": 1,
               "categoryID": "tes:Alchemy",
               "gpCost": 0,
               "itemCosts": [
                 {
-                  "id": "melvorD:Treasure_Chest",
-                  "quantity": 1
-                },
-                {
                   "id": "melvorD:Water_Rune",
-                  "quantity": 4
+                  "quantity": 2
                 }
               ],
               "level": 40,
@@ -22264,18 +23150,14 @@
             },
             {
               "id": "MortarAndPestle",
-              "baseExperience": 55,
+              "baseExperience": 90,
               "baseQuantity": 1,
               "categoryID": "tes:Alchemy",
               "gpCost": 0,
               "itemCosts": [
                 {
-                  "id": "melvorF:Crate_Of_Basic_Supplies",
-                  "quantity": 1
-                },
-                {
                   "id": "melvorD:Earth_Rune",
-                  "quantity": 4
+                  "quantity": 2
                 }
               ],
               "level": 50,
@@ -22303,10 +23185,6 @@
                 },
                 {
                   "id": "tes:MortarAndPestle",
-                  "quantity": 1
-                },
-                {
-                  "id": "melvorF:Steam_Rune",
                   "quantity": 1
                 }
               ],
@@ -22360,10 +23238,6 @@
                 {
                   "id": "tes:MortarAndPestle",
                   "quantity": 1
-                },
-                {
-                  "id": "melvorF:Steam_Rune",
-                  "quantity": 1
                 }
               ],
               "level": 70,
@@ -22392,10 +23266,6 @@
                 {
                   "id": "tes:MortarAndPestle",
                   "quantity": 1
-                },
-                {
-                  "id": "melvorF:Steam_Rune",
-                  "quantity": 1
                 }
               ],
               "level": 80,
@@ -22423,10 +23293,6 @@
                 },
                 {
                   "id": "tes:MortarAndPestle",
-                  "quantity": 1
-                },
-                {
-                  "id": "melvorF:Steam_Rune",
                   "quantity": 1
                 }
               ],
@@ -22479,10 +23345,6 @@
                 },
                 {
                   "id": "tes:MortarAndPestle",
-                  "quantity": 1
-                },
-                {
-                  "id": "melvorF:Steam_Rune",
                   "quantity": 1
                 }
               ],
@@ -22780,7 +23642,9 @@
               "weight": 200
             }
           ],
-          "junkItemIDs": ["tes:gold_coin"],
+          "junkItemIDs": [
+            "tes:gold_coin"
+          ],
           "areas": [
             {
               "id": "Broken_Fang_Cave",
@@ -22953,6 +23817,25 @@
             }
           ]
         }
+      },
+      {
+        "id": "melvorD:Dragon_Valley",
+        "monsters": {
+          "add": [
+            {
+              "monsterID": "tes:green_dragon"
+            },
+            {
+              "monsterID": "tes:red_dragon"
+            },
+            {
+              "monsterID": "tes:blue_dragon"
+            },
+            {
+              "monsterID": "tes:skeleton_Archer"
+            }
+          ]
+        }
       }
     ],
     "monsters": [
@@ -22979,6 +23862,57 @@
               "minQuantity": 1,
               "weight": 1
             }
+          ]
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "melvorF:Elder_Chest",
+        "dropTable": {
+          "add": [
+            {
+              "itemID": "tes:Imperial_Dragon_Helmet",
+              "maxQuantity": 1,
+              "minQuantity": 1,
+              "weight": 10
+            },
+            {
+              "itemID": "tes:Imperial_Dragon_Cloak",
+              "maxQuantity": 1,
+              "minQuantity": 1,
+              "weight": 10
+            },
+            {
+              "itemID": "tes:Imperial_Dragon_Shield",
+              "maxQuantity": 1,
+              "minQuantity": 1,
+              "weight": 10
+            },
+            {
+              "itemID": "tes:Imperial_Dragon_Boots",
+              "maxQuantity": 1,
+              "minQuantity": 1,
+              "weight": 10
+            },
+            {
+              "itemID": "tes:Imperial_Dragon_Armor",
+              "maxQuantity": 1,
+              "minQuantity": 1,
+              "weight": 10
+            },
+            {
+              "itemID": "tes:Imperial_Dragon_Gauntlets",
+              "maxQuantity": 1,
+              "minQuantity": 1,
+              "weight": 10
+            },
+            {
+              "itemID": "tes:Blades_Sword",
+              "maxQuantity": 1,
+              "minQuantity": 1,
+              "weight": 10
+            }            
           ]
         }
       }
