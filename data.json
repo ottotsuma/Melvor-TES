@@ -1933,7 +1933,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 2000
+            "cost": 1000
           },
           "items": [
             {
@@ -1999,7 +1999,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 10000
+            "cost": 5000
           },
           "items": [],
           "raidCoins": {
@@ -2060,7 +2060,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 50000
+            "cost": 10000
           },
           "items": [
             {
@@ -2138,7 +2138,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 200000
+            "cost": 100000
           },
           "items": [
             {
@@ -2204,7 +2204,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 1000000
+            "cost": 500000
           },
           "items": [
             {
@@ -2270,7 +2270,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 5000000
+            "cost": 1000000
           },
           "items": [
             {
@@ -2341,7 +2341,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 10000000
+            "cost": 2000000
           },
           "items": [
             {
@@ -2407,7 +2407,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 50000000
+            "cost": 5000000
           },
           "items": [
             {
@@ -2473,7 +2473,7 @@
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 100000000
+            "cost": 10000000
           },
           "items": [],
           "raidCoins": {
@@ -4352,7 +4352,7 @@
         "purchaseRequirements": [
           {
             "type": "ShopPurchase",
-            "purchaseID": "tes:Listener_Rank",
+            "purchaseID": "tes:Speaker_Rank",
             "count": 1
           }
         ],
@@ -6332,11 +6332,11 @@
           "tes:Shadowhunt_Shop",
           "tes:Black_Band_Shop",
           "tes:The_Deceiver_Shop",
+          "tes:BladeOfWoe_Shop",
           "tes:Black_Hand_Hood_Shop",
           "tes:Black_Hand_Robe_Shop",
           "tes:Scales_of_Pitiless_Justice_Shop",
-          "tes:Shadowmere_Shop",
-          "tes:BladeOfWoe_Shop"
+          "tes:Shadowmere_Shop"
         ]
       }
     ],

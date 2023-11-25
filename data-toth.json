@@ -1018,8 +1018,8 @@
     ],
     "monsters": [
       {
-        "id": "Unedad_Junior_Farmer",
-        "name": "Unedad Junior Farmer",
+        "id": "undead_Junior_Farmer",
+        "name": "undead Junior Farmer",
         "attackType": "ranged",
         "bones": {
           "itemID": "melvorD:Dragon_Bones",
@@ -1098,7 +1098,7 @@
         },
         "ignoreCompletion": true,
         "isBoss": true,
-        "canSlayer": true,
+        "canSlayer": false,
         "selectedSpell": "melvorF:NaturesWrath"
       },
       {
@@ -1182,7 +1182,7 @@
         },
         "ignoreCompletion": true,
         "isBoss": true,
-        "canSlayer": true,
+        "canSlayer": false,
         "selectedSpell": "melvorF:NaturesWrath"
       }
     ]
@@ -1207,7 +1207,7 @@
         "monsters": {
           "add": [
             {
-              "monsterID": "tes:Unedad_Junior_Farmer",
+              "monsterID": "tes:undead_Junior_Farmer",
               "insertAt": 3
             }
           ]

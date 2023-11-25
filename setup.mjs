@@ -2,10 +2,35 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
     // Changes to do:
     // "tes:Moth_Priest"
     // Mages shop is half empty
+    //  get-childitem *.png | foreach { rename-item $_ $_.Name.Replace("-min", "") }
 
     // game.testForOffline(1)
 
     // New modifiers
+    // increasedChanceToApplySlowOnSpawn: number,
+    // decreasedChanceToApplySlowOnSpawn: number,
+    // increasedChanceToApplyStunOnSpawn: number,
+    // decreasedChanceToApplyStunOnSpawn: number,
+    // increasedChanceToApplyPoisonOnSpawn: number,
+    // decreasedChanceToApplyPoisonOnSpawn: number,
+    // increasedChanceToApplyDeadlyPoisonOnSpawn: number,
+    // decreasedChanceToApplyDeadlyPoisonOnSpawn: number,
+
+    // deathMark: number,
+    // increasedDeathMarkOnHit: number,
+    // increasedChanceToApplyStackOfDeathMark: number,
+    // decreasedChanceToApplyStackOfDeathMark: number,
+    // increasedDeathMarkImmunity: number,
+    // decreasedDeathMarkImmunity: number,
+
+    // increasedDamageTakenFromAirSpells: number,
+    // decreasedDamageTakenFromAirSpells: number,
+    // increasedDamageTakenFromWaterSpells: number,
+    // decreasedDamageTakenFromWaterSpells: number,
+    // increasedDamageTakenFromEarthSpells: number,
+    // decreasedDamageTakenFromEarthSpells: number,
+    // increasedDamageTakenFromFireSpells: number,
+    // decreasedDamageTakenFromFireSpells: number,
     modifierData.tes_increasedDragonBreathDamage = {
         get langDescription() {
             return getLangString('tes_increasedDragonBreathDamage');
@@ -51,7 +76,6 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         isNegative: false,
         tags: ['combat']
     };
-    // end new modifiers
 
     // variables to move between load functions
     let Khajiit_Item_1 = ""
@@ -62,172 +86,208 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
     let Khajiit_Item_3 = ""
     let Khajiit_Item_3_Price = 100
     const bards_college_items = []
-    // end variables to move between load functions
+
+    // Local variables
+    const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
+    const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
+    const TothEntitlement = cloudManager.hasTotHEntitlement
+    const dboxLoaded = mod.manager.getLoadedModList().includes('dbox')
 
     onModsLoaded(async (ctx) => {
+        // Translations
         try {
-            // Translations
-            const en_data = {
-                tes_increasedDragonBreathDamage: "Increase damage taken from dragon breaths by +${value}",
-                tes_wardsave: "+${value}% (MAX: 90%) to take 0 damage from a hit.",
-                tes_increasedFlatDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}.",
-                tes_increasedPercDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}%.",
-                tes_decreaseFlatDamageWhileTargetHasMaxHP: "Decrease damage taken while you are fully healed by +${value}.",
-                MISC_STRING_The_Five_Tenets: "The Five Tenets",
-                MISC_STRING_Dead_Drop_Orders_1: "Dead Drop Orders",
-                MISC_STRING_Dead_Drop_Orders_2: "Dead Drop Orders",
-                MISC_STRING_Dead_Drop_Orders_3: "Dead Drop Orders",
-                MISC_STRING_Dead_Drop_Orders_4: "Dead Drop Orders",
-                MISC_STRING_Dead_Drop_Orders_5: "Dead Drop Orders",
-                MISC_STRING_Dead_Drop_Orders_6: "Dead Drop Orders",
-                MISC_STRING_Dead_Drop_Orders_7: "Dead Drop Orders",
-                MISC_STRING_Dead_Drop_Orders_8: "Dead Drop Orders",
-                MISC_STRING_Thieves_Orders: "Thieves_Orders",
-                PASSIVES_NAME_EventPassive1: "Unusual Passive",
-                PASSIVES_NAME_EventPassive2: "Unusual Passive",
-                PASSIVES_NAME_EventPassive3: "Unusual Passive",
-                PASSIVES_NAME_EventPassive4: "Unusual Passive",
-                PASSIVES_NAME_EventPassive5: "Unusual Passive",
-                PASSIVES_NAME_EventPassive6: "Unusual Passive",
-                PASSIVES_NAME_EventPassive7: "Unusual Passive",
-                PASSIVES_NAME_EventPassive8: "Unusual Passive",
-                PASSIVES_NAME_EventPassive9: "Unusual Passive",
-                PASSIVES_NAME_EventPassive10: "Unusual Passive",
-                PASSIVES_NAME_EventPassive11: "Unusual Passive",
-                PASSIVES_NAME_EventPassive12: "Unusual Passive",
-                tes_Bards_College_Global_Droptable_Overview_General_Functionality: 'Each item on the global droptable has its own roll. These rolls are separate from the regular droptable and do not replace any other loot.',
-                tes_Bards_College_Global_Droptable_Overview_Item_Pickup_Info: "Items are not put in the loot container, but instead placed into the bank immediately. That is, if free space is available.",
-                tes_Bards_College_Global_Droptable_Overview_Dungeon_Limitation: "The drop rate for each item is inverse to the monsters combat level.",
+            try {
+                const en_data = {
+                    MONSTER_TYPE_SINGULAR_Elf: "Elf",
+                    MONSTER_TYPE_PLURAL_Elf: "Elves",
+                    tes_increasedDragonBreathDamage: "Increase damage taken from dragon breaths by +${value}",
+                    tes_wardsave: "+${value}% (MAX: 90%) to take 0 damage from a hit.",
+                    tes_increasedFlatDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}.",
+                    tes_increasedPercDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}%.",
+                    tes_decreaseFlatDamageWhileTargetHasMaxHP: "Decrease damage taken while you are fully healed by +${value}.",
+                    // tes_decreasePercDamageToElves: "-${value}%, less damage to elves.",
+                    // tes_increasedPercDamageToElves: "${value}% extra damage to elves.",
+                    // tes_decreasePercDamageFromElves: "-${value}%, less damage from elves.",
+                    // tes_increasedPercDamageFromElves: "${value}% extra damage from elves.",
+                    MISC_STRING_The_Five_Tenets: "The Five Tenets",
+                    MISC_STRING_Dead_Drop_Orders_1: "Dead Drop Orders",
+                    MISC_STRING_Dead_Drop_Orders_2: "Dead Drop Orders",
+                    MISC_STRING_Dead_Drop_Orders_3: "Dead Drop Orders",
+                    MISC_STRING_Dead_Drop_Orders_4: "Dead Drop Orders",
+                    MISC_STRING_Dead_Drop_Orders_5: "Dead Drop Orders",
+                    MISC_STRING_Dead_Drop_Orders_6: "Dead Drop Orders",
+                    MISC_STRING_Dead_Drop_Orders_7: "Dead Drop Orders",
+                    MISC_STRING_Dead_Drop_Orders_8: "Dead Drop Orders",
+                    MISC_STRING_Thieves_Orders: "Thieves_Orders",
+                    PASSIVES_NAME_EventPassive1: "Unusual Passive",
+                    PASSIVES_NAME_EventPassive2: "Unusual Passive",
+                    PASSIVES_NAME_EventPassive3: "Unusual Passive",
+                    PASSIVES_NAME_EventPassive4: "Unusual Passive",
+                    PASSIVES_NAME_EventPassive5: "Unusual Passive",
+                    PASSIVES_NAME_EventPassive6: "Unusual Passive",
+                    PASSIVES_NAME_EventPassive7: "Unusual Passive",
+                    PASSIVES_NAME_EventPassive8: "Unusual Passive",
+                    PASSIVES_NAME_EventPassive9: "Unusual Passive",
+                    PASSIVES_NAME_EventPassive10: "Unusual Passive",
+                    PASSIVES_NAME_EventPassive11: "Unusual Passive",
+                    PASSIVES_NAME_EventPassive12: "Unusual Passive",
+                    tes_Bards_College_Global_Droptable_Overview_General_Functionality: 'Each item on the global droptable has its own roll. These rolls are separate from the regular droptable and do not replace any other loot.',
+                    tes_Bards_College_Global_Droptable_Overview_Item_Pickup_Info: "Items are not put in the loot container, but instead placed into the bank immediately. That is, if free space is available.",
+                    tes_Bards_College_Global_Droptable_Overview_Dungeon_Limitation: "The drop rate for each item is inverse to the monsters combat level.",
 
-                tes_Bards_College_Global_Droptable_Overview_Base_Droprate: "Base chance",
-                // Global_Droptable_Overview_Limitation_Dragons_Only: "Only dropped by Dragons",
-                // Global_Droptable_Overview_Limitation_Undead_Only: "Only dropped by Undead",
+                    tes_Bards_College_Global_Droptable_Overview_Base_Droprate: "Base chance",
+                    // Global_Droptable_Overview_Limitation_Dragons_Only: "Only dropped by Dragons",
+                    // Global_Droptable_Overview_Limitation_Undead_Only: "Only dropped by Undead",
+                }
+                for (const [key, value] of Object.entries(en_data)) {
+                    loadedLangJson[key] = value;
+                }
+                // End Translations
+            } catch (error) {
+                console.log("onModsLoaded Translations ", error)
             }
-            for (const [key, value] of Object.entries(en_data)) {
-                loadedLangJson[key] = value;
-            }
-            // End Translations
-
             // Packages to load based on entitlement
-            const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
-            const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
-            if (cloudManager.hasTotHEntitlement) {
-                await ctx.gameData.addPackage('data-toth.json');
-            }
-            // add items to bards college before mods load
-            bards_college_items.push(game.items.getObjectByID(`tes:Sweetroll`))
-            bards_college_items[0].baseChanceDenominator = "1000"
-            bards_college_items.push(game.items.getObjectByID(`tes:Bard_Drum`))
-            bards_college_items[1].baseChanceDenominator = "10000"
-            bards_college_items.push(game.items.getObjectByID(`tes:Bard_Flute`))
-            bards_college_items[2].baseChanceDenominator = "10000"
-            bards_college_items.push(game.items.getObjectByID(`tes:Bard_Lute`))
-            bards_college_items[3].baseChanceDenominator = "10000"
-            bards_college_items.push(game.items.getObjectByID(`tes:King_Olafs_Verse`))
-            bards_college_items[4].baseChanceDenominator = "Random (Hard)"
-            bards_college_items[4].chanceIncreaseInfo = "Monster combat level increases this items drop chance."
-            // add mods
-            if (mythLoaded) {
-                // increasedMusicHireCost: number;
-                // decreasedMusicHireCost: number;
-                // increasedMusicGP: number;
-                // decreasedMusicGP: number;
-                // increasedChanceToObtainShrimpWhileTrainingMusic: number;
-                // decreasedChanceToObtainShrimpWhileTrainingMusic: number;
-                // increasedSheetMusicDropRate: number;
-                // decreasedSheetMusicDropRate: number;
-                // increasedMusicAdditionalRewardRoll: number;
-                // decreasedMusicAdditionalRewardRoll: number;
-                await ctx.gameData.addPackage('data-bard.json');
-                bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Topaz_Gem`))
-                bards_college_items[5].baseChanceDenominator = "1000"
-                bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Ruby_Gem`))
-                bards_college_items[6].baseChanceDenominator = "1000"
-                bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Sapphire_Gem`))
-                bards_college_items[7].baseChanceDenominator = "1000"
-            }
-            if (kcm) {
-                const cmim = mod.api.customModifiersInMelvor;
-                if (!cmim) {
-                    return;
+            try {
+                if (TothEntitlement) {
+                    await ctx.gameData.addPackage('data-toth.json');
                 }
-                await ctx.gameData.addPackage('custom-mods.json');
-                cmim.addDragons(["tes:Ysmir_Iceheart", "tes:Alduin", "tes:Elsweyr_Dragon", "tes:red_dragon", "tes:green_dragon", "tes:blue_dragon", "tes:MartinSeptim"]);
-                cmim.addHumans(["tes:Necromancer", "tes:Bandit", "tes:Thief", "tes:Havilstein_Hoar", "tes:Matthias_Draconis", "tes:Perennia_Draconis", "tes:Caelia_Draconis", "tes:Sibylla_Draconis", "tes:Andreas_Draconis", "tes:Celedaen", "tes:Imperial_Watch",]);
-                cmim.addUndeads(["tes:Harkon", "tes:Harkon2", "tes:Zombie", "tes:Lich", "tes:skeleton_Archer", "tes:Mannimarco"]);
-            }
-            // Add items after moads load, and patch death
-            ctx.patch(CombatManager, "onEnemyDeath").after(() => {
-                try {
-                    // Inverse: 1 / 10,000
-                    if (game.combat.enemy.monster.combatLevel > 200 && Math.random() < ((game.combat.enemy.monster.combatLevel * Math.random()) / 10000)) {
-                        const tes_items = ["tes:King_Olafs_Verse"]
-                        const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
-                        const tes_item = game.items.getObjectByID(`${tes_itemId}`);
-                        if (tes_item === undefined) {
-                            throw new Error(`Invalid item ID ${tes_itemId}`);
-                        }
-                        game.bank.addItem(tes_item, 1, true, true, false);
-                    }
-                    // 1/10,000
-                    if (game.combat.enemy.monster.combatLevel < 200 && Math.random() < 100 / (10000 + game.combat.enemy.monster.combatLevel)) {
-                        const tes_items = ["tes:Bard_Drum", "tes:Bard_Flute", "tes:Bard_Lute"]
-                        const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
-                        const tes_item = game.items.getObjectByID(`${tes_itemId}`);
-                        if (tes_item === undefined) {
-                            throw new Error(`Invalid item ID ${tes_itemId}`);
-                        }
-                        game.bank.addItem(tes_item, 1, true, true, false);
-                    }
-                    // Myth & 1/1,000
-                    if (mythLoaded && Math.random() < 100 / (1000 + game.combat.enemy.monster.combatLevel)) {
-                        const tes_items = ["mythMusic:Polished_Topaz_Gem", "mythMusic:Polished_Ruby_Gem", "mythMusic:Polished_Sapphire_Gem"]
-                        const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
-                        const tes_item = game.items.getObjectByID(`${tes_itemId}`);
-                        if (tes_item === undefined) {
-                            throw new Error(`Invalid item ID ${tes_itemId}`);
-                        }
-                        game.bank.addItem(tes_item, 1, true, true, false);
-                    }
-                    // 1/1,000
-                    if (Math.random() < 100 / (1000 + game.combat.enemy.monster.combatLevel)) {
-                        const tes_items = ["tes:Sweetroll"]
-                        const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
-                        const tes_item = game.items.getObjectByID(tes_itemId);
-                        if (tes_item === undefined) {
-                            throw new Error(`Invalid item ID ${tes_itemId}`);
-                        }
-                        game.bank.addItem(tes_item, 1, true, true, false);
-                    }
-                } catch (error) {
-                    console.log("onEnemyDeath patch ", error)
+                // add items to bards college before mods load
+                bards_college_items.push(game.items.getObjectByID(`tes:Sweetroll`))
+                bards_college_items[0].baseChanceDenominator = "1000"
+                bards_college_items.push(game.items.getObjectByID(`tes:Bard_Drum`))
+                bards_college_items[1].baseChanceDenominator = "10000"
+                bards_college_items.push(game.items.getObjectByID(`tes:Bard_Flute`))
+                bards_college_items[2].baseChanceDenominator = "10000"
+                bards_college_items.push(game.items.getObjectByID(`tes:Bard_Lute`))
+                bards_college_items[3].baseChanceDenominator = "10000"
+                bards_college_items.push(game.items.getObjectByID(`tes:King_Olafs_Verse`))
+                bards_college_items[4].baseChanceDenominator = "Random (Hard)"
+                bards_college_items[4].chanceIncreaseInfo = "Monster combat level increases this items drop chance."
+                if (mythLoaded) {
+                    // increasedMusicHireCost: number;
+                    // decreasedMusicHireCost: number;
+                    // increasedMusicGP: number;
+                    // decreasedMusicGP: number;
+                    // increasedChanceToObtainShrimpWhileTrainingMusic: number;
+                    // decreasedChanceToObtainShrimpWhileTrainingMusic: number;
+                    // increasedSheetMusicDropRate: number;
+                    // decreasedSheetMusicDropRate: number;
+                    // increasedMusicAdditionalRewardRoll: number;
+                    // decreasedMusicAdditionalRewardRoll: number;
+                    await ctx.gameData.addPackage('data-bard.json');
+                    bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Topaz_Gem`))
+                    bards_college_items[5].baseChanceDenominator = "2500"
+                    bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Ruby_Gem`))
+                    bards_college_items[6].baseChanceDenominator = "2500"
+                    bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Sapphire_Gem`))
+                    bards_college_items[7].baseChanceDenominator = "2500"
                 }
-            });
+                if (kcm) {
+                    const cmim = mod.api.customModifiersInMelvor;
+                    if (!cmim) {
+                        return;
+                    }
+                    const DragonList = ["tes:Ysmir_Iceheart", "tes:Alduin", "tes:Elsweyr_Dragon", "tes:red_dragon", "tes:green_dragon", "tes:blue_dragon", "tes:MartinSeptim"]
+                    const HumansList = ["tes:Necromancer", "tes:Bandit", "tes:Thief", "tes:Havilstein_Hoar", "tes:Matthias_Draconis", "tes:Perennia_Draconis", "tes:Caelia_Draconis", "tes:Sibylla_Draconis", "tes:Andreas_Draconis", "tes:Celedaen", "tes:Imperial_Watch"]
+                    const UndeadList = ["tes:Harkon", "tes:Harkon2", "tes:Zombie", "tes:Lich", "tes:skeleton_Archer", "tes:Mannimarco"]
+                    if (TothEntitlement) {
+                        UndeadList.push("tes:undead_Junior_Farmer")
+                    }
+                    if (mythLoaded) {
+                        HumansList.push("mythMusic:Jester", "mythMusic:Enchanted_Jester", "mythMusic:Mystic_Jester")
+                    }
+                    cmim.addMonsters("Dragon", DragonList)
+                    cmim.addMonsters("Human", HumansList)
+                    cmim.addMonsters("Undead", UndeadList)
+                    cmim.registerOrUpdateType("Elf", "Elves", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", ["tes:Mannimarco"], true);
+                    cmim.forceBaseModTypeActive("Dragon");
+                    cmim.forceBaseModTypeActive("Undead");
+                    cmim.forceBaseModTypeActive("Human");
+                    cmim.forceBaseModTypeActive("Animal");
+                    cmim.forceBaseModTypeActive("Demon");
+                    cmim.forceBaseModTypeActive("Elemental");
+                    cmim.forceBaseModTypeActive("MythicalCreature");
+                    cmim.forceBaseModTypeActive("SeaCreature");
 
-            ctx.patch(Skill, 'levelUp').after(() => {
-                // addXP
-                if (game && game.activeAction && game.activeAction._localID) {
-                    if (game.activeAction._localID === "Magic") {
-                        if (rollPercentage(10)) {
-                            const tes_item = game.items.getObjectByID("tes:magic_mask");
-                            if (tes_item === undefined) {
-                                throw new Error(`Invalid item ID "tes:magic_mask"`);
-                            }
-                            game.bank.addItem(tes_item, 1, true, true, false);
-                        }
-                    }
-                    if (game.activeAction._localID === "Combat") {
-                        if (rollPercentage(10)) {
-                            const tes_item = game.items.getObjectByID("tes:dragonbornhat");
-                            if (tes_item === undefined) {
-                                throw new Error(`Invalid item ID "tes:dragonbornhat"`);
-                            }
-                            game.bank.addItem(tes_item, 1, true, true, false);
-                        }
-                    }
+                    await ctx.gameData.addPackage('custom-mods.json');
                 }
-            })
-            // End Packages to load based on entitlement
+            } catch (error) {
+                console.log('onModsLoaded packages ', error)
+            }
+            // skill patches
+            try {
+                ctx.patch(CombatManager, "onEnemyDeath").after(() => {
+                    try {
+                        // Inverse: 1 / 10,000
+                        if (game.combat.enemy.monster.combatLevel > 200 && Math.random() < ((game.combat.enemy.monster.combatLevel * Math.random()) / 10000)) {
+                            const tes_items = ["tes:King_Olafs_Verse"]
+                            const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
+                            const tes_item = game.items.getObjectByID(`${tes_itemId}`);
+                            if (tes_item === undefined) {
+                                throw new Error(`Invalid item ID ${tes_itemId}`);
+                            }
+                            game.bank.addItem(tes_item, 1, true, true, false);
+                        }
+                        // 1/10,000
+                        if (game.combat.enemy.monster.combatLevel < 200 && Math.random() < 100 / (10000 + game.combat.enemy.monster.combatLevel)) {
+                            const tes_items = ["tes:Bard_Drum", "tes:Bard_Flute", "tes:Bard_Lute"]
+                            const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
+                            const tes_item = game.items.getObjectByID(`${tes_itemId}`);
+                            if (tes_item === undefined) {
+                                throw new Error(`Invalid item ID ${tes_itemId}`);
+                            }
+                            game.bank.addItem(tes_item, 1, true, true, false);
+                        }
+                        // Myth & 1/2,500
+                        if (mythLoaded && Math.random() < 100 / (2500 + game.combat.enemy.monster.combatLevel)) {
+                            const tes_items = ["mythMusic:Polished_Topaz_Gem", "mythMusic:Polished_Ruby_Gem", "mythMusic:Polished_Sapphire_Gem"]
+                            const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
+                            const tes_item = game.items.getObjectByID(`${tes_itemId}`);
+                            if (tes_item === undefined) {
+                                throw new Error(`Invalid item ID ${tes_itemId}`);
+                            }
+                            game.bank.addItem(tes_item, 1, true, true, false);
+                        }
+                        // 1/1,000
+                        if (Math.random() < 100 / (1000 + game.combat.enemy.monster.combatLevel)) {
+                            const tes_items = ["tes:Sweetroll"]
+                            const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
+                            const tes_item = game.items.getObjectByID(tes_itemId);
+                            if (tes_item === undefined) {
+                                throw new Error(`Invalid item ID ${tes_itemId}`);
+                            }
+                            game.bank.addItem(tes_item, 1, true, true, false);
+                        }
+                    } catch (error) {
+                        console.log("onEnemyDeath patch ", error)
+                    }
+                });
+                ctx.patch(Skill, 'levelUp').after(() => {
+                    // addXP
+                    if (game && game.activeAction && game.activeAction._localID) {
+                        if (game.activeAction._localID === "Magic") {
+                            if (rollPercentage(10)) {
+                                const tes_item = game.items.getObjectByID("tes:magic_mask");
+                                if (tes_item === undefined) {
+                                    throw new Error(`Invalid item ID "tes:magic_mask"`);
+                                }
+                                game.bank.addItem(tes_item, 1, true, true, false);
+                            }
+                        }
+                        if (game.activeAction._localID === "Combat") {
+                            if (rollPercentage(10)) {
+                                const tes_item = game.items.getObjectByID("tes:dragonbornhat");
+                                if (tes_item === undefined) {
+                                    throw new Error(`Invalid item ID "tes:dragonbornhat"`);
+                                }
+                                game.bank.addItem(tes_item, 1, true, true, false);
+                            }
+                        }
+                    }
+                })
+            } catch (error) {
+                console.log('onModsLoaded skill patches ', error)
+            }
         } catch (error) {
             console.log("onModsLoaded", error)
         }
@@ -496,8 +556,6 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
 
     onInterfaceReady((ctx) => {
         // Looks like this function should just be UI components like dbox and templates.
-        const dboxLoaded = mod.manager.getLoadedModList().includes('dbox')
-        const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
         try {
             // khajiit_merchants
             if (dboxLoaded) {
