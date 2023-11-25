@@ -872,7 +872,6 @@
           "tes:Fighters_Guild_Banner_Shop",
           "tes:Dark_Brotherhood_Banner_Shop",
           "tes:Mages_Guild_Banner_Shop"
-
         ]
       }
     ],
@@ -918,7 +917,7 @@
         "equipRequirements": [
           {
             "level": 120,
-            "skillID":"melvorD:Magic",
+            "skillID": "melvorD:Magic",
             "type": "SkillLevel"
           }
         ],
@@ -1021,14 +1020,13 @@
       {
         "id": "Unedad_Junior_Farmer",
         "name": "Unedad Junior Farmer",
-        "attackType":"ranged",
+        "attackType": "ranged",
         "bones": {
-          "itemID":"melvorD:Dragon_Bones",
+          "itemID": "melvorD:Dragon_Bones",
           "quantity": 1
         },
         "media": "assets/monsters/skeleton_Archer.png",
-        "passives": [
-        ],
+        "passives": [],
         "specialAttacks": [],
         "lootChance": 0,
         "lootTable": [],
@@ -1101,19 +1099,18 @@
         "ignoreCompletion": true,
         "isBoss": true,
         "canSlayer": true,
-        "selectedSpell":"melvorF:NaturesWrath"
+        "selectedSpell": "melvorF:NaturesWrath"
       },
       {
         "id": "Maiq_the_Liar",
         "name": "M'aiq the Liar",
-        "attackType":"magic",
+        "attackType": "magic",
         "bones": {
-          "itemID":"melvorD:Magic_Bones",
+          "itemID": "melvorD:Magic_Bones",
           "quantity": 1
         },
         "media": "assets/monsters/Maiq_the_Liar.png",
-        "passives": [
-        ],
+        "passives": [],
         "specialAttacks": [],
         "lootChance": 0,
         "lootTable": [],
@@ -1186,55 +1183,63 @@
         "ignoreCompletion": true,
         "isBoss": true,
         "canSlayer": true,
-        "selectedSpell":"melvorF:NaturesWrath"
+        "selectedSpell": "melvorF:NaturesWrath"
       }
     ]
   },
   "modifications": {
     "combatAreas": [
       {
-        "id":"tes:Elsweyr",
+        "id": "tes:Elsweyr",
         "monsters": {
           "add": [
             {
-              "monsterID":"tes:Maiq_the_Liar",
+              "monsterID": "tes:Maiq_the_Liar",
               "insertAt": 1
             }
           ]
         }
       }
     ],
-    "slayerAreas": [{
-      "id":"melvorTotH:MidnightValley",
-      "monsters": {
-        "add": [{
-          "monsterID":"tes:Unedad_Junior_Farmer",
-          "insertAt": 3
-        }]
+    "slayerAreas": [
+      {
+        "id": "melvorTotH:MidnightValley",
+        "monsters": {
+          "add": [
+            {
+              "monsterID": "tes:Unedad_Junior_Farmer",
+              "insertAt": 3
+            }
+          ]
+        }
       }
-    }],
-    "items": [{
-      "id": "tes:Staff_of_Worms",
-      "specialAttacks": {
-        "add": [
-          "melvorTotH:ShadeSummon",
-          "melvorTotH:PhantomSummon",
-          "melvorTotH:CurseTotemSummon",
-          "melvorTotH:GreaterShadeSummon"
-        ]
+    ],
+    "items": [
+      {
+        "id": "tes:Staff_of_Worms",
+        "specialAttacks": {
+          "add": [
+            "melvorTotH:ShadeSummon",
+            "melvorTotH:PhantomSummon",
+            "melvorTotH:CurseTotemSummon",
+            "melvorTotH:GreaterShadeSummon"
+          ]
+        }
       }
-    }],
-    "monsters": [{
-      "id": "tes:Mannimarco",
-      "passives": {
-        "remove": [
-          "tes:Assassin"
-        ],
-        "add": [
-          "melvorTotH:DarkBlade",
-          "melvorTotH:Decay"
-        ]
+    ],
+    "monsters": [
+      {
+        "id": "tes:Mannimarco",
+        "passives": {
+          "remove": [
+            "tes:Assassin"
+          ],
+          "add": [
+            "melvorTotH:DarkBlade",
+            "melvorTotH:Decay"
+          ]
+        }
       }
-    }]
+    ]
   }
 }

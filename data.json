@@ -100,7 +100,7 @@
         "media": "assets/icons/brotherhood/Dark_Brotherhood.png"
       }
     ],
-    "shopPurchases": [      
+    "shopPurchases": [
       {
         "id": "Associate_Mage_Rank",
         "media": "assets/icons/mages/Associate.png",
@@ -6187,8 +6187,7 @@
           }
         },
         "allowQuantityPurchase": false,
-        "unlockRequirements": [
-        ],
+        "unlockRequirements": [],
         "purchaseRequirements": [
           {
             "type": "ShopPurchase",
@@ -6408,15 +6407,15 @@
         },
         "equipmentStats": [
           {
-            "key":"meleeDefenceBonus",
+            "key": "meleeDefenceBonus",
             "value": 70
           },
           {
-            "key":"rangedDefenceBonus",
+            "key": "rangedDefenceBonus",
             "value": 70
           },
           {
-            "key":"damageReduction",
+            "key": "damageReduction",
             "value": 11
           }
         ],
@@ -6424,11 +6423,13 @@
         "validSlots": [
           "Helmet"
         ],
-        "equipRequirements": [          {
-          "monsterID":"tes:Mannimarco",
-          "count": 1,
-          "type": "MonsterKilled"
-        }],
+        "equipRequirements": [
+          {
+            "monsterID": "tes:Mannimarco",
+            "count": 1,
+            "type": "MonsterKilled"
+          }
+        ],
         "occupiesSlots": []
       },
       {
@@ -6447,17 +6448,18 @@
           "increasedSummoningCreationChargesForEquippedTablets": 10,
           "increasedSummoningMaxHit": 300
         },
-        "equipmentStats": [
-        ],
+        "equipmentStats": [],
         "tier": "none",
         "validSlots": [
           "Amulet"
         ],
-        "equipRequirements": [          {
-          "monsterID":"tes:Mannimarco",
-          "count": 1,
-          "type": "MonsterKilled"
-        }],
+        "equipRequirements": [
+          {
+            "monsterID": "tes:Mannimarco",
+            "count": 1,
+            "type": "MonsterKilled"
+          }
+        ],
         "occupiesSlots": []
       },
       {
@@ -6504,7 +6506,7 @@
         ],
         "equipRequirements": [
           {
-            "monsterID":"tes:Mannimarco",
+            "monsterID": "tes:Mannimarco",
             "count": 1,
             "type": "MonsterKilled"
           }
@@ -6559,11 +6561,13 @@
         "validSlots": [
           "Platebody"
         ],
-        "equipRequirements": [          {
-          "monsterID":"tes:Mannimarco",
-          "count": 1,
-          "type": "MonsterKilled"
-        }],
+        "equipRequirements": [
+          {
+            "monsterID": "tes:Mannimarco",
+            "count": 1,
+            "type": "MonsterKilled"
+          }
+        ],
         "occupiesSlots": []
       },
       {
@@ -12962,17 +12966,19 @@
       },
       {
         "id": "The_White_Gold_Tower",
-        "areaEffect":{
+        "areaEffect": {
           "magnitude": 100,
-          "modifier":"increasedMeleeCritChance",
+          "modifier": "increasedMeleeCritChance",
           "target": "Enemy"
         },
         "areaEffectDescription": "Enemies are ${effectValue}% more likely to crit.",
-        "difficulty": [6],
+        "difficulty": [
+          6
+        ],
         "entryRequirements": [],
         "media": "assets/locations/White_gold_tower.png",
-        "pet":{
-          "petID":"tes:HolySymbol",
+        "pet": {
+          "petID": "tes:HolySymbol",
           "weight": 50
         },
         "name": "The White Gold Tower",
@@ -18032,25 +18038,25 @@
         "lootChance": 1,
         "lootTable": [
           {
-            "itemID":"tes:Necromancer_Robes",
+            "itemID": "tes:Necromancer_Robes",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 1
           },
           {
-            "itemID":"tes:Bloodworm_Helm",
+            "itemID": "tes:Bloodworm_Helm",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 1
           },
           {
-            "itemID":"tes:Necromanceramulet",
+            "itemID": "tes:Necromanceramulet",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 1
           },
           {
-            "itemID":"tes:Staff_of_Worms",
+            "itemID": "tes:Staff_of_Worms",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 1
@@ -18061,7 +18067,7 @@
           "max": 1000000
         },
         "bones": {
-          "itemID":"melvorD:Magic_Bones",
+          "itemID": "melvorD:Magic_Bones",
           "quantity": 100
         },
         "canSlayer": false,
@@ -18118,7 +18124,12 @@
           "melvorF:MarkofDeath",
           "melvorF:GreaterDragonbreath"
         ],
-        "overrideSpecialChances": [20, 10, 30, 10],
+        "overrideSpecialChances": [
+          20,
+          10,
+          30,
+          10
+        ],
         "passives": [
           "melvorF:Purity",
           "tes:Wardsave_10"
@@ -18126,49 +18137,49 @@
         "lootChance": 1,
         "lootTable": [
           {
-            "itemID":"tes:Amulet_Of_Kings",
+            "itemID": "tes:Amulet_Of_Kings",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 1
           },
           {
-            "itemID":"tes:Helm_of_the_Crusader",
+            "itemID": "tes:Helm_of_the_Crusader",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 1
           },
           {
-            "itemID":"tes:Shield_of_the_Crusader",
+            "itemID": "tes:Shield_of_the_Crusader",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID":"tes:Boots_of_the_Crusader",
+            "itemID": "tes:Boots_of_the_Crusader",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID":"tes:Cuirass_of_the_Crusader",
+            "itemID": "tes:Cuirass_of_the_Crusader",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID":"tes:Gauntlets_of_the_Crusader",
+            "itemID": "tes:Gauntlets_of_the_Crusader",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID":"tes:Mace_of_the_Crusader",
+            "itemID": "tes:Mace_of_the_Crusader",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID":"tes:Sword_of_the_Crusader",
+            "itemID": "tes:Sword_of_the_Crusader",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
@@ -18179,7 +18190,7 @@
           "max": 1000000
         },
         "bones": {
-          "itemID":"melvorD:Dragon_Bones",
+          "itemID": "melvorD:Dragon_Bones",
           "quantity": 100
         },
         "canSlayer": false,
@@ -20410,8 +20421,7 @@
           }
         ],
         "prehitEffects": [],
-        "onhitEffects": [
-        ],
+        "onhitEffects": [],
         "cantMiss": false,
         "attackCount": 10,
         "attackInterval": 100,
@@ -20429,8 +20439,7 @@
           }
         ],
         "prehitEffects": [],
-        "onhitEffects": [
-        ],
+        "onhitEffects": [],
         "cantMiss": false,
         "attackCount": 5,
         "attackInterval": 100,
@@ -21230,7 +21239,9 @@
       },
       {
         "insertAt": "End",
-        "ids": ["tes:The_White_Gold_Tower"]
+        "ids": [
+          "tes:The_White_Gold_Tower"
+        ]
       }
     ],
     "pets": [
@@ -23912,7 +23923,7 @@
               "maxQuantity": 1,
               "minQuantity": 1,
               "weight": 10
-            }            
+            }
           ]
         }
       }

@@ -4,7 +4,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
     // Mages shop is half empty
 
     // game.testForOffline(1)
-    
+
     // New modifiers
     modifierData.tes_increasedDragonBreathDamage = {
         get langDescription() {
@@ -82,7 +82,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                 MISC_STRING_Dead_Drop_Orders_6: "Dead Drop Orders",
                 MISC_STRING_Dead_Drop_Orders_7: "Dead Drop Orders",
                 MISC_STRING_Dead_Drop_Orders_8: "Dead Drop Orders",
-                MISC_STRING_Thieves_Orders:"Thieves_Orders",
+                MISC_STRING_Thieves_Orders: "Thieves_Orders",
                 PASSIVES_NAME_EventPassive1: "Unusual Passive",
                 PASSIVES_NAME_EventPassive2: "Unusual Passive",
                 PASSIVES_NAME_EventPassive3: "Unusual Passive",
@@ -206,7 +206,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
 
             ctx.patch(Skill, 'levelUp').after(() => {
                 // addXP
-                if(game && game.activeAction && game.activeAction._localID) {
+                if (game && game.activeAction && game.activeAction._localID) {
                     if (game.activeAction._localID === "Magic") {
                         if (rollPercentage(10)) {
                             const tes_item = game.items.getObjectByID("tes:magic_mask");

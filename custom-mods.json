@@ -6,7 +6,7 @@
             {
                 "id": "Death_Mark_10",
                 "name": "Death Mark",
-                "modifiers":{
+                "modifiers": {
                     "increasedChanceToApplyStackOfDeathMark": 10
                 }
             }
@@ -17,7 +17,7 @@
             {
                 "id": "tes:Dawnbreaker",
                 "modifiers": {
-                    "add":{
+                    "add": {
                         "increasedDamageAgainstUndead": 10
                     }
                 }
@@ -25,7 +25,7 @@
             {
                 "id": "tes:Blades_Sword",
                 "modifiers": {
-                    "add":{
+                    "add": {
                         "increasedDamageAgainstDragons": 20
                     }
                 }
@@ -33,7 +33,7 @@
             {
                 "id": "tes:Mace_of_the_Crusader",
                 "modifiers": {
-                    "add":{
+                    "add": {
                         "increasedDamageAgainstUndead": 20,
                         "decreasedDamageAgainstHumans": 10
                     }
@@ -42,7 +42,7 @@
             {
                 "id": "tes:Shield_of_the_Crusader",
                 "modifiers": {
-                    "add":{
+                    "add": {
                         "increasedDamageAgainstUndead": 20,
                         "decreasedDamageAgainstHumans": 10
                     }
@@ -51,7 +51,7 @@
             {
                 "id": "tes:Cuirass_of_the_Crusader",
                 "modifiers": {
-                    "add":{
+                    "add": {
                         "increasedDeathMarkImmunity": 40,
                         "decreasedDamageAgainstHumans": 10
                     }
@@ -60,7 +60,7 @@
             {
                 "id": "tes:Sword_of_the_Crusader",
                 "modifiers": {
-                    "add":{
+                    "add": {
                         "increasedDamageAgainstUndead": 20,
                         "decreasedDamageAgainstHumans": 10
                     }
@@ -69,25 +69,25 @@
             {
                 "id": "tes:Boots_of_the_Crusader",
                 "modifiers": {
-                    "add":{
+                    "add": {
                         "increasedDeathMarkImmunity": 10,
                         "decreasedDamageAgainstHumans": 5
                     }
                 }
-            },   
+            },
             {
                 "id": "tes:Helm_of_the_Crusader",
                 "modifiers": {
-                    "add":{
+                    "add": {
                         "increasedDeathMarkImmunity": 10,
                         "decreasedDamageAgainstHumans": 5
                     }
                 }
-            },  
+            },
             {
                 "id": "tes:Gauntlets_of_the_Crusader",
                 "modifiers": {
-                    "add":{
+                    "add": {
                         "increasedDeathMarkImmunity": 10,
                         "decreasedDamageAgainstHumans": 5
                     }
@@ -96,7 +96,7 @@
             {
                 "id": "tes:Imperial_Dragon_Shield",
                 "modifiers": {
-                    "add":{
+                    "add": {
                         "increasedDamageAgainstHumans": 5
                     }
                 }
@@ -104,7 +104,7 @@
             {
                 "id": "tes:Imperial_Dragon_Helmet",
                 "modifiers": {
-                    "add":{
+                    "add": {
                         "increasedDamageAgainstHumans": 5
                     }
                 }
@@ -112,7 +112,7 @@
             {
                 "id": "tes:Imperial_Dragon_Gauntlets",
                 "modifiers": {
-                    "add":{
+                    "add": {
                         "increasedDamageAgainstHumans": 5
                     }
                 }
@@ -120,7 +120,7 @@
             {
                 "id": "tes:Imperial_Dragon_Armor",
                 "modifiers": {
-                    "add":{
+                    "add": {
                         "increasedDamageAgainstHumans": 5
                     }
                 }
@@ -128,7 +128,7 @@
             {
                 "id": "tes:Imperial_Dragon_Boots",
                 "modifiers": {
-                    "add":{
+                    "add": {
                         "increasedDamageAgainstHumans": 5
                     }
                 }
@@ -136,11 +136,11 @@
             {
                 "id": "tes:Imperial_Dragon_Cloak",
                 "modifiers": {
-                    "add":{
+                    "add": {
                         "increasedDamageAgainstHumans": 5
                     }
                 }
-            } 
+            }
         ],
         "monsters": [
             {
@@ -152,10 +152,10 @@
                 },
                 "equipmentStats": {
                     "add": [
-                            {
-                              "key": "attackSpeed",
-                              "value": 2600
-                            }
+                        {
+                            "key": "attackSpeed",
+                            "value": 2600
+                        }
                     ]
                 }
             },
@@ -165,20 +165,8 @@
                     "add": [
                         "tes:Death_Mark_10"
                     ]
-                },
-                "specialAttacks": {
-                    "add": [
-                        {
-                            "attackID":"melvorTotH:TorrentialDragonbreath",
-                            "chance": 10
-                        }
-                    ],
-                    "remove": [
-                        "melvorF:GreaterDragonbreath"
-                    ]
                 }
             }
-            
         ]
     }
 }
