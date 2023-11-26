@@ -45,8 +45,7 @@
                 "modifiers": {
                     "add": {
                         "increasedDamageAgainstUndead": 20,
-                        "decreasedDamageAgainstHumans": 10,
-                        "decreasedDamageTakenFromElves": 10
+                        "decreasedDamageAgainstHumans": 10
                     }
                 }
             },
@@ -55,8 +54,7 @@
                 "modifiers": {
                     "add": {
                         "increasedDeathMarkImmunity": 40,
-                        "decreasedDamageAgainstHumans": 10,
-                        "decreasedDamageTakenFromElves": 20
+                        "decreasedDamageAgainstHumans": 10
                     }
                 }
             },
@@ -75,8 +73,7 @@
                 "modifiers": {
                     "add": {
                         "increasedDeathMarkImmunity": 10,
-                        "decreasedDamageAgainstHumans": 5,
-                        "decreasedDamageTakenFromElves": 10
+                        "decreasedDamageAgainstHumans": 5
                     }
                 }
             },
@@ -85,8 +82,7 @@
                 "modifiers": {
                     "add": {
                         "increasedDeathMarkImmunity": 10,
-                        "decreasedDamageAgainstHumans": 5,
-                        "decreasedDamageTakenFromElves": 10
+                        "decreasedDamageAgainstHumans": 5
                     }
                 }
             },
@@ -95,8 +91,7 @@
                 "modifiers": {
                     "add": {
                         "increasedDeathMarkImmunity": 10,
-                        "decreasedDamageAgainstHumans": 5,
-                        "decreasedDamageTakenFromElves": 10
+                        "decreasedDamageAgainstHumans": 5
                     }
                 }
             },

@@ -31,6 +31,23 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
     // decreasedDamageTakenFromEarthSpells: number,
     // increasedDamageTakenFromFireSpells: number,
     // decreasedDamageTakenFromFireSpells: number,
+
+    // increasedDamage: `increasedDamageAgainst${typePluralName}`,
+    // decreasedDamage: `decreasedDamageAgainst${typePluralName}`,
+    // increasedDamageTaken: `increasedDamageTakenFrom${typePluralName}`,
+    // decreasedDamageTaken: `decreasedDamageTakenFrom${typePluralName}`,
+    // increasedMaxHitPercent: `increasedMaxHitPercentAgainst${typePluralName}`,
+    // decreasedMaxHitPercent: `decreasedMaxHitPercentAgainst${typePluralName}`,
+    // increasedMaxHitFlat: `increasedMaxHitFlatAgainst${typePluralName}`,
+    // decreasedMaxHitFlat: `decreasedMaxHitFlatAgainst${typePluralName}`,
+    // increasedMinHitBasedOnMaxHit: `increasedMinHitBasedOnMaxHitAgainst${typePluralName}`,
+    // decreasedMinHitBasedOnMaxHit: `decreasedMinHitBasedOnMaxHitAgainst${typePluralName}`,
+    // increasedFlatMinHit: `increasedFlatMinHitAgainst${typePluralName}`,
+    // decreasedFlatMinHit: `decreasedFlatMinHitAgainst${typePluralName}`,
+    // increasedGlobalAccuracy: `increasedGlobalAccuracyAgainst${typePluralName}`,
+    // decreasedGlobalAccuracy: `decreasedGlobalAccuracyAgainst${typePluralName}`,
+    // increasedDamageReduction: `increasedDamageReductionAgainst${typePluralName}`,
+    // decreasedDamageReduction: `decreasedDamageReductionAgainst${typePluralName}`,
     modifierData.tes_increasedDragonBreathDamage = {
         get langDescription() {
             return getLangString('tes_increasedDragonBreathDamage');
@@ -87,13 +104,11 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
     let Khajiit_Item_3_Price = 100
     const bards_college_items = []
 
-    // Local variables
-    const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
-    const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
-    const TothEntitlement = cloudManager.hasTotHEntitlement
-    const dboxLoaded = mod.manager.getLoadedModList().includes('dbox')
-
     onModsLoaded(async (ctx) => {
+        // Local variables
+        const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
+        const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
+        const TothEntitlement = cloudManager.hasTotHEntitlement
         // Translations
         try {
             try {
@@ -219,7 +234,9 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                 ctx.patch(CombatManager, "onEnemyDeath").after(() => {
                     try {
                         // Inverse: 1 / 10,000
-                        if (game.combat.enemy.monster.combatLevel > 200 && Math.random() < ((game.combat.enemy.monster.combatLevel * Math.random()) / 10000)) {
+                        // if (game.combat.enemy.monster.combatLevel > 200 && Math.random() < ((game.combat.enemy.monster.combatLevel * Math.random()) / 10000)) {
+                        if (game.combat.enemy.monster.combatLevel > 200 &&
+                            Math.random() < 1 + (game.combat.enemy.monster.combatLevel/400) / 10000) {
                             const tes_items = ["tes:King_Olafs_Verse"]
                             const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
                             const tes_item = game.items.getObjectByID(`${tes_itemId}`);
@@ -555,6 +572,9 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
     });
 
     onInterfaceReady((ctx) => {
+        // Local variables
+        const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
+        const dboxLoaded = mod.manager.getLoadedModList().includes('dbox')
         // Looks like this function should just be UI components like dbox and templates.
         try {
             // khajiit_merchants
