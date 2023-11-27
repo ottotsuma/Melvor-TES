@@ -4,129 +4,6 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
     // Mages shop is half empty
     //  get-childitem *.png | foreach { rename-item $_ $_.Name.Replace("-min", "") }
 
-    // [
-    //     "tes:skeleton_Archer",
-    //     "tes:red_dragon",
-    //     "tes:green_dragon",
-    //     "tes:blue_dragon",
-    //     "tes:Giant_Mudcrab",
-    //     "tes:mudcrab",
-    //     "tes:Sload",
-    //     "tes:Lucerne",
-    //     "tes:Melka",
-    //     "tes:Moira",
-    //     "tes:Petra",
-    //     "tes:Drascua",
-    //     "tes:Hagraven",
-    //     "tes:Bitterfish_Clan_Goblin_Shaman",
-    //     "tes:Bloody_Hand_Tribe_Goblin_Shaman",
-    //     "tes:Dust_Eater_Clan_Goblin_Shaman",
-    //     "tes:Rock_Biter_Clan_Goblin_Shaman",
-    //     "tes:Sharp_Tooth_Clan_Goblin_Shaman",
-    //     "tes:Skull_Breaker_Clan_Goblin_Shaman",
-    //     "tes:Three_Feather_Clan_Goblin_Shaman",
-    //     "tes:White_Skin_Clan_Goblin_Shaman",
-    //     "tes:Goblin_War_Chief",
-    //     "tes:Goblin_Ambusher",
-    //     "tes:Goblin_Berserker",
-    //     "tes:Goblin_Netherboss",
-    //     "tes:Goblin_Rat_Farmer",
-    //     "tes:Goblin_Shaman",
-    //     "tes:Goblin_Skirmisher",
-    //     "tes:Goblin_Warlord",
-    //     "tes:Goblin_Witch",
-    //     "tes:Goblin_Chef",
-    //     "tes:Savage_Goblin",
-    //     "tes:Xivilai",
-    //     "tes:Ysmir_Iceheart",
-    //     "tes:Cliff_Racer",
-    //     "tes:Alit",
-    //     "tes:Dreugh",
-    //     "tes:Guar",
-    //     "tes:Netch",
-    //     "tes:Kagouti",
-    //     "tes:Nix_Hound",
-    //     "tes:Hoarvor",
-    //     "tes:Gryphon",
-    //     "tes:Indrik",
-    //     "tes:Nereid",
-    //     "tes:Spriggan",
-    //     "tes:Echatere",
-    //     "tes:Riekr",
-    //     "tes:Heron",
-    //     "tes:Assassin_Beetle",
-    //     "tes:Giant_Scorpion",
-    //     "tes:Shrieking_Harpy",
-    //     "tes:Lamia",
-    //     "tes:Welwa",
-    //     "tes:Duneripper",
-    //     "tes:Den_Mother",
-    //     "tes:Blue_Oasis_Dragon_Frog",
-    //     "tes:Infernal_Sep_Adder",
-    //     "tes:Gravelclaw",
-    //     "tes:Guzzard",
-    //     "tes:Elsweyr_Dragon",
-    //     "tes:Voriplasm",
-    //     "tes:Wamasu",
-    //     "tes:Death_Hopper",
-    //     "tes:Umaril",
-    //     "tes:Laloriaran",
-    //     "tes:Lich",
-    //     "tes:Necromancer",
-    //     "tes:Zombie",
-    //     "tes:Harkon2",
-    //     "tes:Harkon",
-    //     "tes:Ungolim",
-    //     "tes:Havilstein_Hoar",
-    //     "tes:Alval_Uvani",
-    //     "tes:Shaleez",
-    //     "tes:JGhasta",
-    //     "tes:Perennia_Draconis",
-    //     "tes:Caelia_Draconis",
-    //     "tes:Sibylla_Draconis",
-    //     "tes:Andreas_Draconis",
-    //     "tes:Matthias_Draconis",
-    //     "tes:Celedaen",
-    //     "tes:The_Gray_Prince",
-    //     "tes:Mannimarco",
-    //     "tes:MartinSeptim",
-    //     "tes:Divine_Crusader",
-    //     "tes:Pelinal_Whitestrake",
-    //     "tes:Imperial_Watch",
-    //     "tes:Giant",
-    //     "tes:Alduin",
-    //     "tes:Bandit",
-    //     "tes:Draugr",
-    //     "tes:Thief",
-    //     "tes:Nocturnal",
-    //     "tes:Vaermina",
-    //     "tes:Sanguine",
-    //     "tes:Peryite",
-    //     "tes:Namira",
-    //     "tes:Molag_Bal",
-    //     "tes:Mephala",
-    //     "tes:Mehrunes_Dagon",
-    //     "tes:Malacath",
-    //     "tes:Hircine",
-    //     "tes:Meridia",
-    //     "tes:Azura",
-    //     "tes:Boethiah",
-    //     "tes:Clavicus_Vile",
-    //     "tes:Hermaeus_Mora",
-    //     "tes:Sheogorath",
-    //     "tes:Golden_Saint",
-    //     "tes:Dark_Seducer",
-    //     "tes:Baliwog",
-    //     "tes:Scalon",
-    //     "tes:Grummite",
-    //     "tes:Elytra",
-    //     "tes:Skinned_Hound",
-    //     "tes:Shambles",
-    //     "tes:Flesh_Atronach",
-    //     "tes:undead_Junior_Farmer",
-    //     "tes:Maiq_the_Liar"
-    // ]
-
     // game.testForOffline(1)
 
     // New modifiers
@@ -216,7 +93,15 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         isNegative: false,
         tags: ['combat']
     };
-
+    modifierData.tes_bypassDamageReduction = {
+        get langDescription() {
+            return getLangString('tes_bypassDamageReduction');
+        },
+        description: '${value} damage, though damage reduction.',
+        isSkill: false,
+        isNegative: false,
+        tags: ['combat']
+    };
     // variables to move between load functions
     let Khajiit_Item_1 = ""
     let Khajiit_Item_1_Price = 100
@@ -243,6 +128,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     tes_increasedFlatDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}.",
                     tes_increasedPercDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}%.",
                     tes_decreaseFlatDamageWhileTargetHasMaxHP: "Decrease damage taken while you are fully healed by +${value}.",
+                    tes_bypassDamageReduction: "${value} damage, though damage reduction.",
                     // tes_decreasePercDamageToElves: "-${value}%, less damage to elves.",
                     // tes_increasedPercDamageToElves: "${value}% extra damage to elves.",
                     // tes_decreasePercDamageFromElves: "-${value}%, less damage from elves.",
@@ -359,17 +245,17 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                         const combatLevel = game.combat.enemy.monster.combatLevel
                         // Inverse: 1 / 10,000
                         // if (combatLevel > 200 && Math.random() < ((combatLevel * Math.random()) / 10000)) {
-                        if (combatLevel > 200 &&
-                            Math.random() < (combatLevel / 400) / 10000) {
-                            const tes_items = ["tes:King_Olafs_Verse"]
-                            const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
-                            const tes_item = game.items.getObjectByID(`${tes_itemId}`);
-                            if (tes_item === undefined) {
-                                throw new Error(`Invalid item ID ${tes_itemId}`);
-                            }
-                            game.bank.addItem(tes_item, 1, true, true, false);
-                        }
                         if (combatLevel > 20) {
+                            if (combatLevel > 200 &&
+                                Math.random() < (combatLevel / 400) / 10000) {
+                                const tes_items = ["tes:King_Olafs_Verse"]
+                                const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
+                                const tes_item = game.items.getObjectByID(`${tes_itemId}`);
+                                if (tes_item === undefined) {
+                                    throw new Error(`Invalid item ID ${tes_itemId}`);
+                                }
+                                game.bank.addItem(tes_item, 1, true, true, false);
+                            }
                             // 1/10,000
                             if (combatLevel < 200 && Math.random() < 100 / (10000 + combatLevel)) {
                                 const tes_items = ["tes:Bard_Drum", "tes:Bard_Flute", "tes:Bard_Lute"]
@@ -495,12 +381,14 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         try {
             // Patching skills for new modifiers
             ctx.patch(Character, 'modifyAttackDamage').after((damage, target, attack) => {
-                let newDamage = 0
-                const DR = target.modifiers.increasedDamageReduction - target.modifiers.decreasedDamageReduction
-
+                const MonsterMods = game.combat.enemy.modifiers
+                const PlayerMods = game.combat.player.modifiers
+                const TargetMods = target.modifiers
+                let tesDamage = 0
+                const DR = TargetMods.increasedDamageReduction - TargetMods.decreasedDamageReduction
                 // Remove all damage and return if wardsaved
-                if (target && target.modifiers && target.modifiers.tes_wardsave) {
-                    let wardsaveChance = Math.min(target.modifiers.tes_wardsave, 90);
+                if (TargetMods.tes_wardsave) {
+                    let wardsaveChance = Math.min(TargetMods.tes_wardsave, 90);
                     if (rollPercentage(wardsaveChance)) {
                         return 0;
                     }
@@ -509,42 +397,46 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                 if (!target.monster && target.stats.maxHitpoints === target.hitpoints) {
                     // do damage to player
                     let percDamage = 0
-                    if (game.combat.enemy.modifiers.tes_increasedPercDamageWhileTargetHasMaxHP) {
-                        percDamage = newDamage * (game.combat.enemy.modifiers.tes_increasedPercDamageWhileTargetHasMaxHP / 100)
+                    if (MonsterMods.tes_increasedPercDamageWhileTargetHasMaxHP) {
+                        percDamage = tesDamage * (MonsterMods.tes_increasedPercDamageWhileTargetHasMaxHP / 100)
                     }
                     let flatDam = 0
-                    if (game.combat.enemy.modifiers.tes_increasedFlatDamageWhileTargetHasMaxHP) {
-                        flatDam = game.combat.enemy.modifiers.tes_increasedFlatDamageWhileTargetHasMaxHP
+                    if (MonsterMods.tes_increasedFlatDamageWhileTargetHasMaxHP) {
+                        flatDam = MonsterMods.tes_increasedFlatDamageWhileTargetHasMaxHP
                     }
-                    newDamage = newDamage + flatDam + percDamage
+                    tesDamage = tesDamage + flatDam + percDamage
                 }
                 if (target.monster && target.stats.maxHitpoints === target.hitpoints) {
                     // Do damage to monster
                     let percDamage = 0
-                    if (game.combat.player.modifiers.tes_increasedPercDamageWhileTargetHasMaxHP) {
-                        percDamage = newDamage * (game.combat.player.modifiers.tes_increasedPercDamageWhileTargetHasMaxHP / 100)
+                    if (PlayerMods.tes_increasedPercDamageWhileTargetHasMaxHP) {
+                        percDamage = tesDamage * (PlayerMods.tes_increasedPercDamageWhileTargetHasMaxHP / 100)
                     }
                     let flatDam = 0
-                    if (game.combat.player.modifiers.tes_increasedFlatDamageWhileTargetHasMaxHP) {
-                        flatDam = game.combat.player.modifiers.tes_increasedFlatDamageWhileTargetHasMaxHP
+                    if (PlayerMods.tes_increasedFlatDamageWhileTargetHasMaxHP) {
+                        flatDam = PlayerMods.tes_increasedFlatDamageWhileTargetHasMaxHP
                     }
-                    newDamage = newDamage + flatDam + percDamage
+                    tesDamage = tesDamage + flatDam + percDamage
                 }
-                if (target && target.modifiers && target.modifiers.tes_decreaseFlatDamageWhileTargetHasMaxHP && target.stats.maxHitpoints === target.hitpoints) {
-                    newDamage = newDamage - target.modifiers.tes_decreaseFlatDamageWhileTargetHasMaxHP
+                if (TargetMods.tes_decreaseFlatDamageWhileTargetHasMaxHP && target.stats.maxHitpoints === target.hitpoints) {
+                    tesDamage = tesDamage - TargetMods.tes_decreaseFlatDamageWhileTargetHasMaxHP
                 }
                 // If it's a dragon breath re-calc
                 if (attack.isDragonbreath) {
                     // Flat calc
-                    newDamage = newDamage + target.modifiers.tes_increasedDragonBreathDamage
+                    tesDamage = tesDamage + TargetMods.tes_increasedDragonBreathDamage
 
                     // % calc
-                    // newDamage *= (1 - (target.modifiers.tes_increasedDragonBreathDamage - target.modifiers.decreasedDragonBreathDamage)) / 100
+                    // tesDamage *= (1 - (TargetMods.tes_increasedDragonBreathDamage - TargetMods.decreasedDragonBreathDamage)) / 100
                 }
                 // account for damage reduction
-                newDamage = newDamage - ((newDamage / 100) * DR)
+                tesDamage = tesDamage - ((tesDamage / 100) * DR)
+                // Adding bypass damage
+                if (MonsterMods.tes_bypassDamageReduction) {
+                    tesDamage = tesDamage + MonsterMods.tes_bypassDamageReduction
+                }
                 // return re-calced damage
-                return Math.floor(damage + newDamage)
+                return Math.floor(damage + tesDamage)
             })
             // end patching skills for new modifiers
 
@@ -598,6 +490,11 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                 })
             });
             initialPackage.add();
+            // game.monsters.forEach(monster => {
+            //     if(monster.namespace === "tes") {
+            //         console.log(`${monster.namespace}:${monster.localID}`)
+            //     }
+            // })
             // end looping though all game items.
 
             // looping though all game monsters

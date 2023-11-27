@@ -15,6 +15,14 @@
     "modifications": {
         "items": [
             {
+                "id": "tes:HelmetOfOreynBearclaw",
+                "modifiers": {
+                    "add": {
+                        "increasedDamageAgainstUndead": 10
+                    }
+                }
+            },
+            {
                 "id": "tes:Dawnbreaker",
                 "modifiers": {
                     "add": {

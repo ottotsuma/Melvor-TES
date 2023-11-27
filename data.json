@@ -46,6 +46,14 @@
     ],
     "combatPassives": [
       {
+        "id": "Padomay",
+        "name": "Padomay's Touch",
+        "customDescription": "Cause 300 damage, by passing damage reduction.",
+        "modifiers": {
+          "tes_bypassDamageReduction": 300
+        }
+      },
+      {
         "id": "Assassin",
         "name": "Assassin",
         "customDescription": "Hit hard, hit once.",
@@ -6767,11 +6775,39 @@
             "type": "SkillLevel"
           }
         ],
-        "equipmentStats": [],
+        "equipmentStats": [
+          {
+            "key":"magicDefenceBonus",
+            "value": 40
+          },
+          {
+            "key":"meleeDefenceBonus",
+            "value": 40
+          },
+          {
+            "key":"rangedDefenceBonus",
+            "value": 40
+          },
+          {
+            "key":"slashAttackBonus",
+            "value": 20
+          },
+          {
+            "key":"blockAttackBonus",
+            "value": 20
+          },
+          {
+            "key":"stabAttackBonus",
+            "value": 20
+          },
+          {
+            "key":"meleeStrengthBonus",
+            "value": 10
+          }
+        ],
         "modifiers": {
-          "increasedFlatMagicDefenceBonus": 40,
-          "increasedFlatMeleeDefenceBonus": 40,
-          "increasedFlatRangedDefenceBonus": 40
+          "increasedGlobalAccuracy": 3,
+          "decreasedGlobalEvasion": 5
         },
         "itemType": "Equipment"
       },
@@ -8476,7 +8512,10 @@
         ],
         "overrideSpecialChances": [
           40
-        ]
+        ],
+        "enemyModifiers":{
+          "decreasedGlobalAccuracy": 3
+        }
       },
       {
         "id": "IceBladeOfTheMonarch",
@@ -8856,7 +8895,8 @@
         "sellsFor": 690,
         "itemType": "Equipment",
         "modifiers": {
-          "healOnHitBasedOnTargetDR": 10
+          "healOnHitBasedOnTargetDR": 10,
+          "increasedBleedLifesteal": 10
         },
         "equipmentStats": [
           {
@@ -8900,8 +8940,15 @@
           {
             "key": "magicDefenceBonus",
             "value": 20
+          },
+          {
+            "key": "damageReduction",
+            "value": 3
           }
         ],
+        "modifiers":{
+          "increasedFlatMinHit": 50
+        },
         "tier": "none",
         "validSlots": [
           "Helmet"
@@ -10066,6 +10113,11 @@
             "purchaseID": "tes:Assassin_Rank",
             "count": 1,
             "type": "ShopPurchase"
+          },
+          {
+            "skillID": "melvorD:Ranged",
+            "type": "SkillLevel",
+            "level": 40
           }
         ],
         "occupiesSlots": [
@@ -10321,9 +10373,9 @@
         ],
         "equipRequirements": [
           {
-            "skillID": "melvorD:Thieving",
-            "level": 99,
-            "type": "SkillLevel"
+            "purchaseID":"tes:Gray_Fox_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           },
           {
             "skillID": "melvorD:Defence",
@@ -10412,9 +10464,9 @@
             "type": "SkillLevel"
           },
           {
-            "skillID": "melvorD:Thieving",
-            "level": 99,
-            "type": "SkillLevel"
+            "purchaseID":"tes:Gray_Fox_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "occupiesSlots": []
@@ -10504,9 +10556,9 @@
         ],
         "equipRequirements": [
           {
-            "skillID": "melvorD:Thieving",
-            "level": 99,
-            "type": "SkillLevel"
+            "purchaseID":"tes:Gray_Fox_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           },
           {
             "skillID": "melvorD:Defence",
@@ -10591,9 +10643,9 @@
         ],
         "equipRequirements": [
           {
-            "skillID": "melvorD:Thieving",
-            "level": 99,
-            "type": "SkillLevel"
+            "purchaseID":"tes:Gray_Fox_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           },
           {
             "skillID": "melvorD:Defence",
@@ -10625,9 +10677,9 @@
             "level": 99
           },
           {
-            "type": "SkillLevel",
-            "skillID": "melvorD:Thieving",
-            "level": 99
+            "purchaseID":"tes:Gray_Fox_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "equipmentStats": [
@@ -10676,9 +10728,9 @@
             "level": 99
           },
           {
-            "type": "SkillLevel",
-            "skillID": "melvorD:Thieving",
-            "level": 99
+            "purchaseID":"tes:Gray_Fox_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "equipmentStats": [
@@ -10737,9 +10789,9 @@
             "level": 99
           },
           {
-            "type": "SkillLevel",
-            "skillID": "melvorD:Thieving",
-            "level": 99
+            "purchaseID":"tes:Gray_Fox_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "equipmentStats": [
@@ -10814,9 +10866,9 @@
         ],
         "equipRequirements": [
           {
-            "skillID": "melvorD:Thieving",
-            "level": 90,
-            "type": "SkillLevel"
+            "purchaseID":"tes:Gray_Fox_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "occupiesSlots": []
@@ -10901,9 +10953,9 @@
         ],
         "equipRequirements": [
           {
-            "skillID": "melvorD:Thieving",
-            "level": 60,
-            "type": "SkillLevel"
+            "purchaseID":"tes:Master_Thief_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "occupiesSlots": []
@@ -10981,9 +11033,9 @@
         ],
         "equipRequirements": [
           {
-            "skillID": "melvorD:Thieving",
-            "level": 90,
-            "type": "SkillLevel"
+            "purchaseID":"tes:Master_Thief_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "occupiesSlots": []
@@ -11067,9 +11119,9 @@
         ],
         "equipRequirements": [
           {
-            "skillID": "melvorD:Thieving",
-            "level": 90,
-            "type": "SkillLevel"
+            "purchaseID":"tes:Master_Thief_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "occupiesSlots": []
@@ -11154,9 +11206,9 @@
         ],
         "equipRequirements": [
           {
-            "skillID": "melvorD:Thieving",
-            "level": 90,
-            "type": "SkillLevel"
+            "purchaseID":"tes:Master_Thief_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "occupiesSlots": []
@@ -11233,9 +11285,9 @@
         ],
         "equipRequirements": [
           {
-            "skillID": "melvorD:Thieving",
-            "level": 25,
-            "type": "SkillLevel"
+            "purchaseID":"tes:Pickpocket_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "occupiesSlots": []
@@ -11318,9 +11370,9 @@
         ],
         "equipRequirements": [
           {
-            "skillID": "melvorD:Thieving",
-            "level": 40,
-            "type": "SkillLevel"
+            "purchaseID":"tes:Pickpocket_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "occupiesSlots": []
@@ -11402,9 +11454,9 @@
         ],
         "equipRequirements": [
           {
-            "skillID": "melvorD:Thieving",
-            "level": 60,
-            "type": "SkillLevel"
+            "purchaseID":"tes:Pickpocket_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "occupiesSlots": []
@@ -11481,9 +11533,9 @@
         ],
         "equipRequirements": [
           {
-            "skillID": "melvorD:Thieving",
-            "level": 10,
-            "type": "SkillLevel"
+            "purchaseID":"tes:Pickpocket_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "occupiesSlots": []
@@ -11588,9 +11640,9 @@
         "occupiesSlots": [],
         "equipRequirements": [
           {
-            "type": "SkillLevel",
-            "skillID": "melvorD:Thieving",
-            "level": 10
+            "purchaseID":"tes:Pickpocket_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
           }
         ],
         "modifiers": {
@@ -13078,7 +13130,7 @@
             "weight": 20
           },
           {
-            "itemID":"melvorD:Red_Dragonhide",
+            "itemID": "melvorD:Red_Dragonhide",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 50
@@ -13130,7 +13182,7 @@
             "weight": 20
           },
           {
-            "itemID":"melvorD:Green_Dragonhide",
+            "itemID": "melvorD:Green_Dragonhide",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 50
@@ -13182,7 +13234,7 @@
             "weight": 20
           },
           {
-            "itemID":"melvorD:Blue_Dragonhide",
+            "itemID": "melvorD:Blue_Dragonhide",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 50
@@ -18056,11 +18108,14 @@
           "tes:Skeleton_Army",
           "melvorF:MarkofDeath"
         ],
-        "overrideSpecialChances": [],
+        "overrideSpecialChances": [
+          33,
+          20
+        ],
         "passives": [
           "melvorF:Purity",
           "tes:Wardsave_10",
-          "tes:Assassin"
+          "tes:Padomay"
         ],
         "lootChance": 1,
         "lootTable": [
@@ -18159,7 +18214,8 @@
         ],
         "passives": [
           "melvorF:Purity",
-          "tes:Wardsave_10"
+          "tes:Wardsave_10",
+          "tes:Padomay"
         ],
         "lootChance": 1,
         "lootTable": [
@@ -18839,13 +18895,49 @@
         "attackType": "ranged",
         "specialAttacks": [],
         "passives": [],
-        "lootChance": 100,
+        "lootChance": 75,
         "lootTable": [
           {
             "itemID": "melvorD:Gold_Bar",
             "maxQuantity": 1,
             "minQuantity": 1,
+            "weight": 20
+          },
+          {
+            "itemID": "tes:gold_coin",
+            "maxQuantity": 100,
+            "minQuantity": 1,
             "weight": 100
+          },
+          {
+            "itemID": "melvorD:Topaz",
+            "maxQuantity": 100,
+            "minQuantity": 1,
+            "weight": 15
+          },
+          {
+            "itemID": "melvorD:Sapphire",
+            "maxQuantity": 100,
+            "minQuantity": 1,
+            "weight": 15
+          },
+          {
+            "itemID": "melvorD:Diamond",
+            "maxQuantity": 100,
+            "minQuantity": 1,
+            "weight": 15
+          },
+          {
+            "itemID": "melvorD:Ruby",
+            "maxQuantity": 100,
+            "minQuantity": 1,
+            "weight": 15
+          },
+          {
+            "itemID": "melvorD:Emerald",
+            "maxQuantity": 100,
+            "minQuantity": 1,
+            "weight": 15
           }
         ],
         "gpDrops": {
@@ -20440,11 +20532,8 @@
         "defaultChance": 33,
         "damage": [
           {
-            "damageType": "Custom",
-            "character": "Attacker",
-            "maxRoll": "FixedPlusMaxHit50",
-            "maxPercent": 100,
-            "roll": false
+            "damageType": "Normal",
+            "amplitude": 666
           }
         ],
         "prehitEffects": [],
@@ -20461,11 +20550,8 @@
         "defaultChance": 33,
         "damage": [
           {
-            "damageType": "Custom",
-            "character": "Attacker",
-            "maxRoll": "Fixed",
-            "maxPercent": 100,
-            "roll": false
+            "damageType": "Normal",
+            "amplitude": 444
           }
         ],
         "prehitEffects": [],
@@ -21567,15 +21653,27 @@
         "insertAt": "After",
         "afterID": "melvorD:Goblin_Village",
         "ids": [
-          "tes:Skyrim",
-          "tes:Cyrodiil",
-          "tes:Valenwood",
-          "tes:Summerset_Isle",
-          "tes:High_Rock",
-          "tes:Hammerfell",
-          "tes:Elsweyr",
           "tes:Black_Marsh",
-          "tes:Morrowind"
+          "tes:Morrowind",
+          "tes:Skyrim",
+          "tes:Cyrodiil"
+        ]
+      },
+      {
+        "insertAt": "After",
+        "afterID": "melvorD:Icy_Hills",
+        "ids": [
+          "tes:Hammerfell"
+        ]
+      },
+      {
+        "insertAt": "After",
+        "afterID": "melvorD:Dragon_Valley",
+        "ids": [
+          "tes:High_Rock",
+          "tes:Valenwood",
+          "tes:Elsweyr",
+          "tes:Summerset_Isle"
         ]
       }
     ],
@@ -23815,6 +23913,60 @@
         "playerModifiers": {
           "increasedThievingStealth": 120,
           "tes_increasedFlatDamageWhileTargetHasMaxHP": 200
+        }
+      },
+      {
+        "itemIDs": [
+          "tes:Cuirass_of_the_Crusader",
+          "tes:Boots_of_the_Crusader",
+          "tes:Helm_of_the_Crusader",
+          "tes:Gauntlets_of_the_Crusader"
+        ],
+        "playerModifiers": {
+          "increasedSlayerAreaEffectNegationFlat": 20
+        }
+      },
+      {
+        "itemIDs": [
+          "tes:Cuirass_of_the_Crusader",
+          "tes:Boots_of_the_Crusader",
+          "tes:Helm_of_the_Crusader",
+          "tes:Gauntlets_of_the_Crusader",
+          "tes:Amulet_Of_Kings"
+        ],
+        "playerModifiers": {
+          "increasedGlobalAccuracy": 20
+        }
+      },
+      {
+        "itemIDs": [
+          "tes:Shield_of_the_Crusader",
+          "tes:Sword_of_the_Crusader"
+        ],
+        "playerModifiers": {
+          "increasedSlayerAreaEffectNegationFlat": 20
+        }
+      },
+      {
+        "itemIDs": [
+          "tes:Shield_of_the_Crusader",
+          "tes:Mace_of_the_Crusader"
+        ],
+        "playerModifiers": {
+          "increasedSlayerAreaEffectNegationFlat": 20
+        }
+      },
+      {
+        "itemIDs": [
+          "tes:Imperial_Dragon_Helmet",
+          "tes:Imperial_Dragon_Gauntlets",
+          "tes:Imperial_Dragon_Armor",
+          "tes:Imperial_Dragon_Boots",
+          "tes:Imperial_Dragon_Cloak",
+          "tes:Imperial_Dragon_Shield"
+        ],
+        "playerModifiers": {
+          "increasedDamageReductionPer30Defence": 5
         }
       }
     ]
