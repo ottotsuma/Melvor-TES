@@ -13049,12 +13049,12 @@
         "name": "Fire Dragon",
         "media": "assets/monsters/red_dragon.png",
         "levels": {
-          "Attack": 20,
-          "Defence": 30,
-          "Hitpoints": 80,
-          "Magic": 1,
-          "Ranged": 1,
-          "Strength": 20
+          "Attack": 300,
+          "Defence": 300,
+          "Hitpoints": 300,
+          "Magic": 300,
+          "Ranged": 300,
+          "Strength": 300
         },
         "equipmentStats": [
           {
@@ -13064,7 +13064,10 @@
         ],
         "ignoreCompletion": false,
         "attackType": "melee",
-        "specialAttacks": [],
+        "specialAttacks": [
+          "melvorF:GreaterDragonbreath",
+          "melvorF:ScorchingRay"
+        ],
         "passives": [],
         "lootChance": 75,
         "lootTable": [
@@ -13073,14 +13076,20 @@
             "maxQuantity": 100,
             "minQuantity": 1,
             "weight": 20
+          },
+          {
+            "itemID":"melvorD:Red_Dragonhide",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 50
           }
         ],
         "gpDrops": {
-          "min": 20,
+          "min": 600,
           "max": 1
         },
         "bones": {
-          "itemID": "melvorD:Bones",
+          "itemID": "melvorD:Dragon_Bones",
           "quantity": 1
         },
         "canSlayer": true,
@@ -13092,12 +13101,12 @@
         "name": "Nature Dragon",
         "media": "assets/monsters/green_dragon.png",
         "levels": {
-          "Attack": 20,
-          "Defence": 30,
-          "Hitpoints": 80,
-          "Magic": 1,
-          "Ranged": 1,
-          "Strength": 20
+          "Attack": 300,
+          "Defence": 300,
+          "Hitpoints": 300,
+          "Magic": 300,
+          "Ranged": 300,
+          "Strength": 300
         },
         "equipmentStats": [
           {
@@ -13107,7 +13116,10 @@
         ],
         "ignoreCompletion": false,
         "attackType": "melee",
-        "specialAttacks": [],
+        "specialAttacks": [
+          "melvorF:GreaterDragonbreath",
+          "melvorF:Boulder"
+        ],
         "passives": [],
         "lootChance": 75,
         "lootTable": [
@@ -13116,14 +13128,20 @@
             "maxQuantity": 100,
             "minQuantity": 1,
             "weight": 20
+          },
+          {
+            "itemID":"melvorD:Green_Dragonhide",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 50
           }
         ],
         "gpDrops": {
-          "min": 20,
+          "min": 600,
           "max": 1
         },
         "bones": {
-          "itemID": "melvorD:Bones",
+          "itemID": "melvorD:Dragon_Bones",
           "quantity": 1
         },
         "canSlayer": true,
@@ -13135,12 +13153,12 @@
         "name": "Frost Dragon",
         "media": "assets/monsters/blue_dragon.png",
         "levels": {
-          "Attack": 20,
-          "Defence": 30,
-          "Hitpoints": 80,
-          "Magic": 1,
-          "Ranged": 1,
-          "Strength": 20
+          "Attack": 300,
+          "Defence": 300,
+          "Hitpoints": 300,
+          "Magic": 300,
+          "Ranged": 300,
+          "Strength": 300
         },
         "equipmentStats": [
           {
@@ -13150,7 +13168,10 @@
         ],
         "ignoreCompletion": false,
         "attackType": "melee",
-        "specialAttacks": [],
+        "specialAttacks": [
+          "melvorF:GreaterDragonbreath",
+          "melvorF:FlashFreeze"
+        ],
         "passives": [],
         "lootChance": 75,
         "lootTable": [
@@ -13159,14 +13180,20 @@
             "maxQuantity": 100,
             "minQuantity": 1,
             "weight": 20
+          },
+          {
+            "itemID":"melvorD:Blue_Dragonhide",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 50
           }
         ],
         "gpDrops": {
-          "min": 20,
+          "min": 600,
           "max": 1
         },
         "bones": {
-          "itemID": "melvorD:Bones",
+          "itemID": "melvorD:Dragon_Bones",
           "quantity": 1
         },
         "canSlayer": true,
@@ -18146,7 +18173,7 @@
             "itemID": "tes:Helm_of_the_Crusader",
             "maxQuantity": 1,
             "minQuantity": 1,
-            "weight": 1
+            "weight": 10
           },
           {
             "itemID": "tes:Shield_of_the_Crusader",
@@ -20416,7 +20443,7 @@
             "damageType": "Custom",
             "character": "Attacker",
             "maxRoll": "FixedPlusMaxHit50",
-            "maxPercent": 40,
+            "maxPercent": 100,
             "roll": false
           }
         ],
@@ -20434,8 +20461,11 @@
         "defaultChance": 33,
         "damage": [
           {
-            "damageType": "Normal",
-            "amplitude": 300
+            "damageType": "Custom",
+            "character": "Attacker",
+            "maxRoll": "Fixed",
+            "maxPercent": 100,
+            "roll": false
           }
         ],
         "prehitEffects": [],
@@ -23841,7 +23871,14 @@
             },
             {
               "monsterID": "tes:blue_dragon"
-            },
+            }
+          ]
+        }
+      },
+      {
+        "id": "melvorD:Wizard_Tower",
+        "monsters": {
+          "add": [
             {
               "monsterID": "tes:skeleton_Archer"
             }

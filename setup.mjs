@@ -356,10 +356,11 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
             try {
                 ctx.patch(CombatManager, "onEnemyDeath").after(() => {
                     try {
+                        const combatLevel = game.combat.enemy.monster.combatLevel
                         // Inverse: 1 / 10,000
-                        // if (game.combat.enemy.monster.combatLevel > 200 && Math.random() < ((game.combat.enemy.monster.combatLevel * Math.random()) / 10000)) {
-                        if (game.combat.enemy.monster.combatLevel > 200 &&
-                            Math.random() < 1 + (game.combat.enemy.monster.combatLevel/400) / 10000) {
+                        // if (combatLevel > 200 && Math.random() < ((combatLevel * Math.random()) / 10000)) {
+                        if (combatLevel > 200 &&
+                            Math.random() < (combatLevel / 400) / 10000) {
                             const tes_items = ["tes:King_Olafs_Verse"]
                             const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
                             const tes_item = game.items.getObjectByID(`${tes_itemId}`);
@@ -368,35 +369,37 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                             }
                             game.bank.addItem(tes_item, 1, true, true, false);
                         }
-                        // 1/10,000
-                        if (game.combat.enemy.monster.combatLevel < 200 && Math.random() < 100 / (10000 + game.combat.enemy.monster.combatLevel)) {
-                            const tes_items = ["tes:Bard_Drum", "tes:Bard_Flute", "tes:Bard_Lute"]
-                            const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
-                            const tes_item = game.items.getObjectByID(`${tes_itemId}`);
-                            if (tes_item === undefined) {
-                                throw new Error(`Invalid item ID ${tes_itemId}`);
+                        if (combatLevel > 20) {
+                            // 1/10,000
+                            if (combatLevel < 200 && Math.random() < 100 / (10000 + combatLevel)) {
+                                const tes_items = ["tes:Bard_Drum", "tes:Bard_Flute", "tes:Bard_Lute"]
+                                const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
+                                const tes_item = game.items.getObjectByID(`${tes_itemId}`);
+                                if (tes_item === undefined) {
+                                    throw new Error(`Invalid item ID ${tes_itemId}`);
+                                }
+                                game.bank.addItem(tes_item, 1, true, true, false);
                             }
-                            game.bank.addItem(tes_item, 1, true, true, false);
-                        }
-                        // Myth & 1/2,500
-                        if (mythLoaded && Math.random() < 100 / (2500 + game.combat.enemy.monster.combatLevel)) {
-                            const tes_items = ["mythMusic:Polished_Topaz_Gem", "mythMusic:Polished_Ruby_Gem", "mythMusic:Polished_Sapphire_Gem"]
-                            const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
-                            const tes_item = game.items.getObjectByID(`${tes_itemId}`);
-                            if (tes_item === undefined) {
-                                throw new Error(`Invalid item ID ${tes_itemId}`);
+                            // Myth & 1/2,500
+                            if (mythLoaded && Math.random() < 100 / (2500 + combatLevel)) {
+                                const tes_items = ["mythMusic:Polished_Topaz_Gem", "mythMusic:Polished_Ruby_Gem", "mythMusic:Polished_Sapphire_Gem"]
+                                const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
+                                const tes_item = game.items.getObjectByID(`${tes_itemId}`);
+                                if (tes_item === undefined) {
+                                    throw new Error(`Invalid item ID ${tes_itemId}`);
+                                }
+                                game.bank.addItem(tes_item, 1, true, true, false);
                             }
-                            game.bank.addItem(tes_item, 1, true, true, false);
-                        }
-                        // 1/1,000
-                        if (Math.random() < 100 / (1000 + game.combat.enemy.monster.combatLevel)) {
-                            const tes_items = ["tes:Sweetroll"]
-                            const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
-                            const tes_item = game.items.getObjectByID(tes_itemId);
-                            if (tes_item === undefined) {
-                                throw new Error(`Invalid item ID ${tes_itemId}`);
+                            // 1/1,000
+                            if (Math.random() < 100 / (1000 + combatLevel)) {
+                                const tes_items = ["tes:Sweetroll"]
+                                const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
+                                const tes_item = game.items.getObjectByID(tes_itemId);
+                                if (tes_item === undefined) {
+                                    throw new Error(`Invalid item ID ${tes_itemId}`);
+                                }
+                                game.bank.addItem(tes_item, 1, true, true, false);
                             }
-                            game.bank.addItem(tes_item, 1, true, true, false);
                         }
                     } catch (error) {
                         console.log("onEnemyDeath patch ", error)
