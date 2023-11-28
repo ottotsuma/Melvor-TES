@@ -6207,6 +6207,515 @@
         "buyLimitOverrides": [],
         "showBuyLimit": false,
         "customName": "Thieves Orders"
+      },
+      {
+        "id": "Resupply_I",
+        "media": "assets/icons/Cache.png",
+        "category": "tes:Fighters_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Cooked_Juvenile_Mudcrab",
+              "quantity": 200
+            },
+            {
+              "id": "tes:Cooked_Juvenile_Mudcrab_Perfect",
+              "quantity": 100
+            },
+            {
+              "id": "melvorD:Light_Rune",
+              "quantity": 200
+            },
+            {
+              "id": "melvorD:Magic_Bones",
+              "quantity": 200
+            },
+            {
+              "id": "melvorD:Frost_Arrows",
+              "quantity": 200
+            },
+            {
+              "id": "melvorD:Enchanted_Sapphire_Bolts",
+              "quantity": 200
+            }
+          ]
+        },
+        "customDescription": "Cooked Juvenile Mudcrab, Light Rune, Magic Bones, Frost Arrows, Enchanted Sapphire Bolts +200. Cooked Juvenile Mudcrab Perfect +100.",
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 5000
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [{
+          "dungeonID":"tes:Arena",
+          "count": 1,
+          "type": "DungeonCompletion"
+        }],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Resupply I"
+      },
+      {
+        "id": "Resupply_II",
+        "media": "assets/icons/Cache.png",
+        "category": "tes:Fighters_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Sweetroll",
+              "quantity": 300
+            },
+            {
+              "id": "melvorD:Light_Rune",
+              "quantity": 1000
+            },
+            {
+              "id": "melvorD:Magic_Bones",
+              "quantity": 2000
+            },
+            {
+              "id": "melvorD:Fire_Arrows",
+              "quantity": 500
+            },
+            {
+              "id": "melvorD:Enchanted_Ruby_Bolts",
+              "quantity": 500
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 50000
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [{
+          "dungeonID":"tes:Volkihar",
+          "count": 1,
+          "type": "DungeonCompletion"
+        }],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Resupply II",
+        "customDescription": "Sweetroll + 300, Light Rune +1000, Magic Bones +2000, Fire Arrows +500, Enchanted Ruby Bolts +500."
+      },
+      {
+        "id": "Resupply_Alchemy",
+        "media": "assets/icons/Cache.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Alembic",
+              "quantity": 100
+            },
+            {
+              "id": "tes:Calcinator",
+              "quantity": 100
+            },
+            {
+              "id": "tes:Retort",
+              "quantity": 100
+            },
+            {
+              "id": "tes:MortarAndPestle",
+              "quantity": 100
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 10000
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [{
+          "skillID":"melvorD:Runecrafting",
+          "level": 50,
+          "type": "SkillLevel"
+        },
+        {
+          "purchaseID":"tes:Conjurer_Mage_Rank",
+          "count": 1,
+          "type": "ShopPurchase"
+        }],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Resupply Alchemy",
+        "customDescription": "Mortar And Pestle, Retort, Calcinator, Alembic +100."
+      },
+      {
+        "id": "Poison_Arrows",
+        "media": "assets/icons/Cache.png",
+        "category": "tes:Dark_Brotherhood_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "melvorD:Poison_Arrows",
+              "quantity": 100
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id":"melvorD:Bones",
+              "quantity": 100
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [{
+          "purchaseID":"tes:Silencer_Rank",
+          "count": 1,
+          "type": "ShopPurchase"
+        }],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Poison Arrows",
+        "customDescription": "Poison Arrows +100."
+      },
+      {
+        "id": "Resupply_Mage_I",
+        "media": "assets/icons/Cache.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "melvorD:Magic_Wand_Basic",
+              "quantity": 1
+            },
+            {
+              "id": "melvorD:Green_Wizard_Hat",
+              "quantity": 1
+            },
+            {
+              "id": "melvorD:Green_Wizard_Robes",
+              "quantity": 1
+            },
+            {
+              "id": "melvorD:Green_Wizard_Bottoms",
+              "quantity": 1
+            },
+            {
+              "id": "melvorD:Green_Wizard_Boots",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 10000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+        {
+          "purchaseID":"tes:Associate_Mage_Rank",
+          "count": 1,
+          "type": "ShopPurchase"
+        }],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Associate Starter Pack",
+        "customDescription": "Contains a basic wand and a set of green wizard clothes."
+      },
+      {
+        "id": "Resupply_Mage_II",
+        "media": "assets/icons/Cache.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "melvorD:Magic_Wand_Basic",
+              "quantity": 1
+            },
+            {
+              "id": "melvorD:Blue_Wizard_Hat",
+              "quantity": 1
+            },
+            {
+              "id": "melvorD:Blue_Wizard_Robes",
+              "quantity": 1
+            },
+            {
+              "id": "melvorD:Blue_Wizard_Bottoms",
+              "quantity": 1
+            },
+            {
+              "id": "melvorD:Blue_Wizard_Boots",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 30000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+        {
+          "purchaseID":"tes:Apprentice_Mage_Rank",
+          "count": 1,
+          "type": "ShopPurchase"
+        }],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Apprentice Starter Pack",
+        "customDescription": "Contains a basic wand and a set of blue wizard clothes."
+      },
+      {
+        "id": "Resupply_Mage_III",
+        "media": "assets/icons/Cache.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "melvorD:Magic_Wand_Powerful",
+              "quantity": 1
+            },
+            {
+              "id": "melvorD:Red_Wizard_Hat",
+              "quantity": 1
+            },
+            {
+              "id": "melvorD:Red_Wizard_Robes",
+              "quantity": 1
+            },
+            {
+              "id": "melvorD:Red_Wizard_Bottoms",
+              "quantity": 1
+            },
+            {
+              "id": "melvorD:Red_Wizard_Boots",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 50000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+        {
+          "purchaseID":"tes:Journeyman_Mage_Rank",
+          "count": 1,
+          "type": "ShopPurchase"
+        }],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Journeyman Starter Pack",
+        "customDescription": "Contains a basic wand and a set of red wizard clothes."
+      },
+      {
+        "id": "Mages_Gloves_Shop",
+        "media": "assets/items/Miolite_Gloves.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Mages_Gloves",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 20000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+        {
+          "purchaseID":"tes:Evoker_Mage_Rank",
+          "count": 1,
+          "type": "ShopPurchase"
+        }],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Mages Gloves"
+      },
+      {
+        "id": "MagesHood_Shop",
+        "media": "assets/items/Mage'sHood.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:MagesHood",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 20000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+        {
+          "purchaseID":"tes:Warlock_Mage_Rank",
+          "count": 1,
+          "type": "ShopPurchase"
+        }],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Mages Hood"
+      },
+      {
+        "id": "MagesRobe_Shop",
+        "media": "assets/items/Mage'sRobe.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:MagesRobe",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 20000
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+        {
+          "purchaseID":"tes:Warlock_Mage_Rank",
+          "count": 1,
+          "type": "ShopPurchase"
+        }],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Mages Robe"
       }
     ],
     "shopDisplayOrder": [
@@ -6254,6 +6763,8 @@
           "tes:Master_Rank",
           "tes:ElsweyrSpicedTea_Shop",
           "tes:GoblinFurnishings_Shop",
+          "tes:Resupply_I",
+          "tes:Resupply_II",
           "tes:RugdumphSword_Shop",
           "tes:FistsofRandagulf_Shop",
           "tes:Sinweaver_Shop",
@@ -6296,8 +6807,15 @@
           "tes:Arch_Mage_Mage_Rank",
           "tes:recommendation_letter_Shop",
           "tes:Calipers_Shop",
+          "tes:Mages_Gloves_Shop",
+          "tes:Resupply_Alchemy",
           "tes:WelkyndStone_Shop",
           "tes:VarlaStone_Shop",
+          "tes:Resupply_Mage_I",
+          "tes:Resupply_Mage_II",
+          "tes:Resupply_Mage_III",
+          "tes:MagesHood_Shop",
+          "tes:MagesRobe_Shop",
           "tes:Arch_MagesHood_Shop",
           "tes:Arch_MagesRobe_Shop",
           "tes:Summoning_Mage_Apprentice_Shop",
@@ -6340,6 +6858,7 @@
           "tes:Shadowhunt_Shop",
           "tes:Black_Band_Shop",
           "tes:The_Deceiver_Shop",
+          "tes:Poison_Arrows",
           "tes:BladeOfWoe_Shop",
           "tes:Black_Hand_Hood_Shop",
           "tes:Black_Hand_Robe_Shop",
@@ -6398,10 +6917,339 @@
     ],
     "items": [
       {
+        "id": "FingerOfAdamusPhillida",
+        "name": "Finger Of Adamus Phillida",
+        "customDescription": "Severed finger.",
+        "category": "Combat",
+        "type": "Finger",
+        "media": "assets/items/FingerOfAdamusPhillida.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 0,
+        "itemType": "Item"
+      },
+      {
+        "id": "StoneOfStAlessia",
+        "name": "Stone Of St.Alessia",
+        "category": "Combat",
+        "type": "Amulet",
+        "media": "assets/items/StoneOfSt.Alessia.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 0,
+        "itemType": "Equipment",
+        "modifiers": {
+          "decreasedMaxHitPercent": 50,
+          "decreasedDamageReduction": 50,
+          "decreasedMagicMaxHit": 50,
+          "decreasedMeleeMaxHit": 50,
+          "decreasedRangedMaxHit": 50,
+          "halfSkillInterval": 1,
+          "halfSkillXP": 1,
+          "halfMasteryXP": 1
+        },
+        "equipmentStats": [],
+        "tier": "none",
+        "validSlots": [
+          "Amulet"
+        ],
+        "equipRequirements": [
+        ],
+        "occupiesSlots": [],
+        "customDescription": "An amulet for the worthy."
+      },
+      {
+        "id": "EmperorsRobe",
+        "name": "Emperor's Robe",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Emperor'sRobe.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 221,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedGPFromSales": 20,
+          "increasedTownshipEducation": 20,
+          "increasedTownshipTaxPerCitizen": 10,
+          "decreasedMaxHitPercentBasedOnDamageReduction": 1
+        },
+        "equipmentStats": [
+          {
+            "key": "damageReduction",
+            "value": 50
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Platebody"
+        ],
+        "equipRequirements": [
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "MagesHood",
+        "name": "Mage's Hood",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Mage'sHood.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 221,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedRunePreservation": 5
+        },
+        "equipmentStats": [
+          {
+            "key": "magicDamageBonus",
+            "value": 4
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 10
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 7
+          },
+          {
+            "key": "damageReduction",
+            "value": 5
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Helmet"
+        ],
+        "equipRequirements": [
+          {
+            "purchaseID":"tes:Warlock_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "MagesRobe",
+        "name": "Mage's Robe",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Mage'sRobe.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 221,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedRunePreservation": 5
+        },
+        "equipmentStats": [
+          {
+            "key": "magicDamageBonus",
+            "value": 5
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 30
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 30
+          },
+          {
+            "key": "damageReduction",
+            "value": 5
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Platebody"
+        ],
+        "equipRequirements": [
+          {
+            "purchaseID":"tes:Warlock_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Mages_Gloves",
+        "name": "Mages Gloves",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Miolite_Gloves.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 221,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedRunePreservation": 5
+        },
+        "equipmentStats": [
+          {
+            "key": "meleeDefenceBonus",
+            "value": 5
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 5
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 4
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 5
+          },
+          {
+            "key": "damageReduction",
+            "value": 2
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Gloves"
+        ],
+        "equipRequirements": [
+          {
+            "purchaseID":"tes:Evoker_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Miolite_Gloves",
+        "name": "Miolite Gloves",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Miolite_Gloves.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 221,
+        "itemType": "Equipment",
+        "modifiers": {},
+        "equipmentStats": [
+          {
+            "key": "blockAttackBonus",
+            "value": 7
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 7
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 7
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 5
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 7
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 5
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 2
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 3
+          },
+          {
+            "key": "damageReduction",
+            "value": 2
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Gloves"
+        ],
+        "equipRequirements": [
+          {
+            "skillID": "melvorD:Defence",
+            "level": 40,
+            "type": "SkillLevel"
+          },
+          {
+            "skillID": "melvorD:Ranged",
+            "level": 40,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Black_Gloves",
+        "name": "Black Gloves",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Black_Gloves.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 18,
+        "itemType": "Equipment",
+        "modifiers": {},
+        "equipmentStats": [
+          {
+            "key": "blockAttackBonus",
+            "value": 4
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 4
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 4
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 5
+          },
+          {
+            "key": "meleeStrengthBonus",
+            "value": 4
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Gloves"
+        ],
+        "equipRequirements": [
+          {
+            "skillID": "melvorD:Defence",
+            "level": 10,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
         "id": "Bloodworm_Helm",
         "name": "Bloodworm Helm",
         "category": "Combat",
-        "type": "Amulet",
+        "type": "Armour",
         "media": "assets/items/Helm_of_Oreyn_Bearclaw.png",
         "ignoreCompletion": false,
         "obtainFromItemLog": false,
@@ -6777,31 +7625,31 @@
         ],
         "equipmentStats": [
           {
-            "key":"magicDefenceBonus",
+            "key": "magicDefenceBonus",
             "value": 40
           },
           {
-            "key":"meleeDefenceBonus",
+            "key": "meleeDefenceBonus",
             "value": 40
           },
           {
-            "key":"rangedDefenceBonus",
+            "key": "rangedDefenceBonus",
             "value": 40
           },
           {
-            "key":"slashAttackBonus",
+            "key": "slashAttackBonus",
             "value": 20
           },
           {
-            "key":"blockAttackBonus",
+            "key": "blockAttackBonus",
             "value": 20
           },
           {
-            "key":"stabAttackBonus",
+            "key": "stabAttackBonus",
             "value": 20
           },
           {
-            "key":"meleeStrengthBonus",
+            "key": "meleeStrengthBonus",
             "value": 10
           }
         ],
@@ -7483,9 +8331,9 @@
         "ignoreCompletion": false,
         "obtainFromItemLog": false,
         "golbinRaidExclusive": false,
-        "sellsFor": 50,
+        "sellsFor": 60,
         "itemType": "Food",
-        "healsFor": 25
+        "healsFor": 35
       },
       {
         "id": "Cooked_Juvenile_Mudcrab",
@@ -8513,7 +9361,7 @@
         "overrideSpecialChances": [
           40
         ],
-        "enemyModifiers":{
+        "enemyModifiers": {
           "decreasedGlobalAccuracy": 3
         }
       },
@@ -8946,7 +9794,7 @@
             "value": 3
           }
         ],
-        "modifiers":{
+        "modifiers": {
           "increasedFlatMinHit": 50
         },
         "tier": "none",
@@ -10373,7 +11221,7 @@
         ],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Gray_Fox_Rank",
+            "purchaseID": "tes:Gray_Fox_Rank",
             "count": 1,
             "type": "ShopPurchase"
           },
@@ -10464,7 +11312,7 @@
             "type": "SkillLevel"
           },
           {
-            "purchaseID":"tes:Gray_Fox_Rank",
+            "purchaseID": "tes:Gray_Fox_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -10556,7 +11404,7 @@
         ],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Gray_Fox_Rank",
+            "purchaseID": "tes:Gray_Fox_Rank",
             "count": 1,
             "type": "ShopPurchase"
           },
@@ -10643,7 +11491,7 @@
         ],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Gray_Fox_Rank",
+            "purchaseID": "tes:Gray_Fox_Rank",
             "count": 1,
             "type": "ShopPurchase"
           },
@@ -10677,7 +11525,7 @@
             "level": 99
           },
           {
-            "purchaseID":"tes:Gray_Fox_Rank",
+            "purchaseID": "tes:Gray_Fox_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -10728,7 +11576,7 @@
             "level": 99
           },
           {
-            "purchaseID":"tes:Gray_Fox_Rank",
+            "purchaseID": "tes:Gray_Fox_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -10789,7 +11637,7 @@
             "level": 99
           },
           {
-            "purchaseID":"tes:Gray_Fox_Rank",
+            "purchaseID": "tes:Gray_Fox_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -10866,7 +11714,7 @@
         ],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Gray_Fox_Rank",
+            "purchaseID": "tes:Gray_Fox_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -10953,7 +11801,7 @@
         ],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Master_Thief_Rank",
+            "purchaseID": "tes:Master_Thief_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -11033,7 +11881,7 @@
         ],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Master_Thief_Rank",
+            "purchaseID": "tes:Master_Thief_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -11119,7 +11967,7 @@
         ],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Master_Thief_Rank",
+            "purchaseID": "tes:Master_Thief_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -11206,7 +12054,7 @@
         ],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Master_Thief_Rank",
+            "purchaseID": "tes:Master_Thief_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -11285,7 +12133,7 @@
         ],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Pickpocket_Rank",
+            "purchaseID": "tes:Pickpocket_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -11370,7 +12218,7 @@
         ],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Pickpocket_Rank",
+            "purchaseID": "tes:Pickpocket_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -11454,7 +12302,7 @@
         ],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Pickpocket_Rank",
+            "purchaseID": "tes:Pickpocket_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -11533,7 +12381,7 @@
         ],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Pickpocket_Rank",
+            "purchaseID": "tes:Pickpocket_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -11640,7 +12488,7 @@
         "occupiesSlots": [],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Pickpocket_Rank",
+            "purchaseID": "tes:Pickpocket_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -12365,7 +13213,7 @@
       },
       {
         "id": "lootbox",
-        "name": "Lootbox",
+        "name": "Lost Box",
         "category": "Dungeons",
         "type": "Item",
         "media": "assets/items/lootbox.png",
@@ -12939,6 +13787,393 @@
           }
         ],
         "customDescription": "The Elder Scrolls are artifacts of unknown origin and quantity, being simultaneously archives of historic, past and future events. This one must be faulty, it drops random items."
+      },
+      {
+        "id": "lootbox2",
+        "name": "Loot",
+        "category": "Dungeons",
+        "type": "Item",
+        "media": "assets/items/lootbox.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 250,
+        "itemType": "Openable",
+        "dropTable": [
+          {
+            "itemID": "tes:StoneOfStAlessia",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID": "tes:gold_coin",
+            "minQuantity": 20,
+            "maxQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:Black_Gloves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:Imperial_Dragon_Helmet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Imperial_Dragon_Gauntlets",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Imperial_Dragon_Armor",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Imperial_Dragon_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Imperial_Dragon_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Imperial_Dragon_Cloak",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Blades_Sword",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Flin",
+            "minQuantity": 100,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Vagrant_Hood",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Vagrant_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Vagrant_Robes",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Fishing_Hat",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Fishing_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Fishing_Clothes",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Juvenile_Mudcrab",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 80
+          },
+          {
+            "itemID": "tes:Cooked_Juvenile_Mudcrab_Perfect",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 60
+          },
+          {
+            "itemID": "tes:Cooked_Juvenile_Mudcrab",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "tes:magic_mask",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:dragonbornhat",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Alikri_Fishing_Rod",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Dwarven_Fishing_Rod",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Fishing_Rod",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Crabbers_Charm",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Argonian_Fishing_Rod",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Jesters_Gloves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Jesters_Hat",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Jesters_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Jesters_Outfit",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Bard_Lute",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Bard_Flute",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Bard_Drum",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Bloodstone_Chalice",
+            "minQuantity": 10,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Blood_Pack",
+            "minQuantity": 100,
+            "maxQuantity": 1,
+            "weight": 80
+          },
+          {
+            "itemID": "tes:Hagraven_Summon",
+            "minQuantity": 10,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Sinestral_Blade",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Sinestral_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Goblin_Ear",
+            "minQuantity": 1000,
+            "maxQuantity": 50,
+            "weight": 60
+          },
+          {
+            "itemID": "tes:GoblinTotemStaff",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Skooma",
+            "minQuantity": 10,
+            "maxQuantity": 1,
+            "weight": 35
+          },
+          {
+            "itemID": "tes:WitchsHead",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Eye",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:GoblinFurnishings",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID": "tes:ElsweyrSpicedTea",
+            "minQuantity": 100,
+            "maxQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "tes:HagravensClaw",
+            "minQuantity": 10,
+            "maxQuantity": 1,
+            "weight": 35
+          },
+          {
+            "itemID": "tes:BloodPotion",
+            "minQuantity": 10,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:WelkyndStone",
+            "minQuantity": 100,
+            "maxQuantity": 1,
+            "weight": 50
+          },
+          {
+            "itemID": "tes:VarlaStone",
+            "minQuantity": 100,
+            "maxQuantity": 1,
+            "weight": 15
+          },
+          {
+            "itemID": "tes:Master_Alchemy_Apparatus",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "tes:Expert_Alchemy_Apparatus",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Journeyman_Alchemy_Apparatus",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 50
+          },
+          {
+            "itemID": "tes:Apprentice_Alchemy_Apparatus",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "tes:Novice_Alchemy_Apparatus",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 90
+          },
+          {
+            "itemID": "tes:MortarAndPestle",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:Retort",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:Calcinator",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:Alembic",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:Necromancer_Robes_Novice",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 90
+          },
+          {
+            "itemID": "tes:Lockpick",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:Sweetroll",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 75
+          }
+        ],
+        "customDescription": "A box that is full of Elder Scrolls loot."
       }
     ],
     "itemUpgrades": [
@@ -13001,8 +14236,8 @@
         "entryRequirements": [
           {
             "type": "SkillLevel",
-            "skillID": "melvorD:Slayer",
-            "level": 99
+            "skillID": "melvorD:Hitpoints",
+            "level": 1
           }
         ],
         "areaEffect": {
@@ -13471,13 +14706,13 @@
           "tes:ShadowBlast"
         ],
         "passives": [],
-        "lootChance": 75,
+        "lootChance": 100,
         "lootTable": [
           {
             "itemID": "melvorD:Water_Rune",
             "maxQuantity": 20,
             "minQuantity": 1,
-            "weight": 60
+            "weight": 70
           },
           {
             "itemID": "tes:Eye",
@@ -13786,6 +15021,42 @@
         "lootChance": 75,
         "lootTable": [
           {
+            "itemID": "melvorD:Air_Rune",
+            "maxQuantity": 30,
+            "minQuantity": 3,
+            "weight": 75
+          },
+          {
+            "itemID": "melvorD:Earth_Rune",
+            "maxQuantity": 30,
+            "minQuantity": 3,
+            "weight": 75
+          },
+          {
+            "itemID": "melvorD:Water_Rune",
+            "maxQuantity": 30,
+            "minQuantity": 3,
+            "weight": 75
+          },
+          {
+            "itemID": "melvorD:Fire_Rune",
+            "maxQuantity": 30,
+            "minQuantity": 3,
+            "weight": 75
+          },
+          {
+            "itemID": "melvorD:Death_Rune",
+            "maxQuantity": 30,
+            "minQuantity": 3,
+            "weight": 75
+          },
+          {
+            "itemID": "melvorF:Nature_Rune",
+            "maxQuantity": 30,
+            "minQuantity": 3,
+            "weight": 50
+          },
+          {
             "itemID": "tes:HagravensClaw",
             "maxQuantity": 3,
             "minQuantity": 1,
@@ -13858,8 +15129,8 @@
           },
           {
             "itemID": "tes:Goblin_Ear",
-            "maxQuantity": 3,
-            "minQuantity": 1,
+            "maxQuantity": 30,
+            "minQuantity": 6,
             "weight": 60
           }
         ],
@@ -13929,8 +15200,8 @@
           },
           {
             "itemID": "tes:Goblin_Ear",
-            "maxQuantity": 3,
-            "minQuantity": 1,
+            "maxQuantity": 30,
+            "minQuantity": 6,
             "weight": 60
           }
         ],
@@ -14000,8 +15271,8 @@
           },
           {
             "itemID": "tes:Goblin_Ear",
-            "maxQuantity": 3,
-            "minQuantity": 1,
+            "maxQuantity": 30,
+            "minQuantity": 6,
             "weight": 60
           }
         ],
@@ -14071,8 +15342,8 @@
           },
           {
             "itemID": "tes:Goblin_Ear",
-            "maxQuantity": 3,
-            "minQuantity": 1,
+            "maxQuantity": 30,
+            "minQuantity": 6,
             "weight": 60
           }
         ],
@@ -14142,8 +15413,8 @@
           },
           {
             "itemID": "tes:Goblin_Ear",
-            "maxQuantity": 3,
-            "minQuantity": 1,
+            "maxQuantity": 30,
+            "minQuantity": 6,
             "weight": 60
           }
         ],
@@ -14213,8 +15484,8 @@
           },
           {
             "itemID": "tes:Goblin_Ear",
-            "maxQuantity": 3,
-            "minQuantity": 1,
+            "maxQuantity": 30,
+            "minQuantity": 6,
             "weight": 60
           }
         ],
@@ -14284,8 +15555,8 @@
           },
           {
             "itemID": "tes:Goblin_Ear",
-            "maxQuantity": 3,
-            "minQuantity": 1,
+            "maxQuantity": 30,
+            "minQuantity": 6,
             "weight": 60
           }
         ],
@@ -14355,8 +15626,8 @@
           },
           {
             "itemID": "tes:Goblin_Ear",
-            "maxQuantity": 3,
-            "minQuantity": 1,
+            "maxQuantity": 30,
+            "minQuantity": 6,
             "weight": 60
           }
         ],
@@ -14420,8 +15691,8 @@
           },
           {
             "itemID": "tes:Goblin_Ear",
-            "maxQuantity": 3,
-            "minQuantity": 1,
+            "maxQuantity": 30,
+            "minQuantity": 6,
             "weight": 60
           },
           {
@@ -14491,8 +15762,8 @@
           },
           {
             "itemID": "tes:Goblin_Ear",
-            "maxQuantity": 3,
-            "minQuantity": 1,
+            "maxQuantity": 30,
+            "minQuantity": 6,
             "weight": 60
           }
         ],
@@ -14544,8 +15815,8 @@
           },
           {
             "itemID": "tes:Goblin_Ear",
-            "maxQuantity": 3,
-            "minQuantity": 1,
+            "maxQuantity": 30,
+            "minQuantity": 6,
             "weight": 60
           },
           {
@@ -14615,8 +15886,8 @@
           },
           {
             "itemID": "tes:Goblin_Ear",
-            "maxQuantity": 3,
-            "minQuantity": 1,
+            "maxQuantity": 30,
+            "minQuantity": 6,
             "weight": 60
           }
         ],
@@ -14680,8 +15951,8 @@
           },
           {
             "itemID": "tes:Goblin_Ear",
-            "maxQuantity": 3,
-            "minQuantity": 1,
+            "maxQuantity": 30,
+            "minQuantity": 6,
             "weight": 60
           }
         ],
@@ -14751,8 +16022,8 @@
           },
           {
             "itemID": "tes:Goblin_Ear",
-            "maxQuantity": 3,
-            "minQuantity": 1,
+            "maxQuantity": 30,
+            "minQuantity": 6,
             "weight": 60
           }
         ],
@@ -14816,8 +16087,8 @@
           },
           {
             "itemID": "tes:Goblin_Ear",
-            "maxQuantity": 3,
-            "minQuantity": 1,
+            "maxQuantity": 30,
+            "minQuantity": 6,
             "weight": 60
           }
         ],
@@ -14881,8 +16152,8 @@
           },
           {
             "itemID": "tes:Goblin_Ear",
-            "maxQuantity": 3,
-            "minQuantity": 1,
+            "maxQuantity": 30,
+            "minQuantity": 6,
             "weight": 60
           }
         ],
@@ -14946,8 +16217,8 @@
           },
           {
             "itemID": "tes:Goblin_Ear",
-            "maxQuantity": 3,
-            "minQuantity": 1,
+            "maxQuantity": 30,
+            "minQuantity": 6,
             "weight": 60
           }
         ],
@@ -15011,8 +16282,8 @@
           },
           {
             "itemID": "tes:Goblin_Ear",
-            "maxQuantity": 3,
-            "minQuantity": 1,
+            "maxQuantity": 30,
+            "minQuantity": 6,
             "weight": 60
           }
         ],
@@ -15076,8 +16347,8 @@
           },
           {
             "itemID": "tes:Goblin_Ear",
-            "maxQuantity": 3,
-            "minQuantity": 1,
+            "maxQuantity": 30,
+            "minQuantity": 6,
             "weight": 60
           }
         ],
@@ -15201,19 +16472,19 @@
             "weight": 10
           },
           {
-            "itemID": "melvorD:Blue_Dhide_Vambraces",
+            "itemID": "melvorD:Blue_Dhide_Vambraces_U",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID": "melvorD:Blue_Dhide_Vambraces",
+            "itemID": "melvorD:Blue_Dhide_Chaps_U",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID": "melvorD:Blue_Dhide_Body",
+            "itemID": "melvorD:Blue_Dhide_Body_U",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
@@ -15225,16 +16496,76 @@
             "weight": 10
           },
           {
+            "itemID": "melvorD:Ice_Sword",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Ice_Longbow",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Ice_Battleaxe",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Ice_Boots",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Ice_Helmet",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Ice_2h_Sword",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
             "itemID": "melvorD:Ice_Arrows",
             "maxQuantity": 20,
             "minQuantity": 5,
             "weight": 10
           },
           {
-            "itemID": "melvorD:Frost_Arrows",
+            "itemID": "melvorD:Ice_Platebody",
             "maxQuantity": 20,
-            "minQuantity": 1,
+            "minQuantity": 5,
             "weight": 10
+          },
+          {
+            "itemID": "melvorD:Ice_Platelegs",
+            "maxQuantity": 20,
+            "minQuantity": 5,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Ice_Shortbow",
+            "maxQuantity": 20,
+            "minQuantity": 5,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Ice_Dagger",
+            "maxQuantity": 20,
+            "minQuantity": 5,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Frost_Arrows",
+            "maxQuantity": 40,
+            "minQuantity": 10,
+            "weight": 50
           }
         ],
         "bones": {
@@ -15712,13 +17043,13 @@
             "itemID": "melvorD:Death_Rune",
             "maxQuantity": 20,
             "minQuantity": 1,
-            "weight": 100
+            "weight": 75
           },
           {
             "itemID": "melvorD:Rune_Boots_T_S",
             "maxQuantity": 1,
             "minQuantity": 1,
-            "weight": 10
+            "weight": 1
           }
         ],
         "gpDrops": {
@@ -15767,7 +17098,7 @@
           },
           {
             "itemID": "melvorD:Dragon_Platelegs_T_S",
-            "maxQuantity": 10,
+            "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           }
@@ -16046,10 +17377,28 @@
         "lootChance": 10,
         "lootTable": [
           {
-            "itemID": "melvorD:Blue_Dhide_Body_U",
-            "maxQuantity": 1,
+            "itemID": "melvorD:Adamant_Arrows",
+            "maxQuantity": 9,
+            "minQuantity": 3,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Beef_Perfect",
+            "maxQuantity": 6,
             "minQuantity": 1,
-            "weight": 10
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Beef_Perfect",
+            "maxQuantity": 6,
+            "minQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:Cooked_Juvenile_Mudcrab_Perfect",
+            "maxQuantity": 6,
+            "minQuantity": 1,
+            "weight": 100
           }
         ],
         "gpDrops": {
@@ -16331,28 +17680,16 @@
         "lootChance": 100,
         "lootTable": [
           {
-            "itemID": "melvorD:Potato_Seed",
-            "maxQuantity": 10,
-            "minQuantity": 1,
+            "itemID": "melvorD:Feathers",
+            "maxQuantity": 120,
+            "minQuantity": 5,
             "weight": 100
           },
           {
-            "itemID": "melvorD:Onion_Seed",
-            "maxQuantity": 10,
+            "itemID": "melvorD:Headless_Arrows",
+            "maxQuantity": 9,
             "minQuantity": 1,
             "weight": 100
-          },
-          {
-            "itemID": "melvorD:Cabbage_Seed",
-            "maxQuantity": 10,
-            "minQuantity": 1,
-            "weight": 100
-          },
-          {
-            "itemID": "melvorD:Tomato_Seed",
-            "maxQuantity": 10,
-            "minQuantity": 1,
-            "weight": 10
           }
         ],
         "gpDrops": {
@@ -16392,28 +17729,34 @@
         "lootChance": 100,
         "lootTable": [
           {
-            "itemID": "melvorD:Potato_Seed",
-            "maxQuantity": 10,
+            "itemID": "melvorD:Mithril_Ore",
+            "maxQuantity": 5,
             "minQuantity": 1,
             "weight": 100
           },
           {
-            "itemID": "melvorD:Onion_Seed",
-            "maxQuantity": 10,
+            "itemID": "melvorD:Adamantite_Ore",
+            "maxQuantity": 5,
             "minQuantity": 1,
-            "weight": 100
+            "weight": 75
           },
           {
-            "itemID": "melvorD:Cabbage_Seed",
-            "maxQuantity": 10,
+            "itemID": "melvorD:Runite_Ore",
+            "maxQuantity": 5,
             "minQuantity": 1,
-            "weight": 100
+            "weight": 50
           },
           {
-            "itemID": "melvorD:Tomato_Seed",
+            "itemID": "melvorD:Coal_Ore",
+            "maxQuantity": 12,
+            "minQuantity": 6,
+            "weight": 25
+          },
+          {
+            "itemID": "melvorD:Adamant_Gloves",
             "maxQuantity": 10,
             "minQuantity": 1,
-            "weight": 10
+            "weight": 90
           }
         ],
         "gpDrops": {
@@ -16454,27 +17797,9 @@
         "lootTable": [
           {
             "itemID": "melvorD:Potato_Seed",
-            "maxQuantity": 10,
+            "maxQuantity": 3,
             "minQuantity": 1,
             "weight": 100
-          },
-          {
-            "itemID": "melvorD:Onion_Seed",
-            "maxQuantity": 10,
-            "minQuantity": 1,
-            "weight": 100
-          },
-          {
-            "itemID": "melvorD:Cabbage_Seed",
-            "maxQuantity": 10,
-            "minQuantity": 1,
-            "weight": 100
-          },
-          {
-            "itemID": "melvorD:Tomato_Seed",
-            "maxQuantity": 10,
-            "minQuantity": 1,
-            "weight": 10
           }
         ],
         "gpDrops": {
@@ -16511,31 +17836,13 @@
         "attackType": "melee",
         "specialAttacks": [],
         "passives": [],
-        "lootChance": 100,
+        "lootChance": 15,
         "lootTable": [
           {
-            "itemID": "melvorD:Potato_Seed",
-            "maxQuantity": 10,
+            "itemID": "tes:Black_Gloves",
+            "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 100
-          },
-          {
-            "itemID": "melvorD:Onion_Seed",
-            "maxQuantity": 10,
-            "minQuantity": 1,
-            "weight": 100
-          },
-          {
-            "itemID": "melvorD:Cabbage_Seed",
-            "maxQuantity": 10,
-            "minQuantity": 1,
-            "weight": 100
-          },
-          {
-            "itemID": "melvorD:Tomato_Seed",
-            "maxQuantity": 10,
-            "minQuantity": 1,
-            "weight": 10
           }
         ],
         "gpDrops": {
@@ -16572,31 +17879,13 @@
         "attackType": "melee",
         "specialAttacks": [],
         "passives": [],
-        "lootChance": 100,
+        "lootChance": 15,
         "lootTable": [
           {
-            "itemID": "melvorD:Potato_Seed",
-            "maxQuantity": 10,
+            "itemID": "melvorD:Rune_Gloves",
+            "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 100
-          },
-          {
-            "itemID": "melvorD:Onion_Seed",
-            "maxQuantity": 10,
-            "minQuantity": 1,
-            "weight": 100
-          },
-          {
-            "itemID": "melvorD:Cabbage_Seed",
-            "maxQuantity": 10,
-            "minQuantity": 1,
-            "weight": 100
-          },
-          {
-            "itemID": "melvorD:Tomato_Seed",
-            "maxQuantity": 10,
-            "minQuantity": 1,
-            "weight": 10
           }
         ],
         "gpDrops": {
@@ -16635,31 +17924,13 @@
           "melvorD:LesserDragonbreath"
         ],
         "passives": [],
-        "lootChance": 100,
+        "lootChance": 10,
         "lootTable": [
           {
-            "itemID": "melvorD:Potato_Seed",
-            "maxQuantity": 10,
+            "itemID": "tes:Miolite_Gloves",
+            "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 100
-          },
-          {
-            "itemID": "melvorD:Onion_Seed",
-            "maxQuantity": 10,
-            "minQuantity": 1,
-            "weight": 100
-          },
-          {
-            "itemID": "melvorD:Cabbage_Seed",
-            "maxQuantity": 10,
-            "minQuantity": 1,
-            "weight": 100
-          },
-          {
-            "itemID": "melvorD:Tomato_Seed",
-            "maxQuantity": 10,
-            "minQuantity": 1,
-            "weight": 10
           }
         ],
         "gpDrops": {
@@ -16701,28 +17972,28 @@
         "lootChance": 100,
         "lootTable": [
           {
-            "itemID": "melvorD:Potato_Seed",
-            "maxQuantity": 10,
+            "itemID": "melvorD:Magic_Longbow",
+            "maxQuantity": 1,
             "minQuantity": 1,
-            "weight": 100
+            "weight": 25
           },
           {
-            "itemID": "melvorD:Onion_Seed",
-            "maxQuantity": 10,
+            "itemID": "melvorD:Maple_Longbow",
+            "maxQuantity": 1,
             "minQuantity": 1,
-            "weight": 100
+            "weight": 75
           },
           {
-            "itemID": "melvorD:Cabbage_Seed",
-            "maxQuantity": 10,
+            "itemID": "melvorF:Yew_Longbow",
+            "maxQuantity": 1,
             "minQuantity": 1,
-            "weight": 100
+            "weight": 50
           },
           {
-            "itemID": "melvorD:Tomato_Seed",
-            "maxQuantity": 10,
-            "minQuantity": 1,
-            "weight": 10
+            "itemID": "melvorD:Headless_Arrows",
+            "maxQuantity": 100,
+            "minQuantity": 10,
+            "weight": 25
           }
         ],
         "gpDrops": {
@@ -16762,28 +18033,10 @@
         "lootChance": 100,
         "lootTable": [
           {
-            "itemID": "melvorD:Potato_Seed",
-            "maxQuantity": 10,
-            "minQuantity": 1,
-            "weight": 100
-          },
-          {
             "itemID": "melvorD:Onion_Seed",
-            "maxQuantity": 10,
+            "maxQuantity": 9,
             "minQuantity": 1,
             "weight": 100
-          },
-          {
-            "itemID": "melvorD:Cabbage_Seed",
-            "maxQuantity": 10,
-            "minQuantity": 1,
-            "weight": 100
-          },
-          {
-            "itemID": "melvorD:Tomato_Seed",
-            "maxQuantity": 10,
-            "minQuantity": 1,
-            "weight": 10
           }
         ],
         "gpDrops": {
@@ -16823,28 +18076,10 @@
         "lootChance": 100,
         "lootTable": [
           {
-            "itemID": "melvorD:Potato_Seed",
-            "maxQuantity": 10,
+            "itemID": "melvorD:Amulet_of_Defence",
+            "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 100
-          },
-          {
-            "itemID": "melvorD:Onion_Seed",
-            "maxQuantity": 10,
-            "minQuantity": 1,
-            "weight": 100
-          },
-          {
-            "itemID": "melvorD:Cabbage_Seed",
-            "maxQuantity": 10,
-            "minQuantity": 1,
-            "weight": 100
-          },
-          {
-            "itemID": "melvorD:Tomato_Seed",
-            "maxQuantity": 10,
-            "minQuantity": 1,
-            "weight": 10
           }
         ],
         "gpDrops": {
@@ -16885,9 +18120,27 @@
         "lootTable": [
           {
             "itemID": "melvorD:Red_Dragonhide",
-            "maxQuantity": 10,
+            "maxQuantity": 32,
             "minQuantity": 1,
             "weight": 100
+          },
+          {
+            "itemID": "tes:ElsweyrSpicedTea",
+            "maxQuantity": 143,
+            "minQuantity": 67,
+            "weight": 26
+          },
+          {
+            "itemID": "tes:gold_coin",
+            "maxQuantity": 127,
+            "minQuantity": 45,
+            "weight": 50
+          },
+          {
+            "itemID": "melvorD:Dragon_Gloves",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 45
           }
         ],
         "gpDrops": {
@@ -16974,6 +18227,12 @@
             "maxQuantity": 3,
             "minQuantity": 1,
             "weight": 100
+          },
+          {
+            "itemID": "melvorD:Steel_Gloves",
+            "maxQuantity": 3,
+            "minQuantity": 1,
+            "weight": 100
           }
         ],
         "gpDrops": {
@@ -17025,7 +18284,19 @@
             "weight": 100
           },
           {
+            "itemID": "melvorF:Goo",
+            "maxQuantity": 4,
+            "minQuantity": 1,
+            "weight": 35
+          },
+          {
             "itemID": "melvorD:Chicken_Soup_Perfect",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Mithril_Boots_T_G",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
@@ -18266,6 +19537,12 @@
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
+          },
+          {
+            "itemID": "tes:EmperorsRobe",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 1
           }
         ],
         "gpDrops": {
@@ -18405,7 +19682,7 @@
       },
       {
         "id": "Imperial_Watch",
-        "name": "Imperial_Watch",
+        "name": "Imperial Watch",
         "media": "assets/monsters/Imperial_Watch.png",
         "levels": {
           "Attack": 20,
@@ -18529,61 +19806,61 @@
         "lootChance": 100,
         "lootTable": [
           {
-            "itemID": "melvorD:Steel_Boots",
+            "itemID": "melvorD:Mithril_Boots",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID": "melvorD:Steel_2H_Sword",
+            "itemID": "melvorD:Mithril_2H_Sword",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID": "melvorD:Steel_Dagger",
+            "itemID": "melvorD:Mithril_Dagger",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID": "melvorD:Steel_Helmet",
+            "itemID": "melvorD:Mithril_Helmet",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID": "melvorD:Steel_Gloves",
+            "itemID": "melvorD:Mithril_Gloves",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID": "melvorD:Steel_Battleaxe",
+            "itemID": "melvorD:Mithril_Battleaxe",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID": "melvorD:Steel_Arrows",
+            "itemID": "melvorD:Mithril_Arrows",
             "maxQuantity": 25,
             "minQuantity": 10,
             "weight": 10
           },
           {
-            "itemID": "melvorD:Steel_Platebody",
+            "itemID": "melvorD:Mithril_Platebody",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID": "melvorD:Steel_Platelegs",
+            "itemID": "melvorD:Mithril_Platelegs",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           },
           {
-            "itemID": "melvorD:Steel_Throwing_Knife",
+            "itemID": "melvorD:Mithril_Throwing_Knife",
             "maxQuantity": 10,
             "minQuantity": 5,
             "weight": 10
@@ -18633,6 +19910,61 @@
         "lootChance": 100,
         "lootTable": [
           {
+            "itemID": "tes:gold_coin",
+            "maxQuantity": 1000,
+            "minQuantity": 100,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Black_Dragonhide",
+            "maxQuantity": 300,
+            "minQuantity": 30,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:lootbox2",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 35
+          }
+        ],
+        "bones": {
+          "itemID": "melvorD:Dragon_Bones",
+          "quantity": 10
+        },
+        "gpDrops": {
+          "min": 500,
+          "max": 1000
+        },
+        "canSlayer": false,
+        "isBoss": false,
+        "selectedSpell": "melvorD:FireSurge"
+      },
+      {
+        "id": "Bandit",
+        "name": "Bandit",
+        "media": "assets/monsters/Bandit.png",
+        "levels": {
+          "Attack": 10,
+          "Defence": 10,
+          "Hitpoints": 10,
+          "Magic": 1,
+          "Ranged": 10,
+          "Strength": 10
+        },
+        "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 2300
+          }
+        ],
+        "ignoreCompletion": false,
+        "attackType": "ranged",
+        "specialAttacks": [],
+        "passives": [],
+        "lootChance": 100,
+        "lootTable": [
+          {
             "itemID": "melvorD:Steel_Boots",
             "maxQuantity": 1,
             "minQuantity": 1,
@@ -18694,103 +20026,6 @@
           }
         ],
         "bones": {
-          "itemID": "melvorD:Dragon_Bones",
-          "quantity": 10
-        },
-        "gpDrops": {
-          "min": 500,
-          "max": 1000
-        },
-        "canSlayer": false,
-        "isBoss": false,
-        "selectedSpell": "melvorD:FireSurge"
-      },
-      {
-        "id": "Bandit",
-        "name": "Bandit",
-        "media": "assets/monsters/Bandit.png",
-        "levels": {
-          "Attack": 10,
-          "Defence": 10,
-          "Hitpoints": 10,
-          "Magic": 1,
-          "Ranged": 10,
-          "Strength": 10
-        },
-        "equipmentStats": [
-          {
-            "key": "attackSpeed",
-            "value": 2300
-          }
-        ],
-        "ignoreCompletion": false,
-        "attackType": "ranged",
-        "specialAttacks": [],
-        "passives": [],
-        "lootChance": 100,
-        "lootTable": [
-          {
-            "itemID": "melvorD:Iron_Boots",
-            "maxQuantity": 1,
-            "minQuantity": 1,
-            "weight": 10
-          },
-          {
-            "itemID": "melvorD:Iron_2H_Sword",
-            "maxQuantity": 1,
-            "minQuantity": 1,
-            "weight": 10
-          },
-          {
-            "itemID": "melvorD:Iron_Dagger",
-            "maxQuantity": 1,
-            "minQuantity": 1,
-            "weight": 10
-          },
-          {
-            "itemID": "melvorD:Iron_Helmet",
-            "maxQuantity": 1,
-            "minQuantity": 1,
-            "weight": 10
-          },
-          {
-            "itemID": "melvorD:Iron_Gloves",
-            "maxQuantity": 1,
-            "minQuantity": 1,
-            "weight": 10
-          },
-          {
-            "itemID": "melvorD:Iron_Battleaxe",
-            "maxQuantity": 1,
-            "minQuantity": 1,
-            "weight": 10
-          },
-          {
-            "itemID": "melvorD:Iron_Arrows",
-            "maxQuantity": 25,
-            "minQuantity": 10,
-            "weight": 10
-          },
-          {
-            "itemID": "melvorD:Iron_Platebody",
-            "maxQuantity": 1,
-            "minQuantity": 1,
-            "weight": 10
-          },
-          {
-            "itemID": "melvorD:Iron_Platelegs",
-            "maxQuantity": 1,
-            "minQuantity": 1,
-            "weight": 10
-          },
-          {
-            "itemID": "melvorD:Iron_Throwing_Knife",
-            "maxQuantity": 10,
-            "minQuantity": 5,
-            "weight": 10
-          }
-        ],
-        "bones": {
           "itemID": "melvorD:Bones",
           "quantity": 1
         },
@@ -18827,7 +20062,25 @@
         "lootChance": 40,
         "lootTable": [
           {
-            "itemID": "melvorD:Black_Platebody",
+            "itemID": "melvorD:Black_Helmet_T_S",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Black_Boots_T_S",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Black_Platelegs_T_S",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Black_Platebody_T_S",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
@@ -18836,13 +20089,13 @@
             "itemID": "melvorD:Black_Sword",
             "maxQuantity": 1,
             "minQuantity": 1,
-            "weight": 10
+            "weight": 90
           },
           {
             "itemID": "melvorD:Black_Battleaxe",
             "maxQuantity": 1,
             "minQuantity": 1,
-            "weight": 10
+            "weight": 90
           },
           {
             "itemID": "melvorD:Air_Rune",
@@ -18855,6 +20108,24 @@
             "maxQuantity": 25,
             "minQuantity": 10,
             "weight": 10
+          },
+          {
+            "itemID": "melvorD:Mithril_Arrows",
+            "maxQuantity": 25,
+            "minQuantity": 10,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Adamant_Arrows",
+            "maxQuantity": 25,
+            "minQuantity": 10,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Rune_Arrows",
+            "maxQuantity": 25,
+            "minQuantity": 10,
+            "weight": 5
           }
         ],
         "bones": {
@@ -21569,17 +22840,17 @@
         "media": "assets/locations/Hammerfell.png",
         "monsterIDs": [
           "tes:Heron",
-          "tes:Assassin_Beetle",
-          "tes:Giant_Scorpion",
-          "tes:Shrieking_Harpy",
-          "tes:Lamia",
           "tes:Welwa",
-          "tes:Duneripper",
-          "tes:Den_Mother",
-          "tes:Blue_Oasis_Dragon_Frog",
-          "tes:Infernal_Sep_Adder",
           "tes:Gravelclaw",
-          "tes:Guzzard"
+          "tes:Shrieking_Harpy",
+          "tes:Duneripper",
+          "tes:Assassin_Beetle",
+          "tes:Guzzard",
+          "tes:Den_Mother",
+          "tes:Lamia",
+          "tes:Infernal_Sep_Adder",
+          "tes:Giant_Scorpion",
+          "tes:Blue_Oasis_Dragon_Frog"
         ],
         "difficulty": [
           0,
@@ -21592,10 +22863,10 @@
         "name": "High Rock",
         "media": "assets/locations/High_Rock.png",
         "monsterIDs": [
-          "tes:Nereid",
-          "tes:Spriggan",
           "tes:Echatere",
-          "tes:Riekr"
+          "tes:Nereid",
+          "tes:Riekr",
+          "tes:Spriggan"
         ],
         "difficulty": [
           1,
@@ -21635,12 +22906,12 @@
         "media": "assets/locations/Morrowind.png",
         "monsterIDs": [
           "tes:Cliff_Racer",
-          "tes:Alit",
+          "tes:Nix_Hound",
           "tes:Dreugh",
+          "tes:Alit",
           "tes:Guar",
-          "tes:Netch",
           "tes:Kagouti",
-          "tes:Nix_Hound"
+          "tes:Netch"
         ],
         "difficulty": [
           0
@@ -23032,6 +24303,10 @@
               "maxGP": 450,
               "maxHit": 15,
               "perception": 450,
+              "uniqueDrop":{
+                "id":"tes:FingerOfAdamusPhillida",
+                "quantity": 1
+              },
               "lootTable": [
                 {
                   "itemID": "melvorD:Standard_Chest",
@@ -23240,6 +24515,38 @@
           ],
           "recipes": [
             {
+              "id": "Transmutation_Topaz",
+              "baseExperience": 10,
+              "baseQuantity": 1,
+              "categoryID": "tes:Alchemy",
+              "gpCost": 0,
+              "itemCosts": [
+                {
+                  "id": "melvorD:Sapphire",
+                  "quantity": 1
+                }
+              ],
+              "level": 1,
+              "productID": "melvorD:Topaz",
+              "scCost": 0
+            },
+            {
+              "id": "Transmutation_Sapphire",
+              "baseExperience": 20,
+              "baseQuantity": 1,
+              "categoryID": "tes:Alchemy",
+              "gpCost": 0,
+              "itemCosts": [
+                {
+                  "id": "melvorD:Ruby",
+                  "quantity": 1
+                }
+              ],
+              "level": 10,
+              "productID": "melvorD:Sapphire",
+              "scCost": 0
+            },
+            {
               "id": "Alembic",
               "baseExperience": 30,
               "baseQuantity": 1,
@@ -23253,6 +24560,22 @@
               ],
               "level": 20,
               "productID": "tes:Alembic",
+              "scCost": 0
+            },
+            {
+              "id": "Transmutation_Ruby",
+              "baseExperience": 25,
+              "baseQuantity": 1,
+              "categoryID": "tes:Alchemy",
+              "gpCost": 0,
+              "itemCosts": [
+                {
+                  "id": "melvorD:Emerald",
+                  "quantity": 1
+                }
+              ],
+              "level": 25,
+              "productID": "melvorD:Ruby",
               "scCost": 0
             },
             {
@@ -23272,6 +24595,22 @@
               "scCost": 0
             },
             {
+              "id": "Transmutation_Emerald",
+              "baseExperience": 30,
+              "baseQuantity": 1,
+              "categoryID": "tes:Alchemy",
+              "gpCost": 0,
+              "itemCosts": [
+                {
+                  "id": "melvorD:Diamond",
+                  "quantity": 1
+                }
+              ],
+              "level": 35,
+              "productID": "melvorD:Emerald",
+              "scCost": 0
+            },
+            {
               "id": "Retort",
               "baseExperience": 70,
               "baseQuantity": 1,
@@ -23288,6 +24627,22 @@
               "scCost": 0
             },
             {
+              "id": "Transmutation_Reverse_Emerald",
+              "baseExperience": 35,
+              "baseQuantity": 1,
+              "categoryID": "tes:Alchemy",
+              "gpCost": 1000,
+              "itemCosts": [
+                {
+                  "id": "melvorD:Emerald",
+                  "quantity": 1
+                }
+              ],
+              "level": 45,
+              "productID": "melvorD:Diamond",
+              "scCost": 0
+            },
+            {
               "id": "MortarAndPestle",
               "baseExperience": 90,
               "baseQuantity": 1,
@@ -23301,6 +24656,22 @@
               ],
               "level": 50,
               "productID": "tes:MortarAndPestle",
+              "scCost": 0
+            },
+            {
+              "id": "Transmutation_Reverse_Ruby",
+              "baseExperience": 40,
+              "baseQuantity": 1,
+              "categoryID": "tes:Alchemy",
+              "gpCost": 100,
+              "itemCosts": [
+                {
+                  "id": "melvorD:Ruby",
+                  "quantity": 1
+                }
+              ],
+              "level": 55,
+              "productID": "melvorD:Emerald",
               "scCost": 0
             },
             {
@@ -23329,6 +24700,38 @@
               ],
               "level": 60,
               "productID": "tes:Novice_Alchemy_Apparatus",
+              "scCost": 0
+            },
+            {
+              "id": "Rune_Essence_I",
+              "baseExperience": 20,
+              "baseQuantity": 60,
+              "categoryID": "tes:Alchemy",
+              "gpCost": 0,
+              "itemCosts": [
+                {
+                  "id": "tes:Novice_Alchemy_Apparatus",
+                  "quantity": 1
+                }
+              ],
+              "level": 60,
+              "productID": "melvorD:Rune_Essence",
+              "scCost": 0
+            },
+            {
+              "id": "Transmutation_Reverse_Sapphire",
+              "baseExperience": 45,
+              "baseQuantity": 1,
+              "categoryID": "tes:Alchemy",
+              "gpCost": 20,
+              "itemCosts": [
+                {
+                  "id": "melvorD:Sapphire",
+                  "quantity": 1
+                }
+              ],
+              "level": 65,
+              "productID": "melvorD:Ruby",
               "scCost": 0
             },
             {
@@ -23384,6 +24787,38 @@
               "scCost": 0
             },
             {
+              "id": "Rune_Essence_II",
+              "baseExperience": 20,
+              "baseQuantity": 70,
+              "categoryID": "tes:Alchemy",
+              "gpCost": 0,
+              "itemCosts": [
+                {
+                  "id": "tes:Apprentice_Alchemy_Apparatus",
+                  "quantity": 1
+                }
+              ],
+              "level": 70,
+              "productID": "melvorD:Rune_Essence",
+              "scCost": 0
+            },
+            {
+              "id": "Transmutation_Reverse_Topaz",
+              "baseExperience": 50,
+              "baseQuantity": 1,
+              "categoryID": "tes:Alchemy",
+              "gpCost": 1,
+              "itemCosts": [
+                {
+                  "id": "melvorD:Topaz",
+                  "quantity": 1
+                }
+              ],
+              "level": 75,
+              "productID": "melvorD:Sapphire",
+              "scCost": 0
+            },
+            {
               "id": "Journeyman_Alchemy_Apparatus",
               "baseExperience": 100,
               "baseQuantity": 1,
@@ -23412,6 +24847,38 @@
               "scCost": 0
             },
             {
+              "id": "Rune_Essence_III",
+              "baseExperience": 22,
+              "baseQuantity": 80,
+              "categoryID": "tes:Alchemy",
+              "gpCost": 0,
+              "itemCosts": [
+                {
+                  "id": "tes:Journeyman_Alchemy_Apparatus",
+                  "quantity": 1
+                }
+              ],
+              "level": 80,
+              "productID": "melvorD:Rune_Essence",
+              "scCost": 0
+            },
+            {
+              "id": "Transmute_1",
+              "baseExperience": 55,
+              "baseQuantity": 1,
+              "categoryID": "tes:Alchemy",
+              "gpCost": 20,
+              "itemCosts": [
+                {
+                  "id": "melvorD:Iron_Ore",
+                  "quantity": 1
+                }
+              ],
+              "level": 85,
+              "productID": "melvorD:Silver_Ore",
+              "scCost": 0
+            },
+            {
               "id": "Expert_Alchemy_Apparatus",
               "baseExperience": 100,
               "baseQuantity": 1,
@@ -23437,6 +24904,38 @@
               ],
               "level": 90,
               "productID": "tes:Expert_Alchemy_Apparatus",
+              "scCost": 0
+            },
+            {
+              "id": "Rune_Essence_IV",
+              "baseExperience": 22,
+              "baseQuantity": 90,
+              "categoryID": "tes:Alchemy",
+              "gpCost": 0,
+              "itemCosts": [
+                {
+                  "id": "tes:Expert_Alchemy_Apparatus",
+                  "quantity": 1
+                }
+              ],
+              "level": 90,
+              "productID": "melvorD:Rune_Essence",
+              "scCost": 0
+            },
+            {
+              "id": "Transmute_2",
+              "baseExperience": 60,
+              "baseQuantity": 1,
+              "categoryID": "tes:Alchemy",
+              "gpCost": 5,
+              "itemCosts": [
+                {
+                  "id": "melvorD:Silver_Ore",
+                  "quantity": 1
+                }
+              ],
+              "level": 95,
+              "productID": "melvorD:Gold_Ore",
               "scCost": 0
             },
             {
@@ -23492,39 +24991,19 @@
               "scCost": 0
             },
             {
-              "id": "Iron_to_Gold",
-              "baseExperience": 1000,
-              "baseQuantity": 1000,
+              "id": "Rune_Essence_V",
+              "baseExperience": 22,
+              "baseQuantity": 100,
               "categoryID": "tes:Alchemy",
               "gpCost": 0,
               "itemCosts": [
                 {
-                  "id": "tes:Alembic",
-                  "quantity": 1
-                },
-                {
-                  "id": "tes:Calcinator",
-                  "quantity": 1
-                },
-                {
-                  "id": "tes:Retort",
-                  "quantity": 1
-                },
-                {
-                  "id": "tes:MortarAndPestle",
-                  "quantity": 1
-                },
-                {
-                  "id": "melvorF:Lava_Rune",
-                  "quantity": 1
-                },
-                {
-                  "id": "melvorD:Iron_Ore",
+                  "id": "tes:Master_Alchemy_Apparatus",
                   "quantity": 1
                 }
               ],
               "level": 99,
-              "productID": "melvorD:Gold_Ore",
+              "productID": "melvorD:Rune_Essence",
               "scCost": 0
             }
           ]
@@ -23715,28 +25194,28 @@
             },
             {
               "id": "Open",
-              "level": 52,
+              "level": 92,
               "name": "Open",
               "media": "assets/icons/mages/Open.png",
-              "baseExperience": 62,
+              "baseExperience": 72,
               "description": "Cast Open on an Elite Chest to get Crate of Basic Supplies.",
               "fixedItemCosts": [
                 {
-                  "id": "melvorD:Elite_Chest",
+                  "id": "tes:lootbox",
                   "quantity": 1
                 }
               ],
               "runesRequired": [
                 {
                   "id": "melvorD:Earth_Rune",
-                  "quantity": 1
+                  "quantity": 24
                 },
                 {
                   "id": "melvorF:Spirit_Rune",
-                  "quantity": 1
+                  "quantity": 12
                 }
               ],
-              "produces": "melvorF:Crate_Of_Basic_Supplies",
+              "produces": "tes:lootbox2",
               "specialCost": {
                 "quantity": 1,
                 "type": "None"
@@ -23745,22 +25224,22 @@
             },
             {
               "id": "Water_Breathing",
-              "level": 92,
+              "level": 52,
               "name": "Water Breathing",
               "media": "assets/icons/mages/Water_Breathing.png",
-              "baseExperience": 72,
+              "baseExperience": 62,
               "description": "Dive into the ocean to fetch a treasure chest.",
               "runesRequired": [
                 {
                   "id": "melvorD:Air_Rune",
-                  "quantity": 100
+                  "quantity": 2
                 },
                 {
                   "id": "melvorF:Spirit_Rune",
-                  "quantity": 10
+                  "quantity": 1
                 }
               ],
-              "produces": "melvorD:Treasure_Chest",
+              "produces": "tes:lootbox",
               "specialCost": {
                 "quantity": 1,
                 "type": "None"

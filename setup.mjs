@@ -214,6 +214,21 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     const DragonList = ["tes:Ysmir_Iceheart", "tes:Alduin", "tes:Elsweyr_Dragon", "tes:red_dragon", "tes:green_dragon", "tes:blue_dragon", "tes:MartinSeptim"]
                     const HumansList = ["tes:Necromancer", "tes:Bandit", "tes:Thief", "tes:Havilstein_Hoar", "tes:Matthias_Draconis", "tes:Perennia_Draconis", "tes:Caelia_Draconis", "tes:Sibylla_Draconis", "tes:Andreas_Draconis", "tes:Celedaen", "tes:Imperial_Watch"]
                     const UndeadList = ["tes:Harkon", "tes:Harkon2", "tes:Zombie", "tes:Lich", "tes:skeleton_Archer", "tes:Mannimarco"]
+                    const DemonList = ["tes:Xivilai",
+                        "tes:Meridia",
+                        "tes:Azura",
+                        "tes:Boethiah",
+                        "tes:Clavicus_Vile",
+                        "tes:Hermaeus_Mora",
+                        "tes:Hircine",
+                        "tes:Malacath",
+                        "tes:Mehrunes_Dagon",
+                        "tes:Molag_Bal",
+                        "tes:Namira",
+                        "tes:Peryite",
+                        "tes:Sanguine",
+                        "tes:Vaermina",
+                        "tes:Nocturnal"]
                     if (TothEntitlement) {
                         UndeadList.push("tes:undead_Junior_Farmer")
                     }
@@ -223,6 +238,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     cmim.addMonsters("Dragon", DragonList)
                     cmim.addMonsters("Human", HumansList)
                     cmim.addMonsters("Undead", UndeadList)
+                    cmim.addMonsters("Demon", DemonList)
                     cmim.registerOrUpdateType("Elf", "Elves", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", ["tes:Mannimarco"], true);
                     cmim.forceBaseModTypeActive("Dragon");
                     cmim.forceBaseModTypeActive("Undead");
@@ -377,6 +393,13 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
             "Events": true,
             "Event": true
         }
+        // const knownNamespaces = {
+        //     "tes": true,
+        //     "melvorF": true,
+        //     "melvorD": true,
+        //     "melvorTotH": true,
+        //     "melvorAoD": true
+        // }
         // Patching stuff spcific to the Character
         try {
             // Patching skills for new modifiers
@@ -441,6 +464,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
             // end patching skills for new modifiers
 
             // Looping though all game items.
+            // const ShopList = []
             const initialPackage = ctx.gameData.buildPackage(itemPackage => {
                 game.items.registeredObjects.forEach(item => {
                     try {
@@ -469,7 +493,6 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                                 Khajiit_Item_3 = `${item.namespace}:${item.localID}`
                                 Khajiit_Item_3_Price = item.sellsFor * 2
                             }
-
                             itemPackage.items.modify({
                                 id: "tes:Elder_Scrolls",
                                 dropTable: {
@@ -483,18 +506,69 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                                     ]
                                 },
                             })
+                            // "gamemodeID": `${game.currentGamemode._namespace.name}:${game.currentGamemode._localID}`,
+                            // General_Goods_Shop
+                            // if (!knownNamespaces[item.namespace]) {
+                            //     itemPackage.shopPurchases.add({
+                            //         "cost": {
+                            //             "gp": {
+                            //                 "cost": 0,
+                            //                 "type": "Fixed"
+                            //             },
+                            //             "items": [
+                            //                 {
+                            //                     "id": "tes:Elder_Scrolls",
+                            //                     "quantity": 1
+                            //                 }
+                            //             ],
+                            //             "raidCoins": {
+                            //                 "cost": 0,
+                            //                 "type": "Fixed"
+                            //             },
+                            //             "slayerCoins": {
+                            //                 "cost": 0,
+                            //                 "type": "Fixed"
+                            //             }
+                            //         },
+                            //         "id": `${item.localID}_Shop`,
+                            //         "purchaseRequirements": [
+                            //             {
+                            //                 "dungeonID": "tes:Dragon_Break",
+                            //                 "count": 1,
+                            //                 "type": "DungeonCompletion"
+                            //             }
+                            //         ],
+                            //         "media": "assets/icons/Cache.png",
+                            //         "category": "tes:General_Goods_Shop",
+                            //         "contains": {
+                            //             "items": [
+                            //                 {
+                            //                     "id": `${item.namespace}:${item.localID}`,
+                            //                     "quantity": 1
+                            //                 }
+                            //             ]
+                            //         },
+                            //         "allowQuantityPurchase": false,
+                            //         "unlockRequirements": [],
+                            //         "defaultBuyLimit": 1,
+                            //         "buyLimitOverrides": [],
+                            //         "showBuyLimit": false
+                            //     })
+                            //     ShopList.push(`tes:${item.localID}_Shop`)
+                            // }
                         }
                     } catch (error) {
                         console.log("onCharacterLoaded initialPackage", error)
                     }
                 })
+                // itemPackage.shopDisplayOrder.add(
+                //     {
+                //         "insertAt": "Start",
+                //         "ids": ShopList
+                //     }
+                // )
             });
             initialPackage.add();
-            // game.monsters.forEach(monster => {
-            //     if(monster.namespace === "tes") {
-            //         console.log(`${monster.namespace}:${monster.localID}`)
-            //     }
-            // })
             // end looping though all game items.
 
             // looping though all game monsters

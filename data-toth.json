@@ -945,7 +945,8 @@
         "equipmentStats": [],
         "tier": "none",
         "validSlots": [
-          "Passive"
+          "Passive",
+          "Quiver"
         ],
         "equipRequirements": [
           {
@@ -975,7 +976,8 @@
         "equipmentStats": [],
         "tier": "none",
         "validSlots": [
-          "Passive"
+          "Passive",
+          "Quiver"
         ],
         "equipRequirements": [
           {
@@ -999,12 +1001,13 @@
         "itemType": "Equipment",
         "modifiers": {
           "tes_increasedFlatDamageWhileTargetHasMaxHP": 10,
-          "tes_increasedPercDamageWhileTargetHasMaxHP": 10
+          "tes_increasedPercDamageWhileTargetHasMaxHP": 50
         },
         "equipmentStats": [],
         "tier": "none",
         "validSlots": [
-          "Passive"
+          "Passive",
+          "Quiver"
         ],
         "equipRequirements": [
           {
@@ -1028,7 +1031,7 @@
         "media": "assets/monsters/skeleton_Archer.png",
         "passives": [],
         "specialAttacks": [],
-        "lootChance": 0,
+        "lootChance": 100,
         "lootTable": [],
         "gpDrops": {
           "min": 50000,
@@ -1091,7 +1094,7 @@
         "levels": {
           "Attack": 600,
           "Defence": 600,
-          "Hitpoints": 600,
+          "Hitpoints": 900,
           "Magic": 600,
           "Ranged": 600,
           "Strength": 600
@@ -1112,8 +1115,45 @@
         "media": "assets/monsters/Maiq_the_Liar.png",
         "passives": [],
         "specialAttacks": [],
-        "lootChance": 0,
-        "lootTable": [],
+        "lootChance": 100,
+        "lootTable": [
+          {
+            "itemID":"tes:MortarAndPestle",
+            "maxQuantity": 10,
+            "minQuantity": 10,
+            "weight": 100
+          },
+          {
+            "itemID":"tes:Retort",
+            "maxQuantity": 10,
+            "minQuantity": 10,
+            "weight": 100
+          },
+          {
+            "itemID":"tes:Calcinator",
+            "maxQuantity": 10,
+            "minQuantity": 10,
+            "weight": 100
+          },
+          {
+            "itemID":"tes:Alembic",
+            "maxQuantity": 10,
+            "minQuantity": 10,
+            "weight": 100
+          },
+          {
+            "itemID":"tes:WelkyndStone",
+            "maxQuantity": 10,
+            "minQuantity": 10,
+            "weight": 50
+          },
+          {
+            "itemID":"tes:VarlaStone",
+            "maxQuantity": 10,
+            "minQuantity": 10,
+            "weight": 20
+          }
+        ],
         "gpDrops": {
           "min": 1000000,
           "max": 1

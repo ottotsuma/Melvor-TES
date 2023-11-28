@@ -42,7 +42,7 @@
                 "id": "tes:Mace_of_the_Crusader",
                 "modifiers": {
                     "add": {
-                        "increasedDamageAgainstUndead": 20,
+                        "increasedDamageAgainstDemons": 20,
                         "decreasedDamageAgainstHumans": 10,
                         "increasedDamageAgainstElves": 100
                     }
@@ -52,7 +52,7 @@
                 "id": "tes:Shield_of_the_Crusader",
                 "modifiers": {
                     "add": {
-                        "increasedDamageAgainstUndead": 20,
+                        "increasedDamageAgainstDemons": 20,
                         "decreasedDamageAgainstHumans": 10
                     }
                 }
