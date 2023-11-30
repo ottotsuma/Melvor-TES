@@ -72,7 +72,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         },
         description: '+${value} damage while the target is fully healed.',
         isSkill: false,
-        isNegative: true,
+        isNegative: false,
         tags: ['combat']
     };
     modifierData.tes_increasedPercDamageWhileTargetHasMaxHP = {
@@ -81,7 +81,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         },
         description: '+${value}% damage while the target is fully healed.',
         isSkill: false,
-        isNegative: true,
+        isNegative: false,
         tags: ['combat']
     };
     modifierData.tes_decreaseFlatDamageWhileTargetHasMaxHP = {
@@ -108,8 +108,16 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
     let Khajiit_Item_1_qty = 1
     let Khajiit_Item_2 = ""
     let Khajiit_Item_2_Price = 100
+    let Khajiit_Item_2_qty = 1
     let Khajiit_Item_3 = ""
     let Khajiit_Item_3_Price = 100
+    let Khajiit_Item_3_qty = 1
+    let Khajiit_Item_4 = ""
+    let Khajiit_Item_4_Price = 100
+    let Khajiit_Item_4_qty = 1
+    let Khajiit_Item_5 = ""
+    let Khajiit_Item_5_Price = 100
+    let Khajiit_Item_5_qty = 1
     const bards_college_items = []
 
     onModsLoaded(async (ctx) => {
@@ -211,10 +219,41 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     if (!cmim) {
                         return;
                     }
-                    const DragonList = ["tes:Ysmir_Iceheart", "tes:Alduin", "tes:Elsweyr_Dragon", "tes:red_dragon", "tes:green_dragon", "tes:blue_dragon", "tes:MartinSeptim"]
-                    const HumansList = ["tes:Necromancer", "tes:Bandit", "tes:Thief", "tes:Havilstein_Hoar", "tes:Matthias_Draconis", "tes:Perennia_Draconis", "tes:Caelia_Draconis", "tes:Sibylla_Draconis", "tes:Andreas_Draconis", "tes:Celedaen", "tes:Imperial_Watch"]
-                    const UndeadList = ["tes:Harkon", "tes:Harkon2", "tes:Zombie", "tes:Lich", "tes:skeleton_Archer", "tes:Mannimarco"]
-                    const DemonList = ["tes:Xivilai",
+                    const DragonList = [
+                        "tes:Ysmir_Iceheart",
+                        "tes:Alduin",
+                        "tes:Elsweyr_Dragon",
+                        "tes:red_dragon",
+                        "tes:green_dragon",
+                        "tes:blue_dragon",
+                        "tes:MartinSeptim"
+                    ]
+                    const HumansList = [
+                        "tes:Necromancer",
+                        "tes:Bandit",
+                        "tes:Thief",
+                        "tes:Havilstein_Hoar",
+                        "tes:Matthias_Draconis",
+                        "tes:Perennia_Draconis",
+                        "tes:Caelia_Draconis",
+                        "tes:Sibylla_Draconis",
+                        "tes:Andreas_Draconis",
+                        "tes:Celedaen",
+                        "tes:Imperial_Watch"
+                    ]
+                    const UndeadList = [
+                        "tes:Harkon",
+                        "tes:Harkon2",
+                        "tes:Zombie",
+                        "tes:Lich",
+                        "tes:skeleton_Archer",
+                        "tes:Mannimarco",
+                        "tes:Draugr",
+                        "tes:Skinned_Hound",
+                        "tes:Flesh_Atronach",
+                    ]
+                    const DemonList = [
+                        "tes:Xivilai",
                         "tes:Meridia",
                         "tes:Azura",
                         "tes:Boethiah",
@@ -228,18 +267,204 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                         "tes:Peryite",
                         "tes:Sanguine",
                         "tes:Vaermina",
-                        "tes:Nocturnal"]
+                        "tes:Nocturnal",
+                        "tes:Sheogorath",
+                        "tes:Golden_Saint",
+                        "tes:Dark_Seducer",
+                    ]
+                    const AnimalList = [
+                        "tes:Giant_Mudcrab",
+                        "tes:mudcrab",
+                        "tes:Sload",
+                        "tes:Cliff_Racer",
+                        "tes:Alit",
+                        "tes:Dreugh",
+                        "tes:Guar",
+                        "tes:Netch",
+                        "tes:Kagouti",
+                        "tes:Nix_Hound",
+                        "tes:Hoarvor",
+                        "tes:Nereid",
+                        "tes:Spriggan",
+                        "tes:Echatere",
+                        "tes:Riekr",
+                        "tes:Heron",
+                        "tes:Assassin_Beetle",
+                        "tes:Giant_Scorpion",
+                        "tes:Shrieking_Harpy",
+                        "tes:Lamia",
+                        "tes:Welwa",
+                        "tes:Duneripper",
+                        "tes:Den_Mother",
+                        "tes:Blue_Oasis_Dragon_Frog",
+                        "tes:Infernal_Sep_Adder",
+                        "tes:Gravelclaw",
+                        "tes:Guzzard",
+                        "tes:Voriplasm",
+                        "tes:Wamasu",
+                        "tes:Death_Hopper",
+                        "tes:Umaril",
+                        "tes:Laloriaran",
+                        "tes:Giant",
+                        "tes:Skinned_Hound",
+                        "tes:Baliwog",
+                        "tes:Scalon",
+                        "tes:Grummite",
+                        "tes:Elytra",
+                        "tes:Shambles",
+
+                        "tes:Lucerne",
+                        "tes:Melka",
+                        "tes:Moira",
+                        "tes:Petra",
+                        "tes:Drascua",
+                        "tes:Hagraven",
+                    ]
+                    const GoblinList = [
+                        "melvorD:Golbin",
+                        "melvorD:RangedGolbin",
+                        "tes:Bitterfish_Clan_Goblin_Shaman",
+                        "tes:Bloody_Hand_Tribe_Goblin_Shaman",
+                        "tes:Dust_Eater_Clan_Goblin_Shaman",
+                        "tes:Rock_Biter_Clan_Goblin_Shaman",
+                        "tes:Sharp_Tooth_Clan_Goblin_Shaman",
+                        "tes:Skull_Breaker_Clan_Goblin_Shaman",
+                        "tes:Three_Feather_Clan_Goblin_Shaman",
+                        "tes:White_Skin_Clan_Goblin_Shaman",
+                        "tes:Goblin_War_Chief",
+                        "tes:Goblin_Ambusher",
+                        "tes:Goblin_Berserker",
+                        "tes:Goblin_Netherboss",
+                        "tes:Goblin_Rat_Farmer",
+                        "tes:Goblin_Shaman",
+                        "tes:Goblin_Skirmisher",
+                        "tes:Goblin_Warlord",
+                        "tes:Goblin_Witch",
+                        "tes:Goblin_Chef",
+                        "tes:Savage_Goblin"
+                    ]
+                    const MythList = [
+                        "tes:Gryphon",
+                        "tes:Indrik",
+                    ]
+                    const elfList = [
+                        "tes:Ungolim",
+                        "tes:Alval_Uvani",
+                        "tes:Mannimarco"
+                    ]
+                    const KhajiitList = [
+                        "tes:JGhasta"
+                    ]
+                    const RobotsList = [
+                        "tes:Divine_Crusader",
+                        "tes:Pelinal_Whitestrake",
+                    ]
+                    const ArgonianList = [
+                        "tes:Shaleez"
+                    ]
+                    const OrcList = [
+                        "tes:The_Gray_Prince",
+                    ]
+                    const SeaCreatureList = [
+
+                    ]
+                    const ElementalCreatureList = [
+
+                    ]
+                    const PlantList = [
+                        "melvorD:Plant"
+                    ]
+
                     if (TothEntitlement) {
-                        UndeadList.push("tes:undead_Junior_Farmer")
+                        UndeadList.push(
+                            "tes:undead_Junior_Farmer",
+                            "melvorF:ElderVampire",
+                            "melvorTotH:CursedSkeletonWarrior",
+                            "melvorTotH:CursedSpirit",
+                            "melvorTotH:LadyDarkheart",
+                            "melvorTotH:Phantom",
+                            "melvorTotH:Banshee",
+                            "melvorTotH:Spectre",
+                            "melvorTotH:VorloranDevastator",
+                            "melvorTotH:VorloranWatcher",
+                            "melvorTotH:VorloranProtector",
+                        )
+                        KhajiitList.push("tes:Maiq_the_Liar")
+                        SeaCreatureList.push(
+                            "melvorTotH:TwinSeaDragonSerpent",
+                            "melvorTotH:Leviathan",
+                        )
+                        AnimalList.push(
+                            "melvorTotH:PoisonToad",
+                            "melvorTotH:Conda",
+                            "melvorTotH:BurningSnake",
+                            "melvorTotH:PolarBear",
+                            "melvorTotH:SpectralIceWolf",
+                            "melvorTotH:MonsterCroc",
+                            "melvorTotH:ScouterSpider",
+                            "melvorTotH:TrapperSpider",
+                            "melvorTotH:WickedSpider",
+                            "melvorTotH:BasherSpider",
+                            "melvorTotH:EnforcerSpider",
+                            "melvorTotH:GuardianSpider",
+                            "melvorTotH:SpiderQueen",
+                            "melvorTotH:Beholder",
+                            "melvorTotH:ShadowBeast",
+                        )
+                        PlantList.push(
+                            "melvorTotH:HungryPlant",
+                            "melvorTotH:Alraune",
+                            "melvorTotH:Morellia",
+                            "melvorTotH:TreeGiant",
+                            "melvorTotH:TreeSpirit",
+                        )
+                        DragonList.push(
+                            "melvorTotH:Kongamato", "melvorTotH:GretYun", "melvorTotH:RaZu",
+                        )
+                        DemonList.push("melvorTotH:MagicFireDemon",)
+                        MythList.push(
+                            "melvorTotH:Manticore",
+                            "melvorTotH:IceHydra",
+                            "melvorTotH:Leviathan",
+                            "melvorTotH:Siren",
+                            "melvorTotH:GoliathWerewolf",
+                            "melvorTotH:Torvair",
+                            "melvorTotH:Arctair",
+                            "melvorTotH:Harkair",
+                            "melvorTotH:Cockatrice",
+                            "melvorTotH:GuardianoftheHerald",
+                        )
+                        ElementalCreatureList.push(
+                            "melvorTotH:InfernalGolem", "melvorTotH:Trogark", "melvorTotH:LargeIceTroll", "melvorTotH:FrostGolem", "melvorTotH:LightningSpirit", "melvorTotH:LightningGolem", "melvorTotH:LightningMonkey",
+                        )
+                        HumansList.push("melvorTotH:PlagueDoctor",)
+                        //     "melvorTotH:TheHeraldPhase1",
+                        //     "melvorTotH:TheHeraldPhase2",
+                        //     "melvorTotH:TheHeraldPhase3"
+
                     }
                     if (mythLoaded) {
-                        HumansList.push("mythMusic:Jester", "mythMusic:Enchanted_Jester", "mythMusic:Mystic_Jester")
+                        HumansList.push("mythMusic:Jester",
+                            "mythMusic:Enchanted_Jester",
+                            "mythMusic:Mystic_Jester")
                     }
                     cmim.addMonsters("Dragon", DragonList)
                     cmim.addMonsters("Human", HumansList)
                     cmim.addMonsters("Undead", UndeadList)
                     cmim.addMonsters("Demon", DemonList)
-                    cmim.registerOrUpdateType("Elf", "Elves", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", ["tes:Mannimarco"], true);
+                    cmim.addMonsters("Animal", AnimalList)
+                    cmim.addMonsters("MythicalCreature", MythList)
+                    cmim.addMonsters("SeaCreature", SeaCreatureList)
+                    cmim.addMonsters("Elemental", ElementalCreatureList)
+
+                    cmim.registerOrUpdateType("Elf", "Elves", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", elfList, true);
+                    cmim.registerOrUpdateType("Goblin", "Goblins", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", GoblinList, true);
+                    cmim.registerOrUpdateType("Khajiit", "Khajiit", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", KhajiitList, true);
+                    cmim.registerOrUpdateType("Robot", "Robots", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", RobotsList, true);
+                    cmim.registerOrUpdateType("Argonian", "Argonians", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", ArgonianList, true);
+                    cmim.registerOrUpdateType("Orc", "Orcs", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", OrcList, true);
+                    cmim.registerOrUpdateType("Plant", "Plants", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", PlantList, true);
+
                     cmim.forceBaseModTypeActive("Dragon");
                     cmim.forceBaseModTypeActive("Undead");
                     cmim.forceBaseModTypeActive("Human");
@@ -485,13 +710,23 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                             if (!Khajiit_Item_1 && rollPercentage(1)) {
                                 Khajiit_Item_1 = `${item.namespace}:${item.localID}`
                                 Khajiit_Item_1_Price = item.sellsFor * 4
-                                Khajiit_Item_1_qty = Math.floor(Math.random() * 10)
+                                Khajiit_Item_1_qty = Math.floor(Math.random() * 40)
                             } else if (!Khajiit_Item_2 && rollPercentage(0.5)) {
                                 Khajiit_Item_2 = `${item.namespace}:${item.localID}`
                                 Khajiit_Item_2_Price = item.sellsFor * 3
+                                Khajiit_Item_2_qty = Math.floor(Math.random() * 10)
                             } else if (!Khajiit_Item_3 && rollPercentage(0.1)) {
                                 Khajiit_Item_3 = `${item.namespace}:${item.localID}`
                                 Khajiit_Item_3_Price = item.sellsFor * 2
+                                Khajiit_Item_3_qty = Math.floor(Math.random() * 6)
+                            } else if (!Khajiit_Item_4 && rollPercentage(0.1)) {
+                                Khajiit_Item_4 = `${item.namespace}:${item.localID}`
+                                Khajiit_Item_4_Price = item.sellsFor * 1.4
+                                Khajiit_Item_4_qty = Math.floor(Math.random() * 3)
+                            } else if (!Khajiit_Item_5 && rollPercentage(0.1)) {
+                                Khajiit_Item_5 = `${item.namespace}:${item.localID}`
+                                Khajiit_Item_5_Price = item.sellsFor * 1.2
+                                Khajiit_Item_5_qty = Math.floor(Math.random() * 2)
                             }
                             itemPackage.items.modify({
                                 id: "tes:Elder_Scrolls",
@@ -730,8 +965,14 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                         text: ['What\'re ya buyin?'],
                         options: [
                             { to: 'exit', losses: { gp: Khajiit_Item_1_Price ? Khajiit_Item_1_Price * Khajiit_Item_1_qty : 100 * Khajiit_Item_1_qty }, rewards: { items: [{ id: Khajiit_Item_1 ? Khajiit_Item_1 : 'tes:ElsweyrSpicedTea', qty: Khajiit_Item_1_qty ? Khajiit_Item_1_qty : 1 }] } },
+
                             { to: 'exit', losses: { gp: Khajiit_Item_2_Price ? Khajiit_Item_2_Price : 100 }, rewards: { items: [{ id: Khajiit_Item_2 ? Khajiit_Item_2 : 'tes:ElsweyrSpicedTea' }] } },
+
                             { to: 'exit', losses: { gp: Khajiit_Item_3_Price ? Khajiit_Item_3_Price : 100 }, rewards: { items: [{ id: Khajiit_Item_3 ? Khajiit_Item_3 : 'tes:ElsweyrSpicedTea' }] } },
+
+                            { to: 'exit', losses: { gp: Khajiit_Item_4_Price ? Khajiit_Item_4_Price * 0.9 : 100 }, rewards: { items: [{ id: Khajiit_Item_4 ? Khajiit_Item_4 : 'tes:ElsweyrSpicedTea' }] } },
+
+                            { to: 'exit', losses: { gp: Khajiit_Item_5_Price ? Khajiit_Item_5_Price : 100 }, rewards: { items: [{ id: Khajiit_Item_5 ? Khajiit_Item_5 : 'tes:ElsweyrSpicedTea' }] } },
 
                             { to: 'exit', losses: { gp: 100 }, rewards: { items: [{ id: TodaysItem }] } },
 
@@ -781,8 +1022,15 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                         text: ['This and that.'],
                         options: [
                             { to: 'exit', losses: { gp: 50 }, rewards: { items: [{ id: 'tes:Lockpick', qty: 10 }] } },
+
                             { to: 'exit', losses: { gp: Khajiit_Item_2_Price ? Khajiit_Item_2_Price : 100 }, rewards: { items: [{ id: Khajiit_Item_2 ? Khajiit_Item_2 : 'tes:ElsweyrSpicedTea' }] } },
+
                             { to: 'exit', losses: { gp: Khajiit_Item_1_Price ? Khajiit_Item_1_Price * 9 : 100 }, rewards: { items: [{ id: Khajiit_Item_1 || 'tes:ElsweyrSpicedTea', qty: 10 }] } },
+
+                            { to: 'exit', losses: { gp: Khajiit_Item_3_Price ? Khajiit_Item_3_Price : 100 }, rewards: { items: [{ id: Khajiit_Item_3 ? Khajiit_Item_3 : 'tes:ElsweyrSpicedTea' }] } },
+
+                            { to: 'exit', losses: { gp: Khajiit_Item_4_Price ? Khajiit_Item_4_Price * 1.1 : 100 }, rewards: { items: [{ id: Khajiit_Item_4 ? Khajiit_Item_4 : 'tes:ElsweyrSpicedTea' }] } },
+
                             { to: 'exit', losses: { gp: 100 }, rewards: { items: [{ id: TodaysItem }] } },
                             { to: '0', text: 'What were we talking about again?', isSpeech: true },
                             { to: 'exit', text: 'Good bye', isSpeech: true },
@@ -850,6 +1098,10 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                             { to: 'exit', losses: { gp: Khajiit_Item_2_Price ? Khajiit_Item_2_Price * 1.1 : 100 }, rewards: { items: [{ id: Khajiit_Item_2 ? Khajiit_Item_2 : 'tes:ElsweyrSpicedTea' }] } },
 
                             { to: 'exit', losses: { gp: Khajiit_Item_3_Price ? Khajiit_Item_3_Price * 0.9 : 100 }, rewards: { items: [{ id: Khajiit_Item_3 ? Khajiit_Item_3 : 'tes:ElsweyrSpicedTea' }] } },
+
+                            { to: 'exit', losses: { gp: Khajiit_Item_4_Price ? Khajiit_Item_4_Price : 100 }, rewards: { items: [{ id: Khajiit_Item_4 ? Khajiit_Item_4 : 'tes:ElsweyrSpicedTea' }] } },
+
+                            { to: 'exit', losses: { gp: Khajiit_Item_5_Price ? Khajiit_Item_5_Price : 100 }, rewards: { items: [{ id: Khajiit_Item_5 ? Khajiit_Item_5 : 'tes:ElsweyrSpicedTea' }] } },
 
                             { to: 'exit', losses: { gp: 100 }, rewards: { items: [{ id: TodaysItem }] } },
 
@@ -1011,7 +1263,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                             { to: '8', losses: { items: [{ id: "tes:King_Olafs_Verse" }], skillCheck: [{ id: 'mythMusic:Music', level: 20 }] }, rewards: { items: [{ id: 'mythMusic:Bards_Body', qty: 1 }] } },
                             { to: '8', losses: { items: [{ id: "tes:King_Olafs_Verse" }], skillCheck: [{ id: 'mythMusic:Music', level: 20 }] }, rewards: { items: [{ id: 'mythMusic:Bards_Boots', qty: 1 }] } },
                             { to: '8', losses: { items: [{ id: "tes:King_Olafs_Verse" }], skillCheck: [{ id: 'mythMusic:Music', level: 20 }] }, rewards: { items: [{ id: 'mythMusic:Bards_Leggings', qty: 1 }] } },
-                            { to: '8', losses: { items: [{ id: "tes:King_Olafs_Verse" }], skillCheck: [{ id: 'mythMusic:Music', level: 50 }] }, rewards: { items: [{ id: 'mythMusic:Concert_Pass', qty: 5 }] } },
+                            { to: '8', losses: { items: [{ id: "tes:King_Olafs_Verse" }], skillCheck: [{ id: 'mythMusic:Music', level: 50 }] }, rewards: { items: [{ id: 'mythMusic:Concert_Pass_Half_A', qty: 5 }, { id: 'mythMusic:Concert_Pass_Half_B', qty: 5 }] } },
                             { to: '0', text: 'What were we talking about again?', isSpeech: true }
                         ]
                     },

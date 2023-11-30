@@ -5352,11 +5352,10 @@
         "contains": {
           "items": [
             {
-              "id": "tes:Arch_MagesRobe",
+              "id": "tes:Arch_MagesHood",
               "quantity": 1
             }
-          ],
-          "modifiers": {}
+          ]
         },
         "cost": {
           "gp": {
@@ -5397,8 +5396,7 @@
               "id": "tes:Arch_MagesRobe",
               "quantity": 1
             }
-          ],
-          "modifiers": {}
+          ]
         },
         "cost": {
           "gp": {
@@ -6258,11 +6256,13 @@
         },
         "allowQuantityPurchase": true,
         "unlockRequirements": [],
-        "purchaseRequirements": [{
-          "dungeonID":"tes:Arena",
-          "count": 1,
-          "type": "DungeonCompletion"
-        }],
+        "purchaseRequirements": [
+          {
+            "dungeonID": "tes:Arena",
+            "count": 1,
+            "type": "DungeonCompletion"
+          }
+        ],
         "defaultBuyLimit": 1,
         "buyLimitOverrides": [],
         "showBuyLimit": false,
@@ -6313,11 +6313,13 @@
         },
         "allowQuantityPurchase": true,
         "unlockRequirements": [],
-        "purchaseRequirements": [{
-          "dungeonID":"tes:Volkihar",
-          "count": 1,
-          "type": "DungeonCompletion"
-        }],
+        "purchaseRequirements": [
+          {
+            "dungeonID": "tes:Volkihar",
+            "count": 1,
+            "type": "DungeonCompletion"
+          }
+        ],
         "defaultBuyLimit": 1,
         "buyLimitOverrides": [],
         "showBuyLimit": false,
@@ -6365,16 +6367,18 @@
         },
         "allowQuantityPurchase": true,
         "unlockRequirements": [],
-        "purchaseRequirements": [{
-          "skillID":"melvorD:Runecrafting",
-          "level": 50,
-          "type": "SkillLevel"
-        },
-        {
-          "purchaseID":"tes:Conjurer_Mage_Rank",
-          "count": 1,
-          "type": "ShopPurchase"
-        }],
+        "purchaseRequirements": [
+          {
+            "skillID": "melvorD:Runecrafting",
+            "level": 50,
+            "type": "SkillLevel"
+          },
+          {
+            "purchaseID": "tes:Conjurer_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
         "defaultBuyLimit": 1,
         "buyLimitOverrides": [],
         "showBuyLimit": false,
@@ -6404,7 +6408,7 @@
           },
           "items": [
             {
-              "id":"melvorD:Bones",
+              "id": "melvorD:Bones",
               "quantity": 100
             }
           ],
@@ -6415,16 +6419,17 @@
         },
         "allowQuantityPurchase": true,
         "unlockRequirements": [],
-        "purchaseRequirements": [{
-          "purchaseID":"tes:Silencer_Rank",
-          "count": 1,
-          "type": "ShopPurchase"
-        }],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Silencer_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
         "defaultBuyLimit": 1,
         "buyLimitOverrides": [],
         "showBuyLimit": false,
-        "customName": "Poison Arrows",
-        "customDescription": "Poison Arrows +100."
+        "customName": "Poison Arrows"
       },
       {
         "id": "Resupply_Mage_I",
@@ -6469,14 +6474,15 @@
             "cost": 0
           }
         },
-        "allowQuantityPurchase": true,
+        "allowQuantityPurchase": false,
         "unlockRequirements": [],
         "purchaseRequirements": [
-        {
-          "purchaseID":"tes:Associate_Mage_Rank",
-          "count": 1,
-          "type": "ShopPurchase"
-        }],
+          {
+            "purchaseID": "tes:Associate_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
         "defaultBuyLimit": 1,
         "buyLimitOverrides": [],
         "showBuyLimit": false,
@@ -6526,14 +6532,15 @@
             "cost": 0
           }
         },
-        "allowQuantityPurchase": true,
+        "allowQuantityPurchase": false,
         "unlockRequirements": [],
         "purchaseRequirements": [
-        {
-          "purchaseID":"tes:Apprentice_Mage_Rank",
-          "count": 1,
-          "type": "ShopPurchase"
-        }],
+          {
+            "purchaseID": "tes:Apprentice_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
         "defaultBuyLimit": 1,
         "buyLimitOverrides": [],
         "showBuyLimit": false,
@@ -6583,14 +6590,15 @@
             "cost": 0
           }
         },
-        "allowQuantityPurchase": true,
+        "allowQuantityPurchase": false,
         "unlockRequirements": [],
         "purchaseRequirements": [
-        {
-          "purchaseID":"tes:Journeyman_Mage_Rank",
-          "count": 1,
-          "type": "ShopPurchase"
-        }],
+          {
+            "purchaseID": "tes:Journeyman_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
         "defaultBuyLimit": 1,
         "buyLimitOverrides": [],
         "showBuyLimit": false,
@@ -6627,11 +6635,12 @@
         "allowQuantityPurchase": false,
         "unlockRequirements": [],
         "purchaseRequirements": [
-        {
-          "purchaseID":"tes:Evoker_Mage_Rank",
-          "count": 1,
-          "type": "ShopPurchase"
-        }],
+          {
+            "purchaseID": "tes:Evoker_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
         "defaultBuyLimit": 1,
         "buyLimitOverrides": [],
         "showBuyLimit": false,
@@ -6667,11 +6676,12 @@
         "allowQuantityPurchase": false,
         "unlockRequirements": [],
         "purchaseRequirements": [
-        {
-          "purchaseID":"tes:Warlock_Mage_Rank",
-          "count": 1,
-          "type": "ShopPurchase"
-        }],
+          {
+            "purchaseID": "tes:Warlock_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
         "defaultBuyLimit": 1,
         "buyLimitOverrides": [],
         "showBuyLimit": false,
@@ -6707,11 +6717,12 @@
         "allowQuantityPurchase": false,
         "unlockRequirements": [],
         "purchaseRequirements": [
-        {
-          "purchaseID":"tes:Warlock_Mage_Rank",
-          "count": 1,
-          "type": "ShopPurchase"
-        }],
+          {
+            "purchaseID": "tes:Warlock_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
         "defaultBuyLimit": 1,
         "buyLimitOverrides": [],
         "showBuyLimit": false,
@@ -6919,15 +6930,26 @@
       {
         "id": "FingerOfAdamusPhillida",
         "name": "Finger Of Adamus Phillida",
-        "customDescription": "Severed finger.",
-        "category": "Combat",
-        "type": "Finger",
         "media": "assets/items/FingerOfAdamusPhillida.png",
+        "customDescription": "Severed finger. Don't eat it.",
+        "category": "Herblore",
+        "type": "Potion",
         "ignoreCompletion": false,
         "obtainFromItemLog": false,
         "golbinRaidExclusive": false,
-        "sellsFor": 0,
-        "itemType": "Item"
+        "sellsFor": 4,
+        "itemType": "Potion",
+        "modifiers": {
+          "increasedBleedLifesteal": 1
+        },
+        "charges": 1,
+        "tier": 0,
+        "action": "melvorD:Combat",
+        "consumesOn": [
+          {
+            "type": "PlayerAttack"
+          }
+        ]
       },
       {
         "id": "StoneOfStAlessia",
@@ -6955,8 +6977,7 @@
         "validSlots": [
           "Amulet"
         ],
-        "equipRequirements": [
-        ],
+        "equipRequirements": [],
         "occupiesSlots": [],
         "customDescription": "An amulet for the worthy."
       },
@@ -6987,8 +7008,7 @@
         "validSlots": [
           "Platebody"
         ],
-        "equipRequirements": [
-        ],
+        "equipRequirements": [],
         "occupiesSlots": []
       },
       {
@@ -7029,7 +7049,7 @@
         ],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Warlock_Mage_Rank",
+            "purchaseID": "tes:Warlock_Mage_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -7074,7 +7094,7 @@
         ],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Warlock_Mage_Rank",
+            "purchaseID": "tes:Warlock_Mage_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -7123,7 +7143,7 @@
         ],
         "equipRequirements": [
           {
-            "purchaseID":"tes:Evoker_Mage_Rank",
+            "purchaseID": "tes:Evoker_Mage_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -8043,7 +8063,7 @@
           },
           {
             "key": "slashAttackBonus",
-            "value": 40
+            "value": 66
           },
           {
             "key": "blockAttackBonus",
@@ -8051,7 +8071,7 @@
           },
           {
             "key": "meleeStrengthBonus",
-            "value": 40
+            "value": 66
           }
         ],
         "itemType": "Weapon",
@@ -8077,7 +8097,7 @@
           ]
         },
         "charges": 10,
-        "tier": 1,
+        "tier": 0,
         "action": "melvorD:Fishing",
         "consumesOn": [
           {
@@ -9221,7 +9241,9 @@
         "validSlots": [
           "Weapon"
         ],
-        "occupiesSlots": [],
+        "occupiesSlots": [
+          "Shield"
+        ],
         "equipRequirements": [
           {
             "purchaseID": "tes:Swordsman_Rank",
@@ -9525,7 +9547,7 @@
           "tes:SkullCrush"
         ],
         "overrideSpecialChances": [
-          25
+          20
         ]
       },
       {
@@ -9583,7 +9605,8 @@
         "sellsFor": 4500,
         "itemType": "Potion",
         "modifiers": {
-          "increasedLifesteal": 100
+          "increasedPoisonDOTDamage": 50,
+          "increasedDamageDealtIfPoisoned": 20
         },
         "charges": 25,
         "tier": 3,
@@ -9823,7 +9846,8 @@
         "sellsFor": 2000,
         "itemType": "Equipment",
         "validSlots": [
-          "Gem"
+          "Gem",
+          "Passive"
         ],
         "modifiers": {
           "applyRandomCurseOnSpawn": 1
@@ -9986,7 +10010,7 @@
       },
       {
         "id": "VarlaStone",
-        "name": "VarlaStone",
+        "name": "Varla Stone",
         "category": "Combat",
         "type": "Consumable",
         "itemType": "Equipment",
@@ -10039,6 +10063,14 @@
             "value": 30
           },
           {
+            "key": "magicDefenceBonus",
+            "value": 30
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 10
+          },
+          {
             "key": "damageReduction",
             "value": 6
           }
@@ -10075,7 +10107,19 @@
         "equipmentStats": [
           {
             "key": "magicAttackBonus",
-            "value": 7
+            "value": 10
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 10
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 5
+          },
+          {
+            "key": "damageReduction",
+            "value": 6
           }
         ],
         "tier": "none",
@@ -11714,7 +11758,7 @@
         ],
         "equipRequirements": [
           {
-            "purchaseID": "tes:Gray_Fox_Rank",
+            "purchaseID": "tes:Master_Thief_Rank",
             "count": 1,
             "type": "ShopPurchase"
           }
@@ -13080,7 +13124,8 @@
         "golbinRaidExclusive": false,
         "sellsFor": 1,
         "validSlots": [
-          "Gem"
+          "Gem",
+          "Passive"
         ],
         "occupiesSlots": [],
         "tier": "none",
@@ -13257,43 +13302,43 @@
             "itemID": "tes:Vagrant_Boots",
             "minQuantity": 1,
             "maxQuantity": 1,
-            "weight": 15
+            "weight": 5
           },
           {
             "itemID": "tes:Vagrant_Hood",
             "minQuantity": 1,
             "maxQuantity": 1,
-            "weight": 15
+            "weight": 5
           },
           {
             "itemID": "tes:Vagrant_Robes",
             "minQuantity": 1,
             "maxQuantity": 1,
-            "weight": 15
+            "weight": 5
           },
           {
             "itemID": "tes:gold_coin",
             "minQuantity": 20,
             "maxQuantity": 1,
-            "weight": 25
+            "weight": 35
           },
           {
             "itemID": "tes:Alikri_Fishing_Rod",
             "minQuantity": 1,
             "maxQuantity": 1,
-            "weight": 5
+            "weight": 10
           },
           {
             "itemID": "tes:Dwarven_Fishing_Rod",
             "minQuantity": 1,
             "maxQuantity": 1,
-            "weight": 5
+            "weight": 10
           },
           {
             "itemID": "tes:Fishing_Rod",
             "minQuantity": 1,
             "maxQuantity": 1,
-            "weight": 10
+            "weight": 75
           },
           {
             "itemID": "tes:Crabbers_Charm",
@@ -13305,7 +13350,7 @@
             "itemID": "tes:Argonian_Fishing_Rod",
             "minQuantity": 1,
             "maxQuantity": 1,
-            "weight": 5
+            "weight": 10
           }
         ],
         "customDescription": "A box that must of fallen of the back of a ship on the way to Melvor."
@@ -14177,6 +14222,21 @@
       }
     ],
     "itemUpgrades": [
+      {
+        "rootItemIDs": [
+          "tes:FingerOfAdamusPhillida"
+        ],
+        "upgradedItemID": "tes:Blood_Pack",
+        "gpCost": 0,
+        "scCost": 0,
+        "isDowngrade": false,
+        "itemCosts": [
+          {
+            "id": "tes:FingerOfAdamusPhillida",
+            "quantity": 10
+          }
+        ]
+      },
       {
         "rootItemIDs": [
           "tes:Blood_Pack"
@@ -19388,25 +19448,25 @@
           "tes:Wardsave_10",
           "tes:Padomay"
         ],
-        "lootChance": 1,
+        "lootChance": 100,
         "lootTable": [
           {
             "itemID": "tes:Necromancer_Robes",
             "maxQuantity": 1,
             "minQuantity": 1,
-            "weight": 1
+            "weight": 39
           },
           {
             "itemID": "tes:Bloodworm_Helm",
             "maxQuantity": 1,
             "minQuantity": 1,
-            "weight": 1
+            "weight": 50
           },
           {
             "itemID": "tes:Necromanceramulet",
             "maxQuantity": 1,
             "minQuantity": 1,
-            "weight": 1
+            "weight": 10
           },
           {
             "itemID": "tes:Staff_of_Worms",
@@ -19421,7 +19481,7 @@
         },
         "bones": {
           "itemID": "melvorD:Magic_Bones",
-          "quantity": 100
+          "quantity": 1000
         },
         "canSlayer": false,
         "isBoss": true,
@@ -19894,6 +19954,10 @@
           {
             "key": "attackSpeed",
             "value": 3200
+          },
+          {
+            "key": "damageReduction",
+            "value": 40
           }
         ],
         "ignoreCompletion": false,
@@ -21795,7 +21859,86 @@
         "specialAttackID": "tes:Wizards_Fury_Spell"
       }
     ],
+    "standardSpells": [
+      {
+        "id": "Poison_Bloom",
+        "level": 99,
+        "maxHit": 10,
+        "media": "assets/icons/mages/Water_Breathing.png",
+        "name": "Poison Bloom",
+        "spellType": "Nature",
+        "spellTier": "Surge",
+        "requirements": [
+          {
+            "purchaseID": "tes:Magician_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "requiredItemID": "tes:WelkyndStone",
+        "runesRequired": [
+          {
+            "id": "melvorD:Dust_Rune",
+            "quantity": 6
+          },
+          {
+            "id": "melvorD:Death_Rune",
+            "quantity": 6
+          },
+          {
+            "id": "melvorD:Ancient_Rune",
+            "quantity": 6
+          }
+        ],
+        "specialAttackID": "tes:Poison_Bloom"
+      }
+    ],
     "attacks": [
+      {
+        "id": "Poison_Bloom",
+        "damage": [
+          {
+            "damageType": "Custom",
+            "character": "Attacker",
+            "roll": false,
+            "maxRoll": "MaxHit",
+            "maxPercent": 100
+          }
+        ],
+        "prehitEffects": [],
+        "onhitEffects": [
+          {
+            "chance": 100,
+            "type": "DOT",
+            "subtype": "Poison",
+            "effectType": "Custom",
+            "damage": [
+              {
+                "character": "Target",
+                "roll": true,
+                "maxRoll": "MaxHP",
+                "maxPercent": 10,
+                "minPercent": 1,
+                "minRoll": "CurrentHP"
+              }
+            ],
+            "procs": 6,
+            "interval": 2500
+          }
+        ],
+        "usesRunesPerProc": false,
+        "usesPrayerPointsPerProc": false,
+        "usesPotionChargesPerProc": false,
+        "isDragonbreath": false,
+        "defaultChance": 100,
+        "cantMiss": false,
+        "attackCount": 2,
+        "attackInterval": 500,
+        "lifesteal": 0,
+        "descriptionGenerator": "<target> is engulfed in a poisoned burst <damage> <count> times over <duration>. On a hit, <hitEffect>. <Avoidable>.",
+        "name": "Poison Bloom",
+        "description": "Target are engulfed in a poisoned burst ${attackDamageMaxValue0}% of your max hit ${hitCount} times over ${duration}s. On a hit, inflicts Poison that deals ${onHitEffect0DamageMaxValue0}% of the enemy's max hitpoints as damage over ${onHitEffect0duration}s. Avoidable."
+      },
       {
         "id": "Skeleton_Army",
         "name": "Skeleton Army",
@@ -24303,8 +24446,8 @@
               "maxGP": 450,
               "maxHit": 15,
               "perception": 450,
-              "uniqueDrop":{
-                "id":"tes:FingerOfAdamusPhillida",
+              "uniqueDrop": {
+                "id": "tes:FingerOfAdamusPhillida",
                 "quantity": 1
               },
               "lootTable": [
@@ -25309,6 +25452,38 @@
               "perfectCookID": "tes:Cooked_Juvenile_Mudcrab_Perfect",
               "gpCost": 0,
               "scCost": 0
+            }
+          ]
+        }
+      },
+      {
+        "skillID": "melvorD:Herblore",
+        "data": {
+          "recipes": [
+            {
+              "id": "Blood_Potion",
+              "categoryID":"melvorF:CombatPotions",
+              "baseExperience": 50,
+              "level": 50,
+              "name": "Blood Potion",
+              "scCost": 0,
+              "gpCost": 0,
+              "itemCosts": [
+               {
+                "id":"melvorD:Blood_Rune",
+                "quantity": 10
+               },
+               {
+                "id":"melvorD:Bones",
+                "quantity": 1
+               }
+              ],
+              "potionIDs": [
+                "tes:FingerOfAdamusPhillida",
+                "tes:Blood_Pack",
+                "tes:BloodPotion",
+                "tes:Bloodstone_Chalice"
+              ]
             }
           ]
         }

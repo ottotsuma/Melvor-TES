@@ -946,7 +946,7 @@
         "tier": "none",
         "validSlots": [
           "Passive",
-          "Quiver"
+          "Gem"
         ],
         "equipRequirements": [
           {
@@ -977,7 +977,7 @@
         "tier": "none",
         "validSlots": [
           "Passive",
-          "Quiver"
+          "Gem"
         ],
         "equipRequirements": [
           {
@@ -1007,7 +1007,7 @@
         "tier": "none",
         "validSlots": [
           "Passive",
-          "Quiver"
+          "Gem"
         ],
         "equipRequirements": [
           {
@@ -1118,37 +1118,37 @@
         "lootChance": 100,
         "lootTable": [
           {
-            "itemID":"tes:MortarAndPestle",
+            "itemID": "tes:MortarAndPestle",
             "maxQuantity": 10,
             "minQuantity": 10,
             "weight": 100
           },
           {
-            "itemID":"tes:Retort",
+            "itemID": "tes:Retort",
             "maxQuantity": 10,
             "minQuantity": 10,
             "weight": 100
           },
           {
-            "itemID":"tes:Calcinator",
+            "itemID": "tes:Calcinator",
             "maxQuantity": 10,
             "minQuantity": 10,
             "weight": 100
           },
           {
-            "itemID":"tes:Alembic",
+            "itemID": "tes:Alembic",
             "maxQuantity": 10,
             "minQuantity": 10,
             "weight": 100
           },
           {
-            "itemID":"tes:WelkyndStone",
+            "itemID": "tes:WelkyndStone",
             "maxQuantity": 10,
             "minQuantity": 10,
             "weight": 50
           },
           {
-            "itemID":"tes:VarlaStone",
+            "itemID": "tes:VarlaStone",
             "maxQuantity": 10,
             "minQuantity": 10,
             "weight": 20
@@ -1224,6 +1224,86 @@
         "isBoss": true,
         "canSlayer": false,
         "selectedSpell": "melvorF:NaturesWrath"
+      }
+    ],
+    "attacks": [
+      {
+        "id": "nuke",
+        "damage": [
+          {
+            "amplitude": 1000,
+            "damageType": "Normal"
+          }
+        ],
+        "attackCount": 1,
+        "attackInterval": 500,
+        "cantMiss": false,
+        "defaultChance": 1,
+        "description": "<target> has a dragon break happen inside them <damage>, <count> times over for <duration>. <Avoidable>.",
+        "name": "Dragon Break",
+        "prehitEffects": [
+          {
+            "modifiers": {
+              "increasedReflectDamage": 100
+            },
+            "countsOn": "Target",
+            "character": "Target",
+            "effectType": "Custom",
+            "maxStacks": 1,
+            "stacksToAdd": 1,
+            "turns": 1,
+            "type": "Modifier",
+            "media": "assets/icons/mages/Burden.png"
+          },
+          {
+            "modifiers": {
+              "increasedChanceToNull": 10
+            },
+            "countsOn": "Attacker",
+            "character": "Attacker",
+            "effectType": "Custom",
+            "maxStacks": 1,
+            "stacksToAdd": 1,
+            "turns": 1,
+            "type": "Modifier",
+            "media": "assets/icons/mages/Burden.png"
+          }
+        ],
+        "onhitEffects": [],
+        "lifesteal": 0
+      }
+    ],
+    "archaicSpells": [
+      {
+        "id": "Dragon_Break_Spell",
+        "name": "Dragon Break",
+        "level": 120,
+        "media": "assets/items/VarlaStone.png",
+        "requiredItemID": "tes:VarlaStone",
+        "spellType": "Infernal",
+        "maxHit": 10000,
+        "specialAttack": "tes:nuke",
+        "requirements": [
+          {
+            "purchaseID": "tes:Arch_Mage_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "runesRequired": [
+          {
+            "id": "melvorTotH:Calamity_Rune",
+            "quantity": 1000
+          },
+          {
+            "id": "melvorTotH:Infernal_Rune",
+            "quantity": 1000
+          },
+          {
+            "id": "melvorD:Fire_Rune",
+            "quantity": 10000
+          }
+        ]
       }
     ]
   },
