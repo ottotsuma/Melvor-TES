@@ -125,6 +125,10 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
         const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
         const TothEntitlement = cloudManager.hasTotHEntitlement
+        // const Abyssal = mod.manager.getLoadedModList().includes('Abyssal Rift')
+        // const Pokeworld = mod.manager.getLoadedModList().includes('Pokeworld (Generation 1)')
+        // const Runescape = mod.manager.getLoadedModList().includes('Runescape Encounters in Melvor')
+
         // Translations
         try {
             try {
@@ -458,12 +462,12 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     cmim.addMonsters("Elemental", ElementalCreatureList)
 
                     cmim.registerOrUpdateType("Elf", "Elves", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", elfList, true);
-                    cmim.registerOrUpdateType("Goblin", "Goblins", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", GoblinList, true);
-                    cmim.registerOrUpdateType("Khajiit", "Khajiit", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", KhajiitList, true);
-                    cmim.registerOrUpdateType("Robot", "Robots", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", RobotsList, true);
-                    cmim.registerOrUpdateType("Argonian", "Argonians", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", ArgonianList, true);
-                    cmim.registerOrUpdateType("Orc", "Orcs", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", OrcList, true);
-                    cmim.registerOrUpdateType("Plant", "Plants", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", PlantList, true);
+                    cmim.registerOrUpdateType("Goblin", "Goblins", "https://cdn.melvor.net/core/v018/assets/media/monsters/goblin.png", GoblinList, true);
+                    cmim.registerOrUpdateType("Khajiit", "Khajiit", "https://cdn.melvor.net/core/v018/assets/media/pets/octavius_lepidus_viii.png", KhajiitList, true);
+                    cmim.registerOrUpdateType("Robot", "Robots", "https://cdn.melvor.net/core/v018/assets/media/pets/smithing.png", RobotsList, true);
+                    cmim.registerOrUpdateType("Argonian", "Argonians", "https://cdn.melvor.net/core/v018/assets/media/monsters/dragon_red.png", ArgonianList, true);
+                    cmim.registerOrUpdateType("Orc", "Orcs", "https://cdn.melvor.net/core/v018/assets/media/monsters/goblin.png", OrcList, true);
+                    cmim.registerOrUpdateType("Plant", "Plants", "https://cdn.melvor.net/core/v018/assets/media/monsters/plant.png", PlantList, true);
 
                     cmim.forceBaseModTypeActive("Dragon");
                     cmim.forceBaseModTypeActive("Undead");

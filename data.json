@@ -2532,7 +2532,7 @@
       },
       {
         "id": "EggChest",
-        "media": "assets/items/EggChest.png",
+        "media": "melvor:assets/media/bank/egg_chest.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -2577,7 +2577,7 @@
       },
       {
         "id": "StandardChest",
-        "media": "assets/items/StandardChest.png",
+        "media": "melvor:assets/media/bank/standard_chest.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -2622,7 +2622,7 @@
       },
       {
         "id": "BanditChest",
-        "media": "assets/items/BanditChest.png",
+        "media": "melvor:assets/media/bank/bandit_chest.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -2667,7 +2667,7 @@
       },
       {
         "id": "MagicChest",
-        "media": "assets/items/MagicChest.png",
+        "media": "melvor:assets/media/bank/magic_chest.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -2712,7 +2712,7 @@
       },
       {
         "id": "SpiderChest",
-        "media": "assets/items/SpiderChest.png",
+        "media": "melvor:assets/media/bank/spider_chest.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -2757,7 +2757,7 @@
       },
       {
         "id": "MioliteChest",
-        "media": "assets/items/MioliteChest.png",
+        "media": "melvor:assets/media/bank/miolite_chest.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -2802,7 +2802,7 @@
       },
       {
         "id": "PirateBooty",
-        "media": "assets/items/PirateBooty.png",
+        "media": "melvor:assets/media/bank/pirate_booty.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -2847,7 +2847,7 @@
       },
       {
         "id": "FrozenChest",
-        "media": "assets/items/FrozenChest.png",
+        "media": "melvor:assets/media/bank/ice_chest.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -2892,7 +2892,7 @@
       },
       {
         "id": "ElderChest",
-        "media": "assets/items/ElderChest.png",
+        "media": "melvor:assets/media/bank/standard_chest.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -2937,7 +2937,7 @@
       },
       {
         "id": "EliteChest",
-        "media": "assets/items/EliteChest.png",
+        "media": "melvor:assets/media/bank/elite_chest.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -2982,7 +2982,7 @@
       },
       {
         "id": "AirChest",
-        "media": "assets/items/AirChest.png",
+        "media": "melvor:assets/media/bank/air_chest.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -3027,7 +3027,7 @@
       },
       {
         "id": "WaterChest",
-        "media": "assets/items/WaterChest.png",
+        "media": "melvor:assets/media/bank/water_chest.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -3072,7 +3072,7 @@
       },
       {
         "id": "EarthChest",
-        "media": "assets/items/EarthChest.png",
+        "media": "melvor:assets/media/bank/earth_chest.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -3117,7 +3117,7 @@
       },
       {
         "id": "FireChest",
-        "media": "assets/items/FireChest.png",
+        "media": "melvor:assets/media/bank/fire_chest.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -3162,7 +3162,7 @@
       },
       {
         "id": "ScrollOfAeris",
-        "media": "assets/items/ScrollOfAeris.png",
+        "media": "melvor:assets/media/bank/scroll_of_aeris.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -3207,7 +3207,7 @@
       },
       {
         "id": "ScrollOfGlacia",
-        "media": "assets/items/ScrollOfGlacia.png",
+        "media": "melvor:assets/media/bank/scroll_of_glacia.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -3252,7 +3252,7 @@
       },
       {
         "id": "ScrollOfTerran",
-        "media": "assets/items/ScrollOfTerran.png",
+        "media": "melvor:assets/media/bank/scroll_of_terran.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -3297,7 +3297,7 @@
       },
       {
         "id": "ScrollOfRagnar",
-        "media": "assets/items/ScrollOfRagnar.png",
+        "media": "melvor:assets/media/bank/scroll_of_ragnar.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -3342,7 +3342,7 @@
       },
       {
         "id": "AirRune",
-        "media": "assets/items/AirRune.png",
+        "media": "melvor:assets/media/bank/rune_air.png",
         "category": "tes:Mages_Guild_Shop",
         "contains": {
           "items": [
@@ -3382,7 +3382,7 @@
       },
       {
         "id": "MindRune",
-        "media": "assets/items/MindRune.png",
+        "media": "melvor:assets/media/bank/rune_mind.png",
         "category": "tes:Mages_Guild_Shop",
         "contains": {
           "items": [
@@ -3422,7 +3422,7 @@
       },
       {
         "id": "WaterRune",
-        "media": "assets/items/WaterRune.png",
+        "media": "melvor:assets/media/bank/rune_water.png",
         "category": "tes:Mages_Guild_Shop",
         "contains": {
           "items": [
@@ -3462,7 +3462,7 @@
       },
       {
         "id": "EarthRune",
-        "media": "assets/items/EarthRune.png",
+        "media": "melvor:assets/media/bank/rune_earth.png",
         "category": "tes:Mages_Guild_Shop",
         "contains": {
           "items": [
@@ -3502,7 +3502,7 @@
       },
       {
         "id": "FireRune",
-        "media": "assets/items/FireRune.png",
+        "media": "melvor:assets/media/bank/rune_fire.png",
         "category": "tes:Mages_Guild_Shop",
         "contains": {
           "items": [
@@ -3542,7 +3542,7 @@
       },
       {
         "id": "LightRune",
-        "media": "assets/items/LightRune.png",
+        "media": "melvor:assets/media/bank/rune_light.png",
         "category": "tes:Mages_Guild_Shop",
         "contains": {
           "items": [
@@ -3582,7 +3582,7 @@
       },
       {
         "id": "BodyRune",
-        "media": "assets/items/BodyRune.png",
+        "media": "melvor:assets/media/bank/rune_body.png",
         "category": "tes:Mages_Guild_Shop",
         "contains": {
           "items": [
@@ -3622,7 +3622,7 @@
       },
       {
         "id": "ChaosRune",
-        "media": "assets/items/ChaosRune.png",
+        "media": "melvor:assets/media/bank/rune_chaos.png",
         "category": "tes:Mages_Guild_Shop",
         "contains": {
           "items": [
@@ -3662,7 +3662,7 @@
       },
       {
         "id": "NatureRune",
-        "media": "assets/items/NatureRune.png",
+        "media": "melvor:assets/media/bank/rune_nature.png",
         "category": "tes:Mages_Guild_Shop",
         "contains": {
           "items": [
@@ -3702,7 +3702,7 @@
       },
       {
         "id": "HavocRune",
-        "media": "assets/items/HavocRune.png",
+        "media": "melvor:assets/media/bank/rune_havoc.png",
         "category": "tes:Mages_Guild_Shop",
         "contains": {
           "items": [
@@ -3742,7 +3742,7 @@
       },
       {
         "id": "DeathRune",
-        "media": "assets/items/DeathRune.png",
+        "media": "melvor:assets/media/bank/rune_death.png",
         "category": "tes:Mages_Guild_Shop",
         "contains": {
           "items": [
@@ -3782,7 +3782,7 @@
       },
       {
         "id": "BloodRune",
-        "media": "assets/items/BloodRune.png",
+        "media": "melvor:assets/media/bank/rune_blood.png",
         "category": "tes:Mages_Guild_Shop",
         "contains": {
           "items": [
@@ -3822,7 +3822,7 @@
       },
       {
         "id": "SpiritRune",
-        "media": "assets/items/SpiritRune.png",
+        "media": "melvor:assets/media/bank/rune_spirit.png",
         "category": "tes:Mages_Guild_Shop",
         "contains": {
           "items": [
@@ -3862,7 +3862,7 @@
       },
       {
         "id": "AncientRune",
-        "media": "assets/items/AncientRune.png",
+        "media": "melvor:assets/media/bank/rune_ancient.png",
         "category": "tes:Mages_Guild_Shop",
         "contains": {
           "items": [
@@ -9141,6 +9141,10 @@
         "occupiesSlots": [],
         "equipRequirements": [],
         "equipmentStats": [
+          {
+            "key": "attackSpeed",
+            "value": 3200
+          },
           {
             "key": "meleeDefenceBonus",
             "value": 40
@@ -25462,21 +25466,21 @@
           "recipes": [
             {
               "id": "Blood_Potion",
-              "categoryID":"melvorF:CombatPotions",
+              "categoryID": "melvorF:CombatPotions",
               "baseExperience": 50,
               "level": 50,
               "name": "Blood Potion",
               "scCost": 0,
               "gpCost": 0,
               "itemCosts": [
-               {
-                "id":"melvorD:Blood_Rune",
-                "quantity": 10
-               },
-               {
-                "id":"melvorD:Bones",
-                "quantity": 1
-               }
+                {
+                  "id": "melvorD:Blood_Rune",
+                  "quantity": 10
+                },
+                {
+                  "id": "melvorD:Bones",
+                  "quantity": 1
+                }
               ],
               "potionIDs": [
                 "tes:FingerOfAdamusPhillida",

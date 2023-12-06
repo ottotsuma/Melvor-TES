@@ -455,7 +455,7 @@
       },
       {
         "id": "AncientChest",
-        "media": "assets/items/AncientChest.png",
+        "media": "melvor:assets/media/bank/ancient_chest.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -500,7 +500,7 @@
       },
       {
         "id": "BurningChest",
-        "media": "assets/items/BurningChest.png",
+        "media": "melvor:assets/media/bank/burning_chest.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -545,7 +545,7 @@
       },
       {
         "id": "StaticChest",
-        "media": "assets/items/StaticChest.png",
+        "media": "melvor:assets/media/bank/static_chest.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -590,7 +590,7 @@
       },
       {
         "id": "WebbedChest",
-        "media": "assets/items/WebbedChest.png",
+        "media": "melvor:assets/media/bank/webbed_chest.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -635,7 +635,7 @@
       },
       {
         "id": "CursedChest",
-        "media": "assets/items/CursedChest.png",
+        "media": "melvor:assets/media/bank/cursed_chest.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -680,7 +680,7 @@
       },
       {
         "id": "BoneChest",
-        "media": "assets/items/BoneChest.png",
+        "media": "melvor:assets/media/bank/bone_chest.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
@@ -1351,9 +1351,6 @@
       {
         "id": "tes:Mannimarco",
         "passives": {
-          "remove": [
-            "tes:Assassin"
-          ],
           "add": [
             "melvorTotH:DarkBlade",
             "melvorTotH:Decay"
