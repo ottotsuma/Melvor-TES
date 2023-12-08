@@ -942,7 +942,16 @@
           "increasedFlatSlashAttackBonus": 10,
           "increasedFlatBlockAttackBonus": 10
         },
-        "equipmentStats": [],
+        "equipmentStats": [
+          {
+            "key":"meleeStrengthBonus",
+            "value": 20
+          },
+          {
+            "key":"rangedStrengthBonus",
+            "value": 20
+          }
+        ],
         "tier": "none",
         "validSlots": [
           "Passive",
@@ -973,7 +982,12 @@
           "increasedMagicCritChance": 3,
           "increasedMagicDamageBonus": 10
         },
-        "equipmentStats": [],
+        "equipmentStats": [
+          {
+            "key":"magicDamageBonus",
+            "value": 20
+          }
+        ],
         "tier": "none",
         "validSlots": [
           "Passive",
@@ -1003,7 +1017,20 @@
           "tes_increasedFlatDamageWhileTargetHasMaxHP": 10,
           "tes_increasedPercDamageWhileTargetHasMaxHP": 50
         },
-        "equipmentStats": [],
+        "equipmentStats": [
+          {
+            "key":"meleeStrengthBonus",
+            "value": 20
+          },
+          {
+            "key":"rangedStrengthBonus",
+            "value": 15
+          },
+          {
+            "key":"magicDamageBonus",
+            "value": 10
+          }
+        ],
         "tier": "none",
         "validSlots": [
           "Passive",
@@ -1336,6 +1363,24 @@
     ],
     "items": [
       {
+        "id": "tes:Sanguine_Rose",
+        "modifiers": {
+          "add":{
+            "increasedSummoningMaxHit": 25,
+            "increasedSummoningChargePreservation": 10
+          }
+        },
+        "specialAttacks": {
+          "add": [
+            "melvorTotH:ShadeSummon"
+          ],
+          "remove": [
+            "melvorF:DrowsySpores",
+            "melvorF:Spores"
+          ]
+        }
+      },
+      {
         "id": "tes:Staff_of_Worms",
         "specialAttacks": {
           "add": [
@@ -1344,6 +1389,15 @@
             "melvorTotH:CurseTotemSummon",
             "melvorTotH:GreaterShadeSummon"
           ]
+        }
+      },
+      {
+        "id": "tes:Mehrunes_Razor",
+        "modifiers": {
+          "add":{
+            "applyRandomCurseOnSpawn": 1,
+            "increasedCurseLifesteal": 50
+          }
         }
       }
     ],

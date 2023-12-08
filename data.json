@@ -46,6 +46,14 @@
     ],
     "combatPassives": [
       {
+        "id": "Sithis",
+        "name": "Sithis's Touch",
+        "customDescription": "Cause 600 damage, by passing damage reduction.",
+        "modifiers": {
+          "tes_bypassDamageReduction": 600
+        }
+      },
+      {
         "id": "Padomay",
         "name": "Padomay's Touch",
         "customDescription": "Cause 300 damage, by passing damage reduction.",
@@ -7760,7 +7768,7 @@
         "sellsFor": 15000000,
         "itemType": "Equipment",
         "modifiers": {
-          "poisonImmunity": 50
+          "increasedPrayerPointsPerMonsterKill": 10
         },
         "equipmentStats": [
           {
@@ -8059,19 +8067,19 @@
           },
           {
             "key": "stabAttackBonus",
-            "value": 6
+            "value": 24
           },
           {
             "key": "slashAttackBonus",
-            "value": 66
+            "value": 75
           },
           {
             "key": "blockAttackBonus",
-            "value": 6
+            "value": 28
           },
           {
             "key": "meleeStrengthBonus",
-            "value": 66
+            "value": 75
           }
         ],
         "itemType": "Weapon",
@@ -12965,7 +12973,6 @@
       {
         "id": "Ebony_Blade",
         "name": "Ebony Blade",
-        "customDescription": "I wonder if Mephala herself knows how many lives this foul blade has taken over the years? I will be glad to give the world a respite from it.",
         "category": "Combat",
         "type": "Weapon",
         "media": "assets/items/Ebony_Blade.png",
@@ -19444,13 +19451,13 @@
           "melvorF:MarkofDeath"
         ],
         "overrideSpecialChances": [
-          33,
+          50,
           20
         ],
         "passives": [
           "melvorF:Purity",
           "tes:Wardsave_10",
-          "tes:Padomay"
+          "tes:Sithis"
         ],
         "lootChance": 100,
         "lootTable": [
@@ -19542,7 +19549,7 @@
           "melvorF:GreaterDragonbreath"
         ],
         "overrideSpecialChances": [
-          20,
+          30,
           10,
           30,
           10
@@ -25586,6 +25593,20 @@
       },
       {
         "itemIDs": [
+          "tes:Shield_of_the_Crusader",
+          "tes:Cuirass_of_the_Crusader",
+          "tes:Boots_of_the_Crusader",
+          "tes:Helm_of_the_Crusader",
+          "tes:Gauntlets_of_the_Crusader"
+        ],
+        "playerModifiers": {
+          "autoLooting": 1,
+          "increasedAutoEatEfficiency": 40,
+          "decreasedDamageTaken": 10
+        }
+      },
+      {
+        "itemIDs": [
           "tes:Cuirass_of_the_Crusader",
           "tes:Boots_of_the_Crusader",
           "tes:Helm_of_the_Crusader",
@@ -25593,7 +25614,19 @@
           "tes:Amulet_Of_Kings"
         ],
         "playerModifiers": {
-          "increasedGlobalAccuracy": 20
+          "increasedGlobalAccuracy": 20,
+          "disableTownshipHealthDegradation": 1,
+          "cleansed": 1,
+          "allowAttackAugmentingMagic": 1
+        }
+      },
+      {
+        "itemIDs": [
+          "tes:EmperorsRobe",
+          "tes:Amulet_Of_Kings"
+        ],
+        "playerModifiers": {
+          "disableTownshipHealthDegradation": 1
         }
       },
       {

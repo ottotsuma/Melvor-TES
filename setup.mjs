@@ -121,6 +121,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
     const bards_college_items = []
 
     onModsLoaded(async (ctx) => {
+        const t0 = performance.now();
         // Local variables
         const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
         const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
@@ -256,6 +257,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                         "tes:Skinned_Hound",
                         "tes:Flesh_Atronach",
                     ]
+
                     const DemonList = [
                         "tes:Xivilai",
                         "tes:Meridia",
@@ -276,6 +278,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                         "tes:Golden_Saint",
                         "tes:Dark_Seducer",
                     ]
+
                     const AnimalList = [
                         "tes:Giant_Mudcrab",
                         "tes:mudcrab",
@@ -478,6 +481,47 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     cmim.forceBaseModTypeActive("MythicalCreature");
                     cmim.forceBaseModTypeActive("SeaCreature");
 
+
+                    // traitApplied: `${typeSingularNameLower}TraitApplied`,
+                    // increasedDamage: `increasedDamageAgainst${typePluralName}`,
+                    // decreasedDamage: `decreasedDamageAgainst${typePluralName}`,
+                    // increasedDamageTaken: `increasedDamageTakenFrom${typePluralName}`,
+                    // decreasedDamageTaken: `decreasedDamageTakenFrom${typePluralName}`,
+                    // increasedMaxHitPercent: `increasedMaxHitPercentAgainst${typePluralName}`,
+                    // decreasedMaxHitPercent: `decreasedMaxHitPercentAgainst${typePluralName}`,
+                    // increasedMaxHitFlat: `increasedMaxHitFlatAgainst${typePluralName}`,
+                    // decreasedMaxHitFlat: `decreasedMaxHitFlatAgainst${typePluralName}`,
+                    // increasedMinHitBasedOnMaxHit: `increasedMinHitBasedOnMaxHitAgainst${typePluralName}`,
+                    // decreasedMinHitBasedOnMaxHit: `decreasedMinHitBasedOnMaxHitAgainst${typePluralName}`,
+                    // increasedFlatMinHit: `increasedFlatMinHitAgainst${typePluralName}`,
+                    // decreasedFlatMinHit: `decreasedFlatMinHitAgainst${typePluralName}`,
+                    // increasedGlobalAccuracy: `increasedGlobalAccuracyAgainst${typePluralName}`,
+                    // decreasedGlobalAccuracy: `decreasedGlobalAccuracyAgainst${typePluralName}`,
+                    // increasedDamageReduction: `increasedDamageReductionAgainst${typePluralName}`,
+                    // decreasedDamageReduction: `decreasedDamageReductionAgainst${typePluralName}`,
+                    // increasedChanceToApplyTraitInfiniteOnSpawn: `increasedChanceToApply${typeSingularName}TraitInfiniteOnSpawn`,
+                    // decreasedChanceToApplyTraitInfiniteOnSpawn: `decreasedChanceToApply${typeSingularName}TraitInfiniteOnSpawn`,
+                    // applyTraitTurnsOnSpawn: `apply${typeSingularName}TraitTurnsOnSpawn`,
+                    // increasedChanceToApplyTrait: `increasedChanceToApply${typeSingularName}Trait`,
+                    // decreasedChanceToApplyTrait: `decreasedChanceToApply${typeSingularName}Trait`,
+                    // applyTraitTurns: `apply${typeSingularName}TraitTurns`
+
+                    // increasedDamageTakenFromAirSpells: Standard,
+                    // decreasedDamageTakenFromAirSpells: Standard,
+                    // increasedDamageTakenFromWaterSpells: Standard,
+                    // decreasedDamageTakenFromWaterSpells: Standard,
+                    // increasedDamageTakenFromEarthSpells: Standard,
+                    // decreasedDamageTakenFromEarthSpells: Standard,
+                    // increasedDamageTakenFromFireSpells: Standard,
+                    // decreasedDamageTakenFromFireSpells: Standard,
+
+                    // const monadSpecies = ['demon', 'undead', 'animal', "SeaCreature", "MythicalCreature", "Elemental", "Human", "Dragon", "Orc", "Robot", "Goblin", "Elf"] as const;
+
+                    // game.items.registeredObjects.forEach(item => {
+                    //     if(item._namespace.name === "tes") {
+                    //         game.bank.addItem(item, 1, true, true, false);
+                    //     }
+                    // })
                     await ctx.gameData.addPackage('custom-mods.json');
                 }
             } catch (error) {
@@ -565,9 +609,12 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         } catch (error) {
             console.log("onModsLoaded", error)
         }
+       const t1 = performance.now();
+        console.log(`onModsLoaded time taken:  ${t1 - t0} milliseconds`)
     });
 
     onCharacterLoaded(ctx => {
+        const t0 = performance.now();
         const bannedList = {
             "Sweetroll": true,
             "Crown_of_Rhaelyx": true,
@@ -905,9 +952,12 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         } catch (error) {
             console.log('onCharacterLoaded', error)
         }
+       const t1 = performance.now();
+       console.log(`onCharacterLoaded time taken:  ${t1 - t0} milliseconds`)
     });
 
     onInterfaceReady((ctx) => {
+        const t0 = performance.now();
         // Local variables
         const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
         const dboxLoaded = mod.manager.getLoadedModList().includes('dbox')
@@ -1293,6 +1343,8 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         } catch (error) {
             console.log('onInterfaceReady', error)
         }
+       const t1 = performance.now();
+       console.log(`onInterfaceReady time taken:  ${t1 - t0} milliseconds`)
     });
 }
 
