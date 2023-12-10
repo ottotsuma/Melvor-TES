@@ -6128,49 +6128,6 @@
         "customName": "Goblin Furnishings"
       },
       {
-        "id": "ElsweyrSpicedTea_Shop",
-        "media": "assets/items/teacup.png",
-        "category": "tes:Fighters_Guild_Shop",
-        "customDescription": "Known for its exotic blend of flavors, this tea captures the essence of the Khajiit culture, where spices, herbs, and unique ingredients come together to create a truly memorable and invigorating drink.",
-        "contains": {
-          "items": [
-            {
-              "id": "tes:ElsweyrSpicedTea",
-              "quantity": 1
-            }
-          ],
-          "modifiers": {}
-        },
-        "cost": {
-          "gp": {
-            "type": "Fixed",
-            "cost": 0
-          },
-          "slayerCoins": {
-            "type": "Fixed",
-            "cost": 1
-          },
-          "items": [],
-          "raidCoins": {
-            "type": "Fixed",
-            "cost": 0
-          }
-        },
-        "allowQuantityPurchase": true,
-        "unlockRequirements": [],
-        "purchaseRequirements": [
-          {
-            "purchaseID": "tes:Associate_Rank",
-            "count": 1,
-            "type": "ShopPurchase"
-          }
-        ],
-        "defaultBuyLimit": 0,
-        "buyLimitOverrides": [],
-        "showBuyLimit": false,
-        "customName": "Elsweyr Spiced Tea"
-      },
-      {
         "id": "Thieves_Orders_Shop",
         "media": "assets/items/Dead_Drop_Orders_bad.png",
         "category": "tes:Thieves_Guild_Shop",
@@ -6780,7 +6737,6 @@
           "tes:Guardian_Rank",
           "tes:Champion_Rank",
           "tes:Master_Rank",
-          "tes:ElsweyrSpicedTea_Shop",
           "tes:GoblinFurnishings_Shop",
           "tes:Resupply_I",
           "tes:Resupply_II",
