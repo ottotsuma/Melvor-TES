@@ -590,7 +590,7 @@
       },
       {
         "id": "WebbedChest",
-        "media": "melvor:assets/media/bank/webbed_chest.png",
+        "media": "melvor:assets/media/bank/Webbed_Chest.png",
         "category": "tes:Fighters_Guild_Shop",
         "contains": {
           "items": [
