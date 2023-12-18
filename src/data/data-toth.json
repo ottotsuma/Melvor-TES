@@ -937,20 +937,13 @@
         "sellsFor": 10000000,
         "itemType": "Equipment",
         "modifiers": {
-          "increasedMeleeStrengthBonus": 10,
+          "increasedMeleeStrengthBonus": 20,
           "increasedFlatStabAttackBonus": 10,
           "increasedFlatSlashAttackBonus": 10,
-          "increasedFlatBlockAttackBonus": 10
+          "increasedFlatBlockAttackBonus": 10,
+          "increasedRangedStrengthBonus": 20
         },
         "equipmentStats": [
-          {
-            "key":"meleeStrengthBonus",
-            "value": 20
-          },
-          {
-            "key":"rangedStrengthBonus",
-            "value": 20
-          }
         ],
         "tier": "none",
         "validSlots": [
@@ -980,13 +973,9 @@
         "modifiers": {
           "increasedMagicAccuracyBonus": 10,
           "increasedMagicCritChance": 3,
-          "increasedMagicDamageBonus": 10
+          "increasedMagicDamageBonus": 20
         },
         "equipmentStats": [
-          {
-            "key":"magicDamageBonus",
-            "value": 20
-          }
         ],
         "tier": "none",
         "validSlots": [
@@ -1015,21 +1004,10 @@
         "itemType": "Equipment",
         "modifiers": {
           "tes_increasedFlatDamageWhileTargetHasMaxHP": 10,
-          "tes_increasedPercDamageWhileTargetHasMaxHP": 50
+          "tes_increasedPercDamageWhileTargetHasMaxHP": 50,
+          "increasedMaxHitPercent": 10
         },
         "equipmentStats": [
-          {
-            "key":"meleeStrengthBonus",
-            "value": 20
-          },
-          {
-            "key":"rangedStrengthBonus",
-            "value": 15
-          },
-          {
-            "key":"magicDamageBonus",
-            "value": 10
-          }
         ],
         "tier": "none",
         "validSlots": [

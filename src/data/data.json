@@ -11703,21 +11703,11 @@
           "increasedGPBasedOnEnemyCombatLevel": 1,
           "increasedThievingAutoSellPrice": 1.1,
           "decreasedAgilityPillarCost": 10,
-          "increasedMinThievingGP": 10
+          "increasedMinThievingGP": 10,
+          "increasedFlatMeleeDefenceBonus": 3,
+          "increasedFlatRangedDefenceBonus": 3
         },
         "equipmentStats": [
-          {
-            "key": "meleeDefenceBonus",
-            "value": 3
-          },
-          {
-            "key": "magicDefenceBonus",
-            "value": 3
-          },
-          {
-            "key": "rangedDefenceBonus",
-            "value": 3
-          }
         ],
         "tier": "none",
         "validSlots": [
@@ -13471,55 +13461,11 @@
         "occupiesSlots": [],
         "equipRequirements": [],
         "equipmentStats": [
-          {
-            "key": "stabAttackBonus",
-            "value": 45
-          },
-          {
-            "key": "slashAttackBonus",
-            "value": 45
-          },
-          {
-            "key": "blockAttackBonus",
-            "value": 45
-          },
-          {
-            "key": "magicAttackBonus",
-            "value": 20
-          },
-          {
-            "key": "magicDamageBonus",
-            "value": 20
-          },
-          {
-            "key": "rangedAttackBonus",
-            "value": 20
-          },
-          {
-            "key": "rangedStrengthBonus",
-            "value": 20
-          },
-          {
-            "key": "meleeStrengthBonus",
-            "value": 35
-          },
-          {
-            "key": "meleeDefenceBonus",
-            "value": 20
-          },
-          {
-            "key": "rangedDefenceBonus",
-            "value": 20
-          },
-          {
-            "key": "magicDefenceBonus",
-            "value": 20
-          },
-          {
-            "key": "damageReduction",
-            "value": 4
-          }
         ],
+        "modifiers":{
+          "increasedDamageReduction": 5,
+          "increasedSummoningMaxHit": 100
+        },
         "itemType": "Equipment"
       },
       {
