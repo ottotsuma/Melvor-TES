@@ -7316,7 +7316,13 @@
         "attackType": "magic",
         "modifiers": {
           "increasedSummoningChargePreservation": 5,
-          "increasedSummoningMaxHit": 100
+          "increasedSummoningMaxHit": 100,
+          "increasedHiddenSkillLevelPer2Levels": [
+            {
+              "skillID": "melvorD:Summoning",
+              "value": 1
+            }
+          ]
         },
         "equipmentStats": [
           {
@@ -11155,6 +11161,7 @@
           "htmlTemplateID": "The_Five_Tenets_HTML"
         }
       },
+
       {
         "id": "Nightingale_Gloves",
         "name": "Nightingale Gloves",
@@ -11170,12 +11177,7 @@
           "increasedThievingStealth": 50,
           "rangedProtection": 5,
           "decreasedDamageTakenWhenStunned": 5,
-          "increasedBleedReflectChance": 5,
-          "increasedBurnReflectChance": 5,
-          "increasedPoisonReflectChance": 5,
-          "increasedReflectDamage": 5,
-          "increasedFrostburnReflectChance": 5,
-          "increasedFlatReflectDamage": 10
+          "increasedGlobalStunChance": 1
         },
         "equipmentStats": [
           {
@@ -11259,7 +11261,6 @@
         "modifiers": {
           "increasedThievingStealth": 50,
           "magicProtection": 5,
-          "summoningSynergy_1_15": 5,
           "increasedHealWhenSleep": 5,
           "increasedChanceToApplySleepToTargetWhenHit": 1
         },
@@ -11345,20 +11346,8 @@
         "modifiers": {
           "increasedThievingStealth": 50,
           "meleeProtection": 5,
-          "increasedHiddenSkillLevelPer2Levels": [
-            {
-              "skillID": "melvorD:Summoning",
-              "value": 1
-            },
-            {
-              "skillID": "melvorD:Defence",
-              "value": 2
-            },
-            {
-              "skillID": "melvorD:Hitpoints",
-              "value": 2
-            }
-          ]
+          "summoningSynergy_1_15": 5,
+          "increasedChanceToApplyBurn": 1
         },
         "equipmentStats": [
           {
@@ -11440,11 +11429,9 @@
         "sellsFor": 0,
         "itemType": "Equipment",
         "modifiers": {
-          "autoLooting": 1,
-          "itemProtection": 1,
           "increasedThievingStealth": 200,
-          "increasedChanceToAvoidThievingStuns": 50,
-          "increasedMaxHitpoints": 40,
+          "increasedDamageReduction": 5,
+          "frostBurnImmunity": 50,
           "increasedDamageDealtIfPoisoned": 10
         },
         "equipmentStats": [
@@ -11563,7 +11550,7 @@
         ],
         "modifiers": {
           "increasedMagicMaxHitBonusAgainstMelee": 10,
-          "increasedThievingStealth": 150
+          "increasedThievingStealth": 75
         }
       },
       {
@@ -11622,7 +11609,7 @@
         ],
         "modifiers": {
           "doubleLifesteal": 1,
-          "increasedThievingStealth": 150
+          "increasedThievingStealth": 75
         }
       },
       {
@@ -11696,14 +11683,13 @@
           "increasedSkillMasteryXPPerKo": [
             {
               "skillID": "melvorD:Thieving",
-              "value": 1
+              "value": 5
             }
           ],
           "increasedGPFromThievingFlat": 100,
           "increasedGPBasedOnEnemyCombatLevel": 1,
           "increasedThievingAutoSellPrice": 1.1,
           "decreasedAgilityPillarCost": 10,
-          "increasedMinThievingGP": 10,
           "increasedFlatMeleeDefenceBonus": 3,
           "increasedFlatRangedDefenceBonus": 3
         },
@@ -11735,17 +11721,15 @@
         "sellsFor": 0,
         "itemType": "Equipment",
         "modifiers": {
+          "increasedThievingStealth": 100,
+          "increasedGPFromThieving": 10,
           "increasedChanceToDoubleItemsSkill": [
             {
               "skillID": "melvorD:Thieving",
               "value": 10
             }
           ],
-          "increasedThievingAreaUniqueChance": 0.2,
-          "autoLooting": 1,
-          "itemProtection": 1,
-          "increasedTownshipMaxStorage": 10,
-          "increasedOffItemChance": 5
+          "increasedThievingAreaUniqueChance": 0.2
         },
         "equipmentStats": [
           {
@@ -11904,7 +11888,6 @@
         "modifiers": {
           "increasedThievingStealth": 50,
           "increasedGPFromThieving": 5,
-          "increasedMinThievingGP": 200,
           "decreasedSkillInterval": [
             {
               "skillID": "melvorD:Thieving",
@@ -11988,17 +11971,9 @@
         "sellsFor": 0,
         "itemType": "Equipment",
         "modifiers": {
-          "increasedGPFromSales": 5,
           "increasedThievingStealth": 50,
           "increasedGPFromThieving": 5,
-          "increasedMinThievingGP": 100,
-          "magicProtection": 5,
-          "increasedHiddenSkillLevelPer2Levels": [
-            {
-              "skillID": "melvorD:Thieving",
-              "value": 1
-            }
-          ]
+          "magicProtection": 5
         },
         "equipmentStats": [
           {
@@ -12075,8 +12050,7 @@
         "sellsFor": 500,
         "itemType": "Equipment",
         "modifiers": {
-          "increasedGPFromSales": 5,
-          "increasedThievingStealth": 40,
+          "increasedThievingStealth": 20,
           "increasedGPFromThieving": 5
         },
         "equipmentStats": [
@@ -12156,7 +12130,6 @@
         "modifiers": {
           "increasedThievingStealth": 15,
           "increasedGPFromThieving": 5,
-          "increasedMinThievingGP": 150,
           "decreasedSkillInterval": [
             {
               "skillID": "melvorD:Thieving",
@@ -12246,7 +12219,7 @@
             }
           ],
           "increasedThievingAreaUniqueChance": 0.1,
-          "autoLooting": 1
+          "increasedThievingStealth": 15
         },
         "equipmentStats": [
           {
@@ -12390,6 +12363,7 @@
         ],
         "occupiesSlots": []
       },
+
       {
         "id": "GoldenShipModel",
         "name": "Golden ShipModel",
@@ -12598,9 +12572,8 @@
         "modifiers": {
           "increasedThievingStealth": 150,
           "increasedThievingAreaUniqueChance": 0.1,
-          "increasedGPFromThieving": 100,
-          "increasedMinThievingGP": 150,
-          "increasedChanceToAvoidThievingStuns": 35
+          "increasedGPFromThieving": 200,
+          "summoningSynergy_Devil_Eagle": 1
         }
       },
       {
@@ -12635,11 +12608,15 @@
         ],
         "itemType": "Equipment",
         "modifiers": {
-          "increasedThievingStealth": 150,
+          "increasedThievingStealth": 200,
           "increasedThievingAreaUniqueChance": 0.1,
-          "increasedGPFromThieving": 100,
-          "increasedMinThievingGP": 150,
-          "increasedChanceToAvoidThievingStuns": 35
+          "increasedGPFromThieving": 200,
+          "increasedHiddenSkillLevelPer2Levels": [
+            {
+              "skillID": "melvorD:Thieving",
+              "value": 1
+            }
+          ]
         }
       },
       {
@@ -12911,9 +12888,8 @@
         "modifiers": {
           "increasedThievingStealth": 150,
           "increasedThievingAreaUniqueChance": 0.1,
-          "increasedGPFromThieving": 100,
-          "increasedMinThievingGP": 150,
-          "increasedChanceToAvoidThievingStuns": 35
+          "increasedGPFromThieving": 200,
+          "increasedChanceToAvoidThievingStuns": 15
         }
       },
       {
@@ -23722,7 +23698,7 @@
               "id": "Nocturnal_Thieving",
               "name": "Nocturnal",
               "media": "assets/monsters/Nocturnal.png",
-              "baseExperience": 200,
+              "baseExperience": 600,
               "level": 99,
               "maxGP": 2500,
               "maxHit": 150,
@@ -23916,7 +23892,7 @@
               "id": "Corvus_Umbranox",
               "name": "Corvus Umbranox",
               "media": "assets/thief/Corvus_Umbranox.png",
-              "baseExperience": 190,
+              "baseExperience": 504,
               "level": 99,
               "maxGP": 2000,
               "maxHit": 100,
@@ -25419,7 +25395,9 @@
           "tes:Nightingale_Gloves"
         ],
         "playerModifiers": {
-          "increasedSlayerAreaEffectNegationFlat": 20
+          "increasedSlayerAreaEffectNegationFlat": 20,
+          "itemProtection": 1,
+          "autoLooting": 1
         }
       },
       {
@@ -25430,7 +25408,15 @@
           "tes:Guild_Masters_Gloves"
         ],
         "playerModifiers": {
-          "increasedMinThievingGP": 60
+          "increasedMinThievingGP": 25,
+          "itemProtection": 1,
+          "autoLooting": 1,
+          "increasedHiddenSkillLevelPer2Levels": [
+            {
+              "skillID": "melvorD:Thieving",
+              "value": 1
+            }
+          ]
         }
       },
       {
@@ -25441,7 +25427,8 @@
           "tes:Thieves_Guild_Gloves"
         ],
         "playerModifiers": {
-          "increasedMinThievingGP": 20
+          "increasedMinThievingGP": 10,
+          "autoLooting": 1
         }
       },
       {

@@ -1346,3 +1346,5 @@ export async function setup(ctx: Modding.ModContext) {
     console.log("Error, monad", error)
   }
 }
+
+// increasedSelfDamageBasedOnCurrentHitpoints
