@@ -135,6 +135,7 @@ export async function setup(ctx: Modding.ModContext) {
       try {
         try {
           const en_data = {
+            MODIFIER_DATA_summoningSynergy_Devil_Eagle: "While Thieving - 50% chance for +10% base Skill XP, 40% chance for 2.5x GP, and 10% chance to gain no Items or GP",
             MONSTER_TYPE_SINGULAR_Elf: "Elf",
             MONSTER_TYPE_PLURAL_Elf: "Elves",
             tes_increasedDragonBreathDamage: "Increase damage taken from dragon breaths by +${value}",

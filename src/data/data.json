@@ -12865,7 +12865,8 @@
         "specialAttacks": [
           "melvorD:LifeLeech",
           "melvorF:BoneCrush"
-        ]
+        ],
+        "overrideSpecialChances": [50, 50]
       },
       {
         "id": "Ring_of_Khajiit",
@@ -25408,7 +25409,7 @@
           "tes:Guild_Masters_Gloves"
         ],
         "playerModifiers": {
-          "increasedMinThievingGP": 25,
+          "increasedMinThievingGP": 20,
           "itemProtection": 1,
           "autoLooting": 1,
           "increasedHiddenSkillLevelPer2Levels": [
