@@ -13124,7 +13124,8 @@
           "allowNonMagicCurses": 1,
           "momentInTimePassive": 10,
           "decreasedMonsterRespawnTimer": 100,
-          "tes_wardsave": 25
+          "tes_wardsave": 25,
+          "removeDebuffsFromAgility": 1
         }
       },
       {
