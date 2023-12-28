@@ -3972,7 +3972,12 @@
             "type": "Fixed",
             "cost": 0
           },
-          "items": [],
+          "items": [
+            {
+              "id": "melvorD:Bones",
+              "quantity": 1
+            }
+          ],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -4018,7 +4023,12 @@
             "type": "Fixed",
             "cost": 0
           },
-          "items": [],
+          "items": [
+            {
+              "id": "melvorD:Bones",
+              "quantity": 5
+            }
+          ],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -4084,7 +4094,12 @@
             "type": "Fixed",
             "cost": 0
           },
-          "items": [],
+          "items": [
+            {
+              "id": "melvorD:Bones",
+              "quantity": 1
+            }
+          ],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -4130,7 +4145,12 @@
             "type": "Fixed",
             "cost": 0
           },
-          "items": [],
+          "items": [
+            {
+              "id": "melvorD:Bones",
+              "quantity": 1
+            }
+          ],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -4176,7 +4196,12 @@
             "type": "Fixed",
             "cost": 0
           },
-          "items": [],
+          "items": [
+            {
+              "id": "melvorD:Bones",
+              "quantity": 1
+            }
+          ],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -4222,7 +4247,12 @@
             "type": "Fixed",
             "cost": 0
           },
-          "items": [],
+          "items": [
+            {
+              "id": "melvorD:Bones",
+              "quantity": 1
+            }
+          ],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -4268,7 +4298,12 @@
             "type": "Fixed",
             "cost": 0
           },
-          "items": [],
+          "items": [
+            {
+              "id": "melvorD:Bones",
+              "quantity": 1
+            }
+          ],
           "raidCoins": {
             "type": "Fixed",
             "cost": 0
@@ -6318,11 +6353,11 @@
         "cost": {
           "gp": {
             "type": "Fixed",
-            "cost": 0
+            "cost": 10000
           },
           "slayerCoins": {
             "type": "Fixed",
-            "cost": 10000
+            "cost": 0
           },
           "items": [],
           "raidCoins": {
