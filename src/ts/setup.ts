@@ -127,6 +127,8 @@ export async function setup(ctx: Modding.ModContext) {
       const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
       const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
       const TothEntitlement = cloudManager.hasTotHEntitlement
+      const AoDEntitlement = cloudManager.hasAoDEntitlement
+
       // const Abyssal = mod.manager.getLoadedModList().includes('Abyssal Rift')
       // const Pokeworld = mod.manager.getLoadedModList().includes('Pokeworld (Generation 1)')
       // const Runescape = mod.manager.getLoadedModList().includes('Runescape Encounters in Melvor')
@@ -190,6 +192,9 @@ export async function setup(ctx: Modding.ModContext) {
         try {
           if (TothEntitlement) {
             await ctx.gameData.addPackage('data-toth.json');
+          }
+          if(AoDEntitlement) {
+            await ctx.gameData.addPackage('data-aod.json');            
           }
           // add items to bards college before mods load
           bards_college_items.push(game.items.getObjectByID(`tes:Sweetroll`))

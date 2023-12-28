@@ -1,0 +1,95 @@
+{
+    "$schema": "https://melvoridle.com/assets/schema/gameData.json",
+    "namespace": "tes",
+    "data": {
+      "monsters": [
+        {
+          "id": "skeleton_Archer_AoD",
+          "name": "Fancy Skeleton Archer",
+          "media": "assets/monsters/skeleton_Archer.png",
+          "levels": {
+            "Attack": 1,
+            "Defence": 120,
+            "Hitpoints": 120,
+            "Magic": 1,
+            "Ranged": 170,
+            "Strength": 1
+          },
+          "equipmentStats": [
+            {
+              "key": "attackSpeed",
+              "value": 2400
+            }
+          ],
+          "ignoreCompletion": false,
+          "attackType": "ranged",
+          "specialAttacks": [],
+          "passives": [],
+          "lootChance": 100,
+          "lootTable": [
+            {
+              "itemID": "melvorD:Steel_Arrows",
+              "maxQuantity": 10,
+              "minQuantity": 5,
+              "weight": 100
+            },
+            {
+              "itemID": "melvorAoD:Basic_Shortbow",
+              "maxQuantity": 1,
+              "minQuantity": 1,
+              "weight": 20
+            },
+            {
+              "itemID": "melvorAoD:Barrier_Touch_Gem",
+              "maxQuantity": 3,
+              "minQuantity": 1,
+              "weight": 40
+            }            
+          ],
+          "gpDrops": {
+            "min": 10,
+            "max": 20
+          },
+          "bones": {
+            "itemID": "melvorAoD:Crystal_Bones",
+            "quantity": 1
+          },
+          "canSlayer": true,
+          "isBoss": false,
+          "selectedSpell": "melvorD:WindStrike"
+        }
+      ]
+    },
+    "modifications": {
+      "items": [
+        {
+          "id": "tes:Staff_of_Worms",
+          "modifiers": {
+            "add":{
+                "allowUnholyPrayerUse": 1
+            }
+          }
+        },
+        {
+          "id": "tes:Mehrunes_Razor",
+          "modifiers": {
+            "add":{
+                "allowUnholyPrayerUse": 1,
+                "increasedCurseOnHitWithUnholyMark": 1
+            }
+          }
+        }
+      ],
+      "combatAreas": [{
+        "id":"melvorD:Wizard_Tower",
+        "monsters": {
+          "add": [
+            {
+              "monsterID": "tes:skeleton_Archer_AoD",
+              "insertAt": 0
+            }
+          ]
+        }
+      }]
+    }
+  }
