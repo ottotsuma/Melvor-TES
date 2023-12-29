@@ -13083,69 +13083,6 @@
         ]
       },
       {
-        "id": "cheat",
-        "name": "cheat",
-        "category": "Combat",
-        "type": "Armour",
-        "media": "assets/items/WitchsHead.png",
-        "ignoreCompletion": true,
-        "obtainFromItemLog": false,
-        "golbinRaidExclusive": false,
-        "sellsFor": 1,
-        "validSlots": [
-          "Gem",
-          "Passive"
-        ],
-        "occupiesSlots": [],
-        "tier": "none",
-        "equipRequirements": [],
-        "equipmentStats": [],
-        "itemType": "Equipment",
-        "modifiers": {
-          "increasedHPRegenFlat": 1000,
-          "increasedMaxHitpoints": 10000,
-          "increasedDamageToAllMonsters": 100,
-          "doubleBoneDrops": 1,
-          "autoBurying": 1,
-          "applyDespairCurseOnSpawn": 50,
-          "applyMadnessCurseOnSpawn": 50,
-          "bleedImmunity": 100,
-          "burnImmunity": 100,
-          "slowImmunity": 100,
-          "stunImmunity": 100,
-          "curseImmunity": 100,
-          "sleepImmunity": 100,
-          "debuffImmunity": 100,
-          "freezeImmunity": 100,
-          "poisonImmunity": 100,
-          "frostBurnImmunity": 100,
-          "allowSignetDrops": 1,
-          "allowAttackAugmentingMagic": 1,
-          "allowNonMagicCurses": 1,
-          "momentInTimePassive": 10,
-          "decreasedMonsterRespawnTimer": 100,
-          "tes_wardsave": 25,
-          "removeDebuffsFromAgility": 1,
-          "increasedMasteryXP": [
-            {
-              "skillID":"melvorAoD:Archaeology",
-              "value": 100
-            }
-          ],
-          "increasedMinimumItemsFoundInArchaeology": 10,
-          "decreasedSkillInterval":[
-            {
-              "skillID":"melvorAoD:Archaeology",
-              "value": 500
-            }
-          ],
-          "increasedBrushToolLevel": 10,
-          "increasedSieveToolLevel": 10,
-          "increasedShovelToolLevel": 10,
-          "increasedTrowelToolLevel": 10
-        }
-      },
-      {
         "id": "Volendrung",
         "name": "Volendrung",
         "category": "Combat",
