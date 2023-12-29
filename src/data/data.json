@@ -13125,7 +13125,24 @@
           "momentInTimePassive": 10,
           "decreasedMonsterRespawnTimer": 100,
           "tes_wardsave": 25,
-          "removeDebuffsFromAgility": 1
+          "removeDebuffsFromAgility": 1,
+          "increasedMasteryXP": [
+            {
+              "skillID":"melvorAoD:Archaeology",
+              "value": 100
+            }
+          ],
+          "increasedMinimumItemsFoundInArchaeology": 10,
+          "decreasedSkillInterval":[
+            {
+              "skillID":"melvorAoD:Archaeology",
+              "value": 500
+            }
+          ],
+          "increasedBrushToolLevel": 10,
+          "increasedSieveToolLevel": 10,
+          "increasedShovelToolLevel": 10,
+          "increasedTrowelToolLevel": 10
         }
       },
       {
