@@ -279,7 +279,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                         "tes:Dark_Seducer",
                     ]
 
-                    const BeastList = [
+                    const AnimalList = [
                         "tes:Giant_Mudcrab",
                         "tes:mudcrab",
                         "tes:Sload",
@@ -401,7 +401,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                             "melvorTotH:TwinSeaDragonSerpent",
                             "melvorTotH:Leviathan",
                         )
-                        BeastList.push(
+                        AnimalList.push(
                             "melvorTotH:PoisonToad",
                             "melvorTotH:Conda",
                             "melvorTotH:BurningSnake",
@@ -459,7 +459,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     cmim.addMonsters("Human", HumansList)
                     cmim.addMonsters("Undead", UndeadList)
                     cmim.addMonsters("Demon", DemonList)
-                    cmim.addMonsters("Beast", BeastList)
+                    cmim.addMonsters("Animal", AnimalList)
                     cmim.addMonsters("MythicalCreature", MythList)
                     cmim.addMonsters("SeaCreature", SeaCreatureList)
                     cmim.addMonsters("Elemental", ElementalCreatureList)
@@ -475,7 +475,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     cmim.forceBaseModTypeActive("Dragon");
                     cmim.forceBaseModTypeActive("Undead");
                     cmim.forceBaseModTypeActive("Human");
-                    cmim.forceBaseModTypeActive("Beast");
+                    cmim.forceBaseModTypeActive("Animal");
                     cmim.forceBaseModTypeActive("Demon");
                     cmim.forceBaseModTypeActive("Elemental");
                     cmim.forceBaseModTypeActive("MythicalCreature");
@@ -515,7 +515,7 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
                     // increasedDamageTakenFromFireSpells: Standard,
                     // decreasedDamageTakenFromFireSpells: Standard,
 
-                    // const monadSpecies = ['demon', 'undead', 'beast', "SeaCreature", "MythicalCreature", "Elemental", "Human", "Dragon", "Orc", "Robot", "Goblin", "Elf"] as const;
+                    // const monadSpecies = ['demon', 'undead', 'animal', "SeaCreature", "MythicalCreature", "Elemental", "Human", "Dragon", "Orc", "Robot", "Goblin", "Elf"] as const;
 
                     // game.items.registeredObjects.forEach(item => {
                     //     if(item._namespace.name === "tes") {
