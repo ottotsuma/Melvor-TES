@@ -530,6 +530,8 @@ export async function setup(ctx: Modding.ModContext) {
             //         game.bank.addItem(item, 1, true, true, false);
             //     }
             // })
+
+            // namespace_thuum
             await ctx.gameData.addPackage('custom-mods.json');
           }
         } catch (error) {
