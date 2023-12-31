@@ -57,6 +57,478 @@
           "canSlayer": true,
           "isBoss": false,
           "selectedSpell": "melvorD:WindStrike"
+        },
+        {
+          "id": "Miraak",
+          "name": "Miraak",
+          "media": "assets/monsters/Miraak.png",
+          "levels": {
+            "Attack": 1,
+            "Defence": 666,
+            "Hitpoints": 1000,
+            "Magic": 700,
+            "Ranged": 1,
+            "Strength": 1
+          },
+          "equipmentStats": [
+            {
+              "key": "attackSpeed",
+              "value": 2000
+            }
+          ],
+          "ignoreCompletion": false,
+          "attackType": "magic",
+          "specialAttacks": [
+            "melvorAoD:Foresight",
+            "melvorTotH:Entangle",
+            "melvorAoD:Crystallization"
+          ],
+          "overrideSpecialChances": [20, 20, 20],
+          "barrierPercent": 100,
+          "passives": [
+            "melvorF:Purity",
+            "melvorTotH:EndOfTurnHealing3_15",
+            "melvorAoD:BarrierRegen",
+            "melvorAoD:WeakeningTouch"
+          ],
+          "lootChance": 100,
+          "lootTable": [
+            {
+              "itemID": "tes:Skyrim_Grand_soul_gem",
+              "maxQuantity": 1,
+              "minQuantity": 1,
+              "weight": 1
+            },
+            {
+              "itemID": "melvorAoD:Barrier_Touch_Gem",
+              "maxQuantity": 20,
+              "minQuantity": 6,
+              "weight": 100
+            }            
+          ],
+          "gpDrops": {
+            "min": 1000,
+            "max": 2000
+          },
+          "bones": {
+            "itemID": "melvorAoD:Crystal_Bones",
+            "quantity": 1
+          },
+          "canSlayer": true,
+          "isBoss": false,
+          "selectedSpell": "melvorD:WaterSurge"
+        }
+      ],
+      "items": [
+        {
+          "id": "Keening",
+          "name": "Keening",
+          "category": "Combat",
+          "type": "Weapon",
+          "media": "assets/items/Keening.png",
+          "ignoreCompletion": false,
+          "obtainFromItemLog": false,
+          "golbinRaidExclusive": false,
+          "sellsFor": 6000000,
+          "tier": "none",
+          "validSlots": [
+            "Weapon"
+          ],
+          "occupiesSlots": [],
+          "equipRequirements": [],
+          "equipmentStats": [
+            {
+              "key": "attackSpeed",
+              "value": 2400
+            },
+            {
+              "key": "stabAttackBonus",
+              "value": 200
+            },
+            {
+              "key": "slashAttackBonus",
+              "value": 62
+            },
+            {
+              "key": "blockAttackBonus",
+              "value": 62
+            },
+            {
+              "key": "meleeStrengthBonus",
+              "value": 200
+            }
+          ],
+          "modifiers": {
+            "barrierRegenTurns": 10,
+            "increasedFlatBarrierDamage": 6,
+            "increasedBarrierSummonDamage": 20
+          },
+          "itemType": "Weapon",
+          "attackType": "melee"
+        },
+        {
+          "id": "Skyrim_Grand_soul_gem",
+          "media": "assets/items/Skyrim_Grand_soul_gem.png",
+          "name": "Soul Gem",
+          "customDescription": "Soul Gems are naturally-occurring magic stones that house the souls of the dead.",
+          "category": "Combat",
+          "type": "Misc",
+          "ignoreCompletion": false,
+          "obtainFromItemLog": false,
+          "golbinRaidExclusive": false,
+          "sellsFor": 500,
+          "itemType": "Item"
+        },
+        {
+          "id": "Sunder",
+          "name": "Sunder",
+          "category": "Combat",
+          "type": "Weapon",
+          "media": "assets/items/Sunder.png",
+          "ignoreCompletion": false,
+          "obtainFromItemLog": false,
+          "golbinRaidExclusive": false,
+          "sellsFor": 6000000,
+          "tier": "none",
+          "validSlots": [
+            "Weapon"
+          ],
+          "occupiesSlots": [
+            "Shield"
+          ],
+          "equipRequirements": [],
+          "equipmentStats": [
+            {
+              "key": "attackSpeed",
+              "value": 5300
+            },
+            {
+              "key": "blockAttackBonus",
+              "value": 140
+            },
+            {
+              "key": "stabAttackBonus",
+              "value": -10
+            },
+            {
+              "key": "slashAttackBonus",
+              "value": 140
+            },
+            {
+              "key": "meleeStrengthBonus",
+              "value": 500
+            }
+          ],
+          "modifiers": {
+            "barrierRegenTurns": 10,
+            "increasedFlatBarrierDamage": 8,
+            "increasedBarrierSummonDamage": 30
+          },
+          "itemType": "Weapon",
+          "attackType": "melee"
+        },
+        {
+          "id": "Wraithguard",
+          "name": "Wraithguard",
+          "category": "Combat",
+          "type": "Armour",
+          "media": "assets/items/Wraithguard.png",
+          "ignoreCompletion": false,
+          "obtainFromItemLog": false,
+          "golbinRaidExclusive": false,
+          "sellsFor": 6000000,
+          "tier": "none",
+          "validSlots": [
+            "Gloves"
+          ],
+          "occupiesSlots": [],
+          "equipRequirements": [],
+          "equipmentStats": [
+            {
+              "key": "magicDefenceBonus",
+              "value": 15
+            },
+            {
+              "key": "rangedDefenceBonus",
+              "value": 12
+            },
+            {
+              "key": "meleeDefenceBonus",
+              "value": 12
+            },
+            {
+              "key": "damageReduction",
+              "value": 10
+            }          
+          ],
+          "modifiers": {
+            "increasedFlatBarrierSummonDamage": 6,
+            "increasedBarrierSummonDamage": 20
+          },
+          "itemType": "Equipment"
+        }
+      ],
+      "itemUpgrades": [
+        {
+          "gpCost": 0,
+          "scCost": 0,
+          "isDowngrade": false,
+          "itemCosts": [
+            {
+              "id":"tes:Skyrim_Grand_soul_gem",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Ring_of_Namira",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Wabbajack",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Gray_Cowl_of_Nocturnal",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Skull_of_Corruption",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Oghma_Infinium",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Sanguine_Rose",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Spell_Breaker",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Ring_of_Khajiit",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Mace_of_Molag_Bal",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Ebony_Blade",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Mehrunes_Razor",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Volendrung",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Cuirass_of_the_Saviors_Hide",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Dawnbreaker",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Azuras_Star",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Ebony_Mail",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Goldbrand",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Masque_of_Clavicus_Vile",
+              "quantity": 1
+            }
+          ],
+          "rootItemIDs": [
+            "tes:Skyrim_Grand_soul_gem"
+          ],
+          "upgradedItemID":"tes:Keening"
+        },
+        {
+          "gpCost": 0,
+          "scCost": 0,
+          "isDowngrade": false,
+          "itemCosts": [
+            {
+              "id":"tes:Skyrim_Grand_soul_gem",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Ring_of_Namira",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Wabbajack",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Gray_Cowl_of_Nocturnal",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Skull_of_Corruption",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Oghma_Infinium",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Sanguine_Rose",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Spell_Breaker",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Ring_of_Khajiit",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Mace_of_Molag_Bal",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Ebony_Blade",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Mehrunes_Razor",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Volendrung",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Cuirass_of_the_Saviors_Hide",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Dawnbreaker",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Azuras_Star",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Ebony_Mail",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Goldbrand",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Masque_of_Clavicus_Vile",
+              "quantity": 1
+            }
+          ],
+          "rootItemIDs": [
+            "tes:Skyrim_Grand_soul_gem"
+          ],
+          "upgradedItemID":"tes:Sunder"
+        },
+        {
+          "gpCost": 0,
+          "scCost": 0,
+          "isDowngrade": false,
+          "itemCosts": [
+            {
+              "id":"tes:Skyrim_Grand_soul_gem",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Ring_of_Namira",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Wabbajack",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Gray_Cowl_of_Nocturnal",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Skull_of_Corruption",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Oghma_Infinium",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Sanguine_Rose",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Spell_Breaker",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Ring_of_Khajiit",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Mace_of_Molag_Bal",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Ebony_Blade",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Mehrunes_Razor",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Volendrung",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Cuirass_of_the_Saviors_Hide",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Dawnbreaker",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Azuras_Star",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Ebony_Mail",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Goldbrand",
+              "quantity": 1
+            },
+            {
+              "id":"tes:Masque_of_Clavicus_Vile",
+              "quantity": 1
+            }
+          ],
+          "rootItemIDs": [
+            "tes:Skyrim_Grand_soul_gem"
+          ],
+          "upgradedItemID":"tes:Wraithguard"
         }
       ]
     },
@@ -80,16 +552,27 @@
           }
         }
       ],
-      "combatAreas": [{
-        "id":"melvorD:Wizard_Tower",
+      "combatAreas": [
+        {
+        "id":"melvorD:Graveyard",
         "monsters": {
           "add": [
             {
-              "monsterID": "tes:skeleton_Archer_AoD",
-              "insertAt": 0
+              "monsterID": "tes:skeleton_Archer_AoD"
             }
           ]
         }
-      }]
+      },
+      {
+        "id":"melvorAoD:RitualSite",
+        "monsters": {
+          "add": [
+            {
+              "monsterID": "tes:Miraak"
+            }
+          ]
+        }
+      }
+    ]
     }
   }

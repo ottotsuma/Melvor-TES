@@ -1319,8 +1319,7 @@
         "monsters": {
           "add": [
             {
-              "monsterID": "tes:Maiq_the_Liar",
-              "insertAt": 1
+              "monsterID": "tes:Maiq_the_Liar"
             }
           ]
         }
