@@ -1,52 +1,52 @@
-    // Changes to do:
-    // "tes:Moth_Priest"
-    // Mages shop is half empty
-    //  get-childitem *.png | foreach { rename-item $_ $_.Name.Replace("-min", "") }
+// Changes to do:
+// "tes:Moth_Priest"
+// Mages shop is half empty
+//  get-childitem *.png | foreach { rename-item $_ $_.Name.Replace("-min", "") }
 
-    // game.testForOffline(1)
+// game.testForOffline(1)
 
-    // New modifiers
-    // increasedChanceToApplySlowOnSpawn: number,
-    // decreasedChanceToApplySlowOnSpawn: number,
-    // increasedChanceToApplyStunOnSpawn: number,
-    // decreasedChanceToApplyStunOnSpawn: number,
-    // increasedChanceToApplyPoisonOnSpawn: number,
-    // decreasedChanceToApplyPoisonOnSpawn: number,
-    // increasedChanceToApplyDeadlyPoisonOnSpawn: number,
-    // decreasedChanceToApplyDeadlyPoisonOnSpawn: number,
+// New modifiers
+// increasedChanceToApplySlowOnSpawn: number,
+// decreasedChanceToApplySlowOnSpawn: number,
+// increasedChanceToApplyStunOnSpawn: number,
+// decreasedChanceToApplyStunOnSpawn: number,
+// increasedChanceToApplyPoisonOnSpawn: number,
+// decreasedChanceToApplyPoisonOnSpawn: number,
+// increasedChanceToApplyDeadlyPoisonOnSpawn: number,
+// decreasedChanceToApplyDeadlyPoisonOnSpawn: number,
 
-    // deathMark: number,
-    // increasedDeathMarkOnHit: number,
-    // increasedChanceToApplyStackOfDeathMark: number,
-    // decreasedChanceToApplyStackOfDeathMark: number,
-    // increasedDeathMarkImmunity: number,
-    // decreasedDeathMarkImmunity: number,
+// deathMark: number,
+// increasedDeathMarkOnHit: number,
+// increasedChanceToApplyStackOfDeathMark: number,
+// decreasedChanceToApplyStackOfDeathMark: number,
+// increasedDeathMarkImmunity: number,
+// decreasedDeathMarkImmunity: number,
 
-    // increasedDamageTakenFromAirSpells: number,
-    // decreasedDamageTakenFromAirSpells: number,
-    // increasedDamageTakenFromWaterSpells: number,
-    // decreasedDamageTakenFromWaterSpells: number,
-    // increasedDamageTakenFromEarthSpells: number,
-    // decreasedDamageTakenFromEarthSpells: number,
-    // increasedDamageTakenFromFireSpells: number,
-    // decreasedDamageTakenFromFireSpells: number,
+// increasedDamageTakenFromAirSpells: number,
+// decreasedDamageTakenFromAirSpells: number,
+// increasedDamageTakenFromWaterSpells: number,
+// decreasedDamageTakenFromWaterSpells: number,
+// increasedDamageTakenFromEarthSpells: number,
+// decreasedDamageTakenFromEarthSpells: number,
+// increasedDamageTakenFromFireSpells: number,
+// decreasedDamageTakenFromFireSpells: number,
 
-    // increasedDamage: `increasedDamageAgainst${typePluralName}`,
-    // decreasedDamage: `decreasedDamageAgainst${typePluralName}`,
-    // increasedDamageTaken: `increasedDamageTakenFrom${typePluralName}`,
-    // decreasedDamageTaken: `decreasedDamageTakenFrom${typePluralName}`,
-    // increasedMaxHitPercent: `increasedMaxHitPercentAgainst${typePluralName}`,
-    // decreasedMaxHitPercent: `decreasedMaxHitPercentAgainst${typePluralName}`,
-    // increasedMaxHitFlat: `increasedMaxHitFlatAgainst${typePluralName}`,
-    // decreasedMaxHitFlat: `decreasedMaxHitFlatAgainst${typePluralName}`,
-    // increasedMinHitBasedOnMaxHit: `increasedMinHitBasedOnMaxHitAgainst${typePluralName}`,
-    // decreasedMinHitBasedOnMaxHit: `decreasedMinHitBasedOnMaxHitAgainst${typePluralName}`,
-    // increasedFlatMinHit: `increasedFlatMinHitAgainst${typePluralName}`,
-    // decreasedFlatMinHit: `decreasedFlatMinHitAgainst${typePluralName}`,
-    // increasedGlobalAccuracy: `increasedGlobalAccuracyAgainst${typePluralName}`,
-    // decreasedGlobalAccuracy: `decreasedGlobalAccuracyAgainst${typePluralName}`,
-    // increasedDamageReduction: `increasedDamageReductionAgainst${typePluralName}`,
-    // decreasedDamageReduction: `decreasedDamageReductionAgainst${typePluralName}`,
+// increasedDamage: `increasedDamageAgainst${typePluralName}`,
+// decreasedDamage: `decreasedDamageAgainst${typePluralName}`,
+// increasedDamageTaken: `increasedDamageTakenFrom${typePluralName}`,
+// decreasedDamageTaken: `decreasedDamageTakenFrom${typePluralName}`,
+// increasedMaxHitPercent: `increasedMaxHitPercentAgainst${typePluralName}`,
+// decreasedMaxHitPercent: `decreasedMaxHitPercentAgainst${typePluralName}`,
+// increasedMaxHitFlat: `increasedMaxHitFlatAgainst${typePluralName}`,
+// decreasedMaxHitFlat: `decreasedMaxHitFlatAgainst${typePluralName}`,
+// increasedMinHitBasedOnMaxHit: `increasedMinHitBasedOnMaxHitAgainst${typePluralName}`,
+// decreasedMinHitBasedOnMaxHit: `decreasedMinHitBasedOnMaxHitAgainst${typePluralName}`,
+// increasedFlatMinHit: `increasedFlatMinHitAgainst${typePluralName}`,
+// decreasedFlatMinHit: `decreasedFlatMinHitAgainst${typePluralName}`,
+// increasedGlobalAccuracy: `increasedGlobalAccuracyAgainst${typePluralName}`,
+// decreasedGlobalAccuracy: `decreasedGlobalAccuracyAgainst${typePluralName}`,
+// increasedDamageReduction: `increasedDamageReductionAgainst${typePluralName}`,
+// decreasedDamageReduction: `decreasedDamageReductionAgainst${typePluralName}`,
 import '../css/styles.css';
 export async function setup(ctx: Modding.ModContext) {
   try {
@@ -193,8 +193,8 @@ export async function setup(ctx: Modding.ModContext) {
           if (TothEntitlement) {
             await ctx.gameData.addPackage('data-toth.json');
           }
-          if(AoDEntitlement) {
-            await ctx.gameData.addPackage('data-aod.json');            
+          if (AoDEntitlement) {
+            await ctx.gameData.addPackage('data-aod.json');
           }
           // add items to bards college before mods load
           bards_college_items.push(game.items.getObjectByID(`tes:Sweetroll`))
@@ -539,8 +539,8 @@ export async function setup(ctx: Modding.ModContext) {
         }
         // skill patches
         try {
-            ctx.patch(CombatManager, "onEnemyDeath").after(() => {
-              try {
+          ctx.patch(CombatManager, "onEnemyDeath").after(() => {
+            try {
               const combatLevel = game.combat.enemy.monster.combatLevel
               // Inverse: 1 / 10,000
               // if (combatLevel > 200 && Math.random() < ((combatLevel * Math.random()) / 10000)) {
@@ -751,7 +751,7 @@ export async function setup(ctx: Modding.ModContext) {
         // Looping though all game items.
         // const ShopList = []
         const initialPackage = ctx.gameData.buildPackage(itemPackage => {
-          game.items.registeredObjects.forEach((item:any) => {
+          game.items.registeredObjects.forEach((item: any) => {
             try {
               if (item) {
                 // Skip the item if its localID is in the bannedList
