@@ -13611,7 +13611,8 @@
         "modifiers": {
           "increasedSlayerAreaEffectNegationFlat": 10
         },
-        "itemType": "Equipment"
+        "itemType": "Weapon",
+        "attackType": "melee"
       },
       {
         "id": "Masque_of_Clavicus_Vile",
