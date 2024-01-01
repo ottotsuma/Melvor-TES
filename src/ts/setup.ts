@@ -539,8 +539,8 @@ export async function setup(ctx: Modding.ModContext) {
         }
         // skill patches
         try {
-          ctx.patch(CombatManager, "onEnemyDeath").after(() => {
-            try {
+            ctx.patch(CombatManager, "onEnemyDeath").after(() => {
+              try {
               const combatLevel = game.combat.enemy.monster.combatLevel
               // Inverse: 1 / 10,000
               // if (combatLevel > 200 && Math.random() < ((combatLevel * Math.random()) / 10000)) {
