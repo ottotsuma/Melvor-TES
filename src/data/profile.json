@@ -1,0 +1,95 @@
+{
+    "$schema": "https://melvoridle.com/assets/schema/gameData.json",
+    "namespace": "tes",
+    "data": {
+        "skillData": [
+            {
+                "skillID": "namespace_profile:Profile",
+                "data": {
+                    "species": [
+                        {
+                            "id": "Khajiit",
+                            "name": "Khajiit",
+                            "media": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2Fjha2ofzeymw51.jpg",
+                            "baseExperience": 5,
+                            "productId": "namespace_profile:Khajiit",
+                            "level": 1,
+                            "skills": [
+                                "https://cdn2-main.melvor.net/assets/media/pets/mister_fuzzbutt.png",
+                                "https://cdn2-main.melvor.net/assets/media/skills/thieving/thieving.svg",
+                                "https://cdn2-main.melvor.net/assets/media/main/coins.svg"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "khajiitTraitApplied",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "increasedThievingStunIntervalPercent",
+                                    "value": 100
+                                },          
+                                {
+                                    "level": 20,
+                                    "key": "increasedThievingStealth",
+                                    "value": 150
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedGPFromThieving",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedGPFromSales",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increasedChanceToDodge",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedGPOnEnemyHit",
+                                    "value": 5
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

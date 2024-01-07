@@ -126,9 +126,10 @@ export async function setup(ctx: Modding.ModContext) {
       // Local variables
       const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
       const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
+      const profileSkill = mod.manager.getLoadedModList().includes('Class &amp; Species')
       const TothEntitlement = cloudManager.hasTotHEntitlement
       const AoDEntitlement = cloudManager.hasAoDEntitlement
-
+      
       // const Abyssal = mod.manager.getLoadedModList().includes('Abyssal Rift')
       // const Pokeworld = mod.manager.getLoadedModList().includes('Pokeworld (Generation 1)')
       // const Runescape = mod.manager.getLoadedModList().includes('Runescape Encounters in Melvor')
@@ -179,6 +180,9 @@ export async function setup(ctx: Modding.ModContext) {
             tes_Bards_College_Global_Droptable_Overview_Base_Droprate: "Base chance",
             // Global_Droptable_Overview_Limitation_Dragons_Only: "Only dropped by Dragons",
             // Global_Droptable_Overview_Limitation_Undead_Only: "Only dropped by Undead",
+
+            // profile
+            Profile_Profile_Single_Species_Khajiit: 'Khajiit'
           }
           for (const [key, value] of Object.entries(en_data)) {
             // @ts-ignore
@@ -533,6 +537,12 @@ export async function setup(ctx: Modding.ModContext) {
 
             // namespace_thuum
             await ctx.gameData.addPackage('custom-mods.json');
+          }
+          if(kcm && profileSkill) {
+            // add modifier package
+            await ctx.gameData.addPackage('profile.json');
+
+            // edit on xp gain for mastery
           }
         } catch (error) {
           console.log('onModsLoaded packages ', error)

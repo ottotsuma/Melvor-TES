@@ -27,6 +27,7 @@ module.exports = {
         { from: 'src/data/data-aod.json', to: 'data-aod.json' },
         { from: 'src/data/data-bard.json', to: 'data-bard.json' },
         { from: 'src/data/custom-mods.json', to: 'custom-mods.json' },
+        { from: 'src/data/profile.json', to: 'profile.json' },
         { from: 'src/components/Dead_Drop_Orders_1.html', to: 'Dead_Drop_Orders_1.html' },
         { from: 'src/components/Dead_Drop_Orders_2.html', to: 'Dead_Drop_Orders_2.html' },
         { from: 'src/components/Dead_Drop_Orders_3.html', to: 'Dead_Drop_Orders_3.html' },
