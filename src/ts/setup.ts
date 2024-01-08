@@ -1314,11 +1314,11 @@ export async function setup(ctx: Modding.ModContext) {
               character: 'Viarmo',
               text: ['You\'ve come to the right place.'],
               options: [
-                { losses: { items: [{ id: "mythMusic:Polished_Topaz_Gem", qty: 1 }, { id: "mythMusic:Polished_Ruby_Gem", qty: 1 }, { id: "mythMusic:Polished_Sapphire_Gem", qty: 1 }, { id: "mythMusic:Pristine_Leather", qty: 5 }] }, rewards: { items: [{ id: 'tes:rjorns_drum' }] } },
+                { losses: { items: [{ id: "mythMusic:Polished_Topaz_Gem", qty: 10 }, { id: "mythMusic:Polished_Ruby_Gem", qty: 10 }, { id: "mythMusic:Polished_Sapphire_Gem", qty: 10 }, { id: "mythMusic:Pristine_Leather", qty: 1 }] }, rewards: { items: [{ id: 'tes:rjorns_drum' }] } },
 
-                { losses: { items: [{ id: "mythMusic:Polished_Topaz_Gem", qty: 1 }, { id: "mythMusic:Polished_Ruby_Gem", qty: 1 }, { id: "mythMusic:Polished_Sapphire_Gem", qty: 1 }, { id: "mythMusic:Mystic_Oil", qty: 5 }] }, rewards: { items: [{ id: 'tes:Dancers_Flute' }] } },
+                { losses: { items: [{ id: "mythMusic:Polished_Topaz_Gem", qty: 10 }, { id: "mythMusic:Polished_Ruby_Gem", qty: 10 }, { id: "mythMusic:Polished_Sapphire_Gem", qty: 10 }, { id: "mythMusic:Mystic_Oil", qty: 1 }] }, rewards: { items: [{ id: 'tes:Dancers_Flute' }] } },
 
-                { losses: { items: [{ id: "mythMusic:Polished_Topaz_Gem", qty: 1 }, { id: "mythMusic:Polished_Ruby_Gem", qty: 1 }, { id: "mythMusic:Polished_Sapphire_Gem", qty: 1 }, { id: "mythMusic:Diamond_String", qty: 5 }] }, rewards: { items: [{ id: 'tes:finns_lute' }] } },
+                { losses: { items: [{ id: "mythMusic:Polished_Topaz_Gem", qty: 10 }, { id: "mythMusic:Polished_Ruby_Gem", qty: 10 }, { id: "mythMusic:Polished_Sapphire_Gem", qty: 10 }, { id: "mythMusic:Diamond_String", qty: 1 }] }, rewards: { items: [{ id: 'tes:finns_lute' }] } },
                 { to: '0', text: 'What were we talking about again?', isSpeech: true },
                 { text: 'Good bye', isSpeech: true },
               ]
