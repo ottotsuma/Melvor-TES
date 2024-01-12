@@ -182,7 +182,8 @@ export async function setup(ctx: Modding.ModContext) {
             // Global_Droptable_Overview_Limitation_Undead_Only: "Only dropped by Undead",
 
             // profile
-            Profile_Profile_Single_Species_Khajiit: 'Khajiit'
+            Profile_Profile_Single_Species_Khajiit: 'Khajiit',
+            Profile_Profile_Single_Species_Argonian: 'Argonian'
           }
           for (const [key, value] of Object.entries(en_data)) {
             // @ts-ignore
@@ -236,297 +237,6 @@ export async function setup(ctx: Modding.ModContext) {
             if (!cmim) {
               return;
             }
-
-            // const FightersList: any[] = [
-            //   "melvorD:BlackKnight",
-            //   "melvorD:HillGiant",
-            //   "melvorD:MossGiant",
-            //   "melvorD:GiantCrab",
-            //   "melvorD:Tentacle",
-            //   "melvorD:Seagull",
-            //   "melvorD:ConfusedPirate",
-            //   "melvorD:FrozenMammoth",
-            //   "melvorD:WetMonster",
-            //   "melvorD:MoistMonster",
-            //   "melvorD:SweatyMonster",
-            //   "melvorD:Golbin",
-            //   "melvorD:Chicken",
-            //   "melvorD:Cow",
-            //   "melvorD:Chick",
-            //   "melvorD:MummaChicken",
-            //   "melvorD:Pirate",
-            //   "melvorD:PirateCaptain",
-            //   "melvorD:TheKraken",
-            //   "melvorD:Bat",
-            //   "melvorD:BigBat",
-            //   "melvorD:MalcsTheGuardianOfMelvor",
-            //   "melvorD:Spider",
-            //   "melvorD:BrownSpider",
-            //   "melvorD:EvilSpider",
-            //   "melvorD:SpiderKing",
-            //   "melvorD:IceMonster",
-            //   "melvorD:IceTroll",
-            //   "melvorD:Ice",
-            //   "melvorD:ProtectorofIce",
-            //   "melvorD:FirstMate",
-            //   "melvorD:ZombieHand",
-            //   "melvorD:Zombie",
-            //   "melvorD:ZombieLeader",
-            //   "melvorD:Ghost",
-            //   "melvorD:GreenDragon",
-            //   "melvorD:BlueDragon",
-            //   "melvorD:RedDragon",
-            //   "melvorD:BlackDragon",
-            //   "melvorD:JuniorFarmer",
-            //   "melvorD:AdultFarmer",
-            //   "melvorD:MasterFarmer",
-            //   "melvorD:SteelKnight",
-            //   "melvorD:MithrilKnight",
-            //   "melvorD:AdamantKnight",
-            //   "melvorD:RuneKnight",
-            //   "melvorD:Leech",
-            //   "melvorD:Plant",
-            //   "melvorD:ElerineWarrior",
-            //   "melvorF:Mummy",
-            //   "melvorF:Statue",
-            //   "melvorF:UndeadWerewolf",
-            //   "melvorF:FierceDevil",
-            //   "melvorF:StrangeEyedMonster",
-            //   "melvorF:LotsofEyes",
-            //   "melvorF:Eyes",
-            //   "melvorF:Griffin",
-            //   "melvorF:Pegasus",
-            //   "melvorF:Valkyrie",
-            //   "melvorF:GooMonster",
-            //   "melvorF:GreenGooMonster",
-            //   "melvorF:PurpleGooMonster",
-            //   "melvorF:ScatteredGooMonster",
-            //   "melvorF:RagingHornedElite",
-            //   "melvorF:DarkHornedElite",
-            //   "melvorF:AirMonster",
-            //   "melvorF:Aleron",
-            //   "melvorF:WaterMonster",
-            //   "melvorF:Murtia",
-            //   "melvorF:EarthMonster",
-            //   "melvorF:EarthGolem",
-            //   "melvorF:Ophidia",
-            //   "melvorF:Terran",
-            //   "melvorF:FireGuard",
-            //   "melvorF:FireMonster",
-            //   "melvorF:Ignis",
-            //   "melvorF:ElderDragon",
-            //   "melvorF:MioliteSprig",
-            //   "melvorF:MioliteWarden",
-            //   "melvorF:TurkulRiders",
-            //   "melvorF:TurkulGiant",
-            //   "melvorF:BountyHunter",
-            //   "melvorF:ChaoticGreaterDragon",
-            //   "melvorF:Umbora",
-            //   "melvorF:Paladin",
-            //   "melvorF:Cerberus",
-            //   "melvorF:RedDevil",
-            //   "melvorF:Incendius",
-            //   "melvorF:MalcsTheLeaderOfDragons",
-            //   "melvorF:MysteriousFigurePhase1",
-            //   "melvorF:EyeOfFear",
-            //   "melvorF:VenomousSnake",
-            //   "melvorF:SpikedRedClaw",
-            //   "melvorF:GreaterSkeletalDragon",
-            //   "tes:red_dragon",
-            //   "tes:green_dragon",
-            //   "tes:blue_dragon",
-            //   "tes:Giant_Mudcrab",
-            //   "tes:mudcrab",
-            //   "tes:Goblin_War_Chief",
-            //   "tes:Goblin_Berserker",
-            //   "tes:Goblin_Warlord",
-            //   "tes:Goblin_Chef",
-            //   "tes:Savage_Goblin",
-            //   "tes:Xivilai",
-            //   "tes:Cliff_Racer",
-            //   "tes:Alit",
-            //   "tes:Guar",
-            //   "tes:Kagouti",
-            //   "tes:Nix_Hound",
-            //   "tes:Gryphon",
-            //   "tes:Echatere",
-            //   "tes:Riekr",
-            //   "tes:Heron",
-            //   "tes:Assassin_Beetle",
-            //   "tes:Giant_Scorpion",
-            //   "tes:Welwa",
-            //   "tes:Duneripper",
-            //   "tes:Den_Mother",
-            //   "tes:Gravelclaw",
-            //   "tes:Guzzard",
-            //   "tes:Elsweyr_Dragon",
-            //   "tes:Wamasu",
-            //   "tes:Death_Hopper",
-            //   "tes:Laloriaran",
-            //   "tes:Havilstein_Hoar",
-            //   "tes:Shaleez",
-            //   "tes:JGhasta",
-            //   "tes:Perennia_Draconis",
-            //   "tes:Sibylla_Draconis",
-            //   "tes:Andreas_Draconis",
-            //   "tes:Matthias_Draconis",
-            //   "tes:The_Gray_Prince",
-            //   "tes:MartinSeptim",
-            //   "tes:Pelinal_Whitestrake",
-            //   "tes:Imperial_Watch",
-            //   "tes:Giant",
-            //   "tes:Alduin",
-            //   "tes:Draugr",
-            //   "tes:Sanguine",
-            //   "tes:Peryite",
-            //   "tes:Namira",
-            //   "tes:Molag_Bal",
-            //   "tes:Mehrunes_Dagon",
-            //   "tes:Malacath",
-            //   "tes:Boethiah",
-            //   "tes:Hermaeus_Mora",
-            //   "tes:Sheogorath",
-            //   "tes:Golden_Saint",
-            //   "tes:Dark_Seducer",
-            //   "tes:Baliwog",
-            //   "tes:Scalon",
-            //   "tes:Elytra",
-            //   "tes:Skinned_Hound",
-            //   "tes:Shambles",
-            //   "tes:Flesh_Atronach"
-            // ]
-            // const MagesList: any[] = [
-            //   "melvorD:TheEye",
-            //   "melvorD:ResurrectedEye",
-            //   "melvorD:Wizard",
-            //   "melvorD:DarkWizard",
-            //   "melvorD:MasterWizard",
-            //   "melvorD:ElderWizard",
-            //   "melvorD:FireSpirit",
-            //   "melvorD:ElerineMage",
-            //   "melvorF:StoneSnake",
-            //   "melvorF:Fairy",
-            //   "melvorF:Angel",
-            //   "melvorF:SeethingHornedElite",
-            //   "melvorF:WaterGuard",
-            //   "melvorF:WaterGolem",
-            //   "melvorF:Lissia",
-            //   "melvorF:Glacia",
-            //   "melvorF:Mistral",
-            //   "melvorF:FireGolem",
-            //   "melvorF:Pyra",
-            //   "melvorF:Ragnar",
-            //   "melvorF:MioliteTrio",
-            //   "melvorF:MioliteMonarch",
-            //   "melvorF:Druid",
-            //   "melvorF:Shaman",
-            //   "melvorF:Necromancer",
-            //   "melvorF:Elementalist",
-            //   "melvorF:CursedMaiden",
-            //   "melvorF:WickedGreaterDragon",
-            //   "melvorF:Kutul",
-            //   "melvorF:Priest",
-            //   "melvorF:WanderingBard",
-            //   "melvorF:FearfulEye",
-            //   "melvorF:Phoenix",
-            //   "melvorF:Ahrenia",
-            //   "melvorF:SuperiorEyedMonster",
-            //   "melvorF:GiantMoth",
-            //   "melvorF:CursedLich",
-            //   "tes:Sload",
-            //   "tes:Lucerne",
-            //   "tes:Melka",
-            //   "tes:Moira",
-            //   "tes:Petra",
-            //   "tes:Drascua",
-            //   "tes:Hagraven",
-            //   "tes:Bitterfish_Clan_Goblin_Shaman",
-            //   "tes:Bloody_Hand_Tribe_Goblin_Shaman",
-            //   "tes:Dust_Eater_Clan_Goblin_Shaman",
-            //   "tes:Rock_Biter_Clan_Goblin_Shaman",
-            //   "tes:Sharp_Tooth_Clan_Goblin_Shaman",
-            //   "tes:Skull_Breaker_Clan_Goblin_Shaman",
-            //   "tes:Three_Feather_Clan_Goblin_Shaman",
-            //   "tes:White_Skin_Clan_Goblin_Shaman",
-            //   "tes:Goblin_Netherboss",
-            //   "tes:Goblin_Shaman",
-            //   "tes:Goblin_Witch",
-            //   "tes:Netch",
-            //   "tes:Indrik",
-            //   "tes:Nereid",
-            //   "tes:Spriggan",
-            //   "tes:Lamia",
-            //   "tes:Blue_Oasis_Dragon_Frog",
-            //   "tes:Voriplasm",
-            //   "tes:Umaril",
-            //   "tes:Lich",
-            //   "tes:Necromancer",
-            //   "tes:Zombie",
-            //   "tes:Harkon2",
-            //   "tes:Harkon",
-            //   "tes:Alval_Uvani",
-            //   "tes:Celedaen",
-            //   "tes:Mannimarco",
-            //   "tes:Divine_Crusader",
-            //   "tes:Nocturnal",
-            //   "tes:Vaermina",
-            //   "tes:Azura",
-            //   "tes:Clavicus_Vile",
-            //   "tes:Maiq_the_Liar",
-            //   "tes:Miraak"
-            // ]
-            // const RoguesList: any[] = [
-            //   "melvorD:FrozenArcher",
-            //   "melvorD:RangedGolbin",
-            //   "melvorD:PratTheProtectorOfSecrets",
-            //   "melvorD:BanditTrainee",
-            //   "melvorD:Bandit",
-            //   "melvorD:BanditLeader",
-            //   "melvorD:Skeleton",
-            //   "melvorD:ViciousSerpent",
-            //   "melvorD:ElerineArcher",
-            //   "melvorF:Vampire",
-            //   "melvorF:ManyEyedMonster",
-            //   "melvorF:HolyArcher",
-            //   "melvorF:AirGuard",
-            //   "melvorF:AirGolem",
-            //   "melvorF:Voltaire",
-            //   "melvorF:Aeris",
-            //   "melvorF:EarthGuard",
-            //   "melvorF:FuriousHornedElite",
-            //   "melvorF:Thief",
-            //   "melvorF:TurkulArchers",
-            //   "melvorF:TurkulThrowers",
-            //   "melvorF:TurkulGeneral",
-            //   "melvorF:SandBeast",
-            //   "melvorF:RancoraSpider",
-            //   "melvorF:ElderVampire",
-            //   "melvorF:HuntingGreaterDragon",
-            //   "melvorF:Rokken",
-            //   "melvorF:PratTheGuardianOfSecrets",
-            //   "melvorF:MysteriousFigurePhase2",
-            //   "melvorF:NoxiousSerpent",
-            //   "melvorF:LegaranWurm",
-            //   "tes:undead_Junior_Farmer",
-            //   "tes:skeleton_Archer_AoD",
-            //   "tes:skeleton_Archer",
-            //   "tes:Goblin_Ambusher",
-            //   "tes:Goblin_Rat_Farmer",
-            //   "tes:Goblin_Skirmisher",
-            //   "tes:Ysmir_Iceheart",
-            //   "tes:Dreugh",
-            //   "tes:Hoarvor",
-            //   "tes:Shrieking_Harpy",
-            //   "tes:Infernal_Sep_Adder",
-            //   "tes:Ungolim",
-            //   "tes:Caelia_Draconis",
-            //   "tes:Bandit",
-            //   "tes:Thief",
-            //   "tes:Mephala",
-            //   "tes:Hircine",
-            //   "tes:Meridia",
-            //   "tes:Grummite",
-            // ]
             const DragonList = [
               "tes:Ysmir_Iceheart",
               "tes:Alduin",
@@ -534,7 +244,20 @@ export async function setup(ctx: Modding.ModContext) {
               "tes:red_dragon",
               "tes:green_dragon",
               "tes:blue_dragon",
-              "tes:MartinSeptim"
+              "tes:MartinSeptim",
+              "melvorD:PratTheProtectorOfSecrets",
+              "melvorD:GreenDragon",
+              "melvorD:BlueDragon",
+              "melvorD:RedDragon",
+              "melvorD:BlackDragon",
+              "melvorD:MalcsTheGuardianOfMelvor",
+              "melvorF:ElderDragon",
+              "melvorF:ChaoticGreaterDragon",
+              "melvorF:HuntingGreaterDragon",
+              "melvorF:WickedGreaterDragon",
+              "melvorF:MalcsTheLeaderOfDragons",
+              "melvorF:GreaterSkeletalDragon",
+              "melvorD:ProtectorofIce"
             ]
             const HumansList = [
               "tes:Necromancer",
@@ -547,7 +270,35 @@ export async function setup(ctx: Modding.ModContext) {
               "tes:Sibylla_Draconis",
               "tes:Andreas_Draconis",
               "tes:Celedaen",
-              "tes:Imperial_Watch"
+              "tes:Imperial_Watch",
+              "melvorF:BountyHunter",
+              "melvorD:BlackKnight",
+              "melvorD:ConfusedPirate",
+              "melvorD:FrozenArcher",
+              "melvorD:Pirate",
+              "melvorD:FirstMate",
+              "melvorD:JuniorFarmer",
+              "melvorD:AdultFarmer",
+              "melvorD:MasterFarmer",
+              "melvorD:Wizard",
+              "melvorD:SteelKnight",
+              "melvorD:MithrilKnight",
+              "melvorD:AdamantKnight",
+              "melvorD:RuneKnight",
+              "melvorD:BanditTrainee",
+              "melvorD:Bandit",
+              "melvorD:BanditLeader",
+              "melvorD:DarkWizard",
+              "melvorD:MasterWizard",
+              "melvorD:ElderWizard",
+              "melvorF:Druid",
+              "melvorF:Thief",
+              "melvorF:Shaman",
+              "melvorF:Necromancer",
+              "melvorF:Elementalist",
+              "melvorF:Paladin",
+              "melvorF:Priest",
+              "melvorF:WanderingBard",
             ]
             const UndeadList = [
               "tes:Harkon",
@@ -559,8 +310,20 @@ export async function setup(ctx: Modding.ModContext) {
               "tes:Draugr",
               "tes:Skinned_Hound",
               "tes:Flesh_Atronach",
+              "melvorD:PirateCaptain",
+              "melvorD:ZombieHand",
+              "melvorD:Zombie",
+              "melvorD:ZombieLeader",
+              "melvorD:Ghost",
+              "melvorD:Skeleton",
+              "melvorF:UndeadWerewolf",
+              "melvorF:CursedLich",
+              "melvorF:GreaterSkeletalDragon",
+              "melvorF:Mummy",
+              "melvorF:Vampire",
+              "melvorF:ElderVampire",
+              "melvorF:CursedMaiden"
             ]
-
             const DemonList = [
               "tes:Xivilai",
               "tes:Meridia",
@@ -580,11 +343,13 @@ export async function setup(ctx: Modding.ModContext) {
               "tes:Sheogorath",
               "tes:Golden_Saint",
               "tes:Dark_Seducer",
+              "melvorF:RedDevil",
+              "melvorF:FierceDevil",
+              "melvorF:FireGuard",
+              "melvorF:Ignis",
+              "melvorF:Ragnar"
             ]
-
             const BeastList = [
-              "tes:Giant_Mudcrab",
-              "tes:mudcrab",
               "tes:Sload",
               "tes:Cliff_Racer",
               "tes:Alit",
@@ -599,8 +364,7 @@ export async function setup(ctx: Modding.ModContext) {
               "tes:Echatere",
               "tes:Riekr",
               "tes:Heron",
-              "tes:Assassin_Beetle",
-              "tes:Giant_Scorpion",
+
               "tes:Shrieking_Harpy",
               "tes:Lamia",
               "tes:Welwa",
@@ -613,9 +377,7 @@ export async function setup(ctx: Modding.ModContext) {
               "tes:Voriplasm",
               "tes:Wamasu",
               "tes:Death_Hopper",
-              "tes:Umaril",
-              "tes:Laloriaran",
-              "tes:Giant",
+
               "tes:Skinned_Hound",
               "tes:Baliwog",
               "tes:Scalon",
@@ -629,6 +391,8 @@ export async function setup(ctx: Modding.ModContext) {
               "tes:Petra",
               "tes:Drascua",
               "tes:Hagraven",
+
+              "melvorD:WetMonster", "melvorD:SweatyMonster", "melvorD:MoistMonster", "melvorD:IceMonster", "melvorF:StoneSnake", "melvorF:Statue", "melvorF:GooMonster", "melvorF:GreenGooMonster", "melvorF:PurpleGooMonster", "melvorF:ScatteredGooMonster", "melvorF:LotsofEyes", "melvorF:ManyEyedMonster", "melvorF:StrangeEyedMonster", "melvorF:Eyes", "melvorF:SuperiorEyedMonster", "melvorF:EyeOfFear", "melvorF:SandBeast", "melvorF:RagingHornedElite", "melvorF:SeethingHornedElite", "melvorF:DarkHornedElite", "melvorF:FuriousHornedElite", "melvorTotH:LargeIceTroll", "melvorD:IceTroll", "melvorD:Ice", "melvorD:TheEye", "melvorD:ResurrectedEye", "melvorF:AirMonster", "melvorF:AirGuard"
             ]
             const GoblinList = [
               "melvorD:Golbin",
@@ -656,11 +420,29 @@ export async function setup(ctx: Modding.ModContext) {
             const MythList = [
               "tes:Gryphon",
               "tes:Indrik",
+              "melvorD:ElerineMage",
+              "melvorD:ElerineWarrior",
+              "melvorD:ElerineArcher",
+              "melvorF:Griffin",
+              "melvorF:Pegasus",
+              "melvorF:Cerberus",
+              "melvorF:Phoenix",
+              "melvorF:Aleron",
+              "melvorF:EarthGuard",
+              "melvorF:EarthMonster",
+              "melvorF:Ophidia",
+              "melvorF:FireMonster",
+              "melvorTotH:IceHydra",
+              "melvorF:Aeris",
+              "melvorF:Voltaire",
+              "melvorF:Aleron"
             ]
             const elfList = [
+              "tes:Umaril",
               "tes:Ungolim",
               "tes:Alval_Uvani",
-              "tes:Mannimarco"
+              "tes:Mannimarco",
+              "tes:Laloriaran",
             ]
             const KhajiitList = [
               "tes:JGhasta"
@@ -674,15 +456,82 @@ export async function setup(ctx: Modding.ModContext) {
             ]
             const OrcList = [
               "tes:The_Gray_Prince",
+              "melvorF:TurkulRiders",
+              "melvorF:TurkulArchers",
+              "melvorF:TurkulThrowers",
+              "melvorF:TurkulGiant",
+              "melvorF:TurkulGeneral"
             ]
             const SeaCreatureList = [
-
-            ]
-            const ElementalCreatureList = [
-
+              "melvorF:MioliteSprig",
+              "melvorF:MioliteTrio",
+              "melvorF:MioliteWarden",
+              "melvorF:MioliteMonarch",
+              "melvorD:GiantCrab",
+              "melvorD:Tentacle",
+              "melvorD:TheKraken",
+              "melvorF:Lissia",
+              "melvorF:Murtia",
+              "melvorF:Umbora",
+              "melvorF:Rokken",
+              "melvorF:Kutul",
+              "melvorF:Lissia",
+              "melvorF:Murtia",
+              "melvorF:MioliteWarden",
             ]
             const PlantList = [
               "melvorD:Plant"
+            ]
+            const AngelList: any[] = [
+              "melvorF:Angel",
+              "melvorF:Fairy",
+              "melvorF:Valkyrie",
+              "melvorF:HolyArcher"
+            ]
+            const AarakocraList: any[] = []
+            const AnimalList: any[] = [
+              "tes:Assassin_Beetle",
+              "tes:Giant_Scorpion",
+              "tes:Giant_Mudcrab",
+              "tes:mudcrab",
+              "melvorD:Chicken",
+              "melvorD:Cow",
+              "melvorD:Chick",
+              "melvorD:MummaChicken",
+              "melvorD:Leech",
+              "melvorD:Bat",
+              "melvorD:BigBat",
+              "melvorD:ViciousSerpent",
+              "melvorD:Spider",
+              "melvorD:BrownSpider",
+              "melvorD:EvilSpider",
+              "melvorD:SpiderKing",
+              "melvorD:Seagull",
+              "melvorD:FrozenMammoth",
+              "melvorF:AirGuard",
+              "melvorF:LegaranWurm",
+              "melvorF:NoxiousSerpent",
+              "melvorF:VenomousSnake",
+              "melvorF:GiantMoth",
+              "melvorF:RancoraSpider",
+              "melvorF:SpikedRedClaw"
+            ]
+            const ElementalCreatureList: any[] = [
+              "melvorD:Ice",
+              "MelvorD:FireSpirit",
+              "melvorF:AirGolem",
+              "melvorF:WaterGuard",
+              "melvorF:WaterMonster",
+              "melvorF:WaterGolem",
+              "melvorF:Glacia",
+              "melvorF:EarthGolem",
+              "melvorF:FireGolem",
+            ]
+            const GiantList = [
+              "melvorD:HillGiant", "melvorD:MossGiant", "melvorF:GiantMoth", "melvorD:GiantCrab", "melvorF:TurkulGiant",
+              "tes:Giant",
+              "tes:Giant_Scorpion",
+              "tes:Giant_Mudcrab",
             ]
 
             if (TothEntitlement) {
@@ -759,66 +608,45 @@ export async function setup(ctx: Modding.ModContext) {
                 "mythMusic:Mystic_Jester")
             }
             cmim.addMonsters("Dragon", DragonList)
-            cmim.addMonsters("Human", HumansList)
+            cmim.addMonsters("Animal", AnimalList)
             cmim.addMonsters("Undead", UndeadList)
-            cmim.addMonsters("Demon", DemonList)
-            cmim.addMonsters("Beast", BeastList)
-            cmim.addMonsters("MythicalCreature", MythList)
             cmim.addMonsters("SeaCreature", SeaCreatureList)
+            cmim.addMonsters("Human", HumansList)
+            cmim.addMonsters("Demon", DemonList)
+            cmim.addMonsters("MythicalCreature", MythList)
             cmim.addMonsters("Elemental", ElementalCreatureList)
 
-            cmim.registerOrUpdateType("Elf", "Elves", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", elfList, true);
-            cmim.registerOrUpdateType("Goblin", "Goblins", "https://cdn.melvor.net/core/v018/assets/media/monsters/goblin.png", GoblinList, true);
+            // Tes spcific
             cmim.registerOrUpdateType("Khajiit", "Khajiit", "https://cdn.melvor.net/core/v018/assets/media/pets/octavius_lepidus_viii.png", KhajiitList, true);
             cmim.registerOrUpdateType("Robot", "Robots", "https://cdn.melvor.net/core/v018/assets/media/pets/smithing.png", RobotsList, true);
             cmim.registerOrUpdateType("Argonian", "Argonians", "https://cdn.melvor.net/core/v018/assets/media/monsters/dragon_red.png", ArgonianList, true);
-            cmim.registerOrUpdateType("Orc", "Orcs", "https://cdn.melvor.net/core/v018/assets/media/monsters/goblin.png", OrcList, true);
+
+            // Used in other mods
+            cmim.registerOrUpdateType("Elf", "Elves", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", elfList, true);
+            cmim.registerOrUpdateType("Goblin", "Goblins", "https://cdn.melvor.net/core/v018/assets/media/monsters/goblin.png", GoblinList, true);
             cmim.registerOrUpdateType("Plant", "Plants", "https://cdn.melvor.net/core/v018/assets/media/monsters/plant.png", PlantList, true);
+            cmim.registerOrUpdateType("Orc", "Orcs", "https://cdn.melvor.net/core/v018/assets/media/monsters/goblin.png", OrcList, true);
+            cmim.registerOrUpdateType("Giant", "Giants", "https://cdn2-main.melvor.net/assets/media/monsters/hill_giant.png", GiantList, true);
+            cmim.registerOrUpdateType("Beast", "Beasts", "https://cdn2-main.melvor.net/assets/media/monsters/m13.png", BeastList, true);
+            cmim.registerOrUpdateType("Aarakocra", "Aarakocras", "https://cdn2-main.melvor.net/assets/media/monsters/torvair.png", AarakocraList, true);
+            cmim.registerOrUpdateType("Angel", "Angels", "https://cdn2-main.melvor.net/assets/media/monsters/angel.png", AngelList, true);
 
+            // @ts-ignore
             cmim.forceBaseModTypeActive("Dragon");
+            // @ts-ignore
             cmim.forceBaseModTypeActive("Undead");
+            // @ts-ignore
             cmim.forceBaseModTypeActive("Human");
-            cmim.forceBaseModTypeActive("Beast");
+            // @ts-ignore
+            cmim.forceBaseModTypeActive("Animal");
+            // @ts-ignore
             cmim.forceBaseModTypeActive("Demon");
+            // @ts-ignore
             cmim.forceBaseModTypeActive("Elemental");
+            // @ts-ignore
             cmim.forceBaseModTypeActive("MythicalCreature");
+            // @ts-ignore
             cmim.forceBaseModTypeActive("SeaCreature");
-
-
-            // traitApplied: `${typeSingularNameLower}TraitApplied`,
-            // increasedDamage: `increasedDamageAgainst${typePluralName}`,
-            // decreasedDamage: `decreasedDamageAgainst${typePluralName}`,
-            // increasedDamageTaken: `increasedDamageTakenFrom${typePluralName}`,
-            // decreasedDamageTaken: `decreasedDamageTakenFrom${typePluralName}`,
-            // increasedMaxHitPercent: `increasedMaxHitPercentAgainst${typePluralName}`,
-            // decreasedMaxHitPercent: `decreasedMaxHitPercentAgainst${typePluralName}`,
-            // increasedMaxHitFlat: `increasedMaxHitFlatAgainst${typePluralName}`,
-            // decreasedMaxHitFlat: `decreasedMaxHitFlatAgainst${typePluralName}`,
-            // increasedMinHitBasedOnMaxHit: `increasedMinHitBasedOnMaxHitAgainst${typePluralName}`,
-            // decreasedMinHitBasedOnMaxHit: `decreasedMinHitBasedOnMaxHitAgainst${typePluralName}`,
-            // increasedFlatMinHit: `increasedFlatMinHitAgainst${typePluralName}`,
-            // decreasedFlatMinHit: `decreasedFlatMinHitAgainst${typePluralName}`,
-            // increasedGlobalAccuracy: `increasedGlobalAccuracyAgainst${typePluralName}`,
-            // decreasedGlobalAccuracy: `decreasedGlobalAccuracyAgainst${typePluralName}`,
-            // increasedDamageReduction: `increasedDamageReductionAgainst${typePluralName}`,
-            // decreasedDamageReduction: `decreasedDamageReductionAgainst${typePluralName}`,
-            // increasedChanceToApplyTraitInfiniteOnSpawn: `increasedChanceToApply${typeSingularName}TraitInfiniteOnSpawn`,
-            // decreasedChanceToApplyTraitInfiniteOnSpawn: `decreasedChanceToApply${typeSingularName}TraitInfiniteOnSpawn`,
-            // applyTraitTurnsOnSpawn: `apply${typeSingularName}TraitTurnsOnSpawn`,
-            // increasedChanceToApplyTrait: `increasedChanceToApply${typeSingularName}Trait`,
-            // decreasedChanceToApplyTrait: `decreasedChanceToApply${typeSingularName}Trait`,
-            // applyTraitTurns: `apply${typeSingularName}TraitTurns`
-
-            // increasedDamageTakenFromAirSpells: Standard,
-            // decreasedDamageTakenFromAirSpells: Standard,
-            // increasedDamageTakenFromWaterSpells: Standard,
-            // decreasedDamageTakenFromWaterSpells: Standard,
-            // increasedDamageTakenFromEarthSpells: Standard,
-            // decreasedDamageTakenFromEarthSpells: Standard,
-            // increasedDamageTakenFromFireSpells: Standard,
-            // decreasedDamageTakenFromFireSpells: Standard,
-
-            // const monadSpecies = ['demon', 'undead', 'Beast', "SeaCreature", "MythicalCreature", "Elemental", "Human", "Dragon", "Orc", "Robot", "Goblin", "Elf"] as const;
 
             // game.items.registeredObjects.forEach(item => {
             //     if(item._namespace.name === "tes") {
@@ -915,6 +743,67 @@ export async function setup(ctx: Modding.ModContext) {
               }
             }
           })
+          if (kcm && profileSkill) {
+            // @ts-ignore
+            ctx.patch(Skill, 'addXP').after(function (amount, masteryAction) {
+              const single_species = game.profile.yous.get(1) // human
+              const single_class = game.profile.yous.get(2) // knight
+
+              let exp1 = 0
+              if (single_species) {
+                exp1 = Math.floor(single_species.single_species.baseExperience) || 0
+              }
+              let exp2 = 0
+              if (single_class) {
+                exp2 = Math.floor(single_class.single_species.baseExperience) || 0
+              }
+              let skillExp1 = exp1 || 0
+              let masteryExp1 = exp1 || 0
+
+              let skillExp2 = exp2 || 0
+              let masteryExp2 = exp2 || 0
+              if (game.profile.isPoolTierActive(1)) {
+                skillExp1 = skillExp1 + ((skillExp1 / 100) * 3) || 0
+                skillExp2 = skillExp2 + ((skillExp2 / 100) * 3) || 0
+              }
+              if (game.profile.isPoolTierActive(1)) {
+                masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
+                masteryExp2 = masteryExp2 + ((masteryExp2 / 100) * 5) || 0
+              }
+              // const globalEXPmod = game.modifiers.increasedGlobalSkillXP - game.modifiers.decreasedGlobalSkillXP || 0
+
+              // const totalExp = skillExp1 + skillExp2 + (((skillExp1 + skillExp2) / 100) * globalEXPmod) || 0
+
+              const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP || 0
+
+              const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) || 0
+              const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) || 0
+              let currentSpeicies = ''
+              if (single_species) {
+                currentSpeicies = single_species.single_species.localID
+              }
+
+              if (game && game.activeAction && currentSpeicies === 'Argonian' && game.activeAction._localID === 'Fishing') {
+
+                game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
+                game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
+                game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
+              }
+              if (game && game.activeAction && currentSpeicies === 'Argonian' && game.activeAction._localID === 'Cooking') {
+
+                game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
+                game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
+                game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
+              }
+              if (game && game.activeAction && currentSpeicies === 'Khajiit' && game.activeAction._localID === 'Thieving') {
+
+                game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
+                game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
+                game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
+              }
+              return [amount, masteryAction]
+            })
+          }
         } catch (error) {
           console.log('onModsLoaded skill patches ', error)
         }

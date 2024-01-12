@@ -1,4 +1,5 @@
 declare class Game implements Serializable, EncodableObject {
+    profile: any;
     loopInterval: number;
     loopStarted: boolean;
     disableClearOffline: boolean;

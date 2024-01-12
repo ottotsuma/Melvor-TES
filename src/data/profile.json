@@ -13,7 +13,7 @@
                             "media": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2Fjha2ofzeymw51.jpg",
                             "baseExperience": 5,
                             "productId": "namespace_profile:Khajiit",
-                            "level": 1,
+                            "level": 5,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/pets/mister_fuzzbutt.png",
                                 "https://cdn2-main.melvor.net/assets/media/skills/thieving/thieving.svg",
@@ -29,7 +29,7 @@
                                     "level": 1,
                                     "key": "increasedThievingStunIntervalPercent",
                                     "value": 100
-                                },          
+                                },
                                 {
                                     "level": 20,
                                     "key": "increasedThievingStealth",
@@ -54,6 +54,86 @@
                                     "level": 99,
                                     "key": "increasedGPOnEnemyHit",
                                     "value": 5
+                                }
+                            ],
+                            "hardcoreModifiers": [
+                                {
+                                    "level": 1,
+                                    "key": "decreasedChanceGoldenStardust",
+                                    "value": 50
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "skill": "melvorD:Woodcutting",
+                                    "value": 1
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedMasteryXP",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "decreasedSkillIntervalPercent",
+                                    "skill": "melvorD:Firemaking",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "increasedMinBirdNestQuantity",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Argonian",
+                            "name": "Argonian",
+                            "media": "https://img.nerdburglars.net/wp-content/uploads/2023/03/argonians-name-generator-2.jpg",
+                            "baseExperience": 15,
+                            "productId": "namespace_profile:Argonian",
+                            "level": 15,
+                            "skills": [
+                                "https://static.wikia.nocookie.net/skyrim_gamepedia/images/c/c0/Deeja.png",
+                                "https://cdn2-main.melvor.net/assets/media/skills/fishing/fishing.svg",
+                                "https://cdn2-main.melvor.net/assets/media/skills/cooking/cooking.svg"
+                            ],
+                            "standardModifiers": [
+                                {
+                                    "level": 0,
+                                    "key": "argonianTraitApplied",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 1,
+                                    "key": "decreasedCookingSuccessCap",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 20,
+                                    "key": "increasedChanceSuccessfulCook",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 40,
+                                    "key": "increasedGPFromRawFishSales",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 60,
+                                    "key": "increasedChancePerfectCookGlobal",
+                                    "value": 10
+                                },
+                                {
+                                    "level": 80,
+                                    "key": "increasedFishingCookedChance",
+                                    "value": 5
+                                },
+                                {
+                                    "level": 99,
+                                    "key": "poisonImmunity",
+                                    "value": 50
                                 }
                             ],
                             "hardcoreModifiers": [

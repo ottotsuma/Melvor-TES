@@ -8,7 +8,9 @@
     "allowJs": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "noEmit": false,
+    "noEmitOnError": false
   },
   "include": [
     "src/**/*",
