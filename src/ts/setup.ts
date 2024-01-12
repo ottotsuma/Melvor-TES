@@ -602,6 +602,10 @@ export async function setup(ctx: Modding.ModContext) {
               //     "melvorTotH:TheHeraldPhase3"
 
             }
+            if(AoDEntitlement) {
+              UndeadList.push("tes:skeleton_Archer_AoD")
+              DemonList.push("tes:Miraak")
+            }
             if (mythLoaded) {
               HumansList.push("mythMusic:Jester",
                 "mythMusic:Enchanted_Jester",
