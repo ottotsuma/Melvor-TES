@@ -7397,7 +7397,7 @@
         ]
       },
       {
-        "id": "Necromancer_Robes",
+        "id": "Necromancer_Robes_Mannimarco",
         "name": "Necromancer Robes",
         "category": "Combat",
         "type": "Magic_Armour",
@@ -19332,7 +19332,7 @@
         "lootChance": 100,
         "lootTable": [
           {
-            "itemID": "tes:Necromancer_Robes",
+            "itemID": "tes:Necromancer_Robes_Mannimarco",
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 39
