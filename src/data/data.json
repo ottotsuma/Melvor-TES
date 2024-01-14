@@ -92,6 +92,13 @@
         "modifiers": {
           "increasedLifesteal": 5
         }
+      },
+      {
+        "id": "Magic_Nerf",
+        "name": "Magic Nerf",
+        "modifiers": {
+          "decreasedMagicMaxHit": 80
+        }
       }
     ],
     "shopCategories": [
@@ -15040,7 +15047,8 @@
           "tes:Goblin_Curse"
         ],
         "passives": [
-          "tes:Goblin_Buff"
+          "tes:Goblin_Buff",
+          "tes:Magic_Nerf"
         ],
         "lootChance": 75,
         "lootTable": [
@@ -15111,7 +15119,8 @@
           "tes:Goblin_Curse"
         ],
         "passives": [
-          "tes:Goblin_Buff"
+          "tes:Goblin_Buff",
+          "tes:Magic_Nerf"
         ],
         "lootChance": 75,
         "lootTable": [
@@ -15182,7 +15191,8 @@
           "tes:Goblin_Curse"
         ],
         "passives": [
-          "tes:Goblin_Buff"
+          "tes:Goblin_Buff",
+          "tes:Magic_Nerf"
         ],
         "lootChance": 75,
         "lootTable": [
@@ -15253,7 +15263,8 @@
           "tes:Goblin_Curse"
         ],
         "passives": [
-          "tes:Goblin_Buff"
+          "tes:Goblin_Buff",
+          "tes:Magic_Nerf"
         ],
         "lootChance": 75,
         "lootTable": [
@@ -15324,7 +15335,8 @@
           "tes:Goblin_Curse"
         ],
         "passives": [
-          "tes:Goblin_Buff"
+          "tes:Goblin_Buff",
+          "tes:Magic_Nerf"
         ],
         "lootChance": 75,
         "lootTable": [
@@ -15395,7 +15407,8 @@
           "tes:Goblin_Curse"
         ],
         "passives": [
-          "tes:Goblin_Buff"
+          "tes:Goblin_Buff",
+          "tes:Magic_Nerf"
         ],
         "lootChance": 75,
         "lootTable": [
@@ -15466,7 +15479,8 @@
           "tes:Goblin_Curse"
         ],
         "passives": [
-          "tes:Goblin_Buff"
+          "tes:Goblin_Buff",
+          "tes:Magic_Nerf"
         ],
         "lootChance": 75,
         "lootTable": [
@@ -15537,7 +15551,9 @@
           "tes:Goblin_Curse"
         ],
         "passives": [
-          "tes:Goblin_Buff"
+          "tes:Magic_Nerf",
+          "tes:Goblin_Buff",
+          "tes:Magic_Nerf"
         ],
         "lootChance": 75,
         "lootTable": [
@@ -21858,7 +21874,7 @@
       },
       {
         "id": "Goblin_Curse",
-        "name": "Goblin_Curse",
+        "name": "Goblin Curse",
         "description": "Curse you!",
         "defaultChance": 20,
         "damage": [

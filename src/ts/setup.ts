@@ -945,7 +945,7 @@ export async function setup(ctx: Modding.ModContext) {
         // Looping though all game items.
         // const ShopList = []
         const initialPackage = ctx.gameData.buildPackage(itemPackage => {
-          game.items.registeredObjects.forEach((item: any) => {
+          game.items.registeredObjects.forEach((item: AnyItem) => {
             try {
               if (item) {
                 // Skip the item if its localID is in the bannedList
@@ -958,29 +958,53 @@ export async function setup(ctx: Modding.ModContext) {
                 if (categoryBan[item.category]) {
                   return;
                 }
+                // @ts-ignore
                 if (item.swalData) {
+                  return;
+                }
+                if (item.type === "Special") {
                   return;
                 }
                 if (!Khajiit_Item_1 && rollPercentage(1)) {
                   Khajiit_Item_1 = `${item.namespace}:${item.localID}`
                   Khajiit_Item_1_Price = item.sellsFor * 4
-                  Khajiit_Item_1_qty = Math.floor(Math.random() * 40)
+                  Khajiit_Item_1_qty = Math.floor(Math.random() * 100)
+                  if (Khajiit_Item_1_Price < 1000) { Khajiit_Item_1_qty = Math.floor(Math.random() * 10000)}
+                  if(item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour") {
+                    Khajiit_Item_1_qty = 1
+                  }
                 } else if (!Khajiit_Item_2 && rollPercentage(0.5)) {
                   Khajiit_Item_2 = `${item.namespace}:${item.localID}`
-                  Khajiit_Item_2_Price = item.sellsFor * 3
-                  Khajiit_Item_2_qty = Math.floor(Math.random() * 10)
-                } else if (!Khajiit_Item_3 && rollPercentage(0.1)) {
+                  Khajiit_Item_2_Price = item.sellsFor * 4
+                  Khajiit_Item_2_qty = Math.floor(Math.random() * 50)
+                  if (Khajiit_Item_2_Price < 1000) { Khajiit_Item_2_qty = Math.floor(Math.random() * 10000)}
+                  if(item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour") {
+                    Khajiit_Item_2_qty = 1
+                  }
+                } else if (!Khajiit_Item_3 && rollPercentage(0.5)) {
                   Khajiit_Item_3 = `${item.namespace}:${item.localID}`
-                  Khajiit_Item_3_Price = item.sellsFor * 2
-                  Khajiit_Item_3_qty = Math.floor(Math.random() * 6)
-                } else if (!Khajiit_Item_4 && rollPercentage(0.1)) {
+                  Khajiit_Item_3_Price = item.sellsFor * 4
+                  Khajiit_Item_3_qty = Math.floor(Math.random() * 10)
+                  if (Khajiit_Item_3_Price < 1000) { Khajiit_Item_3_qty = Math.floor(Math.random() * 10000)}
+                  if(item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour") {
+                    Khajiit_Item_3_qty = 1
+                  }
+                } else if (!Khajiit_Item_4 && rollPercentage(0.5)) {
                   Khajiit_Item_4 = `${item.namespace}:${item.localID}`
-                  Khajiit_Item_4_Price = item.sellsFor * 1.4
-                  Khajiit_Item_4_qty = Math.floor(Math.random() * 3)
-                } else if (!Khajiit_Item_5 && rollPercentage(0.1)) {
+                  Khajiit_Item_4_Price = item.sellsFor * 4
+                  Khajiit_Item_4_qty = Math.floor(Math.random() * 2)
+                  if (Khajiit_Item_4_Price < 1000) { Khajiit_Item_4_qty = Math.floor(Math.random() * 10000)}
+                  if(item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour") {
+                    Khajiit_Item_4_qty = 1
+                  }
+                } else if (!Khajiit_Item_5 && rollPercentage(0.5)) {
                   Khajiit_Item_5 = `${item.namespace}:${item.localID}`
-                  Khajiit_Item_5_Price = item.sellsFor * 1.2
-                  Khajiit_Item_5_qty = Math.floor(Math.random() * 2)
+                  Khajiit_Item_5_Price = item.sellsFor * 4
+                  // Khajiit_Item_5_qty = Math.floor(Math.random() * 2)
+                  if (Khajiit_Item_5_Price < 1000) { Khajiit_Item_5_qty = Math.floor(Math.random() * 10000)}
+                  if(item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour") {
+                    Khajiit_Item_5_qty = 1
+                  }
                 }
                 itemPackage.items.modify({
                   id: "tes:Elder_Scrolls",
@@ -1243,15 +1267,15 @@ export async function setup(ctx: Modding.ModContext) {
               character: 'khajiit_merchant_risaad',
               text: ['What\'re ya buyin?'],
               options: [
-                { to: 'exit', losses: { gp: Khajiit_Item_1_Price ? Khajiit_Item_1_Price * Khajiit_Item_1_qty : 100 * Khajiit_Item_1_qty }, rewards: { items: [{ id: Khajiit_Item_1 ? Khajiit_Item_1 : 'tes:ElsweyrSpicedTea', qty: Khajiit_Item_1_qty ? Khajiit_Item_1_qty : 1 }] } },
+                { to: 'exit', losses: { gp: Khajiit_Item_1_Price && Khajiit_Item_1_qty ? Khajiit_Item_1_Price * Khajiit_Item_1_qty : 100 }, rewards: { items: [{ id: Khajiit_Item_1 ? Khajiit_Item_1 : 'tes:ElsweyrSpicedTea', qty: Khajiit_Item_1_qty ? Khajiit_Item_1_qty : 1 }] } },
 
-                { to: 'exit', losses: { gp: Khajiit_Item_2_Price ? Khajiit_Item_2_Price : 100 }, rewards: { items: [{ id: Khajiit_Item_2 ? Khajiit_Item_2 : 'tes:ElsweyrSpicedTea' }] } },
+                { to: 'exit', losses: { gp: Khajiit_Item_2_Price && Khajiit_Item_2_qty ? Khajiit_Item_2_Price * Khajiit_Item_2_qty : 100 }, rewards: { items: [{ id: Khajiit_Item_2 ? Khajiit_Item_2 : 'tes:ElsweyrSpicedTea', qty: Khajiit_Item_2_qty ? Khajiit_Item_2_qty : 1 }] } },
 
-                { to: 'exit', losses: { gp: Khajiit_Item_3_Price ? Khajiit_Item_3_Price : 100 }, rewards: { items: [{ id: Khajiit_Item_3 ? Khajiit_Item_3 : 'tes:ElsweyrSpicedTea' }] } },
+                { to: 'exit', losses: { gp: Khajiit_Item_3_Price && Khajiit_Item_3_qty ? Khajiit_Item_3_Price * Khajiit_Item_3_qty * 0.4 : 100 }, rewards: { items: [{ id: Khajiit_Item_3 ? Khajiit_Item_3 : 'tes:ElsweyrSpicedTea', qty: Khajiit_Item_3_qty ? Khajiit_Item_3_qty : 1 }] } },
 
-                { to: 'exit', losses: { gp: Khajiit_Item_4_Price ? Khajiit_Item_4_Price * 0.9 : 100 }, rewards: { items: [{ id: Khajiit_Item_4 ? Khajiit_Item_4 : 'tes:ElsweyrSpicedTea' }] } },
+                { to: 'exit', losses: { gp: Khajiit_Item_4_Price && Khajiit_Item_4_qty ? Khajiit_Item_4_Price * Khajiit_Item_4_qty : 100 }, rewards: { items: [{ id: Khajiit_Item_4 ? Khajiit_Item_4 : 'tes:ElsweyrSpicedTea', qty: Khajiit_Item_4_qty ? Khajiit_Item_4_qty : 1 }] } },
 
-                { to: 'exit', losses: { gp: Khajiit_Item_5_Price ? Khajiit_Item_5_Price : 100 }, rewards: { items: [{ id: Khajiit_Item_5 ? Khajiit_Item_5 : 'tes:ElsweyrSpicedTea' }] } },
+                { to: 'exit', losses: { gp: Khajiit_Item_5_Price && Khajiit_Item_5_qty ? Khajiit_Item_5_Price * Khajiit_Item_5_qty : 100 }, rewards: { items: [{ id: Khajiit_Item_5 ? Khajiit_Item_5 : 'tes:ElsweyrSpicedTea', qty: Khajiit_Item_5_qty ? Khajiit_Item_5_qty : 1 }] } },
 
                 { to: 'exit', losses: { gp: 100 }, rewards: { items: [{ id: TodaysItem }] } },
 
@@ -1302,13 +1326,15 @@ export async function setup(ctx: Modding.ModContext) {
               options: [
                 { to: 'exit', losses: { gp: 50 }, rewards: { items: [{ id: 'tes:Lockpick', qty: 10 }] } },
 
-                { to: 'exit', losses: { gp: Khajiit_Item_2_Price ? Khajiit_Item_2_Price : 100 }, rewards: { items: [{ id: Khajiit_Item_2 ? Khajiit_Item_2 : 'tes:ElsweyrSpicedTea' }] } },
+                { to: 'exit', losses: { gp: Khajiit_Item_1_Price && Khajiit_Item_1_qty ? Khajiit_Item_1_Price * Khajiit_Item_1_qty : 100 }, rewards: { items: [{ id: Khajiit_Item_1 ? Khajiit_Item_1 : 'tes:ElsweyrSpicedTea', qty: Khajiit_Item_1_qty ? Khajiit_Item_1_qty : 1 }] } },
 
-                { to: 'exit', losses: { gp: Khajiit_Item_1_Price ? Khajiit_Item_1_Price * 9 : 100 }, rewards: { items: [{ id: Khajiit_Item_1 || 'tes:ElsweyrSpicedTea', qty: 10 }] } },
+                { to: 'exit', losses: { gp: Khajiit_Item_2_Price && Khajiit_Item_2_qty ? Khajiit_Item_2_Price * Khajiit_Item_2_qty * 0.33 : 100 }, rewards: { items: [{ id: Khajiit_Item_2 ? Khajiit_Item_2 : 'tes:ElsweyrSpicedTea', qty: Khajiit_Item_2_qty ? Khajiit_Item_2_qty : 1 }] } },
 
-                { to: 'exit', losses: { gp: Khajiit_Item_3_Price ? Khajiit_Item_3_Price : 100 }, rewards: { items: [{ id: Khajiit_Item_3 ? Khajiit_Item_3 : 'tes:ElsweyrSpicedTea' }] } },
+                { to: 'exit', losses: { gp: Khajiit_Item_3_Price && Khajiit_Item_3_qty ? Khajiit_Item_3_Price * Khajiit_Item_3_qty : 100 }, rewards: { items: [{ id: Khajiit_Item_3 ? Khajiit_Item_3 : 'tes:ElsweyrSpicedTea', qty: Khajiit_Item_3_qty ? Khajiit_Item_3_qty : 1 }] } },
 
-                { to: 'exit', losses: { gp: Khajiit_Item_4_Price ? Khajiit_Item_4_Price * 1.1 : 100 }, rewards: { items: [{ id: Khajiit_Item_4 ? Khajiit_Item_4 : 'tes:ElsweyrSpicedTea' }] } },
+                { to: 'exit', losses: { gp: Khajiit_Item_4_Price && Khajiit_Item_4_qty ? Khajiit_Item_4_Price * Khajiit_Item_4_qty : 100 }, rewards: { items: [{ id: Khajiit_Item_4 ? Khajiit_Item_4 : 'tes:ElsweyrSpicedTea', qty: Khajiit_Item_4_qty ? Khajiit_Item_4_qty : 1 }] } },
+
+                { to: 'exit', losses: { gp: Khajiit_Item_5_Price && Khajiit_Item_5_qty ? Khajiit_Item_5_Price * Khajiit_Item_5_qty : 100 }, rewards: { items: [{ id: Khajiit_Item_5 ? Khajiit_Item_5 : 'tes:ElsweyrSpicedTea', qty: Khajiit_Item_5_qty ? Khajiit_Item_5_qty : 1 }] } },
 
                 { to: 'exit', losses: { gp: 100 }, rewards: { items: [{ id: TodaysItem }] } },
                 { to: '0', text: 'What were we talking about again?', isSpeech: true },
@@ -1372,15 +1398,15 @@ export async function setup(ctx: Modding.ModContext) {
               options: [
                 { to: 'exit', losses: { gp: 500 }, rewards: { items: [{ id: 'tes:ElsweyrSpicedTea', qty: 10 }] } },
 
-                { to: 'exit', losses: { gp: Khajiit_Item_1_Price ? Khajiit_Item_1_Price * Khajiit_Item_1_qty : 100 * Khajiit_Item_1_qty }, rewards: { items: [{ id: Khajiit_Item_1 ? Khajiit_Item_1 : 'tes:ElsweyrSpicedTea', qty: Khajiit_Item_1_qty ? Khajiit_Item_1_qty + 1 : 1 }] } },
+                { to: 'exit', losses: { gp: Khajiit_Item_1_Price && Khajiit_Item_1_qty ? Khajiit_Item_1_Price * Khajiit_Item_1_qty * 0.5 : 100 }, rewards: { items: [{ id: Khajiit_Item_1 ? Khajiit_Item_1 : 'tes:ElsweyrSpicedTea', qty: Khajiit_Item_1_qty ? Khajiit_Item_1_qty : 1 }] } },
 
-                { to: 'exit', losses: { gp: Khajiit_Item_2_Price ? Khajiit_Item_2_Price * 1.1 : 100 }, rewards: { items: [{ id: Khajiit_Item_2 ? Khajiit_Item_2 : 'tes:ElsweyrSpicedTea' }] } },
+                { to: 'exit', losses: { gp: Khajiit_Item_2_Price && Khajiit_Item_2_qty ? Khajiit_Item_2_Price * Khajiit_Item_2_qty : 100 }, rewards: { items: [{ id: Khajiit_Item_2 ? Khajiit_Item_2 : 'tes:ElsweyrSpicedTea', qty: Khajiit_Item_2_qty ? Khajiit_Item_2_qty : 1 }] } },
 
-                { to: 'exit', losses: { gp: Khajiit_Item_3_Price ? Khajiit_Item_3_Price * 0.9 : 100 }, rewards: { items: [{ id: Khajiit_Item_3 ? Khajiit_Item_3 : 'tes:ElsweyrSpicedTea' }] } },
+                { to: 'exit', losses: { gp: Khajiit_Item_3_Price && Khajiit_Item_3_qty ? Khajiit_Item_3_Price * Khajiit_Item_3_qty : 100 }, rewards: { items: [{ id: Khajiit_Item_3 ? Khajiit_Item_3 : 'tes:ElsweyrSpicedTea', qty: Khajiit_Item_3_qty ? Khajiit_Item_3_qty : 1 }] } },
 
-                { to: 'exit', losses: { gp: Khajiit_Item_4_Price ? Khajiit_Item_4_Price : 100 }, rewards: { items: [{ id: Khajiit_Item_4 ? Khajiit_Item_4 : 'tes:ElsweyrSpicedTea' }] } },
+                { to: 'exit', losses: { gp: Khajiit_Item_4_Price && Khajiit_Item_4_qty ? Khajiit_Item_4_Price * Khajiit_Item_4_qty : 100 }, rewards: { items: [{ id: Khajiit_Item_4 ? Khajiit_Item_4 : 'tes:ElsweyrSpicedTea', qty: Khajiit_Item_4_qty ? Khajiit_Item_4_qty : 1 }] } },
 
-                { to: 'exit', losses: { gp: Khajiit_Item_5_Price ? Khajiit_Item_5_Price : 100 }, rewards: { items: [{ id: Khajiit_Item_5 ? Khajiit_Item_5 : 'tes:ElsweyrSpicedTea' }] } },
+                { to: 'exit', losses: { gp: Khajiit_Item_5_Price && Khajiit_Item_5_qty ? Khajiit_Item_5_Price * Khajiit_Item_5_qty : 100 }, rewards: { items: [{ id: Khajiit_Item_5 ? Khajiit_Item_5 : 'tes:ElsweyrSpicedTea', qty: Khajiit_Item_5_qty ? Khajiit_Item_5_qty : 1 }] } },
 
                 { to: 'exit', losses: { gp: 100 }, rewards: { items: [{ id: TodaysItem }] } },
 
