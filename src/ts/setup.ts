@@ -183,7 +183,9 @@ export async function setup(ctx: Modding.ModContext) {
 
             // profile
             Profile_Profile_Single_Species_Khajiit: 'Khajiit',
-            Profile_Profile_Single_Species_Argonian: 'Argonian'
+            Profile_Profile_Single_Species_Argonian: 'Argonian',
+            Profile_Single_Species_Khajiit: 'Khajiit',
+            Profile_Single_Species_Argonian: 'Argonian'
           }
           console.log(setLang, 'Current lang tes')
           for (const [key, value] of Object.entries(en_data)) {
