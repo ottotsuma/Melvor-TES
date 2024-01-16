@@ -605,7 +605,7 @@ export async function setup(ctx: Modding.ModContext) {
               //     "melvorTotH:TheHeraldPhase3"
 
             }
-            if(AoDEntitlement) {
+            if (AoDEntitlement) {
               UndeadList.push("tes:skeleton_Archer_AoD")
               DemonList.push("tes:Miraak")
             }
@@ -972,40 +972,40 @@ export async function setup(ctx: Modding.ModContext) {
                   Khajiit_Item_1 = `${item.namespace}:${item.localID}`
                   Khajiit_Item_1_Price = item.sellsFor * 4
                   Khajiit_Item_1_qty = Math.floor(Math.random() * 100)
-                  if (Khajiit_Item_1_Price < 1000) { Khajiit_Item_1_qty = Math.floor(Math.random() * 10000)}
-                  if(item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour") {
+                  if (Khajiit_Item_1_Price < 1000) { Khajiit_Item_1_qty = Math.floor(Math.random() * 10000) }
+                  if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour") {
                     Khajiit_Item_1_qty = 1
                   }
                 } else if (!Khajiit_Item_2 && rollPercentage(0.5)) {
                   Khajiit_Item_2 = `${item.namespace}:${item.localID}`
                   Khajiit_Item_2_Price = item.sellsFor * 4
                   Khajiit_Item_2_qty = Math.floor(Math.random() * 50)
-                  if (Khajiit_Item_2_Price < 1000) { Khajiit_Item_2_qty = Math.floor(Math.random() * 10000)}
-                  if(item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour") {
+                  if (Khajiit_Item_2_Price < 1000) { Khajiit_Item_2_qty = Math.floor(Math.random() * 10000) }
+                  if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour") {
                     Khajiit_Item_2_qty = 1
                   }
                 } else if (!Khajiit_Item_3 && rollPercentage(0.5)) {
                   Khajiit_Item_3 = `${item.namespace}:${item.localID}`
                   Khajiit_Item_3_Price = item.sellsFor * 4
                   Khajiit_Item_3_qty = Math.floor(Math.random() * 10)
-                  if (Khajiit_Item_3_Price < 1000) { Khajiit_Item_3_qty = Math.floor(Math.random() * 10000)}
-                  if(item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour") {
+                  if (Khajiit_Item_3_Price < 1000) { Khajiit_Item_3_qty = Math.floor(Math.random() * 10000) }
+                  if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour") {
                     Khajiit_Item_3_qty = 1
                   }
                 } else if (!Khajiit_Item_4 && rollPercentage(0.5)) {
                   Khajiit_Item_4 = `${item.namespace}:${item.localID}`
                   Khajiit_Item_4_Price = item.sellsFor * 4
                   Khajiit_Item_4_qty = Math.floor(Math.random() * 2)
-                  if (Khajiit_Item_4_Price < 1000) { Khajiit_Item_4_qty = Math.floor(Math.random() * 10000)}
-                  if(item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour") {
+                  if (Khajiit_Item_4_Price < 1000) { Khajiit_Item_4_qty = Math.floor(Math.random() * 10000) }
+                  if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour") {
                     Khajiit_Item_4_qty = 1
                   }
                 } else if (!Khajiit_Item_5 && rollPercentage(0.5)) {
                   Khajiit_Item_5 = `${item.namespace}:${item.localID}`
                   Khajiit_Item_5_Price = item.sellsFor * 4
                   // Khajiit_Item_5_qty = Math.floor(Math.random() * 2)
-                  if (Khajiit_Item_5_Price < 1000) { Khajiit_Item_5_qty = Math.floor(Math.random() * 10000)}
-                  if(item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour") {
+                  if (Khajiit_Item_5_Price < 1000) { Khajiit_Item_5_qty = Math.floor(Math.random() * 10000) }
+                  if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour") {
                     Khajiit_Item_5_qty = 1
                   }
                 }
