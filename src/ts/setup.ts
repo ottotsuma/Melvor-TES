@@ -48,6 +48,7 @@
 // increasedDamageReduction: `increasedDamageReductionAgainst${typePluralName}`,
 // decreasedDamageReduction: `decreasedDamageReductionAgainst${typePluralName}`,
 import '../css/styles.css';
+import { languages } from './../language';
 export async function setup(ctx: Modding.ModContext) {
   try {
     modifierData.tes_increasedDragonBreathDamage = {
@@ -123,75 +124,38 @@ export async function setup(ctx: Modding.ModContext) {
     const bards_college_items: any[] = []
 
     ctx.onModsLoaded(async (ctx) => {
-      // Local variables
-      const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
-      const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
-      const profileSkill = mod.manager.getLoadedModList().includes('Class &amp; Species')
-      const TothEntitlement = cloudManager.hasTotHEntitlement
-      const AoDEntitlement = cloudManager.hasAoDEntitlement
-
-      // const Abyssal = mod.manager.getLoadedModList().includes('Abyssal Rift')
-      // const Pokeworld = mod.manager.getLoadedModList().includes('Pokeworld (Generation 1)')
-      // const Runescape = mod.manager.getLoadedModList().includes('Runescape Encounters in Melvor')
-
-      // Translations
       try {
+        // Local variables
+        const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
+        const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
+        const profileSkill = mod.manager.getLoadedModList().includes('Class &amp; Species')
+        const TothEntitlement = cloudManager.hasTotHEntitlement
+        const AoDEntitlement = cloudManager.hasAoDEntitlement
+
+        // const Abyssal = mod.manager.getLoadedModList().includes('Abyssal Rift')
+        // const Pokeworld = mod.manager.getLoadedModList().includes('Pokeworld (Generation 1)')
+        // const Runescape = mod.manager.getLoadedModList().includes('Runescape Encounters in Melvor')
+
+        // Translations
         try {
-          const en_data = {
-            MODIFIER_DATA_summoningSynergy_Devil_Eagle: "While Thieving - 50% chance for +10% base Skill XP, 40% chance for 2.5x GP, and 10% chance to gain no Items or GP",
-            MONSTER_TYPE_SINGULAR_Elf: "Elf",
-            MONSTER_TYPE_PLURAL_Elf: "Elves",
-            tes_increasedDragonBreathDamage: "Increase damage taken from dragon breaths by +${value}",
-            tes_wardsave: "+${value}% (MAX: 90%) to take 0 damage from a hit.",
-            tes_increasedFlatDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}.",
-            tes_increasedPercDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}%.",
-            tes_decreaseFlatDamageWhileTargetHasMaxHP: "Decrease damage taken while you are fully healed by +${value}.",
-            tes_bypassDamageReduction: "${value} damage, though damage reduction.",
-            // tes_decreasePercDamageToElves: "-${value}%, less damage to elves.",
-            // tes_increasedPercDamageToElves: "${value}% extra damage to elves.",
-            // tes_decreasePercDamageFromElves: "-${value}%, less damage from elves.",
-            // tes_increasedPercDamageFromElves: "${value}% extra damage from elves.",
-            MISC_STRING_The_Five_Tenets: "The Five Tenets",
-            MISC_STRING_Dead_Drop_Orders_1: "Dead Drop Orders",
-            MISC_STRING_Dead_Drop_Orders_2: "Dead Drop Orders",
-            MISC_STRING_Dead_Drop_Orders_3: "Dead Drop Orders",
-            MISC_STRING_Dead_Drop_Orders_4: "Dead Drop Orders",
-            MISC_STRING_Dead_Drop_Orders_5: "Dead Drop Orders",
-            MISC_STRING_Dead_Drop_Orders_6: "Dead Drop Orders",
-            MISC_STRING_Dead_Drop_Orders_7: "Dead Drop Orders",
-            MISC_STRING_Dead_Drop_Orders_8: "Dead Drop Orders",
-            MISC_STRING_Thieves_Orders: "Thieves_Orders",
-            PASSIVES_NAME_EventPassive1: "Unusual Passive",
-            PASSIVES_NAME_EventPassive2: "Unusual Passive",
-            PASSIVES_NAME_EventPassive3: "Unusual Passive",
-            PASSIVES_NAME_EventPassive4: "Unusual Passive",
-            PASSIVES_NAME_EventPassive5: "Unusual Passive",
-            PASSIVES_NAME_EventPassive6: "Unusual Passive",
-            PASSIVES_NAME_EventPassive7: "Unusual Passive",
-            PASSIVES_NAME_EventPassive8: "Unusual Passive",
-            PASSIVES_NAME_EventPassive9: "Unusual Passive",
-            PASSIVES_NAME_EventPassive10: "Unusual Passive",
-            PASSIVES_NAME_EventPassive11: "Unusual Passive",
-            PASSIVES_NAME_EventPassive12: "Unusual Passive",
-            tes_Bards_College_Global_Droptable_Overview_General_Functionality: 'Each item on the global droptable has its own roll. These rolls are separate from the regular droptable and do not replace any other loot.',
-            tes_Bards_College_Global_Droptable_Overview_Item_Pickup_Info: "Items are not put in the loot container, but instead placed into the bank immediately. That is, if free space is available.",
-            tes_Bards_College_Global_Droptable_Overview_Dungeon_Limitation: "The drop rate for each item is inverse to the monsters combat level.",
+          let lang = setLang;
 
-            tes_Bards_College_Global_Droptable_Overview_Base_Droprate: "Base chance",
-            // Global_Droptable_Overview_Limitation_Dragons_Only: "Only dropped by Dragons",
-            // Global_Droptable_Overview_Limitation_Undead_Only: "Only dropped by Undead",
-
-            // profile
-            Profile_Profile_Single_Species_Khajiit: 'Khajiit',
-            Profile_Profile_Single_Species_Argonian: 'Argonian',
-            Profile_Single_Species_Khajiit: 'Khajiit',
-            Profile_Single_Species_Argonian: 'Argonian'
+          if (lang === 'lemon' || lang === 'carrot') {
+            lang = 'en';
           }
-          console.log(setLang, 'Current lang tes')
-          for (const [key, value] of Object.entries(en_data)) {
+          // @ts-ignore
+          if (languages[lang]) {
             // @ts-ignore
-            loadedLangJson[key] = value;
+            for (const [key, value] of Object.entries<string>(languages[lang])) {
+              loadedLangJson[key] = value;
+            } 
+          } else {
+            // @ts-ignore
+            for (const [key, value] of Object.entries<string>(languages.en)) {
+              loadedLangJson[key] = value;
+            } 
           }
+
           // End Translations
         } catch (error) {
           console.log("onModsLoaded Translations ", error)
@@ -667,7 +631,65 @@ export async function setup(ctx: Modding.ModContext) {
           if (kcm && profileSkill) {
             // add modifier package
             await ctx.gameData.addPackage('profile.json');
+            // @ts-ignore
+            ctx.patch(Skill, 'addXP').after(function (amount, masteryAction) {
+              const single_species = game.profile.yous.get(1) // human
+              const single_class = game.profile.yous.get(2) // knight
 
+              let exp1 = 0
+              if (single_species) {
+                exp1 = Math.floor(single_species.single_species.baseExperience) || 0
+              }
+              let exp2 = 0
+              if (single_class) {
+                exp2 = Math.floor(single_class.single_species.baseExperience) || 0
+              }
+              let skillExp1 = exp1 || 0
+              let masteryExp1 = exp1 || 0
+
+              let skillExp2 = exp2 || 0
+              let masteryExp2 = exp2 || 0
+              if (game.profile.isPoolTierActive(1)) {
+                skillExp1 = skillExp1 + ((skillExp1 / 100) * 3) || 0
+                skillExp2 = skillExp2 + ((skillExp2 / 100) * 3) || 0
+              }
+              if (game.profile.isPoolTierActive(1)) {
+                masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
+                masteryExp2 = masteryExp2 + ((masteryExp2 / 100) * 5) || 0
+              }
+              // const globalEXPmod = game.modifiers.increasedGlobalSkillXP - game.modifiers.decreasedGlobalSkillXP || 0
+
+              // const totalExp = skillExp1 + skillExp2 + (((skillExp1 + skillExp2) / 100) * globalEXPmod) || 0
+
+              const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP || 0
+
+              const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) || 0
+              const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) || 0
+              let currentSpeicies = ''
+              if (single_species) {
+                currentSpeicies = single_species.single_species.localID
+              }
+
+              if (game && game.activeAction && currentSpeicies === 'Argonian' && game.activeAction._localID === 'Fishing') {
+
+                game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
+                game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
+                game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
+              }
+              if (game && game.activeAction && currentSpeicies === 'Argonian' && game.activeAction._localID === 'Cooking') {
+
+                game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
+                game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
+                game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
+              }
+              if (game && game.activeAction && currentSpeicies === 'Khajiit' && game.activeAction._localID === 'Thieving') {
+
+                game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
+                game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
+                game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
+              }
+              return [amount, masteryAction]
+            })
             // edit on xp gain for mastery
           }
         } catch (error) {
@@ -750,67 +772,6 @@ export async function setup(ctx: Modding.ModContext) {
               }
             }
           })
-          if (kcm && profileSkill) {
-            // @ts-ignore
-            ctx.patch(Skill, 'addXP').after(function (amount, masteryAction) {
-              const single_species = game.profile.yous.get(1) // human
-              const single_class = game.profile.yous.get(2) // knight
-
-              let exp1 = 0
-              if (single_species) {
-                exp1 = Math.floor(single_species.single_species.baseExperience) || 0
-              }
-              let exp2 = 0
-              if (single_class) {
-                exp2 = Math.floor(single_class.single_species.baseExperience) || 0
-              }
-              let skillExp1 = exp1 || 0
-              let masteryExp1 = exp1 || 0
-
-              let skillExp2 = exp2 || 0
-              let masteryExp2 = exp2 || 0
-              if (game.profile.isPoolTierActive(1)) {
-                skillExp1 = skillExp1 + ((skillExp1 / 100) * 3) || 0
-                skillExp2 = skillExp2 + ((skillExp2 / 100) * 3) || 0
-              }
-              if (game.profile.isPoolTierActive(1)) {
-                masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
-                masteryExp2 = masteryExp2 + ((masteryExp2 / 100) * 5) || 0
-              }
-              // const globalEXPmod = game.modifiers.increasedGlobalSkillXP - game.modifiers.decreasedGlobalSkillXP || 0
-
-              // const totalExp = skillExp1 + skillExp2 + (((skillExp1 + skillExp2) / 100) * globalEXPmod) || 0
-
-              const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP || 0
-
-              const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) || 0
-              const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) || 0
-              let currentSpeicies = ''
-              if (single_species) {
-                currentSpeicies = single_species.single_species.localID
-              }
-
-              if (game && game.activeAction && currentSpeicies === 'Argonian' && game.activeAction._localID === 'Fishing') {
-
-                game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
-                game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
-                game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
-              }
-              if (game && game.activeAction && currentSpeicies === 'Argonian' && game.activeAction._localID === 'Cooking') {
-
-                game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
-                game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
-                game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
-              }
-              if (game && game.activeAction && currentSpeicies === 'Khajiit' && game.activeAction._localID === 'Thieving') {
-
-                game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
-                game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
-                game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
-              }
-              return [amount, masteryAction]
-            })
-          }
         } catch (error) {
           console.log('onModsLoaded skill patches ', error)
         }
