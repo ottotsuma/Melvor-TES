@@ -133,52 +133,84 @@ export async function setup({ onCharacterLoaded, onModsLoaded, onInterfaceReady 
         // Translations
         try {
             try {
-                const en_data = {
-                    MONSTER_TYPE_SINGULAR_Elf: "Elf",
-                    MONSTER_TYPE_PLURAL_Elf: "Elves",
-                    tes_increasedDragonBreathDamage: "Increase damage taken from dragon breaths by +${value}",
-                    tes_wardsave: "+${value}% (MAX: 90%) to take 0 damage from a hit.",
-                    tes_increasedFlatDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}.",
-                    tes_increasedPercDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}%.",
-                    tes_decreaseFlatDamageWhileTargetHasMaxHP: "Decrease damage taken while you are fully healed by +${value}.",
-                    tes_bypassDamageReduction: "${value} damage, though damage reduction.",
-                    // tes_decreasePercDamageToElves: "-${value}%, less damage to elves.",
-                    // tes_increasedPercDamageToElves: "${value}% extra damage to elves.",
-                    // tes_decreasePercDamageFromElves: "-${value}%, less damage from elves.",
-                    // tes_increasedPercDamageFromElves: "${value}% extra damage from elves.",
-                    MISC_STRING_The_Five_Tenets: "The Five Tenets",
-                    MISC_STRING_Dead_Drop_Orders_1: "Dead Drop Orders",
-                    MISC_STRING_Dead_Drop_Orders_2: "Dead Drop Orders",
-                    MISC_STRING_Dead_Drop_Orders_3: "Dead Drop Orders",
-                    MISC_STRING_Dead_Drop_Orders_4: "Dead Drop Orders",
-                    MISC_STRING_Dead_Drop_Orders_5: "Dead Drop Orders",
-                    MISC_STRING_Dead_Drop_Orders_6: "Dead Drop Orders",
-                    MISC_STRING_Dead_Drop_Orders_7: "Dead Drop Orders",
-                    MISC_STRING_Dead_Drop_Orders_8: "Dead Drop Orders",
-                    MISC_STRING_Thieves_Orders: "Thieves_Orders",
-                    PASSIVES_NAME_EventPassive1: "Unusual Passive",
-                    PASSIVES_NAME_EventPassive2: "Unusual Passive",
-                    PASSIVES_NAME_EventPassive3: "Unusual Passive",
-                    PASSIVES_NAME_EventPassive4: "Unusual Passive",
-                    PASSIVES_NAME_EventPassive5: "Unusual Passive",
-                    PASSIVES_NAME_EventPassive6: "Unusual Passive",
-                    PASSIVES_NAME_EventPassive7: "Unusual Passive",
-                    PASSIVES_NAME_EventPassive8: "Unusual Passive",
-                    PASSIVES_NAME_EventPassive9: "Unusual Passive",
-                    PASSIVES_NAME_EventPassive10: "Unusual Passive",
-                    PASSIVES_NAME_EventPassive11: "Unusual Passive",
-                    PASSIVES_NAME_EventPassive12: "Unusual Passive",
-                    tes_Bards_College_Global_Droptable_Overview_General_Functionality: 'Each item on the global droptable has its own roll. These rolls are separate from the regular droptable and do not replace any other loot.',
-                    tes_Bards_College_Global_Droptable_Overview_Item_Pickup_Info: "Items are not put in the loot container, but instead placed into the bank immediately. That is, if free space is available.",
-                    tes_Bards_College_Global_Droptable_Overview_Dungeon_Limitation: "The drop rate for each item is inverse to the monsters combat level.",
 
-                    tes_Bards_College_Global_Droptable_Overview_Base_Droprate: "Base chance",
-                    // Global_Droptable_Overview_Limitation_Dragons_Only: "Only dropped by Dragons",
-                    // Global_Droptable_Overview_Limitation_Undead_Only: "Only dropped by Undead",
+                let lang = setLang;
+        
+                if (lang === 'lemon' || lang === 'carrot') {
+                    lang = 'en';
                 }
-                for (const [key, value] of Object.entries(en_data)) {
-                    loadedLangJson[key] = value;
+        
+                const keysToNotPrefix = [
+                    'MASTERY_CHECKPOINT',
+                    'MASTERY_BONUS',
+                    'POTION_NAME',
+                    'PET_NAME',
+                    'ITEM_NAME',
+                    'ITEM_DESCRIPTION',
+                    'SHOP_NAME',
+                    'SHOP_DESCRIPTION',
+                    'MONSTER_NAME',
+                    'COMBAT_AREA_NAME',
+                    'SPECIAL_ATTACK_NAME',
+                    'SPECIAL_ATTACK_DESCRIPTION',
+                    'mod_',
+                    'PASSIVES_NAME_',
+                    'MODIFIER_DATA_'
+                ];
+        
+                for (const [key, value] of Object.entries<string>(languages[lang])) {
+                    if (keysToNotPrefix.some(prefix => key.includes(prefix))) {
+                        loadedLangJson[key] = value;
+                    } else {
+                        loadedLangJson[`Profile_${key}`] = value;
+                    }
                 }
+                // const en_data = {
+                //     MONSTER_TYPE_SINGULAR_Elf: "Elf",
+                //     MONSTER_TYPE_PLURAL_Elf: "Elves",
+                //     tes_increasedDragonBreathDamage: "Increase damage taken from dragon breaths by +${value}",
+                //     tes_wardsave: "+${value}% (MAX: 90%) to take 0 damage from a hit.",
+                //     tes_increasedFlatDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}.",
+                //     tes_increasedPercDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}%.",
+                //     tes_decreaseFlatDamageWhileTargetHasMaxHP: "Decrease damage taken while you are fully healed by +${value}.",
+                //     tes_bypassDamageReduction: "${value} damage, though damage reduction.",
+                //     // tes_decreasePercDamageToElves: "-${value}%, less damage to elves.",
+                //     // tes_increasedPercDamageToElves: "${value}% extra damage to elves.",
+                //     // tes_decreasePercDamageFromElves: "-${value}%, less damage from elves.",
+                //     // tes_increasedPercDamageFromElves: "${value}% extra damage from elves.",
+                //     MISC_STRING_The_Five_Tenets: "The Five Tenets",
+                //     MISC_STRING_Dead_Drop_Orders_1: "Dead Drop Orders",
+                //     MISC_STRING_Dead_Drop_Orders_2: "Dead Drop Orders",
+                //     MISC_STRING_Dead_Drop_Orders_3: "Dead Drop Orders",
+                //     MISC_STRING_Dead_Drop_Orders_4: "Dead Drop Orders",
+                //     MISC_STRING_Dead_Drop_Orders_5: "Dead Drop Orders",
+                //     MISC_STRING_Dead_Drop_Orders_6: "Dead Drop Orders",
+                //     MISC_STRING_Dead_Drop_Orders_7: "Dead Drop Orders",
+                //     MISC_STRING_Dead_Drop_Orders_8: "Dead Drop Orders",
+                //     MISC_STRING_Thieves_Orders: "Thieves_Orders",
+                //     PASSIVES_NAME_EventPassive1: "Unusual Passive",
+                //     PASSIVES_NAME_EventPassive2: "Unusual Passive",
+                //     PASSIVES_NAME_EventPassive3: "Unusual Passive",
+                //     PASSIVES_NAME_EventPassive4: "Unusual Passive",
+                //     PASSIVES_NAME_EventPassive5: "Unusual Passive",
+                //     PASSIVES_NAME_EventPassive6: "Unusual Passive",
+                //     PASSIVES_NAME_EventPassive7: "Unusual Passive",
+                //     PASSIVES_NAME_EventPassive8: "Unusual Passive",
+                //     PASSIVES_NAME_EventPassive9: "Unusual Passive",
+                //     PASSIVES_NAME_EventPassive10: "Unusual Passive",
+                //     PASSIVES_NAME_EventPassive11: "Unusual Passive",
+                //     PASSIVES_NAME_EventPassive12: "Unusual Passive",
+                //     tes_Bards_College_Global_Droptable_Overview_General_Functionality: 'Each item on the global droptable has its own roll. These rolls are separate from the regular droptable and do not replace any other loot.',
+                //     tes_Bards_College_Global_Droptable_Overview_Item_Pickup_Info: "Items are not put in the loot container, but instead placed into the bank immediately. That is, if free space is available.",
+                //     tes_Bards_College_Global_Droptable_Overview_Dungeon_Limitation: "The drop rate for each item is inverse to the monsters combat level.",
+
+                //     tes_Bards_College_Global_Droptable_Overview_Base_Droprate: "Base chance",
+                //     // Global_Droptable_Overview_Limitation_Dragons_Only: "Only dropped by Dragons",
+                //     // Global_Droptable_Overview_Limitation_Undead_Only: "Only dropped by Undead",
+                // }
+                // for (const [key, value] of Object.entries(en_data)) {
+                //     loadedLangJson[key] = value;
+                // }
                 // End Translations
             } catch (error) {
                 console.log("onModsLoaded Translations ", error)
