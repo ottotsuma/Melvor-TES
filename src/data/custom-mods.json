@@ -9,9 +9,31 @@
                 "modifiers": {
                     "increasedChanceToApplyStackOfDeathMark": 10
                 }
+            },
+            {
+                "id": "Executioner",
+                "name": "Executioner",
+                "modifiers": {
+                    "increasedDamageAgainstHumans": 30
+                }
             }
         ],
         "itemSynergies": [
+            {
+                "itemIDs": [
+                  "tes:Daedric_Armor",
+                  "tes:Daedric_Boots",
+                  "tes:Daedric_Gauntlets",
+                  "tes:Daedric_Greaves",
+                  "tes:Daedric_Helmet",
+                  "tes:Daedric_Shield"
+                ],
+                "playerModifiers": {
+                  "demonTraitApplied": 1,
+                  "increasedPrayerCost": 10,
+                  "increasedDamageAgainstAngels": 10
+                }
+              },
             {
                 "itemIDs": ["tes:Shield_of_the_Crusader", "tes:Cuirass_of_the_Crusader", "tes:Boots_of_the_Crusader", "tes:Helm_of_the_Crusader", "tes:Gauntlets_of_the_Crusader"],
                 "playerModifiers":{
@@ -19,11 +41,122 @@
                     "increasedGlobalAccuracyAgainstElves": 10000,
                     "increasedDamageReductionAgainstElves": 10
                 }
+            },
+            {
+                "itemIDs": ["tes:vampire_lord_armour", "tes:Vampire_Leather_Hood", "tes:Vampire_Boots", "tes:Vampire_Gauntlets"],
+                "playerModifiers":{
+                    "increasedChanceToApplyBleedOnSpawn": 10,
+                    "increasedChanceToApplyBleed": 10
+                }
             }
+        ],
+        "monsters": [
+            {
+                "id": "Vicente_Valtieri",
+                "name": "Vicente Valtieri",
+                "media": "https://www.elderscrollsportal.de/wiki/images/thumb/d/df/Vicente_Valtieri.JPG/400px-Vicente_Valtieri.JPG",
+                "levels": {
+                  "Attack": 300,
+                  "Defence": 200,
+                  "Hitpoints": 500,
+                  "Magic": 299,
+                  "Ranged": 100,
+                  "Strength": 300
+                },
+                "equipmentStats": [
+                  {
+                    "key": "attackSpeed",
+                    "value": 2400
+                  }
+                ],
+                "ignoreCompletion": false,
+                "attackType": "melee",
+                "specialAttacks": [
+                  "melvorF:TripleSwipe"
+                ],
+                "passives": [
+                  "tes:Death_Mark_10",
+                  "tes:Executioner",
+                  "melvorF:Purity",
+                  "melvorF:EventPassive4"
+                ],
+                "lootChance": 100,
+                "lootTable": [
+                  {
+                    "itemID": "tes:Cruelty_Heart",
+                    "maxQuantity": 1,
+                    "minQuantity": 1,
+                    "weight": 1
+                  },
+                  {
+                    "itemID": "tes:Vampire_Boots",
+                    "maxQuantity": 1,
+                    "minQuantity": 1,
+                    "weight": 25
+                  },   
+                  {
+                    "itemID": "tes:Vampire_Gauntlets",
+                    "maxQuantity": 1,
+                    "minQuantity": 1,
+                    "weight": 25
+                  },   
+                  {
+                    "itemID": "tes:Vampire_Leather_Hood",
+                    "maxQuantity": 1,
+                    "minQuantity": 1,
+                    "weight": 25
+                  },   
+                  {
+                    "itemID": "tes:vampire_lord_armour",
+                    "maxQuantity": 1,
+                    "minQuantity": 1,
+                    "weight": 25
+                  },   
+                  {
+                    "itemID": "tes:Blood_Pack",
+                    "maxQuantity": 10,
+                    "minQuantity": 1,
+                    "weight": 99
+                  }
+                ],
+                "gpDrops": {
+                  "min": 10,
+                  "max": 50
+                },
+                "bones": {
+                  "itemID": "melvorD:Magic_Bones",
+                  "quantity": 1
+                },
+                "canSlayer": false,
+                "isBoss": false,
+                "selectedSpell": "melvorD:EarthSurge"
+              }
         ]
     },
     "modifications": {
         "items": [
+        {
+            "id": "tes:dragon_bone_helmet",
+            "modifiers": {
+                "add": {
+                    "dragonTraitApplied": 1,
+                    "increasedDamageAgainstElves": 10,
+                    "increasedGlobalAccuracyAgainstAarakocras": 10
+                }
+            }
+        },
+            {
+                "id": "tes:vampire_lord_armour",
+                "modifiers": {
+                    "add": {
+                        "increasedChanceToApplyBleedOnSpawn": 10,
+                        "increasedChanceToApplyBleed": 10
+                    },
+                    "remove": [
+                        "increasedMeleeLifesteal"
+                    ]
+                }
+            },
             {
                 "id": "tes:HelmetOfOreynBearclaw",
                 "modifiers": {
@@ -205,6 +338,18 @@
                 "passives": {
                     "add": [
                         "tes:Death_Mark_10"
+                    ]
+                }
+            }
+        ],
+        "combatAreas": [
+            {
+                "id":"tes:Cyrodiil",
+                "monsters": {
+                    "add": [
+                        {
+                            "monsterID":"tes:Vicente_Valtieri"
+                        }
                     ]
                 }
             }

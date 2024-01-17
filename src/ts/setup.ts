@@ -268,6 +268,7 @@ export async function setup(ctx: Modding.ModContext) {
               "melvorF:WanderingBard",
             ]
             const UndeadList = [
+              "tes:Vicente_Valtieri",
               "tes:Harkon",
               "tes:Harkon2",
               "tes:Zombie",

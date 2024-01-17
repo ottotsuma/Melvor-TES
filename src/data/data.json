@@ -6934,6 +6934,549 @@
     ],
     "items": [
       {
+        "id": "Daedric_Helmet",
+        "name": "Daedric Helmet",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Daedric_Helmet.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 1400,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedDamageDealtPerEffect": 5
+        },
+        "equipmentStats": [
+          {
+            "key": "rangedDefenceBonus",
+            "value": 46
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": -1
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 45
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": -2
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": -6
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Helmet"
+        ],
+        "equipRequirements": [
+          {
+            "skillID":"melvorD:Defence",
+            "level": 60,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Daedric_Armor",
+        "name": "Daedric Armour",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Daedric_Armor.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 3500,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedDamageDealtPerEffect": 5
+        },
+        "equipmentStats": [
+          {
+            "key": "magicDefenceBonus",
+            "value": -6
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 106
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 109
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": -10
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": -30
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Platebody"
+        ],
+        "equipRequirements": [
+          {
+            "skillID":"melvorD:Defence",
+            "level": 60,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Daedric_Greaves",
+        "name": "Daedric Greaves",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Daedric_Greaves.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 2300,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedDamageDealtPerEffect": 5
+        },
+        "equipmentStats": [
+          {
+            "key": "magicDefenceBonus",
+            "value": -4
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 65
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 68
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": -7
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": -21
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Platelegs"
+        ],
+        "equipRequirements": [
+          {
+            "skillID":"melvorD:Defence",
+            "level": 60,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Daedric_Boots",
+        "name": "Daedric Boots",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Daedric_Boots.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 1300,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedDamageDealtPerEffect": 5
+        },
+        "equipmentStats": [
+          {
+            "key": "meleeDefenceBonus",
+            "value": 16
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": -1
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": -3
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Boots"
+        ],
+        "equipRequirements": [
+          {
+            "skillID":"melvorD:Defence",
+            "level": 60,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Daedric_Gauntlets",
+        "name": "Daedric Gauntlets",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Daedric_Gauntlets.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 900,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedDamageDealtPerEffect": 5
+        },
+        "equipmentStats": [
+          {
+            "key": "meleeDefenceBonus",
+            "value": 8
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 8
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 8
+          },
+          {
+            "key": "blockAttackBonus",
+            "value": 8
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Gloves"
+        ],
+        "equipRequirements": [
+          {
+            "skillID":"melvorD:Defence",
+            "level": 60,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Daedric_Shield",
+        "name": "Daedric Shield",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Daedric_Shield.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 900,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedDamageDealtPerEffect": 5
+        },
+        "equipmentStats": [
+          {
+            "key": "meleeDefenceBonus",
+            "value": 56
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 58
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": -1
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": -8
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": -2
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Shield"
+        ],
+        "equipRequirements": [
+          {
+            "skillID":"melvorD:Defence",
+            "level": 60,
+            "type": "SkillLevel"
+          }
+        ],
+        "occupiesSlots": []
+      },  
+      {
+        "id": "dragon_bone_helmet",
+        "name": "Dragon Lord's Crown",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/dragon_bone_helmet.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 750000,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedSummoningMaxHit": 300,
+          "burnImmunity": 20,
+          "decreasedDragonBreathDamage": 100
+        },
+        "equipmentStats": [
+          {
+            "key": "damageReduction",
+            "value": 4
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 10
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 10
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 10
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": -10
+          },
+          {
+            "key": "magicAttackBonus",
+            "value": 10
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Helmet"
+        ],
+        "equipRequirements": [
+          {
+            "dungeonID":"tes:Dragon_Break",
+            "count": 1,
+            "type": "DungeonCompletion"
+          }
+        ],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Vampire_Leather_Hood",
+        "name": "Vampire Hood",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Vampire_Leather_Hood.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 250,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedBleedLifesteal": 10
+        },
+        "equipmentStats": [
+          {
+            "key": "damageReduction",
+            "value": 4
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 10
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 10
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 10
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 10
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 10
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": -10
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Helmet"
+        ],
+        "equipRequirements": [],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Vampire_Gauntlets",
+        "name": "Vampire Gauntlets",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Vampire_Gauntlets.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 250,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedBleedLifesteal": 10
+        },
+        "equipmentStats": [
+          {
+            "key": "damageReduction",
+            "value": 4
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 10
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 10
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 10
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 10
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 10
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": -10
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Gloves"
+        ],
+        "equipRequirements": [],
+        "occupiesSlots": []
+      },
+      {
+        "id": "Vampire_Boots",
+        "name": "Vampire Boots",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/Vampire_Boots.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 250,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedBleedLifesteal": 10
+        },
+        "equipmentStats": [
+          {
+            "key": "damageReduction",
+            "value": 4
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 10
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 10
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 10
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 10
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 10
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": -10
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Boots"
+        ],
+        "equipRequirements": [],
+        "occupiesSlots": []
+      },
+      {
+        "id": "vampire_lord_armour",
+        "name": "Vampire Lord Armour",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/vampire_lord_armour.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 500000,
+        "itemType": "Equipment",
+        "modifiers": {
+          "increasedBleedLifesteal": 10,
+          "increasedLifesteal": 20,
+          "increasedMeleeLifesteal": 10
+        },
+        "equipmentStats": [
+          {
+            "key": "damageReduction",
+            "value": 12
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 72
+          },
+          {
+            "key": "magicDefenceBonus",
+            "value": 60
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 60
+          },
+          {
+            "key": "slashAttackBonus",
+            "value": 40
+          },
+          {
+            "key": "stabAttackBonus",
+            "value": 40
+          },
+          {
+            "key": "rangedAttackBonus",
+            "value": -20
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Platebody"
+        ],
+        "equipRequirements": [],
+        "occupiesSlots": []
+      },
+      {
         "id": "FingerOfAdamusPhillida",
         "name": "Finger Of Adamus Phillida",
         "media": "assets/items/FingerOfAdamusPhillida.png",
@@ -13299,6 +13842,42 @@
         "itemType": "Openable",
         "dropTable": [
           {
+            "itemID": "tes:Daedric_Armor",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Helmet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Greaves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Gauntlets",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
             "itemID": "melvorD:Bread_Perfect",
             "minQuantity": 15,
             "maxQuantity": 25,
@@ -13716,7 +14295,13 @@
             "minQuantity": 1,
             "maxQuantity": 100,
             "weight": 100
-          }
+          },
+          {
+            "itemID": "tes:dragon_bone_helmet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 10
+          }          
         ],
         "customDescription": "The Elder Scrolls are artifacts of unknown origin and quantity, being simultaneously archives of historic, past and future events. This one must be faulty, it drops random items."
       },
@@ -16352,6 +16937,12 @@
         "lootChance": 70,
         "lootTable": [
           {
+            "itemID": "tes:Daedric_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
             "itemID": "melvorD:Dragon_2H_Sword",
             "maxQuantity": 1,
             "minQuantity": 1,
@@ -16360,12 +16951,6 @@
           {
             "itemID": "melvorD:Shark_Perfect",
             "maxQuantity": 5,
-            "minQuantity": 1,
-            "weight": 15
-          },
-          {
-            "itemID": "melvorD:Dragon_Platebody",
-            "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 10
           }
@@ -18556,6 +19141,12 @@
             "weight": 1
           },
           {
+            "itemID": "tes:vampire_lord_armour",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 25
+          },   
+          {
             "itemID": "tes:Blood_Pack",
             "maxQuantity": 10,
             "minQuantity": 1,
@@ -18609,6 +19200,12 @@
             "minQuantity": 1,
             "weight": 1
           },
+          {
+            "itemID": "tes:vampire_lord_armour",
+            "maxQuantity": 1,
+            "minQuantity": 1,
+            "weight": 25
+          },          
           {
             "itemID": "tes:Blood_Pack",
             "maxQuantity": 10,
@@ -20212,6 +20809,42 @@
         "lootChance": 100,
         "lootTable": [
           {
+            "itemID": "tes:Daedric_Armor",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Helmet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Greaves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Gauntlets",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
             "maxQuantity": 11,
@@ -20286,6 +20919,42 @@
         "lootChance": 100,
         "lootTable": [
           {
+            "itemID": "tes:Daedric_Armor",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Helmet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Greaves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Gauntlets",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
             "maxQuantity": 11,
@@ -20359,6 +21028,42 @@
         ],
         "lootChance": 100,
         "lootTable": [
+          {
+            "itemID": "tes:Daedric_Armor",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Helmet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Greaves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Gauntlets",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
           {
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
@@ -20436,6 +21141,42 @@
         "lootChance": 100,
         "lootTable": [
           {
+            "itemID": "tes:Daedric_Armor",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Helmet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Greaves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Gauntlets",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
             "maxQuantity": 11,
@@ -20510,6 +21251,42 @@
         "lootChance": 100,
         "lootTable": [
           {
+            "itemID": "tes:Daedric_Armor",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Helmet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Greaves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Gauntlets",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
             "maxQuantity": 11,
@@ -20582,6 +21359,42 @@
         ],
         "lootChance": 100,
         "lootTable": [
+          {
+            "itemID": "tes:Daedric_Armor",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Helmet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Greaves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Gauntlets",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
           {
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
@@ -20662,6 +21475,42 @@
         "lootChance": 100,
         "lootTable": [
           {
+            "itemID": "tes:Daedric_Armor",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Helmet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Greaves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Gauntlets",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
             "maxQuantity": 11,
@@ -20740,6 +21589,42 @@
         "lootChance": 100,
         "lootTable": [
           {
+            "itemID": "tes:Daedric_Armor",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Helmet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Greaves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Gauntlets",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
             "maxQuantity": 11,
@@ -20816,6 +21701,42 @@
         ],
         "lootChance": 100,
         "lootTable": [
+          {
+            "itemID": "tes:Daedric_Armor",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Helmet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Greaves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Gauntlets",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
           {
             "itemID": "melvorD:Ancient_Rune",
             "minQuantity": 1,
@@ -20929,6 +21850,42 @@
             "minQuantity": 1,
             "maxQuantity": 1,
             "weight": 1
+          },
+          {
+            "itemID": "tes:Daedric_Armor",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Helmet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Greaves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Gauntlets",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
           }
         ],
         "gpDrops": {
@@ -21004,6 +21961,42 @@
             "minQuantity": 1,
             "maxQuantity": 1,
             "weight": 1
+          },
+          {
+            "itemID": "tes:Daedric_Armor",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Helmet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Greaves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Gauntlets",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
           }
         ],
         "gpDrops": {
@@ -21080,6 +22073,42 @@
             "minQuantity": 1,
             "maxQuantity": 1,
             "weight": 1
+          },
+          {
+            "itemID": "tes:Daedric_Armor",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Helmet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Greaves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Gauntlets",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
           }
         ],
         "gpDrops": {
@@ -21161,6 +22190,42 @@
             "minQuantity": 1,
             "maxQuantity": 1,
             "weight": 10
+          },
+          {
+            "itemID": "tes:Daedric_Armor",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Helmet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Greaves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Gauntlets",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
           }
         ],
         "gpDrops": {
@@ -21236,6 +22301,42 @@
             "minQuantity": 1,
             "maxQuantity": 1,
             "weight": 1
+          },
+          {
+            "itemID": "tes:Daedric_Armor",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Helmet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Greaves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Gauntlets",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
           }
         ],
         "gpDrops": {
@@ -21314,6 +22415,42 @@
             "minQuantity": 1,
             "maxQuantity": 1,
             "weight": 1
+          },
+          {
+            "itemID": "tes:Daedric_Armor",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Helmet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Greaves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Gauntlets",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
           }
         ],
         "gpDrops": {
@@ -25397,6 +26534,20 @@
     "itemSynergies": [
       {
         "itemIDs": [
+          "tes:Daedric_Armor",
+          "tes:Daedric_Boots",
+          "tes:Daedric_Gauntlets",
+          "tes:Daedric_Greaves",
+          "tes:Daedric_Helmet",
+          "tes:Daedric_Shield"
+        ],
+        "playerModifiers": {
+          "increasedDamageToAllMonsters": 20,
+          "increasedDamageTaken": 20
+        }
+      },
+      {
+        "itemIDs": [
           "tes:Nightingale_Armour",
           "tes:Nightingale_Boots",
           "tes:Nightingale_Hood",
@@ -25652,7 +26803,7 @@
               "minQuantity": 1,
               "weight": 1
             }
-          ]
+          ]          
         }
       },
       {
@@ -25664,6 +26815,24 @@
               "maxQuantity": 1,
               "minQuantity": 1,
               "weight": 1
+            },
+            {
+              "itemID": "tes:Vampire_Boots",
+              "maxQuantity": 1,
+              "minQuantity": 1,
+              "weight": 25
+            },
+            {
+              "itemID": "tes:Vampire_Gauntlets",
+              "maxQuantity": 1,
+              "minQuantity": 1,
+              "weight": 25
+            },
+            {
+              "itemID": "tes:Vampire_Leather_Hood",
+              "maxQuantity": 1,
+              "minQuantity": 1,
+              "weight": 25
             }
           ]
         }
