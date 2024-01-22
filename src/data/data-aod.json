@@ -530,6 +530,22 @@
           ],
           "upgradedItemID":"tes:Wraithguard"
         }
+      ],
+      "itemSynergies": [
+        {
+          "itemIDs": [
+            "tes:Daedric_Armor",
+            "tes:Daedric_Boots",
+            "tes:Daedric_Gauntlets",
+            "tes:Daedric_Greaves",
+            "tes:Daedric_Helmet",
+            "tes:Daedric_Shield"
+          ],
+          "playerModifiers": {
+            "allowUnholyPrayerUse": 1,
+            "increasedUnholyMarkOnHit": 1
+          }
+        }
       ]
     },
     "modifications": {
