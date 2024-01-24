@@ -6400,7 +6400,7 @@
           "items": [
             {
               "id": "melvorD:Poison_Arrows",
-              "quantity": 100
+              "quantity": 1
             }
           ]
         },
@@ -6416,7 +6416,7 @@
           "items": [
             {
               "id": "melvorD:Bones",
-              "quantity": 100
+              "quantity": 1
             }
           ],
           "raidCoins": {
@@ -6433,7 +6433,7 @@
             "type": "ShopPurchase"
           }
         ],
-        "defaultBuyLimit": 1,
+        "defaultBuyLimit": 0,
         "buyLimitOverrides": [],
         "showBuyLimit": false,
         "customName": "Poison Arrows"
