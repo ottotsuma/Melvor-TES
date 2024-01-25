@@ -14769,8 +14769,8 @@
         "entryRequirements": [
           {
             "type": "SkillLevel",
-            "skillID": "melvorD:Hitpoints",
-            "level": 1
+            "skillID": "melvorD:Slayer",
+            "level": 75
           }
         ],
         "areaEffect": {
