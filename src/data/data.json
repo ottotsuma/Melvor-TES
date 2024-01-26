@@ -6341,26 +6341,26 @@
           "items": [
             {
               "id": "tes:Alembic",
-              "quantity": 100
+              "quantity": 1
             },
             {
               "id": "tes:Calcinator",
-              "quantity": 100
+              "quantity": 1
             },
             {
               "id": "tes:Retort",
-              "quantity": 100
+              "quantity": 1
             },
             {
               "id": "tes:MortarAndPestle",
-              "quantity": 100
+              "quantity": 1
             }
           ]
         },
         "cost": {
           "gp": {
             "type": "Fixed",
-            "cost": 10000
+            "cost": 100
           },
           "slayerCoins": {
             "type": "Fixed",
@@ -6386,7 +6386,7 @@
             "type": "ShopPurchase"
           }
         ],
-        "defaultBuyLimit": 1,
+        "defaultBuyLimit": 0,
         "buyLimitOverrides": [],
         "showBuyLimit": false,
         "customName": "Resupply Alchemy",
@@ -6734,6 +6734,53 @@
         "buyLimitOverrides": [],
         "showBuyLimit": false,
         "customName": "Mages Robe"
+      },
+      {
+        "id": "Fighters_Random_Loot_Shop",
+        "media": "assets/icons/Cache.png",
+        "category": "tes:Fighters_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Fighters_Loot_Box",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:gold_coin",
+              "quantity": 1000
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Master_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Random Fighters Loot",
+        "customDescription": "Random Fighters Loot."
       }
     ],
     "shopDisplayOrder": [
@@ -6794,6 +6841,7 @@
           "tes:GiantClub_Shop",
           "tes:Chrysamere_Shop",
           "tes:HelmetOfOreynBearclaw_Shop",
+          "tes:Fighters_Random_Loot_Shop",
           "tes:EggChest",
           "tes:StandardChest",
           "tes:BanditChest",
@@ -6975,7 +7023,7 @@
         ],
         "equipRequirements": [
           {
-            "skillID":"melvorD:Defence",
+            "skillID": "melvorD:Defence",
             "level": 60,
             "type": "SkillLevel"
           }
@@ -7024,7 +7072,7 @@
         ],
         "equipRequirements": [
           {
-            "skillID":"melvorD:Defence",
+            "skillID": "melvorD:Defence",
             "level": 60,
             "type": "SkillLevel"
           }
@@ -7073,7 +7121,7 @@
         ],
         "equipRequirements": [
           {
-            "skillID":"melvorD:Defence",
+            "skillID": "melvorD:Defence",
             "level": 60,
             "type": "SkillLevel"
           }
@@ -7114,7 +7162,7 @@
         ],
         "equipRequirements": [
           {
-            "skillID":"melvorD:Defence",
+            "skillID": "melvorD:Defence",
             "level": 60,
             "type": "SkillLevel"
           }
@@ -7159,7 +7207,7 @@
         ],
         "equipRequirements": [
           {
-            "skillID":"melvorD:Defence",
+            "skillID": "melvorD:Defence",
             "level": 60,
             "type": "SkillLevel"
           }
@@ -7208,13 +7256,13 @@
         ],
         "equipRequirements": [
           {
-            "skillID":"melvorD:Defence",
+            "skillID": "melvorD:Defence",
             "level": 60,
             "type": "SkillLevel"
           }
         ],
         "occupiesSlots": []
-      },  
+      },
       {
         "id": "dragon_bone_helmet",
         "name": "Dragon Lord's Crown",
@@ -7263,7 +7311,7 @@
         ],
         "equipRequirements": [
           {
-            "dungeonID":"tes:Dragon_Break",
+            "dungeonID": "tes:Dragon_Break",
             "count": 1,
             "type": "DungeonCompletion"
           }
@@ -11746,7 +11794,6 @@
           "htmlTemplateID": "The_Five_Tenets_HTML"
         }
       },
-
       {
         "id": "Nightingale_Gloves",
         "name": "Nightingale Gloves",
@@ -12278,8 +12325,7 @@
           "increasedFlatMeleeDefenceBonus": 3,
           "increasedFlatRangedDefenceBonus": 3
         },
-        "equipmentStats": [
-        ],
+        "equipmentStats": [],
         "tier": "none",
         "validSlots": [
           "Amulet",
@@ -12948,7 +12994,6 @@
         ],
         "occupiesSlots": []
       },
-
       {
         "id": "GoldenShipModel",
         "name": "Golden ShipModel",
@@ -13451,7 +13496,10 @@
           "melvorD:LifeLeech",
           "melvorF:BoneCrush"
         ],
-        "overrideSpecialChances": [50, 50]
+        "overrideSpecialChances": [
+          50,
+          50
+        ]
       },
       {
         "id": "Ring_of_Khajiit",
@@ -14012,9 +14060,8 @@
         ],
         "occupiesSlots": [],
         "equipRequirements": [],
-        "equipmentStats": [
-        ],
-        "modifiers":{
+        "equipmentStats": [],
+        "modifiers": {
           "increasedDamageReduction": 5,
           "increasedSummoningMaxHit": 100
         },
@@ -14301,7 +14348,7 @@
             "minQuantity": 1,
             "maxQuantity": 1,
             "weight": 10
-          }          
+          }
         ],
         "customDescription": "The Elder Scrolls are artifacts of unknown origin and quantity, being simultaneously archives of historic, past and future events. This one must be faulty, it drops random items."
       },
@@ -14682,6 +14729,357 @@
             "minQuantity": 1,
             "maxQuantity": 1,
             "weight": 100
+          },
+          {
+            "itemID": "tes:Sweetroll",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "tes:Daedric_Armor",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Helmet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Greaves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Gauntlets",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          }
+        ],
+        "customDescription": "A box that is full of Elder Scrolls loot."
+      },
+      {
+        "id": "Fighters_Loot_Box",
+        "name": "Fighters Loot",
+        "category": "Dungeons",
+        "type": "Item",
+        "media": "assets/items/lootbox.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 250,
+        "itemType": "Openable",
+        "dropTable": [
+          {
+            "itemID": "melvorF:Scroll_of_Ragnar",
+            "minQuantity": 1,
+            "maxQuantity": 10,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Pirate_Booty",
+            "minQuantity": 1,
+            "maxQuantity": 10,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorD:Standard_Chest",
+            "minQuantity": 1,
+            "maxQuantity": 10,
+            "weight": 40
+          },
+          {
+            "itemID": "melvorF:Melee_Strength_Potion_IV",
+            "minQuantity": 1,
+            "maxQuantity": 10,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorF:Melee_Strength_Potion_III",
+            "minQuantity": 1,
+            "maxQuantity": 20,
+            "weight": 50
+          },
+          {
+            "itemID": "melvorF:Melee_Strength_Potion_II",
+            "minQuantity": 1,
+            "maxQuantity": 40,
+            "weight": 80
+          },
+          {
+            "itemID": "melvorF:Melee_Strength_Potion_I",
+            "minQuantity": 1,
+            "maxQuantity": 100,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorF:Melee_Accuracy_Potion_IV",
+            "minQuantity": 1,
+            "maxQuantity": 10,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorF:Melee_Accuracy_Potion_III",
+            "minQuantity": 1,
+            "maxQuantity": 20,
+            "weight": 50
+          },
+          {
+            "itemID": "melvorF:Melee_Accuracy_Potion_II",
+            "minQuantity": 1,
+            "maxQuantity": 40,
+            "weight": 80
+          },
+          {
+            "itemID": "melvorF:Melee_Accuracy_Potion_I",
+            "minQuantity": 1,
+            "maxQuantity": 100,
+            "weight": 100
+          },
+          {
+            "itemID": "melvorD:Ultimate_Slapping_Gloves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Melee_Crit_Amulet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Burning_Ring",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Poison_Ring",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Frostburn_Ring",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "tes:Daedric_Armor",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Helmet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Greaves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Gauntlets",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Daedric_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:StoneOfStAlessia",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID": "tes:gold_coin",
+            "minQuantity": 20,
+            "maxQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:Black_Gloves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:Imperial_Dragon_Helmet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Imperial_Dragon_Gauntlets",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Imperial_Dragon_Armor",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Imperial_Dragon_Boots",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Imperial_Dragon_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Imperial_Dragon_Cloak",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Blades_Sword",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Cooked_Juvenile_Mudcrab_Perfect",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 60
+          },
+          {
+            "itemID": "tes:Cooked_Juvenile_Mudcrab",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "tes:dragonbornhat",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Bard_Drum",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Bloodstone_Chalice",
+            "minQuantity": 10,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Blood_Pack",
+            "minQuantity": 100,
+            "maxQuantity": 1,
+            "weight": 80
+          },
+          {
+            "itemID": "tes:Sinestral_Blade",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Sinestral_Shield",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Goblin_Ear",
+            "minQuantity": 1000,
+            "maxQuantity": 50,
+            "weight": 60
+          },
+          {
+            "itemID": "tes:Skooma",
+            "minQuantity": 10,
+            "maxQuantity": 1,
+            "weight": 35
+          },
+          {
+            "itemID": "tes:WitchsHead",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Eye",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:GoblinFurnishings",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID": "tes:ElsweyrSpicedTea",
+            "minQuantity": 100,
+            "maxQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "tes:HagravensClaw",
+            "minQuantity": 10,
+            "maxQuantity": 1,
+            "weight": 35
+          },
+          {
+            "itemID": "tes:BloodPotion",
+            "minQuantity": 10,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "melvorF:Summoning_Familiar_Minotaur",
+            "minQuantity": 10,
+            "maxQuantity": 1000,
+            "weight": 70
           },
           {
             "itemID": "tes:Sweetroll",
@@ -19145,7 +19543,7 @@
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 25
-          },   
+          },
           {
             "itemID": "tes:Blood_Pack",
             "maxQuantity": 10,
@@ -19205,7 +19603,7 @@
             "maxQuantity": 1,
             "minQuantity": 1,
             "weight": 25
-          },          
+          },
           {
             "itemID": "tes:Blood_Pack",
             "maxQuantity": 10,
@@ -20483,7 +20881,7 @@
             "itemID": "tes:lootbox2",
             "maxQuantity": 1,
             "minQuantity": 1,
-            "weight": 35
+            "weight": 20
           }
         ],
         "bones": {
@@ -26434,7 +26832,7 @@
               "itemID": "tes:lootbox",
               "maxQuantity": 1,
               "minQuantity": 1,
-              "weight": 200
+              "weight": 150
             }
           ],
           "junkItemIDs": [
@@ -26803,7 +27201,7 @@
               "minQuantity": 1,
               "weight": 1
             }
-          ]          
+          ]
         }
       },
       {

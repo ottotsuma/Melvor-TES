@@ -16,7 +16,7 @@
                             "level": 5,
                             "skills": [
                                 "https://cdn2-main.melvor.net/assets/media/pets/mister_fuzzbutt.png",
-                                "https://cdn2-main.melvor.net/assets/media/skills/thieving/thieving.svg",
+                                "melvorD:Thieving",
                                 "https://cdn2-main.melvor.net/assets/media/main/coins.svg"
                             ],
                             "standardModifiers": [
@@ -96,8 +96,8 @@
                             "level": 15,
                             "skills": [
                                 "https://static.wikia.nocookie.net/skyrim_gamepedia/images/c/c0/Deeja.png",
-                                "https://cdn2-main.melvor.net/assets/media/skills/fishing/fishing.svg",
-                                "https://cdn2-main.melvor.net/assets/media/skills/cooking/cooking.svg"
+                                "melvorD:Fishing",
+                                "melvorD:Cooking"
                             ],
                             "standardModifiers": [
                                 {

@@ -632,66 +632,6 @@ export async function setup(ctx: Modding.ModContext) {
           if (kcm && profileSkill) {
             // add modifier package
             await ctx.gameData.addPackage('profile.json');
-            // @ts-ignore
-            ctx.patch(Skill, 'addXP').after(function (amount, masteryAction) {
-              const single_species = game.profile.yous.get(1) // human
-              const single_class = game.profile.yous.get(2) // knight
-
-              let exp1 = 0
-              if (single_species) {
-                exp1 = Math.floor(single_species.single_species.baseExperience) || 0
-              }
-              let exp2 = 0
-              if (single_class) {
-                exp2 = Math.floor(single_class.single_species.baseExperience) || 0
-              }
-              let skillExp1 = exp1 || 0
-              let masteryExp1 = exp1 || 0
-
-              let skillExp2 = exp2 || 0
-              let masteryExp2 = exp2 || 0
-              if (game.profile.isPoolTierActive(1)) {
-                skillExp1 = skillExp1 + ((skillExp1 / 100) * 3) || 0
-                skillExp2 = skillExp2 + ((skillExp2 / 100) * 3) || 0
-              }
-              if (game.profile.isPoolTierActive(1)) {
-                masteryExp1 = masteryExp1 + ((masteryExp1 / 100) * 5) || 0
-                masteryExp2 = masteryExp2 + ((masteryExp2 / 100) * 5) || 0
-              }
-              // const globalEXPmod = game.modifiers.increasedGlobalSkillXP - game.modifiers.decreasedGlobalSkillXP || 0
-
-              // const totalExp = skillExp1 + skillExp2 + (((skillExp1 + skillExp2) / 100) * globalEXPmod) || 0
-
-              const globalMasteryEXPmod = game.modifiers.increasedGlobalMasteryXP - game.modifiers.decreasedGlobalMasteryXP || 0
-
-              const totalMasteryExp1 = masteryExp1 + (((skillExp1) / 100) * globalMasteryEXPmod) || 0
-              const totalMasteryExp2 = masteryExp2 + (((skillExp2) / 100) * globalMasteryEXPmod) || 0
-              let currentSpeicies = ''
-              if (single_species) {
-                currentSpeicies = single_species.single_species.localID
-              }
-
-              if (game && game.activeAction && currentSpeicies === 'Argonian' && game.activeAction._localID === 'Fishing') {
-
-                game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
-                game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
-                game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
-              }
-              if (game && game.activeAction && currentSpeicies === 'Argonian' && game.activeAction._localID === 'Cooking') {
-
-                game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
-                game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
-                game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
-              }
-              if (game && game.activeAction && currentSpeicies === 'Khajiit' && game.activeAction._localID === 'Thieving') {
-
-                game.profile.addMasteryXP(single_species.single_species, totalMasteryExp1)
-                game.profile.addMasteryXP(single_class.single_species, totalMasteryExp2)
-                game.profile.addMasteryPoolXP(totalMasteryExp1 + totalMasteryExp2)
-              }
-              return [amount, masteryAction]
-            })
-            // edit on xp gain for mastery
           }
         } catch (error) {
           console.log('onModsLoaded packages ', error)
