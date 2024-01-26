@@ -6783,6 +6783,53 @@
         "customDescription": "Random Fighters Loot."
       },
       {
+        "id": "Rangers_Random_Loot_Shop",
+        "media": "assets/icons/Cache.png",
+        "category": "tes:Fighters_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Rangers_Loot_Box",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:gold_coin",
+              "quantity": 1000
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Master_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Random Rangers Loot",
+        "customDescription": "Random Rangers Loot."
+      },
+      {
         "id": "Mages_Random_Loot_Shop",
         "media": "assets/icons/Cache.png",
         "category": "tes:Mages_Guild_Shop",
@@ -6889,6 +6936,7 @@
           "tes:Chrysamere_Shop",
           "tes:HelmetOfOreynBearclaw_Shop",
           "tes:Fighters_Random_Loot_Shop",
+          "tes:Rangers_Random_Loot_Shop",
           "tes:EggChest",
           "tes:StandardChest",
           "tes:BanditChest",
