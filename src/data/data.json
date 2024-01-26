@@ -6781,6 +6781,53 @@
         "showBuyLimit": false,
         "customName": "Random Fighters Loot",
         "customDescription": "Random Fighters Loot."
+      },
+      {
+        "id": "Mages_Random_Loot_Shop",
+        "media": "assets/icons/Cache.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Mages_Loot_Box",
+              "quantity": 1
+            }
+          ]
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:gold_coin",
+              "quantity": 1000
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Arch_Mage_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Random Mages Loot",
+        "customDescription": "Random Mages Loot."
       }
     ],
     "shopDisplayOrder": [
@@ -6884,6 +6931,7 @@
           "tes:Arch_MagesHood_Shop",
           "tes:Arch_MagesRobe_Shop",
           "tes:Summoning_Mage_Apprentice_Shop",
+          "tes:Mages_Random_Loot_Shop",
           "tes:AirRune",
           "tes:MindRune",
           "tes:WaterRune",
@@ -15088,7 +15136,565 @@
             "weight": 75
           }
         ],
-        "customDescription": "A box that is full of Elder Scrolls loot."
+        "customDescription": "A box that is full of Fighter loot."
+      },
+      {
+        "id": "Mages_Loot_Box",
+        "name": "Mages Loot",
+        "category": "Dungeons",
+        "type": "Item",
+        "media": "assets/items/lootbox.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 250,
+        "itemType": "Openable",
+        "dropTable": [
+          {
+            "itemID": "melvorD:Mystery_Wand",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorD:Magic_Crit_Amulet",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorD:Burning_Wand",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorD:Frostburn_Wand",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorF:Scroll_of_Glacia",
+            "minQuantity": 1,
+            "maxQuantity": 10,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorF:Miolite_Chest",
+            "minQuantity": 1,
+            "maxQuantity": 10,
+            "weight": 50
+          },
+          {
+            "itemID": "melvorD:Magic_Chest",
+            "minQuantity": 1,
+            "maxQuantity": 10,
+            "weight": 50
+          },
+          {
+            "itemID": "melvorF:Magic_Assistance_Potion_IV",
+            "minQuantity": 1,
+            "maxQuantity": 10,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorF:Magic_Assistance_Potion_III",
+            "minQuantity": 1,
+            "maxQuantity": 40,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorF:Magic_Assistance_Potion_II",
+            "minQuantity": 1,
+            "maxQuantity": 60,
+            "weight": 30
+          },
+          {
+            "itemID": "melvorF:Magic_Assistance_Potion_I",
+            "minQuantity": 1,
+            "maxQuantity": 100,
+            "weight": 40
+          },
+          {
+            "itemID": "melvorF:Magic_Damage_Potion_IV",
+            "minQuantity": 1,
+            "maxQuantity": 10,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorF:Magic_Damage_Potion_III",
+            "minQuantity": 1,
+            "maxQuantity": 40,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorF:Magic_Damage_Potion_II",
+            "minQuantity": 1,
+            "maxQuantity": 60,
+            "weight": 30
+          },
+          {
+            "itemID": "melvorF:Magic_Damage_Potion_I",
+            "minQuantity": 1,
+            "maxQuantity": 100,
+            "weight": 40
+          },
+          {
+            "itemID": "tes:Mages_Gloves",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 40
+          },
+          {
+            "itemID": "tes:Arch_MagesHood",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID": "tes:Arch_MagesRobe",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID": "tes:MagesRobe",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 60
+          },
+          {
+            "itemID": "tes:MagesHood",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 60
+          },
+          {
+            "itemID": "tes:gold_coin",
+            "minQuantity": 20,
+            "maxQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:Cooked_Juvenile_Mudcrab_Perfect",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 60
+          },
+          {
+            "itemID": "tes:Cooked_Juvenile_Mudcrab",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "tes:magic_mask",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:dragonbornhat",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Bard_Flute",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Bloodstone_Chalice",
+            "minQuantity": 10,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Blood_Pack",
+            "minQuantity": 100,
+            "maxQuantity": 1,
+            "weight": 80
+          },
+          {
+            "itemID": "tes:Hagraven_Summon",
+            "minQuantity": 10,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Goblin_Ear",
+            "minQuantity": 1000,
+            "maxQuantity": 50,
+            "weight": 60
+          },
+          {
+            "itemID": "tes:GoblinTotemStaff",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Skooma",
+            "minQuantity": 10,
+            "maxQuantity": 1,
+            "weight": 35
+          },
+          {
+            "itemID": "tes:WitchsHead",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Eye",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:GoblinFurnishings",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID": "tes:ElsweyrSpicedTea",
+            "minQuantity": 100,
+            "maxQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "tes:HagravensClaw",
+            "minQuantity": 10,
+            "maxQuantity": 1,
+            "weight": 35
+          },
+          {
+            "itemID": "tes:BloodPotion",
+            "minQuantity": 10,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:WelkyndStone",
+            "minQuantity": 100,
+            "maxQuantity": 1,
+            "weight": 50
+          },
+          {
+            "itemID": "tes:VarlaStone",
+            "minQuantity": 100,
+            "maxQuantity": 1,
+            "weight": 15
+          },
+          {
+            "itemID": "tes:Master_Alchemy_Apparatus",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "tes:Expert_Alchemy_Apparatus",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Journeyman_Alchemy_Apparatus",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 50
+          },
+          {
+            "itemID": "tes:Apprentice_Alchemy_Apparatus",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "tes:Novice_Alchemy_Apparatus",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 90
+          },
+          {
+            "itemID": "tes:MortarAndPestle",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:Retort",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:Calcinator",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:Alembic",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:Necromancer_Robes_Novice",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 90
+          },
+          {
+            "itemID": "tes:Sweetroll",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 75
+          }
+        ],
+        "customDescription": "A box that is full of Mage loot."
+      },
+      {
+        "id": "Rangers_Loot_Box",
+        "name": "Rangers Loot",
+        "category": "Dungeons",
+        "type": "Item",
+        "media": "assets/items/lootbox.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 250,
+        "itemType": "Openable",
+        "dropTable": [
+          {
+            "itemID": "melvorD:Bandit_Chest",
+            "minQuantity": 1,
+            "maxQuantity": 10,
+            "weight": 60
+          },
+          {
+            "itemID": "melvorD:Spider_Chest",
+            "minQuantity": 1,
+            "maxQuantity": 10,
+            "weight": 50
+          },
+          {
+            "itemID": "melvorF:Scroll_of_Aeris",
+            "minQuantity": 1,
+            "maxQuantity": 10,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorF:Ranged_Strength_Potion_IV",
+            "minQuantity": 1,
+            "maxQuantity": 10,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorF:Ranged_Strength_Potion_III",
+            "minQuantity": 1,
+            "maxQuantity": 40,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorF:Ranged_Strength_Potion_II",
+            "minQuantity": 1,
+            "maxQuantity": 60,
+            "weight": 30
+          },
+          {
+            "itemID": "melvorF:Ranged_Strength_Potion_I",
+            "minQuantity": 1,
+            "maxQuantity": 100,
+            "weight": 40
+          },
+          {
+            "itemID": "melvorF:Ranged_Assistance_Potion_IV",
+            "minQuantity": 1,
+            "maxQuantity": 10,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorF:Ranged_Assistance_Potion_III",
+            "minQuantity": 1,
+            "maxQuantity": 40,
+            "weight": 20
+          },
+          {
+            "itemID": "melvorF:Ranged_Assistance_Potion_II",
+            "minQuantity": 1,
+            "maxQuantity": 60,
+            "weight": 30
+          },
+          {
+            "itemID": "melvorF:Ranged_Assistance_Potion_I",
+            "minQuantity": 1,
+            "maxQuantity": 100,
+            "weight": 40
+          },
+          {
+            "itemID": "melvorD:Enchanted_Sapphire_Bolts",
+            "minQuantity": 20,
+            "maxQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Enchanted_Topaz_Bolts",
+            "minQuantity": 20,
+            "maxQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Frost_Arrows",
+            "minQuantity": 20,
+            "maxQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Enchanted_Emerald_Bolts",
+            "minQuantity": 20,
+            "maxQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Enchanted_Ruby_Bolts",
+            "minQuantity": 20,
+            "maxQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Poison_Arrows",
+            "minQuantity": 20,
+            "maxQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Enchanted_Diamond_Bolts",
+            "minQuantity": 20,
+            "maxQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Fire_Arrows",
+            "minQuantity": 20,
+            "maxQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "melvorD:Enchanted_Jadestone_Bolts",
+            "minQuantity": 20,
+            "maxQuantity": 1,
+            "weight": 10
+          },
+          {
+            "itemID": "tes:gold_coin",
+            "minQuantity": 20,
+            "maxQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:Cooked_Juvenile_Mudcrab_Perfect",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 60
+          },
+          {
+            "itemID": "tes:Cooked_Juvenile_Mudcrab",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "tes:dragonbornhat",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Bard_Lute",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Bloodstone_Chalice",
+            "minQuantity": 10,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Blood_Pack",
+            "minQuantity": 100,
+            "maxQuantity": 1,
+            "weight": 80
+          },
+          {
+            "itemID": "tes:Goblin_Ear",
+            "minQuantity": 1000,
+            "maxQuantity": 50,
+            "weight": 60
+          },
+          {
+            "itemID": "tes:Skooma",
+            "minQuantity": 10,
+            "maxQuantity": 1,
+            "weight": 35
+          },
+          {
+            "itemID": "tes:WitchsHead",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Eye",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:GoblinFurnishings",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 1
+          },
+          {
+            "itemID": "tes:ElsweyrSpicedTea",
+            "minQuantity": 100,
+            "maxQuantity": 1,
+            "weight": 75
+          },
+          {
+            "itemID": "tes:HagravensClaw",
+            "minQuantity": 10,
+            "maxQuantity": 1,
+            "weight": 35
+          },
+          {
+            "itemID": "tes:BloodPotion",
+            "minQuantity": 10,
+            "maxQuantity": 1,
+            "weight": 25
+          },
+          {
+            "itemID": "tes:Lockpick",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 100
+          },
+          {
+            "itemID": "tes:Sweetroll",
+            "minQuantity": 1,
+            "maxQuantity": 1,
+            "weight": 75
+          }
+        ],
+        "customDescription": "A box that is full of Ranger loot."
       }
     ],
     "itemUpgrades": [
