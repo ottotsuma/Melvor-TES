@@ -40,7 +40,7 @@ New Shops
 
 New Spells & Curses
 
-[wizard](images/wizard.png)
+![wizard](images/wizard.png)
 
 Speaking Khajiit merchants
 
