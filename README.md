@@ -56,5 +56,5 @@ Monsters will gain categories (Dragon, Human, Undead) from Custom Modifiers in M
 
 ![dragon](images/dragon.png)
 
-Intergration with my other mod classes & species, where you can chose one of each for yourself: https://mod.io/g/melvoridle/m/show-skill-Modifiers
+Intergration with my other mod classes & species, where you can chose one of each for yourself: https://mod.io/g/melvoridle/m/class-species
 ![profile](images/profile.png)
