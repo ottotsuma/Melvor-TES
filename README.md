@@ -27,19 +27,29 @@ New items
 ![armour](images/armour.png)
 
 New monsters
+
 ![high](images/high.png)
+
 New thieving areas
+
 ![Imperial](images/Imperial.png)
+
 New Shops
+
 ![shops](images/shops.png)
+
 New Spells & Curses
+
 [wizard](images/wizard.png)
+
 Speaking Khajiit merchants
+
 ![Khajiit](images/Khajiit.png)
 
 The Bards College
 
 ![bard](images/bard.png)
+
 ![viarmo](images/viarmo.png)
 
 Monsters will gain categories (Dragon, Human, Undead) from Custom Modifiers in Melvor if you have it installed also.
