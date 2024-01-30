@@ -13275,7 +13275,14 @@
           15,
           15,
           15
-        ]
+        ],
+        "modifiers":{
+          "increasedMinElementalSpellDmg": 10,
+          "increasedMaxAirSpellDmg": 10,
+          "increasedMaxEarthSpellDmg": 10,
+          "increasedMaxFireSpellDmg": 10,
+          "increasedMaxWaterSpellDmg": 10
+        }
       },
       {
         "id": "Skeleton_Key",
@@ -13394,7 +13401,10 @@
           "melvorF:Infernum",
           "melvorF:Inferno",
           "melvorF:InfernalVolley"
-        ]
+        ],
+        "modifiers":{
+          "increasedMaxFireSpellDmg": 20
+        }
       },
       {
         "id": "Sanguine_Rose",
@@ -13537,8 +13547,8 @@
         "itemType": "Equipment",
         "modifiers": {
           "decreasedFoodHealingValue": 25,
-          "increasedHealingWhenHit": 50,
-          "increasedHealingOnAttackBasedOnDR": 50
+          "increasedHealingWhenHit": 5,
+          "increasedHealingOnAttackBasedOnDR": 5
         }
       },
       {
