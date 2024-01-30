@@ -11601,7 +11601,7 @@
         "sellsFor": 690,
         "itemType": "Equipment",
         "modifiers": {
-          "increasedDamageReductionAgainstMagic": 8,
+          "increasedDamageReductionAgainstMagic": 2,
           "increasedDamageReductionPer30Defence": 1
         },
         "equipmentStats": [
