@@ -155,7 +155,6 @@ export async function setup(ctx: Modding.ModContext) {
               loadedLangJson[key] = value;
             } 
           }
-
           // End Translations
         } catch (error) {
           console.log("onModsLoaded Translations ", error)
@@ -633,6 +632,43 @@ export async function setup(ctx: Modding.ModContext) {
             // add modifier package
             await ctx.gameData.addPackage('profile.json');
           }
+
+          // itemSynergies translations
+          game.itemSynergies.forEach(synergies => {
+            if(synergies && synergies.length > 0) {
+              const found_items = []
+              const found_items_names = []
+              // const synergy.playerModifiers
+              synergies.forEach(synergy => {
+                synergy.items.forEach(item => {
+                  if(item?._namespace?.name === "tes") {
+                    const tes_item = game.items.getObjectByID(`${item._namespace.name}:${item._localID}`)
+                    if(!found_items_names.includes(item.name))
+                    found_items.push(tes_item)
+                    found_items_names.push(item.name)
+                    // synergy.playerModifiers .push(synergy.playerModifiers)
+                  }
+                })
+              })
+              found_items.forEach(item => {
+                // synergy.playerModifiers
+                if(item?._namespace?.name === "tes") {
+                  const synergyDes = `. When equipped with ${found_items_names}, grant the following boosts: ${}`
+                  const tes_item = game.items.getObjectByID(`${item._namespace.name}:${item._localID}`)
+                  if(tes_item._customDescription) {
+                    tes_item._customDescription = tes_item._customDescription + " + " + "synergy.playerModifiers"
+                  } else {
+                    tes_item._customDescription = tes_item.description + synergyDes
+                  }
+
+                  console.log(item, game.items.getObjectByID(`${item._namespace.name}:${item._localID}`))
+                }
+              })
+            }})
+// "+10% Bleed lifesteal. When equipped with Vampire Lord Armour,Vampire Hood,Vampire Boots,Vampire Gauntlets, grant the following boosts: synergy.playerModifiers + synergy.playerModifiers + synergy.playerModifiers + synergy.playerModifiers"
+            
+
+          // You would create or update entries of ITEM_DESCRIPTION_{ITEM_ID_HERE} while looping through the itemSynergiesData. You would have to create an entry yourself like When equipped with ${items}, grant the following boosts: ${automatically_generated_list_of_benefits}, but both ${items} and ${automatically_generated_list_of_benefits} would just read out existing translations for modifiers, stats, etc. 
         } catch (error) {
           console.log('onModsLoaded packages ', error)
         }
