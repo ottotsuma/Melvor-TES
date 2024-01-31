@@ -725,76 +725,86 @@ export async function setup(ctx: Modding.ModContext) {
       // #modal-content-item-stats Try and get it to display only here
       // #item-view-description
       try {
+        const effectedItems = {
+        }
+        // @ts-ignore
+        const found_items = []
         game.itemSynergies.forEach(synergies => {
           if (synergies && synergies.length > 0) {
-            // @ts-ignore
-            const found_items = []
-            // @ts-ignore
-            const found_items_names = []
-            let synergyObjectplayerModifiers = {}
             synergies.forEach(synergy => {
-              synergyObjectplayerModifiers = {
-                ...synergyObjectplayerModifiers,
+              // @ts-ignore
+              const found_items_names = []
+              let synergyObjectplayerModifiers = {
                 ...synergy.playerModifiers
               }
               synergy.items.forEach(item => {
                 // @ts-ignore
                 if (item?._namespace?.name === "tes") {
                   // @ts-ignore
-                  const tes_item = game.items.getObjectByID(`${item._namespace.name}:${item._localID}`)
-                  // @ts-ignore
                   if (!found_items_names.includes(item.name)) {
-                    found_items.push(tes_item)
-                  // @ts-ignore
-                  found_items_names.push(item.name)
+                    // @ts-ignore
+                    if (item?._namespace?.name === "tes") {
+                      // @ts-ignore
+                      found_items_names.push(item.name)
+                      // @ts-ignore
+                      if (!found_items.includes(item)) found_items.push(item)
+                    }
                   }
                 }
               })
-            })
-            // @ts-ignore
-            found_items.forEach(item => {
-              // synergyObjectplayerModifiers
-              if (item?._namespace?.name === "tes") {
+              if (found_items_names.length > 0) {
                 const entries = Object.entries(synergyObjectplayerModifiers);
                 // @ts-ignore
                 const boosts = []
                 entries.forEach(entry => {
                   (entry.forEach(e => {
                     if (typeof e === 'string') {
-                      // @ts-ignore
-                      if(typeof synergyObjectplayerModifiers[e] === "object") {
-                        // @ts-ignore
-                        boosts.push(getLangString("MODIFIER_DATA_" + e).replace('${value}', synergyObjectplayerModifiers[e][0].value).replace('${skillName}', synergyObjectplayerModifiers[e][0].skill._localID).replace('${skillName}', synergyObjectplayerModifiers[e][0].skill._localID))
-                      } else {
-                      // @ts-ignore
-                      boosts.push(getLangString("MODIFIER_DATA_" + e).replace('${value}', synergyObjectplayerModifiers[e]))
+                      let pre = "MODIFIER_DATA_"
+                      if (e.includes('tes_')) {
+                        pre = ""
                       }
-                    }                    
+                      // @ts-ignore
+                      if (typeof synergyObjectplayerModifiers[e] === "object") {
+                        // @ts-ignore
+                        boosts.push(getLangString(pre + e).replace('${value}', synergyObjectplayerModifiers[e][0].value).replace('${skillName}', synergyObjectplayerModifiers[e][0].skill._localID).replace('${skillName}', synergyObjectplayerModifiers[e][0].skill._localID))
+                      } else {
+                        // @ts-ignore
+                        boosts.push(getLangString(pre + e).replace('${value}', synergyObjectplayerModifiers[e]))
+                      }
+                    }
                   }))
                 })
-                // getLangString('increasedChanceToApplyBleed')
                 // @ts-ignore
-                const synergyDes = `. \nWhen equipped with ${found_items_names.join(', ')}, grant the following boosts: ${boosts.join(', ')}`
-                const tes_item = game.items.getObjectByID(`${item._namespace.name}:${item._localID}`)
-                if (tes_item._customDescription) {
-                  // tes_item._customDescription = tes_item._customDescription + " + " + entries
-                } else {
-                  tes_item._customDescription = tes_item.description + synergyDes
-                }
+                effectedItems[found_items_names.join(', ')] = boosts.join(', ')
               }
             })
           }
         })
+        // real item
+        // @ts-ignore
+        found_items.forEach(item => {
+          const tes_item = game.items.getObjectByID(`${item._namespace.name}:${item._localID}`)
+
+          const possibleSynergies = Object.keys(effectedItems)
+          possibleSynergies.forEach((s, i) => {
+            if(s.includes(item.name)) {
+              // @ts-ignore
+              const synergyDes = `. \nWhen equipped with ${possibleSynergies[i]}, grant the following boosts: ${effectedItems[possibleSynergies[i]]}`
+              if (tes_item._customDescription) {
+                if(tes_item._customDescription.includes(synergyDes)) {
+                  // console.log('found double', tes_item._customDescription)
+                } else {
+                  tes_item._customDescription = tes_item._customDescription + synergyDes
+                }
+              } else {
+                tes_item._customDescription = tes_item.description + synergyDes
+              }
+            }
+          })
+        })
       } catch (error) {
-        // Guild_Masters_Hood
         console.log('tes synergy error: ', error)
       }
-
-// +200 Maximum Hitpoints, +40% chance to resist application of death mark stacks, -10% Damage To Humans, and -40% Damage taken from Elves.
-
-// When equipped with Cuirass of the Crusader, Boots of the Crusader, Helm of the Crusader, Gauntlets of the Crusader, Shield of the Crusader, Cuirass of the Crusader, Boots of the Crusader, Helm of the Crusader, Gauntlets of the Crusader, Cuirass of the Crusader, Boots of the Crusader, Helm of the Crusader, Gauntlets of the Crusader, Amulet Of Kings, Shield of the Crusader, Cuirass of the Crusader, Boots of the Crusader, Helm of the Crusader, Gauntlets of the Crusader
-
-// grant the following boosts: +20% Flat Slayer Area Effect Negation, Combat loot is automatically collected, +40% Auto Eat Efficiency, 10% less Damage taken, +20% Accuracy Rating, Township Health no longer degrades, Immune to all debuffs and damage over time effects, Magic Curses and Auroras can be used without a Magic weapon, -10% Damage taken from Elves, +10000% Accuracy Rating when fighting Elves, +10% Damage Reduction when fighting Elves
       const bannedList: any = {
         "Sweetroll": true,
         "Crown_of_Rhaelyx": true,
