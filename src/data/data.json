@@ -125,6 +125,549 @@
     ],
     "shopPurchases": [
       {
+        "id": "Dunbarrow_Cove",
+        "media": "assets/locations/Dunbarrow_Cove.png",
+        "category": "melvorF:Township",
+        "contains": {
+          "items": [],
+          "modifiers": {
+            "increasedTownshipMaxStorage": 5
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:gold_coin",
+              "quantity": 5500
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Dunbarrow Cove"
+      },
+      {
+        "id": "Frostcrag_Spire",
+        "media": "assets/locations/Frostcrag_Spire.png",
+        "category": "melvorF:Township",
+        "contains": {
+          "items": [],
+          "modifiers": {
+            "increasedTownshipMaxStorage": 5
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:gold_coin",
+              "quantity": 8500
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Frostcrag Spire"
+      },
+      {
+        "id": "Priory_of_the_Nine",
+        "media": "assets/locations/Priory_of_the_Nine_Restored.png",
+        "category": "melvorF:Township",
+        "contains": {
+          "items": [],
+          "modifiers": {
+            "increasedTownshipMaxStorage": 40
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:gold_coin",
+              "quantity": 1000000
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Priory of the Nine"
+      },
+      {
+        "id": "Deepscorn_Hollow",
+        "media": "assets/locations/Deepscorn_Hollow_08.png",
+        "category": "melvorF:Township",
+        "contains": {
+          "items": [],
+          "modifiers": {
+            "increasedTownshipMaxStorage": 20
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:gold_coin",
+              "quantity": 15250
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Deepscorn Hollow"
+      },
+      {
+        "id": "Battlehorn_Castle",
+        "media": "assets/locations/Battlehorn_Castle.png",
+        "category": "melvorF:Township",
+        "contains": {
+          "items": [],
+          "modifiers": {
+            "increasedTownshipMaxStorage": 20
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:gold_coin",
+              "quantity": 15000
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Battlehorn Castle"
+      },
+      {
+        "id": "Skingrad",
+        "media": "assets/locations/Rosethorn_Hall_Exterior.png",
+        "category": "melvorF:Township",
+        "contains": {
+          "items": [],
+          "modifiers": {
+            "increasedTownshipMaxStorage": 20
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:gold_coin",
+              "quantity": 25000
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Rosethorn Hall - Skingrad"
+      },
+      {
+        "id": "Leyawiin",
+        "media": "assets/locations/Leyawiin_House_For_Sale.png",
+        "category": "melvorF:Township",
+        "contains": {
+          "items": [],
+          "modifiers": {
+            "increasedTownshipMaxStorage": 5
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:gold_coin",
+              "quantity": 7000
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Leyawiin"
+      },
+      {
+        "id": "Chorrol",
+        "media": "assets/locations/Arborwatch_02.png",
+        "category": "melvorF:Township",
+        "contains": {
+          "items": [],
+          "modifiers": {
+            "increasedTownshipMaxStorage": 20
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:gold_coin",
+              "quantity": 20000
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Arborwatch - Chorrol"
+      },
+      {
+        "id": "Bruma",
+        "media": "assets/locations/Bruma_House_For_Sale.png",
+        "category": "melvorF:Township",
+        "contains": {
+          "items": [],
+          "modifiers": {
+            "increasedTownshipMaxStorage": 10
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:gold_coin",
+              "quantity": 10000
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Bruma"
+      },
+      {
+        "id": "Bravil",
+        "media": "assets/locations/Bravil_House_For_Sale.png",
+        "category": "melvorF:Township",
+        "contains": {
+          "items": [],
+          "modifiers": {
+            "increasedTownshipMaxStorage": 5
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:gold_coin",
+              "quantity": 4000
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Bravil"
+      },
+      {
+        "id": "Benirus_Manor",
+        "media": "assets/locations/Benirus_Manor_Restored.png",
+        "category": "melvorF:Township",
+        "contains": {
+          "items": [],
+          "modifiers": {
+            "increasedTownshipMaxStorage": 5
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:gold_coin",
+              "quantity": 5000
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Benirus Manor"
+      },
+      {
+        "id": "Cheydinhal",
+        "media": "assets/locations/Cheydinhal_House_For_Sale.png",
+        "category": "melvorF:Township",
+        "contains": {
+          "items": [],
+          "modifiers": {
+            "increasedTownshipMaxStorage": 20
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:gold_coin",
+              "quantity": 15000
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Cheydinhal"
+      },
+      {
+        "id": "Soul_Gem_Shop",
+        "media": "assets/items/Skyrim_Grand_soul_gem.png",
+        "category": "tes:Mages_Guild_Shop",
+        "contains": {
+          "items": [
+            {
+              "id":"tes:Soul_Gem",
+              "quantity": 1
+            }
+          ],
+          "modifiers": {
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:gold_coin",
+              "quantity": 10
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": true,
+        "unlockRequirements": [],
+        "purchaseRequirements": [
+          {
+            "purchaseID": "tes:Arch_Mage_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "defaultBuyLimit": 0,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Soul Gem",
+        "customDescription": "50% chance to recieve double loot in combat, but a 10% chance to recieve nothing."
+      },
+      {
+        "id": "Shack",
+        "media": "assets/locations/Shack_For_Sale.png",
+        "category": "melvorF:Township",
+        "contains": {
+          "items": [],
+          "modifiers": {
+            "increasedTownshipMaxStorage": 5
+          }
+        },
+        "cost": {
+          "gp": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "slayerCoins": {
+            "type": "Fixed",
+            "cost": 0
+          },
+          "items": [
+            {
+              "id": "tes:gold_coin",
+              "quantity": 2000
+            }
+          ],
+          "raidCoins": {
+            "type": "Fixed",
+            "cost": 0
+          }
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Shack - Imperial City"
+      },
+      {
         "id": "Associate_Mage_Rank",
         "media": "assets/icons/mages/Associate.png",
         "category": "tes:Mages_Guild_Shop",
@@ -6979,6 +7522,7 @@
           "tes:Arch_MagesHood_Shop",
           "tes:Arch_MagesRobe_Shop",
           "tes:Summoning_Mage_Apprentice_Shop",
+          "tes:Soul_Gem_Shop",
           "tes:Mages_Random_Loot_Shop",
           "tes:AirRune",
           "tes:MindRune",
@@ -7025,6 +7569,24 @@
           "tes:Black_Hand_Robe_Shop",
           "tes:Scales_of_Pitiless_Justice_Shop",
           "tes:Shadowmere_Shop"
+        ]
+      },
+      {
+        "insertAt": "End",
+        "ids": [
+          "tes:Shack",
+          "tes:Cheydinhal",
+          "tes:Benirus_Manor",
+          "tes:Bravil",
+          "tes:Bruma",
+          "tes:Chorrol",
+          "tes:Leyawiin",
+          "tes:Skingrad",
+          "tes:Battlehorn_Castle",
+          "tes:Deepscorn_Hollow",
+          "tes:Dunbarrow_Cove",
+          "tes:Frostcrag_Spire",
+          "tes:Priory_of_the_Nine"
         ]
       }
     ],
@@ -7077,6 +7639,40 @@
       }
     ],
     "items": [
+      {
+        "id": "Soul_Gem",
+        "name": "Soul Gem",
+        "category": "Combat",
+        "type": "Consumable",
+        "itemType": "Equipment",
+        "consumesOn": [
+          {
+            "type": "MonsterKilled"
+          }
+        ],
+        "media": "assets/items/Skyrim_Grand_soul_gem.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 60,
+        "modifiers": {
+          "increasedChanceToDoubleLootCombat": 50,
+          "increasedChanceToReceiveNoCombatDrops": 10
+        },
+        "equipmentStats": [],
+        "tier": "none",
+        "validSlots": [
+          "Consumable"
+        ],
+        "equipRequirements": [
+          {
+            "purchaseID": "tes:Arch_Mage_Mage_Rank",
+            "count": 1,
+            "type": "ShopPurchase"
+          }
+        ],
+        "occupiesSlots": []
+      },
       {
         "id": "Daedric_Helmet",
         "name": "Daedric Helmet",
@@ -9157,7 +9753,7 @@
       },
       {
         "id": "gold_coin",
-        "name": "Gold Coin",
+        "name": "Septim",
         "customDescription": "The empire is law, The law is sacred",
         "category": "Misc",
         "type": "Coin",

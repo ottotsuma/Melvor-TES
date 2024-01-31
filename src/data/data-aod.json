@@ -529,6 +529,51 @@
             "tes:Skyrim_Grand_soul_gem"
           ],
           "upgradedItemID":"tes:Wraithguard"
+        },
+        {
+          "rootItemIDs": [
+            "melvorAoD:Old_Gold_Coin"
+          ],
+          "upgradedItemID": "tes:gold_coin",
+          "gpCost": 0,
+          "scCost": 0,
+          "isDowngrade": false,
+          "itemCosts": [
+            {
+              "id": "melvorAoD:Old_Gold_Coin",
+              "quantity": 2
+            }
+          ]
+        },
+        {
+          "rootItemIDs": [
+            "melvorAoD:Old_Silver_Coin"
+          ],
+          "upgradedItemID": "tes:gold_coin",
+          "gpCost": 0,
+          "scCost": 0,
+          "isDowngrade": false,
+          "itemCosts": [
+            {
+              "id": "melvorAoD:Old_Silver_Coin",
+              "quantity": 4
+            }
+          ]
+        },
+        {
+          "rootItemIDs": [
+            "melvorAoD:Rusted_Bronze_Coin"
+          ],
+          "upgradedItemID": "tes:gold_coin",
+          "gpCost": 0,
+          "scCost": 0,
+          "isDowngrade": false,
+          "itemCosts": [
+            {
+              "id": "melvorAoD:Rusted_Bronze_Coin",
+              "quantity": 10
+            }
+          ]
         }
       ],
       "itemSynergies": [

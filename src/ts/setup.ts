@@ -723,6 +723,7 @@ export async function setup(ctx: Modding.ModContext) {
     ctx.onCharacterLoaded(ctx => {
       // itemSynergies translations
       // #modal-content-item-stats Try and get it to display only here
+      // #item-view-name
       // #item-view-description
       try {
         const effectedItems = {
@@ -784,7 +785,6 @@ export async function setup(ctx: Modding.ModContext) {
         // @ts-ignore
         found_items.forEach(item => {
           const tes_item = game.items.getObjectByID(`${item._namespace.name}:${item._localID}`)
-
           const possibleSynergies = Object.keys(effectedItems)
           possibleSynergies.forEach((s, i) => {
             if(s.includes(item.name)) {
