@@ -148,12 +148,12 @@ export async function setup(ctx: Modding.ModContext) {
             // @ts-ignore
             for (const [key, value] of Object.entries<string>(languages[lang])) {
               loadedLangJson[key] = value;
-            } 
+            }
           } else {
             // @ts-ignore
             for (const [key, value] of Object.entries<string>(languages.en)) {
               loadedLangJson[key] = value;
-            } 
+            }
           }
           // End Translations
         } catch (error) {
@@ -632,43 +632,6 @@ export async function setup(ctx: Modding.ModContext) {
             // add modifier package
             await ctx.gameData.addPackage('profile.json');
           }
-
-          // itemSynergies translations
-          game.itemSynergies.forEach(synergies => {
-            if(synergies && synergies.length > 0) {
-              const found_items = []
-              const found_items_names = []
-              // const synergy.playerModifiers
-              synergies.forEach(synergy => {
-                synergy.items.forEach(item => {
-                  if(item?._namespace?.name === "tes") {
-                    const tes_item = game.items.getObjectByID(`${item._namespace.name}:${item._localID}`)
-                    if(!found_items_names.includes(item.name))
-                    found_items.push(tes_item)
-                    found_items_names.push(item.name)
-                    // synergy.playerModifiers .push(synergy.playerModifiers)
-                  }
-                })
-              })
-              found_items.forEach(item => {
-                // synergy.playerModifiers
-                if(item?._namespace?.name === "tes") {
-                  const synergyDes = `. When equipped with ${found_items_names}, grant the following boosts: ${}`
-                  const tes_item = game.items.getObjectByID(`${item._namespace.name}:${item._localID}`)
-                  if(tes_item._customDescription) {
-                    tes_item._customDescription = tes_item._customDescription + " + " + "synergy.playerModifiers"
-                  } else {
-                    tes_item._customDescription = tes_item.description + synergyDes
-                  }
-
-                  console.log(item, game.items.getObjectByID(`${item._namespace.name}:${item._localID}`))
-                }
-              })
-            }})
-// "+10% Bleed lifesteal. When equipped with Vampire Lord Armour,Vampire Hood,Vampire Boots,Vampire Gauntlets, grant the following boosts: synergy.playerModifiers + synergy.playerModifiers + synergy.playerModifiers + synergy.playerModifiers"
-            
-
-          // You would create or update entries of ITEM_DESCRIPTION_{ITEM_ID_HERE} while looping through the itemSynergiesData. You would have to create an entry yourself like When equipped with ${items}, grant the following boosts: ${automatically_generated_list_of_benefits}, but both ${items} and ${automatically_generated_list_of_benefits} would just read out existing translations for modifiers, stats, etc. 
         } catch (error) {
           console.log('onModsLoaded packages ', error)
         }
@@ -758,6 +721,80 @@ export async function setup(ctx: Modding.ModContext) {
     });
 
     ctx.onCharacterLoaded(ctx => {
+      // itemSynergies translations
+      // #modal-content-item-stats Try and get it to display only here
+      // #item-view-description
+      try {
+        game.itemSynergies.forEach(synergies => {
+          if (synergies && synergies.length > 0) {
+            // @ts-ignore
+            const found_items = []
+            // @ts-ignore
+            const found_items_names = []
+            let synergyObjectplayerModifiers = {}
+            synergies.forEach(synergy => {
+              synergyObjectplayerModifiers = {
+                ...synergyObjectplayerModifiers,
+                ...synergy.playerModifiers
+              }
+              synergy.items.forEach(item => {
+                // @ts-ignore
+                if (item?._namespace?.name === "tes") {
+                  // @ts-ignore
+                  const tes_item = game.items.getObjectByID(`${item._namespace.name}:${item._localID}`)
+                  // @ts-ignore
+                  if (!found_items_names.includes(item.name)) {
+                    found_items.push(tes_item)
+                  // @ts-ignore
+                  found_items_names.push(item.name)
+                  }
+                }
+              })
+            })
+            // @ts-ignore
+            found_items.forEach(item => {
+              // synergyObjectplayerModifiers
+              if (item?._namespace?.name === "tes") {
+                const entries = Object.entries(synergyObjectplayerModifiers);
+                // @ts-ignore
+                const boosts = []
+                entries.forEach(entry => {
+                  (entry.forEach(e => {
+                    if (typeof e === 'string') {
+                      // @ts-ignore
+                      if(typeof synergyObjectplayerModifiers[e] === "object") {
+                        // @ts-ignore
+                        boosts.push(getLangString("MODIFIER_DATA_" + e).replace('${value}', synergyObjectplayerModifiers[e][0].value).replace('${skillName}', synergyObjectplayerModifiers[e][0].skill._localID).replace('${skillName}', synergyObjectplayerModifiers[e][0].skill._localID))
+                      } else {
+                      // @ts-ignore
+                      boosts.push(getLangString("MODIFIER_DATA_" + e).replace('${value}', synergyObjectplayerModifiers[e]))
+                      }
+                    }                    
+                  }))
+                })
+                // getLangString('increasedChanceToApplyBleed')
+                // @ts-ignore
+                const synergyDes = `. \nWhen equipped with ${found_items_names.join(', ')}, grant the following boosts: ${boosts.join(', ')}`
+                const tes_item = game.items.getObjectByID(`${item._namespace.name}:${item._localID}`)
+                if (tes_item._customDescription) {
+                  // tes_item._customDescription = tes_item._customDescription + " + " + entries
+                } else {
+                  tes_item._customDescription = tes_item.description + synergyDes
+                }
+              }
+            })
+          }
+        })
+      } catch (error) {
+        // Guild_Masters_Hood
+        console.log('tes synergy error: ', error)
+      }
+
+// +200 Maximum Hitpoints, +40% chance to resist application of death mark stacks, -10% Damage To Humans, and -40% Damage taken from Elves.
+
+// When equipped with Cuirass of the Crusader, Boots of the Crusader, Helm of the Crusader, Gauntlets of the Crusader, Shield of the Crusader, Cuirass of the Crusader, Boots of the Crusader, Helm of the Crusader, Gauntlets of the Crusader, Cuirass of the Crusader, Boots of the Crusader, Helm of the Crusader, Gauntlets of the Crusader, Amulet Of Kings, Shield of the Crusader, Cuirass of the Crusader, Boots of the Crusader, Helm of the Crusader, Gauntlets of the Crusader
+
+// grant the following boosts: +20% Flat Slayer Area Effect Negation, Combat loot is automatically collected, +40% Auto Eat Efficiency, 10% less Damage taken, +20% Accuracy Rating, Township Health no longer degrades, Immune to all debuffs and damage over time effects, Magic Curses and Auroras can be used without a Magic weapon, -10% Damage taken from Elves, +10000% Accuracy Rating when fighting Elves, +10% Damage Reduction when fighting Elves
       const bannedList: any = {
         "Sweetroll": true,
         "Crown_of_Rhaelyx": true,
