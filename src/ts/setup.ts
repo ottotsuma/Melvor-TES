@@ -51,6 +51,22 @@ import '../css/styles.css';
 import { languages } from './../language';
 export async function setup(ctx: Modding.ModContext) {
   try {
+      var link1 = document.createElement('link');
+      link1.rel = 'preconnect';
+      link1.href = 'https://fonts.googleapis.com';
+      document.head.appendChild(link1);
+
+      var link2 = document.createElement('link');
+      link2.rel = 'preconnect';
+      link2.href = 'https://fonts.gstatic.com';
+      link2.crossOrigin = 'anonymous'
+      document.head.appendChild(link2);
+
+      var link3 = document.createElement('link');
+      link3.rel = 'stylesheet';
+      link3.href = 'https://fonts.googleapis.com/css2?family=The+Nautigal&display=swap';
+      document.head.appendChild(link3);
+
     modifierData.tes_increasedDragonBreathDamage = {
       get langDescription() {
         return getLangString('tes_increasedDragonBreathDamage');
@@ -729,6 +745,8 @@ export async function setup(ctx: Modding.ModContext) {
         const effectedItems = {
         }
         // @ts-ignore
+        const synergiesForExport = []
+        // @ts-ignore
         const found_items = []
         game.itemSynergies.forEach(synergies => {
           if (synergies && synergies.length > 0) {
@@ -749,6 +767,8 @@ export async function setup(ctx: Modding.ModContext) {
                       found_items_names.push(item.name)
                       // @ts-ignore
                       if (!found_items.includes(item)) found_items.push(item)
+                      // @ts-ignore
+                      if (!synergiesForExport.includes(synergy)) synergiesForExport.push(synergy)
                     }
                   }
                 }
@@ -784,7 +804,7 @@ export async function setup(ctx: Modding.ModContext) {
         // real item
         // @ts-ignore
         found_items.forEach(item => {
-          const tes_item = game.items.getObjectByID(`${item._namespace.name}:${item._localID}`)
+          const tes_item = game.items.getObjectByID(item._namespace.name + ":" + item._localID)
           const possibleSynergies = Object.keys(effectedItems)
           possibleSynergies.forEach((s, i) => {
             if(s.includes(item.name)) {
@@ -792,7 +812,7 @@ export async function setup(ctx: Modding.ModContext) {
               const synergyDes = `. \nWhen equipped with ${possibleSynergies[i]}, grant the following boosts: ${effectedItems[possibleSynergies[i]]}`
               if (tes_item._customDescription) {
                 if(tes_item._customDescription.includes(synergyDes)) {
-                  // console.log('found double', tes_item._customDescription)
+                  // console.log('found double')
                 } else {
                   tes_item._customDescription = tes_item._customDescription + synergyDes
                 }
@@ -802,6 +822,8 @@ export async function setup(ctx: Modding.ModContext) {
             }
           })
         })
+        // @ts-ignore
+        game.tes_itemSynergies = synergiesForExport
       } catch (error) {
         console.log('tes synergy error: ', error)
       }

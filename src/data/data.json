@@ -7685,7 +7685,7 @@
         "sellsFor": 1400,
         "itemType": "Equipment",
         "modifiers": {
-          "increasedDamageDealtPerEffect": 5
+          "increasedDamageToAllMonsters": 1
         },
         "equipmentStats": [
           {
@@ -7734,7 +7734,7 @@
         "sellsFor": 3500,
         "itemType": "Equipment",
         "modifiers": {
-          "increasedDamageDealtPerEffect": 5
+          "increasedDamageToAllMonsters": 1
         },
         "equipmentStats": [
           {
@@ -7783,7 +7783,7 @@
         "sellsFor": 2300,
         "itemType": "Equipment",
         "modifiers": {
-          "increasedDamageDealtPerEffect": 5
+          "increasedDamageToAllMonsters": 1
         },
         "equipmentStats": [
           {
@@ -7832,7 +7832,7 @@
         "sellsFor": 1300,
         "itemType": "Equipment",
         "modifiers": {
-          "increasedDamageDealtPerEffect": 5
+          "increasedDamageToAllMonsters": 1
         },
         "equipmentStats": [
           {
@@ -7873,7 +7873,7 @@
         "sellsFor": 900,
         "itemType": "Equipment",
         "modifiers": {
-          "increasedDamageDealtPerEffect": 5
+          "increasedDamageToAllMonsters": 1
         },
         "equipmentStats": [
           {
@@ -7918,7 +7918,7 @@
         "sellsFor": 900,
         "itemType": "Equipment",
         "modifiers": {
-          "increasedDamageDealtPerEffect": 5
+          "increasedDamageToAllMonsters": 1
         },
         "equipmentStats": [
           {

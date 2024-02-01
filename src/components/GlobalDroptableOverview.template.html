@@ -6,26 +6,32 @@
                     <div class="row no-gutters">
                         <div class="col-12">
                             <ul class="font-w600 text-warning">
-                                <li><lang-string lang-id="tes_Bards_College_Global_Droptable_Overview_General_Functionality"></lang-string></li>
-                                <li><lang-string lang-id="tes_Bards_College_Global_Droptable_Overview_Item_Pickup_Info"></lang-string></li>
-                                <li><lang-string lang-id="tes_Bards_College_Global_Droptable_Overview_Dungeon_Limitation"></lang-string></li>
+                                <li><lang-string
+                                        lang-id="tes_Bards_College_Global_Droptable_Overview_General_Functionality"></lang-string>
+                                </li>
+                                <li><lang-string
+                                        lang-id="tes_Bards_College_Global_Droptable_Overview_Item_Pickup_Info"></lang-string>
+                                </li>
+                                <li><lang-string
+                                        lang-id="tes_Bards_College_Global_Droptable_Overview_Dungeon_Limitation"></lang-string>
+                                </li>
                             </ul>
                             <div class="row">
-                                <div v-for="item in items"
-                                     class="col-12 col-lg-6 col-xl-6 p-2">
+                                <div v-for="item in items" class="col-12 col-lg-6 col-xl-6 p-2">
                                     <div class="block block-content block-rounded block-link-pop border border-2x">
                                         <div class="media d-flex align-items-center push">
                                             <div class="mr-3">
-                                                <img class="global-droptable-overview-image"
-                                                     v-bind:title="item.name"
-                                                     v-bind:src="item.media">
+                                                <img class="global-droptable-overview-image" v-bind:title="item.name"
+                                                    v-bind:src="item.media">
                                             </div>
                                             <div class="media-body">
                                                 <div class="font-w600">
                                                     {{ item.name }}
                                                 </div>
                                                 <div class="font-size-sm">
-                                                    <lang-string lang-id="tes_Bards_College_Global_Droptable_Overview_Base_Droprate"></lang-string>: 1 / {{ item.baseChanceDenominator }}
+                                                    <lang-string
+                                                        lang-id="tes_Bards_College_Global_Droptable_Overview_Base_Droprate"></lang-string>:
+                                                    1 / {{ item.baseChanceDenominator }}
                                                 </div>
                                                 <div class="font-size-sm d-none">
                                                 </div>
@@ -47,6 +53,44 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="background-color: #232a35!important;">
+            <h1
+                style="text-align: center; padding-top: 10px; color: #f5f5f5!important; font-family: 'The Nautigal', cursive; ">
+                Book of synergies</h1>
+            <div style="background-color: #232a35!important; color: #f5f5f5!important; padding: 10px; border: solid white; text-align: center;"
+                v-for="synergy in game.tes_itemSynergies">
+                <div v-for="item in synergy.items">
+                    <div>{{item._name}}</div>
+                    <!-- <img :src="getMediaURL(item._media)" /> -->
+                </div>
+                <div v-for="playerModifier in Object.keys(synergy.playerModifiers)">
+                    <div>
+                        <div v-if="playerModifier.includes('tes_')">
+                            {{getLangString(playerModifier).replace('${value}',
+                            synergy.playerModifiers[playerModifier]).replace('${skillName}',
+                            synergy.playerModifiers[playerModifier]).replace('${skillName}',
+                            synergy.playerModifiers[playerModifier])}}
+                        </div>
+                        <div v-else-if="playerModifier === 'allowUnholyPrayerUse'">
+                            Allows Unholy Prayers to be used if equipped with one other item that allows for Unholy
+                            Prayers
+                        </div>
+                        <div v-else-if="typeof synergy.playerModifiers[playerModifier] === 'object' ">
+                            {{getLangString("MODIFIER_DATA_" + playerModifier).replace('${value}',
+                            synergy.playerModifiers[playerModifier][0].skill.value).replace('${skillName}',
+                            synergy.playerModifiers[playerModifier][0].skill._localID).replace('${skillName}',
+                            synergy.playerModifiers[playerModifier][0].skill._localID)}}
+                        </div>
+                        <div v-else>
+                            {{getLangString("MODIFIER_DATA_" + playerModifier).replace('${value}',
+                            synergy.playerModifiers[playerModifier]).replace('${skillName}',
+                            synergy.playerModifiers[playerModifier]).replace('${skillName}',
+                            synergy.playerModifiers[playerModifier])}}
                         </div>
                     </div>
                 </div>

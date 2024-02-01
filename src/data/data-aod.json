@@ -587,7 +587,6 @@
             "tes:Daedric_Shield"
           ],
           "playerModifiers": {
-            "allowUnholyPrayerUse": 1,
             "increasedUnholyMarkOnHit": 1
           }
         }
@@ -595,6 +594,54 @@
     },
     "modifications": {
       "items": [
+        {
+          "id": "tes:Daedric_Boots",
+          "modifiers": {
+            "add":{
+                "allowUnholyPrayerUse": 1
+            }
+          }
+        },
+        {
+          "id": "tes:Daedric_Gauntlets",
+          "modifiers": {
+            "add":{
+                "allowUnholyPrayerUse": 1
+            }
+          }
+        },
+        {
+          "id": "tes:Daedric_Greaves",
+          "modifiers": {
+            "add":{
+                "allowUnholyPrayerUse": 1
+            }
+          }
+        },
+        {
+          "id": "tes:Daedric_Helmet",
+          "modifiers": {
+            "add":{
+                "allowUnholyPrayerUse": 1
+            }
+          }
+        },
+        {
+          "id": "tes:Daedric_Shield",
+          "modifiers": {
+            "add":{
+                "allowUnholyPrayerUse": 1
+            }
+          }
+        },
+        {
+          "id": "tes:Daedric_Armor",
+          "modifiers": {
+            "add":{
+                "allowUnholyPrayerUse": 1
+            }
+          }
+        },
         {
           "id": "tes:Staff_of_Worms",
           "modifiers": {
