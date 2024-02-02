@@ -114,7 +114,7 @@
                 are calculated based on Dragon Arrows</p>
             <div style="background-color: #232a35!important; color: #f5f5f5!important; padding: 10px; border: solid white; text-align: center;"
                 v-for="item in game.tes_weapons">
-                <div
+                <div 
                     v-bind:style="{ color: game.calcItemLevel(item) !== 'string' && game.calcItemLevel(item) < game.calcItemLevel(game.items.getObjectByID('melvorD:Bronze_Dagger')) ? 'red' : game.calcItemLevel(item) !== 'string' && game.calcItemLevel(item) > Math.floor(game.calcItemLevel(game.items.getObjectByID('melvorF:Ultima_Godsword'))) ? 'green' : '' }">
                     {{item._name}}: {{game.calcItemLevel(item)}}</div>
             </div>
