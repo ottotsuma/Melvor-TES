@@ -67,6 +67,15 @@ export async function setup(ctx: Modding.ModContext) {
     link3.href = 'https://fonts.googleapis.com/css2?family=The+Nautigal&display=swap';
     document.head.appendChild(link3);
 
+    const BardDrops = ctx.settings.section('tes');
+    BardDrops.add({
+      type: 'switch',
+      default: false,
+      name: 'bard_drops',
+      label: 'Stop bard drops?',
+      hint: ''
+    } as Modding.Settings.RadioGroupConfig);
+
     modifierData.tes_increasedDragonBreathDamage = {
       get langDescription() {
         return getLangString('tes_increasedDragonBreathDamage');
@@ -654,8 +663,84 @@ export async function setup(ctx: Modding.ModContext) {
         }
         // skill patches
         try {
-          ctx.patch(CombatManager, "onEnemyDeath").after(() => {
-            try {
+          // @ts-ignore
+          ctx.patch(Skill, 'levelUp').after(() => {
+            // addXP
+            if (game && game.activeAction && game.activeAction._localID) {
+              if (game.activeAction._localID === "Magic") {
+                if (rollPercentage(10)) {
+                  const tes_item = game.items.getObjectByID("tes:magic_mask");
+                  if (tes_item === undefined) {
+                    throw new Error(`Invalid item ID "tes:magic_mask"`);
+                  }
+                  game.bank.addItem(tes_item, 1, true, true, false);
+                }
+              }
+              if (game.activeAction._localID === "Combat") {
+                if (rollPercentage(10)) {
+                  const tes_item = game.items.getObjectByID("tes:dragonbornhat");
+                  if (tes_item === undefined) {
+                    throw new Error(`Invalid item ID "tes:dragonbornhat"`);
+                  }
+                  game.bank.addItem(tes_item, 1, true, true, false);
+                }
+              }
+            }
+          })
+        } catch (error) {
+          console.log('onModsLoaded skill patches ', error)
+        }
+      } catch (error) {
+        console.log("onModsLoaded", error)
+      }
+      // @ts-ignore
+      console.log('Tes onModsLoaded time: ', (start - new Date()) / (1000) * -1, ' seconds');
+    });
+
+    ctx.onCharacterLoaded(ctx => {
+      let start = new Date();
+      // Local variables
+      const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
+      // const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
+      // const profileSkill = mod.manager.getLoadedModList().includes('Class &amp; Species')
+      // const TothEntitlement = cloudManager.hasTotHEntitlement
+      // const AoDEntitlement = cloudManager.hasAoDEntitlement
+
+      function calcItemLevel(item: WeaponItemData) {
+        try {
+          if (item && item.type === "Weapon" || item.type === "Ranged Weapon" || item.type === "Magic Staff" || item.type === "Magic Wand") {
+            // item = game.items.getObjectByID('melvorD:Dragon_Dagger')
+            // const target = game.monsters.getObjectByID('melvorD:Plant')
+            const player = game.combat.player
+            const effectiveSkillLevel = item.attackType === 'melee' ? player.levels.Strength : item.attackType === 'ranged' ? player.levels.Ranged : player.levels.Magic
+            const accuracy = player.stats ? player.stats.accuracy : 43000
+            const targetEvasion = item.attackType === 'melee' ? 220 : item.attackType === 'ranged' ? 640 : 640
+            const chanceToHit = (1 - (targetEvasion / (2 * accuracy))) * 100
+            const strengthBonus = item.attackType === 'melee' ? item.equipmentStats.find(stat => stat.key === 'meleeStrengthBonus')?.value : item.attackType === 'ranged' ? item.equipmentStats.find(stat => stat.key === 'rangedStrengthBonus')?.value + 60 : item.attackType === 'magic' ? item.equipmentStats.find(stat => stat.key === 'magicDamageBonus')?.value : 0
+            const spellMaxHit = 255
+            const baseMaxHit = item.attackType === 'magic' ? spellMaxHit * (1 + (strengthBonus / 100)) * (1 + ((effectiveSkillLevel + 1) / 200)) : 10 * (2.2 + (effectiveSkillLevel / 10) + ((effectiveSkillLevel + 17) / 640) * strengthBonus)
+            const percentMaxHitModifer = player.modifiers ? player.modifiers.increasedMaxHitPercent : 0
+            const flatDam = player.modifiers ? player.modifiers.increasedMaxHitFlat : 0
+            const minToMaxPerc = player.modifiers ? player.modifiers.increasedMinHitBasedOnMaxHit : 0
+            const maxHit = baseMaxHit * (1 + (percentMaxHitModifer / 100)) + flatDam
+            const minHit = Math.min(Math.max(1 + maxHit * minToMaxPerc + flatDam, 1), maxHit)
+            const avgHit = ((maxHit + minHit) / 2) * (1 - 0)
+            const interval = item.equipmentStats.find(stat => stat.key === 'attackSpeed')?.value
+            const dps = (avgHit / interval) * chanceToHit
+            return dps ? dps : "Weapon failed"
+          } else {
+            return "Non Weapon items cannot be processed yet"
+          }
+        } catch (error) {
+          return "There was an error with this item"
+        }
+      }
+      try {
+        // @ts-ignore
+        game.calcItemLevel = calcItemLevel
+        ctx.patch(CombatManager, "onEnemyDeath").after(() => {
+          try {
+            if (!ctx.settings.section('tes').get('bard_drops')) {
               const combatLevel = game.combat.enemy.monster.combatLevel
               // Inverse: 1 / 10,000
               // if (combatLevel > 200 && Math.random() < ((combatLevel * Math.random()) / 10000)) {
@@ -701,78 +786,14 @@ export async function setup(ctx: Modding.ModContext) {
                   game.bank.addItem(tes_item, 1, true, true, false);
                 }
               }
-            } catch (error) {
-              console.log("onEnemyDeath patch ", error)
             }
-          });
-          // @ts-ignore
-          ctx.patch(Skill, 'levelUp').after(() => {
-            // addXP
-            if (game && game.activeAction && game.activeAction._localID) {
-              if (game.activeAction._localID === "Magic") {
-                if (rollPercentage(10)) {
-                  const tes_item = game.items.getObjectByID("tes:magic_mask");
-                  if (tes_item === undefined) {
-                    throw new Error(`Invalid item ID "tes:magic_mask"`);
-                  }
-                  game.bank.addItem(tes_item, 1, true, true, false);
-                }
-              }
-              if (game.activeAction._localID === "Combat") {
-                if (rollPercentage(10)) {
-                  const tes_item = game.items.getObjectByID("tes:dragonbornhat");
-                  if (tes_item === undefined) {
-                    throw new Error(`Invalid item ID "tes:dragonbornhat"`);
-                  }
-                  game.bank.addItem(tes_item, 1, true, true, false);
-                }
-              }
-            }
-          })
-        } catch (error) {
-          console.log('onModsLoaded skill patches ', error)
-        }
-      } catch (error) {
-        console.log("onModsLoaded", error)
-      }
-      // @ts-ignore
-      console.log('Tes onModsLoaded time: ', (start - new Date()) / (1000) * -1, ' seconds');
-    });
-
-    ctx.onCharacterLoaded(ctx => {
-      let start = new Date();
-      function calcItemLevel(item: WeaponItemData) {
-        try {
-          if (item && item.type === "Weapon" || item.type === "Ranged Weapon" || item.type === "Magic Staff" || item.type === "Magic Wand") {
-            // item = game.items.getObjectByID('melvorD:Dragon_Dagger')
-            // const target = game.monsters.getObjectByID('melvorD:Plant')
-            const player = game.combat.player
-            const effectiveSkillLevel = item.attackType === 'melee' ? player.levels.Strength : item.attackType === 'ranged' ? player.levels.Ranged : player.levels.Magic
-            const accuracy = player.stats ? player.stats.accuracy : 43000
-            const targetEvasion = item.attackType === 'melee' ? 220 : item.attackType === 'ranged' ? 640 : 640
-            const chanceToHit = (1 - (targetEvasion / (2 * accuracy))) * 100
-            const strengthBonus = item.attackType === 'melee' ? item.equipmentStats.find(stat => stat.key === 'meleeStrengthBonus')?.value : item.attackType === 'ranged' ? item.equipmentStats.find(stat => stat.key === 'rangedStrengthBonus')?.value + 60 : item.attackType === 'magic' ? item.equipmentStats.find(stat => stat.key === 'magicDamageBonus')?.value : 0
-            const spellMaxHit = 255
-            const baseMaxHit = item.attackType === 'magic' ? spellMaxHit * (1 + (strengthBonus / 100)) * (1 + ((effectiveSkillLevel + 1) / 200)) : 10 * (2.2 + (effectiveSkillLevel / 10) + ((effectiveSkillLevel + 17) / 640) * strengthBonus)
-            const percentMaxHitModifer = player.modifiers ? player.modifiers.increasedMaxHitPercent : 0
-            const flatDam = player.modifiers ? player.modifiers.increasedMaxHitFlat : 0
-            const minToMaxPerc = player.modifiers ? player.modifiers.increasedMinHitBasedOnMaxHit : 0
-            const maxHit = baseMaxHit * (1 + (percentMaxHitModifer / 100)) + flatDam
-            const minHit = Math.min(Math.max(1 + maxHit * minToMaxPerc + flatDam, 1), maxHit)
-            const avgHit = ((maxHit + minHit) / 2) * (1 - 0)
-            const interval = item.equipmentStats.find(stat => stat.key === 'attackSpeed')?.value
-            const dps = (avgHit / interval) * chanceToHit
-            return dps ? dps : "Weapon failed"
-          } else {
-            return "Non Weapon items cannot be processed yet"
+          } catch (error) {
+            console.log("onEnemyDeath patch ", error)
           }
-        } catch (error) {
-          return "There was an error with this item"
-        }
+        });
+      } catch (error) {
+        
       }
-      // @ts-ignore
-      game.calcItemLevel = calcItemLevel
-
       try {
         const effectedItems = {
         }
