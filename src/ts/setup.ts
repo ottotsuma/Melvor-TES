@@ -793,20 +793,45 @@ export async function setup(ctx: Modding.ModContext) {
 
       function calcItemLevel(item: WeaponItemData) {
         try {
-          if (item && item.type === "Weapon" || item.type === "Ranged Weapon" || item.type === "Magic Staff" || item.type === "Magic Wand") {
+          if (item && item.attackType) {
             // item = game.items.getObjectByID('melvorD:Dragon_Dagger')
             // const target = game.monsters.getObjectByID('melvorD:Plant')
             const player = game.combat.player
             const effectiveSkillLevel = item.attackType === 'melee' ? player.levels.Strength : item.attackType === 'ranged' ? player.levels.Ranged : player.levels.Magic
-            const accuracy = player.stats ? player.stats.accuracy : 43000
-            const targetEvasion = item.attackType === 'melee' ? 220 : item.attackType === 'ranged' ? 640 : 640
-            const chanceToHit = (1 - (targetEvasion / (2 * accuracy))) * 100
+            // baseaccuracybonus = all attack bonuses found in equipmentstats 
+            // accuracymodifier = modifiers on the item & all other sources but here just the item
+            // const accuracy = (effectiveSkillLevel+9) * (baseaccuracybonus + 64) * (1 + (accuracymodifier / 100))
+            // const accuracy = player.stats ? player.stats.accuracy : 43000
+            // const targetEvasion = item.attackType === 'melee' ? 220 : item.attackType === 'ranged' ? 640 : 640
+            // const chanceToHit = (1 - (targetEvasion / (2 * accuracy))) * 100
+            const chanceToHit = 100
             const strengthBonus = item.attackType === 'melee' ? item.equipmentStats.find(stat => stat.key === 'meleeStrengthBonus')?.value : item.attackType === 'ranged' ? item.equipmentStats.find(stat => stat.key === 'rangedStrengthBonus')?.value + 60 : item.attackType === 'magic' ? item.equipmentStats.find(stat => stat.key === 'magicDamageBonus')?.value : 0
             const spellMaxHit = 255
             const baseMaxHit = item.attackType === 'magic' ? spellMaxHit * (1 + (strengthBonus / 100)) * (1 + ((effectiveSkillLevel + 1) / 200)) : 10 * (2.2 + (effectiveSkillLevel / 10) + ((effectiveSkillLevel + 17) / 640) * strengthBonus)
-            const percentMaxHitModifer = player.modifiers ? player.modifiers.increasedMaxHitPercent : 0
-            const flatDam = player.modifiers ? player.modifiers.increasedMaxHitFlat : 0
-            const minToMaxPerc = player.modifiers ? player.modifiers.increasedMinHitBasedOnMaxHit : 0
+            let percentMaxHitModifer = item.modifiers?.increasedMaxHitPercent ? item.modifiers?.increasedMaxHitPercent : 0
+            let flatDam = item.modifiers?.increasedMaxHitFlat ? item.modifiers?.increasedMaxHitFlat : 0
+            const minToMaxPerc = item.modifiers?.increasedMinHitBasedOnMaxHit ? item.modifiers?.increasedMinHitBasedOnMaxHit : 0
+            if(item.attackType === 'melee') {
+              percentMaxHitModifer = percentMaxHitModifer + item.modifiers?.increasedMeleeMaxHit || 0
+              percentMaxHitModifer = percentMaxHitModifer - item.modifiers?.decreasedMeleeMaxHit || 0
+
+              flatDam = flatDam + item.modifiers?.increasedMeleeMaxHitFlat || 0
+              flatDam = flatDam - item.modifiers?.decreasedMeleeMaxHitFlat || 0
+            }
+            if(item.attackType === 'ranged') {
+              percentMaxHitModifer = percentMaxHitModifer + item.modifiers?.increasedRangedMaxHit || 0
+              percentMaxHitModifer = percentMaxHitModifer - item.modifiers?.decreasedRangedMaxHit || 0
+
+              flatDam = flatDam + item.modifiers?.increasedRangedMaxHitFlat || 0
+              flatDam = flatDam - item.modifiers?.decreasedRangedMaxHitFlat || 0
+            }
+            if(item.attackType === 'magic') {
+              percentMaxHitModifer = percentMaxHitModifer + item.modifiers?.increasedMagicMaxHit || 0
+              percentMaxHitModifer = percentMaxHitModifer - item.modifiers?.decreasedMagicMaxHit || 0
+
+              flatDam = flatDam + item.modifiers?.increasedMagicMaxHitFlat || 0
+              flatDam = flatDam - item.modifiers?.decreasedMagicMaxHitFlat || 0
+            }
             const maxHit = baseMaxHit * (1 + (percentMaxHitModifer / 100)) + flatDam
             const minHit = Math.min(Math.max(1 + maxHit * minToMaxPerc + flatDam, 1), maxHit)
             const avgHit = ((maxHit + minHit) / 2) * (1 - 0)
@@ -1120,7 +1145,8 @@ export async function setup(ctx: Modding.ModContext) {
           game.items.registeredObjects.forEach((item: AnyItem) => {
             try {
               if (item) {
-                if (item.type === "Weapon" || item.type === "Ranged Weapon" || item.type === "Magic Staff" || item.type === "Magic Wand") {
+                // @ts-ignore
+                if (item?.attackType) {
                   listOfAllWeapons.push(item)
                 }
                 // Skip the item if its localID is in the bannedList
@@ -1812,43 +1838,3 @@ export async function setup(ctx: Modding.ModContext) {
 //       console.log(calcItemLevel(items[index]))
 //   }
 // }
-
-// 'Staff of Worms 4.84440746124031'
-// 'Mace of the Crusader 12.237170012718023'
-// 'Sword of the Crusader 11.867999636627907'
-// 'Blades Sword 6.307715827882752'
-// 'Alikri Fishing Rod 2.3368885255167955'
-// 'Dwarven Fishing Rod 2.3368885255167955'
-// 'Fishing Rod 2.3368885255167955'
-// 'Argonian Fishing Rod 2.3368885255167955'
-// 'Bard\'s Lute 2.7090719880490957'
-// 'Bard\'s Flute 2.1188789970930233'
-// 'Bard\'s Drum 3.374808169815891'
-// 'Sinestral Elven Blade 9.735042298782703'
-// 'Chrysamere 9.735042298782703'
-// 'Sinweaver 6.639725126594149'
-// 'Rugdumph\'s Sword 3.861190952034884'
-// 'Spear of Bitter Mercy 8.782683381782945'
-// 'Ice Blade of the Monarch 6.490991440568476'
-// 'Skull Crusher 11.18826972591362'
-// 'Giant Club 11.41706299363756'
-// 'Goblin Totem Staff 3.0738284883720928'
-// 'Calipers NaN'
-// 'Shadowhunt 5.552639050387597'
-// 'Sufferthorn 4.309260537790697'
-// 'Dagger of Discipline 3.505332788275193'
-// 'Blade Of Woe 5.182730576109937'
-// 'Nightingale Orb 5.612864583333333'
-// 'Nightingale Blade 7.4197725896317825'
-// 'Nightingale Bow 7.088105813953488'
-// 'Wabbajack 5.673090116279069'
-// 'Skull of Corruption 5.673090116279069'
-// 'Sanguine Rose 5.673090116279069'
-// 'Mace of Molag Bal 11.005864164904862'
-// 'Ebony Blade 9.97130159883721'
-// 'Mehrunes\' Razor 6.234790879360465'
-// 'Daedric Crescent 9.975665406976745'
-// 'Volendrung 22.652131342494716'
-// 'Dawnbreaker 9.064819635306554'
-// 'Goldbrand 9.064819635306554'
-// 'Umbra Sword 9.064819635306554'
