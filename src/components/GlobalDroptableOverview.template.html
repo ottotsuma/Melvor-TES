@@ -21,7 +21,7 @@
                                     <div class="block block-content block-rounded block-link-pop border border-2x">
                                         <div class="media d-flex align-items-center push">
                                             <div class="mr-3">
-                                                <img class="global-droptable-overview-image" v-bind:title="item.name"
+                                                <img style="width: 64px; margin: 6px;" class="global-droptable-overview-image" v-bind:title="item.name"
                                                     v-bind:src="item.media">
                                             </div>
                                             <div class="media-body">
@@ -66,7 +66,8 @@
                 v-for="synergy in game.tes_itemSynergies">
                 <div v-for="item in synergy.items">
                     <div>{{item._name}}</div>
-                    <!-- <img :src="getMediaURL(item._media)" /> -->
+                    <img style="width: 64px; margin: 6px;" class="global-droptable-overview-image" v-bind:title="item.name"
+                    v-bind:src="item.media">
                 </div>
                 <div v-for="playerModifier in Object.keys(synergy.playerModifiers)">
                     <div>
@@ -82,7 +83,7 @@
                         </div>
                         <div v-else-if="typeof synergy.playerModifiers[playerModifier] === 'object' ">
                             {{getLangString("MODIFIER_DATA_" + playerModifier).replace('${value}',
-                            synergy.playerModifiers[playerModifier][0].skill.value).replace('${skillName}',
+                            synergy.playerModifiers[playerModifier][0].value).replace('${skillName}',
                             synergy.playerModifiers[playerModifier][0].skill._localID).replace('${skillName}',
                             synergy.playerModifiers[playerModifier][0].skill._localID)}}
                         </div>
@@ -94,6 +95,18 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div style="background-color: #232a35!important;">
+            <h1
+                style="text-align: center; padding-top: 10px; color: #f5f5f5!important;">Book of Balance: Vol 1 - Weapons</h1>
+                <p style=" margin-bottom:0; text-align: center; padding-top: 10px; color: #f5f5f5!important;">Items are rated with the players current modifiers and levels. So if you're level 1 in ranged, you can expect ranged items to rank low.</p>
+                <p style=" margin-bottom:0; text-align: center; padding-top: 10px; color: #f5f5f5!important;">Red is worse then a bronze dagger; Green is better then a God sword. [Kind of]</p>
+                <p style=" margin-bottom:0; text-align: center; padding-top: 10px; color: #f5f5f5!important;">Magic weapons are calculated based on Fire Surge</p>
+                <p style=" margin-bottom:0; text-align: center; padding-top: 10px; color: #f5f5f5!important;">Ranged weapons are calculated based on Dragon Arrows</p>
+            <div style="background-color: #232a35!important; color: #f5f5f5!important; padding: 10px; border: solid white; text-align: center;" v-for="item in game.tes_weapons">
+                    <div  v-bind:style="{ color: game.calcItemLevel(item) !== 'string' && game.calcItemLevel(item) <3 ? 'red' : game.calcItemLevel(item) !== 'string' && game.calcItemLevel(item) > 11 ? 'green' : '' }" >{{item._name}}: {{game.calcItemLevel(item)}}</div>
             </div>
         </div>
     </div>

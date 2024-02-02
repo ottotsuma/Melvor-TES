@@ -11008,7 +11008,7 @@
         "name": "Boots of the Apostle",
         "media": "assets/items/Boots_of_the_Apostle.png",
         "category": "Armour",
-        "type": "Boots",
+        "type": "Armour",
         "ignoreCompletion": false,
         "obtainFromItemLog": false,
         "golbinRaidExclusive": false,
@@ -11255,6 +11255,10 @@
           {
             "key": "magicAttackBonus",
             "value": 12
+          },
+          {
+            "key": "magicDamageBonus",
+            "value": 0
           },
           {
             "key": "damageReduction",
@@ -12223,7 +12227,7 @@
         "id": "Boots_of_Bloody_Bounding",
         "name": "Boots of Bloody Bounding",
         "category": "Combat",
-        "type": "Weapon",
+        "type": "Armour",
         "media": "assets/items/Boots_of_Bloody_Bounding.png",
         "ignoreCompletion": false,
         "obtainFromItemLog": false,

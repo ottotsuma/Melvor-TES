@@ -51,21 +51,21 @@ import '../css/styles.css';
 import { languages } from './../language';
 export async function setup(ctx: Modding.ModContext) {
   try {
-      var link1 = document.createElement('link');
-      link1.rel = 'preconnect';
-      link1.href = 'https://fonts.googleapis.com';
-      document.head.appendChild(link1);
+    var link1 = document.createElement('link');
+    link1.rel = 'preconnect';
+    link1.href = 'https://fonts.googleapis.com';
+    document.head.appendChild(link1);
 
-      var link2 = document.createElement('link');
-      link2.rel = 'preconnect';
-      link2.href = 'https://fonts.gstatic.com';
-      link2.crossOrigin = 'anonymous'
-      document.head.appendChild(link2);
+    var link2 = document.createElement('link');
+    link2.rel = 'preconnect';
+    link2.href = 'https://fonts.gstatic.com';
+    link2.crossOrigin = 'anonymous'
+    document.head.appendChild(link2);
 
-      var link3 = document.createElement('link');
-      link3.rel = 'stylesheet';
-      link3.href = 'https://fonts.googleapis.com/css2?family=The+Nautigal&display=swap';
-      document.head.appendChild(link3);
+    var link3 = document.createElement('link');
+    link3.rel = 'stylesheet';
+    link3.href = 'https://fonts.googleapis.com/css2?family=The+Nautigal&display=swap';
+    document.head.appendChild(link3);
 
     modifierData.tes_increasedDragonBreathDamage = {
       get langDescription() {
@@ -140,6 +140,7 @@ export async function setup(ctx: Modding.ModContext) {
     const bards_college_items: any[] = []
 
     ctx.onModsLoaded(async (ctx) => {
+      let start = new Date();
       try {
         // Local variables
         const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
@@ -734,16 +735,51 @@ export async function setup(ctx: Modding.ModContext) {
       } catch (error) {
         console.log("onModsLoaded", error)
       }
+      // @ts-ignore
+      console.log('Tes onModsLoaded time: ', (start - new Date()) / (1000) * -1, ' seconds');
     });
 
     ctx.onCharacterLoaded(ctx => {
-      // itemSynergies translations
-      // #modal-content-item-stats Try and get it to display only here
-      // #item-view-name
-      // #item-view-description
+      let start = new Date();
+      function calcItemLevel(item: WeaponItemData) {
+        try {
+          if (item && item.type === "Weapon" || item.type === "Ranged Weapon" || item.type === "Magic Staff" || item.type === "Magic Wand") {
+            // item = game.items.getObjectByID('melvorD:Dragon_Dagger')
+            // const target = game.monsters.getObjectByID('melvorD:Plant')
+            const player = game.combat.player
+            const effectiveSkillLevel = item.attackType === 'melee' ? player.levels.Strength : item.attackType === 'ranged' ? player.levels.Ranged : player.levels.Magic
+            const accuracy = player.stats ? player.stats.accuracy : 43000
+            const targetEvasion = item.attackType === 'melee' ? 220 : item.attackType === 'ranged' ? 640 : 640
+            const chanceToHit = (1 - (targetEvasion / (2 * accuracy))) * 100
+            const strengthBonus = item.attackType === 'melee' ? item.equipmentStats.find(stat => stat.key === 'meleeStrengthBonus')?.value : item.attackType === 'ranged' ? item.equipmentStats.find(stat => stat.key === 'rangedStrengthBonus')?.value + 60 : item.attackType === 'magic' ? item.equipmentStats.find(stat => stat.key === 'magicDamageBonus')?.value : 0
+            const spellMaxHit = 255
+            const baseMaxHit = item.attackType === 'magic' ? spellMaxHit * (1 + (strengthBonus / 100)) * (1 + ((effectiveSkillLevel + 1) / 200)) : 10 * (2.2 + (effectiveSkillLevel / 10) + ((effectiveSkillLevel + 17) / 640) * strengthBonus)
+            const percentMaxHitModifer = player.modifiers ? player.modifiers.increasedMaxHitPercent : 0
+            const flatDam = player.modifiers ? player.modifiers.increasedMaxHitFlat : 0
+            const minToMaxPerc = player.modifiers ? player.modifiers.increasedMinHitBasedOnMaxHit : 0
+            const maxHit = baseMaxHit * (1 + (percentMaxHitModifer / 100)) + flatDam
+            const minHit = Math.min(Math.max(1 + maxHit * minToMaxPerc + flatDam, 1), maxHit)
+            const avgHit = ((maxHit + minHit) / 2) * (1 - 0)
+            const interval = item.equipmentStats.find(stat => stat.key === 'attackSpeed')?.value
+            const dps = (avgHit / interval) * chanceToHit
+            return dps ? dps : "Weapon failed"
+          } else {
+            return "Non Weapon items cannot be processed yet"
+          }
+        } catch (error) {
+          return "There was an error with this item"
+        }
+      }
+      // @ts-ignore
+      game.calcItemLevel = calcItemLevel
+
       try {
         const effectedItems = {
         }
+        // itemSynergies translations
+        // #modal-content-item-stats Try and get it to display only here
+        // #item-view-name
+        // #item-view-description
         // @ts-ignore
         const synergiesForExport = []
         // @ts-ignore
@@ -807,11 +843,11 @@ export async function setup(ctx: Modding.ModContext) {
           const tes_item = game.items.getObjectByID(item._namespace.name + ":" + item._localID)
           const possibleSynergies = Object.keys(effectedItems)
           possibleSynergies.forEach((s, i) => {
-            if(s.includes(item.name)) {
+            if (s.includes(item.name)) {
               // @ts-ignore
               const synergyDes = `. \nWhen equipped with ${possibleSynergies[i]}, grant the following boosts: ${effectedItems[possibleSynergies[i]]}`
               if (tes_item._customDescription) {
-                if(tes_item._customDescription.includes(synergyDes)) {
+                if (tes_item._customDescription.includes(synergyDes)) {
                   // console.log('found double')
                 } else {
                   tes_item._customDescription = tes_item._customDescription + synergyDes
@@ -954,10 +990,14 @@ export async function setup(ctx: Modding.ModContext) {
 
         // Looping though all game items.
         // const ShopList = []
+        const listOfAllWeapons: AnyItem[] = []
         const initialPackage = ctx.gameData.buildPackage(itemPackage => {
           game.items.registeredObjects.forEach((item: AnyItem) => {
             try {
               if (item) {
+                if (item.type === "Weapon" || item.type === "Ranged Weapon" || item.type === "Magic Staff" || item.type === "Magic Wand") {
+                  listOfAllWeapons.push(item)
+                }
                 // Skip the item if its localID is in the bannedList
                 if (bannedList[item.localID]) {
                   return;
@@ -1092,6 +1132,8 @@ export async function setup(ctx: Modding.ModContext) {
           // )
         });
         initialPackage.add();
+        // @ts-ignore
+        game.tes_weapons = listOfAllWeapons
         // end looping though all game items.
 
         // const magiclist = []
@@ -1214,9 +1256,12 @@ export async function setup(ctx: Modding.ModContext) {
       } catch (error) {
         console.log('onCharacterLoaded', error)
       }
+      // @ts-ignore
+      console.log('Tes onCharacterLoaded time: ', (start - new Date()) / (1000) * -1, ' seconds');
     });
 
     ctx.onInterfaceReady((ctx) => {
+      let start = new Date();
       // Local variables
       const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
       const dboxLoaded = mod.manager.getLoadedModList().includes('dbox')
@@ -1604,6 +1649,8 @@ export async function setup(ctx: Modding.ModContext) {
       } catch (error) {
         console.log('onInterfaceReady', error)
       }
+      // @ts-ignore
+      console.log('Tes onInterfaceReady time: ', (start - new Date()) / (1000) * -1, ' seconds');
     });
   } catch (error) {
     console.log("Error, monad", error)
@@ -1611,3 +1658,72 @@ export async function setup(ctx: Modding.ModContext) {
 }
 
 // increasedSelfDamageBasedOnCurrentHitpoints
+
+// function calcItemLevel(item) {
+//   const game = {}
+//   // item = game.items.getObjectByID('melvorD:Dragon_Dagger')
+//   // const target = game.monsters.getObjectByID('melvorD:Plant')
+//   const player = game.combat ? game.combat.player : {}
+//   // const effectiveSkillLevel = item.attackType === 'melee' ? player.levels.Attack : item.attackType === 'ranged' ? player.levels.Ranged : player.levels.Magic
+//   const effectiveSkillLevel = 120
+//   const accuracy = player.stats ? player.stats.accuracy : 43000
+//   const targetEvasion = item.attackType === 'melee' ? 220 : item.attackType === 'ranged' ? 640 : 640
+//   const chanceToHit = (1 - (targetEvasion / (2*accuracy)))*100
+//   const strengthBonus = item.attackType === 'melee' ? item.equipmentStats.find(stat => stat.key === 'meleeStrengthBonus')?.value : item.attackType === 'ranged' ? item.equipmentStats.find(stat => stat.key === 'rangedStrengthBonus')?.value : item.attackType === 'magic' ? item.equipmentStats.find(stat => stat.key === 'magicDamageBonus')?.value : 0
+//   const baseMaxHit = 10 * (2.2 + (effectiveSkillLevel/10) + ((effectiveSkillLevel+17)/640) * strengthBonus)
+//   const percentMaxHitModifer = player.modifiers ? player.modifiers.increasedMaxHitPercent : 0
+//   const flatDam = player.modifiers ? player.modifiers.increasedMaxHitFlat : 0
+//   const minToMaxPerc = player.modifiers ? player.modifiers.increasedMinHitBasedOnMaxHit : 0
+//   const maxHit = baseMaxHit * (1 + (percentMaxHitModifer/100)) + flatDam
+//   const minHit = Math.min(Math.max(1 + maxHit *minToMaxPerc + flatDam, 1), maxHit)
+//   const avgHit = ((maxHit+minHit)/2)* (1 - 0)
+//   const interval = item.equipmentStats.find(stat => stat.key === 'attackSpeed')?.value
+//   const dps = (avgHit/interval) * chanceToHit
+//   return dps
+// }
+
+// for (let index = 0; index < items.length; index++) {
+//   if(items[index].type === "Weapon"){
+//       console.log(calcItemLevel(items[index]))
+//   }
+// }
+
+// 'Staff of Worms 4.84440746124031'
+// 'Mace of the Crusader 12.237170012718023'
+// 'Sword of the Crusader 11.867999636627907'
+// 'Blades Sword 6.307715827882752'
+// 'Alikri Fishing Rod 2.3368885255167955'
+// 'Dwarven Fishing Rod 2.3368885255167955'
+// 'Fishing Rod 2.3368885255167955'
+// 'Argonian Fishing Rod 2.3368885255167955'
+// 'Bard\'s Lute 2.7090719880490957'
+// 'Bard\'s Flute 2.1188789970930233'
+// 'Bard\'s Drum 3.374808169815891'
+// 'Sinestral Elven Blade 9.735042298782703'
+// 'Chrysamere 9.735042298782703'
+// 'Sinweaver 6.639725126594149'
+// 'Rugdumph\'s Sword 3.861190952034884'
+// 'Spear of Bitter Mercy 8.782683381782945'
+// 'Ice Blade of the Monarch 6.490991440568476'
+// 'Skull Crusher 11.18826972591362'
+// 'Giant Club 11.41706299363756'
+// 'Goblin Totem Staff 3.0738284883720928'
+// 'Calipers NaN'
+// 'Shadowhunt 5.552639050387597'
+// 'Sufferthorn 4.309260537790697'
+// 'Dagger of Discipline 3.505332788275193'
+// 'Blade Of Woe 5.182730576109937'
+// 'Nightingale Orb 5.612864583333333'
+// 'Nightingale Blade 7.4197725896317825'
+// 'Nightingale Bow 7.088105813953488'
+// 'Wabbajack 5.673090116279069'
+// 'Skull of Corruption 5.673090116279069'
+// 'Sanguine Rose 5.673090116279069'
+// 'Mace of Molag Bal 11.005864164904862'
+// 'Ebony Blade 9.97130159883721'
+// 'Mehrunes\' Razor 6.234790879360465'
+// 'Daedric Crescent 9.975665406976745'
+// 'Volendrung 22.652131342494716'
+// 'Dawnbreaker 9.064819635306554'
+// 'Goldbrand 9.064819635306554'
+// 'Umbra Sword 9.064819635306554'
