@@ -801,9 +801,10 @@ export async function setup(ctx: Modding.ModContext) {
             // baseaccuracybonus = all attack bonuses found in equipmentstats 
             // accuracymodifier = modifiers on the item & all other sources but here just the item
             // const accuracy = (effectiveSkillLevel+9) * (baseaccuracybonus + 64) * (1 + (accuracymodifier / 100))
-            // const accuracy = player.stats ? player.stats.accuracy : 43000
+            // const accuracy = player.stats ? player.stats.accuracy : 18763 
             // const targetEvasion = item.attackType === 'melee' ? 220 : item.attackType === 'ranged' ? 640 : 640
             // const chanceToHit = (1 - (targetEvasion / (2 * accuracy))) * 100
+            // player Damage reduction = 45
             const chanceToHit = 100
             const strengthBonus = item.attackType === 'melee' ? item.equipmentStats.find(stat => stat.key === 'meleeStrengthBonus')?.value : item.attackType === 'ranged' ? item.equipmentStats.find(stat => stat.key === 'rangedStrengthBonus')?.value + 60 : item.attackType === 'magic' ? item.equipmentStats.find(stat => stat.key === 'magicDamageBonus')?.value : 0
             const spellMaxHit = 255
@@ -811,6 +812,7 @@ export async function setup(ctx: Modding.ModContext) {
             let percentMaxHitModifer = item.modifiers?.increasedMaxHitPercent ? item.modifiers?.increasedMaxHitPercent : 0
             let flatDam = item.modifiers?.increasedMaxHitFlat ? item.modifiers?.increasedMaxHitFlat : 0
             const minToMaxPerc = item.modifiers?.increasedMinHitBasedOnMaxHit ? item.modifiers?.increasedMinHitBasedOnMaxHit : 0
+            // damage to all monsters, dungon monsters, slayer monsters
             if(item.attackType === 'melee') {
               percentMaxHitModifer = percentMaxHitModifer + item.modifiers?.increasedMeleeMaxHit || 0
               percentMaxHitModifer = percentMaxHitModifer - item.modifiers?.decreasedMeleeMaxHit || 0
