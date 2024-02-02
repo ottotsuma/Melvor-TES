@@ -148,6 +148,91 @@ export async function setup(ctx: Modding.ModContext) {
     let Khajiit_Item_5_qty = 1
     const bards_college_items: any[] = []
 
+    // could check if items owned
+    // could color code negative and positive
+    const showList = (itemID: string, backFunction: any, ...backArgs: any) => {
+      const item = game.items.getObjectByID(itemID);
+
+      let html = `<h5 class="font-w400 mb-1">${item.name}</h5>`;
+      html += `<img src="${item.media}" style="width: 48px; height: 48px;"></img>`;
+      html += '<p></p>';
+
+      // @ts-ignore
+      game.allSynergies.forEach(synergy => {
+        if (synergy.items.includes(item)) {
+          html += `<div>When equipped with the following items:</div>`;
+          // @ts-ignore
+          synergy.items.forEach(i => {
+            html += `<div>${i.name}</div>`
+          })
+          html += '<p></p>';
+          html += `<div>Gain the following modifiers:</div>`;
+          for (var modifier in synergy.playerModifiers) {
+            // check if the property/key is defined in the object itself, not in parent
+            if (synergy.playerModifiers.hasOwnProperty(modifier)) {
+              // @ts-ignore
+              const isNegative = modifierData[modifier].isNegative ? 'red' : 'green'
+              if (modifier.includes('tes_')) {
+                const displayString = getLangString(modifier).replace('${value}',
+                  synergy.playerModifiers[modifier]).replace('${skillName}',
+                    synergy.playerModifiers[modifier]).replace('${skillName}',
+                      synergy.playerModifiers[modifier])
+                html += `<div style="color: ${isNegative}">${displayString}</div>`
+              } else if (modifier === 'allowUnholyPrayerUse') {
+                html += `<div>Allows Unholy Prayers to be used if equipped with one other item that allows for Unholy Prayers"</div>`
+              } else if (typeof synergy.playerModifiers[modifier] === 'object') {
+                const displayString = getLangString("MODIFIER_DATA_" + modifier).replace('${value}',
+                  synergy.playerModifiers[modifier][0].value).replace('${skillName}',
+                    synergy.playerModifiers[modifier][0].skill._localID).replace('${skillName}',
+                      synergy.playerModifiers[modifier][0].skill._localID)
+                html += `<div style="color: ${isNegative}">${displayString}</div>`
+              } else {
+                const displayString = getLangString("MODIFIER_DATA_" + modifier).replace('${value}',
+                  synergy.playerModifiers[modifier]).replace('${skillName}',
+                    synergy.playerModifiers[modifier]).replace('${skillName}',
+                      synergy.playerModifiers[modifier])
+                html += `<div style="color: ${isNegative}">${displayString}</div>`
+              }
+            }
+          }
+          html += '<p></p>';
+        }
+      })
+
+      if (backFunction) {
+        SwalLocale.fire({
+          html: html,
+          showCancelButton: true,
+          confirmButtonText: getLangString('ASTROLOGY_BTN_2'),
+          cancelButtonText: getLangString('FARMING_MISC_24'),
+        }).then((result) => {
+          if (result.value) {
+            backFunction(...backArgs);
+          }
+        });
+      } else {
+        SwalLocale.fire({
+          html: html
+        });
+      }
+    }
+
+    ctx.patch(BankSideBarMenu, 'initialize').after(function (returnValue, game) {
+      const img = createElement("img", {
+        classList: ["skill-icon-xxs"],
+        attributes: [["src", "https://cdn2-main.melvor.net/assets/media/bank/old_hat.png"]],
+      });
+
+      const button = createElement('button', {
+        className: 'btn btn-sm btn-outline-secondary p-0 ml-2 tes'
+      });
+      // @ts-ignore
+      button.onclick = () => showList(game.bank.selectedBankItem.item.id);
+      button.appendChild(img);
+      // @ts-ignore
+      bankSideBarMenu.selectedMenu.itemWikiLink.parentNode.append(button);
+    });
+
     ctx.onModsLoaded(async (ctx) => {
       let start = new Date();
       try {
@@ -792,7 +877,7 @@ export async function setup(ctx: Modding.ModContext) {
           }
         });
       } catch (error) {
-        
+
       }
       try {
         const effectedItems = {
@@ -802,6 +887,8 @@ export async function setup(ctx: Modding.ModContext) {
         // #item-view-name
         // #item-view-description
         // @ts-ignore
+        const tesSynergiesForExport = []
+        // @ts-ignore
         const synergiesForExport = []
         // @ts-ignore
         const found_items = []
@@ -809,10 +896,12 @@ export async function setup(ctx: Modding.ModContext) {
           if (synergies && synergies.length > 0) {
             synergies.forEach(synergy => {
               // @ts-ignore
+              const all_found_items_names = []
+              // @ts-ignore
               const found_items_names = []
-              let synergyObjectplayerModifiers = {
-                ...synergy.playerModifiers
-              }
+              // let synergyObjectplayerModifiers = {
+              //   ...synergy.playerModifiers
+              // }
               synergy.items.forEach(item => {
                 // @ts-ignore
                 if (item?._namespace?.name === "tes") {
@@ -825,36 +914,43 @@ export async function setup(ctx: Modding.ModContext) {
                       // @ts-ignore
                       if (!found_items.includes(item)) found_items.push(item)
                       // @ts-ignore
-                      if (!synergiesForExport.includes(synergy)) synergiesForExport.push(synergy)
+                      if (!tesSynergiesForExport.includes(synergy)) tesSynergiesForExport.push(synergy)
                     }
                   }
                 }
+                // @ts-ignore
+                if (!all_found_items_names.includes(item.name)) {
+                  // @ts-ignore
+                  all_found_items_names.push(item.name)
+                  // @ts-ignore
+                  if (!synergiesForExport.includes(synergy)) synergiesForExport.push(synergy)
+                }
               })
-              if (found_items_names.length > 0) {
-                const entries = Object.entries(synergyObjectplayerModifiers);
-                // @ts-ignore
-                const boosts = []
-                entries.forEach(entry => {
-                  (entry.forEach(e => {
-                    if (typeof e === 'string') {
-                      let pre = "MODIFIER_DATA_"
-                      if (e.includes('tes_')) {
-                        pre = ""
-                      }
-                      // @ts-ignore
-                      if (typeof synergyObjectplayerModifiers[e] === "object") {
-                        // @ts-ignore
-                        boosts.push(getLangString(pre + e).replace('${value}', synergyObjectplayerModifiers[e][0].value).replace('${skillName}', synergyObjectplayerModifiers[e][0].skill._localID).replace('${skillName}', synergyObjectplayerModifiers[e][0].skill._localID))
-                      } else {
-                        // @ts-ignore
-                        boosts.push(getLangString(pre + e).replace('${value}', synergyObjectplayerModifiers[e]))
-                      }
-                    }
-                  }))
-                })
-                // @ts-ignore
-                effectedItems[found_items_names.join(', ')] = boosts.join(', ')
-              }
+              // if (found_items_names.length > 0) {
+              //   const entries = Object.entries(synergyObjectplayerModifiers);
+              //   // @ts-ignore
+              //   const boosts = []
+              //   entries.forEach(entry => {
+              //     (entry.forEach(e => {
+              //       if (typeof e === 'string') {
+              //         let pre = "MODIFIER_DATA_"
+              //         if (e.includes('tes_')) {
+              //           pre = ""
+              //         }
+              //         // @ts-ignore
+              //         if (typeof synergyObjectplayerModifiers[e] === "object") {
+              //           // @ts-ignore
+              //           boosts.push(getLangString(pre + e).replace('${value}', synergyObjectplayerModifiers[e][0].value).replace('${skillName}', synergyObjectplayerModifiers[e][0].skill._localID).replace('${skillName}', synergyObjectplayerModifiers[e][0].skill._localID))
+              //         } else {
+              //           // @ts-ignore
+              //           boosts.push(getLangString(pre + e).replace('${value}', synergyObjectplayerModifiers[e]))
+              //         }
+              //       }
+              //     }))
+              //   })
+              //   // @ts-ignore
+              //   effectedItems[found_items_names.join(', ')] = boosts.join(', ')
+              // }
             })
           }
         })
@@ -862,25 +958,33 @@ export async function setup(ctx: Modding.ModContext) {
         // @ts-ignore
         found_items.forEach(item => {
           const tes_item = game.items.getObjectByID(item._namespace.name + ":" + item._localID)
-          const possibleSynergies = Object.keys(effectedItems)
-          possibleSynergies.forEach((s, i) => {
-            if (s.includes(item.name)) {
-              // @ts-ignore
-              const synergyDes = `. \nWhen equipped with ${possibleSynergies[i]}, grant the following boosts: ${effectedItems[possibleSynergies[i]]}`
-              if (tes_item._customDescription) {
-                if (tes_item._customDescription.includes(synergyDes)) {
-                  // console.log('found double')
-                } else {
-                  tes_item._customDescription = tes_item._customDescription + synergyDes
-                }
-              } else {
-                tes_item._customDescription = tes_item.description + synergyDes
-              }
-            }
-          })
+          if (tes_item._customDescription) {
+            tes_item._customDescription = tes_item._customDescription + ". Click the small priate hat icon to find out which Synergies this item is effected by."
+          } else {
+            tes_item._customDescription = tes_item.description + ". Click the small priate hat icon to find out which Synergies this item is effected by."
+          }
+
+          // const possibleSynergies = Object.keys(effectedItems)
+          // possibleSynergies.forEach((s, i) => {
+          //   if (s.includes(item.name)) {
+          //     // @ts-ignore
+          //     const synergyDes = `. \nWhen equipped with ${possibleSynergies[i]}, grant the following boosts: ${effectedItems[possibleSynergies[i]]}`
+          //     if (tes_item._customDescription) {
+          //       if (tes_item._customDescription.includes(synergyDes)) {
+          //         // console.log('found double')
+          //       } else {
+          //         tes_item._customDescription = tes_item._customDescription + ". Click the small priate hat icon to find out which Synergies this item is effected by."
+          //       }
+          //     } else {
+          //       tes_item._customDescription = tes_item.description +  + ". Click the small priate hat icon to find out which Synergies this item is effected by."
+          //     }
+          //   }
+          // })
         })
         // @ts-ignore
-        game.tes_itemSynergies = synergiesForExport
+        game.allSynergies = synergiesForExport
+        // @ts-ignore
+        game.tes_itemSynergies = tesSynergiesForExport
       } catch (error) {
         console.log('tes synergy error: ', error)
       }
