@@ -1,52 +1,14 @@
 // Changes to do:
 // "tes:Moth_Priest"
-// Mages shop is half empty
 //  get-childitem *.png | foreach { rename-item $_ $_.Name.Replace("-min", "") }
-
 // game.testForOffline(1)
 
-// New modifiers
-// increasedChanceToApplySlowOnSpawn: number,
-// decreasedChanceToApplySlowOnSpawn: number,
-// increasedChanceToApplyStunOnSpawn: number,
-// decreasedChanceToApplyStunOnSpawn: number,
-// increasedChanceToApplyPoisonOnSpawn: number,
-// decreasedChanceToApplyPoisonOnSpawn: number,
-// increasedChanceToApplyDeadlyPoisonOnSpawn: number,
-// decreasedChanceToApplyDeadlyPoisonOnSpawn: number,
+// game.items.registeredObjects.forEach(item => {
+//   if(item._namespace.name === "tes") {
+//       game.bank.addItem(item, 1, true, true, false);
+//   }
+// })
 
-// deathMark: number,
-// increasedDeathMarkOnHit: number,
-// increasedChanceToApplyStackOfDeathMark: number,
-// decreasedChanceToApplyStackOfDeathMark: number,
-// increasedDeathMarkImmunity: number,
-// decreasedDeathMarkImmunity: number,
-
-// increasedDamageTakenFromAirSpells: number,
-// decreasedDamageTakenFromAirSpells: number,
-// increasedDamageTakenFromWaterSpells: number,
-// decreasedDamageTakenFromWaterSpells: number,
-// increasedDamageTakenFromEarthSpells: number,
-// decreasedDamageTakenFromEarthSpells: number,
-// increasedDamageTakenFromFireSpells: number,
-// decreasedDamageTakenFromFireSpells: number,
-
-// increasedDamage: `increasedDamageAgainst${typePluralName}`,
-// decreasedDamage: `decreasedDamageAgainst${typePluralName}`,
-// increasedDamageTaken: `increasedDamageTakenFrom${typePluralName}`,
-// decreasedDamageTaken: `decreasedDamageTakenFrom${typePluralName}`,
-// increasedMaxHitPercent: `increasedMaxHitPercentAgainst${typePluralName}`,
-// decreasedMaxHitPercent: `decreasedMaxHitPercentAgainst${typePluralName}`,
-// increasedMaxHitFlat: `increasedMaxHitFlatAgainst${typePluralName}`,
-// decreasedMaxHitFlat: `decreasedMaxHitFlatAgainst${typePluralName}`,
-// increasedMinHitBasedOnMaxHit: `increasedMinHitBasedOnMaxHitAgainst${typePluralName}`,
-// decreasedMinHitBasedOnMaxHit: `decreasedMinHitBasedOnMaxHitAgainst${typePluralName}`,
-// increasedFlatMinHit: `increasedFlatMinHitAgainst${typePluralName}`,
-// decreasedFlatMinHit: `decreasedFlatMinHitAgainst${typePluralName}`,
-// increasedGlobalAccuracy: `increasedGlobalAccuracyAgainst${typePluralName}`,
-// decreasedGlobalAccuracy: `decreasedGlobalAccuracyAgainst${typePluralName}`,
-// increasedDamageReduction: `increasedDamageReductionAgainst${typePluralName}`,
-// decreasedDamageReduction: `decreasedDamageReductionAgainst${typePluralName}`,
 import '../css/styles.css';
 import { languages } from './../language';
 export async function setup(ctx: Modding.ModContext) {
@@ -198,6 +160,8 @@ export async function setup(ctx: Modding.ModContext) {
           html += '<p></p>';
         }
       })
+      // @ts-ignore
+      if(game.calcItemLevel && typeof game.calcItemLevel(item) === 'number') html += `<div>Power rating: ${Math.floor(game.calcItemLevel(item))}</div>`
 
       if (backFunction) {
         SwalLocale.fire({
@@ -729,12 +693,6 @@ export async function setup(ctx: Modding.ModContext) {
             cmim.forceBaseModTypeActive("MythicalCreature");
             // @ts-ignore
             cmim.forceBaseModTypeActive("SeaCreature");
-
-            // game.items.registeredObjects.forEach(item => {
-            //     if(item._namespace.name === "tes") {
-            //         game.bank.addItem(item, 1, true, true, false);
-            //     }
-            // })
 
             // namespace_thuum
             await ctx.gameData.addPackage('custom-mods.json');
