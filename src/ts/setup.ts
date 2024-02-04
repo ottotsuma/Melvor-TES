@@ -944,9 +944,9 @@ export async function setup(ctx: Modding.ModContext) {
         found_items.forEach(item => {
           const tes_item = game.items.getObjectByID(item._namespace.name + ":" + item._localID)
           if (tes_item._customDescription) {
-            tes_item._customDescription = tes_item._customDescription + ". Click the small priate hat icon to find out which Synergies this item is effected by."
+            tes_item._customDescription = tes_item._customDescription + ". Click the small pirate hat icon to find out which Synergies this item is effected by."
           } else {
-            tes_item._customDescription = tes_item.description + ". Click the small priate hat icon to find out which Synergies this item is effected by."
+            tes_item._customDescription = tes_item.description + ". Click the small pirate hat icon to find out which Synergies this item is effected by."
           }
 
           // const possibleSynergies = Object.keys(effectedItems)
