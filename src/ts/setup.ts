@@ -804,9 +804,9 @@ export async function setup(ctx: Modding.ModContext) {
             // const accuracy = player.stats ? player.stats.accuracy : 18763 
             // const targetEvasion = item.attackType === 'melee' ? 220 : item.attackType === 'ranged' ? 640 : 640
             // const chanceToHit = (1 - (targetEvasion / (2 * accuracy))) * 100
-            // player Damage reduction = 45
+            // player Damage reduction = 45 // "ammoType": "Arrows",
             const chanceToHit = 100
-            const strengthBonus = item.attackType === 'melee' ? item.equipmentStats.find(stat => stat.key === 'meleeStrengthBonus')?.value : item.attackType === 'ranged' ? item.equipmentStats.find(stat => stat.key === 'rangedStrengthBonus')?.value + 60 : item.attackType === 'magic' ? item.equipmentStats.find(stat => stat.key === 'magicDamageBonus')?.value : 0
+            const strengthBonus = item.attackType === 'melee' ? item.equipmentStats.find(stat => stat.key === 'meleeStrengthBonus')?.value : item.attackType === 'ranged' ? item.ammoType === "Arrows" ? item.equipmentStats.find(stat => stat.key === 'rangedStrengthBonus')?.value + 60 : item.ammoType === "Bolts" ? item.equipmentStats.find(stat => stat.key === 'rangedStrengthBonus')?.value + 152 : item.equipmentStats.find(stat => stat.key === 'rangedStrengthBonus')?.value : item.attackType === 'magic' ? item.equipmentStats.find(stat => stat.key === 'magicDamageBonus')?.value : 0
             const spellMaxHit = 255
             const baseMaxHit = item.attackType === 'magic' ? spellMaxHit * (1 + (strengthBonus / 100)) * (1 + ((effectiveSkillLevel + 1) / 200)) : 10 * (2.2 + (effectiveSkillLevel / 10) + ((effectiveSkillLevel + 17) / 640) * strengthBonus)
             let percentMaxHitModifer = item.modifiers?.increasedMaxHitPercent ? item.modifiers?.increasedMaxHitPercent : 0

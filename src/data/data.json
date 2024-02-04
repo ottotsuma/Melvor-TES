@@ -28196,6 +28196,19 @@
     "itemSynergies": [
       {
         "itemIDs": [
+          "tes:Black_Gloves",
+          "melvorD:Black_Boots",
+          "melvorD:Black_Platebody",
+          "melvorD:Black_Platelegs",
+          "melvorD:Black_Helmet"
+        ],
+        "playerModifiers": {
+          "increasedDamageToAllMonsters": 5,
+          "increasedDamageTaken": 5
+        }
+      },
+      {
+        "itemIDs": [
           "tes:Daedric_Armor",
           "tes:Daedric_Boots",
           "tes:Daedric_Gauntlets",
