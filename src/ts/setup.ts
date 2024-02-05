@@ -204,7 +204,6 @@ export async function setup(ctx: Modding.ModContext) {
     });
 
     ctx.onModsLoaded(async (ctx) => {
-      let start = new Date();
       try {
         // Local variables
         const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
@@ -742,12 +741,9 @@ export async function setup(ctx: Modding.ModContext) {
       } catch (error) {
         console.log("onModsLoaded", error)
       }
-      // @ts-ignore
-      console.log('Tes onModsLoaded time: ', (start - new Date()) / (1000) * -1, ' seconds');
     });
 
     ctx.onCharacterLoaded(ctx => {
-      let start = new Date();
       // Local variables
       const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
       // const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
@@ -1373,12 +1369,9 @@ export async function setup(ctx: Modding.ModContext) {
       } catch (error) {
         console.log('onCharacterLoaded', error)
       }
-      // @ts-ignore
-      console.log('Tes onCharacterLoaded time: ', (start - new Date()) / (1000) * -1, ' seconds');
     });
 
     ctx.onInterfaceReady((ctx) => {
-      let start = new Date();
       // Local variables
       const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
       const dboxLoaded = mod.manager.getLoadedModList().includes('dbox')
@@ -1766,8 +1759,6 @@ export async function setup(ctx: Modding.ModContext) {
       } catch (error) {
         console.log('onInterfaceReady', error)
       }
-      // @ts-ignore
-      console.log('Tes onInterfaceReady time: ', (start - new Date()) / (1000) * -1, ' seconds');
     });
   } catch (error) {
     console.log("Error, monad", error)
