@@ -161,7 +161,13 @@ export async function setup(ctx: Modding.ModContext) {
         }
       })
       // @ts-ignore
-      if(game.calcItemLevel && typeof game.calcItemLevel(item) === 'number') html += `<div>Power rating: ${Math.floor(game.calcItemLevel(item))}</div>`
+      if (game.calcItemLevel && typeof game.calcItemLevel(item) === 'number') {
+        // @ts-ignore
+        html += `<div>Power rating: ${Math.floor(game.calcItemLevel(item))}</div>`
+        // @ts-ignore
+        console.log(`itemID: ${game.calcItemLevel(item)}`)
+      }
+
 
       if (backFunction) {
         SwalLocale.fire({
@@ -771,21 +777,21 @@ export async function setup(ctx: Modding.ModContext) {
             let flatDam = item.modifiers?.increasedMaxHitFlat ? item.modifiers?.increasedMaxHitFlat : 0
             const minToMaxPerc = item.modifiers?.increasedMinHitBasedOnMaxHit ? item.modifiers?.increasedMinHitBasedOnMaxHit : 0
             // damage to all monsters, dungon monsters, slayer monsters
-            if(item.attackType === 'melee') {
+            if (item.attackType === 'melee') {
               percentMaxHitModifer = percentMaxHitModifer + item.modifiers?.increasedMeleeMaxHit || 0
               percentMaxHitModifer = percentMaxHitModifer - item.modifiers?.decreasedMeleeMaxHit || 0
 
               flatDam = flatDam + item.modifiers?.increasedMeleeMaxHitFlat || 0
               flatDam = flatDam - item.modifiers?.decreasedMeleeMaxHitFlat || 0
             }
-            if(item.attackType === 'ranged') {
+            if (item.attackType === 'ranged') {
               percentMaxHitModifer = percentMaxHitModifer + item.modifiers?.increasedRangedMaxHit || 0
               percentMaxHitModifer = percentMaxHitModifer - item.modifiers?.decreasedRangedMaxHit || 0
 
               flatDam = flatDam + item.modifiers?.increasedRangedMaxHitFlat || 0
               flatDam = flatDam - item.modifiers?.decreasedRangedMaxHitFlat || 0
             }
-            if(item.attackType === 'magic') {
+            if (item.attackType === 'magic') {
               percentMaxHitModifer = percentMaxHitModifer + item.modifiers?.increasedMagicMaxHit || 0
               percentMaxHitModifer = percentMaxHitModifer - item.modifiers?.decreasedMagicMaxHit || 0
 
@@ -944,9 +950,9 @@ export async function setup(ctx: Modding.ModContext) {
         found_items.forEach(item => {
           const tes_item = game.items.getObjectByID(item._namespace.name + ":" + item._localID)
           if (tes_item._customDescription) {
-            tes_item._customDescription = tes_item._customDescription + ". Click the small pirate hat icon to find out which Synergies this item is effected by."
+            tes_item._customDescription = tes_item._customDescription + ". Click the small 🏴‍☠pirate hat icon to find out which Synergies this item is effected by."
           } else {
-            tes_item._customDescription = tes_item.description + ". Click the small pirate hat icon to find out which Synergies this item is effected by."
+            tes_item._customDescription = tes_item.description + ". Click the small 🏴‍☠pirate hat icon to find out which Synergies this item is effected by."
           }
 
           // const possibleSynergies = Object.keys(effectedItems)
