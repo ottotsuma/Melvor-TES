@@ -11,8 +11,12 @@
 
 import '../css/styles.css';
 import { languages } from './../language';
+// import {TesTranslation} from './../language/translation'
 export async function setup(ctx: Modding.ModContext) {
   try {
+    
+    // TesTranslation(ctx)
+
     var link1 = document.createElement('link');
     link1.rel = 'preconnect';
     link1.href = 'https://fonts.googleapis.com';
@@ -34,7 +38,7 @@ export async function setup(ctx: Modding.ModContext) {
       type: 'switch',
       default: false,
       name: 'bard_drops',
-      label: 'Stop bard drops?',
+      label: getLangString('Stop_bard_drops'),
       hint: ''
     } as Modding.Settings.RadioGroupConfig);
 
@@ -122,13 +126,13 @@ export async function setup(ctx: Modding.ModContext) {
       // @ts-ignore
       game.allSynergies.forEach(synergy => {
         if (synergy.items.includes(item)) {
-          html += `<div>When equipped with the following items:</div>`;
+          html += `<div>${getLangString('equipped_with')}</div>`;
           // @ts-ignore
           synergy.items.forEach(i => {
             html += `<div>${i.name}</div>`
           })
           html += '<p></p>';
-          html += `<div>Gain the following modifiers:</div>`;
+          html += `<div>${getLangString('gain_modifiers')}</div>`;
           for (var modifier in synergy.playerModifiers) {
             // check if the property/key is defined in the object itself, not in parent
             if (synergy.playerModifiers.hasOwnProperty(modifier)) {
@@ -141,7 +145,7 @@ export async function setup(ctx: Modding.ModContext) {
                       synergy.playerModifiers[modifier])
                 html += `<div style="color: ${isNegative}">${displayString}</div>`
               } else if (modifier === 'allowUnholyPrayerUse') {
-                html += `<div>Allows Unholy Prayers to be used if equipped with one other item that allows for Unholy Prayers"</div>`
+                html += `<div>${getLangString('allowUnholyPrayerUse')}</div>`
               } else if (typeof synergy.playerModifiers[modifier] === 'object') {
                 const displayString = getLangString("MODIFIER_DATA_" + modifier).replace('${value}',
                   synergy.playerModifiers[modifier][0].value).replace('${skillName}',
@@ -163,9 +167,9 @@ export async function setup(ctx: Modding.ModContext) {
       // @ts-ignore
       if (game.calcItemLevel && typeof game.calcItemLevel(item) === 'number') {
         // @ts-ignore
-        html += `<div>Power rating: ${Math.floor(game.calcItemLevel(item))}</div>`
+        html += `<div>${getLangString('power_rating')} ${Math.floor(game.calcItemLevel(item))}</div>`
         // @ts-ignore
-        console.log(`itemID: ${game.calcItemLevel(item)}`)
+        console.log(`${item._namespace.name + ":" + item.localID}: ${game.calcItemLevel(item)}`)
       }
 
 
@@ -223,6 +227,7 @@ export async function setup(ctx: Modding.ModContext) {
           if (lang === 'lemon' || lang === 'carrot') {
             lang = 'en';
           }
+
           // @ts-ignore
           if (languages[lang]) {
             // @ts-ignore
@@ -946,9 +951,9 @@ export async function setup(ctx: Modding.ModContext) {
         found_items.forEach(item => {
           const tes_item = game.items.getObjectByID(item._namespace.name + ":" + item._localID)
           if (tes_item._customDescription) {
-            tes_item._customDescription = tes_item._customDescription + ". Click the small 🏴‍☠pirate hat icon to find out which Synergies this item is effected by."
+            tes_item._customDescription = tes_item._customDescription + getLangString('pirate_icon')
           } else {
-            tes_item._customDescription = tes_item.description + ". Click the small 🏴‍☠pirate hat icon to find out which Synergies this item is effected by."
+            tes_item._customDescription = tes_item.description + getLangString('pirate_icon')
           }
 
           // const possibleSynergies = Object.keys(effectedItems)
@@ -1398,39 +1403,39 @@ export async function setup(ctx: Modding.ModContext) {
             dialogs: [{
               id: '0',
               character: 'khajiit_merchant_risaad',
-              text: ['Welcome. If I cannot serve you, I am sure that one of my other traders can do so.'],
+              text: [getLangString('dbox_welcome_Risaad')],
               options: [
-                { to: '3', text: 'What\'re ya sellin\'?', isSpeech: true },
-                { to: '1', text: 'I\'m curious about your homeland.', isSpeech: true },
-                { to: '2', text: 'Why sell your goods in Melvor?', isSpeech: true },
-                { to: 'exit', text: 'Good bye', isSpeech: true },
+                { to: '3', text: getLangString('dbox_selling'), isSpeech: true },
+                { to: '1', text: getLangString('dbox_homeland'), isSpeech: true },
+                { to: '2', text: getLangString('dbox_why_melvor'), isSpeech: true },
+                { to: 'exit', text: getLangString('dbox_good_bye'), isSpeech: true },
               ]
             }, {
               id: '1',
               character: 'khajiit_merchant_risaad',
               text: 'The Khajiit hail from a distant land called Elsweyr, bordered on the north by Cyrodiil and the south by the glistening blue waters of the sea. Elsweyr is an arid land of deserts and rocky canyons, where the sun shines warmly, always. There are cities so ancient, the sands have swallowed them whole. But now I will say no more, for I miss my home greatly.',
               options: [
-                { to: '3', text: 'What\'re ya sellin\'?', isSpeech: true },
-                { to: '2', text: 'Why sell your goods in Melvor?', isSpeech: true },
-                { to: 'exit', text: 'Good bye', isSpeech: true },
+                { to: '3', text: getLangString('dbox_selling'), isSpeech: true },
+                { to: '2', text: getLangString('dbox_why_melvor'), isSpeech: true },
+                { to: 'exit', text: getLangString('dbox_good_bye'), isSpeech: true },
               ]
             },
 
             {
               id: '2',
               character: 'khajiit_merchant_risaad',
-              text: ['An astute question, for we are far from home and this is a cold, hard land. The wise trader finds the best opportunities, even if he must travel far to find them. Skyrim is a ripe opportunity indeed. The dragons and the war have scared many other traders away, but for those with courage, there is much profit to be made.'],
+              text: [getLangString('dbox_astute')],
               options: [
-                { to: '3', text: 'What\'re ya sellin\'?', isSpeech: true },
-                { to: '1', text: 'I\'m curious about your homeland.', isSpeech: true },
-                { to: 'exit', text: 'Good bye', isSpeech: true },
+                { to: '3', text: getLangString('dbox_selling'), isSpeech: true },
+                { to: '1', text: getLangString('dbox_homeland'), isSpeech: true },
+                { to: 'exit', text: getLangString('dbox_good_bye'), isSpeech: true },
               ]
             },
 
             {
               id: '3',
               character: 'khajiit_merchant_risaad',
-              text: ['What\'re ya buyin?'],
+              text: [getLangString('dbox_buying')],
               options: [
                 { to: 'exit', losses: { gp: Khajiit_Item_1_Price && Khajiit_Item_1_qty ? Khajiit_Item_1_Price * Khajiit_Item_1_qty : 100 }, rewards: { items: [{ id: Khajiit_Item_1 ? Khajiit_Item_1 : 'tes:ElsweyrSpicedTea', qty: Khajiit_Item_1_qty ? Khajiit_Item_1_qty : 1 }] } },
 
@@ -1444,15 +1449,15 @@ export async function setup(ctx: Modding.ModContext) {
 
                 { to: 'exit', losses: { gp: 100 }, rewards: { items: [{ id: TodaysItem }] } },
 
-                { to: '0', text: 'What were we talking about again?', isSpeech: true },
-                { to: 'exit', text: 'Good bye', isSpeech: true },
+                { to: '0', text: getLangString('dbox_forgot'), isSpeech: true },
+                { to: 'exit', text: getLangString('dbox_good_bye'), isSpeech: true },
               ]
             },
 
             {
               id: 'exit',
               character: 'khajiit_merchant_risaad',
-              text: ['May your road lead you to warm sands.'],
+              text: [getLangString('dbox_warmsands')],
               options: [{ text: 'You too' }]
             }]
           }, ctx);
@@ -1469,25 +1474,25 @@ export async function setup(ctx: Modding.ModContext) {
             dialogs: [{
               id: '0',
               character: 'khajiit_merchant_atahbah',
-              text: ['We have been in this land for so long, I have forgotten what it feels like to walk on warm sand.'],
+              text: [getLangString('dbox_toolong')],
               options: [
-                { to: '3', text: 'Whats for sale?', isSpeech: true },
-                { to: '1', text: 'Do you reget coming to Melvor?', isSpeech: true },
-                { to: 'exit', text: 'Good bye', isSpeech: true },
+                { to: '3', text: getLangString('dbox_forsale'), isSpeech: true },
+                { to: '1', text: getLangString('dbox_regret_melvor'), isSpeech: true },
+                { to: 'exit', text: getLangString('dbox_good_bye'), isSpeech: true },
               ]
             }, {
               id: '1',
               character: 'khajiit_merchant_atahbah',
               text: 'In truth I do not. I have always dreamed of seeing new lands, and it does not hurt that we are making a good profit.',
               options: [
-                { to: '3', text: 'Whats for sale?', isSpeech: true },
-                { to: 'exit', text: 'Good bye', isSpeech: true },
+                { to: '3', text: getLangString('dbox_forsale'), isSpeech: true },
+                { to: 'exit', text: getLangString('dbox_good_bye'), isSpeech: true },
               ]
             },
             {
               id: '3',
               character: 'khajiit_merchant_atahbah',
-              text: ['This and that.'],
+              text: [getLangString('dbox_thisthat')],
               options: [
                 { to: 'exit', losses: { gp: 50 }, rewards: { items: [{ id: 'tes:Lockpick', qty: 10 }] } },
 
@@ -1502,15 +1507,15 @@ export async function setup(ctx: Modding.ModContext) {
                 { to: 'exit', losses: { gp: Khajiit_Item_5_Price && Khajiit_Item_5_qty ? Khajiit_Item_5_Price * Khajiit_Item_5_qty : 100 }, rewards: { items: [{ id: Khajiit_Item_5 ? Khajiit_Item_5 : 'tes:ElsweyrSpicedTea', qty: Khajiit_Item_5_qty ? Khajiit_Item_5_qty : 1 }] } },
 
                 { to: 'exit', losses: { gp: 100 }, rewards: { items: [{ id: TodaysItem }] } },
-                { to: '0', text: 'What were we talking about again?', isSpeech: true },
-                { to: 'exit', text: 'Good bye', isSpeech: true },
+                { to: '0', text: getLangString('dbox_forgot'), isSpeech: true },
+                { to: 'exit', text: getLangString('dbox_good_bye'), isSpeech: true },
               ]
             },
 
             {
               id: 'exit',
               character: 'khajiit_merchant_atahbah',
-              text: ['May your road lead you to warm sands.'],
+              text: [getLangString('dbox_warmsands')],
               options: [{ text: 'You too' }]
             }]
           }, ctx);
@@ -1527,12 +1532,12 @@ export async function setup(ctx: Modding.ModContext) {
             dialogs: [{
               id: '0',
               character: 'khajiit_merchant_ahkari',
-              text: ['So many refuse to talk to us. They call us thieves and smugglers. I am glad to see that you are not such a one.'],
+              text: [getLangString('dbox_manyrefuse')],
               options: [
-                { to: '3', text: 'Whats for sale?', isSpeech: true },
-                { to: '1', text: 'Have you had trouble with the locals?', isSpeech: true },
-                { to: '2', text: 'How long have you been in Melvor?', isSpeech: true },
-                { to: 'exit', text: 'Good bye', isSpeech: true },
+                { to: '3', text: getLangString('dbox_forsale'), isSpeech: true },
+                { to: '1', text: getLangString('dbox_locals'), isSpeech: true },
+                { to: '2', text: getLangString('dbox_melvor_long'), isSpeech: true },
+                { to: 'exit', text: getLangString('dbox_good_bye'), isSpeech: true },
               ]
             },
             {
@@ -1540,9 +1545,9 @@ export async function setup(ctx: Modding.ModContext) {
               character: 'khajiit_merchant_ahkari',
               text: 'Mostly it is the Golbins. They do not like outsiders in their land, and so we are forbidden to enter the cities. When they look upon us, they see only pickpockets and skooma dealers. It is most unfair, but we do our best to ignore them.',
               options: [
-                { to: '3', text: 'Whats for sale?', isSpeech: true },
-                { to: '2', text: 'How long have you been in Melvor?', isSpeech: true },
-                { to: 'exit', text: 'Good bye', isSpeech: true },
+                { to: '3', text: getLangString('dbox_forsale'), isSpeech: true },
+                { to: '2', text: getLangString('dbox_melvor_long'), isSpeech: true },
+                { to: 'exit', text: getLangString('dbox_good_bye'), isSpeech: true },
               ]
             },
             {
@@ -1550,16 +1555,16 @@ export async function setup(ctx: Modding.ModContext) {
               character: 'khajiit_merchant_ahkari',
               text: 'Not long, in truth. I came to Melvor after I found myself unwelcome in both Elsweyr and Cyrodiil. I seem to have an unfortunate talent for getting myself involved in misunderstandings with the law. Ri\'saad was able to look past that, and it was he who helped to set me up with a trade caravan. Now I work for him.',
               options: [
-                { to: '3', text: 'Whats for sale?', isSpeech: true },
-                { to: '1', text: 'Have you had trouble with the locals?', isSpeech: true },
-                { to: 'exit', text: 'Good bye', isSpeech: true },
+                { to: '3', text: getLangString('dbox_forsale'), isSpeech: true },
+                { to: '1', text: getLangString('dbox_locals'), isSpeech: true },
+                { to: 'exit', text: getLangString('dbox_good_bye'), isSpeech: true },
               ]
             },
 
             {
               id: '3',
               character: 'khajiit_merchant_ahkari',
-              text: ['This and that.'],
+              text: [getLangString('dbox_thisthat')],
               options: [
                 { to: 'exit', losses: { gp: 500 }, rewards: { items: [{ id: 'tes:ElsweyrSpicedTea', qty: 10 }] } },
 
@@ -1575,15 +1580,15 @@ export async function setup(ctx: Modding.ModContext) {
 
                 { to: 'exit', losses: { gp: 100 }, rewards: { items: [{ id: TodaysItem }] } },
 
-                { to: '0', text: 'What were we talking about again?', isSpeech: true },
-                { to: 'exit', text: 'Good bye', isSpeech: true },
+                { to: '0', text: getLangString('dbox_forgot'), isSpeech: true },
+                { to: 'exit', text: getLangString('dbox_good_bye'), isSpeech: true },
               ]
             },
 
             {
               id: 'exit',
               character: 'khajiit_merchant_ahkari',
-              text: ['May your road lead you to warm sands.'],
+              text: [getLangString('dbox_warmsands')],
               options: [{ text: 'You too' }]
             }]
           }, ctx);
@@ -1639,15 +1644,15 @@ export async function setup(ctx: Modding.ModContext) {
             dialogs: [{
               id: '0',
               character: 'Viarmo',
-              text: ['Welcome to the Bard\'s College. I am the headmaster here. How may I help you?'],
+              text: [getLangString('dbox_welcome_bards_college')],
               options: [
-                { to: 'shop', text: 'I\'m looking for a new instrument.', isSpeech: true },
-                { to: '1', text: 'I\'m looking to apply to the college.', isSpeech: true },
-                { to: '2', text: 'What do you know about dragons?', isSpeech: true },
-                { to: '3', text: 'So what is the Poetic Edda?', isSpeech: true },
-                { to: '4', text: 'Why did Elisif forbid the festival?', isSpeech: true },
-                { to: '7', text: 'I found King Olaf\'s Verse.', isSpeech: true },
-                { text: 'Good bye', isSpeech: true },
+                { to: 'shop', text: getLangString('dbox_new_instrument'), isSpeech: true },
+                { to: '1', text: getLangString('dbox_college_apply'), isSpeech: true },
+                { to: '2', text: getLangString('dbox_know_dragons'), isSpeech: true },
+                { to: '3', text: getLangString('dbox_Poetic_Edda'), isSpeech: true },
+                { to: '4', text: getLangString('dbox_elisif'), isSpeech: true },
+                { to: '7', text: getLangString('dbox_found_olaf'), isSpeech: true },
+                { text: getLangString('dbox_good_bye'), isSpeech: true },
               ]
             },
             {
@@ -1655,9 +1660,9 @@ export async function setup(ctx: Modding.ModContext) {
               character: 'Viarmo',
               text: 'Always a pleasure to meet a prospective bard. You should be aware that many apply but we accept very few people. When possible, we ask applicants to perform tasks the college needs completed. In this case, I do have a task befitting an inspiring bard...',
               options: [
-                { to: '5', text: 'What do you need me to do?', isSpeech: true },
-                { to: '0', text: 'Maybe not today then...', isSpeech: true },
-                { text: 'Good bye', isSpeech: true },
+                { to: '5', text: getLangString('dbox_need_me'), isSpeech: true },
+                { to: '0', text: getLangString('dbox_not_today'), isSpeech: true },
+                { text: getLangString('dbox_good_bye'), isSpeech: true },
               ]
             },
             {
@@ -1665,9 +1670,9 @@ export async function setup(ctx: Modding.ModContext) {
               character: 'Viarmo',
               text: 'Not much, to be honest. Their return was a shock to us all. Giraud Gemane has some tomes about them in the library, if you\'re interested.',
               options: [
-                { to: '0', text: 'What were we talking about again?', isSpeech: true },
-                { to: 'shop', text: 'I\'m looking for a new instrument.', isSpeech: true },
-                { text: 'Good bye', isSpeech: true },
+                { to: '0', text: getLangString('dbox_forgot'), isSpeech: true },
+                { to: 'shop', text: getLangString('dbox_new_instrument'), isSpeech: true },
+                { text: getLangString('dbox_good_bye'), isSpeech: true },
               ]
             },
             {
@@ -1675,9 +1680,9 @@ export async function setup(ctx: Modding.ModContext) {
               character: 'Viarmo',
               text: 'Not much. But as a bard, I find the whole affair depressing. There are no heroes in this war. No winners to be had and no real conclusion. If you want something a bard can dig into look to the dragons. A thousand years from now Skyrim will have changed rulers dozens of times but the return of the dragons, that story is once in an era. So what is the Poetic Edda?',
               options: [
-                { to: '0', text: 'What were we talking about again?', isSpeech: true },
-                { to: 'shop', text: 'I\'m looking for a new instrument.', isSpeech: true },
-                { text: 'Good bye', isSpeech: true },
+                { to: '0', text: getLangString('dbox_forgot'), isSpeech: true },
+                { to: 'shop', text: getLangString('dbox_new_instrument'), isSpeech: true },
+                { text: getLangString('dbox_good_bye'), isSpeech: true },
               ]
             },
             {
@@ -1685,9 +1690,9 @@ export async function setup(ctx: Modding.ModContext) {
               character: 'Viarmo',
               text: 'As you may be aware Elisif\'s husband High King Torygg was recently killed. Elisif mourns her husband deeply and she feels that a festival that burns a King in effigy is... distasteful. I\'ve tried to convince her the festival is many centuries old and celebrates Solitude but I need proof. I believe King Olaf\'s verse will provide that proof.',
               options: [
-                { to: '0', text: 'What were we talking about again?', isSpeech: true },
-                { to: 'shop', text: 'I\'m looking for a new instrument.', isSpeech: true },
-                { text: 'Good bye', isSpeech: true },
+                { to: '0', text: getLangString('dbox_forgot'), isSpeech: true },
+                { to: 'shop', text: getLangString('dbox_new_instrument'), isSpeech: true },
+                { text: getLangString('dbox_good_bye'), isSpeech: true },
               ]
             },
             {
@@ -1695,9 +1700,9 @@ export async function setup(ctx: Modding.ModContext) {
               character: 'Viarmo',
               text: 'Elisif has forbidden the Burning of King Olaf, a Festival put on by the Bards College. We need to change her mind. To convince her I want to read King Olaf\'s Verse. A part of the Poetic Edda, the living history of Skyrim. Unfortunately, the verse was lost long ago.',
               options: [
-                { to: '6', text: 'And that\'s where I come in?', isSpeech: true },
-                { to: '0', text: 'Maybe not today then...', isSpeech: true },
-                { text: 'Good bye', isSpeech: true },
+                { to: '6', text: getLangString('dbox_I_come'), isSpeech: true },
+                { to: '0', text: getLangString('dbox_not_today'), isSpeech: true },
+                { text: getLangString('dbox_good_bye'), isSpeech: true },
               ]
             },
             {
@@ -1705,28 +1710,28 @@ export async function setup(ctx: Modding.ModContext) {
               character: 'Viarmo',
               text: 'Yes. According to Giraud, our histories keeper, the portion of Edda dealing with King Olaf might still exist in Dead Man\'s respite. I need you to retrieve the poem.',
               options: [
-                { to: '0', text: 'Maybe not today then...', isSpeech: true },
-                { text: 'Okay! I am going right now!', isSpeech: true }
+                { to: '0', text: getLangString('dbox_not_today'), isSpeech: true },
+                { text: getLangString('dbox_going'), isSpeech: true }
               ]
             },
             {
               id: 'shop',
               character: 'Viarmo',
-              text: ['You\'ve come to the right place.'],
+              text: [getLangString('dbox_right_place')],
               options: [
                 { losses: { items: [{ id: "mythMusic:Polished_Topaz_Gem", qty: 10 }, { id: "mythMusic:Polished_Ruby_Gem", qty: 10 }, { id: "mythMusic:Polished_Sapphire_Gem", qty: 10 }, { id: "mythMusic:Pristine_Leather", qty: 1 }] }, rewards: { items: [{ id: 'tes:rjorns_drum' }] } },
 
                 { losses: { items: [{ id: "mythMusic:Polished_Topaz_Gem", qty: 10 }, { id: "mythMusic:Polished_Ruby_Gem", qty: 10 }, { id: "mythMusic:Polished_Sapphire_Gem", qty: 10 }, { id: "mythMusic:Mystic_Oil", qty: 1 }] }, rewards: { items: [{ id: 'tes:Dancers_Flute' }] } },
 
                 { losses: { items: [{ id: "mythMusic:Polished_Topaz_Gem", qty: 10 }, { id: "mythMusic:Polished_Ruby_Gem", qty: 10 }, { id: "mythMusic:Polished_Sapphire_Gem", qty: 10 }, { id: "mythMusic:Diamond_String", qty: 1 }] }, rewards: { items: [{ id: 'tes:finns_lute' }] } },
-                { to: '0', text: 'What were we talking about again?', isSpeech: true },
-                { text: 'Good bye', isSpeech: true },
+                { to: '0', text: getLangString('dbox_forgot'), isSpeech: true },
+                { text: getLangString('dbox_good_bye'), isSpeech: true },
               ]
             },
             {
               id: '7',
               character: 'Viarmo',
-              text: ['I have to admit I didn\'t think it would actually be there. Now let\'s take a look at this... Oh. Oh-no. This won\'t do at all. The copy is incomplete, it\'s aged to the point that parts are unreadable. And the parts that are readable... well... bardic verse has come a long way since ancient times.'],
+              text: [getLangString('dbox_olaf_part_7')],
               options: [
                 { to: '8', losses: { items: [{ id: "tes:King_Olafs_Verse" }] }, rewards: { gp: 1000000 } },
                 { to: '8', losses: { items: [{ id: "tes:King_Olafs_Verse" }], skillCheck: [{ id: 'mythMusic:Music', level: 20 }] }, rewards: { items: [{ id: 'mythMusic:Bards_Hat', qty: 1 }] } },
@@ -1734,7 +1739,7 @@ export async function setup(ctx: Modding.ModContext) {
                 { to: '8', losses: { items: [{ id: "tes:King_Olafs_Verse" }], skillCheck: [{ id: 'mythMusic:Music', level: 20 }] }, rewards: { items: [{ id: 'mythMusic:Bards_Boots', qty: 1 }] } },
                 { to: '8', losses: { items: [{ id: "tes:King_Olafs_Verse" }], skillCheck: [{ id: 'mythMusic:Music', level: 20 }] }, rewards: { items: [{ id: 'mythMusic:Bards_Leggings', qty: 1 }] } },
                 { to: '8', losses: { items: [{ id: "tes:King_Olafs_Verse" }], skillCheck: [{ id: 'mythMusic:Music', level: 50 }] }, rewards: { items: [{ id: 'mythMusic:Concert_Pass_Half_A', qty: 5 }, { id: 'mythMusic:Concert_Pass_Half_B', qty: 5 }] } },
-                { to: '0', text: 'What were we talking about again?', isSpeech: true }
+                { to: '0', text: getLangString('dbox_forgot'), isSpeech: true }
               ]
             },
             {
@@ -1742,8 +1747,8 @@ export async function setup(ctx: Modding.ModContext) {
               character: 'Viarmo',
               text: 'I can\'t read it to the court. Without the verse I won\'t be able to convince Elisif of the importance of The Burning of King Olaf Festival. If she isn\'t convinced of the festival\'s importance then she won\'t reverse her decision to stop the effigy burning. It means that the Burning of King Olaf, which the Bards College has held for time immemorial, won\'t be happening.',
               options: [
-                { to: '0', text: 'What were we talking about again?', isSpeech: true },
-                { text: 'Good Luck!', isSpeech: true }
+                { to: '0', text: getLangString('dbox_forgot'), isSpeech: true },
+                { text: getLangString('dbox_good_luck'), isSpeech: true }
               ]
             },
               // https://elderscrolls.fandom.com/wiki/Viarmo
