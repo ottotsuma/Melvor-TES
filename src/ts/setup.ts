@@ -264,8 +264,8 @@ export async function setup(ctx: Modding.ModContext) {
           bards_college_items.push(game.items.getObjectByID(`tes:Bard_Lute`))
           bards_college_items[3].baseChanceDenominator = "10000"
           bards_college_items.push(game.items.getObjectByID(`tes:King_Olafs_Verse`))
-          bards_college_items[4].baseChanceDenominator = "Random (Hard)"
-          bards_college_items[4].chanceIncreaseInfo = "Monster combat level increases this items drop chance."
+          bards_college_items[4].baseChanceDenominator = getLangString('bard_random_hard')
+          bards_college_items[4].chanceIncreaseInfo = getLangString('bard_chance_info')
           if (mythLoaded) {
             // increasedMusicHireCost: number;
             // decreasedMusicHireCost: number;
