@@ -14,7 +14,6 @@ import { languages } from './../language';
 // import {TesTranslation} from './../language/translation'
 export async function setup(ctx: Modding.ModContext) {
   try {
-    
     // TesTranslation(ctx)
 
     var link1 = document.createElement('link');
