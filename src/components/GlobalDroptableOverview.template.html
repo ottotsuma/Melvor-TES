@@ -66,7 +66,7 @@
             <div style="background-color: #232a35!important; color: #f5f5f5!important; padding: 10px; border: solid white; text-align: center;"
                 v-for="synergy in game.tes_itemSynergies">
                 <div v-for="item in synergy.items">
-                    <div>{{item._name}}</div>
+                    <div>{{getLangString("ITEM_NAME_" + item.localID)}}</div>
                     <img style="width: 64px; margin: 6px;" class="global-droptable-overview-image"
                         v-bind:title="item.name" v-bind:src="item.media">
                 </div>
@@ -114,9 +114,9 @@
                 are calculated based on Dragon Arrows / Jade bolts</p>
             <div style="background-color: #232a35!important; color: #f5f5f5!important; padding: 10px; border: solid white; text-align: center;"
                 v-for="item in game.tes_weapons">
-                <div 
+                <div
                     v-bind:style="{ color: game.calcItemLevel(item) !== 'string' && game.calcItemLevel(item) < game.calcItemLevel(game.items.getObjectByID('melvorD:Bronze_Dagger')) ? 'red' : game.calcItemLevel(item) !== 'string' && game.calcItemLevel(item) > Math.floor(game.calcItemLevel(game.items.getObjectByID('melvorF:Ultima_Godsword'))) ? 'green' : '' }">
-                    {{item._name}}: {{game.calcItemLevel(item)}}</div>
+                    {{getLangString("ITEM_NAME_" + item.localID)}}</div>
             </div>
         </div> -->
     </div>
