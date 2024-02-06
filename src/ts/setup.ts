@@ -9,6 +9,9 @@
 //   }
 // })
 
+// Translate the HTML pages
+
+
 import '../css/styles.css';
 import { languages } from './../language';
 import {TesTranslation} from './../language/translation'

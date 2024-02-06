@@ -82,4 +82,20 @@ export function TesTranslation (ctx: Modding.ModContext) {
 
             return orignal();
         });
+
+        ctx.patch(ShopCategory, 'name').get(function (orignal) {
+            if (this.namespace === 'tes' && !getLangString(`SHOP_MISC_${this.localID}`).includes('UNDEFINED TRANSLATION')) {
+                return getLangString(`SHOP_MISC_${this.localID}`);
+            }
+
+            return orignal();
+        });
+
+        ctx.patch(ThievingArea, 'name').get(function (orignal) {
+            if (this.namespace === 'tes' && !getLangString(`THIEVING_AREA_NAME_${this.localID}`).includes('UNDEFINED TRANSLATION')) {
+                return getLangString(`THIEVING_AREA_NAME_${this.localID}`);
+            }
+
+            return orignal();
+        });
 }

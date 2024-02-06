@@ -35,7 +35,7 @@ export const en = {
     MISC_STRING_Dead_Drop_Orders_6: "Dead Drop Orders",
     MISC_STRING_Dead_Drop_Orders_7: "Dead Drop Orders",
     MISC_STRING_Dead_Drop_Orders_8: "Dead Drop Orders",
-    MISC_STRING_Thieves_Orders: "Thieves_Orders",
+    MISC_STRING_Thieves_Orders: "Thieves Orders",
     tes_Bards_College_Global_Droptable_Overview_General_Functionality: 'Each item on the global droptable has its own roll. These rolls are separate from the regular droptable and do not replace any other loot.',
     tes_Bards_College_Global_Droptable_Overview_Item_Pickup_Info: "Items are not put in the loot container, but instead placed into the bank immediately. That is, if free space is available.",
     tes_Bards_College_Global_Droptable_Overview_Dungeon_Limitation: "The drop rate for each item is inverse to the monsters combat level.",
@@ -47,7 +47,7 @@ export const en = {
     Profile_Single_Species_Argonian: 'Argonian',
 
     Stop_bard_drops: 'Stop bard drops?',
-    pirate_icon: ". Click the small 🏴‍☠pirate hat icon to find out which Synergies this item is effected by.",
+    pirate_icon: ". Click the small 🏴‍☠<strong class=\"text-warning\">pirate hat icon</strong> to find out which Synergies this item is effected by.",
     equipped_with: "When equipped with the following items:",
     gain_modifiers: "Gain the following modifiers:",
     allowUnholyPrayerUse: "Allows Unholy Prayers to be used if equipped with one other item that allows for Unholy Prayers",
@@ -669,7 +669,7 @@ export const en = {
   MONSTER_NAME_Skinned_Hound: 'Skinned Hound',
   MONSTER_NAME_Shambles: 'Shambles',
   MONSTER_NAME_Flesh_Atronach: 'Flesh Atronach',
-  
+
   COMBAT_AREA_NAME_Skyrim: 'Skyrim',
   COMBAT_AREA_NAME_Cyrodiil: 'Cyrodiil',
   COMBAT_AREA_NAME_Black_Marsh: 'Black Marsh',
@@ -739,5 +739,32 @@ export const en = {
   PET_NAME_CuSith: 'CuSith',
   PET_NAME_Undead_Ayleid: 'Undead Ayleid',
   PET_NAME_The_Goblin_Army: 'The Goblin Army',
-  PET_NAME_Esmerelda: 'Esmerelda'
+  PET_NAME_Esmerelda: 'Esmerelda',
+
+  SHOP_MISC_Thieves_Guild_Shop: "Thieves Guild",
+  SHOP_MISC_Fighters_Guild_Shop: "Fighters Guild",
+  SHOP_MISC_Mages_Guild_Shop: "Mages Guild",
+  SHOP_MISC_Dark_Brotherhood_Shop: "Dark Brotherhood",
+  SKILL_NAME_Bards_College_Overview: "Bards College",
+  THIEVING_AREA_NAME_Windhelm: 'Windhelm',
+  THIEVING_AREA_NAME_Whiterun: 'Whiterun',
+  THIEVING_AREA_NAME_Markarth: 'Markarth',
+  THIEVING_AREA_NAME_Bravil: 'Bravil',
+  THIEVING_AREA_NAME_Leyawiin: 'Leyawiin',
+  THIEVING_AREA_NAME_Kvatch: 'Kvatch',
+  THIEVING_AREA_NAME_Bruma: 'Bruma',
+  THIEVING_AREA_NAME_Riften: 'Riften',
+  THIEVING_AREA_NAME_Chorrol: 'Chorrol',
+  THIEVING_AREA_NAME_Cheydinhal:"Cheydinhal",
+  THIEVING_AREA_NAME_Anvil:"Anvil",
+  THIEVING_AREA_NAME_Skingrad:"Skingrad",
+  THIEVING_AREA_NAME_Imperial_City:"Imperial City",
+  THIEVING_AREA_NAME_Twilight_Sepulcher: "Twilight Sepulcher",
+
+  drop_dead_order_1_0: 'Murderer',
+  drop_dead_order_1_1: 'You are now reading your first dead drop note, here on Hero Hill, which proves to me you were well-appointed to the tasks that lie ahead.',
+  drop_dead_order_1_2: 'Journey now to Leafrot Cave. There you will encounter an ancient Necromancer who is attempting to escape death by transforming himself into a lich. This Necromancer, Celedaen, has not yet completed his metamorphosis, but is still immensely powerful, possibly too powerful to destroy if confronted directly. Search Leafrot Cave. Necromancers are wizards after all, and wizards are prolific by nature. Celedaen surely has written records, and these records may contain evidence of some kind of weakness. Perhaps there is some other way to destroy Celedaen besides a direct confrontation. But destroy him you must!',
+  drop_dead_order_1_3: 'When the Necromancer lies dead, journey to the city of Chorrol for your next dead drop. At the foot of the Great Oak, hidden in the bushes, is an old sack. Inside you will find your reward for killing the Necromancer, as well as information regarding your next contract.',
+  drop_dead_order_1_4: "Serve me well, Murderer, and there's no telling just how far you might advance.",
+
 };

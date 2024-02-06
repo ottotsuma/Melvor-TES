@@ -79,8 +79,7 @@
                             synergy.playerModifiers[playerModifier])}}
                         </div>
                         <div v-else-if="playerModifier === 'allowUnholyPrayerUse'">
-                            Allows Unholy Prayers to be used if equipped with one other item that allows for Unholy
-                            Prayers
+                            {{getLangString('ALLOW_UNHOLY_PRAYERS_WITH_EQUIPMENT')}}
                         </div>
                         <div v-else-if="typeof synergy.playerModifiers[playerModifier] === 'object' ">
                             {{getLangString("MODIFIER_DATA_" + playerModifier).replace('${value}',
