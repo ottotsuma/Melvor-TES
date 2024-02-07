@@ -55,36 +55,6 @@
                                     "key": "increasedGPOnEnemyHit",
                                     "value": 5
                                 }
-                            ],
-                            "hardcoreModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "decreasedChanceGoldenStardust",
-                                    "value": 50
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedMinBirdNestQuantity",
-                                    "skill": "melvorD:Woodcutting",
-                                    "value": 1
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "increasedMasteryXP",
-                                    "skill": "melvorD:Firemaking",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "decreasedSkillIntervalPercent",
-                                    "skill": "melvorD:Firemaking",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedMinBirdNestQuantity",
-                                    "value": 1
-                                }
                             ]
                         },
                         {
@@ -134,36 +104,6 @@
                                     "level": 99,
                                     "key": "poisonImmunity",
                                     "value": 50
-                                }
-                            ],
-                            "hardcoreModifiers": [
-                                {
-                                    "level": 1,
-                                    "key": "decreasedChanceGoldenStardust",
-                                    "value": 50
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedMinBirdNestQuantity",
-                                    "skill": "melvorD:Woodcutting",
-                                    "value": 1
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "increasedMasteryXP",
-                                    "skill": "melvorD:Firemaking",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "decreasedSkillIntervalPercent",
-                                    "skill": "melvorD:Firemaking",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedMinBirdNestQuantity",
-                                    "value": 1
                                 }
                             ]
                         }
