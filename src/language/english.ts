@@ -280,7 +280,7 @@ export const en = {
     ITEM_NAME_Mages_Loot_Box: 'Mages Loot',
     ITEM_NAME_Rangers_Loot_Box: 'Rangers Loot',
 
-    ITEM_DESCRIPTION_Skyrim_Grand_soul_gem: 'Soul Gems are naturally-occurring magic stones that house the souls of the dead.',
+ITEM_DESCRIPTION_Skyrim_Grand_soul_gem: 'Soul Gems are naturally-occurring magic stones that house the souls of the dead.',
     ITEM_DESCRIPTION_FingerOfAdamusPhillida: 'Severed finger. Don\'t eat it.',
     ITEM_DESCRIPTION_StoneOfStAlessia: 'An amulet for the worthy.',
     ITEM_DESCRIPTION_gold_coin: 'The empire is law, The law is sacred',
