@@ -122,9 +122,9 @@ export async function setup(ctx: Modding.ModContext) {
       const item = game.items.getObjectByID(itemID);
 
       let html = `<h5 class="font-w400 mb-1">${item.name}</h5>`;
-      html += `<img src="${item.media}"></img>`;
+      html += `<img src="${item.media}" style="width: 48px; height: 48px;"></img>`;
       html += '<p></p>';
-// style="width: 48px; height: 48px;"
+
       // @ts-ignore
       game.allSynergies.forEach(synergy => {
         if (synergy.items.includes(item)) {
