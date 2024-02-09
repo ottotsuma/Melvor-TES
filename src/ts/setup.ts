@@ -122,7 +122,7 @@ export async function setup(ctx: Modding.ModContext) {
       const item = game.items.getObjectByID(itemID);
 
       let html = `<h5 class="font-w400 mb-1">${item.name}</h5>`;
-      html += `<img src="${item.media}" style="width: 48px; height: 48px;"></img>`;
+      html += `<img src="${item.media}" style="max-width: 256px; max-height: 256px;"></img>`;
       html += '<p></p>';
 
       // @ts-ignore
@@ -194,19 +194,22 @@ export async function setup(ctx: Modding.ModContext) {
     }
 
     ctx.patch(BankSideBarMenu, 'initialize').after(function (returnValue, game) {
-      const img = createElement("img", {
-        classList: ["skill-icon-xxs"],
-        attributes: [["src", "https://cdn2-main.melvor.net/assets/media/bank/old_hat.png"]],
-      });
-
-      const button = createElement('button', {
-        className: 'btn btn-sm btn-outline-secondary p-0 ml-2 tes'
-      });
-      // @ts-ignore
-      button.onclick = () => showList(game.bank.selectedBankItem.item.id);
-      button.appendChild(img);
-      // @ts-ignore
-      bankSideBarMenu.selectedMenu.itemWikiLink.parentNode.append(button);
+      if(document.getElementsByClassName('btn btn-sm btn-outline-secondary p-0 ml-2 monad').length === 0
+      ) {
+        const img = createElement("img", {
+          classList: ["skill-icon-xxs"],
+          attributes: [["src", "https://cdn2-main.melvor.net/assets/media/bank/old_hat.png"]],
+        });
+  
+        const button = createElement('button', {
+          className: 'btn btn-sm btn-outline-secondary p-0 ml-2 tes'
+        });
+        // @ts-ignore
+        button.onclick = () => showList(game.bank.selectedBankItem.item.id);
+        button.appendChild(img);
+        // @ts-ignore
+        bankSideBarMenu.selectedMenu.itemWikiLink.parentNode.append(button);
+      }
     });
 
     ctx.onModsLoaded(async (ctx) => {
