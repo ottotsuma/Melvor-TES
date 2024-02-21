@@ -986,6 +986,8 @@ export async function setup(ctx: Modding.ModContext) {
         console.log('tes synergy error: ', error)
       }
       const bannedList: any = {
+        "dndCoin": true,
+        "dndCoinofFinding": true,
         "Sweetroll": true,
         "Crown_of_Rhaelyx": true,
         "Cooking_Gloves": true,
