@@ -1,0 +1,38 @@
+  /* Volume slider */
+  #volume-slider {
+    width: 150px;
+    -webkit-appearance: none; /* Remove default styling */
+    height: 5px;
+    background: #d3d3d3;
+    border-radius: 5px;
+    margin: 20px;
+  }
+  
+  #volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #4CAF50;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  /* Volume display */
+  #volume-display {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  /* Play button */
+  #Play {
+    background-color: #4CAF50; /* Match the slider thumb */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #Play:hover {
+    background-color: #3e8e41; /* Darker green on hover */
+  }

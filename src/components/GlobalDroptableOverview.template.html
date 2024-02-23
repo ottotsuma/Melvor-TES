@@ -54,6 +54,13 @@
                                     </div>
                                 </div>
                             </div>
+                            <div style="display: flex; align-items: center;">
+                                <audio id="tes_music" src="https://ia804700.us.archive.org/5/items/directsong_oblivion/01%20Reign%20of%20the%20Septims.mp3" style="display: none;"></audio>
+                                <button id="Play" aria-label="Play" type="button" class="btn-block-option">Play</button>
+                                <input type="range" min="0" max="1" step="0.01" id="volume-slider" />
+                                <p id="volume-display">Volume: 50%</p>
+                                <p style="margin: 0px 0px 5px 5px;" id="track-display">Track: 0</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -119,4 +126,44 @@
             </div>
         </div> -->
     </div>
+    <script>
+        const tracks = ["https://ia804700.us.archive.org/5/items/directsong_oblivion/01%20Reign%20of%20the%20Septims.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/02%20Through%20the%20Valleys.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/03%20Death%20Knell.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/04%20Harvest%20Dawn.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/05%20Wind%20from%20the%20Depths.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/06%20King%20and%20Country.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/07%20Fall%20of%20the%20Hammer.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/08%20Wings%20of%20Kynareth.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/09%20Alls%20Well.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/10%20Tension.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/11%20March%20of%20the%20Marauders.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/12%20Watchman%27s%20Ease.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/13%20Glory%20of%20Cyrodiil.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/14%20Defending%20the%20Gate.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/15%20Bloody%20Blades.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/16%20Minstrel%27s%20Lament.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/17%20Ancient%20Sorrow.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/18%20Auriel%27s%20Ascension.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/19%20Daedra%20in%20Flight.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/20%20Unmarked%20Stone.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/21%20Bloodlust.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/22%20Sunrise%20of%20Flutes.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/23%20Churl%27s%20Revenge.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/24%20Deep%20Waters.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/25%20Dusk%20at%20the%20Market.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/26%20Peace%20of%20Akatosh.mp3"]
+    const x = document.getElementById("tes_music");
+    const volumeSlider = document.getElementById("volume-slider");
+    const volumeDisplay = document.getElementById("volume-display"); // Optional
+    const playPauseButton = document.getElementById("Play");
+    const trackDisplay = document.getElementById("track-display");
+    
+        let y = 0
+// https://ia804700.us.archive.org/5/items/directsong_oblivion/
+// This code will play or pause the audio when the button is clicked
+playPauseButton.addEventListener("click", ()=>{
+  if (x.paused) { // check if the player is paused
+    x.play(); // Play the audio
+    playPauseButton.textContent = "Pause"; // Update button text to "Pause"
+  } else {
+    x.pause(); // Pause the audio
+    playPauseButton.textContent = "Play"; // Update button text to "Play"
+  }
+});
+volumeSlider.addEventListener("input", () => {
+  x.volume = volumeSlider.value;
+  updateVolumeDisplay(); // Optional
+});
+function updateVolumeDisplay() {
+  volumeDisplay.textContent = `Volume: ${Math.floor(x.volume * 100)}%`;
+}
+x.addEventListener('ended',function(){
+      //play next song
+      x.pause();
+      y = y + 1
+      if(y > tracks.length) {
+        y = 0
+      }
+      trackDisplay.textContent = y
+        x.src = tracks[y];
+        x.load();
+        x.play();
+    });
+    </script>
 </template>
