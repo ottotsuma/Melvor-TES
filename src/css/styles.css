@@ -36,3 +36,22 @@
   #Play:hover {
     background-color: #3e8e41; /* Darker green on hover */
   }
+
+
+/* Tooltips */
+[data-tooltip]::before {
+  position : absolute;
+  content : attr(data-tooltip);
+  opacity : 0;
+}
+[data-tooltip]:hover::before {
+  opacity : 1;
+    top: -15px;
+    background: #1c1e1f;
+    padding: 0px 5px;
+    font-weight: 300;
+    text-wrap: nowrap;
+}
+[data-tooltip]:not([data-tooltip-persistent])::before {
+  pointer-events: none;
+}

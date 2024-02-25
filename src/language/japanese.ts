@@ -48,7 +48,7 @@ export const ja = {
     Profile_Single_Species_Argonian: 'アルゴニアン',
 
     "Stop_bard_drops": "バードドロップを停止する？",
-    "pirate_icon": ".アイテムがどのシナジーに影響されるかを知りたい場合は、小さな🏴‍☠<strong class=\"text-warning\">海賊の帽子アイコン</strong>をクリックしてください。",
+    "synergy_icon": ". 小さな<strong class=\"text-warning\">シナジーアイコン</strong>をクリックすると、このアイテムがどのシナジーの影響を受けているかを知ることができる",
     "equipped_with": "以下のアイテムを装備している場合：",
     "gain_modifiers": "以下の修飾子を獲得：",
     "allowUnholyPrayerUse": "邪悪な祈りが使用可能になります。もう1つの邪悪な祈りを許可するアイテムと装備している場合",

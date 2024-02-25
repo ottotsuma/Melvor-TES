@@ -13,6 +13,13 @@ interface SkillModifierTemplate extends BaseModifierTemplate {
 }
 declare type ModifierTag = SkillName | 'Combat';
 declare class CombatModifiers implements CombatModifierObject<number> {
+    tes_increasedDragonBreathDamage: number;
+    tes_wardsave: number;
+    tes_increasedFlatDamageWhileTargetHasMaxHP: number;
+    tes_increasedPercDamageWhileTargetHasMaxHP: number;
+    tes_decreaseFlatDamageWhileTargetHasMaxHP: number;
+    tes_decreasePercDamageWhileTargetHasMaxHP: number;
+    tes_bypassDamageReduction: number;
     increasedGlobalAccuracy: number;
     decreasedGlobalAccuracy: number;
     increasedMeleeAccuracyBonus: number;
@@ -1336,6 +1343,7 @@ interface StandardModifierObject<Standard> extends CombatModifierObject<Standard
     tes_increasedFlatDamageWhileTargetHasMaxHP: Standard;
     tes_increasedPercDamageWhileTargetHasMaxHP: Standard;
     tes_decreaseFlatDamageWhileTargetHasMaxHP: Standard;
+    tes_decreasePercDamageWhileTargetHasMaxHP: Standard;
     tes_bypassDamageReduction: Standard;
     /** Increases chance to double bones and item drops by value: Implemented */
     increasedChanceToDoubleLootCombat: Standard;

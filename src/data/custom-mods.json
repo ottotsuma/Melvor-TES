@@ -25,8 +25,7 @@
                   "tes:Daedric_Boots",
                   "tes:Daedric_Gauntlets",
                   "tes:Daedric_Greaves",
-                  "tes:Daedric_Helmet",
-                  "tes:Daedric_Shield"
+                  "tes:Daedric_Helmet"
                 ],
                 "playerModifiers": {
                   "demonTraitApplied": 1,

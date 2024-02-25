@@ -47,7 +47,7 @@ export const zhCN = {
   Profile_Single_Species_Argonian: '亚龙',
 
   Stop_bard_drops: '停止吟游诗人的掉落吗？',
-pirate_icon: ". 点击小🏴‍☠<strong class=\"text-warning\">海盗帽图标</strong>以了解此物品受到哪些协同效应影响。",
+synergy_icon: ". 点击小<strong class=\"text-warning\">协同作用图标</strong>以了解此物品受到哪些协同效应影响。",
 equipped_with: "当装备以下物品时:",
 gain_modifiers: "获得以下特性:",
 allowUnholyPrayerUse: "如果配备另一件允许使用邪恶祈祷的物品，则允许使用邪恶祈祷",

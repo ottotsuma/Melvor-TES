@@ -14,8 +14,9 @@
 
 import '../css/styles.css';
 import { languages } from './../language';
-import {TesTranslation} from './../language/translation'
+import { TesTranslation } from './../language/translation'
 export async function setup(ctx: Modding.ModContext) {
+  const tes_errors = []
   try {
     TesTranslation(ctx)
 
@@ -80,11 +81,20 @@ export async function setup(ctx: Modding.ModContext) {
       isNegative: false,
       tags: ['combat']
     };
+    modifierData.tes_decreasePercDamageWhileTargetHasMaxHP = {
+      get langDescription() {
+        return getLangString('tes_decreasePercDamageWhileTargetHasMaxHP');
+      },
+      description: '-${value}% damage while the target is fully healed.',
+      isSkill: false,
+      isNegative: false,
+      tags: ['combat']
+    };
     modifierData.tes_decreaseFlatDamageWhileTargetHasMaxHP = {
       get langDescription() {
         return getLangString('tes_decreaseFlatDamageWhileTargetHasMaxHP');
       },
-      description: '-${value}% damage while you are fully healed.',
+      description: '-${value} damage while you are fully healed.',
       isSkill: false,
       isNegative: false,
       tags: ['combat']
@@ -125,12 +135,15 @@ export async function setup(ctx: Modding.ModContext) {
       html += `<img src="${item.media}" style="max-width: 256px; max-height: 256px;"></img>`;
       html += '<p></p>';
 
+      const testing: any = []
       // @ts-ignore
       game.allSynergies.forEach(synergy => {
+        const nameSet = []
         if (synergy.items.includes(item)) {
           html += `<div>${getLangString('equipped_with')}</div>`;
           // @ts-ignore
           synergy.items.forEach(i => {
+            nameSet.push(i.name)
             html += `<div>${i.name}</div>`
           })
           html += '<p></p>';
@@ -139,13 +152,13 @@ export async function setup(ctx: Modding.ModContext) {
             // check if the property/key is defined in the object itself, not in parent
             if (synergy.playerModifiers.hasOwnProperty(modifier)) {
               // @ts-ignore
-              const isNegative = modifierData[modifier].isNegative ? 'red' : 'green'
+              const isNegative = modifierData[modifier].isNegative ? 'text-danger' : 'text-success'
               if (modifier.includes('tes_')) {
                 const displayString = getLangString(modifier).replace('${value}',
                   synergy.playerModifiers[modifier]).replace('${skillName}',
                     synergy.playerModifiers[modifier]).replace('${skillName}',
                       synergy.playerModifiers[modifier])
-                html += `<div style="color: ${isNegative}">${displayString}</div>`
+                html += `<div class="${isNegative}">${displayString}</div>`
               } else if (modifier === 'allowUnholyPrayerUse') {
                 html += `<div>${getLangString('allowUnholyPrayerUse')}</div>`
               } else if (typeof synergy.playerModifiers[modifier] === 'object') {
@@ -153,19 +166,21 @@ export async function setup(ctx: Modding.ModContext) {
                   synergy.playerModifiers[modifier][0].value).replace('${skillName}',
                     synergy.playerModifiers[modifier][0].skill._localID).replace('${skillName}',
                       synergy.playerModifiers[modifier][0].skill._localID)
-                html += `<div style="color: ${isNegative}">${displayString}</div>`
+                html += `<div class="${isNegative}">${displayString}</div>`
               } else {
                 const displayString = getLangString("MODIFIER_DATA_" + modifier).replace('${value}',
                   synergy.playerModifiers[modifier]).replace('${skillName}',
                     synergy.playerModifiers[modifier]).replace('${skillName}',
                       synergy.playerModifiers[modifier])
-                html += `<div style="color: ${isNegative}">${displayString}</div>`
+                html += `<div class="${isNegative}">${displayString}</div>`
               }
             }
           }
           html += '<p></p>';
         }
+        nameSet.push(testing)
       })
+      game.tes_log = testing
       // @ts-ignore
       if (game.calcItemLevel && typeof game.calcItemLevel(item) === 'number') {
         // @ts-ignore
@@ -194,14 +209,15 @@ export async function setup(ctx: Modding.ModContext) {
     }
 
     ctx.patch(BankSideBarMenu, 'initialize').after(function (returnValue, game) {
-      if(document.getElementsByClassName('btn btn-sm btn-outline-secondary p-0 ml-2 monad').length === 0
+      if (document.getElementsByClassName('btn btn-sm btn-outline-secondary p-0 ml-2 monad').length === 0
       ) {
         const img = createElement("img", {
           classList: ["skill-icon-xxs"],
-          attributes: [["src", "https://cdn2-main.melvor.net/assets/media/bank/old_hat.png"]],
+          attributes: [["src", "https://cdn2-main.melvor.net/assets/media/skills/summoning/synergy.svg"]],
         });
-  
+
         const button = createElement('button', {
+          id: 'synergiesButton',
           className: 'btn btn-sm btn-outline-secondary p-0 ml-2 tes'
         });
         // @ts-ignore
@@ -247,7 +263,7 @@ export async function setup(ctx: Modding.ModContext) {
           }
           // End Translations
         } catch (error) {
-          console.log("onModsLoaded Translations ", error)
+          tes_errors.push('onModsLoaded Translations', error)
         }
         // Packages to load based on entitlement
         try {
@@ -717,7 +733,8 @@ export async function setup(ctx: Modding.ModContext) {
             await ctx.gameData.addPackage('profile.json');
           }
         } catch (error) {
-          console.log('onModsLoaded packages ', error)
+
+          tes_errors.push('onModsLoaded packages', error)
         }
         // skill patches
         try {
@@ -746,10 +763,10 @@ export async function setup(ctx: Modding.ModContext) {
             }
           })
         } catch (error) {
-          console.log('onModsLoaded skill patches ', error)
+          tes_errors.push('onModsLoaded skill patches', error)
         }
       } catch (error) {
-        console.log("onModsLoaded", error)
+        tes_errors.push('onModsLoaded', error)
       }
     });
 
@@ -870,19 +887,13 @@ export async function setup(ctx: Modding.ModContext) {
               }
             }
           } catch (error) {
-            console.log("onEnemyDeath patch ", error)
+            tes_errors.push('onEnemyDeath internal', error)
           }
         });
       } catch (error) {
-
+        tes_errors.push('onEnemyDeath', error)
       }
       try {
-        const effectedItems = {
-        }
-        // itemSynergies translations
-        // #modal-content-item-stats Try and get it to display only here
-        // #item-view-name
-        // #item-view-description
         // @ts-ignore
         const tesSynergiesForExport = []
         // @ts-ignore
@@ -896,9 +907,6 @@ export async function setup(ctx: Modding.ModContext) {
               const all_found_items_names = []
               // @ts-ignore
               const found_items_names = []
-              // let synergyObjectplayerModifiers = {
-              //   ...synergy.playerModifiers
-              // }
               synergy.items.forEach(item => {
                 // @ts-ignore
                 if (item?._namespace?.name === "tes") {
@@ -923,31 +931,6 @@ export async function setup(ctx: Modding.ModContext) {
                   if (!synergiesForExport.includes(synergy)) synergiesForExport.push(synergy)
                 }
               })
-              // if (found_items_names.length > 0) {
-              //   const entries = Object.entries(synergyObjectplayerModifiers);
-              //   // @ts-ignore
-              //   const boosts = []
-              //   entries.forEach(entry => {
-              //     (entry.forEach(e => {
-              //       if (typeof e === 'string') {
-              //         let pre = "MODIFIER_DATA_"
-              //         if (e.includes('tes_')) {
-              //           pre = ""
-              //         }
-              //         // @ts-ignore
-              //         if (typeof synergyObjectplayerModifiers[e] === "object") {
-              //           // @ts-ignore
-              //           boosts.push(getLangString(pre + e).replace('${value}', synergyObjectplayerModifiers[e][0].value).replace('${skillName}', synergyObjectplayerModifiers[e][0].skill._localID).replace('${skillName}', synergyObjectplayerModifiers[e][0].skill._localID))
-              //         } else {
-              //           // @ts-ignore
-              //           boosts.push(getLangString(pre + e).replace('${value}', synergyObjectplayerModifiers[e]))
-              //         }
-              //       }
-              //     }))
-              //   })
-              //   // @ts-ignore
-              //   effectedItems[found_items_names.join(', ')] = boosts.join(', ')
-              // }
             })
           }
         })
@@ -956,34 +939,17 @@ export async function setup(ctx: Modding.ModContext) {
         found_items.forEach(item => {
           const tes_item = game.items.getObjectByID(item._namespace.name + ":" + item._localID)
           if (tes_item._customDescription) {
-            tes_item._customDescription = tes_item._customDescription + getLangString('pirate_icon')
+            tes_item._customDescription = tes_item._customDescription + getLangString('synergy_icon')
           } else {
-            tes_item._customDescription = tes_item.description + getLangString('pirate_icon')
+            tes_item._customDescription = tes_item.description + getLangString('synergy_icon')
           }
-
-          // const possibleSynergies = Object.keys(effectedItems)
-          // possibleSynergies.forEach((s, i) => {
-          //   if (s.includes(item.name)) {
-          //     // @ts-ignore
-          //     const synergyDes = `. \nWhen equipped with ${possibleSynergies[i]}, grant the following boosts: ${effectedItems[possibleSynergies[i]]}`
-          //     if (tes_item._customDescription) {
-          //       if (tes_item._customDescription.includes(synergyDes)) {
-          //         // console.log('found double')
-          //       } else {
-          //         tes_item._customDescription = tes_item._customDescription + ". Click the small priate hat icon to find out which Synergies this item is effected by."
-          //       }
-          //     } else {
-          //       tes_item._customDescription = tes_item.description +  + ". Click the small priate hat icon to find out which Synergies this item is effected by."
-          //     }
-          //   }
-          // })
         })
         // @ts-ignore
         game.allSynergies = synergiesForExport
         // @ts-ignore
         game.tes_itemSynergies = tesSynergiesForExport
       } catch (error) {
-        console.log('tes synergy error: ', error)
+        tes_errors.push('synergy error', error)
       }
       const bannedList: any = {
         "dndCoin": true,
@@ -1050,67 +1016,69 @@ export async function setup(ctx: Modding.ModContext) {
       // }
       // Patching stuff spcific to the Character
       try {
-        // Patching skills for new modifiers
-        // @ts-ignore
-        ctx.patch(Character, 'modifyAttackDamage').after((damage: any, target: any, attack: any) => {
-          const MonsterMods: any = game.combat.enemy.modifiers
-          const PlayerMods: any = game.combat.player.modifiers
-          const TargetMods: any = target.modifiers
-          let tesDamage = 0
-          const DR: any = TargetMods.increasedDamageReduction - TargetMods.decreasedDamageReduction
-          // Remove all damage and return if wardsaved
-          if (TargetMods.tes_wardsave) {
-            let wardsaveChance = Math.min(TargetMods.tes_wardsave, 90);
-            if (rollPercentage(wardsaveChance)) {
-              return 0;
+        try {
+          // Patching skills for new modifiers
+          function getCharacterFlatAttackDamageBonusModification(attacker: Character, target: Character): number {
+            return target.hitpointsPercent === 100
+              ? numberMultiplier * (attacker.modifiers.tes_increasedFlatDamageWhileTargetHasMaxHP - attacker.modifiers.tes_decreaseFlatDamageWhileTargetHasMaxHP)
+              : 0;
+          }
+          function getDamagePercentageModificationForStats(attacker: Character, target: Character): number {
+            return target.hitpointsPercent === 100
+              ? attacker.modifiers.tes_increasedPercDamageWhileTargetHasMaxHP - attacker.modifiers.tes_decreasePercDamageWhileTargetHasMaxHP
+              : 0;
+          }
+          // @ts-ignore
+          ctx.patch(Character, 'modifyAttackDamage').after((damage: number, target: any, attack: any) => {
+            const Monster: any = game.combat.enemy
+            const Player: any = game.combat.player
+            const TargetMods: any = target.modifiers
+            let tesDamage = 0
+            const DR: number = TargetMods.increasedDamageReduction - TargetMods.decreasedDamageReduction
+            console.log('modifyAttackDamage damage: ', damage, ' target: ', target, ' attack: ', attack)
+            // Remove all damage and return if wardsaved
+            if (TargetMods.tes_wardsave) {
+              let wardsaveChance = Math.min(TargetMods.tes_wardsave, 90);
+              if (rollPercentage(wardsaveChance)) {
+                return 0;
+              }
             }
-          }
-          // At HP full damage
-          if (!target.monster && target.stats.maxHitpoints === target.hitpoints) {
-            // do damage to player
-            let percDamage = 0
-            if (MonsterMods.tes_increasedPercDamageWhileTargetHasMaxHP) {
-              percDamage = tesDamage * (MonsterMods.tes_increasedPercDamageWhileTargetHasMaxHP / 100)
+            if (target.hitpointsPercent === 100) {
+              // At HP full damage
+              if (!target.monster) {
+                // Target is player
+                tesDamage = tesDamage + getCharacterFlatAttackDamageBonusModification(Monster, Player) + getDamagePercentageModificationForStats(Monster, Player)
+              }
+              if (target.monster) {
+                // Target is monster
+                tesDamage = tesDamage + getCharacterFlatAttackDamageBonusModification(Player, Monster) + getDamagePercentageModificationForStats(Player, Monster)
+              }
             }
-            let flatDam = 0
-            if (MonsterMods.tes_increasedFlatDamageWhileTargetHasMaxHP) {
-              flatDam = MonsterMods.tes_increasedFlatDamageWhileTargetHasMaxHP
+            // If it's a dragon breath re-calc
+            if (attack.isDragonbreath) {
+              // Flat calc
+              tesDamage = tesDamage + TargetMods.tes_increasedDragonBreathDamage
             }
-            tesDamage = tesDamage + flatDam + percDamage
-          }
-          if (target.monster && target.stats.maxHitpoints === target.hitpoints) {
-            // Do damage to monster
-            let percDamage = 0
-            if (PlayerMods.tes_increasedPercDamageWhileTargetHasMaxHP) {
-              percDamage = tesDamage * (PlayerMods.tes_increasedPercDamageWhileTargetHasMaxHP / 100)
+            // account for damage reduction
+            tesDamage = tesDamage - ((tesDamage / 100) * DR)
+            // Adding bypass damage
+            if (!target.monster) {
+              if (Monster.modifiers.tes_bypassDamageReduction) {
+                tesDamage = tesDamage + Monster.modifiers.tes_bypassDamageReduction
+              }
             }
-            let flatDam = 0
-            if (PlayerMods.tes_increasedFlatDamageWhileTargetHasMaxHP) {
-              flatDam = PlayerMods.tes_increasedFlatDamageWhileTargetHasMaxHP
+            if (target.monster) {
+              if (Player.modifiers.tes_bypassDamageReduction) {
+                tesDamage = tesDamage + Player.modifiers.tes_bypassDamageReduction
+              }
             }
-            tesDamage = tesDamage + flatDam + percDamage
-          }
-          if (TargetMods.tes_decreaseFlatDamageWhileTargetHasMaxHP && target.stats.maxHitpoints === target.hitpoints) {
-            tesDamage = tesDamage - TargetMods.tes_decreaseFlatDamageWhileTargetHasMaxHP
-          }
-          // If it's a dragon breath re-calc
-          if (attack.isDragonbreath) {
-            // Flat calc
-            tesDamage = tesDamage + TargetMods.tes_increasedDragonBreathDamage
-
-            // % calc
-            // tesDamage *= (1 - (TargetMods.tes_increasedDragonBreathDamage - TargetMods.decreasedDragonBreathDamage)) / 100
-          }
-          // account for damage reduction
-          tesDamage = tesDamage - ((tesDamage / 100) * DR)
-          // Adding bypass damage
-          if (MonsterMods.tes_bypassDamageReduction) {
-            tesDamage = tesDamage + MonsterMods.tes_bypassDamageReduction
-          }
-          // return re-calced damage
-          return Math.floor(damage + tesDamage)
-        })
-        // end patching skills for new modifiers
+            // return re-calced damage
+            return Math.floor(damage + tesDamage)
+          })
+          // end patching skills for new modifiers
+        } catch (error) {
+          game.tes_errors.push('ctx.patch combat modifiers: ', error)
+        }
 
         // Looping though all game items.
         // const ShopList = []
@@ -1246,7 +1214,8 @@ export async function setup(ctx: Modding.ModContext) {
                 // }
               }
             } catch (error) {
-              console.log("onCharacterLoaded initialPackage", error)
+
+              tes_errors.push('onCharacterLoaded initialPackage', error)
             }
           })
           // itemPackage.shopDisplayOrder.add(
@@ -1374,12 +1343,12 @@ export async function setup(ctx: Modding.ModContext) {
               }
             }
           } catch (error) {
-            console.log("onCharacterLoaded game.monsters.forEach", error)
+            tes_errors.push('onCharacterLoaded game.monsters.forEach ', error)
           }
         })
         // end looping though all game monsters
       } catch (error) {
-        console.log('onCharacterLoaded', error)
+        tes_errors.push('onCharacterLoaded ', error)
       }
     });
 
@@ -1768,13 +1737,15 @@ export async function setup(ctx: Modding.ModContext) {
           document.body.querySelector('.modal.King_Olafs_Verse').id = 'King_Olafs_Verse';
         }
         // End bards college
+        document.getElementById('synergiesButton').setAttribute('data-tooltip', getLangString('GAME_GUIDE_156'));
       } catch (error) {
-        console.log('onInterfaceReady', error)
+        tes_errors.push('onInterfaceReady ', error)
       }
     });
   } catch (error) {
-    console.log("Error, monad", error)
+    tes_errors.push('setup ', error)
   }
+  game.tes_errors = tes_errors
 }
 
 // increasedSelfDamageBasedOnCurrentHitpoints

@@ -1,4 +1,6 @@
 declare class Game implements Serializable, EncodableObject {
+    tes_errors: any;
+    tes_log: any;
     profile: any;
     loopInterval: number;
     loopStarted: boolean;

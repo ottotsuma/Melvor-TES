@@ -7640,6 +7640,32 @@
     ],
     "items": [
       {
+        "id": "Scales_of_Pitiless_Justice2",
+        "name": "tes_increasedPercDamageWhileTargetHasMaxHP",
+        "category": "Combat",
+        "type": "Misc",
+        "media": "assets/items/Scales_of_Pitiless_Justice.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 115,
+        "itemType": "Equipment",
+        "modifiers": {
+          "tes_increasedPercDamageWhileTargetHasMaxHP": 5000,
+          "increasedMeleeStrengthBonus": 10,
+          "increasedDamageTaken": 10
+        },
+        "customDescription": "Increase damage while target is fully healed by 50%, +10 melee strength bonus however +10% more damage taken.",
+        "equipmentStats": [],
+        "tier": "none",
+        "validSlots": [
+          "Helmet"
+        ],
+        "equipRequirements": [
+        ],
+        "occupiesSlots": []
+      },
+      {
         "id": "Soul_Gem",
         "name": "Soul Gem",
         "category": "Combat",
@@ -28213,8 +28239,7 @@
           "tes:Daedric_Boots",
           "tes:Daedric_Gauntlets",
           "tes:Daedric_Greaves",
-          "tes:Daedric_Helmet",
-          "tes:Daedric_Shield"
+          "tes:Daedric_Helmet"
         ],
         "playerModifiers": {
           "increasedDamageToAllMonsters": 20,
