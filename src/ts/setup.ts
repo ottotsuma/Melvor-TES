@@ -12,6 +12,7 @@
 // Translate the HTML pages
 
 
+import { Modifier } from 'typescript';
 import '../css/styles.css';
 import { languages } from './../language';
 import { TesTranslation } from './../language/translation'
@@ -45,9 +46,9 @@ export async function setup(ctx: Modding.ModContext) {
       hint: ''
     } as Modding.Settings.RadioGroupConfig);
 
-    modifierData.tes_increasedDragonBreathDamage = {
+    modifierData.tes_increasedDragonBreathDamageTaken = {
       get langDescription() {
-        return getLangString('tes_increasedDragonBreathDamage');
+        return getLangString('tes_increasedDragonBreathDamageTaken');
       },
       description: '+${value}% damage taken from dragonbreath',
       isSkill: false,
@@ -762,19 +763,25 @@ export async function setup(ctx: Modding.ModContext) {
         try {
           // Patching skills for new modifiers
           function getCharacterFlatAttackDamageBonusModification(attacker: Character, target: Character): number {
+            const attackerModifiers = attacker.modifiers
+            const p = attackerModifiers.tes_increasedFlatDamageWhileTargetHasMaxHP ? attackerModifiers.tes_increasedFlatDamageWhileTargetHasMaxHP : 0
+            const n = attackerModifiers.tes_decreaseFlatDamageWhileTargetHasMaxHP ? attackerModifiers.tes_decreaseFlatDamageWhileTargetHasMaxHP : 0
             return target.hitpointsPercent === 100
-              ? numberMultiplier * (attacker.modifiers.tes_increasedFlatDamageWhileTargetHasMaxHP - attacker.modifiers.tes_decreaseFlatDamageWhileTargetHasMaxHP)
+              ? numberMultiplier * (p - n)
               : 0;
           }
-          function getDamagePercentageModificationForStats(attacker: Character, target: Character): number {
+          function getCharacterPercentageAttackDamageBonusModification(attacker: Character, target: Character): number {
+            const attackerModifiers = attacker.modifiers
+            const p = attackerModifiers.tes_increasedPercDamageWhileTargetHasMaxHP ? attackerModifiers.tes_increasedPercDamageWhileTargetHasMaxHP : 0
+            const n = attackerModifiers.tes_decreasePercDamageWhileTargetHasMaxHP ? attackerModifiers.tes_decreasePercDamageWhileTargetHasMaxHP : 0
             return target.hitpointsPercent === 100
-              ? attacker.modifiers.tes_increasedPercDamageWhileTargetHasMaxHP - attacker.modifiers.tes_decreasePercDamageWhileTargetHasMaxHP
+              ? p - n
               : 0;
           }
           ctx.patch(Player, 'modifyAttackDamage').after((damage: number, target: any, attack: any) => {
-            const Monster: any = game.combat.enemy
-            const Player: any = game.combat.player
-            const TargetMods: any = target.modifiers
+            const Monster: Enemy = game.combat.enemy
+            const Player: Player = game.combat.player
+            const TargetMods: CombatModifiers = target.modifiers
             let tesDamage = 0
             const DR: number = TargetMods.increasedDamageReduction - TargetMods.decreasedDamageReduction
             // Remove all damage and return if wardsaved
@@ -787,12 +794,16 @@ export async function setup(ctx: Modding.ModContext) {
             if (target.hitpointsPercent === 100) {
               // At HP full damage
               // Target is monster
-              tesDamage = tesDamage + getCharacterFlatAttackDamageBonusModification(Player, Monster) + getDamagePercentageModificationForStats(Player, Monster)
+              const a = getCharacterFlatAttackDamageBonusModification(Player, Monster)
+              const b = getCharacterPercentageAttackDamageBonusModification(Player, Monster)
+              if (!isNaN(a) && !isNaN(b)) {
+                tesDamage = tesDamage + a + (damage * b)
+              }
             }
             // If it's a dragon breath re-calc
             if (attack.isDragonbreath) {
               // Flat calc
-              tesDamage = tesDamage + TargetMods.tes_increasedDragonBreathDamage
+              tesDamage = tesDamage + TargetMods.tes_increasedDragonBreathDamageTaken
             }
             // account for damage reduction
             tesDamage = tesDamage - ((tesDamage / 100) * DR)
@@ -804,9 +815,9 @@ export async function setup(ctx: Modding.ModContext) {
             return Math.floor(damage + tesDamage)
           })
           ctx.patch(Enemy, 'modifyAttackDamage').after((damage: number, target: any, attack: any) => {
-            const Monster: any = game.combat.enemy
-            const Player: any = game.combat.player
-            const TargetMods: any = target.modifiers
+            const Monster: Enemy = game.combat.enemy
+            const Player: Player = game.combat.player
+            const TargetMods: CombatModifiers = target.modifiers
             let tesDamage = 0
             const DR: number = TargetMods.increasedDamageReduction - TargetMods.decreasedDamageReduction
             // Remove all damage and return if wardsaved
@@ -819,13 +830,16 @@ export async function setup(ctx: Modding.ModContext) {
             if (target.hitpointsPercent === 100) {
               // At HP full damage
               // Target is player
-              tesDamage = tesDamage + getCharacterFlatAttackDamageBonusModification(Monster, Player) + getDamagePercentageModificationForStats(Monster, Player)
-
+              const a = getCharacterFlatAttackDamageBonusModification(Monster, Player)
+              const b = getCharacterPercentageAttackDamageBonusModification(Monster, Player)
+              if (!isNaN(a) && !isNaN(b)) {
+                tesDamage = tesDamage + a + (damage * b)
+              }
             }
             // If it's a dragon breath re-calc
             if (attack.isDragonbreath) {
               // Flat calc
-              tesDamage = tesDamage + TargetMods.tes_increasedDragonBreathDamage
+              tesDamage = tesDamage + TargetMods.tes_increasedDragonBreathDamageTaken
             }
             // account for damage reduction
             tesDamage = tesDamage - ((tesDamage / 100) * DR)
@@ -987,7 +1001,7 @@ export async function setup(ctx: Modding.ModContext) {
               const found_items_names = []
               synergy.items.forEach(item => {
                 // @ts-ignore
-                if(!synergies_all_items_names.includes(item?._namespace?.name + ":" + item?._localID)) synergies_all_items_names.push(item?._namespace?.name + ":" + item?._localID)
+                if (!synergies_all_items_names.includes(item?._namespace?.name + ":" + item?._localID)) synergies_all_items_names.push(item?._namespace?.name + ":" + item?._localID)
                 // @ts-ignore
                 if (item?._namespace?.name === "tes") {
                   // @ts-ignore
@@ -1034,19 +1048,19 @@ export async function setup(ctx: Modding.ModContext) {
         tes_errors.push('synergy error', error)
       }
       try {
-          // game.bank.selectedBankItem
-          // game.bank.selectItemOnClick
-          ctx.patch(Bank, 'selectItemOnClick').after(() => {
-            const selectedItem: BankItem = game.bank.selectedBankItem
-            // @ts-ignore
-            if(game.synergies_found_items.includes(selectedItem.item._namespace.name + ':' + selectedItem.item._localID)) {
-              document.getElementById('synergiesButton').style.display = 'inline-block'
-            } else {
-              document.getElementById('synergiesButton').style.display = 'none'
-            }
-          })  
+        // game.bank.selectedBankItem
+        // game.bank.selectItemOnClick
+        ctx.patch(Bank, 'selectItemOnClick').after(() => {
+          const selectedItem: BankItem = game.bank.selectedBankItem
+          // @ts-ignore
+          if (game.synergies_found_items.includes(selectedItem.item._namespace.name + ':' + selectedItem.item._localID)) {
+            document.getElementById('synergiesButton').style.display = 'inline-block'
+          } else {
+            document.getElementById('synergiesButton').style.display = 'none'
+          }
+        })
       } catch (error) {
-        
+
       }
       const bannedList: any = {
         "dndCoin": true,

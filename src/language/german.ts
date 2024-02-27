@@ -20,7 +20,7 @@ export const de = {
     PASSIVES_NAME_EventPassive11: "Ungewöhnliche passive",
     PASSIVES_NAME_EventPassive12: "Ungewöhnliche passive",
     MODIFIER_DATA_increasedDeadlyToxinsFromHerblore: 'Beim Herstellen von tödlichen Giftstofftränken in der Kräuterkunde erhalte +${value} zusätzliche tödliche Giftstofftränke (kann nicht verdoppelt werden)',
-    tes_increasedDragonBreathDamage: "Erhöhten Schaden durch Drachenatem um +${value}",
+    tes_increasedDragonBreathDamageTaken: "Erhöhten Schaden durch Drachenatem um +${value}",
     tes_wardsave: "+${value}% (MAX: 90%) um keinen Schaden von einem Treffer zu nehmen",
     tes_increasedFlatDamageWhileTargetHasMaxHP: "Erhöht den Schaden, während das Ziel vollständig geheilt ist, um +${value}",
     tes_increasedPercDamageWhileTargetHasMaxHP: "Erhöht den Schaden, während das Ziel vollständig geheilt ist, um +${value}%",

@@ -20,7 +20,7 @@ export const it = {
     PASSIVES_NAME_EventPassive11: "Passiva Insolita",
     PASSIVES_NAME_EventPassive12: "Passiva Insolita",
     MODIFIER_DATA_increasedDeadlyToxinsFromHerblore: 'Nella creazione di Pozioni di Tossine Letali in Erboristeria, ottieni +${value} Pozioni di Tossine Letali come Pozione aggiuntiva (Non può essere raddoppiato)',
-    tes_increasedDragonBreathDamage: "Aumenta il danno subito dai soffi del drago di +${value}",
+    tes_increasedDragonBreathDamageTaken: "Aumenta il danno subito dai soffi del drago di +${value}",
     tes_wardsave: "+${value}% (MAX: 90%) per non subire danni da un colpo",
     tes_increasedFlatDamageWhileTargetHasMaxHP: "Aumenta il danno inflitto mentre il bersaglio è completamente guarito di +${value}",
     tes_increasedPercDamageWhileTargetHasMaxHP: "Aumenta il danno inflitto mentre il bersaglio è completamente guarito di +${value}%",

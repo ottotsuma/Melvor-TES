@@ -20,7 +20,7 @@ export const zhCN = {
   PASSIVES_NAME_EventPassive11: "特殊被动11",
   PASSIVES_NAME_EventPassive12: "特殊被动12",
   MODIFIER_DATA_increasedDeadlyToxinsFromHerblore: '在草药学中制作致命毒素药水时，获得额外的 +${value} 致命毒素药水（不可翻倍）',
-  tes_increasedDragonBreathDamage: "龙吼伤害增加 +${value}",
+  tes_increasedDragonBreathDamageTaken: "龙吼伤害增加 +${value}",
   tes_wardsave: "+${value}%（上限:90%）的概率不受伤害",
   tes_increasedFlatDamageWhileTargetHasMaxHP: "当目标生命值满时，伤害增加 +${value}",
   tes_increasedPercDamageWhileTargetHasMaxHP: "当目标生命值满时，伤害增加 +${value}%",

@@ -20,7 +20,7 @@ export const ko = {
     PASSIVES_NAME_EventPassive11: "특이한 패시브",
     PASSIVES_NAME_EventPassive12: "특이한 패시브",
     MODIFIER_DATA_increasedDeadlyToxinsFromHerblore: '허블로어에서 치명적인 독 물약을 만들 때, +${value} 치명적인 독 물약을 추가로 획득합니다 (이중으로 늘릴 수 없음)',
-    tes_increasedDragonBreathDamage: "용의 숨결로부터 받는 피해 증가 +${value}",
+    tes_increasedDragonBreathDamageTaken: "용의 숨결로부터 받는 피해 증가 +${value}",
     tes_wardsave: "+${value}% (최대: 90%) 피격 시 0 피해를 입습니다",
     tes_increasedFlatDamageWhileTargetHasMaxHP: "대상이 완전히 회복된 상태에서 입는 피해 증가 +${value}",
     tes_increasedPercDamageWhileTargetHasMaxHP: "대상이 완전히 회복된 상태에서 입는 피해 증가 +${value}%",

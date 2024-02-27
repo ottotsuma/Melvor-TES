@@ -20,7 +20,7 @@ export const zhTW = {
     PASSIVES_NAME_EventPassive11: '異常被動',
     PASSIVES_NAME_EventPassive12: '異常被動',
     MODIFIER_DATA_increasedDeadlyToxinsFromHerblore: '在製作致命毒素藥水時，獲得+${value}的致命毒素藥水（作為額外藥水，不能翻倍）',
-    tes_increasedDragonBreathDamage: '增加來自龍吐息的傷害 +${value}',
+    tes_increasedDragonBreathDamageTaken: '增加來自龍吐息的傷害 +${value}',
     tes_wardsave: '有${value}%的機會（上限：90%）免疫傷害',
     tes_increasedFlatDamageWhileTargetHasMaxHP: '在目標完全恢復生命時，傷害增加 +${value}',
     tes_increasedPercDamageWhileTargetHasMaxHP: '在目標完全恢復生命時，傷害增加 +${value}%',

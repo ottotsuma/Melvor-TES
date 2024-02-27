@@ -13,7 +13,7 @@ interface SkillModifierTemplate extends BaseModifierTemplate {
 }
 declare type ModifierTag = SkillName | 'Combat';
 declare class CombatModifiers implements CombatModifierObject<number> {
-    tes_increasedDragonBreathDamage: number;
+    tes_increasedDragonBreathDamageTaken: number;
     tes_wardsave: number;
     tes_increasedFlatDamageWhileTargetHasMaxHP: number;
     tes_increasedPercDamageWhileTargetHasMaxHP: number;
@@ -1338,7 +1338,7 @@ interface CombatModifierObject<Standard> {
 }
 /** Modifiers that are only common to the player */
 interface StandardModifierObject<Standard> extends CombatModifierObject<Standard> {
-    tes_increasedDragonBreathDamage: Standard;
+    tes_increasedDragonBreathDamageTaken: Standard;
     tes_wardsave: Standard;
     tes_increasedFlatDamageWhileTargetHasMaxHP: Standard;
     tes_increasedPercDamageWhileTargetHasMaxHP: Standard;

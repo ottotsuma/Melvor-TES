@@ -20,7 +20,7 @@ export const ru = {
     "PASSIVES_NAME_EventPassive11": "Необычная Пассивная",
     "PASSIVES_NAME_EventPassive12": "Необычная Пассивная",
     "MODIFIER_DATA_increasedDeadlyToxinsFromHerblore": 'При создании смертоносных ядов в навыке Травничества, получите дополнительно +${value} порций яда (не удваивается)',
-    "tes_increasedDragonBreathDamage": "Увеличивает урон от дыхания дракона на +${value}",
+    "tes_increasedDragonBreathDamageTaken": "Увеличивает урон от дыхания дракона на +${value}",
     "tes_wardsave": "+${value}% (МАКС: 90%) для блокировки урона от удара",
     "tes_increasedFlatDamageWhileTargetHasMaxHP": "Увеличивает урон, когда цель полностью заживлена, на +${value}",
     "tes_increasedPercDamageWhileTargetHasMaxHP": "Увеличивает урон, когда цель полностью заживлена, на +${value}%",

@@ -20,7 +20,7 @@ export const pt = {
     "PASSIVES_NAME_EventPassive11": "Passiva Incomum",
     "PASSIVES_NAME_EventPassive12": "Passiva Incomum",
     "MODIFIER_DATA_increasedDeadlyToxinsFromHerblore": 'Ao criar Poções de Toxinas Mortais em Herbologia, ganhe +${value} Poção(s) de Toxinas Mortais como uma poção adicional (não pode ser duplicada)',
-    "tes_increasedDragonBreathDamage": "Aumenta o dano recebido de sopro de dragão em +${value}",
+    "tes_increasedDragonBreathDamageTaken": "Aumenta o dano recebido de sopro de dragão em +${value}",
     "tes_wardsave": "+${value}% (MÁX: 90%) para não sofrer dano de um golpe",
     "tes_increasedFlatDamageWhileTargetHasMaxHP": "Aumenta o dano enquanto o alvo estiver completamente curado em +${value}",
     "tes_increasedPercDamageWhileTargetHasMaxHP": "Aumenta o dano enquanto o alvo estiver completamente curado em +${value}%",

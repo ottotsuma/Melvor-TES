@@ -13,7 +13,7 @@ export const ja = {
     PASSIVES_NAME_EventPassive12: '珍しいパッシブ',
     MODIFIER_DATA_increasedDeadlyToxinsFromHerblore: '調合で猛毒ポーションを得るを作成するとき、追加のポーションとして+${value}致死毒ポーションを得る（2倍にはできない）。',
     MODIFIER_DATA_bigRon: '戦闘で2倍の戦利品を回収する確率が100%上昇する。敵の最大基本HP 2,000につき（上限10,000まで）、使用による近距離威力ボーナス+9%、最大威力の3%が最小威力に加算されるとともに、ダメージ軽減度が1%上昇する。相手がボスの場合は、ボーナスが2倍になる。',
-    tes_increasedDragonBreathDamage: 'ドラゴンの息から受けるダメージが+${value}増加',
+    tes_increasedDragonBreathDamageTaken: 'ドラゴンの息から受けるダメージが+${value}増加',
     tes_wardsave: 'ダメージを受けないための最大${value}%（最大90%）',
     tes_increasedFlatDamageWhileTargetHasMaxHP: '対象が完全に回復している間、ダメージが+${value}増加',
     tes_increasedPercDamageWhileTargetHasMaxHP: '対象が完全に回復している間、ダメージが+${value%増加',

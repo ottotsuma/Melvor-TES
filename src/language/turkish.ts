@@ -20,7 +20,7 @@ export const tr = {
     "PASSIVES_NAME_EventPassive11": 'Olağandışı Pasif',
     "PASSIVES_NAME_EventPassive12": 'Olağandışı Pasif',
     "MODIFIER_DATA_increasedDeadlyToxinsFromHerblore": 'Herblore\'da Ölümcül Zehirler İksiri oluştururken, +%${value} Ölümcül Zehirler İksiri kazanma (Katlanamaz)',
-    "tes_increasedDragonBreathDamage": 'Ejderha nefesinden alınan hasarı +%${value} artırır',
+    "tes_increasedDragonBreathDamageTaken": 'Ejderha nefesinden alınan hasarı +%${value} artırır',
     "tes_wardsave": 'Vuruştan +%${value} (MAX: 90%) hasar almamak için',
     "tes_increasedFlatDamageWhileTargetHasMaxHP": 'Hedef tamamen iyileşmişken alınan hasarı +%${value} artırır',
     "tes_increasedPercDamageWhileTargetHasMaxHP": 'Hedef tamamen iyileşmişken alınan hasarı +%${value} artırır',

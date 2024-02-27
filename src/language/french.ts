@@ -20,7 +20,7 @@ export const fr = {
     PASSIVES_NAME_EventPassive11: "Passif inhabituel",
     PASSIVES_NAME_EventPassive12: "Passif inhabituel",
     MODIFIER_DATA_increasedDeadlyToxinsFromHerblore: "Lors de la création de potions de toxines létales en herboristerie, gagnez +${value} potion(s) de toxines létales en plus (ne peut pas être doublé)",
-    tes_increasedDragonBreathDamage: "Augmente les dégâts infligés par les souffles de dragon de +${value}",
+    tes_increasedDragonBreathDamageTaken: "Augmente les dégâts infligés par les souffles de dragon de +${value}",
     tes_wardsave: "+${value}% (MAX : 90%) pour ne pas subir de dégâts d'un coup",
     tes_increasedFlatDamageWhileTargetHasMaxHP: "Augmente les dégâts lorsque la cible est entièrement soignée de +${value}",
     tes_increasedPercDamageWhileTargetHasMaxHP: "Augmente les dégâts lorsque la cible est entièrement soignée de +${value}%",

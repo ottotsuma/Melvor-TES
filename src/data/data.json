@@ -14904,7 +14904,7 @@
           }
         ],
         "modifiers": {
-          "tes_increasedDragonBreathDamage": 20
+          "tes_increasedDragonBreathDamageTaken": 20
         },
         "itemType": "Equipment",
         "customDescription": "High stats but takes more damage from dragon breath."
@@ -28555,6 +28555,19 @@
             },
             {
               "itemID": "tes:Blades_Sword",
+              "maxQuantity": 1,
+              "minQuantity": 1,
+              "weight": 10
+            }
+          ]
+        }
+      },
+      {
+        "id": "melvorF:Miolite_Chest",
+        "dropTable": {
+          "add": [
+            {
+              "itemID": "tes:Miolite_Gloves",
               "maxQuantity": 1,
               "minQuantity": 1,
               "weight": 10

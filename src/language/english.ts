@@ -20,7 +20,7 @@ export const en = {
   PASSIVES_NAME_EventPassive11: "Unusual Passive",
   PASSIVES_NAME_EventPassive12: "Unusual Passive",
   MODIFIER_DATA_increasedDeadlyToxinsFromHerblore: 'When creating Lethal Toxins Potions in Herblore, gain +${value} Deadly Toxins Potion(s) as an additional Potion (Cannot be doubled)',
-  tes_increasedDragonBreathDamage: "Increase damage taken from dragon breaths by +${value}",
+  tes_increasedDragonBreathDamageTaken: "Increase damage taken from dragon breaths by +${value}",
   tes_wardsave: "+${value}% (MAX: 90%) to take 0 damage from a hit",
   tes_increasedFlatDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}",
   tes_increasedPercDamageWhileTargetHasMaxHP: "Increase damage while target is fully healed by +${value}%",
