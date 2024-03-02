@@ -1037,6 +1037,8 @@ export async function setup(ctx: Modding.ModContext) {
           } else {
             tes_item._customDescription = tes_item.description + getLangString('synergy_icon')
           }
+          // const synergy_image = <img class="skill-icon-xxs" src="https://cdn2-main.melvor.net/assets/media/skills/summoning/synergy.svg">
+          // tes_item.name === tes_item.name
         })
         // @ts-ignore
         game.allSynergies = synergiesForExport
@@ -1055,7 +1057,8 @@ export async function setup(ctx: Modding.ModContext) {
           // @ts-ignore
           if (game.synergies_found_items.includes(selectedItem.item._namespace.name + ':' + selectedItem.item._localID)) {
             document.getElementById('synergiesButton').style.display = 'inline-block'
-          } else {
+            // const synergy_image = <img class="skill-icon-xxs" src="https://cdn2-main.melvor.net/assets/media/skills/summoning/synergy.svg">
+          } else {  
             document.getElementById('synergiesButton').style.display = 'none'
           }
         })
@@ -1780,7 +1783,11 @@ export async function setup(ctx: Modding.ModContext) {
           document.body.querySelector('.modal.King_Olafs_Verse').id = 'King_Olafs_Verse';
         }
         // End bards college
-        document.getElementById('synergiesButton').setAttribute('data-tooltip', getLangString('GAME_GUIDE_156'));
+
+        // @ts-ignore
+        tippy('#synergiesButton', {
+          content: getLangString('GAME_GUIDE_156'),
+        });
       } catch (error) {
         tes_errors.push('onInterfaceReady ', error)
       }
