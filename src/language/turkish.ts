@@ -47,7 +47,7 @@ export const tr = {
     Profile_Single_Species_Argonian: 'Argonian',
 
     Stop_bard_drops: 'Stop bard drops?',
-    synergy_icon: ". Click the small <strong class=\"text-warning\">synergy icon</strong> to find out which Synergies this item is effected by.",
+    synergy_icon: ". Click the small <strong class=\"text-warning\">synergy icon <img class=\"skill-icon-xxs\" src=\"https://cdn2-main.melvor.net/assets/media/skills/summoning/synergy.svg\"></strong> to find out which Synergies this item is effected by.",
     equipped_with: "When equipped with the following items:",
     gain_modifiers: "Gain the following modifiers:",
     allowUnholyPrayerUse: "Allows Unholy Prayers to be used if equipped with one other item that allows for Unholy Prayers",

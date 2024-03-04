@@ -766,8 +766,9 @@ export async function setup(ctx: Modding.ModContext) {
             const attackerModifiers = attacker.modifiers
             const p = attackerModifiers.tes_increasedFlatDamageWhileTargetHasMaxHP ? attackerModifiers.tes_increasedFlatDamageWhileTargetHasMaxHP : 0
             const n = attackerModifiers.tes_decreaseFlatDamageWhileTargetHasMaxHP ? attackerModifiers.tes_decreaseFlatDamageWhileTargetHasMaxHP : 0
+            // numberMultiplier
             return target.hitpointsPercent === 100
-              ? numberMultiplier * (p - n)
+              ? p - n
               : 0;
           }
           function getCharacterPercentageAttackDamageBonusModification(attacker: Character, target: Character): number {
@@ -1037,8 +1038,8 @@ export async function setup(ctx: Modding.ModContext) {
           } else {
             tes_item._customDescription = tes_item.description + getLangString('synergy_icon')
           }
-          // const synergy_image = <img class="skill-icon-xxs" src="https://cdn2-main.melvor.net/assets/media/skills/summoning/synergy.svg">
-          // tes_item.name === tes_item.name
+          // const synergy_image = `<img class=\"skill-icon-xxs\" src=\"https://cdn2-main.melvor.net/assets/media/skills/summoning/synergy.svg\">`
+          // tes_item.name === tes_item.name + synergy_image
         })
         // @ts-ignore
         game.allSynergies = synergiesForExport
