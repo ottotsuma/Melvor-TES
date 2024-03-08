@@ -79,7 +79,7 @@
       },
       {
         "id": "Assassin_Target",
-        "name": "Assassin_Target",
+        "name": "Assassin Target",
         "customDescription": "Fully heal if not killed in 2 hits.",
         "modifiers": {
           "increasedEndOfTurnHealing2": 100
