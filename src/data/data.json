@@ -25516,7 +25516,7 @@
         "scaleChanceWithMasteryPool": false,
         "ignoreCompletion": false,
         "modifiers": {
-          "increasedMinFireSpellDmg": 4
+          "increasedMinFireSpellDmg": 0.04
         },
         "activeInRaid": false,
         "hint": "Oblivion",
@@ -25568,7 +25568,7 @@
         "scaleChanceWithMasteryPool": false,
         "ignoreCompletion": false,
         "modifiers": {
-          "increasedMinNatureSpellDamageBasedOnMaxHit": 2
+          "increasedMinNatureSpellDamageBasedOnMaxHit": 0.02
         },
         "activeInRaid": false,
         "hint": "Ayleid Ruins",
