@@ -54,7 +54,7 @@
             "itemID": "melvorAoD:Crystal_Bones",
             "quantity": 1
           },
-          "canSlayer": true,
+          "canSlayer": false,
           "isBoss": false,
           "selectedSpell": "melvorD:WindStrike"
         },
@@ -114,7 +114,7 @@
             "itemID": "melvorAoD:Crystal_Bones",
             "quantity": 1
           },
-          "canSlayer": true,
+          "canSlayer": false,
           "isBoss": false,
           "selectedSpell": "melvorD:WaterSurge"
         }
