@@ -16,6 +16,13 @@
                 "modifiers": {
                     "increasedDamageAgainstHumans": 30
                 }
+            },
+            {
+                "id": "woodland_weakness",
+                "name": "Woodland Creature",
+                "modifiers":{
+                    "increasedDamageTakenFromFireSpells": 50
+                }
             }
         ],
         "itemSynergies": [
@@ -316,6 +323,14 @@
             }
         ],
         "monsters": [
+            {
+                "id":"tes:Spriggan",
+                "passives": {
+                    "add": [
+                        "tes:woodland_weakness"
+                    ]
+                }
+            },
             {
                 "id": "tes:Divine_Crusader",
                 "passives": {

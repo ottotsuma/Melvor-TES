@@ -10463,7 +10463,7 @@
       {
         "id": "Goblin_Ear",
         "name": "Goblin Ear",
-        "customDescription": "A stinky smell goblin ear.",
+        "customDescription": "A stinky goblin ear.",
         "category": "Combat",
         "type": "Ear",
         "media": "assets/items/Goblin_Ear.png",

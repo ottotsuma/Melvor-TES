@@ -285,7 +285,7 @@ export const en = {
   ITEM_DESCRIPTION_StoneOfStAlessia: 'An amulet for the worthy.',
   ITEM_DESCRIPTION_gold_coin: 'The empire is law, The law is sacred',
   ITEM_DESCRIPTION_King_Olafs_Verse: 'A very faded copy of the fabled work of the bard, Svaknir which is requested by the headmaster of the Bards College, Viarmo. The only remaining copy is sadly, mostly illegible.',
-  ITEM_DESCRIPTION_Goblin_Ear: 'A stinky smell goblin ear.',
+  ITEM_DESCRIPTION_Goblin_Ear: 'A stinky goblin ear.',
   ITEM_DESCRIPTION_WitchsHead: 'The gruesome and eerie head of a witch.',
   ITEM_DESCRIPTION_Eye: 'A cold, lifeless eye taken from the body of a fallen foe.',
   ITEM_DESCRIPTION_GoblinFurnishings: 'A collection of peculiar goblin decorations and furnishings.',

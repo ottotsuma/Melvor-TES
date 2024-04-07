@@ -263,10 +263,21 @@ export async function setup(ctx: Modding.ModContext) {
         // Packages to load based on entitlement
         try {
           if (TothEntitlement) {
+            try {
             await ctx.gameData.addPackage('data-toth.json');
+              
+            } catch (error) {
+              tes_errors.push('data-toth.json', error)
+              
+            }
           }
           if (AoDEntitlement) {
+            try {
             await ctx.gameData.addPackage('data-aod.json');
+              
+            } catch (error) {
+              tes_errors.push('data-aod.json', error)
+            }
           }
           // add items to bards college before mods load
           bards_college_items.push(game.items.getObjectByID(`tes:Sweetroll`))
@@ -291,7 +302,12 @@ export async function setup(ctx: Modding.ModContext) {
             // decreasedSheetMusicDropRate: number;
             // increasedMusicAdditionalRewardRoll: number;
             // decreasedMusicAdditionalRewardRoll: number;
+            try {
             await ctx.gameData.addPackage('data-bard.json');
+              
+            } catch (error) {
+              tes_errors.push('data-bard.json', error)
+            }
             bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Topaz_Gem`))
             bards_college_items[5].baseChanceDenominator = "2500"
             bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Ruby_Gem`))
@@ -303,6 +319,11 @@ export async function setup(ctx: Modding.ModContext) {
             const cmim = mod.api.customModifiersInMelvor;
             if (!cmim) {
               return;
+            }
+            try {
+              await ctx.gameData.addPackage('custom-mods.json'); 
+            } catch (error) {
+              tes_errors.push('custom-mods.json', error)
             }
             const DragonList = [
               "tes:Ysmir_Iceheart",
@@ -719,13 +740,15 @@ export async function setup(ctx: Modding.ModContext) {
             cmim.forceBaseModTypeActive("MythicalCreature");
             // @ts-ignore
             cmim.forceBaseModTypeActive("SeaCreature");
-
-            // namespace_thuum
-            await ctx.gameData.addPackage('custom-mods.json');
           }
           if (kcm && profileSkill) {
             // add modifier package
-            await ctx.gameData.addPackage('profile.json');
+            try {
+              await ctx.gameData.addPackage('profile.json');
+            } catch (error) {
+              tes_errors.push('profile.json', error)
+            }
+            
           }
         } catch (error) {
 
@@ -798,7 +821,7 @@ export async function setup(ctx: Modding.ModContext) {
               const a = getCharacterFlatAttackDamageBonusModification(Player, Monster)
               const b = getCharacterPercentageAttackDamageBonusModification(Player, Monster)
               if (!isNaN(a) && !isNaN(b)) {
-                tesDamage = tesDamage + a + (damage * b)
+                tesDamage = tesDamage + a + ((damage/100) * b)
               }
             }
             // If it's a dragon breath re-calc
