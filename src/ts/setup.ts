@@ -362,7 +362,6 @@ export async function setup(ctx: Modding.ModContext) {
               "melvorF:BountyHunter",
               "melvorD:BlackKnight",
               "melvorD:ConfusedPirate",
-              "melvorD:FrozenArcher",
               "melvorD:Pirate",
               "melvorD:FirstMate",
               "melvorD:JuniorFarmer",
@@ -527,6 +526,7 @@ export async function setup(ctx: Modding.ModContext) {
               "melvorF:Aleron"
             ]
             const elfList = [
+              "melvorD:FrozenArcher",
               "tes:Umaril",
               "tes:Ungolim",
               "tes:Alval_Uvani",
