@@ -1,5 +1,5 @@
 {
-    "$schema": "https://melvoridle.com/assets/schema/gameData.json",
+    "$schema": "https://melvoridle.com/public_test/assets/schema/gameData.json",
     "namespace": "tes",
     "modifications": {
         "items": [
@@ -15,12 +15,12 @@
                     ]
                 },
                 "specialAttacks": {
-                    "add": ["mythMusic:Lesser_Prank"]
+                    "add": [
+                        "mythMusic:Lesser_Prank"
+                    ]
                 },
                 "modifiers": {
-                    "add":{
-                        "increasedMusicGP": 10
-                    }
+                    "increasedMusicGP": 1
                 }
             },
             {
@@ -35,12 +35,12 @@
                     ]
                 },
                 "specialAttacks": {
-                    "add": ["mythMusic:Lesser_Prank"]
+                    "add": [
+                        "mythMusic:Lesser_Prank"
+                    ]
                 },
                 "modifiers": {
-                    "add":{
-                        "increasedMusicGP": 10
-                    }
+                    "increasedMusicGP": 1
                 }
             },
             {
@@ -55,12 +55,12 @@
                     ]
                 },
                 "specialAttacks": {
-                    "add": ["mythMusic:Lesser_Prank"]
+                    "add": [
+                        "mythMusic:Lesser_Prank"
+                    ]
                 },
                 "modifiers": {
-                    "add":{
-                        "increasedMusicGP": 10
-                    }
+                    "increasedMusicGP": 1
                 }
             },
             {
@@ -75,9 +75,7 @@
                     ]
                 },
                 "modifiers": {
-                    "add":{
-                        "increasedMusicGP": 10
-                    }
+                    "increasedMusicGP": 1
                 }
             },
             {
@@ -92,11 +90,9 @@
                     ]
                 },
                 "modifiers": {
-                    "add":{
-                        "increasedMusicGP": 10
-                    }
+                    "increasedMusicGP": 1
                 }
-            },            
+            },
             {
                 "id": "tes:Jesters_Boots",
                 "equipRequirements": {
@@ -109,9 +105,7 @@
                     ]
                 },
                 "modifiers": {
-                    "add":{
-                        "increasedMusicGP": 10
-                    }
+                    "increasedMusicGP": 1
                 }
             },
             {
@@ -126,17 +120,13 @@
                     ]
                 },
                 "modifiers": {
-                    "add":{
-                        "increasedMusicGP": 10
-                    }
+                    "increasedMusicGP": 1
                 }
             },
             {
                 "id": "tes:Crabbers_Charm",
                 "modifiers": {
-                    "add":{
-                        "increasedChanceToObtainShrimpWhileTrainingMusic": 100
-                    }
+                    "increasedChanceToObtainShrimpWhileTrainingMusic": 1
                 }
             }
         ],
@@ -146,7 +136,7 @@
                 "lootTable": {
                     "add": [
                         {
-                            "itemID":"tes:Jesters_Hat",
+                            "itemID": "tes:Jesters_Hat",
                             "maxQuantity": 1,
                             "minQuantity": 1,
                             "weight": 1
@@ -159,7 +149,7 @@
                 "lootTable": {
                     "add": [
                         {
-                            "itemID":"tes:Jesters_Gloves",
+                            "itemID": "tes:Jesters_Gloves",
                             "maxQuantity": 1,
                             "minQuantity": 1,
                             "weight": 1
@@ -172,13 +162,13 @@
                 "lootTable": {
                     "add": [
                         {
-                            "itemID":"tes:Jesters_Outfit",
+                            "itemID": "tes:Jesters_Outfit",
                             "maxQuantity": 1,
                             "minQuantity": 1,
                             "weight": 1
                         },
                         {
-                            "itemID":"tes:Jesters_Boots",
+                            "itemID": "tes:Jesters_Boots",
                             "maxQuantity": 1,
                             "minQuantity": 1,
                             "weight": 1
@@ -243,9 +233,11 @@
                         "value": 1
                     }
                 ],
-                "specialAttacks": ["mythMusic:Greater_Prank"],
+                "specialAttacks": [
+                    "mythMusic:Greater_Prank"
+                ],
                 "modifiers": {
-                    "increasedMusicGP": 20
+                    "increasedMusicGP": 1
                 }
             },
             {
@@ -293,9 +285,11 @@
                         "value": 90
                     }
                 ],
-                "specialAttacks": ["mythMusic:Greater_Prank"],
+                "specialAttacks": [
+                    "mythMusic:Greater_Prank"
+                ],
                 "modifiers": {
-                    "increasedMusicGP": 20
+                    "increasedMusicGP": 1
                 }
             },
             {
@@ -351,9 +345,11 @@
                         "value": 182
                     }
                 ],
-                "specialAttacks": ["mythMusic:Greater_Prank"],
+                "specialAttacks": [
+                    "mythMusic:Greater_Prank"
+                ],
                 "modifiers": {
-                    "increasedMusicGP": 20
+                    "increasedMusicGP": 1
                 }
             }
         ]

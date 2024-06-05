@@ -1,115 +1,115 @@
 {
-    "$schema": "https://melvoridle.com/assets/schema/gameData.json",
+    "$schema": "https://melvoridle.com/public_test/assets/schema/gameData.json",
     "namespace": "tes",
     "data": {
-        "skillData": [
-            {
-                "skillID": "namespace_profile:Profile",
-                "data": {
-                    "species": [
-                        {
-                            "id": "Khajiit",
-                            "name": "Khajiit",
-                            "media": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2Fjha2ofzeymw51.jpg",
-                            "baseExperience": 5,
-                            "productId": "namespace_profile:Khajiit",
-                            "level": 5,
-                            "skills": [
-                                "https://cdn2-main.melvor.net/assets/media/pets/mister_fuzzbutt.png",
-                                "melvorD:Thieving",
-                                "https://cdn2-main.melvor.net/assets/media/main/coins.svg"
-                            ],
-                            "standardModifiers": [
-                                {
-                                    "level": 0,
-                                    "key": "khajiitTraitApplied",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 1,
-                                    "key": "increasedThievingStunIntervalPercent",
-                                    "value": 100
-                                },
-                                {
-                                    "level": 20,
-                                    "key": "increasedThievingStealth",
-                                    "value": 150
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedGPFromThieving",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "increasedGPFromSales",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "increasedChanceToDodge",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "increasedGPOnEnemyHit",
-                                    "value": 5
-                                }
-                            ]
-                        },
-                        {
-                            "id": "Argonian",
-                            "name": "Argonian",
-                            "media": "https://img.nerdburglars.net/wp-content/uploads/2023/03/argonians-name-generator-2.jpg",
-                            "baseExperience": 15,
-                            "productId": "namespace_profile:Argonian",
-                            "level": 15,
-                            "skills": [
-                                "https://static.wikia.nocookie.net/skyrim_gamepedia/images/c/c0/Deeja.png",
-                                "melvorD:Fishing",
-                                "melvorD:Cooking"
-                            ],
-                            "standardModifiers": [
-                                {
-                                    "level": 0,
-                                    "key": "argonianTraitApplied",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 1,
-                                    "key": "decreasedCookingSuccessCap",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 20,
-                                    "key": "increasedChanceSuccessfulCook",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 40,
-                                    "key": "increasedGPFromRawFishSales",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 60,
-                                    "key": "increasedChancePerfectCookGlobal",
-                                    "value": 10
-                                },
-                                {
-                                    "level": 80,
-                                    "key": "increasedFishingCookedChance",
-                                    "value": 5
-                                },
-                                {
-                                    "level": 99,
-                                    "key": "poisonImmunity",
-                                    "value": 50
-                                }
-                            ]
-                        }
-                    ]
-                }
-            }
-        ]
+      "skillData": [
+        {
+          "skillID": "namespace_profile:Profile",
+          "data": {
+            "species": [
+              {
+                "id": "Khajiit",
+                "name": "Khajiit",
+                "media": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2Fjha2ofzeymw51.jpg",
+                "baseExperience": 5,
+                "productId": "namespace_profile:Khajiit",
+                "level": 5,
+                "skills": [
+                  "https://cdn2-main.melvor.net/assets/media/pets/mister_fuzzbutt.png",
+                  "melvorD:Thieving",
+                  "https://cdn2-main.melvor.net/assets/media/main/coins.svg"
+                ],
+                "standardModifiers": [
+                  {
+                    "level": 0,
+                    "key": "khajiitTraitApplied",
+                    "value": 10
+                  },
+                  {
+                    "level": 1,
+                    "key": "increasedThievingStunIntervalPercent",
+                    "value": 100
+                  },
+                  {
+                    "level": 20,
+                    "key": "increasedThievingStealth",
+                    "value": 150
+                  },
+                  {
+                    "level": 40,
+                    "key": "increasedGPFromThieving",
+                    "value": 10
+                  },
+                  {
+                    "level": 60,
+                    "key": "increasedGPFromSales",
+                    "value": 10
+                  },
+                  {
+                    "level": 80,
+                    "key": "increasedChanceToDodge",
+                    "value": 5
+                  },
+                  {
+                    "level": 99,
+                    "key": "increasedGPOnEnemyHit",
+                    "value": 5
+                  }
+                ]
+              },
+              {
+                "id": "Argonian",
+                "name": "Argonian",
+                "media": "https://img.nerdburglars.net/wp-content/uploads/2023/03/argonians-name-generator-2.jpg",
+                "baseExperience": 15,
+                "productId": "namespace_profile:Argonian",
+                "level": 15,
+                "skills": [
+                  "https://static.wikia.nocookie.net/skyrim_gamepedia/images/c/c0/Deeja.png",
+                  "melvorD:Fishing",
+                  "melvorD:Cooking"
+                ],
+                "standardModifiers": [
+                  {
+                    "level": 0,
+                    "key": "argonianTraitApplied",
+                    "value": 10
+                  },
+                  {
+                    "level": 1,
+                    "key": "decreasedCookingSuccessCap",
+                    "value": 10
+                  },
+                  {
+                    "level": 20,
+                    "key": "increasedChanceSuccessfulCook",
+                    "value": 10
+                  },
+                  {
+                    "level": 40,
+                    "key": "increasedGPFromRawFishSales",
+                    "value": 10
+                  },
+                  {
+                    "level": 60,
+                    "key": "increasedChancePerfectCookGlobal",
+                    "value": 10
+                  },
+                  {
+                    "level": 80,
+                    "key": "increasedFishingCookedChance",
+                    "value": 5
+                  },
+                  {
+                    "level": 99,
+                    "key": "poisonImmunity",
+                    "value": 50
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
     }
-}
+  }

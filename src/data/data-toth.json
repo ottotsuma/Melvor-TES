@@ -1,5 +1,5 @@
 {
-  "$schema": "https://melvoridle.com/assets/schema/gameData.json",
+  "$schema": "https://melvoridle.com/public_test/assets/schema/gameData.json",
   "namespace": "tes",
   "data": {
     "shopPurchases": [
@@ -17,19 +17,14 @@
           "modifiers": {}
         },
         "cost": {
-          "gp": {
-            "type": "Fixed",
-            "cost": 45000000
-          },
-          "slayerCoins": {
-            "type": "Fixed",
-            "cost": 0
-          },
-          "items": [],
-          "raidCoins": {
-            "type": "Fixed",
-            "cost": 0
-          }
+          "currencies": [
+            {
+              "currency": "melvorD:GP",
+              "type": "Fixed",
+              "cost": 45000000
+            }
+          ],
+          "items": []
         },
         "allowQuantityPurchase": false,
         "unlockRequirements": [],
@@ -58,19 +53,14 @@
           ]
         },
         "cost": {
-          "gp": {
-            "type": "Fixed",
-            "cost": 2000
-          },
-          "slayerCoins": {
-            "type": "Fixed",
-            "cost": 0
-          },
-          "items": [],
-          "raidCoins": {
-            "type": "Fixed",
-            "cost": 0
-          }
+          "currencies": [
+            {
+              "currency": "melvorD:GP",
+              "type": "Fixed",
+              "cost": 2000
+            }
+          ],
+          "items": []
         },
         "allowQuantityPurchase": true,
         "unlockRequirements": [],
@@ -109,19 +99,14 @@
           ]
         },
         "cost": {
-          "gp": {
-            "type": "Fixed",
-            "cost": 2100
-          },
-          "slayerCoins": {
-            "type": "Fixed",
-            "cost": 0
-          },
-          "items": [],
-          "raidCoins": {
-            "type": "Fixed",
-            "cost": 0
-          }
+          "currencies": [
+            {
+              "currency": "melvorD:GP",
+              "type": "Fixed",
+              "cost": 2100
+            }
+          ],
+          "items": []
         },
         "allowQuantityPurchase": true,
         "unlockRequirements": [],
@@ -160,19 +145,14 @@
           ]
         },
         "cost": {
-          "gp": {
-            "type": "Fixed",
-            "cost": 2200
-          },
-          "slayerCoins": {
-            "type": "Fixed",
-            "cost": 0
-          },
-          "items": [],
-          "raidCoins": {
-            "type": "Fixed",
-            "cost": 0
-          }
+          "currencies": [
+            {
+              "currency": "melvorD:GP",
+              "type": "Fixed",
+              "cost": 2200
+            }
+          ],
+          "items": []
         },
         "allowQuantityPurchase": true,
         "unlockRequirements": [],
@@ -211,19 +191,14 @@
           ]
         },
         "cost": {
-          "gp": {
-            "type": "Fixed",
-            "cost": 2300
-          },
-          "slayerCoins": {
-            "type": "Fixed",
-            "cost": 0
-          },
-          "items": [],
-          "raidCoins": {
-            "type": "Fixed",
-            "cost": 0
-          }
+          "currencies": [
+            {
+              "currency": "melvorD:GP",
+              "type": "Fixed",
+              "cost": 2300
+            }
+          ],
+          "items": []
         },
         "allowQuantityPurchase": true,
         "unlockRequirements": [],
@@ -262,19 +237,14 @@
           ]
         },
         "cost": {
-          "gp": {
-            "type": "Fixed",
-            "cost": 2400
-          },
-          "slayerCoins": {
-            "type": "Fixed",
-            "cost": 0
-          },
-          "items": [],
-          "raidCoins": {
-            "type": "Fixed",
-            "cost": 0
-          }
+          "currencies": [
+            {
+              "currency": "melvorD:GP",
+              "type": "Fixed",
+              "cost": 2400
+            }
+          ],
+          "items": []
         },
         "allowQuantityPurchase": true,
         "unlockRequirements": [],
@@ -313,19 +283,14 @@
           ]
         },
         "cost": {
-          "gp": {
-            "type": "Fixed",
-            "cost": 2500
-          },
-          "slayerCoins": {
-            "type": "Fixed",
-            "cost": 0
-          },
-          "items": [],
-          "raidCoins": {
-            "type": "Fixed",
-            "cost": 0
-          }
+          "currencies": [
+            {
+              "currency": "melvorD:GP",
+              "type": "Fixed",
+              "cost": 2500
+            }
+          ],
+          "items": []
         },
         "allowQuantityPurchase": true,
         "unlockRequirements": [],
@@ -364,19 +329,14 @@
           ]
         },
         "cost": {
-          "gp": {
-            "type": "Fixed",
-            "cost": 2600
-          },
-          "slayerCoins": {
-            "type": "Fixed",
-            "cost": 0
-          },
-          "items": [],
-          "raidCoins": {
-            "type": "Fixed",
-            "cost": 0
-          }
+          "currencies": [
+            {
+              "currency": "melvorD:GP",
+              "type": "Fixed",
+              "cost": 2600
+            }
+          ],
+          "items": []
         },
         "allowQuantityPurchase": true,
         "unlockRequirements": [],
@@ -415,19 +375,14 @@
           ]
         },
         "cost": {
-          "gp": {
-            "type": "Fixed",
-            "cost": 2700
-          },
-          "slayerCoins": {
-            "type": "Fixed",
-            "cost": 0
-          },
-          "items": [],
-          "raidCoins": {
-            "type": "Fixed",
-            "cost": 0
-          }
+          "currencies": [
+            {
+              "currency": "melvorD:GP",
+              "type": "Fixed",
+              "cost": 2700
+            }
+          ],
+          "items": []
         },
         "allowQuantityPurchase": true,
         "unlockRequirements": [],
@@ -466,19 +421,14 @@
           ]
         },
         "cost": {
-          "gp": {
-            "type": "Fixed",
-            "cost": 2500000
-          },
-          "slayerCoins": {
-            "type": "Fixed",
-            "cost": 0
-          },
-          "items": [],
-          "raidCoins": {
-            "type": "Fixed",
-            "cost": 0
-          }
+          "currencies": [
+            {
+              "currency": "melvorD:GP",
+              "type": "Fixed",
+              "cost": 2500000
+            }
+          ],
+          "items": []
         },
         "allowQuantityPurchase": true,
         "unlockRequirements": [],
@@ -511,19 +461,14 @@
           ]
         },
         "cost": {
-          "gp": {
-            "type": "Fixed",
-            "cost": 2500000
-          },
-          "slayerCoins": {
-            "type": "Fixed",
-            "cost": 0
-          },
-          "items": [],
-          "raidCoins": {
-            "type": "Fixed",
-            "cost": 0
-          }
+          "currencies": [
+            {
+              "currency": "melvorD:GP",
+              "type": "Fixed",
+              "cost": 2500000
+            }
+          ],
+          "items": []
         },
         "allowQuantityPurchase": true,
         "unlockRequirements": [],
@@ -556,19 +501,14 @@
           ]
         },
         "cost": {
-          "gp": {
-            "type": "Fixed",
-            "cost": 2500000
-          },
-          "slayerCoins": {
-            "type": "Fixed",
-            "cost": 0
-          },
-          "items": [],
-          "raidCoins": {
-            "type": "Fixed",
-            "cost": 0
-          }
+          "currencies": [
+            {
+              "currency": "melvorD:GP",
+              "type": "Fixed",
+              "cost": 2500000
+            }
+          ],
+          "items": []
         },
         "allowQuantityPurchase": true,
         "unlockRequirements": [],
@@ -601,19 +541,14 @@
           ]
         },
         "cost": {
-          "gp": {
-            "type": "Fixed",
-            "cost": 5000000
-          },
-          "slayerCoins": {
-            "type": "Fixed",
-            "cost": 0
-          },
-          "items": [],
-          "raidCoins": {
-            "type": "Fixed",
-            "cost": 0
-          }
+          "currencies": [
+            {
+              "currency": "melvorD:GP",
+              "type": "Fixed",
+              "cost": 5000000
+            }
+          ],
+          "items": []
         },
         "allowQuantityPurchase": true,
         "unlockRequirements": [],
@@ -646,19 +581,14 @@
           ]
         },
         "cost": {
-          "gp": {
-            "type": "Fixed",
-            "cost": 5000000
-          },
-          "slayerCoins": {
-            "type": "Fixed",
-            "cost": 0
-          },
-          "items": [],
-          "raidCoins": {
-            "type": "Fixed",
-            "cost": 0
-          }
+          "currencies": [
+            {
+              "currency": "melvorD:GP",
+              "type": "Fixed",
+              "cost": 5000000
+            }
+          ],
+          "items": []
         },
         "allowQuantityPurchase": true,
         "unlockRequirements": [],
@@ -691,19 +621,14 @@
           ]
         },
         "cost": {
-          "gp": {
-            "type": "Fixed",
-            "cost": 5000000
-          },
-          "slayerCoins": {
-            "type": "Fixed",
-            "cost": 0
-          },
-          "items": [],
-          "raidCoins": {
-            "type": "Fixed",
-            "cost": 0
-          }
+          "currencies": [
+            {
+              "currency": "melvorD:GP",
+              "type": "Fixed",
+              "cost": 5000000
+            }
+          ],
+          "items": []
         },
         "allowQuantityPurchase": true,
         "unlockRequirements": [],
@@ -737,19 +662,14 @@
           "modifiers": {}
         },
         "cost": {
-          "gp": {
-            "type": "Fixed",
-            "cost": 0
-          },
-          "slayerCoins": {
-            "type": "Fixed",
-            "cost": 100000000
-          },
-          "items": [],
-          "raidCoins": {
-            "type": "Fixed",
-            "cost": 0
-          }
+          "currencies": [
+            {
+              "currency": "melvorD:SlayerCoins",
+              "type": "Fixed",
+              "cost": 100000000
+            }
+          ],
+          "items": []
         },
         "allowQuantityPurchase": false,
         "unlockRequirements": [],
@@ -779,19 +699,14 @@
           "modifiers": {}
         },
         "cost": {
-          "gp": {
-            "type": "Fixed",
-            "cost": 100000000
-          },
-          "slayerCoins": {
-            "type": "Fixed",
-            "cost": 0
-          },
-          "items": [],
-          "raidCoins": {
-            "type": "Fixed",
-            "cost": 0
-          }
+          "currencies": [
+            {
+              "currency": "melvorD:GP",
+              "type": "Fixed",
+              "cost": 100000000
+            }
+          ],
+          "items": []
         },
         "allowQuantityPurchase": false,
         "unlockRequirements": [],
@@ -817,23 +732,17 @@
               "id": "tes:Dark_Brotherhood_Banner",
               "quantity": 1
             }
-          ],
-          "modifiers": {}
+          ]
         },
         "cost": {
-          "gp": {
-            "type": "Fixed",
-            "cost": 100000000
-          },
-          "slayerCoins": {
-            "type": "Fixed",
-            "cost": 0
-          },
-          "items": [],
-          "raidCoins": {
-            "type": "Fixed",
-            "cost": 0
-          }
+          "currencies": [
+            {
+              "currency": "melvorD:GP",
+              "type": "Fixed",
+              "cost": 100000000
+            }
+          ],
+          "items": []
         },
         "allowQuantityPurchase": false,
         "unlockRequirements": [],
@@ -889,8 +798,8 @@
         "itemType": "Weapon",
         "attackType": "magic",
         "modifiers": {
-          "increasedFlatMinHit": 20,
-          "increasedFlatMagicAttackBonus": 40
+          "flatMinHit": 20,
+          "flatMagicAttackBonus": 40
         },
         "equipmentStats": [
           {
@@ -904,9 +813,11 @@
           {
             "key": "magicDamageBonus",
             "value": 100
-          },
+          }
+        ],
+        "resistanceStats": [
           {
-            "key": "damageReduction",
+            "id": "melvorD:Normal",
             "value": 5
           }
         ],
@@ -937,14 +848,13 @@
         "sellsFor": 10000000,
         "itemType": "Equipment",
         "modifiers": {
-          "increasedMeleeStrengthBonus": 20,
-          "increasedFlatStabAttackBonus": 10,
-          "increasedFlatSlashAttackBonus": 10,
-          "increasedFlatBlockAttackBonus": 10,
-          "increasedRangedStrengthBonus": 20
+          "meleeStrengthBonus": 20,
+          "flatStabAttackBonus": 10,
+          "flatSlashAttackBonus": 10,
+          "flatBlockAttackBonus": 10,
+          "rangedStrengthBonus": 20
         },
-        "equipmentStats": [
-        ],
+        "equipmentStats": [],
         "tier": "none",
         "validSlots": [
           "Passive",
@@ -971,12 +881,11 @@
         "sellsFor": 10000000,
         "itemType": "Equipment",
         "modifiers": {
-          "increasedMagicAccuracyBonus": 10,
-          "increasedMagicCritChance": 3,
-          "increasedMagicDamageBonus": 20
+          "magicAccuracyRating": 10,
+          "magicCritChance": 3,
+          "magicDamageBonus": 20
         },
-        "equipmentStats": [
-        ],
+        "equipmentStats": [],
         "tier": "none",
         "validSlots": [
           "Passive",
@@ -1003,12 +912,11 @@
         "sellsFor": 10000000,
         "itemType": "Equipment",
         "modifiers": {
+          "maxHit": 10,
           "tes_increasedFlatDamageWhileTargetHasMaxHP": 10,
-          "tes_increasedPercDamageWhileTargetHasMaxHP": 50,
-          "increasedMaxHitPercent": 10
+          "tes_increasedPercDamageWhileTargetHasMaxHP": 50
         },
-        "equipmentStats": [
-        ],
+        "equipmentStats": [],
         "tier": "none",
         "validSlots": [
           "Passive",
@@ -1038,18 +946,17 @@
         "specialAttacks": [],
         "lootChance": 100,
         "lootTable": [],
-        "gpDrops": {
-          "min": 50000,
-          "max": 1
-        },
+        "currencyDrops": [
+          {
+            "currencyID": "melvorD:GP",
+            "min": 50000,
+            "max": 1
+          }
+        ],
         "equipmentStats": [
           {
             "key": "attackSpeed",
             "value": 2000
-          },
-          {
-            "key": "damageReduction",
-            "value": 99
           },
           {
             "key": "magicDamageBonus",
@@ -1094,6 +1001,12 @@
           {
             "key": "rangedDefenceBonus",
             "value": 600
+          }
+        ],
+        "resistanceStats": [
+          {
+            "id": "melvorD:Normal",
+            "value": 99
           }
         ],
         "levels": {
@@ -1159,18 +1072,17 @@
             "weight": 20
           }
         ],
-        "gpDrops": {
-          "min": 1000000,
-          "max": 1
-        },
+        "currencyDrops": [
+          {
+            "currencyID": "melvorD:GP",
+            "min": 1000000,
+            "max": 1
+          }
+        ],
         "equipmentStats": [
           {
             "key": "attackSpeed",
             "value": 900
-          },
-          {
-            "key": "damageReduction",
-            "value": 99
           },
           {
             "key": "magicDamageBonus",
@@ -1217,6 +1129,12 @@
             "value": 999
           }
         ],
+        "resistanceStats": [
+          {
+            "id": "melvorD:Normal",
+            "value": 99
+          }
+        ],
         "levels": {
           "Attack": 999,
           "Defence": 999,
@@ -1248,46 +1166,79 @@
         "name": "Dragon Break",
         "prehitEffects": [
           {
-            "modifiers": {
-              "increasedReflectDamage": 100
-            },
-            "countsOn": "Target",
-            "character": "Target",
-            "effectType": "Custom",
-            "maxStacks": 1,
-            "stacksToAdd": 1,
-            "turns": 1,
-            "type": "Modifier",
-            "media": "assets/icons/mages/Burden.png"
+            "effectID": "tes:nuke0"
           },
           {
-            "modifiers": {
-              "increasedChanceToNull": 10
-            },
-            "countsOn": "Attacker",
-            "character": "Attacker",
-            "effectType": "Custom",
-            "maxStacks": 1,
-            "stacksToAdd": 1,
-            "turns": 1,
-            "type": "Modifier",
-            "media": "assets/icons/mages/Burden.png"
+            "effectID": "tes:nuke1"
           }
         ],
         "onhitEffects": [],
         "lifesteal": 0
       }
     ],
-    "archaicSpells": [
+    "combatEffects": [
+      {
+        "id": "nuke0",
+        "templateID": "melvorD:StaticSelfCountingModifier",
+        "media": "assets/icons/mages/Burden.png",
+        "target": "Target",
+        "statGroups": [
+          {
+            "name": "stacks",
+            "modifiers": {
+              "reflectDamage": 100
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "turns",
+            "initialValue": 1
+          }
+        ],
+        "name": "Dragon Break",
+        "nameLang": "SPECIAL_ATTACK_NAME_nuke"
+      },
+      {
+        "id": "nuke1",
+        "templateID": "melvorD:StaticSelfCountingModifier",
+        "media": "assets/icons/mages/Burden.png",
+        "target": "Self",
+        "statGroups": [
+          {
+            "name": "stacks",
+            "combatEffects": [
+              {
+                "effectID": "melvorF:Nulled",
+                "chance": 10,
+                "appliesWhen": "PostAttack",
+                "descriptionLang": "CUSTOM_APPLICATOR_NULLED_ON_ATTACK"
+              }
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "turns",
+            "initialValue": 1
+          }
+        ],
+        "name": "Dragon Break",
+        "nameLang": "SPECIAL_ATTACK_NAME_nuke"
+      }
+    ],
+    "attackSpells": [
       {
         "id": "Dragon_Break_Spell",
         "name": "Dragon Break",
         "level": 120,
         "media": "assets/items/VarlaStone.png",
         "requiredItemID": "tes:VarlaStone",
-        "spellType": "Infernal",
+        "categories": [
+          "melvorTotH:Infernal"
+        ],
         "maxHit": 10000,
-        "specialAttack": "tes:nuke",
+        "specialAttackID": "tes:nuke",
         "requirements": [
           {
             "purchaseID": "tes:Arch_Mage_Mage_Rank",
@@ -1308,7 +1259,8 @@
             "id": "melvorD:Fire_Rune",
             "quantity": 10000
           }
-        ]
+        ],
+        "spellbook": "melvorTotH:Archaic"
       }
     ]
   },
@@ -1342,9 +1294,9 @@
       {
         "id": "tes:Sanguine_Rose",
         "modifiers": {
-          "add":{
-            "increasedSummoningMaxHit": 25,
-            "increasedSummoningChargePreservation": 10
+          "add": {
+            "summoningMaxHit": 25,
+            "summoningChargePreservationChance": 10
           }
         },
         "specialAttacks": {
@@ -1371,10 +1323,18 @@
       {
         "id": "tes:Mehrunes_Razor",
         "modifiers": {
-          "add":{
-            "applyRandomCurseOnSpawn": 1,
-            "increasedCurseLifesteal": 50
+          "add": {
+            "curseLifesteal": 50
           }
+        },
+        "combatEffects": {
+          "add": [
+            {
+              "tableID": "melvorF:RandomCurse",
+              "appliesWhen": "StartOfFight",
+              "descriptionLang": "MODIFIER_DATA_applyRandomCurseOnSpawn"
+            }
+          ]
         }
       }
     ],

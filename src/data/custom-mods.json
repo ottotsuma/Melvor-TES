@@ -1,5 +1,5 @@
 {
-    "$schema": "https://melvoridle.com/assets/schema/gameData.json",
+    "$schema": "https://melvoridle.com/public_test/assets/schema/gameData.json",
     "namespace": "tes",
     "data": {
         "combatPassives": [
@@ -20,37 +20,46 @@
             {
                 "id": "woodland_weakness",
                 "name": "Woodland Creature",
-                "modifiers":{
-                    "increasedDamageTakenFromFireSpells": 50
-                }
+                "modifiers": {}
             }
         ],
         "itemSynergies": [
             {
                 "itemIDs": [
-                  "tes:Daedric_Armor",
-                  "tes:Daedric_Boots",
-                  "tes:Daedric_Gauntlets",
-                  "tes:Daedric_Greaves",
-                  "tes:Daedric_Helmet"
+                    "tes:Daedric_Armor",
+                    "tes:Daedric_Boots",
+                    "tes:Daedric_Gauntlets",
+                    "tes:Daedric_Greaves",
+                    "tes:Daedric_Helmet"
                 ],
                 "playerModifiers": {
-                  "demonTraitApplied": 1,
-                  "increasedPrayerCost": 10,
-                  "increasedDamageAgainstAngels": 10
+                    "demonTraitApplied": 1,
+                    "prayerPointCost": 10,
+                    "increasedDamageAgainstAngels": 10
                 }
-              },
+            },
             {
-                "itemIDs": ["tes:Shield_of_the_Crusader", "tes:Cuirass_of_the_Crusader", "tes:Boots_of_the_Crusader", "tes:Helm_of_the_Crusader", "tes:Gauntlets_of_the_Crusader"],
-                "playerModifiers":{
+                "itemIDs": [
+                    "tes:Shield_of_the_Crusader",
+                    "tes:Cuirass_of_the_Crusader",
+                    "tes:Boots_of_the_Crusader",
+                    "tes:Helm_of_the_Crusader",
+                    "tes:Gauntlets_of_the_Crusader"
+                ],
+                "playerModifiers": {
                     "decreasedDamageTakenFromElves": 10,
                     "increasedGlobalAccuracyAgainstElves": 10000,
                     "increasedDamageReductionAgainstElves": 10
                 }
             },
             {
-                "itemIDs": ["tes:vampire_lord_armour", "tes:Vampire_Leather_Hood", "tes:Vampire_Boots", "tes:Vampire_Gauntlets"],
-                "playerModifiers":{
+                "itemIDs": [
+                    "tes:vampire_lord_armour",
+                    "tes:Vampire_Leather_Hood",
+                    "tes:Vampire_Boots",
+                    "tes:Vampire_Gauntlets"
+                ],
+                "playerModifiers": {
                     "increasedChanceToApplyBleedOnSpawn": 10,
                     "increasedChanceToApplyBleed": 10
                 }
@@ -62,269 +71,229 @@
                 "name": "Vicente Valtieri",
                 "media": "https://www.elderscrollsportal.de/wiki/images/thumb/d/df/Vicente_Valtieri.JPG/400px-Vicente_Valtieri.JPG",
                 "levels": {
-                  "Attack": 300,
-                  "Defence": 200,
-                  "Hitpoints": 500,
-                  "Magic": 299,
-                  "Ranged": 100,
-                  "Strength": 300
+                    "Attack": 300,
+                    "Defence": 200,
+                    "Hitpoints": 500,
+                    "Magic": 299,
+                    "Ranged": 100,
+                    "Strength": 300
                 },
                 "equipmentStats": [
-                  {
-                    "key": "attackSpeed",
-                    "value": 2400
-                  }
+                    {
+                        "key": "attackSpeed",
+                        "value": 2400
+                    }
                 ],
                 "ignoreCompletion": false,
                 "attackType": "melee",
                 "specialAttacks": [
-                  "melvorF:TripleSwipe"
+                    "melvorF:TripleSwipe"
                 ],
                 "passives": [
-                  "tes:Death_Mark_10",
-                  "tes:Executioner",
-                  "melvorF:Purity",
-                  "melvorF:EventPassive4"
+                    "tes:Death_Mark_10",
+                    "tes:Executioner",
+                    "melvorF:Purity",
+                    "melvorF:EventPassive4"
                 ],
                 "lootChance": 100,
                 "lootTable": [
-                  {
-                    "itemID": "tes:Cruelty_Heart",
-                    "maxQuantity": 1,
-                    "minQuantity": 1,
-                    "weight": 1
-                  },
-                  {
-                    "itemID": "tes:Vampire_Boots",
-                    "maxQuantity": 1,
-                    "minQuantity": 1,
-                    "weight": 25
-                  },   
-                  {
-                    "itemID": "tes:Vampire_Gauntlets",
-                    "maxQuantity": 1,
-                    "minQuantity": 1,
-                    "weight": 25
-                  },   
-                  {
-                    "itemID": "tes:Vampire_Leather_Hood",
-                    "maxQuantity": 1,
-                    "minQuantity": 1,
-                    "weight": 25
-                  },   
-                  {
-                    "itemID": "tes:vampire_lord_armour",
-                    "maxQuantity": 1,
-                    "minQuantity": 1,
-                    "weight": 25
-                  },   
-                  {
-                    "itemID": "tes:Blood_Pack",
-                    "maxQuantity": 10,
-                    "minQuantity": 1,
-                    "weight": 99
-                  }
+                    {
+                        "itemID": "tes:Cruelty_Heart",
+                        "maxQuantity": 1,
+                        "minQuantity": 1,
+                        "weight": 1
+                    },
+                    {
+                        "itemID": "tes:Vampire_Boots",
+                        "maxQuantity": 1,
+                        "minQuantity": 1,
+                        "weight": 25
+                    },
+                    {
+                        "itemID": "tes:Vampire_Gauntlets",
+                        "maxQuantity": 1,
+                        "minQuantity": 1,
+                        "weight": 25
+                    },
+                    {
+                        "itemID": "tes:Vampire_Leather_Hood",
+                        "maxQuantity": 1,
+                        "minQuantity": 1,
+                        "weight": 25
+                    },
+                    {
+                        "itemID": "tes:vampire_lord_armour",
+                        "maxQuantity": 1,
+                        "minQuantity": 1,
+                        "weight": 25
+                    },
+                    {
+                        "itemID": "tes:Blood_Pack",
+                        "maxQuantity": 10,
+                        "minQuantity": 1,
+                        "weight": 99
+                    }
                 ],
-                "gpDrops": {
-                  "min": 10,
-                  "max": 50
-                },
+                "currencyDrops": [
+                    {
+                        "currencyID": "melvorD:GP",
+                        "min": 10,
+                        "max": 50
+                    }
+                ],
                 "bones": {
-                  "itemID": "melvorD:Magic_Bones",
-                  "quantity": 1
+                    "itemID": "melvorD:Magic_Bones",
+                    "quantity": 1
                 },
                 "canSlayer": false,
                 "isBoss": false,
                 "selectedSpell": "melvorD:EarthSurge"
-              }
+            }
         ]
     },
     "modifications": {
         "items": [
-        {
-            "id": "tes:dragon_bone_helmet",
-            "modifiers": {
-                "add": {
+            {
+                "id": "tes:dragon_bone_helmet",
+                "modifiers": {
                     "dragonTraitApplied": 1,
                     "increasedDamageAgainstElves": 10,
                     "increasedGlobalAccuracyAgainstAarakocras": 10
                 }
-            }
-        },
+            },
             {
                 "id": "tes:vampire_lord_armour",
                 "modifiers": {
-                    "add": {
-                        "increasedChanceToApplyBleedOnSpawn": 10,
-                        "increasedChanceToApplyBleed": 10
-                    },
-                    "remove": [
-                        "increasedMeleeLifesteal"
-                    ]
+                    "increasedChanceToApplyBleedOnSpawn": 10,
+                    "increasedChanceToApplyBleed": 10
                 }
             },
             {
                 "id": "tes:HelmetOfOreynBearclaw",
                 "modifiers": {
-                    "add": {
-                        "increasedDamageAgainstUndead": 10
-                    }
+                    "increasedDamageAgainstUndead": 10
                 }
             },
             {
                 "id": "tes:Dawnbreaker",
                 "modifiers": {
-                    "add": {
-                        "increasedDamageAgainstUndead": 10
-                    }
+                    "increasedDamageAgainstUndead": 10
                 }
             },
             {
                 "id": "tes:Mace_of_Molag_Bal",
                 "modifiers": {
-                    "add": {
-                        "increasedDamageAgainstHumans": 100
-                    }
+                    "increasedDamageAgainstHumans": 100
                 }
             },
             {
                 "id": "tes:Ebony_Blade",
                 "modifiers": {
-                    "add": {
-                        "increasedDamageAgainstHumans": 20
-                    }
+                    "increasedDamageAgainstHumans": 20
                 }
             },
             {
                 "id": "tes:Blades_Sword",
                 "modifiers": {
-                    "add": {
-                        "increasedDamageAgainstDragons": 40
-                    }
+                    "increasedDamageAgainstDragons": 40
                 }
             },
             {
                 "id": "tes:Mace_of_the_Crusader",
                 "modifiers": {
-                    "add": {
-                        "increasedDamageAgainstDemons": 20,
-                        "decreasedDamageAgainstHumans": 10,
-                        "increasedDamageAgainstElves": 100
-                    }
+                    "increasedDamageAgainstDemons": 20,
+                    "decreasedDamageAgainstHumans": 10,
+                    "increasedDamageAgainstElves": 100
                 }
             },
             {
                 "id": "tes:Shield_of_the_Crusader",
                 "modifiers": {
-                    "add": {
-                        "increasedDamageAgainstDemons": 20,
-                        "decreasedDamageAgainstHumans": 10,
-                        "decreasedDamageTakenFromElves": 10
-                    }
+                    "increasedDamageAgainstDemons": 20,
+                    "decreasedDamageAgainstHumans": 10,
+                    "decreasedDamageTakenFromElves": 10
                 }
             },
             {
                 "id": "tes:Cuirass_of_the_Crusader",
                 "modifiers": {
-                    "add": {
-                        "increasedDeathMarkImmunity": 40,
-                        "decreasedDamageAgainstHumans": 10,
-                        "decreasedDamageTakenFromElves": 40
-                    }
+                    "increasedDeathMarkImmunity": 40,
+                    "decreasedDamageAgainstHumans": 10,
+                    "decreasedDamageTakenFromElves": 40
                 }
             },
             {
                 "id": "tes:Sword_of_the_Crusader",
                 "modifiers": {
-                    "add": {
-                        "increasedDamageAgainstUndead": 20,
-                        "decreasedDamageAgainstHumans": 10,
-                        "increasedDamageAgainstElves": 100
-                    }
+                    "increasedDamageAgainstUndead": 20,
+                    "decreasedDamageAgainstHumans": 10,
+                    "increasedDamageAgainstElves": 100
                 }
             },
             {
                 "id": "tes:Boots_of_the_Crusader",
                 "modifiers": {
-                    "add": {
-                        "increasedDeathMarkImmunity": 10,
-                        "decreasedDamageAgainstHumans": 5,
-                        "decreasedDamageTakenFromElves": 10
-                    }
+                    "increasedDeathMarkImmunity": 10,
+                    "decreasedDamageAgainstHumans": 5,
+                    "decreasedDamageTakenFromElves": 10
                 }
             },
             {
                 "id": "tes:Helm_of_the_Crusader",
                 "modifiers": {
-                    "add": {
-                        "increasedDeathMarkImmunity": 10,
-                        "decreasedDamageAgainstHumans": 5,
-                        "decreasedDamageTakenFromElves": 10
-                    }
+                    "increasedDeathMarkImmunity": 10,
+                    "decreasedDamageAgainstHumans": 5,
+                    "decreasedDamageTakenFromElves": 10
                 }
             },
             {
                 "id": "tes:Gauntlets_of_the_Crusader",
                 "modifiers": {
-                    "add": {
-                        "increasedDeathMarkImmunity": 10,
-                        "decreasedDamageAgainstHumans": 5,
-                        "decreasedDamageTakenFromElves": 10
-                    }
+                    "increasedDeathMarkImmunity": 10,
+                    "decreasedDamageAgainstHumans": 5,
+                    "decreasedDamageTakenFromElves": 10
                 }
             },
             {
                 "id": "tes:Imperial_Dragon_Shield",
                 "modifiers": {
-                    "add": {
-                        "increasedDamageAgainstHumans": 5
-                    }
+                    "increasedDamageAgainstHumans": 5
                 }
             },
             {
                 "id": "tes:Imperial_Dragon_Helmet",
                 "modifiers": {
-                    "add": {
-                        "increasedDamageAgainstHumans": 5
-                    }
+                    "increasedDamageAgainstHumans": 5
                 }
             },
             {
                 "id": "tes:Imperial_Dragon_Gauntlets",
                 "modifiers": {
-                    "add": {
-                        "increasedDamageAgainstHumans": 5
-                    }
+                    "increasedDamageAgainstHumans": 5
                 }
             },
             {
                 "id": "tes:Imperial_Dragon_Armor",
                 "modifiers": {
-                    "add": {
-                        "increasedDamageAgainstHumans": 5
-                    }
+                    "increasedDamageAgainstHumans": 5
                 }
             },
             {
                 "id": "tes:Imperial_Dragon_Boots",
                 "modifiers": {
-                    "add": {
-                        "increasedDamageAgainstHumans": 5
-                    }
+                    "increasedDamageAgainstHumans": 5
                 }
             },
             {
                 "id": "tes:Imperial_Dragon_Cloak",
                 "modifiers": {
-                    "add": {
-                        "increasedDamageAgainstHumans": 5
-                    }
+                    "increasedDamageAgainstHumans": 5
                 }
             }
         ],
         "monsters": [
             {
-                "id":"tes:Spriggan",
+                "id": "tes:Spriggan",
                 "passives": {
                     "add": [
                         "tes:woodland_weakness"
@@ -358,11 +327,11 @@
         ],
         "combatAreas": [
             {
-                "id":"tes:Cyrodiil",
+                "id": "tes:Cyrodiil",
                 "monsters": {
                     "add": [
                         {
-                            "monsterID":"tes:Vicente_Valtieri"
+                            "monsterID": "tes:Vicente_Valtieri"
                         }
                     ]
                 }
