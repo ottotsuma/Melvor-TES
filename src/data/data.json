@@ -76,17 +76,14 @@
       {
         "id": "Assassin_Target",
         "name": "Assassin Target",
-        "customDescription": "Fully heal if not killed in 2 hits.",
-        "modifiers":{
-          "EndofTurnHealing2": 100
-        },
+        "customDescription": "Fully heal if not killed in 1 hit.",
         "combatEffects": [
           {
             "effectID": "melvorD:EndOfTurnCurrentHealing",
             "initialParams": [
               {
                 "name": "XTurns",
-                "value": 2
+                "value": 1
               },
               {
                 "name": "percent",
