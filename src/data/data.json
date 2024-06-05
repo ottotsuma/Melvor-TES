@@ -37,11 +37,6 @@
             "quantity": 5
           }
         ],
-        "targetModifiers": {
-          "increasedDamageTakenIfCursed": 5,
-          "decreasedChanceToAvoidSleep": 20,
-          "increasedDamageTakenWhenAsleep": 20
-        },
         "effectID": "tes:PeryitesPresence"
       }
     ],
