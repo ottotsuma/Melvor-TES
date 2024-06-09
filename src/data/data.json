@@ -46,7 +46,7 @@
         "name": "Sithis's Touch",
         "customDescription": "Cause 600 damage, by passing damage reduction.",
         "modifiers": {
-          "tes_bypassDamageReduction":600
+          "tes_bypassDamageReduction": 600
         }
       },
       {

@@ -71,16 +71,18 @@ declare function toggleCharacteSelectWarningPopup(): void;
 declare function setNewStartPage(page: CharacterSelectPage): void;
 /** Checks mod manager status, and shows a prompt to the user. Returns true if the current callback function should abort early. */
 declare function showModManagerPrompts(): boolean;
+/** Checks save's mod profile against the currently active mod profile. Returns true if the current callback function should abort early. */
+declare function showModProfilePrompts(profile: Omit<Modding.Profile, 'autoEnable'> | null): Promise<boolean>;
 declare function displayGamemodeSelection(slotID: number): void;
 declare const setStartingGamemode: (gamemode: Gamemode) => void;
 /** Callback function for when the Import Save option is clicked */
 declare function importSaveOnClick(slotID: number): void;
 /** Callback function for when the Create Sharable Save URL option is clicked */
-declare function createSaveShareLink(characterID: number): void;
+declare function createSaveShareLink(characterID: number): Promise<void>;
 /** Callback function for when the Download Save option is clicked */
 declare function openDownloadSave(slotID: number): Promise<void>;
 /** Callback function for when the Export Save option is clicked */
-declare function openExportSave(slotID: number): void;
+declare function openExportSave(slotID: number): Promise<void>;
 /** Callback function for when the Delete Local save option is clicked */
 declare function confirmLocalSaveDeletion(slotID: number): Promise<void>;
 /** Callback function for when the Delete Cloud save option is clicked. */

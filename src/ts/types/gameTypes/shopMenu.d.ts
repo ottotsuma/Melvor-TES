@@ -5,6 +5,7 @@ declare class ShopCostsAndUnlock {
     requirementElements: ShopUnlockElement[];
     costElements: ShopCostElement[];
     buyLimit?: HTMLSpanElement;
+    costFlex: HTMLDivElement;
     get buyQty(): number;
     constructor(purchase: ShopPurchase, game: Game, costContainer: HTMLElement);
     updatePurchaseRequirements(): void;
@@ -134,6 +135,7 @@ declare class ShopMenu {
     quickbuyContainer: HTMLElement;
     quickBuyButton: HTMLElement;
     constructor(game: Game, containerID?: string, quickBuyID?: string);
+    shouldShowCategory(category: ShopCategory): boolean;
     /** Creates a new tab for the given category */
     createShopTab(category: ShopCategory): {
         menu: ShopTabMenu;

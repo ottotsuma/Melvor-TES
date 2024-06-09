@@ -29,11 +29,15 @@ declare class NamespacedObject {
     _localID: string;
     constructor(_namespace: DataNamespace, localID: string);
     getMediaURL(media: string): string;
+    getPixiAssetURL(media: string): string;
+    /** If the URL to a PIXI.js texture should be resolved as a Blob */
+    isAssetURLExternal(path: string): boolean;
     static isValidLocalID(localID: string): boolean;
 }
-interface SoftDataDependant<T extends IDData = IDData> {
-    registerSoftDependencies(data: T, game: Game): void;
+interface SoftDataDependant<DataType> {
+    registerSoftDependencies(data: DataType, game: Game): void;
 }
+declare type SoftDataDependantElement<DataType> = [DataType, SoftDataDependant<DataType>];
 declare class NamespaceRegistry<T extends NamespacedObject> {
     rootNamespaceMap: NamespaceMap;
     /** Map of namespace: id: object */
@@ -64,7 +68,11 @@ declare class NamespaceRegistry<T extends NamespacedObject> {
     /** Returns an array of objects that meet the condition specified by predicate */
     filter(predicate: (value: T, id: string, map: Map<string, T>) => boolean): T[];
     every(predicate: (value: T, id: string, map: Map<string, T>) => boolean): boolean;
+    /** Returns true if every object registered to namespace matches predicate. Supports Completion namepsaces (e.g. True and BaseGame). If the namespace has nothing registered, returns true. */
+    everyInNamespace(namespace: string, predicate: (value: T, id: string) => boolean): boolean;
     some(predicate: (value: T, id: string, map: Map<string, T>) => boolean): boolean;
+    /** Returns true if any object registered to the namespace matched predicate. Supports Completion namespaces (e.g. True and BaseGame). If the namespace has nothing registered, returns false. */
+    someInNamespace(namespace: string, predicate: (value: T, id: string) => boolean): boolean;
     reduce<U>(callbackfn: (previousValue: U, currentValue: T, id: string, map: Map<string, T>) => U, initialValue: U): U;
     /** Gets a set of objects for use in constructing an object. */
     getSetForConstructor(ids: string[], objectBeingConstructed: Object, unregisteredName: string): Set<T>;

@@ -2,9 +2,21 @@ interface CraftingSkillData extends MasterySkillData {
     categories?: SkillCategoryData[];
     recipes?: SingleProductArtisanSkillRecipeData[];
 }
+declare type CraftingEvents = {
+    action: CraftingActionEvent;
+};
 declare type CraftingRecipe = SingleProductArtisanSkillRecipe<SkillCategory>;
-declare class Crafting extends ArtisanSkill<CraftingRecipe, CraftingSkillData, AnyItem> implements SkillCategoryObject<SkillCategory> {
-    readonly _media = "assets/media/skills/crafting/crafting.svg";
+declare class Crafting extends ArtisanSkill<CraftingRecipe, CraftingSkillData, AnyItem> implements SkillCategoryObject<SkillCategory>, IGameEventEmitter<CraftingEvents> {
+    _events: import("mitt").Emitter<CraftingEvents>;
+    on: {
+        <Key extends "action">(type: Key, handler: import("mitt").Handler<CraftingEvents[Key]>): void;
+        (type: "*", handler: import("mitt").WildcardHandler<CraftingEvents>): void;
+    };
+    off: {
+        <Key extends "action">(type: Key, handler?: import("mitt").Handler<CraftingEvents[Key]> | undefined): void;
+        (type: "*", handler: import("mitt").WildcardHandler<CraftingEvents>): void;
+    };
+    readonly _media = Assets.Crafting;
     getTotalUnlockedMasteryActions(): number;
     readonly baseInterval: number;
     get menu(): ArtisanMenu<AnyItem>;
@@ -34,4 +46,5 @@ declare class Crafting extends ArtisanSkill<CraftingRecipe, CraftingSkillData, A
     getActionIDFromOldID(oldActionID: number, idMap: NumericIDMap): string;
     setFromOldOffline(offline: OfflineSkill, idMap: NumericIDMap): void;
     testTranslations(): void;
+    getObtainableItems(): Set<AnyItem>;
 }

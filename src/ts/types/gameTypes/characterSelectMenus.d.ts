@@ -12,6 +12,9 @@ declare class CharacterDisplayElement extends HTMLElement {
     offlineActionTime: HTMLSpanElement;
     saveTimestamp: HTMLSpanElement;
     timestampComparison: HTMLHeadingElement;
+    modProfileContainer: HTMLHeadingElement;
+    modProfileIcon: HTMLElement;
+    modProfileName: HTMLSpanElement;
     constructor();
     connectedCallback(): void;
     toggleTestWarning(isTest: boolean): void;
@@ -64,6 +67,7 @@ declare class GamemodeSelectionElement extends HTMLElement {
     timeRemaining: HTMLSpanElement;
     name: HTMLHeadingElement;
     safety: HTMLHeadingElement;
+    activeNotice: HTMLHeadingElement;
     description: HTMLHeadingElement;
     rules: HTMLHeadingElement[];
     constructor();

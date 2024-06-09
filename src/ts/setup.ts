@@ -12,7 +12,7 @@
 // Translate the HTML pages
 
 
-import { Modifier } from 'typescript';
+// import { Modifier } from 'typescript';
 import '../css/styles.css';
 import { languages } from './../language';
 import { TesTranslation } from './../language/translation'
@@ -264,17 +264,17 @@ export async function setup(ctx: Modding.ModContext) {
         try {
           if (TothEntitlement) {
             try {
-            await ctx.gameData.addPackage('data-toth.json');
-              
+              await ctx.gameData.addPackage('data-toth.json');
+
             } catch (error) {
               tes_errors.push('data-toth.json', error)
-              
+
             }
           }
           if (AoDEntitlement) {
             try {
-            await ctx.gameData.addPackage('data-aod.json');
-              
+              await ctx.gameData.addPackage('data-aod.json');
+
             } catch (error) {
               tes_errors.push('data-aod.json', error)
             }
@@ -303,8 +303,8 @@ export async function setup(ctx: Modding.ModContext) {
             // increasedMusicAdditionalRewardRoll: number;
             // decreasedMusicAdditionalRewardRoll: number;
             try {
-            await ctx.gameData.addPackage('data-bard.json');
-              
+              await ctx.gameData.addPackage('data-bard.json');
+
             } catch (error) {
               tes_errors.push('data-bard.json', error)
             }
@@ -321,7 +321,7 @@ export async function setup(ctx: Modding.ModContext) {
               return;
             }
             try {
-              await ctx.gameData.addPackage('custom-mods.json'); 
+              await ctx.gameData.addPackage('custom-mods.json');
             } catch (error) {
               tes_errors.push('custom-mods.json', error)
             }
@@ -748,7 +748,7 @@ export async function setup(ctx: Modding.ModContext) {
             } catch (error) {
               tes_errors.push('profile.json', error)
             }
-            
+
           }
         } catch (error) {
 
@@ -802,6 +802,14 @@ export async function setup(ctx: Modding.ModContext) {
               ? p - n
               : 0;
           }
+          // modifyAttackDamage(target, attack, damage, applyReduction = true) {
+            // if (target.isBarrierActive || this.modifiers.disableAttackDamage > 0)
+            //     return 0; //No damage if there is a barrier or modifier.
+            // Apply Damage Modifiers
+            // damage = this.applyDamageModifiers(target, damage);
+            // damage *= 1 - target.stats.getResistance(this.damageType) / 100;
+            // return Math.floor(damage);
+            
           ctx.patch(Player, 'modifyAttackDamage').after((damage: number, target: any, attack: any) => {
             const Monster: Enemy = game.combat.enemy
             const Player: Player = game.combat.player
@@ -821,7 +829,7 @@ export async function setup(ctx: Modding.ModContext) {
               const a = getCharacterFlatAttackDamageBonusModification(Player, Monster)
               const b = getCharacterPercentageAttackDamageBonusModification(Player, Monster)
               if (!isNaN(a) && !isNaN(b)) {
-                tesDamage = tesDamage + a + ((damage/100) * b)
+                tesDamage = tesDamage + a + ((damage / 100) * b)
               }
             }
             // If it's a dragon breath re-calc
@@ -1082,7 +1090,7 @@ export async function setup(ctx: Modding.ModContext) {
           if (game.synergies_found_items.includes(selectedItem.item._namespace.name + ':' + selectedItem.item._localID)) {
             document.getElementById('synergiesButton').style.display = 'inline-block'
             // const synergy_image = <img class="skill-icon-xxs" src="https://cdn2-main.melvor.net/assets/media/skills/summoning/synergy.svg">
-          } else {  
+          } else {
             document.getElementById('synergiesButton').style.display = 'none'
           }
         })

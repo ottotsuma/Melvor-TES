@@ -1,5 +1,6 @@
 declare let currentCharacter: number;
 declare let characterSelected: boolean;
+/** @deprecated Unused global that is no longer needed */
 declare let backupSave: string;
 declare let dataDeleted: boolean;
 declare const keyVersion = "A04";
@@ -18,6 +19,8 @@ interface SaveGameHeader {
     saveTimestamp: number;
     /** The un-modded namespaces that were active in the save when it was created. And empty array indicates the save is old and this information is unknown. */
     activeNamespaces: string[];
+    /** The mod profile assigned to this save. Null for no mods. */
+    modProfile: Omit<Modding.Profile, 'autoEnable'> | null;
 }
 declare const setSaveGUID: () => void;
 declare let sidebarSwipeTimer: number;
@@ -43,24 +46,30 @@ declare function updatePartialSettings(partialSettings: Partial<OldSettingsData>
  * @param {string} keyPrefix
  * @returns {0|1|2} 0: No save, 1: Old format save, 2: new format save
  */
-declare function doesLocalSaveExist(keyPrefix: string): 0 | 1 | 2;
+declare function doesLocalSaveExist(keyPrefix: string): Promise<0 | 1 | 2>;
 declare function deleteLocalSaveInSlot(slotID?: number): void;
 /** Callback function for exporting a save */
-declare function exportSave(update?: boolean): void;
+declare function exportSave(update?: boolean): Promise<void>;
 /** Sets the specified local save slot to the given saveString */
-declare function setSlotToSaveString(slotID: number, saveString: string): void;
+declare function setSlotToSaveString(slotID: number, saveString: string): Promise<void>;
 /** Attempts to import a save to the specified slot. Returns a promise which if resolved to true means the import was a success. */
 declare function importSaveToSlot(saveString: string, slotID: number): Promise<boolean>;
 declare function openDeleteMelvorCloudAccount(): void;
 declare function confirmDeleteMelvorCloudAccount(): void;
-declare function copyToClipboard(input: string): void;
+/**
+ * Copies a given string to the clipboard
+ * @param input Text to copy to the clipboard
+ * @returns True if copy was successful, false if not
+ */
+declare function copyToClipboard(input: string): Promise<boolean>;
+declare function copyUICallback(el: HTMLElement): void;
 /**
  * Gets a save string for a local save
  * @param customKey
  * @param charID
  * @returns
  */
-declare function getLocalSaveString(customKey?: boolean, charID?: number): string;
+declare function getLocalSaveString(customKey?: boolean, charID?: number): Promise<string>;
 /**
  *
  * @param {string} keyPrefix
@@ -140,21 +149,19 @@ declare let blockCorruptSaving: boolean;
  * @param {NewSaveGame} savegame
  */
 declare function loadOldSaveGame(savegame: NewSaveGame): Promise<void>;
-declare function setBackupSaveDetails(save: string): void;
 declare let quickEquipInterval: number;
 declare let inFocus: boolean;
 declare const onloadEvent: (accessCheck?: boolean) => void;
 declare function confirmedAuthenticated(): void;
 declare function checkIfAuthenticated(): Promise<void>;
-declare const INTERFACE_VERSION = 29;
+declare const INTERFACE_VERSION = 114;
 declare function loadGameInterface(accessCheck?: boolean): Promise<void>;
-declare const DATA_VERSION = 106;
-declare function loadGameData(): Promise<void>;
+declare const DATA_VERSION = 274;
 declare function changePageCharacterSelection(page: CharacterSelectPage): void;
 /** Future announcement handler that will occur dynamically. For now this is hard coded. */
 declare function updateUIForAnnouncements(): void;
 declare function hideUIForAnnouncement(id: number): void;
-declare const maxSaveSlots = 6;
+declare const maxSaveSlots = 8;
 declare const enum SaveLoadError {
     Empty = 0,
     Corrupt = 1,

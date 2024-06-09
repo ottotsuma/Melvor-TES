@@ -15,8 +15,20 @@ interface HerbloreSkillData extends MasterySkillData {
     recipes?: HerbloreRecipeData[];
     deadlyToxinsItem?: string;
 }
-declare class Herblore extends ArtisanSkill<HerbloreRecipe, HerbloreSkillData, PotionItem> implements SkillCategoryObject<SkillCategory> {
-    readonly _media = "assets/media/skills/herblore/herblore.svg";
+declare type HerbloreEvents = {
+    action: HerbloreActionEvent;
+};
+declare class Herblore extends ArtisanSkill<HerbloreRecipe, HerbloreSkillData, PotionItem> implements SkillCategoryObject<SkillCategory>, IGameEventEmitter<HerbloreEvents> {
+    _events: import("mitt").Emitter<HerbloreEvents>;
+    on: {
+        <Key extends "action">(type: Key, handler: import("mitt").Handler<HerbloreEvents[Key]>): void;
+        (type: "*", handler: import("mitt").WildcardHandler<HerbloreEvents>): void;
+    };
+    off: {
+        <Key extends "action">(type: Key, handler?: import("mitt").Handler<HerbloreEvents[Key]> | undefined): void;
+        (type: "*", handler: import("mitt").WildcardHandler<HerbloreEvents>): void;
+    };
+    readonly _media = Assets.Herblore;
     getTotalUnlockedMasteryActions(): number;
     readonly baseInterval: number;
     get menu(): HerbloreArtisanMenu;
@@ -49,6 +61,7 @@ declare class Herblore extends ArtisanSkill<HerbloreRecipe, HerbloreSkillData, P
     getActionIDFromOldID(oldActionID: number, idMap: NumericIDMap): string;
     setFromOldOffline(offline: OfflineSkill, idMap: NumericIDMap): void;
     testTranslations(): void;
+    getObtainableItems(): Set<AnyItem>;
     /** Mastery levels required to craft a tier of potion */
     static tierMasteryLevels: number[];
 }

@@ -22,14 +22,14 @@ declare abstract class InfoIcon extends ContainedComponent {
     show(): void;
     static readonly media: {
         skillXP: string;
-        strXP: string;
-        masteryXP: string;
-        poolXP: string;
+        strXP: Assets;
+        masteryXP: Assets;
+        poolXP: Assets;
         preserveChance: string;
         doublingChance: string;
         interval: string;
-        gp: string;
-        slayerCoins: string;
+        gp: Assets;
+        slayerCoins: Assets;
         shopIcon: string;
         perfectCook: string;
         successfulCook: string;
@@ -163,6 +163,23 @@ declare class SCQtyIcon extends QtyIcon {
     getCurrentQty(): number;
     getName(): string;
 }
+declare function createQtyIconsForCosts(container: HTMLElement, size: Resize, quickBuy: boolean, items?: AnyItemQuantity[], gp?: number, sc?: number): QtyIcon[];
+/**
+ * Creates and appends QtyIcons for a Costs object
+ * @param container The Element to append the icons to
+ * @param costs The costs to display
+ * @param size Size of the quantity icons to use
+ * @returns An array of QtyIcons
+ */
+declare function createQtyIconsFromCosts(container: HTMLElement, costs: Costs, quickBuy?: boolean, size?: Resize): QtyIcon[];
+/**
+ * Creates and appends QtyIcons for a FixedCosts object
+ * @param container The Element to append the icons to
+ * @param costs The costs to display
+ * @param size Size of the quantity icons to use
+ * @returns An array of QtyIcons
+ */
+declare function createQtyIconsFromFixedCosts(container: HTMLElement, costs: FixedCosts, quickBuy?: boolean, size?: Resize): QtyIcon[];
 declare abstract class QtyCurrentIcon extends InfoIcon {
     abstract getCurrentQty(): number;
     abstract getName(): string;
