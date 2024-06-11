@@ -14444,7 +14444,7 @@
         "itemType": "Equipment",
         "customDescription": "High stats but takes more damage from dragon breath.",
         "modifiers": {
-          "tes_increasedDragonBreathDamageTaken": 1
+          "tes_increasedDragonBreathDamageTaken": 20
         }
       },
       {

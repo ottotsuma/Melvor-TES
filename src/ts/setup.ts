@@ -146,31 +146,23 @@ export async function setup(ctx: Modding.ModContext) {
           })
           html += '<p></p>';
           html += `<div>${getLangString('gain_modifiers')}</div>`;
-          for (var modifier in synergy.playerModifiers) {
+          for (var modifierIndex in synergy.playerModifiers) {
             // check if the property/key is defined in the object itself, not in parent
-            if (synergy.playerModifiers.hasOwnProperty(modifier)) {
-              // @ts-ignore
-              const isNegative = modifierData[modifier].isNegative ? 'text-danger' : 'text-success'
-              if (modifier.includes('tes_')) {
-                const displayString = getLangString(modifier).replace('${value}',
-                  synergy.playerModifiers[modifier]).replace('${skillName}',
-                    synergy.playerModifiers[modifier]).replace('${skillName}',
-                      synergy.playerModifiers[modifier])
-                html += `<div class="${isNegative}">${displayString}</div>`
-              } else if (modifier === 'allowUnholyPrayerUse') {
+            if (synergy.playerModifiers.hasOwnProperty(modifierIndex)) {
+              // @ts-ignore              
+              if (modifierIndex === 'allowUnholyPrayerUse') {
                 html += `<div>${getLangString('allowUnholyPrayerUse')}</div>`
-              } else if (typeof synergy.playerModifiers[modifier] === 'object') {
-                const displayString = getLangString("MODIFIER_DATA_" + modifier).replace('${value}',
-                  synergy.playerModifiers[modifier][0].value).replace('${skillName}',
-                    synergy.playerModifiers[modifier][0].skill._localID).replace('${skillName}',
-                      synergy.playerModifiers[modifier][0].skill._localID)
-                html += `<div class="${isNegative}">${displayString}</div>`
               } else {
-                const displayString = getLangString("MODIFIER_DATA_" + modifier).replace('${value}',
-                  synergy.playerModifiers[modifier]).replace('${skillName}',
-                    synergy.playerModifiers[modifier]).replace('${skillName}',
-                      synergy.playerModifiers[modifier])
-                html += `<div class="${isNegative}">${displayString}</div>`
+                for (let index = 0; index < synergy.playerModifiers.length; index++) {
+                  const mod = synergy.playerModifiers[index];
+                  const isNegative = mod.isNegative ? 'red' : 'green'
+                  const negString = mod.isNegative ? 'negAliases' : 'posAliases'
+                  const displayString = getLangString("MODIFIER_DATA_" + mod.modifier.allowedScopes[0][negString][0].key).replace('${skillName}', mod.modifier.allowedScopes[0][negString][0].key).replace('${value}',
+                    mod.value)
+                    // .replace('${skillName}', mod.modifier.allowedScopes[0]?.value[negString][0].key)
+                  html += `<div style="color: ${isNegative}">${displayString}</div>`
+                  html += '<p></p>';
+                }
               }
             }
           }
@@ -202,7 +194,7 @@ export async function setup(ctx: Modding.ModContext) {
       }
     }
 
-    ctx.patch(BankSideBarMenu, 'initialize').after(function (returnValue, game) {
+    ctx.patch(BankSidebarMenuElement, 'initialize').after(function (returnValue, game) {
       if (document.getElementsByClassName('btn btn-sm btn-outline-secondary p-0 ml-2 monad').length === 0
       ) {
         const img = createElement("img", {
@@ -231,7 +223,10 @@ export async function setup(ctx: Modding.ModContext) {
         const profileSkill = mod.manager.getLoadedModList().includes("(Skill) Classes and Species")
         const TothEntitlement = cloudManager.hasTotHEntitlement
         const AoDEntitlement = cloudManager.hasAoDEntitlement
-
+        const combatSim = mod.manager.getLoadedModList().includes("[Myth] Combat Simulator")
+        if(combatSim) {
+          mod.api.mythCombatSimulator?.registerNamespace('tes');
+        }
         // const Abyssal = mod.manager.getLoadedModList().includes('Abyssal Rift')
         // const Pokeworld = mod.manager.getLoadedModList().includes('Pokeworld (Generation 1)')
         // const Runescape = mod.manager.getLoadedModList().includes('Runescape Encounters in Melvor')
@@ -784,6 +779,7 @@ export async function setup(ctx: Modding.ModContext) {
           tes_errors.push('onModsLoaded skill patches', error)
         }
         try {
+          //  damage = this.applyDamageModifiers(target, damage);
           // Patching skills for new modifiers
           function getCharacterFlatAttackDamageBonusModification(attacker: Character, target: Character): number {
             const attackerModifiers = attacker.modifiers
@@ -802,20 +798,14 @@ export async function setup(ctx: Modding.ModContext) {
               ? p - n
               : 0;
           }
-          // modifyAttackDamage(target, attack, damage, applyReduction = true) {
-            // if (target.isBarrierActive || this.modifiers.disableAttackDamage > 0)
-            //     return 0; //No damage if there is a barrier or modifier.
-            // Apply Damage Modifiers
-            // damage = this.applyDamageModifiers(target, damage);
-            // damage *= 1 - target.stats.getResistance(this.damageType) / 100;
-            // return Math.floor(damage);
-            
-          ctx.patch(Player, 'modifyAttackDamage').after((damage: number, target: any, attack: any) => {
+
+          ctx.patch(Player, 'modifyAttackDamage').after((target: Character, attack: AttackData, damage: number, applyReduction = true) => {
+
             const Monster: Enemy = game.combat.enemy
             const Player: Player = game.combat.player
-            const TargetMods: CombatModifiers = target.modifiers
+            const TargetMods = target.modifiers
             let tesDamage = 0
-            const DR: number = TargetMods.increasedDamageReduction - TargetMods.decreasedDamageReduction
+            // const DR: number = TargetMods.increasedDamageReduction - TargetMods.decreasedDamageReduction
             // Remove all damage and return if wardsaved
             if (TargetMods.tes_wardsave) {
               let wardsaveChance = Math.min(TargetMods.tes_wardsave, 90);
@@ -834,24 +824,25 @@ export async function setup(ctx: Modding.ModContext) {
             }
             // If it's a dragon breath re-calc
             if (attack.isDragonbreath) {
-              // Flat calc
-              tesDamage = tesDamage + TargetMods.tes_increasedDragonBreathDamageTaken
+              // tesDamage += TargetMods.tes_increasedDragonBreathDamageTaken; // flat
+              tesDamage *= 1 + TargetMods.tes_increasedDragonBreathDamageTaken / 100; // %
             }
             // account for damage reduction
-            tesDamage = tesDamage - ((tesDamage / 100) * DR)
+            tesDamage *= 1 - target.stats.getResistance(this.damageType) / 100;
             // Adding bypass damage
             if (Player.modifiers.tes_bypassDamageReduction) {
               tesDamage = tesDamage + Player.modifiers.tes_bypassDamageReduction
             }
+            tesDamage = this.applyDamageModifiers(target, tesDamage);
             // return re-calced damage
             return Math.floor(damage + tesDamage)
           })
-          ctx.patch(Enemy, 'modifyAttackDamage').after((damage: number, target: any, attack: any) => {
+          ctx.patch(Enemy, 'modifyAttackDamage').after((target: Character, attack: AttackData, damage: number, applyReduction = true) => {
             const Monster: Enemy = game.combat.enemy
             const Player: Player = game.combat.player
-            const TargetMods: CombatModifiers = target.modifiers
+            const TargetMods = target.modifiers
             let tesDamage = 0
-            const DR: number = TargetMods.increasedDamageReduction - TargetMods.decreasedDamageReduction
+            // const DR: number = TargetMods.increasedDamageReduction - TargetMods.decreasedDamageReduction
             // Remove all damage and return if wardsaved
             if (TargetMods.tes_wardsave) {
               let wardsaveChance = Math.min(TargetMods.tes_wardsave, 90);
@@ -870,16 +861,16 @@ export async function setup(ctx: Modding.ModContext) {
             }
             // If it's a dragon breath re-calc
             if (attack.isDragonbreath) {
-              // Flat calc
-              tesDamage = tesDamage + TargetMods.tes_increasedDragonBreathDamageTaken
+              // tesDamage += TargetMods.tes_increasedDragonBreathDamageTaken; // flat
+              tesDamage *= 1 + TargetMods.tes_increasedDragonBreathDamageTaken / 100; // %
             }
             // account for damage reduction
-            tesDamage = tesDamage - ((tesDamage / 100) * DR)
+            // tesDamage = tesDamage - ((tesDamage / 100) * DR)
             // Adding bypass damage
             if (Monster.modifiers.tes_bypassDamageReduction) {
               tesDamage = tesDamage + Monster.modifiers.tes_bypassDamageReduction
             }
-
+            tesDamage = this.applyDamageModifiers(target, tesDamage);
             // return re-calced damage
             return Math.floor(damage + tesDamage)
           })
@@ -923,27 +914,37 @@ export async function setup(ctx: Modding.ModContext) {
             const minToMaxPerc = item.modifiers?.increasedMinHitBasedOnMaxHit ? item.modifiers?.increasedMinHitBasedOnMaxHit : 0
             // damage to all monsters, dungon monsters, slayer monsters
             if (item.attackType === 'melee') {
+              // @ts-ignore
               percentMaxHitModifer = percentMaxHitModifer + item.modifiers?.increasedMeleeMaxHit || 0
+              // @ts-ignore
               percentMaxHitModifer = percentMaxHitModifer - item.modifiers?.decreasedMeleeMaxHit || 0
-
+              // @ts-ignore
               flatDam = flatDam + item.modifiers?.increasedMeleeMaxHitFlat || 0
+              // @ts-ignore
               flatDam = flatDam - item.modifiers?.decreasedMeleeMaxHitFlat || 0
             }
             if (item.attackType === 'ranged') {
+              // @ts-ignore
               percentMaxHitModifer = percentMaxHitModifer + item.modifiers?.increasedRangedMaxHit || 0
+              // @ts-ignore
               percentMaxHitModifer = percentMaxHitModifer - item.modifiers?.decreasedRangedMaxHit || 0
-
+              // @ts-ignore
               flatDam = flatDam + item.modifiers?.increasedRangedMaxHitFlat || 0
+              // @ts-ignore
               flatDam = flatDam - item.modifiers?.decreasedRangedMaxHitFlat || 0
             }
             if (item.attackType === 'magic') {
+              // @ts-ignore
               percentMaxHitModifer = percentMaxHitModifer + item.modifiers?.increasedMagicMaxHit || 0
+              // @ts-ignore
               percentMaxHitModifer = percentMaxHitModifer - item.modifiers?.decreasedMagicMaxHit || 0
-
+              // @ts-ignore
               flatDam = flatDam + item.modifiers?.increasedMagicMaxHitFlat || 0
+              // @ts-ignore
               flatDam = flatDam - item.modifiers?.decreasedMagicMaxHitFlat || 0
-            }
+            }        // @ts-ignore
             const maxHit = baseMaxHit * (1 + (percentMaxHitModifer / 100)) + flatDam
+            // @ts-ignore
             const minHit = Math.min(Math.max(1 + maxHit * minToMaxPerc + flatDam, 1), maxHit)
             const avgHit = ((maxHit + minHit) / 2) * (1 - 0)
             const interval = item.equipmentStats.find(stat => stat.key === 'attackSpeed')?.value
@@ -1192,7 +1193,7 @@ export async function setup(ctx: Modding.ModContext) {
                 }
                 if (!Khajiit_Item_1 && rollPercentage(1)) {
                   Khajiit_Item_1 = `${item.namespace}:${item.localID}`
-                  Khajiit_Item_1_Price = item.sellsFor * 4
+                  Khajiit_Item_1_Price = item.sellsFor.currency.amount * 4
                   Khajiit_Item_1_qty = Math.floor(Math.random() * 100)
                   if (Khajiit_Item_1_Price < 1000) { Khajiit_Item_1_qty = Math.floor(Math.random() * 10000) }
                   if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour" || item.type === "Magic Armour") {
@@ -1200,7 +1201,7 @@ export async function setup(ctx: Modding.ModContext) {
                   }
                 } else if (!Khajiit_Item_2 && rollPercentage(0.5)) {
                   Khajiit_Item_2 = `${item.namespace}:${item.localID}`
-                  Khajiit_Item_2_Price = item.sellsFor * 4
+                  Khajiit_Item_2_Price = item.sellsFor.currency.amount * 4
                   Khajiit_Item_2_qty = Math.floor(Math.random() * 50)
                   if (Khajiit_Item_2_Price < 1000) { Khajiit_Item_2_qty = Math.floor(Math.random() * 10000) }
                   if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour" || item.type === "Magic Armour") {
@@ -1208,7 +1209,7 @@ export async function setup(ctx: Modding.ModContext) {
                   }
                 } else if (!Khajiit_Item_3 && rollPercentage(0.5)) {
                   Khajiit_Item_3 = `${item.namespace}:${item.localID}`
-                  Khajiit_Item_3_Price = item.sellsFor * 4
+                  Khajiit_Item_3_Price = item.sellsFor.currency.amount * 4
                   Khajiit_Item_3_qty = Math.floor(Math.random() * 10)
                   if (Khajiit_Item_3_Price < 1000) { Khajiit_Item_3_qty = Math.floor(Math.random() * 10000) }
                   if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour" || item.type === "Magic Armour") {
@@ -1216,7 +1217,7 @@ export async function setup(ctx: Modding.ModContext) {
                   }
                 } else if (!Khajiit_Item_4 && rollPercentage(0.5)) {
                   Khajiit_Item_4 = `${item.namespace}:${item.localID}`
-                  Khajiit_Item_4_Price = item.sellsFor * 4
+                  Khajiit_Item_4_Price = item.sellsFor.currency.amount * 4
                   Khajiit_Item_4_qty = Math.floor(Math.random() * 2)
                   if (Khajiit_Item_4_Price < 1000) { Khajiit_Item_4_qty = Math.floor(Math.random() * 10000) }
                   if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour" || item.type === "Magic Armour") {
@@ -1224,7 +1225,7 @@ export async function setup(ctx: Modding.ModContext) {
                   }
                 } else if (!Khajiit_Item_5 && rollPercentage(0.5)) {
                   Khajiit_Item_5 = `${item.namespace}:${item.localID}`
-                  Khajiit_Item_5_Price = item.sellsFor * 4
+                  Khajiit_Item_5_Price = item.sellsFor.currency.amount * 4
                   // Khajiit_Item_5_qty = Math.floor(Math.random() * 2)
                   if (Khajiit_Item_5_Price < 1000) { Khajiit_Item_5_qty = Math.floor(Math.random() * 10000) }
                   if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour" || item.type === "Magic Armour") {
