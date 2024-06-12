@@ -1,7 +1,7 @@
 declare global {
     interface CloudManager {
-        hasTotHEntitlement: boolean;
-        hasAoDEntitlement: boolean;
+        hasTotHEntitlementAndIsEnabled: boolean;
+        hasAoDEntitlementAndIsEnabled: boolean;
     }
 
     const cloudManager: CloudManager;

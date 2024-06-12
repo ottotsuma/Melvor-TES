@@ -130,26 +130,24 @@ export async function setup(ctx: Modding.ModContext) {
     // could check if items owned
     // could color code negative and positive
     const showList = (itemID: string, backFunction: any, ...backArgs: any) => {
-      const item = game.items.getObjectByID(itemID);
+      const item = game.items.getObjectByID(itemID) as EquipmentItem;
 
       let html = `<h5 class="font-w400 mb-1">${item.name}</h5>`;
       html += `<img src="${item.media}" style="max-width: 256px; max-height: 256px;"></img>`;
       html += '<p></p>';
 
-      // @ts-ignore
       game.allSynergies.forEach(synergy => {
         if (synergy.items.includes(item)) {
           html += `<div>${getLangString('equipped_with')}</div>`;
-          // @ts-ignore
           synergy.items.forEach(i => {
+             // @ts-ignore
             html += `<div>${i.name}</div>`
           })
           html += '<p></p>';
           html += `<div>${getLangString('gain_modifiers')}</div>`;
           for (var modifierIndex in synergy.playerModifiers) {
             // check if the property/key is defined in the object itself, not in parent
-            if (synergy.playerModifiers.hasOwnProperty(modifierIndex)) {
-              // @ts-ignore              
+            if (synergy.playerModifiers.hasOwnProperty(modifierIndex)) {        
               if (modifierIndex === 'allowUnholyPrayerUse') {
                 html += `<div>${getLangString('allowUnholyPrayerUse')}</div>`
               } else {
@@ -158,7 +156,7 @@ export async function setup(ctx: Modding.ModContext) {
                   const isNegative = mod.isNegative ? 'red' : 'green'
                   const negString = mod.isNegative ? 'negAliases' : 'posAliases'
                   const displayString = getLangString("MODIFIER_DATA_" + mod.modifier.allowedScopes[0][negString][0].key).replace('${skillName}', mod.modifier.allowedScopes[0][negString][0].key).replace('${value}',
-                    mod.value)
+                    mod.value + '')
                     // .replace('${skillName}', mod.modifier.allowedScopes[0]?.value[negString][0].key)
                   html += `<div style="color: ${isNegative}">${displayString}</div>`
                   html += '<p></p>';
@@ -221,8 +219,8 @@ export async function setup(ctx: Modding.ModContext) {
         const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
         const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
         const profileSkill = mod.manager.getLoadedModList().includes("(Skill) Classes and Species")
-        const TothEntitlement = cloudManager.hasTotHEntitlement
-        const AoDEntitlement = cloudManager.hasAoDEntitlement
+        const TothEntitlement = cloudManager.hasTotHEntitlementAndIsEnabled
+        const AoDEntitlement = cloudManager.hasAoDEntitlementAndIsEnabled
         const combatSim = mod.manager.getLoadedModList().includes("[Myth] Combat Simulator")
         if(combatSim) {
           mod.api.mythCombatSimulator?.registerNamespace('tes');
@@ -894,62 +892,15 @@ export async function setup(ctx: Modding.ModContext) {
       function calcItemLevel(item: WeaponItemData) {
         try {
           if (item && item.attackType) {
-            // item = game.items.getObjectByID('melvorD:Dragon_Dagger')
-            // const target = game.monsters.getObjectByID('melvorD:Plant')
-            const player = game.combat.player
-            const effectiveSkillLevel = item.attackType === 'melee' ? player.levels.Strength : item.attackType === 'ranged' ? player.levels.Ranged : player.levels.Magic
-            // baseaccuracybonus = all attack bonuses found in equipmentstats 
-            // accuracymodifier = modifiers on the item & all other sources but here just the item
-            // const accuracy = (effectiveSkillLevel+9) * (baseaccuracybonus + 64) * (1 + (accuracymodifier / 100))
-            // const accuracy = player.stats ? player.stats.accuracy : 18763 
-            // const targetEvasion = item.attackType === 'melee' ? 220 : item.attackType === 'ranged' ? 640 : 640
-            // const chanceToHit = (1 - (targetEvasion / (2 * accuracy))) * 100
-            // player Damage reduction = 45 // "ammoType": "Arrows",
-            const chanceToHit = 100
-            const strengthBonus = item.attackType === 'melee' ? item.equipmentStats.find(stat => stat.key === 'meleeStrengthBonus')?.value : item.attackType === 'ranged' ? item.ammoType === "Arrows" ? item.equipmentStats.find(stat => stat.key === 'rangedStrengthBonus')?.value + 60 : item.ammoType === "Bolts" ? item.equipmentStats.find(stat => stat.key === 'rangedStrengthBonus')?.value + 152 : item.equipmentStats.find(stat => stat.key === 'rangedStrengthBonus')?.value : item.attackType === 'magic' ? item.equipmentStats.find(stat => stat.key === 'magicDamageBonus')?.value : 0
-            const spellMaxHit = 255
-            const baseMaxHit = item.attackType === 'magic' ? spellMaxHit * (1 + (strengthBonus / 100)) * (1 + ((effectiveSkillLevel + 1) / 200)) : 10 * (2.2 + (effectiveSkillLevel / 10) + ((effectiveSkillLevel + 17) / 640) * strengthBonus)
-            let percentMaxHitModifer = item.modifiers?.increasedMaxHitPercent ? item.modifiers?.increasedMaxHitPercent : 0
-            let flatDam = item.modifiers?.increasedMaxHitFlat ? item.modifiers?.increasedMaxHitFlat : 0
-            const minToMaxPerc = item.modifiers?.increasedMinHitBasedOnMaxHit ? item.modifiers?.increasedMinHitBasedOnMaxHit : 0
-            // damage to all monsters, dungon monsters, slayer monsters
-            if (item.attackType === 'melee') {
-              // @ts-ignore
-              percentMaxHitModifer = percentMaxHitModifer + item.modifiers?.increasedMeleeMaxHit || 0
-              // @ts-ignore
-              percentMaxHitModifer = percentMaxHitModifer - item.modifiers?.decreasedMeleeMaxHit || 0
-              // @ts-ignore
-              flatDam = flatDam + item.modifiers?.increasedMeleeMaxHitFlat || 0
-              // @ts-ignore
-              flatDam = flatDam - item.modifiers?.decreasedMeleeMaxHitFlat || 0
-            }
-            if (item.attackType === 'ranged') {
-              // @ts-ignore
-              percentMaxHitModifer = percentMaxHitModifer + item.modifiers?.increasedRangedMaxHit || 0
-              // @ts-ignore
-              percentMaxHitModifer = percentMaxHitModifer - item.modifiers?.decreasedRangedMaxHit || 0
-              // @ts-ignore
-              flatDam = flatDam + item.modifiers?.increasedRangedMaxHitFlat || 0
-              // @ts-ignore
-              flatDam = flatDam - item.modifiers?.decreasedRangedMaxHitFlat || 0
-            }
-            if (item.attackType === 'magic') {
-              // @ts-ignore
-              percentMaxHitModifer = percentMaxHitModifer + item.modifiers?.increasedMagicMaxHit || 0
-              // @ts-ignore
-              percentMaxHitModifer = percentMaxHitModifer - item.modifiers?.decreasedMagicMaxHit || 0
-              // @ts-ignore
-              flatDam = flatDam + item.modifiers?.increasedMagicMaxHitFlat || 0
-              // @ts-ignore
-              flatDam = flatDam - item.modifiers?.decreasedMagicMaxHitFlat || 0
-            }        // @ts-ignore
-            const maxHit = baseMaxHit * (1 + (percentMaxHitModifer / 100)) + flatDam
-            // @ts-ignore
-            const minHit = Math.min(Math.max(1 + maxHit * minToMaxPerc + flatDam, 1), maxHit)
-            const avgHit = ((maxHit + minHit) / 2) * (1 - 0)
-            const interval = item.equipmentStats.find(stat => stat.key === 'attackSpeed')?.value
-            const dps = (avgHit / interval) * chanceToHit
-            return dps ? dps : "Weapon failed"
+            
+            game.combat.player.computeMaxHit()
+
+            // const maxHit = baseMaxHit * (1 + (percentMaxHitModifer / 100)) + flatDam
+            // const minHit = Math.min(Math.max(1 + maxHit * minToMaxPerc + flatDam, 1), maxHit)
+            // const avgHit = ((maxHit + minHit) / 2) * (1 - 0)
+            // const interval = item.equipmentStats.find(stat => stat.key === 'attackSpeed')?.value
+            // const dps = (avgHit / interval) * chanceToHit
+            // return dps ? dps : "Weapon failed"
           } else {
             return "Non Weapon items cannot be processed yet"
           }
@@ -958,7 +909,6 @@ export async function setup(ctx: Modding.ModContext) {
         }
       }
       try {
-        // @ts-ignore
         game.calcItemLevel = calcItemLevel
         ctx.patch(CombatManager, "onEnemyDeath").after(() => {
           try {
@@ -1017,21 +967,15 @@ export async function setup(ctx: Modding.ModContext) {
         tes_errors.push('onEnemyDeath', error)
       }
       try {
-        // @ts-ignore
-        const tesSynergiesForExport = []
-        // @ts-ignore
-        const synergiesForExport = []
-        // @ts-ignore
-        const found_items = []
-        // @ts-ignore
-        const synergies_all_items_names = []
+        const tesSynergiesForExport: any[] = []
+        const synergiesForExport: any[] = []
+        const found_items: any[] = []
+        const synergies_all_items_names: any[] = []
         game.itemSynergies.forEach(synergies => {
           if (synergies && synergies.length > 0) {
             synergies.forEach(synergy => {
-              // @ts-ignore
-              const all_found_items_names = []
-              // @ts-ignore
-              const found_items_names = []
+              const all_found_items_names: any[] = []
+              const found_items_names: any[] = []
               synergy.items.forEach(item => {
                 // @ts-ignore
                 if (!synergies_all_items_names.includes(item?._namespace?.name + ":" + item?._localID)) synergies_all_items_names.push(item?._namespace?.name + ":" + item?._localID)

@@ -5,6 +5,8 @@ declare type GameEvents = {
 };
 declare class Game extends GameEventEmitter<GameEvents> implements Serializable, EncodableObject {
     tes_errors: any;
+    calcItemLevel: any;
+    allSynergies: [ItemSynergy];
     loopInterval: number;
     loopStarted: boolean;
     disableClearOffline: boolean;
