@@ -207,7 +207,7 @@
         "name": "Sithis's Touch",
         "customDescription": "Cause 600 damage, by passing damage reduction.",
         "modifiers": {
-          "tes:tes_bypassDamageReduction": 600
+          "tes_increasedbypassDamageReduction": 600
         }
       },
       {
@@ -215,7 +215,7 @@
         "name": "Padomay's Touch",
         "customDescription": "Cause 300 damage, by passing damage reduction.",
         "modifiers": {
-          "tes:tes_bypassDamageReduction": 300
+          "tes_increasedbypassDamageReduction": 300
         }
       },
       {

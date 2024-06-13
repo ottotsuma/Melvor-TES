@@ -681,7 +681,6 @@ export async function setup(ctx: Modding.ModContext) {
 
           }
         } catch (error) {
-
           tes_errors.push('onModsLoaded packages', error)
         }
         // skill patches
@@ -738,89 +737,91 @@ export async function setup(ctx: Modding.ModContext) {
           }
           // @ts-ignore
           ctx.patch(Player, 'modifyAttackDamage').after((target: Character, attack: AttackData, damage: number, applyReduction = true) => {
-
-            const Monster: Enemy = game.combat.enemy
-            const Player: Player = game.combat.player
-            const TargetMods = target.modifiers
             let tesDamage = 0
-            // const DR: number = TargetMods.increasedDamageReduction - TargetMods.decreasedDamageReduction
-            // Remove all damage and return if wardsaved
-            console.log('Player', target, attack, damage, applyReduction)
-            // @ts-ignore
-            const ward = TargetMods.getValue('tes:tes_wardsave', {})
-            if (ward) {
-              let wardsaveChance = Math.min(ward, 90);
-              if (rollPercentage(wardsaveChance)) {
-                return 0;
-              }
-            }
-            if (target.hitpointsPercent === 100) {
-              // At HP full damage
-              // Target is monster
-              const a = getCharacterFlatAttackDamageBonusModification(Player, Monster)
-              const b = getCharacterPercentageAttackDamageBonusModification(Player, Monster)
-              if (!isNaN(a) && !isNaN(b)) {
-                tesDamage = tesDamage + a + ((damage / 100) * b)
-              }
-            }
-            // If it's a dragon breath re-calc
-            if (attack.isDragonbreath) {
-              // tesDamage += TargetMods.tes_increasedDragonBreathDamageTaken; // flat
+            try {
+              const Monster: Enemy = game.combat.enemy
+              const Player: Player = game.combat.player
+              const TargetMods = target.modifiers
+              console.log('Player', target, attack, damage, applyReduction)
               // @ts-ignore
-              tesDamage *= 1 + TargetMods.getValue('tes:tes_increasedDragonBreathDamageTaken', {}) / 100; // %
-            }
-            // account for damage reduction
-            tesDamage *= 1 - target.stats.getResistance(this.damageType) / 100;
-            // Adding bypass damage
-            // @ts-ignore
-            if (Player.modifiers.getValue('tes:tes_bypassDamageReduction', {})) {
+              const ward = TargetMods.getValue('tes:tes_wardsave', {})
+              if (ward) {
+                let wardsaveChance = Math.min(ward, 90);
+                if (rollPercentage(wardsaveChance)) {
+                  return 0;
+                }
+              }
+              if (target.hitpointsPercent === 100) {
+                // At HP full damage
+                // Target is monster
+                const a = getCharacterFlatAttackDamageBonusModification(Player, Monster)
+                const b = getCharacterPercentageAttackDamageBonusModification(Player, Monster)
+                if (!isNaN(a) && !isNaN(b)) {
+                  tesDamage = tesDamage + a + ((damage / 100) * b)
+                }
+              }
+              // If it's a dragon breath re-calc
+              if (attack.isDragonbreath) {
+                // tesDamage += TargetMods.tes_increasedDragonBreathDamageTaken; // flat
+                // @ts-ignore
+                tesDamage *= 1 + TargetMods.getValue('tes:tes_increasedDragonBreathDamageTaken', {}) / 100; // %
+              }
+              // account for damage reduction
+              tesDamage *= 1 - target.stats.getResistance(this.damageType) / 100;
+              // Adding bypass damage
               // @ts-ignore
-              tesDamage = tesDamage + Player.modifiers.getValue('tes:tes_bypassDamageReduction', {})
+              if (Player.modifiers.getValue('tes:tes_bypassDamageReduction', {})) {
+                // @ts-ignore
+                tesDamage = tesDamage + Player.modifiers.getValue('tes:tes_bypassDamageReduction', {})
+              }
+              tesDamage = this.applyDamageModifiers(target, tesDamage);
+            } catch (error) {
+              tesDamage = 0
+              tes_errors.push('Player', error)
             }
-            tesDamage = this.applyDamageModifiers(target, tesDamage);
             // return re-calced damage
             return Math.floor(damage + tesDamage)
           })
           // @ts-ignore
           ctx.patch(Enemy, 'modifyAttackDamage').after((target: Character, attack: AttackData, damage: number, applyReduction = true) => {
-            const Monster: Enemy = game.combat.enemy
-            const Player: Player = game.combat.player
-            const TargetMods = target.modifiers
             let tesDamage = 0
-            // const DR: number = TargetMods.increasedDamageReduction - TargetMods.decreasedDamageReduction
-            // Remove all damage and return if wardsaved
-            // @ts-ignore
-            const ward = TargetMods.getValue('tes:tes_wardsave', {})
-            if (ward) {
-              let wardsaveChance = Math.min(ward, 90);
-              if (rollPercentage(wardsaveChance)) {
-                return 0;
-              }
-            }
-            if (target.hitpointsPercent === 100) {
-              // At HP full damage
-              // Target is player
-              const a = getCharacterFlatAttackDamageBonusModification(Monster, Player)
-              const b = getCharacterPercentageAttackDamageBonusModification(Monster, Player)
-              if (!isNaN(a) && !isNaN(b)) {
-                tesDamage = tesDamage + a + (damage * b)
-              }
-            }
-            // If it's a dragon breath re-calc
-            if (attack.isDragonbreath) {
-              // tesDamage += TargetMods.tes_increasedDragonBreathDamageTaken; // flat
+            try {
+              const Monster: Enemy = game.combat.enemy
+              const Player: Player = game.combat.player
+              const TargetMods = target.modifiers
               // @ts-ignore
-              tesDamage *= 1 + TargetMods.getValue('tes:tes_increasedDragonBreathDamageTaken', {}) / 100; // %
-            }
-            // account for damage reduction
-            // tesDamage = tesDamage - ((tesDamage / 100) * DR)
-            // Adding bypass damage
-            // @ts-ignore
-            if (Monster.modifiers.getValue('tes:tes_bypassDamageReduction', {})) {
+              const ward = TargetMods.getValue('tes:tes_wardsave', {})
+              if (ward) {
+                let wardsaveChance = Math.min(ward, 90);
+                if (rollPercentage(wardsaveChance)) {
+                  return 0;
+                }
+              }
+              if (target.hitpointsPercent === 100) {
+                // At HP full damage
+                // Target is player
+                const a = getCharacterFlatAttackDamageBonusModification(Monster, Player)
+                const b = getCharacterPercentageAttackDamageBonusModification(Monster, Player)
+                if (!isNaN(a) && !isNaN(b)) {
+                  tesDamage = tesDamage + a + (damage * b)
+                }
+              }
+              // If it's a dragon breath re-calc
+              if (attack.isDragonbreath) {
+                // tesDamage += TargetMods.tes_increasedDragonBreathDamageTaken; // flat
+                // @ts-ignore
+                tesDamage *= 1 + TargetMods.getValue('tes:tes_increasedDragonBreathDamageTaken', {}) / 100; // %
+              }
               // @ts-ignore
-              tesDamage = tesDamage + Monster.modifiers.getValue('tes:tes_bypassDamageReduction', {})
+              if (Monster.modifiers.getValue('tes:tes_bypassDamageReduction', {})) {
+                // @ts-ignore
+                tesDamage = tesDamage + Monster.modifiers.getValue('tes:tes_bypassDamageReduction', {})
+              }
+              tesDamage = this.applyDamageModifiers(target, tesDamage);
+            } catch (error) {
+              tesDamage = 0
+              tes_errors.push('Enemy', error)
             }
-            tesDamage = this.applyDamageModifiers(target, tesDamage);
             // return re-calced damage
             return Math.floor(damage + tesDamage)
           })
