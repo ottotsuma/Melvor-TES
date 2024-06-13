@@ -1,7 +1,168 @@
 {
-  "$schema": "https://melvoridle.com/public_test/assets/schema/gameData.json",
+  "$schema": "https://melvoridle.com/assets/schema/gameData.json",
   "namespace": "tes",
   "data": {
+    "modifiers": [
+      {
+        "id": "tes_increasedDragonBreathDamageTaken",
+        "isCombat": true,
+        "allowEnemy": true,
+        "allowedScopes": [
+          {
+            "scopes": {},
+            "descriptions": [
+              {
+                "text": "+${value}% Dragon Breath Damage Taken",
+                "lang": "tes_increasedDragonBreathDamageTaken",
+                "above": 0,
+                "includeSign": false
+              }
+            ],
+            "posAliases": [
+              {
+                "key": "tes_increasedDragonBreathDamageTaken"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tes_wardsave",
+        "isCombat": true,
+        "allowEnemy": true,
+        "allowedScopes": [
+          {
+            "scopes": {},
+            "descriptions": [
+              {
+                "text": "-${value}% Ward",
+                "lang": "decreasedtes_wardsave",
+                "below": 0,
+                "includeSign": false
+              },
+              {
+                "text": "+${value}% Ward",
+                "lang": "increasedtes_wardsave",
+                "above": 0,
+                "includeSign": false
+              }
+            ],
+            "posAliases": [
+              {
+                "key": "increasedtes_wardsave"
+              }
+            ],
+            "negAliases": [
+              {
+                "key": "decreasedtes_wardsave"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tes_FlatDamageWhileTargetHasMaxHP",
+        "isCombat": true,
+        "allowEnemy": true,
+        "allowedScopes": [
+          {
+            "scopes": {},
+            "descriptions": [
+              {
+                "text": "-${value} damage while the target is fully healed.",
+                "lang": "tes_decreaseFlatDamageWhileTargetHasMaxHP",
+                "below": 0,
+                "includeSign": false
+              },
+              {
+                "text": "+${value} damage while the target is fully healed.",
+                "lang": "tes_increasedFlatDamageWhileTargetHasMaxHP",
+                "above": 0,
+                "includeSign": false
+              }
+            ],
+            "posAliases": [
+              {
+                "key": "tes_increasedFlatDamageWhileTargetHasMaxHP"
+              }
+            ],
+            "negAliases": [
+              {
+                "key": "tes_decreaseFlatDamageWhileTargetHasMaxHP"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tes_PercDamageWhileTargetHasMaxHP",
+        "isCombat": true,
+        "allowEnemy": true,
+        "allowedScopes": [
+          {
+            "scopes": {},
+            "descriptions": [
+              {
+                "text": "-${value}% damage while the target is fully healed.",
+                "lang": "tes_decreasePercDamageWhileTargetHasMaxHP",
+                "below": 0,
+                "includeSign": false
+              },
+              {
+                "text": "+${value}% damage while the target is fully healed.",
+                "lang": "tes_increasedPercDamageWhileTargetHasMaxHP",
+                "above": 0,
+                "includeSign": false
+              }
+            ],
+            "posAliases": [
+              {
+                "key": "tes_increasedPercDamageWhileTargetHasMaxHP"
+              }
+            ],
+            "negAliases": [
+              {
+                "key": "tes_decreasePercDamageWhileTargetHasMaxHP"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tes_bypassDamageReduction",
+        "isCombat": true,
+        "allowEnemy": true,
+        "allowedScopes": [
+          {
+            "scopes": {},
+            "descriptions": [
+              {
+                "text": "-${value} damage, though damage reduction.",
+                "lang": "tes_decreasebypassDamageReduction",
+                "below": 0,
+                "includeSign": false
+              },
+              {
+                "text": "+${value} damage, though damage reduction.",
+                "lang": "tes_increasedbypassDamageReduction",
+                "above": 0,
+                "includeSign": false
+              }
+            ],
+            "posAliases": [
+              {
+                "key": "tes_increasedbypassDamageReduction"
+              }
+            ],
+            "negAliases": [
+              {
+                "key": "tes_decreasebypassDamageReduction"
+              }
+            ]
+          }
+        ]
+      }
+    ],
     "pages": [
       {
         "id": "Bards_College_Overview",
@@ -46,7 +207,7 @@
         "name": "Sithis's Touch",
         "customDescription": "Cause 600 damage, by passing damage reduction.",
         "modifiers": {
-          "tes_bypassDamageReduction": 600
+          "tes:tes_bypassDamageReduction": 600
         }
       },
       {
@@ -54,7 +215,7 @@
         "name": "Padomay's Touch",
         "customDescription": "Cause 300 damage, by passing damage reduction.",
         "modifiers": {
-          "tes_bypassDamageReduction": 300
+          "tes:tes_bypassDamageReduction": 300
         }
       },
       {
@@ -70,7 +231,7 @@
         "name": "Mara's Protection",
         "customDescription": "Mara's Protection 10%.",
         "modifiers": {
-          "tes_wardsave": 10
+          "increasedtes_wardsave": 10
         }
       },
       {
@@ -11512,7 +11673,7 @@
         "itemType": "Equipment",
         "modifiers": {
           "flatSlashAttackBonus": 10,
-          "tes_wardsave": 5
+          "increasedtes_wardsave": 5
         },
         "customDescription": "+10 Slash Attack Bonus and 5% chance to take no damage from any attack.",
         "equipmentStats": [
@@ -14444,7 +14605,7 @@
         "itemType": "Equipment",
         "customDescription": "High stats but takes more damage from dragon breath.",
         "modifiers": {
-          "tes_increasedDragonBreathDamageTaken": 20
+          "tes:tes_increasedDragonBreathDamageTaken": 20
         }
       },
       {
@@ -28589,7 +28750,6 @@
         "media": "assets/icons/mages/Water_Breathing.png",
         "name": "Poison Bloom",
         "categories": [
-          "melvorD:Nature",
           "melvorD:Surge"
         ],
         "requirements": [

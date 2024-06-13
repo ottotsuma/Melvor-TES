@@ -46,69 +46,6 @@ export async function setup(ctx: Modding.ModContext) {
       hint: ''
     } as Modding.Settings.RadioGroupConfig);
 
-    modifierData.tes_increasedDragonBreathDamageTaken = {
-      get langDescription() {
-        return getLangString('tes_increasedDragonBreathDamageTaken');
-      },
-      description: '+${value}% damage taken from dragonbreath',
-      isSkill: false,
-      isNegative: true,
-      tags: ['combat']
-    };
-    modifierData.tes_wardsave = {
-      get langDescription() {
-        return getLangString('tes_wardsave');
-      },
-      description: '+${value}% (MAX: 90%) to take 0 damage from a hit.',
-      isSkill: false,
-      isNegative: true,
-      tags: ['combat']
-    };
-    modifierData.tes_increasedFlatDamageWhileTargetHasMaxHP = {
-      get langDescription() {
-        return getLangString('tes_increasedFlatDamageWhileTargetHasMaxHP');
-      },
-      description: '+${value} damage while the target is fully healed.',
-      isSkill: false,
-      isNegative: false,
-      tags: ['combat']
-    };
-    modifierData.tes_increasedPercDamageWhileTargetHasMaxHP = {
-      get langDescription() {
-        return getLangString('tes_increasedPercDamageWhileTargetHasMaxHP');
-      },
-      description: '+${value}% damage while the target is fully healed.',
-      isSkill: false,
-      isNegative: false,
-      tags: ['combat']
-    };
-    modifierData.tes_decreasePercDamageWhileTargetHasMaxHP = {
-      get langDescription() {
-        return getLangString('tes_decreasePercDamageWhileTargetHasMaxHP');
-      },
-      description: '-${value}% damage while the target is fully healed.',
-      isSkill: false,
-      isNegative: false,
-      tags: ['combat']
-    };
-    modifierData.tes_decreaseFlatDamageWhileTargetHasMaxHP = {
-      get langDescription() {
-        return getLangString('tes_decreaseFlatDamageWhileTargetHasMaxHP');
-      },
-      description: '-${value} damage while you are fully healed.',
-      isSkill: false,
-      isNegative: false,
-      tags: ['combat']
-    };
-    modifierData.tes_bypassDamageReduction = {
-      get langDescription() {
-        return getLangString('tes_bypassDamageReduction');
-      },
-      description: '${value} damage, though damage reduction.',
-      isSkill: false,
-      isNegative: false,
-      tags: ['combat']
-    };
     // variables to move between load functions
     let Khajiit_Item_1 = ""
     let Khajiit_Item_1_Price = 100
@@ -140,14 +77,14 @@ export async function setup(ctx: Modding.ModContext) {
         if (synergy.items.includes(item)) {
           html += `<div>${getLangString('equipped_with')}</div>`;
           synergy.items.forEach(i => {
-             // @ts-ignore
+            // @ts-ignore
             html += `<div>${i.name}</div>`
           })
           html += '<p></p>';
           html += `<div>${getLangString('gain_modifiers')}</div>`;
           for (var modifierIndex in synergy.playerModifiers) {
             // check if the property/key is defined in the object itself, not in parent
-            if (synergy.playerModifiers.hasOwnProperty(modifierIndex)) {        
+            if (synergy.playerModifiers.hasOwnProperty(modifierIndex)) {
               if (modifierIndex === 'allowUnholyPrayerUse') {
                 html += `<div>${getLangString('allowUnholyPrayerUse')}</div>`
               } else {
@@ -157,7 +94,7 @@ export async function setup(ctx: Modding.ModContext) {
                   const negString = mod.isNegative ? 'negAliases' : 'posAliases'
                   const displayString = getLangString("MODIFIER_DATA_" + mod.modifier.allowedScopes[0][negString][0].key).replace('${skillName}', mod.modifier.allowedScopes[0][negString][0].key).replace('${value}',
                     mod.value + '')
-                    // .replace('${skillName}', mod.modifier.allowedScopes[0]?.value[negString][0].key)
+                  // .replace('${skillName}', mod.modifier.allowedScopes[0]?.value[negString][0].key)
                   html += `<div style="color: ${isNegative}">${displayString}</div>`
                   html += '<p></p>';
                 }
@@ -222,7 +159,7 @@ export async function setup(ctx: Modding.ModContext) {
         const TothEntitlement = cloudManager.hasTotHEntitlementAndIsEnabled
         const AoDEntitlement = cloudManager.hasAoDEntitlementAndIsEnabled
         const combatSim = mod.manager.getLoadedModList().includes("[Myth] Combat Simulator")
-        if(combatSim) {
+        if (combatSim) {
           mod.api.mythCombatSimulator?.registerNamespace('tes');
         }
         // const Abyssal = mod.manager.getLoadedModList().includes('Abyssal Rift')
@@ -781,22 +718,25 @@ export async function setup(ctx: Modding.ModContext) {
           // Patching skills for new modifiers
           function getCharacterFlatAttackDamageBonusModification(attacker: Character, target: Character): number {
             const attackerModifiers = attacker.modifiers
-            const p = attackerModifiers.tes_increasedFlatDamageWhileTargetHasMaxHP ? attackerModifiers.tes_increasedFlatDamageWhileTargetHasMaxHP : 0
-            const n = attackerModifiers.tes_decreaseFlatDamageWhileTargetHasMaxHP ? attackerModifiers.tes_decreaseFlatDamageWhileTargetHasMaxHP : 0
-            // numberMultiplier
+            // @ts-ignore
+            const p = attackerModifiers.getValue('tes:tes_FlatDamageWhileTargetHasMaxHP', {});
+            // @ts-ignore
+            const n = attackerModifiers.getValue('tes:tes_PercDamageWhileTargetHasMaxHP', {});
             return target.hitpointsPercent === 100
               ? p - n
               : 0;
           }
           function getCharacterPercentageAttackDamageBonusModification(attacker: Character, target: Character): number {
             const attackerModifiers = attacker.modifiers
-            const p = attackerModifiers.tes_increasedPercDamageWhileTargetHasMaxHP ? attackerModifiers.tes_increasedPercDamageWhileTargetHasMaxHP : 0
-            const n = attackerModifiers.tes_decreasePercDamageWhileTargetHasMaxHP ? attackerModifiers.tes_decreasePercDamageWhileTargetHasMaxHP : 0
+            // @ts-ignore
+            const p = attackerModifiers.getValue('tes:tes_FlatDamageWhileTargetHasMaxHP', {});
+            // @ts-ignore 
+            const n = attackerModifiers.getValue('tes:tes_PercDamageWhileTargetHasMaxHP', {});
             return target.hitpointsPercent === 100
               ? p - n
               : 0;
           }
-
+          // @ts-ignore
           ctx.patch(Player, 'modifyAttackDamage').after((target: Character, attack: AttackData, damage: number, applyReduction = true) => {
 
             const Monster: Enemy = game.combat.enemy
@@ -805,8 +745,11 @@ export async function setup(ctx: Modding.ModContext) {
             let tesDamage = 0
             // const DR: number = TargetMods.increasedDamageReduction - TargetMods.decreasedDamageReduction
             // Remove all damage and return if wardsaved
-            if (TargetMods.tes_wardsave) {
-              let wardsaveChance = Math.min(TargetMods.tes_wardsave, 90);
+            console.log('Player', target, attack, damage, applyReduction)
+            // @ts-ignore
+            const ward = TargetMods.getValue('tes:tes_wardsave', {})
+            if (ward) {
+              let wardsaveChance = Math.min(ward, 90);
               if (rollPercentage(wardsaveChance)) {
                 return 0;
               }
@@ -823,18 +766,22 @@ export async function setup(ctx: Modding.ModContext) {
             // If it's a dragon breath re-calc
             if (attack.isDragonbreath) {
               // tesDamage += TargetMods.tes_increasedDragonBreathDamageTaken; // flat
-              tesDamage *= 1 + TargetMods.tes_increasedDragonBreathDamageTaken / 100; // %
+              // @ts-ignore
+              tesDamage *= 1 + TargetMods.getValue('tes:tes_increasedDragonBreathDamageTaken', {}) / 100; // %
             }
             // account for damage reduction
             tesDamage *= 1 - target.stats.getResistance(this.damageType) / 100;
             // Adding bypass damage
-            if (Player.modifiers.tes_bypassDamageReduction) {
-              tesDamage = tesDamage + Player.modifiers.tes_bypassDamageReduction
+            // @ts-ignore
+            if (Player.modifiers.getValue('tes:tes_bypassDamageReduction', {})) {
+              // @ts-ignore
+              tesDamage = tesDamage + Player.modifiers.getValue('tes:tes_bypassDamageReduction', {})
             }
             tesDamage = this.applyDamageModifiers(target, tesDamage);
             // return re-calced damage
             return Math.floor(damage + tesDamage)
           })
+          // @ts-ignore
           ctx.patch(Enemy, 'modifyAttackDamage').after((target: Character, attack: AttackData, damage: number, applyReduction = true) => {
             const Monster: Enemy = game.combat.enemy
             const Player: Player = game.combat.player
@@ -842,8 +789,10 @@ export async function setup(ctx: Modding.ModContext) {
             let tesDamage = 0
             // const DR: number = TargetMods.increasedDamageReduction - TargetMods.decreasedDamageReduction
             // Remove all damage and return if wardsaved
-            if (TargetMods.tes_wardsave) {
-              let wardsaveChance = Math.min(TargetMods.tes_wardsave, 90);
+            // @ts-ignore
+            const ward = TargetMods.getValue('tes:tes_wardsave', {})
+            if (ward) {
+              let wardsaveChance = Math.min(ward, 90);
               if (rollPercentage(wardsaveChance)) {
                 return 0;
               }
@@ -860,13 +809,16 @@ export async function setup(ctx: Modding.ModContext) {
             // If it's a dragon breath re-calc
             if (attack.isDragonbreath) {
               // tesDamage += TargetMods.tes_increasedDragonBreathDamageTaken; // flat
-              tesDamage *= 1 + TargetMods.tes_increasedDragonBreathDamageTaken / 100; // %
+              // @ts-ignore
+              tesDamage *= 1 + TargetMods.getValue('tes:tes_increasedDragonBreathDamageTaken', {}) / 100; // %
             }
             // account for damage reduction
             // tesDamage = tesDamage - ((tesDamage / 100) * DR)
             // Adding bypass damage
-            if (Monster.modifiers.tes_bypassDamageReduction) {
-              tesDamage = tesDamage + Monster.modifiers.tes_bypassDamageReduction
+            // @ts-ignore
+            if (Monster.modifiers.getValue('tes:tes_bypassDamageReduction', {})) {
+              // @ts-ignore
+              tesDamage = tesDamage + Monster.modifiers.getValue('tes:tes_bypassDamageReduction', {})
             }
             tesDamage = this.applyDamageModifiers(target, tesDamage);
             // return re-calced damage
@@ -892,7 +844,7 @@ export async function setup(ctx: Modding.ModContext) {
       function calcItemLevel(item: WeaponItemData) {
         try {
           if (item && item.attackType) {
-            
+
             game.combat.player.computeMaxHit()
 
             // const maxHit = baseMaxHit * (1 + (percentMaxHitModifer / 100)) + flatDam
@@ -1031,16 +983,19 @@ export async function setup(ctx: Modding.ModContext) {
         // game.bank.selectItemOnClick
         ctx.patch(Bank, 'selectItemOnClick').after(() => {
           const selectedItem: BankItem = game.bank.selectedBankItem
-          // @ts-ignore
-          if (game.synergies_found_items.includes(selectedItem.item._namespace.name + ':' + selectedItem.item._localID)) {
-            document.getElementById('synergiesButton').style.display = 'inline-block'
-            // const synergy_image = <img class="skill-icon-xxs" src="https://cdn2-main.melvor.net/assets/media/skills/summoning/synergy.svg">
-          } else {
-            document.getElementById('synergiesButton').style.display = 'none'
+          const synergiesButton = document.getElementById('synergiesButton')
+          if (synergiesButton) {
+            // @ts-ignore
+            if (game.synergies_found_items.includes(selectedItem.item._namespace.name + ':' + selectedItem.item._localID)) {
+              synergiesButton.style.display = 'inline-block'
+              // const synergy_image = <img class="skill-icon-xxs" src="https://cdn2-main.melvor.net/assets/media/skills/summoning/synergy.svg">
+            } else {
+              synergiesButton.style.display = 'none'
+            }
           }
         })
       } catch (error) {
-
+        tes_errors.push('synergiesButton', error)
       }
       const bannedList: any = {
         "dndCoin": true,
