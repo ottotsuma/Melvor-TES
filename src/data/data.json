@@ -7228,6 +7228,11 @@
         },
         "equipmentStats": [
           {
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
+            "value": 4
+          },
+          {
             "key": "rangedDefenceBonus",
             "value": 10
           },
@@ -7246,12 +7251,6 @@
           {
             "key": "magicAttackBonus",
             "value": 10
-          }
-        ],
-        "resistanceStats": [
-          {
-            "id": "melvorD:Normal",
-            "value": 4
           }
         ],
         "tier": "none",
@@ -7283,6 +7282,11 @@
         },
         "equipmentStats": [
           {
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
+            "value": 4
+          },
+          {
             "key": "rangedDefenceBonus",
             "value": 10
           },
@@ -7305,12 +7309,6 @@
           {
             "key": "rangedAttackBonus",
             "value": -10
-          }
-        ],
-        "resistanceStats": [
-          {
-            "id": "melvorD:Normal",
-            "value": 4
           }
         ],
         "tier": "none",
@@ -7336,6 +7334,11 @@
         },
         "equipmentStats": [
           {
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
+            "value": 4
+          },
+          {
             "key": "rangedDefenceBonus",
             "value": 10
           },
@@ -7358,12 +7361,6 @@
           {
             "key": "rangedAttackBonus",
             "value": -10
-          }
-        ],
-        "resistanceStats": [
-          {
-            "id": "melvorD:Normal",
-            "value": 4
           }
         ],
         "tier": "none",
@@ -7389,6 +7386,11 @@
         },
         "equipmentStats": [
           {
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
+            "value": 4
+          },
+          {
             "key": "rangedDefenceBonus",
             "value": 10
           },
@@ -7411,12 +7413,6 @@
           {
             "key": "rangedAttackBonus",
             "value": -10
-          }
-        ],
-        "resistanceStats": [
-          {
-            "id": "melvorD:Normal",
-            "value": 4
           }
         ],
         "tier": "none",
@@ -7444,6 +7440,11 @@
         },
         "equipmentStats": [
           {
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
+            "value": 12
+          },
+          {
             "key": "rangedDefenceBonus",
             "value": 72
           },
@@ -7466,12 +7467,6 @@
           {
             "key": "rangedAttackBonus",
             "value": -20
-          }
-        ],
-        "resistanceStats": [
-          {
-            "id": "melvorD:Normal",
-            "value": 12
           }
         ],
         "tier": "none",
@@ -7567,10 +7562,10 @@
             }
           ]
         },
-        "equipmentStats": [],
-        "resistanceStats": [
+        "equipmentStats": [
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 50
           }
         ],
@@ -7607,11 +7602,10 @@
           {
             "key": "magicDefenceBonus",
             "value": 7
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 5
           }
         ],
@@ -7654,11 +7648,10 @@
           {
             "key": "magicDefenceBonus",
             "value": 30
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 5
           }
         ],
@@ -7705,11 +7698,10 @@
           {
             "key": "magicDefenceBonus",
             "value": 5
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 2
           }
         ],
@@ -7769,11 +7761,10 @@
           {
             "key": "magicDefenceBonus",
             "value": 3
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 2
           }
         ],
@@ -7880,11 +7871,10 @@
           {
             "key": "rangedDefenceBonus",
             "value": 70
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 11
           }
         ],
@@ -7914,13 +7904,13 @@
         "itemType": "Equipment",
         "modifiers": {
           "summoningChargePreservationChance": 5,
-          "summoningMaxHit": 300,
           "flatBasePrimaryProductQuantity": [
             {
               "skillID": "melvorD:Summoning",
               "value": 50
             }
-          ]
+          ],
+          "summoningMaxHit": 300
         },
         "equipmentStats": [],
         "tier": "none",
@@ -7972,14 +7962,13 @@
             "value": 70
           },
           {
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
+            "value": 2
+          },
+          {
             "key": "magicDefenceBonus",
             "value": 50
-          }
-        ],
-        "resistanceStats": [
-          {
-            "id": "melvorD:Normal",
-            "value": 2
           }
         ],
         "tier": "none",
@@ -8014,6 +8003,11 @@
         },
         "equipmentStats": [
           {
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
+            "value": 2
+          },
+          {
             "key": "rangedDefenceBonus",
             "value": 5
           },
@@ -8032,12 +8026,6 @@
           {
             "key": "magicAttackBonus",
             "value": 40
-          }
-        ],
-        "resistanceStats": [
-          {
-            "id": "melvorD:Normal",
-            "value": 2
           }
         ],
         "tier": "none",
@@ -8328,11 +8316,10 @@
           {
             "key": "meleeDefenceBonus",
             "value": 95
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 10
           }
         ],
@@ -8375,11 +8362,10 @@
           {
             "key": "meleeDefenceBonus",
             "value": 12
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 10
           }
         ],
@@ -8422,11 +8408,10 @@
           {
             "key": "meleeDefenceBonus",
             "value": 250
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 10
           }
         ],
@@ -8469,11 +8454,10 @@
           {
             "key": "meleeDefenceBonus",
             "value": 30
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 10
           }
         ],
@@ -8524,11 +8508,10 @@
           {
             "key": "magicDefenceBonus",
             "value": 30
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 10
           }
         ],
@@ -9385,10 +9368,10 @@
             "type": "ShopPurchase"
           }
         ],
-        "occupiesSlots": [],
         "modifiers": {
           "tes_increasedFlatDamageWhileTargetHasMaxHP": 10
-        }
+        },
+        "occupiesSlots": []
       },
       {
         "id": "Jesters_Hat",
@@ -9426,10 +9409,10 @@
             "type": "ShopPurchase"
           }
         ],
-        "occupiesSlots": [],
         "modifiers": {
           "tes_increasedFlatDamageWhileTargetHasMaxHP": 10
-        }
+        },
+        "occupiesSlots": []
       },
       {
         "id": "Jesters_Boots",
@@ -9467,10 +9450,10 @@
             "type": "ShopPurchase"
           }
         ],
-        "occupiesSlots": [],
         "modifiers": {
           "tes_increasedFlatDamageWhileTargetHasMaxHP": 10
-        }
+        },
+        "occupiesSlots": []
       },
       {
         "id": "Jesters_Outfit",
@@ -9508,10 +9491,10 @@
             "type": "ShopPurchase"
           }
         ],
-        "occupiesSlots": [],
         "modifiers": {
           "tes_increasedFlatDamageWhileTargetHasMaxHP": 30
-        }
+        },
+        "occupiesSlots": []
       },
       {
         "id": "King_Olafs_Verse",
@@ -9797,11 +9780,10 @@
           {
             "key": "magicDefenceBonus",
             "value": 20
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 4
           }
         ],
@@ -10225,11 +10207,10 @@
           {
             "key": "magicDamageBonus",
             "value": 20
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 2
           }
         ],
@@ -10385,17 +10366,16 @@
             "value": 5
           },
           {
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
+            "value": 5
+          },
+          {
             "key": "meleeStrengthBonus",
             "value": 7
           },
           {
             "key": "rangedStrengthBonus",
-            "value": 5
-          }
-        ],
-        "resistanceStats": [
-          {
-            "id": "melvorD:Normal",
             "value": 5
           }
         ],
@@ -10474,11 +10454,10 @@
           {
             "key": "magicDefenceBonus",
             "value": 20
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 3
           }
         ],
@@ -10629,11 +10608,10 @@
           {
             "key": "magicDamageBonus",
             "value": 0
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 3
           }
         ],
@@ -10744,11 +10722,10 @@
           {
             "key": "magicDamageBonus",
             "value": 10
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 6
           }
         ],
@@ -10793,11 +10770,10 @@
           {
             "key": "magicDamageBonus",
             "value": 5
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 6
           }
         ],
@@ -11153,10 +11129,10 @@
             "type": "ShopPurchase"
           }
         ],
-        "occupiesSlots": [],
         "modifiers": {
           "tes_increasedFlatDamageWhileTargetHasMaxHP": 10
-        }
+        },
+        "occupiesSlots": []
       },
       {
         "id": "ShroudedArmor",
@@ -11194,6 +11170,9 @@
             "type": "ShopPurchase"
           }
         ],
+        "modifiers": {
+          "tes_increasedFlatDamageWhileTargetHasMaxHP": 10
+        },
         "occupiesSlots": []
       },
       {
@@ -11220,11 +11199,10 @@
           {
             "key": "meleeStrengthBonus",
             "value": 26
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 6
           }
         ],
@@ -11239,10 +11217,11 @@
             "type": "ShopPurchase"
           }
         ],
-        "occupiesSlots": [],
         "modifiers": {
-          "tes_increasedFlatDamageWhileTargetHasMaxHP": 30
-        }
+          "tes_increasedFlatDamageWhileTargetHasMaxHP": 60,
+          "tes_increasedPercDamageWhileTargetHasMaxHP": 60
+        },
+        "occupiesSlots": []
       },
       {
         "id": "Black_Hand_Hood",
@@ -11268,11 +11247,10 @@
           {
             "key": "meleeStrengthBonus",
             "value": 18
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 6
           }
         ],
@@ -11287,11 +11265,11 @@
             "type": "ShopPurchase"
           }
         ],
-        "occupiesSlots": [],
         "modifiers": {
-          "tes_increasedFlatDamageWhileTargetHasMaxHP": 15,
+          "tes_increasedFlatDamageWhileTargetHasMaxHP": 30,
           "tes_increasedPercDamageWhileTargetHasMaxHP": 30
-        }
+        },
+        "occupiesSlots": []
       },
       {
         "id": "Scales_of_Pitiless_Justice",
@@ -11305,9 +11283,9 @@
         "sellsFor": 115,
         "itemType": "Equipment",
         "modifiers": {
+          "tes_increasedPercDamageWhileTargetHasMaxHP": 50,
           "meleeStrengthBonus": 10,
-          "damageTaken": 10,
-          "tes_increasedPercDamageWhileTargetHasMaxHP": 50
+          "damageTaken": 10
         },
         "customDescription": "Increase damage while target is fully healed by 50%, +10 melee strength bonus however +10% more damage taken.",
         "equipmentStats": [],
@@ -11392,18 +11370,17 @@
         ],
         "equipmentStats": [
           {
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
+            "value": 5
+          },
+          {
             "key": "magicDamageBonus",
             "value": 3
           },
           {
             "key": "magicAttackBonus",
             "value": 28
-          }
-        ],
-        "resistanceStats": [
-          {
-            "id": "melvorD:Normal",
-            "value": 5
           }
         ],
         "tier": "none",
@@ -11442,18 +11419,17 @@
         },
         "equipmentStats": [
           {
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
+            "value": 2
+          },
+          {
             "key": "magicDamageBonus",
             "value": 3
           },
           {
             "key": "magicAttackBonus",
             "value": 10
-          }
-        ],
-        "resistanceStats": [
-          {
-            "id": "melvorD:Normal",
-            "value": 2
           }
         ],
         "tier": "none",
@@ -11682,14 +11658,13 @@
             "value": 8
           },
           {
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
+            "value": 1
+          },
+          {
             "key": "magicAttackBonus",
             "value": -3
-          }
-        ],
-        "resistanceStats": [
-          {
-            "id": "melvorD:Normal",
-            "value": 1
           }
         ],
         "tier": "none",
@@ -11750,13 +11725,13 @@
             "level": 40
           }
         ],
-        "occupiesSlots": [
-          "Shield"
-        ],
         "modifiers": {
           "tes_increasedFlatDamageWhileTargetHasMaxHP": 50,
           "tes_increasedPercDamageWhileTargetHasMaxHP": 40
-        }
+        },
+        "occupiesSlots": [
+          "Shield"
+        ]
       },
       {
         "id": "Sufferthorn",
@@ -12006,11 +11981,10 @@
           {
             "key": "magicDefenceBonus",
             "value": 10
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 5
           }
         ],
@@ -12106,11 +12080,10 @@
           {
             "key": "magicDefenceBonus",
             "value": 9
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 5
           }
         ],
@@ -12198,11 +12171,10 @@
           {
             "key": "magicDefenceBonus",
             "value": 9
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 5
           }
         ],
@@ -12302,11 +12274,10 @@
           {
             "key": "magicDefenceBonus",
             "value": 50
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 5
           }
         ],
@@ -12633,11 +12604,10 @@
           {
             "key": "magicDefenceBonus",
             "value": 50
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 5
           }
         ],
@@ -12726,11 +12696,10 @@
           {
             "key": "magicDefenceBonus",
             "value": 9
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 5
           }
         ],
@@ -12819,11 +12788,10 @@
           {
             "key": "magicDefenceBonus",
             "value": 10
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 5
           }
         ],
@@ -12906,11 +12874,10 @@
           {
             "key": "magicDefenceBonus",
             "value": 9
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 5
           }
         ],
@@ -12992,11 +12959,10 @@
           {
             "key": "magicDefenceBonus",
             "value": 3
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 0
           }
         ],
@@ -13084,11 +13050,10 @@
           {
             "key": "magicDefenceBonus",
             "value": 3
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 0
           }
         ],
@@ -13170,11 +13135,10 @@
           {
             "key": "magicDefenceBonus",
             "value": 3
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 0
           }
         ],
@@ -13262,11 +13226,10 @@
           {
             "key": "magicDefenceBonus",
             "value": 3
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 0
           }
         ],
@@ -13551,11 +13514,10 @@
           {
             "key": "rangedDefenceBonus",
             "value": 12
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 2
           }
         ],
@@ -13721,11 +13683,10 @@
           {
             "key": "magicDefenceBonus",
             "value": 38
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 4
           }
         ],
@@ -13771,11 +13732,10 @@
           {
             "key": "meleeDefenceBonus",
             "value": 5
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": -5
           }
         ],
@@ -14127,11 +14087,10 @@
           {
             "key": "magicDefenceBonus",
             "value": 100
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 2
           }
         ],
@@ -14475,14 +14434,13 @@
             "value": 100
           },
           {
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
+            "value": 4
+          },
+          {
             "key": "meleeStrengthBonus",
             "value": 10
-          }
-        ],
-        "resistanceStats": [
-          {
-            "id": "melvorD:Normal",
-            "value": 4
           }
         ],
         "modifiers": {
@@ -14594,19 +14552,18 @@
           {
             "key": "magicDefenceBonus",
             "value": 20
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 4
           }
         ],
         "itemType": "Equipment",
-        "customDescription": "High stats but takes more damage from dragon breath.",
         "modifiers": {
           "tes:tes_increasedDragonBreathDamageTaken": 20
-        }
+        },
+        "customDescription": "High stats but takes more damage from dragon breath."
       },
       {
         "id": "Umbra_Sword",
@@ -14680,11 +14637,10 @@
           {
             "key": "magicDefenceBonus",
             "value": 20
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 4
           }
         ],
@@ -19165,18 +19121,17 @@
             "value": 4000
           },
           {
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
+            "value": 50
+          },
+          {
             "key": "magicDefenceBonus",
             "value": 50000
           },
           {
             "key": "magicDamageBonus",
             "value": 200
-          }
-        ],
-        "resistanceStats": [
-          {
-            "id": "melvorD:Normal",
-            "value": 50
           }
         ],
         "ignoreCompletion": false,
@@ -20427,11 +20382,10 @@
           {
             "key": "attackSpeed",
             "value": 3200
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 25
           }
         ],
@@ -20484,11 +20438,10 @@
           {
             "key": "attackSpeed",
             "value": 3200
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 25
           }
         ],
@@ -20541,11 +20494,10 @@
           {
             "key": "attackSpeed",
             "value": 2600
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 40
           }
         ],
@@ -20598,11 +20550,10 @@
           {
             "key": "attackSpeed",
             "value": 2600
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 5
           }
         ],
@@ -20654,11 +20605,10 @@
           {
             "key": "attackSpeed",
             "value": 3000
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 25
           }
         ],
@@ -21525,6 +21475,11 @@
             "value": 3000
           },
           {
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
+            "value": 99
+          },
+          {
             "key": "magicDamageBonus",
             "value": 999
           },
@@ -21543,12 +21498,6 @@
           {
             "key": "rangedDefenceBonus",
             "value": 999
-          }
-        ],
-        "resistanceStats": [
-          {
-            "id": "melvorD:Normal",
-            "value": 99
           }
         ],
         "ignoreCompletion": false,
@@ -21626,6 +21575,11 @@
             "value": 2400
           },
           {
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
+            "value": 99
+          },
+          {
             "key": "magicDamageBonus",
             "value": 999
           },
@@ -21644,12 +21598,6 @@
           {
             "key": "rangedDefenceBonus",
             "value": 999
-          }
-        ],
-        "resistanceStats": [
-          {
-            "id": "melvorD:Normal",
-            "value": 99
           }
         ],
         "ignoreCompletion": false,
@@ -21761,6 +21709,11 @@
             "value": 2400
           },
           {
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
+            "value": 20
+          },
+          {
             "key": "magicDamageBonus",
             "value": 200
           },
@@ -21779,12 +21732,6 @@
           {
             "key": "rangedDefenceBonus",
             "value": 300
-          }
-        ],
-        "resistanceStats": [
-          {
-            "id": "melvorD:Normal",
-            "value": 20
           }
         ],
         "ignoreCompletion": false,
@@ -21830,6 +21777,11 @@
             "value": 2600
           },
           {
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
+            "value": 10
+          },
+          {
             "key": "meleeStrengthBonus",
             "value": 400
           },
@@ -21844,12 +21796,6 @@
           {
             "key": "rangedDefenceBonus",
             "value": 300
-          }
-        ],
-        "resistanceStats": [
-          {
-            "id": "melvorD:Normal",
-            "value": 10
           }
         ],
         "ignoreCompletion": false,
@@ -22096,11 +22042,10 @@
           {
             "key": "attackSpeed",
             "value": 3200
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 40
           }
         ],
@@ -23136,11 +23081,10 @@
           {
             "key": "attackSpeed",
             "value": 1800
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 5
           }
         ],
@@ -23256,11 +23200,10 @@
           {
             "key": "attackSpeed",
             "value": 2000
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 50
           }
         ],
@@ -23375,11 +23318,10 @@
           {
             "key": "attackSpeed",
             "value": 2000
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 5
           }
         ],
@@ -23493,11 +23435,10 @@
           {
             "key": "attackSpeed",
             "value": 1100
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 5
           }
         ],
@@ -23612,11 +23553,10 @@
           {
             "key": "attackSpeed",
             "value": 1800
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 10
           }
         ],
@@ -23728,11 +23668,10 @@
           {
             "key": "attackSpeed",
             "value": 1800
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 10
           }
         ],
@@ -23845,11 +23784,10 @@
           {
             "key": "attackSpeed",
             "value": 1800
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 10
           }
         ],
@@ -23967,11 +23905,10 @@
           {
             "key": "attackSpeed",
             "value": 1800
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 10
           }
         ],
@@ -24083,11 +24020,10 @@
           {
             "key": "attackSpeed",
             "value": 1200
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 10
           }
         ],
@@ -24202,11 +24138,10 @@
           {
             "key": "attackSpeed",
             "value": 2000
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 40
           }
         ],
@@ -24251,11 +24186,10 @@
           {
             "key": "attackSpeed",
             "value": 1000
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 40
           }
         ],
@@ -24297,11 +24231,10 @@
           {
             "key": "attackSpeed",
             "value": 1000
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 40
           }
         ],
@@ -25478,10 +25411,10 @@
         "ignoreCompletion": false,
         "activeInRaid": false,
         "hint": "Goblin Caves",
-        "customDescription": "May the Goblin Army protect you from Assassins",
         "modifiers": {
           "tes_decreaseFlatDamageWhileTargetHasMaxHP": 1
-        }
+        },
+        "customDescription": "May the Goblin Army protect you from Assassins"
       },
       {
         "id": "Esmerelda",
@@ -28750,6 +28683,7 @@
         "media": "assets/icons/mages/Water_Breathing.png",
         "name": "Poison Bloom",
         "categories": [
+          "melvorD:Nature",
           "melvorD:Surge"
         ],
         "requirements": [
