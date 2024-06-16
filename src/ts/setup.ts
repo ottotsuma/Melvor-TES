@@ -19,6 +19,14 @@ import { TesTranslation } from './../language/translation'
 export async function setup(ctx: Modding.ModContext) {
   const tes_errors = []
   try {
+    function _try(func: Function, fallbackValue: any) {
+      try {
+        var value = func();
+        return value === null || value === undefined ? fallbackValue : value;
+      } catch (e) {
+        return fallbackValue;
+      }
+    }
     TesTranslation(ctx)
 
     var link1 = document.createElement('link');
@@ -91,10 +99,7 @@ export async function setup(ctx: Modding.ModContext) {
                 for (let index = 0; index < synergy.playerModifiers.length; index++) {
                   const mod = synergy.playerModifiers[index];
                   const isNegative = mod.isNegative ? 'red' : 'green'
-                  const negString = mod.isNegative ? 'negAliases' : 'posAliases'
-                  const displayString = getLangString("MODIFIER_DATA_" + mod.modifier.allowedScopes[0][negString][0].key).replace('${skillName}', mod.modifier.allowedScopes[0][negString][0].key).replace('${value}',
-                    mod.value + '')
-                  // .replace('${skillName}', mod.modifier.allowedScopes[0]?.value[negString][0].key)
+                  const displayString = mod.getDescription().description
                   html += `<div style="color: ${isNegative}">${displayString}</div>`
                   html += '<p></p>';
                 }
@@ -713,114 +718,84 @@ export async function setup(ctx: Modding.ModContext) {
           tes_errors.push('onModsLoaded skill patches', error)
         }
         try {
-          //  damage = this.applyDamageModifiers(target, damage);
           // Patching skills for new modifiers
-          function getCharacterFlatAttackDamageBonusModification(attacker: Character, target: Character): number {
-            const attackerModifiers = attacker.modifiers
-            // @ts-ignore
-            const p = attackerModifiers.getValue('tes:tes_FlatDamageWhileTargetHasMaxHP', {});
-            // @ts-ignore
-            const n = attackerModifiers.getValue('tes:tes_PercDamageWhileTargetHasMaxHP', {});
-            return target.hitpointsPercent === 100
-              ? p - n
-              : 0;
-          }
-          function getCharacterPercentageAttackDamageBonusModification(attacker: Character, target: Character): number {
-            const attackerModifiers = attacker.modifiers
-            // @ts-ignore
-            const p = attackerModifiers.getValue('tes:tes_FlatDamageWhileTargetHasMaxHP', {});
-            // @ts-ignore 
-            const n = attackerModifiers.getValue('tes:tes_PercDamageWhileTargetHasMaxHP', {});
-            return target.hitpointsPercent === 100
-              ? p - n
-              : 0;
-          }
           // @ts-ignore
-          ctx.patch(Player, 'modifyAttackDamage').after((target: Character, attack: AttackData, damage: number, applyReduction = true) => {
+          ctx.patch(Player, 'modifyAttackDamage').after((damage: number, target: Enemy, attack: SpecialAttack) => {
             let tesDamage = 0
-            try {
-              const Monster: Enemy = game.combat.enemy
-              const Player: Player = game.combat.player
-              const TargetMods = target.modifiers
-              console.log('Player', target, attack, damage, applyReduction)
-              // @ts-ignore
-              const ward = TargetMods.getValue('tes:tes_wardsave', {})
-              if (ward) {
-                let wardsaveChance = Math.min(ward, 90);
-                if (rollPercentage(wardsaveChance)) {
-                  return 0;
-                }
+            const Monster: Enemy = game.combat.enemy
+            const Player: Player = game.combat.player
+            const ward = Monster.modifiers.getValue('tes:tes_wardsave', ModifierQuery.EMPTY)
+            if (ward) {
+              let wardsaveChance = Math.min(ward, 90);
+              if (rollPercentage(wardsaveChance)) {
+                return 0;
               }
-              if (target.hitpointsPercent === 100) {
-                // At HP full damage
-                // Target is monster
-                const a = getCharacterFlatAttackDamageBonusModification(Player, Monster)
-                const b = getCharacterPercentageAttackDamageBonusModification(Player, Monster)
-                if (!isNaN(a) && !isNaN(b)) {
-                  tesDamage = tesDamage + a + ((damage / 100) * b)
-                }
-              }
-              // If it's a dragon breath re-calc
-              if (attack.isDragonbreath) {
-                // tesDamage += TargetMods.tes_increasedDragonBreathDamageTaken; // flat
-                // @ts-ignore
-                tesDamage *= 1 + TargetMods.getValue('tes:tes_increasedDragonBreathDamageTaken', {}) / 100; // %
-              }
-              // account for damage reduction
-              tesDamage *= 1 - target.stats.getResistance(this.damageType) / 100;
-              // Adding bypass damage
-              // @ts-ignore
-              if (Player.modifiers.getValue('tes:tes_bypassDamageReduction', {})) {
-                // @ts-ignore
-                tesDamage = tesDamage + Player.modifiers.getValue('tes:tes_bypassDamageReduction', {})
-              }
-              tesDamage = this.applyDamageModifiers(target, tesDamage);
-            } catch (error) {
-              tesDamage = 0
-              tes_errors.push('Player', error)
             }
+            if (target.hitpointsPercent === 100) {
+              // At HP full damage
+              // Target is monster
+              const a = Player.modifiers.getValue('tes:tes_FlatDamageWhileTargetHasMaxHP', ModifierQuery.EMPTY);
+              const b = Player.modifiers.getValue('tes:tes_PercDamageWhileTargetHasMaxHP', ModifierQuery.EMPTY);
+              if (!isNaN(a) && !isNaN(b)) {
+                tesDamage = tesDamage + a + ((damage / 100) * b)
+              }
+            }
+            // If it's a dragon breath re-calc
+            if (attack.isDragonbreath) {
+              // tesDamage += TargetMods.tes_increasedDragonBreathDamageTaken; // flat
+              // @ts-ignore
+              tesDamage *= 1 + Monster.modifiers.getValue('tes:tes_increasedDragonBreathDamageTaken', ModifierQuery.EMPTY) / 100; // %
+            }
+            // account for damage reduction
+            tesDamage *= 1 - Monster.stats.getResistance(Player.damageType) / 100;
+            // Adding bypass damage
+            const bypass = Player.modifiers.getValue('tes:tes_bypassDamageReduction', ModifierQuery.EMPTY)
+            if (bypass) {
+              tesDamage = tesDamage + bypass
+            }
+            tesDamage = Player.applyDamageModifiers(target, tesDamage);
+            if (isNaN(tesDamage)) {
+              tesDamage = 0
+            }
+            console.log(tesDamage, '2')
             // return re-calced damage
             return Math.floor(damage + tesDamage)
           })
           // @ts-ignore
-          ctx.patch(Enemy, 'modifyAttackDamage').after((target: Character, attack: AttackData, damage: number, applyReduction = true) => {
+          ctx.patch(Enemy, 'modifyAttackDamage').after((damage: number, target: Enemy, attack: SpecialAttack) => {
             let tesDamage = 0
-            try {
-              const Monster: Enemy = game.combat.enemy
-              const Player: Player = game.combat.player
-              const TargetMods = target.modifiers
-              // @ts-ignore
-              const ward = TargetMods.getValue('tes:tes_wardsave', {})
-              if (ward) {
-                let wardsaveChance = Math.min(ward, 90);
-                if (rollPercentage(wardsaveChance)) {
-                  return 0;
-                }
+            const Monster: Enemy = game.combat.enemy
+            const Player: Player = game.combat.player
+            const ward = Player.modifiers.getValue('tes:tes_wardsave', ModifierQuery.EMPTY)
+            if (ward) {
+              let wardsaveChance = Math.min(ward, 90);
+              if (rollPercentage(wardsaveChance)) {
+                return 0;
               }
-              if (target.hitpointsPercent === 100) {
-                // At HP full damage
-                // Target is player
-                const a = getCharacterFlatAttackDamageBonusModification(Monster, Player)
-                const b = getCharacterPercentageAttackDamageBonusModification(Monster, Player)
-                if (!isNaN(a) && !isNaN(b)) {
-                  tesDamage = tesDamage + a + (damage * b)
-                }
+            }
+            if (target.hitpointsPercent === 100) {
+              // At HP full damage
+              // Target is player
+              const a = Monster.modifiers.getValue('tes:tes_FlatDamageWhileTargetHasMaxHP', ModifierQuery.EMPTY);
+              const b = Monster.modifiers.getValue('tes:tes_PercDamageWhileTargetHasMaxHP', ModifierQuery.EMPTY);
+              if (!isNaN(a) && !isNaN(b)) {
+                tesDamage = tesDamage + a + (damage * b)
               }
-              // If it's a dragon breath re-calc
-              if (attack.isDragonbreath) {
-                // tesDamage += TargetMods.tes_increasedDragonBreathDamageTaken; // flat
-                // @ts-ignore
-                tesDamage *= 1 + TargetMods.getValue('tes:tes_increasedDragonBreathDamageTaken', {}) / 100; // %
-              }
-              // @ts-ignore
-              if (Monster.modifiers.getValue('tes:tes_bypassDamageReduction', {})) {
-                // @ts-ignore
-                tesDamage = tesDamage + Monster.modifiers.getValue('tes:tes_bypassDamageReduction', {})
-              }
-              tesDamage = this.applyDamageModifiers(target, tesDamage);
-            } catch (error) {
+            }
+            // If it's a dragon breath re-calc
+            if (attack.isDragonbreath) {
+              // tesDamage += TargetMods.tes_increasedDragonBreathDamageTaken; // flat
+              tesDamage *= 1 + Player.modifiers.getValue('tes:tes_increasedDragonBreathDamageTaken', ModifierQuery.EMPTY) / 100; // %
+            }
+            // account for damage reduction
+            tesDamage *= 1 - Player.stats.getResistance(Monster.damageType) / 100;
+            const bypass = Monster.modifiers.getValue('tes:tes_bypassDamageReduction', ModifierQuery.EMPTY)
+            if (bypass) {
+              tesDamage = tesDamage + bypass
+            }
+            tesDamage = Monster.applyDamageModifiers(target, tesDamage);
+            if (isNaN(tesDamage)) {
               tesDamage = 0
-              tes_errors.push('Enemy', error)
             }
             // return re-calced damage
             return Math.floor(damage + tesDamage)
@@ -942,8 +917,20 @@ export async function setup(ctx: Modding.ModContext) {
                       found_items_names.push(item.name)
                       // @ts-ignore
                       if (!found_items.includes(item)) found_items.push(item)
+                        const playerModifiers: {
+                          description: string,
+                          isNegative: boolean
+                        }[] = []
+                        synergy.playerModifiers.forEach(modifier=>{
+                          const desc = modifier.getDescription()
+                          playerModifiers.push({description: desc.description, isNegative: desc.isNegative})
+                        })
+                        const sync = {items: synergy.items, playerModifiers: playerModifiers}
                       // @ts-ignore
-                      if (!tesSynergiesForExport.includes(synergy)) tesSynergiesForExport.push(synergy)
+                      if (!synergiesForExport.includes(synergy)) {
+                        tesSynergiesForExport.push(sync)
+                        synergiesForExport.push(synergy)
+                      } 
                     }
                   }
                 }

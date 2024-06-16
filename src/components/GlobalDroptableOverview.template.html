@@ -77,28 +77,13 @@
                     <img style="width: 64px; margin: 6px;" class="global-droptable-overview-image"
                         v-bind:title="item.name" v-bind:src="item.media">
                 </div>
-                <div v-for="playerModifier in Object.keys(synergy.playerModifiers)">
+                <div v-for="playerModifier in synergy.playerModifiers">
                     <div>
-                        <div v-if="playerModifier.includes('tes_')">
-                            {{getLangString(playerModifier).replace('${value}',
-                            synergy.playerModifiers[playerModifier]).replace('${skillName}',
-                            synergy.playerModifiers[playerModifier]).replace('${skillName}',
-                            synergy.playerModifiers[playerModifier])}}
+                        <div style="color: red;" v-if="playerModifier && playerModifier.isNegative">
+                            {{playerModifier.description}}
                         </div>
-                        <div v-else-if="playerModifier === 'allowUnholyPrayerUse'">
-                            {{getLangString('ALLOW_UNHOLY_PRAYERS_WITH_EQUIPMENT')}}
-                        </div>
-                        <div v-else-if="typeof synergy.playerModifiers[playerModifier] === 'object' ">
-                            {{getLangString("MODIFIER_DATA_" + playerModifier).replace('${value}',
-                            synergy.playerModifiers[playerModifier][0].value).replace('${skillName}',
-                            synergy.playerModifiers[playerModifier][0].skill._localID).replace('${skillName}',
-                            synergy.playerModifiers[playerModifier][0].skill._localID)}}
-                        </div>
-                        <div v-else>
-                            {{getLangString("MODIFIER_DATA_" + playerModifier).replace('${value}',
-                            synergy.playerModifiers[playerModifier]).replace('${skillName}',
-                            synergy.playerModifiers[playerModifier]).replace('${skillName}',
-                            synergy.playerModifiers[playerModifier])}}
+                        <div style="color: green;" v-else-if="playerModifier">
+                            {{playerModifier.description}}
                         </div>
                     </div>
                 </div>

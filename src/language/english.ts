@@ -815,4 +815,14 @@ export const en = {
   The_Black_Horse_Courier: "The Black Horse Courier",
   Waterfront_Raid_Fails: "Waterfront Raid Fails!",
   The_Black_Horse_Courier_Content: "Stymied in his attempts to capture the legendary thief, the Gray Fox, Captain Hieronymus Lex of the Imperial Watch raided the Waterfront. Extra Watchmen were pulled from duty in other parts of the city to search the slums of the Waterfront. A small amount of contraband was confiscated, but the Gray Fox escaped. The Arcane University has filed a formal complaint against Captain Hieronymus Lex for dereliction of duty. The guards normally posted at the Arcane University were sent to the Waterfront during the raid. An attempted break-in at the University was foiled. University spokesmen insist that nothing was taken. They scoffed at the idea that any mere thief could make off with one of their treasures.",
-};
+  MODIFIER_DATA_FAILED: "Failed to find this modifier.",
+  MODIFIER_DATA_tes_increasedFlatDamageWhileTargetHasMaxHP: "+${value} damage while the target is fully healed.",
+  MODIFIER_DATA_tes_decreaseFlatDamageWhileTargetHasMaxHP: "-${value} damage while the target is fully healed.",
+  MODIFIER_DATA_tes_increasedPercDamageWhileTargetHasMaxHP: "+${value}% damage while the target is fully healed.",
+  MODIFIER_DATA_tes_decreasePercDamageWhileTargetHasMaxHP: "-${value}% damage while the target is fully healed.",
+  MODIFIER_DATA_tes_increasedDragonBreathDamageTaken: "+${value}% Dragon Breath Damage Taken",
+  MODIFIER_DATA_increasedtes_wardsave: "+${value}% Ward",
+  MODIFIER_DATA_decreasedtes_wardsave: "-${value}% Ward",
+  MODIFIER_DATA_tes_decreasebypassDamageReduction: "-${value} damage, though damage reduction.",
+  MODIFIER_DATA_tes_increasedbypassDamageReduction: "+${value} damage, though damage reduction."
+}

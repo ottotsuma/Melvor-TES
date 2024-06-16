@@ -11949,5 +11949,7 @@ const example_ja = {
     "MOD_MANAGER_FAILED_TO_LOAD": "MODマネージャーの読み込みに失敗しました！",
     "MOD_MANAGER_FAILED_TO_INITIALIZE_NO_MODS_LOADED": "MODマネージャーの初期化に失敗しました。MODは読み込まれていません。",
     "MOD_MANAGER_CLOUD_ACCOUNT_REQUIRED": "クラウドアカウントが必要です",
-    "MOD_MANAGER_CREATE_OR_SIGN_IN": "この機能にアクセスするには、Melvorクラウドアカウントの作成またはサインインが必要です。"
+    "MOD_MANAGER_CREATE_OR_SIGN_IN": "この機能にアクセスするには、Melvorクラウドアカウントの作成またはサインインが必要です。",
+    
+  MODIFIER_DATA_FAILED: "Failed to find this modifier."
 }
