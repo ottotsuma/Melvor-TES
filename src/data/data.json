@@ -28683,7 +28683,6 @@
         "media": "assets/icons/mages/Water_Breathing.png",
         "name": "Poison Bloom",
         "categories": [
-          "melvorD:Nature",
           "melvorD:Surge"
         ],
         "requirements": [

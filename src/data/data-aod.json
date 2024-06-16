@@ -1,5 +1,5 @@
 {
-  "$schema": "https://melvoridle.com/public_test/assets/schema/gameData.json",
+  "$schema": "https://melvoridle.com/assets/schema/gameData.json",
   "namespace": "tes",
   "data": {
     "monsters": [
@@ -289,11 +289,10 @@
           {
             "key": "meleeDefenceBonus",
             "value": 12
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 10
           }
         ],

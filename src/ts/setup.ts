@@ -902,7 +902,6 @@ export async function setup(ctx: Modding.ModContext) {
         game.itemSynergies.forEach(synergies => {
           if (synergies && synergies.length > 0) {
             synergies.forEach(synergy => {
-              const all_found_items_names: any[] = []
               const found_items_names: any[] = []
               synergy.items.forEach(item => {
                 // @ts-ignore
@@ -912,7 +911,7 @@ export async function setup(ctx: Modding.ModContext) {
                   // @ts-ignore
                   if (!found_items_names.includes(item.name)) {
                     // @ts-ignore
-                    if (item?._namespace?.name === "tes") {
+                    // if (item?._namespace?.name === "tes") {
                       // @ts-ignore
                       found_items_names.push(item.name)
                       // @ts-ignore
@@ -931,15 +930,8 @@ export async function setup(ctx: Modding.ModContext) {
                         tesSynergiesForExport.push(sync)
                         synergiesForExport.push(synergy)
                       } 
-                    }
+                    // }
                   }
-                }
-                // @ts-ignore
-                if (!all_found_items_names.includes(item.name)) {
-                  // @ts-ignore
-                  all_found_items_names.push(item.name)
-                  // @ts-ignore
-                  if (!synergiesForExport.includes(synergy)) synergiesForExport.push(synergy)
                 }
               })
             })

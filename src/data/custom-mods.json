@@ -1,5 +1,5 @@
 {
-    "$schema": "https://melvoridle.com/public_test/assets/schema/gameData.json",
+    "$schema": "https://melvoridle.com/assets/schema/gameData.json",
     "namespace": "tes",
     "data": {
         "combatPassives": [

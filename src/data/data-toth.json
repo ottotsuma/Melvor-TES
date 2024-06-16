@@ -1,5 +1,5 @@
 {
-  "$schema": "https://melvoridle.com/public_test/assets/schema/gameData.json",
+  "$schema": "https://melvoridle.com/assets/schema/gameData.json",
   "namespace": "tes",
   "data": {
     "shopPurchases": [
@@ -813,11 +813,10 @@
           {
             "key": "magicDamageBonus",
             "value": 100
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 5
           }
         ],
@@ -1001,11 +1000,10 @@
           {
             "key": "rangedDefenceBonus",
             "value": 600
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 99
           }
         ],
@@ -1127,11 +1125,10 @@
           {
             "key": "rangedDefenceBonus",
             "value": 999
-          }
-        ],
-        "resistanceStats": [
+          },
           {
-            "id": "melvorD:Normal",
+            "key": "resistance",
+            "damageType": "melvorD:Normal",
             "value": 99
           }
         ],
