@@ -758,7 +758,6 @@ export async function setup(ctx: Modding.ModContext) {
             if (isNaN(tesDamage)) {
               tesDamage = 0
             }
-            console.log(tesDamage, '2')
             // return re-calced damage
             return Math.floor(damage + tesDamage)
           })
