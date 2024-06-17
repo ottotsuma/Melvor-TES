@@ -197,6 +197,7 @@ export async function setup(ctx: Modding.ModContext) {
         }
         // Packages to load based on entitlement
         try {
+          await ctx.gameData.addPackage('data.json');
           if (TothEntitlement) {
             try {
               await ctx.gameData.addPackage('data-toth.json');

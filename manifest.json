@@ -2,5 +2,5 @@
     "namespace": "tes",
     "icon": "assets/Preview.png",
     "setup": "setup.mjs",
-    "load": ["GlobalDroptableOverview.template.html", "Dead_Drop_Orders_1.html", "Dead_Drop_Orders_2.html", "Dead_Drop_Orders_3.html", "Dead_Drop_Orders_4.html", "Dead_Drop_Orders_5.html", "Dead_Drop_Orders_6.html", "Dead_Drop_Orders_7.html", "Dead_Drop_Orders_8.html", "Thieves_Orders.html", "The_Five_Tenents.html", "The_Black_Horse_Courier_Waterfront_HTML.html", "recommendation_letter.html", "King_Olafs_Verse.html", "data.json"]
+    "load": ["GlobalDroptableOverview.template.html", "Dead_Drop_Orders_1.html", "Dead_Drop_Orders_2.html", "Dead_Drop_Orders_3.html", "Dead_Drop_Orders_4.html", "Dead_Drop_Orders_5.html", "Dead_Drop_Orders_6.html", "Dead_Drop_Orders_7.html", "Dead_Drop_Orders_8.html", "Thieves_Orders.html", "The_Five_Tenents.html", "The_Black_Horse_Courier_Waterfront_HTML.html", "recommendation_letter.html", "King_Olafs_Verse.html"]
   }
