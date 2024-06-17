@@ -159,7 +159,7 @@ export async function setup(ctx: Modding.ModContext) {
       try {
         // Local variables
         const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
-        const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
+        const kcm = false // mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
         const profileSkill = mod.manager.getLoadedModList().includes("(Skill) Classes and Species")
         const TothEntitlement = cloudManager.hasTotHEntitlementAndIsEnabled
         const AoDEntitlement = cloudManager.hasAoDEntitlementAndIsEnabled
@@ -811,6 +811,7 @@ export async function setup(ctx: Modding.ModContext) {
 
     ctx.onCharacterLoaded(ctx => {
       // Local variables
+      const combatSim = mod.manager.getLoadedModList().includes("[Myth] Combat Simulator")
       const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
       // const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
       // const profileSkill = mod.manager.getLoadedModList().includes("(Skill) Classes and Species")
@@ -1027,6 +1028,7 @@ export async function setup(ctx: Modding.ModContext) {
       const bannedNameSpace: any = {
         "tes": true
       }
+      const allowedNameSpaces = ["monad", "namespace_thuum", "pokemon", "dnd", "tes", "melvorAoD", "melvorTotH", 'melvorAprilFools2024', 'melvorBirthday2023', 'melvorD', 'melvorBaseGame', 'melvorTrue', 'melvorF']
       const categoryBan: any = {
         "Limes": true,
         "Lemon": true,
@@ -1049,6 +1051,9 @@ export async function setup(ctx: Modding.ModContext) {
           game.items.registeredObjects.forEach((item: AnyItem) => {
             try {
               if (item) {
+                if(combatSim && !allowedNameSpaces.includes(item.namespace)) {
+                  return;
+                }
                 // @ts-ignore
                 if (item?.attackType) {
                   listOfAllWeapons.push(item)
