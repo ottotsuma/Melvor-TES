@@ -51,9 +51,8 @@
                     "tes:Gauntlets_of_the_Crusader"
                 ],
                 "playerModifiers": {
-                    "customModifiersInMelvor:damageTakenElf": -10,
-                    "customModifiersInMelvor:accuracyRatingElf": 10000,
-                    "customModifiersInMelvor:flatResistanceElf": 10
+                    "customModifiersInMelvor:damageTakenElf": -20,
+                    "customModifiersInMelvor:accuracyRatingElf": 10000
                 }
             },
             {
@@ -63,16 +62,18 @@
                     "tes:Vampire_Boots",
                     "tes:Vampire_Gauntlets"
                 ],
-                "combatEffects": [{
-                    "effectID": "melvorD:Bleed",
-                    "chance": 10,
-                    "appliesWhen": "StartOfFight"
-                },
-                {
-                    "effectID": "melvorD:Bleed",
-                    "chance": 10,
-                    "appliesWhen": "PostAttack"
-                }]
+                "combatEffects": [
+                    {
+                        "effectID": "melvorD:Bleed400",
+                        "chance": 10,
+                        "appliesWhen": "StartOfFight"
+                    },
+                    {
+                        "effectID": "melvorD:Bleed400",
+                        "chance": 10,
+                        "appliesWhen": "PostAttack"
+                    }
+                ]
             }
         ],
         "monsters": [
@@ -166,143 +167,182 @@
             {
                 "id": "tes:dragon_bone_helmet",
                 "modifiers": {
-                    "customModifiersInMelvor:traitAppliedDragon": 1,
-                    "customModifiersInMelvor:damageDealElf": 10,
-                    "accuracyRatingAarakocra": 10
+                    "add": {
+                        "customModifiersInMelvor:traitAppliedDragon": 1,
+                        "customModifiersInMelvor:damageDealtElf": 10,
+                        "customModifiersInMelvor:accuracyRatingAarakocra": 10
+                    }
                 }
             },
             {
                 "id": "tes:vampire_lord_armour",
                 "combatEffects": {
-                    "add": [{
-                        "effectID": "melvorD:Bleed",
-                        "chance": 10,
-                        "appliesWhen": "StartOfFight"
-                    },
-                    {
-                        "effectID": "melvorD:Bleed",
-                        "chance": 10,
-                        "appliesWhen": "PostAttack"
-                    }]
+                    "add": [
+                        {
+                            "effectID": "melvorD:Bleed400",
+                            "chance": 10,
+                            "appliesWhen": "StartOfFight"
+                        },
+                        {
+                            "effectID": "melvorD:Bleed400",
+                            "chance": 10,
+                            "appliesWhen": "PostAttack"
+                        }
+                    ]
                 }
             },
             {
                 "id": "tes:HelmetOfOreynBearclaw",
                 "modifiers": {
-                    "customModifiersInMelvor:damageDealUndead": 10
+                    "add": {
+                        "customModifiersInMelvor:damageDealtUndead": 10
+                    }
                 }
             },
             {
                 "id": "tes:Dawnbreaker",
                 "modifiers": {
-                    "customModifiersInMelvor:damageDealUndead": 10
+                    "add": {
+                        "customModifiersInMelvor:damageDealtUndead": 10
+                    }
                 }
             },
             {
                 "id": "tes:Mace_of_Molag_Bal",
                 "modifiers": {
-                    "customModifiersInMelvor:damageDealHuman": 100
+                    "add": {
+                        "customModifiersInMelvor:damageDealtHuman": 100
+                    }
                 }
             },
             {
                 "id": "tes:Ebony_Blade",
                 "modifiers": {
-                    "customModifiersInMelvor:damageDealHuman": 20
+                    "add": {
+                        "customModifiersInMelvor:damageDealtHuman": 20
+                    }
                 }
             },
             {
                 "id": "tes:Blades_Sword",
                 "modifiers": {
-                    "customModifiersInMelvor:damageDealDragon": 40
+                    "add": {
+                        "customModifiersInMelvor:damageDealtDragon": 40
+                    }
                 }
             },
             {
                 "id": "tes:Mace_of_the_Crusader",
                 "modifiers": {
-                    "customModifiersInMelvor:damageDealDemon": 20,
-                    "customModifiersInMelvor:damageDealHuman": -10,
-                    "customModifiersInMelvor:damageDealElf": 100
+                    "add": {
+                        "customModifiersInMelvor:damageDealtDemon": 20,
+                        "customModifiersInMelvor:damageDealtHuman": -10,
+                        "customModifiersInMelvor:damageDealtElf": 100
+                    }
                 }
             },
             {
                 "id": "tes:Shield_of_the_Crusader",
                 "modifiers": {
-                    "customModifiersInMelvor:damageDealDemon": 20,
-                    "customModifiersInMelvor:damageDealHuman": -10,
-                    "customModifiersInMelvor:damageTakenElf": -10
+                    "add": {
+                        "customModifiersInMelvor:damageDealtDemon": 20,
+                        "customModifiersInMelvor:damageDealtHuman": -10,
+                        "customModifiersInMelvor:damageTakenElf": -10
+                    }
                 }
             },
             {
                 "id": "tes:Cuirass_of_the_Crusader",
                 "modifiers": {
-                    "customModifiersInMelvor:damageDealHuman": -10,
-                    "customModifiersInMelvor:damageTakenElf": -40
+                    "add": {
+                        "customModifiersInMelvor:damageDealtHuman": -10,
+                        "customModifiersInMelvor:damageTakenElf": -40
+                    }
                 }
             },
             {
                 "id": "tes:Sword_of_the_Crusader",
                 "modifiers": {
-                    "customModifiersInMelvor:damageDealUndead": 20,
-                    "customModifiersInMelvor:damageDealHuman": -10,
-                    "customModifiersInMelvor:damageDealElf": 100
+                    "add": {
+                        "customModifiersInMelvor:damageDealtUndead": 20,
+                        "customModifiersInMelvor:damageDealtHuman": -10,
+                        "customModifiersInMelvor:damageDealtElf": 100
+                    }
                 }
             },
             {
                 "id": "tes:Boots_of_the_Crusader",
                 "modifiers": {
-                    "": 10,
-                    "customModifiersInMelvor:damageDealHuman": -5,
-                    "customModifiersInMelvor:damageTakenElf": -10
+                    "add": {
+                        "customModifiersInMelvor:damageDealtHuman": -5,
+                        "customModifiersInMelvor:damageTakenElf": -10
+                    }
                 }
             },
             {
                 "id": "tes:Helm_of_the_Crusader",
                 "modifiers": {
-                    "customModifiersInMelvor:damageDealHuman": -5,
-                    "customModifiersInMelvor:damageTakenElf": -10
+                    "add": {
+                        "customModifiersInMelvor:damageDealtHuman": -5,
+                        "customModifiersInMelvor:damageTakenElf": -10
+                    }
                 }
             },
             {
                 "id": "tes:Gauntlets_of_the_Crusader",
                 "modifiers": {
-                    "customModifiersInMelvor:damageDealHuman": -5,
-                    "customModifiersInMelvor:damageTakenElf": -10
+                    "add": {
+                        "customModifiersInMelvor:damageDealtHuman": -5,
+                        "customModifiersInMelvor:damageTakenElf": -10
+                    }
                 }
             },
             {
                 "id": "tes:Imperial_Dragon_Shield",
                 "modifiers": {
-                    "customModifiersInMelvor:damageDealHuman": 5
+                    "add": {
+                        "customModifiersInMelvor:damageDealtHuman": 5
+                    }
                 }
             },
             {
                 "id": "tes:Imperial_Dragon_Helmet",
                 "modifiers": {
-                    "customModifiersInMelvor:damageDealHuman": 5
+                    "add": {
+                        "customModifiersInMelvor:damageDealtHuman": 5
+                    }
                 }
             },
             {
                 "id": "tes:Imperial_Dragon_Gauntlets",
                 "modifiers": {
-                    "customModifiersInMelvor:damageDealHuman": 5
+                    "add": {
+                        "customModifiersInMelvor:damageDealtHuman": 5
+                    }
                 }
             },
             {
                 "id": "tes:Imperial_Dragon_Armor",
                 "modifiers": {
-                    "customModifiersInMelvor:damageDealHuman": 5
+                    "add": {
+                        "customModifiersInMelvor:damageDealtHuman": 5
+                    }
                 }
             },
             {
                 "id": "tes:Imperial_Dragon_Boots",
                 "modifiers": {
-                    "customModifiersInMelvor:damageDealHuman": 5
+                    "add": {
+                        "customModifiersInMelvor:damageDealtHuman": 5
+                    }
                 }
             },
             {
                 "id": "tes:Imperial_Dragon_Cloak",
                 "modifiers": {
-                    "customModifiersInMelvor:damageDealHuman": 5
+                    "add": {
+                        "customModifiersInMelvor:damageDealtHuman": 5
+                    }
                 }
             }
         ],

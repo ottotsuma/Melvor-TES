@@ -253,25 +253,25 @@ export async function setup(ctx: Modding.ModContext) {
           }
           if (kcm) {
             const cmim = mod.api.customModifiersInMelvor;
-            
-// traitApplied: `traitApplied${typeName
-// }`,
-// damageDealt: `damageDealt${typeName
-// }`,
-// damageTaken: `damageTaken${typeName
-// }`,
-// maxHit: `maxHit${typeName
-// }`,
-// flatMaxHit: `flatMaxHit${typeName
-// }`,
-// flatMinHit: `flatMinHit${typeName
-// }`,
-// minHitBasedOnMaxHit: `minHitBasedOnMaxHit${typeName
-// }`,
-// accuracyRating: `accuracyRating${typeName
-// }`,
-// flatResistance: `flatResistance${typeName
-// }`
+
+            // traitApplied: `traitApplied${typeName
+            // }`,
+            // damageDealt: `damageDealt${typeName
+            // }`,
+            // damageTaken: `damageTaken${typeName
+            // }`,
+            // maxHit: `maxHit${typeName
+            // }`,
+            // flatMaxHit: `flatMaxHit${typeName
+            // }`,
+            // flatMinHit: `flatMinHit${typeName
+            // }`,
+            // minHitBasedOnMaxHit: `minHitBasedOnMaxHit${typeName
+            // }`,
+            // accuracyRating: `accuracyRating${typeName
+            // }`,
+            // flatResistance: `flatResistance${typeName
+            // }`
             if (!cmim) {
               return;
             }
@@ -279,7 +279,6 @@ export async function setup(ctx: Modding.ModContext) {
               if (combatSim) {
                 mod.api.mythCombatSimulator?.registerNamespace('customModifiersInMelvor');
               }
-              await ctx.gameData.addPackage('custom-mods.json');
             } catch (error) {
               tes_errors.push('custom-mods.json', error)
             }
@@ -666,14 +665,13 @@ export async function setup(ctx: Modding.ModContext) {
             cmim.addMonsters("Demon", DemonList)
             cmim.addMonsters("MythicalCreature", MythList)
             cmim.addMonsters("Elemental", ElementalCreatureList)
+            cmim.addMonsters("Elf", elfList)
 
             // Tes spcific
             cmim.registerOrUpdateType("Khajiit", "Khajiit", "https://cdn.melvor.net/core/v018/assets/media/pets/octavius_lepidus_viii.png", KhajiitList, true);
             cmim.registerOrUpdateType("Robot", "Robots", "https://cdn.melvor.net/core/v018/assets/media/pets/smithing.png", RobotsList, true);
             cmim.registerOrUpdateType("Argonian", "Argonians", "https://cdn.melvor.net/core/v018/assets/media/monsters/dragon_red.png", ArgonianList, true);
-
             // Used in other mods
-            cmim.registerOrUpdateType("Elf", "Elves", "https://cdn.melvor.net/core/v018/assets/media/pets/elf_rock.png", elfList, true);
             cmim.registerOrUpdateType("Goblin", "Goblins", "https://cdn.melvor.net/core/v018/assets/media/monsters/goblin.png", GoblinList, true);
             cmim.registerOrUpdateType("Plant", "Plants", "https://cdn.melvor.net/core/v018/assets/media/monsters/plant.png", PlantList, true);
             cmim.registerOrUpdateType("Orc", "Orcs", "https://cdn.melvor.net/core/v018/assets/media/monsters/goblin.png", OrcList, true);
@@ -682,6 +680,8 @@ export async function setup(ctx: Modding.ModContext) {
             cmim.registerOrUpdateType("Aarakocra", "Aarakocras", "https://cdn2-main.melvor.net/assets/media/monsters/torvair.png", AarakocraList, true);
             cmim.registerOrUpdateType("Angel", "Angels", "https://cdn2-main.melvor.net/assets/media/monsters/angel.png", AngelList, true);
 
+            // @ts-ignore
+            cmim.forceBaseModTypeActive("Elf");
             // @ts-ignore
             cmim.forceBaseModTypeActive("Dragon");
             // @ts-ignore
@@ -698,7 +698,9 @@ export async function setup(ctx: Modding.ModContext) {
             cmim.forceBaseModTypeActive("MythicalCreature");
             // @ts-ignore
             cmim.forceBaseModTypeActive("SeaCreature");
+            await ctx.gameData.addPackage('custom-mods.json');
           }
+
           if (kcm && profileSkill) {
             // add modifier package
             try {
@@ -835,7 +837,6 @@ export async function setup(ctx: Modding.ModContext) {
       // Local variables
       const combatSim = mod.manager.getLoadedModList().includes("[Myth] Combat Simulator")
       const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
-      // const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
       // const profileSkill = mod.manager.getLoadedModList().includes("(Skill) Classes and Species")
       // const TothEntitlement = cloudManager.hasTotHEntitlement
       // const AoDEntitlement = cloudManager.hasAoDEntitlement
@@ -932,28 +933,33 @@ export async function setup(ctx: Modding.ModContext) {
                 // @ts-ignore
                 if (item?._namespace?.name === "tes") {
                   // @ts-ignore
-                  if (!found_items_names.includes(item.name)) {
+                  if (!found_items_names.includes(item.name) && synergy.playerModifiers) {
                     // @ts-ignore
                     // if (item?._namespace?.name === "tes") {
-                      // @ts-ignore
-                      found_items_names.push(item.name)
-                      // @ts-ignore
-                      if (!found_items.includes(item)) found_items.push(item)
-                        const playerModifiers: {
-                          description: string,
-                          isNegative: boolean
-                        }[] = []
-                        synergy.playerModifiers.forEach(modifier=>{
-                          const desc = modifier.getDescription()
-                          playerModifiers.push({description: desc.description, isNegative: desc.isNegative})
-                        })
-                        const sync = {items: synergy.items, playerModifiers: playerModifiers}
-                      // @ts-ignore
-                      if (!synergiesForExport.includes(synergy)) {
-                        tesSynergiesForExport.push(sync)
-                        synergiesForExport.push(synergy)
-                      } 
+                    // @ts-ignore
+                    found_items_names.push(item.name)
+                    // @ts-ignore
+                    if (!found_items.includes(item)) found_items.push(item)
+                    const playerModifiers: {
+                      description: string,
+                      isNegative: boolean
+                    }[] = []
+                    synergy.playerModifiers.forEach(modifier => {
+                      const desc = modifier.getDescription()
+                      playerModifiers.push({ description: desc.description, isNegative: desc.isNegative })
+                    })
+                    const sync = { items: synergy.items, playerModifiers: playerModifiers }
+                    // @ts-ignore
+                    if (!synergiesForExport.includes(synergy)) {
+                      tesSynergiesForExport.push(sync)
+                      synergiesForExport.push(synergy)
+                    }
                     // }
+                  } // @ts-ignore
+                  else if (!found_items_names.includes(item.name)) {
+                     // @ts-ignore
+                    console.log(item.name, synergy)
+                    if (!found_items.includes(item)) found_items.push(item)
                   }
                 }
               })
@@ -1073,7 +1079,7 @@ export async function setup(ctx: Modding.ModContext) {
           game.items.registeredObjects.forEach((item: AnyItem) => {
             try {
               if (item) {
-                if(combatSim && !allowedNameSpaces.includes(item.namespace)) {
+                if (combatSim && !allowedNameSpaces.includes(item.namespace)) {
                   return;
                 }
                 // @ts-ignore
