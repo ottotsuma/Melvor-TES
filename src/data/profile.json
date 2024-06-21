@@ -22,7 +22,7 @@
                 "standardModifiers": [
                   {
                     "level": 0,
-                    "key": "khajiitTraitApplied",
+                    "key": "customModifiersInMelvor:khajiitTraitApplied",
                     "value": 10
                   },
                   {
@@ -72,7 +72,7 @@
                 "standardModifiers": [
                   {
                     "level": 0,
-                    "key": "argonianTraitApplied",
+                    "key": "customModifiersInMelvor:argonianTraitApplied",
                     "value": 10
                   },
                   {

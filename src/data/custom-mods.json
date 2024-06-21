@@ -7,14 +7,18 @@
                 "id": "Death_Mark_10",
                 "name": "Death Mark",
                 "modifiers": {
-                    "increasedChanceToApplyStackOfDeathMark": 10
+                    "critMultiplier": [
+                        {
+                            "value": 300
+                        }
+                    ]
                 }
             },
             {
                 "id": "Executioner",
                 "name": "Executioner",
                 "modifiers": {
-                    "increasedDamageAgainstHumans": 30
+                    "customModifiersInMelvor:damageDealtHuman": 30
                 }
             },
             {
@@ -33,9 +37,9 @@
                     "tes:Daedric_Helmet"
                 ],
                 "playerModifiers": {
-                    "demonTraitApplied": 1,
+                    "customModifiersInMelvor:traitAppliedDemon": 1,
                     "prayerPointCost": 10,
-                    "increasedDamageAgainstAngels": 10
+                    "customModifiersInMelvor:damageDealtAngel": 10
                 }
             },
             {
@@ -47,9 +51,9 @@
                     "tes:Gauntlets_of_the_Crusader"
                 ],
                 "playerModifiers": {
-                    "decreasedDamageTakenFromElves": 10,
-                    "increasedGlobalAccuracyAgainstElves": 10000,
-                    "increasedDamageReductionAgainstElves": 10
+                    "customModifiersInMelvor:damageTakenElf": -10,
+                    "customModifiersInMelvor:accuracyRatingElf": 10000,
+                    "customModifiersInMelvor:flatResistanceElf": 10
                 }
             },
             {
@@ -59,10 +63,16 @@
                     "tes:Vampire_Boots",
                     "tes:Vampire_Gauntlets"
                 ],
-                "playerModifiers": {
-                    "increasedChanceToApplyBleedOnSpawn": 10,
-                    "increasedChanceToApplyBleed": 10
-                }
+                "combatEffects": [{
+                    "effectID": "melvorD:Bleed",
+                    "chance": 10,
+                    "appliesWhen": "StartOfFight"
+                },
+                {
+                    "effectID": "melvorD:Bleed",
+                    "chance": 10,
+                    "appliesWhen": "PostAttack"
+                }]
             }
         ],
         "monsters": [
@@ -156,138 +166,143 @@
             {
                 "id": "tes:dragon_bone_helmet",
                 "modifiers": {
-                    "dragonTraitApplied": 1,
-                    "increasedDamageAgainstElves": 10,
-                    "increasedGlobalAccuracyAgainstAarakocras": 10
+                    "customModifiersInMelvor:traitAppliedDragon": 1,
+                    "customModifiersInMelvor:damageDealElf": 10,
+                    "accuracyRatingAarakocra": 10
                 }
             },
             {
                 "id": "tes:vampire_lord_armour",
-                "modifiers": {
-                    "increasedChanceToApplyBleedOnSpawn": 10,
-                    "increasedChanceToApplyBleed": 10
+                "combatEffects": {
+                    "add": [{
+                        "effectID": "melvorD:Bleed",
+                        "chance": 10,
+                        "appliesWhen": "StartOfFight"
+                    },
+                    {
+                        "effectID": "melvorD:Bleed",
+                        "chance": 10,
+                        "appliesWhen": "PostAttack"
+                    }]
                 }
             },
             {
                 "id": "tes:HelmetOfOreynBearclaw",
                 "modifiers": {
-                    "increasedDamageAgainstUndead": 10
+                    "customModifiersInMelvor:damageDealUndead": 10
                 }
             },
             {
                 "id": "tes:Dawnbreaker",
                 "modifiers": {
-                    "increasedDamageAgainstUndead": 10
+                    "customModifiersInMelvor:damageDealUndead": 10
                 }
             },
             {
                 "id": "tes:Mace_of_Molag_Bal",
                 "modifiers": {
-                    "increasedDamageAgainstHumans": 100
+                    "customModifiersInMelvor:damageDealHuman": 100
                 }
             },
             {
                 "id": "tes:Ebony_Blade",
                 "modifiers": {
-                    "increasedDamageAgainstHumans": 20
+                    "customModifiersInMelvor:damageDealHuman": 20
                 }
             },
             {
                 "id": "tes:Blades_Sword",
                 "modifiers": {
-                    "increasedDamageAgainstDragons": 40
+                    "customModifiersInMelvor:damageDealDragon": 40
                 }
             },
             {
                 "id": "tes:Mace_of_the_Crusader",
                 "modifiers": {
-                    "increasedDamageAgainstDemons": 20,
-                    "decreasedDamageAgainstHumans": 10,
-                    "increasedDamageAgainstElves": 100
+                    "customModifiersInMelvor:damageDealDemon": 20,
+                    "customModifiersInMelvor:damageDealHuman": -10,
+                    "customModifiersInMelvor:damageDealElf": 100
                 }
             },
             {
                 "id": "tes:Shield_of_the_Crusader",
                 "modifiers": {
-                    "increasedDamageAgainstDemons": 20,
-                    "decreasedDamageAgainstHumans": 10,
-                    "decreasedDamageTakenFromElves": 10
+                    "customModifiersInMelvor:damageDealDemon": 20,
+                    "customModifiersInMelvor:damageDealHuman": -10,
+                    "customModifiersInMelvor:damageTakenElf": -10
                 }
             },
             {
                 "id": "tes:Cuirass_of_the_Crusader",
                 "modifiers": {
-                    "increasedDeathMarkImmunity": 40,
-                    "decreasedDamageAgainstHumans": 10,
-                    "decreasedDamageTakenFromElves": 40
+                    "customModifiersInMelvor:damageDealHuman": -10,
+                    "customModifiersInMelvor:damageTakenElf": -40
                 }
             },
             {
                 "id": "tes:Sword_of_the_Crusader",
                 "modifiers": {
-                    "increasedDamageAgainstUndead": 20,
-                    "decreasedDamageAgainstHumans": 10,
-                    "increasedDamageAgainstElves": 100
+                    "customModifiersInMelvor:damageDealUndead": 20,
+                    "customModifiersInMelvor:damageDealHuman": -10,
+                    "customModifiersInMelvor:damageDealElf": 100
                 }
             },
             {
                 "id": "tes:Boots_of_the_Crusader",
                 "modifiers": {
-                    "increasedDeathMarkImmunity": 10,
-                    "decreasedDamageAgainstHumans": 5,
-                    "decreasedDamageTakenFromElves": 10
+                    "": 10,
+                    "customModifiersInMelvor:damageDealHuman": -5,
+                    "customModifiersInMelvor:damageTakenElf": -10
                 }
             },
             {
                 "id": "tes:Helm_of_the_Crusader",
                 "modifiers": {
-                    "increasedDeathMarkImmunity": 10,
-                    "decreasedDamageAgainstHumans": 5,
-                    "decreasedDamageTakenFromElves": 10
+                    "customModifiersInMelvor:damageDealHuman": -5,
+                    "customModifiersInMelvor:damageTakenElf": -10
                 }
             },
             {
                 "id": "tes:Gauntlets_of_the_Crusader",
                 "modifiers": {
-                    "increasedDeathMarkImmunity": 10,
-                    "decreasedDamageAgainstHumans": 5,
-                    "decreasedDamageTakenFromElves": 10
+                    "customModifiersInMelvor:damageDealHuman": -5,
+                    "customModifiersInMelvor:damageTakenElf": -10
                 }
             },
             {
                 "id": "tes:Imperial_Dragon_Shield",
                 "modifiers": {
-                    "increasedDamageAgainstHumans": 5
+                    "customModifiersInMelvor:damageDealHuman": 5
                 }
             },
             {
                 "id": "tes:Imperial_Dragon_Helmet",
                 "modifiers": {
-                    "increasedDamageAgainstHumans": 5
+                    "customModifiersInMelvor:damageDealHuman": 5
                 }
             },
             {
                 "id": "tes:Imperial_Dragon_Gauntlets",
                 "modifiers": {
-                    "increasedDamageAgainstHumans": 5
+                    "customModifiersInMelvor:damageDealHuman": 5
                 }
             },
             {
                 "id": "tes:Imperial_Dragon_Armor",
                 "modifiers": {
-                    "increasedDamageAgainstHumans": 5
+                    "customModifiersInMelvor:damageDealHuman": 5
                 }
             },
             {
                 "id": "tes:Imperial_Dragon_Boots",
                 "modifiers": {
-                    "increasedDamageAgainstHumans": 5
+                    "customModifiersInMelvor:damageDealHuman": 5
                 }
             },
             {
                 "id": "tes:Imperial_Dragon_Cloak",
                 "modifiers": {
-                    "increasedDamageAgainstHumans": 5
+                    "customModifiersInMelvor:damageDealHuman": 5
                 }
             }
         ],

@@ -159,7 +159,7 @@ export async function setup(ctx: Modding.ModContext) {
       try {
         // Local variables
         const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
-        const kcm = false // mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
+        const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
         const profileSkill = mod.manager.getLoadedModList().includes("(Skill) Classes and Species")
         const TothEntitlement = cloudManager.hasTotHEntitlementAndIsEnabled
         const AoDEntitlement = cloudManager.hasAoDEntitlementAndIsEnabled
@@ -253,10 +253,32 @@ export async function setup(ctx: Modding.ModContext) {
           }
           if (kcm) {
             const cmim = mod.api.customModifiersInMelvor;
+            
+// traitApplied: `traitApplied${typeName
+// }`,
+// damageDealt: `damageDealt${typeName
+// }`,
+// damageTaken: `damageTaken${typeName
+// }`,
+// maxHit: `maxHit${typeName
+// }`,
+// flatMaxHit: `flatMaxHit${typeName
+// }`,
+// flatMinHit: `flatMinHit${typeName
+// }`,
+// minHitBasedOnMaxHit: `minHitBasedOnMaxHit${typeName
+// }`,
+// accuracyRating: `accuracyRating${typeName
+// }`,
+// flatResistance: `flatResistance${typeName
+// }`
             if (!cmim) {
               return;
             }
             try {
+              if (combatSim) {
+                mod.api.mythCombatSimulator?.registerNamespace('customModifiersInMelvor');
+              }
               await ctx.gameData.addPackage('custom-mods.json');
             } catch (error) {
               tes_errors.push('custom-mods.json', error)
