@@ -1056,7 +1056,7 @@ export async function setup(ctx: Modding.ModContext) {
       const bannedNameSpace: any = {
         "tes": true
       }
-      const allowedNameSpaces = ["monad", "namespace_thuum", "pokemon", "dnd", "tes", "melvorAoD", "melvorTotH", 'melvorAprilFools2024', 'melvorBirthday2023', 'melvorD', 'melvorBaseGame', 'melvorTrue', 'melvorF']
+      const allowedNameSpaces = ["monad", "pokemon", "dnd", "tes", "melvorAoD", "melvorTotH", 'melvorAprilFools2024', 'melvorBirthday2023', 'melvorD', 'melvorBaseGame', 'melvorTrue', 'melvorF']
       const categoryBan: any = {
         "Limes": true,
         "Lemon": true,
