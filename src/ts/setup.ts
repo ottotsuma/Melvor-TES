@@ -1105,7 +1105,7 @@ export async function setup(ctx: Modding.ModContext) {
                 }
                 if (!Khajiit_Item_1 && rollPercentage(1)) {
                   Khajiit_Item_1 = `${item.namespace}:${item.localID}`
-                  Khajiit_Item_1_Price = item.sellsFor.currency.amount * 4
+                  Khajiit_Item_1_Price = item.sellsFor.quantity * 4
                   Khajiit_Item_1_qty = Math.floor(Math.random() * 100)
                   if (Khajiit_Item_1_Price < 1000) { Khajiit_Item_1_qty = Math.floor(Math.random() * 10000) }
                   if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour" || item.type === "Magic Armour") {
@@ -1113,7 +1113,7 @@ export async function setup(ctx: Modding.ModContext) {
                   }
                 } else if (!Khajiit_Item_2 && rollPercentage(0.5)) {
                   Khajiit_Item_2 = `${item.namespace}:${item.localID}`
-                  Khajiit_Item_2_Price = item.sellsFor.currency.amount * 4
+                  Khajiit_Item_2_Price = item.sellsFor.quantity * 4
                   Khajiit_Item_2_qty = Math.floor(Math.random() * 50)
                   if (Khajiit_Item_2_Price < 1000) { Khajiit_Item_2_qty = Math.floor(Math.random() * 10000) }
                   if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour" || item.type === "Magic Armour") {
@@ -1121,7 +1121,7 @@ export async function setup(ctx: Modding.ModContext) {
                   }
                 } else if (!Khajiit_Item_3 && rollPercentage(0.5)) {
                   Khajiit_Item_3 = `${item.namespace}:${item.localID}`
-                  Khajiit_Item_3_Price = item.sellsFor.currency.amount * 4
+                  Khajiit_Item_3_Price = item.sellsFor.quantity * 4
                   Khajiit_Item_3_qty = Math.floor(Math.random() * 10)
                   if (Khajiit_Item_3_Price < 1000) { Khajiit_Item_3_qty = Math.floor(Math.random() * 10000) }
                   if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour" || item.type === "Magic Armour") {
@@ -1129,7 +1129,7 @@ export async function setup(ctx: Modding.ModContext) {
                   }
                 } else if (!Khajiit_Item_4 && rollPercentage(0.5)) {
                   Khajiit_Item_4 = `${item.namespace}:${item.localID}`
-                  Khajiit_Item_4_Price = item.sellsFor.currency.amount * 4
+                  Khajiit_Item_4_Price = item.sellsFor.quantity * 4
                   Khajiit_Item_4_qty = Math.floor(Math.random() * 2)
                   if (Khajiit_Item_4_Price < 1000) { Khajiit_Item_4_qty = Math.floor(Math.random() * 10000) }
                   if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour" || item.type === "Magic Armour") {
@@ -1137,7 +1137,7 @@ export async function setup(ctx: Modding.ModContext) {
                   }
                 } else if (!Khajiit_Item_5 && rollPercentage(0.5)) {
                   Khajiit_Item_5 = `${item.namespace}:${item.localID}`
-                  Khajiit_Item_5_Price = item.sellsFor.currency.amount * 4
+                  Khajiit_Item_5_Price = item.sellsFor.quantity * 4
                   // Khajiit_Item_5_qty = Math.floor(Math.random() * 2)
                   if (Khajiit_Item_5_Price < 1000) { Khajiit_Item_5_qty = Math.floor(Math.random() * 10000) }
                   if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour" || item.type === "Magic Armour") {
