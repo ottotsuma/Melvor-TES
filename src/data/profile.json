@@ -22,38 +22,57 @@
                 "standardModifiers": [
                   {
                     "level": 0,
-                    "key": "customModifiersInMelvor:khajiitTraitApplied",
-                    "value": 10
+                    "modifiers": {
+                      "customModifiersInMelvor:khajiitTraitApplied": 1
+                    }
                   },
                   {
                     "level": 1,
-                    "key": "increasedThievingStunIntervalPercent",
-                    "value": 100
+                    "modifiers": {
+                      "thievingStunInterval": 100
+                    }
                   },
                   {
                     "level": 20,
-                    "key": "increasedThievingStealth",
-                    "value": 150
+                    "modifiers": {
+                      "thievingStealth": 150
+                    }
                   },
                   {
                     "level": 40,
-                    "key": "increasedGPFromThieving",
-                    "value": 10
+                    "modifiers": {
+                      "currencyGain":[
+                        {
+                          "currencyID":"melvorD:GP",
+                          "skillID":"melvorD:Thieving",
+                          "value": 10
+                        }
+                      ]
+                    }
                   },
                   {
                     "level": 60,
-                    "key": "increasedGPFromSales",
-                    "value": 10
+                    "modifiers": {
+                      "itemSaleCurrencyGain":[{
+                        "currencyID":"melvorD:GP",
+                        "value": 10
+                      }]
+                    }
                   },
                   {
                     "level": 80,
-                    "key": "increasedChanceToDodge",
-                    "value": 5
+                    "modifiers": {
+                      "dodgeChance": 5
+                    }
                   },
                   {
                     "level": 99,
-                    "key": "increasedGPOnEnemyHit",
-                    "value": 5
+                    "modifiers": {
+                      "flatCurrencyGainOnEnemyHit":[{
+                        "currencyID":"melvorD:GP",
+                        "value": 5
+                      }]
+                    }
                   }
                 ]
               },
@@ -72,38 +91,53 @@
                 "standardModifiers": [
                   {
                     "level": 0,
-                    "key": "customModifiersInMelvor:argonianTraitApplied",
-                    "value": 10
+                    "modifiers": {
+                      "customModifiersInMelvor:argonianTraitApplied": 1
+                    }
                   },
                   {
                     "level": 1,
-                    "key": "decreasedCookingSuccessCap",
-                    "value": 10
+                    "modifiers": {
+                      "cookingSuccessCap": -10
+                    }
                   },
                   {
                     "level": 20,
-                    "key": "increasedChanceSuccessfulCook",
-                    "value": 10
+                    "modifiers": {
+                      "successfulCookChance": 10
+                    }
                   },
                   {
                     "level": 40,
-                    "key": "increasedGPFromRawFishSales",
-                    "value": 10
+                    "modifiers": {
+                      "currencyGainFromRawFishSales":[{
+                        "currencyID":"melvorD:GP",
+                        "value": 10
+                      }]
+                    }
                   },
                   {
                     "level": 60,
-                    "key": "increasedChancePerfectCookGlobal",
-                    "value": 10
+                    "modifiers": {
+                      "perfectCookChance": 10
+                    }
                   },
                   {
                     "level": 80,
-                    "key": "increasedFishingCookedChance",
-                    "value": 5
+                    "modifiers": {
+                      "fishingCookedChance": 5
+                    }
                   },
                   {
                     "level": 99,
-                    "key": "poisonImmunity",
-                    "value": 50
+                    "modifiers": {
+                      "effectIgnoreChance":[
+                        {
+                          "effectGroupID":"melvorD:PoisonDOT",
+                          "value": 50
+                        }
+                      ]
+                    }
                   }
                 ]
               }
