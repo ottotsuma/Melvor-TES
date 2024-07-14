@@ -23,7 +23,7 @@
                   {
                     "level": 0,
                     "modifiers": {
-                      "customModifiersInMelvor:khajiitTraitApplied": 1
+                      "customModifiersInMelvor:traitAppliedKhajiit": 1
                     }
                   },
                   {
@@ -92,7 +92,7 @@
                   {
                     "level": 0,
                     "modifiers": {
-                      "customModifiersInMelvor:argonianTraitApplied": 1
+                      "customModifiersInMelvor:traitAppliedArgonian": 1
                     }
                   },
                   {
