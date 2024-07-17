@@ -160,7 +160,7 @@ export async function setup(ctx: Modding.ModContext) {
         // Local variables
         const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
         const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
-        const profileSkill = mod.manager.getLoadedModList().includes("(Skill) Classes and Species")
+        // const profileSkill = mod.manager.getLoadedModList().includes("(Skill) Classes and Species")
         const TothEntitlement = cloudManager.hasTotHEntitlementAndIsEnabled
         const AoDEntitlement = cloudManager.hasAoDEntitlementAndIsEnabled
         const combatSim = mod.manager.getLoadedModList().includes("[Myth] Combat Simulator")
@@ -701,15 +701,15 @@ export async function setup(ctx: Modding.ModContext) {
             await ctx.gameData.addPackage('custom-mods.json');
           }
 
-          if (kcm && profileSkill) {
-            // add modifier package
-            try {
-              await ctx.gameData.addPackage('profile.json');
-            } catch (error) {
-              tes_errors.push('profile.json', error)
-            }
+          // if (kcm && profileSkill) {
+          //   // add modifier package
+          //   try {
+          //     await ctx.gameData.addPackage('profile.json');
+          //   } catch (error) {
+          //     tes_errors.push('profile.json', error)
+          //   }
 
-          }
+          // }
         } catch (error) {
           tes_errors.push('onModsLoaded packages', error)
         }
