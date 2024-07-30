@@ -268,7 +268,7 @@
         "id": "Magic_Nerf",
         "name": "Magic Nerf",
         "modifiers": {
-          "magicMaxHit": -80
+          "magicMaxHit": -90
         }
       }
     ],
@@ -16131,12 +16131,12 @@
         "name": "Skeleton Archer",
         "media": "assets/monsters/skeleton_Archer.png",
         "levels": {
-          "Attack": 1,
+          "Attack": 100,
           "Defence": 120,
           "Hitpoints": 120,
-          "Magic": 1,
+          "Magic": 100,
           "Ranged": 170,
-          "Strength": 1
+          "Strength": 100
         },
         "equipmentStats": [
           {
@@ -16146,7 +16146,9 @@
         ],
         "ignoreCompletion": false,
         "attackType": "ranged",
-        "specialAttacks": [],
+        "specialAttacks": [
+          "melvorF:ImpairingShot"
+        ],
         "passives": [],
         "lootChance": 50,
         "lootTable": [
@@ -18057,7 +18059,7 @@
           "Hitpoints": 30,
           "Magic": 10,
           "Ranged": 10,
-          "Strength": 45
+          "Strength": 35
         },
         "equipmentStats": [
           {
@@ -20619,7 +20621,14 @@
           "melvorF:EventPassive1"
         ],
         "lootChance": 1,
-        "lootTable": [],
+        "lootTable": [
+          {
+            "itemID":"melvorD:Bones",
+            "weight": 1,
+            "maxQuantity": 1,
+            "minQuantity": 1
+          }
+        ],
         "currencyDrops": [
           {
             "currencyID": "melvorD:GP",
@@ -20781,7 +20790,11 @@
         ],
         "ignoreCompletion": false,
         "attackType": "ranged",
-        "specialAttacks": [],
+        "specialAttacks": [
+          "melvorF:ConcealedDanger",
+          "melvorF:MarkofDeath",
+          "melvorF:Shadowstep"
+        ],
         "passives": [
           "tes:Assassin_Target",
           "tes:Assassin"
@@ -20821,12 +20834,12 @@
         "name": "Havilstein Hoar-Blood",
         "media": "assets/monsters/Havilstein_Hoar.png",
         "levels": {
-          "Attack": 100,
+          "Attack": 150,
           "Defence": 150,
           "Hitpoints": 300,
           "Magic": 1,
           "Ranged": 1,
-          "Strength": 100
+          "Strength": 150
         },
         "equipmentStats": [
           {
@@ -20836,7 +20849,11 @@
         ],
         "ignoreCompletion": false,
         "attackType": "melee",
-        "specialAttacks": [],
+        "specialAttacks": [
+          "melvorF:ReapandReturn",
+          "melvorF:MarkofDeath",
+          "melvorF:CursedEdge"
+        ],
         "passives": [
           "tes:Assassin_Target",
           "tes:Assassin"
@@ -20885,7 +20902,9 @@
         ],
         "ignoreCompletion": false,
         "attackType": "magic",
-        "specialAttacks": [],
+        "specialAttacks": [
+          "melvorF:ShadowBurst"
+        ],
         "passives": [
           "tes:Assassin_Target",
           "tes:Assassin"
@@ -20934,7 +20953,9 @@
         ],
         "ignoreCompletion": false,
         "attackType": "melee",
-        "specialAttacks": [],
+        "specialAttacks": [
+          "melvorF:BladeEchoes"
+        ],
         "passives": [
           "tes:Assassin_Target",
           "tes:Assassin"
@@ -20968,12 +20989,12 @@
         "name": "J'Ghasta",
         "media": "assets/monsters/JGhasta.png",
         "levels": {
-          "Attack": 58,
-          "Defence": 48,
-          "Hitpoints": 48,
+          "Attack": 60,
+          "Defence": 50,
+          "Hitpoints": 60,
           "Magic": 1,
           "Ranged": 1,
-          "Strength": 55
+          "Strength": 60
         },
         "equipmentStats": [
           {
@@ -20983,7 +21004,9 @@
         ],
         "ignoreCompletion": false,
         "attackType": "melee",
-        "specialAttacks": [],
+        "specialAttacks": [
+          "melvorF:PenetratingClaws"
+        ],
         "passives": [
           "tes:Assassin_Target",
           "tes:Assassin"
@@ -21017,12 +21040,12 @@
         "name": "Perennia Draconis",
         "media": "assets/monsters/Perennia_Draconis.png",
         "levels": {
-          "Attack": 45,
+          "Attack": 55,
           "Defence": 45,
-          "Hitpoints": 28,
+          "Hitpoints": 40,
           "Magic": 20,
-          "Ranged": 30,
-          "Strength": 45
+          "Ranged": 55,
+          "Strength": 55
         },
         "equipmentStats": [
           {
@@ -21089,12 +21112,12 @@
         "name": "Caelia Draconis",
         "media": "assets/monsters/Caelia_Draconis.png",
         "levels": {
-          "Attack": 45,
+          "Attack": 55,
           "Defence": 45,
-          "Hitpoints": 28,
+          "Hitpoints": 40,
           "Magic": 20,
-          "Ranged": 30,
-          "Strength": 45
+          "Ranged": 55,
+          "Strength": 55
         },
         "equipmentStats": [
           {
@@ -21104,7 +21127,9 @@
         ],
         "ignoreCompletion": false,
         "attackType": "ranged",
-        "specialAttacks": [],
+        "specialAttacks": [
+          "melvorAoD:Killshot"
+        ],
         "passives": [
           "tes:Assassin_Target"
         ],
@@ -21143,12 +21168,12 @@
         "name": "Sibylla Draconis",
         "media": "assets/monsters/Sibylla_Draconis.png",
         "levels": {
-          "Attack": 45,
+          "Attack": 55,
           "Defence": 45,
-          "Hitpoints": 28,
+          "Hitpoints": 40,
           "Magic": 20,
-          "Ranged": 30,
-          "Strength": 45
+          "Ranged": 55,
+          "Strength": 55
         },
         "equipmentStats": [
           {
@@ -21191,12 +21216,12 @@
         "name": "Andreas Draconis",
         "media": "assets/monsters/Andreas_Draconis.png",
         "levels": {
-          "Attack": 45,
+          "Attack": 55,
           "Defence": 45,
-          "Hitpoints": 28,
+          "Hitpoints": 40,
           "Magic": 20,
-          "Ranged": 30,
-          "Strength": 45
+          "Ranged": 55,
+          "Strength": 55
         },
         "equipmentStats": [
           {
@@ -21257,12 +21282,12 @@
         "name": "Matthias Draconis",
         "media": "assets/monsters/Matthias_Draconis.png",
         "levels": {
-          "Attack": 45,
+          "Attack": 55,
           "Defence": 45,
-          "Hitpoints": 28,
+          "Hitpoints": 40,
           "Magic": 20,
-          "Ranged": 30,
-          "Strength": 45
+          "Ranged": 55,
+          "Strength": 55
         },
         "equipmentStats": [
           {
@@ -21445,7 +21470,14 @@
           "melvorF:MeleeProficiency"
         ],
         "lootChance": 100,
-        "lootTable": [],
+        "lootTable": [
+          {
+            "itemID":"melvorD:Bones",
+            "weight": 1,
+            "maxQuantity": 1,
+            "minQuantity": 1
+          }
+        ],
         "currencyDrops": [
           {
             "currencyID": "melvorD:GP",
@@ -21747,7 +21779,14 @@
           "tes:Wardsave_10"
         ],
         "lootChance": 100,
-        "lootTable": [],
+        "lootTable": [
+          {
+            "itemID":"melvorD:Bones",
+            "weight": 1,
+            "maxQuantity": 1,
+            "minQuantity": 1
+          }
+        ],
         "currencyDrops": [
           {
             "currencyID": "melvorD:GP",
@@ -21810,7 +21849,14 @@
           "melvorF:MeleeProficiency"
         ],
         "lootChance": 100,
-        "lootTable": [],
+        "lootTable": [
+          {
+            "itemID":"melvorD:Bones",
+            "weight": 1,
+            "maxQuantity": 1,
+            "minQuantity": 1
+          }
+        ],
         "currencyDrops": [
           {
             "currencyID": "melvorD:GP",
@@ -24158,7 +24204,14 @@
           "melvorF:Rebirth"
         ],
         "lootChance": 0,
-        "lootTable": [],
+        "lootTable": [
+          {
+            "itemID":"melvorD:Bones",
+            "weight": 1,
+            "maxQuantity": 1,
+            "minQuantity": 1
+          }
+        ],
         "currencyDrops": [
           {
             "currencyID": "melvorD:GP",
@@ -24203,7 +24256,14 @@
           "melvorF:Afflicted"
         ],
         "lootChance": 0,
-        "lootTable": [],
+        "lootTable": [
+          {
+            "itemID":"melvorD:Bones",
+            "weight": 1,
+            "maxQuantity": 1,
+            "minQuantity": 1
+          }
+        ],
         "currencyDrops": [
           {
             "currencyID": "melvorD:GP",
@@ -24248,7 +24308,14 @@
           "melvorF:Afflicted"
         ],
         "lootChance": 0,
-        "lootTable": [],
+        "lootTable": [
+          {
+            "itemID":"melvorD:Bones",
+            "weight": 1,
+            "maxQuantity": 1,
+            "minQuantity": 1
+          }
+        ],
         "currencyDrops": [
           {
             "currencyID": "melvorD:GP",
@@ -24287,7 +24354,14 @@
           "melvorF:Afflicted"
         ],
         "lootChance": 0,
-        "lootTable": [],
+        "lootTable": [
+          {
+            "itemID":"melvorD:Bones",
+            "weight": 1,
+            "maxQuantity": 1,
+            "minQuantity": 1
+          }
+        ],
         "currencyDrops": [
           {
             "currencyID": "melvorD:GP",
@@ -24326,7 +24400,14 @@
           "melvorF:Afflicted"
         ],
         "lootChance": 0,
-        "lootTable": [],
+        "lootTable": [
+          {
+            "itemID":"melvorD:Bones",
+            "weight": 1,
+            "maxQuantity": 1,
+            "minQuantity": 1
+          }
+        ],
         "currencyDrops": [
           {
             "currencyID": "melvorD:GP",
@@ -24365,7 +24446,14 @@
           "melvorF:Afflicted"
         ],
         "lootChance": 0,
-        "lootTable": [],
+        "lootTable": [
+          {
+            "itemID":"melvorD:Bones",
+            "weight": 1,
+            "maxQuantity": 1,
+            "minQuantity": 1
+          }
+        ],
         "currencyDrops": [
           {
             "currencyID": "melvorD:GP",
@@ -24404,7 +24492,14 @@
           "melvorF:Afflicted"
         ],
         "lootChance": 0,
-        "lootTable": [],
+        "lootTable": [
+          {
+            "itemID":"melvorD:Bones",
+            "weight": 1,
+            "maxQuantity": 1,
+            "minQuantity": 1
+          }
+        ],
         "currencyDrops": [
           {
             "currencyID": "melvorD:GP",
@@ -24443,7 +24538,14 @@
           "melvorF:Afflicted"
         ],
         "lootChance": 0,
-        "lootTable": [],
+        "lootTable": [
+          {
+            "itemID":"melvorD:Bones",
+            "weight": 1,
+            "maxQuantity": 1,
+            "minQuantity": 1
+          }
+        ],
         "currencyDrops": [
           {
             "currencyID": "melvorD:GP",
@@ -24482,7 +24584,14 @@
           "melvorF:Afflicted"
         ],
         "lootChance": 0,
-        "lootTable": [],
+        "lootTable": [
+          {
+            "itemID":"melvorD:Bones",
+            "weight": 1,
+            "maxQuantity": 1,
+            "minQuantity": 1
+          }
+        ],
         "currencyDrops": [
           {
             "currencyID": "melvorD:GP",
@@ -24522,7 +24631,14 @@
           "melvorF:Afflicted"
         ],
         "lootChance": 0,
-        "lootTable": [],
+        "lootTable": [
+          {
+            "itemID":"melvorD:Bones",
+            "weight": 1,
+            "maxQuantity": 1,
+            "minQuantity": 1
+          }
+        ],
         "currencyDrops": [
           {
             "currencyID": "melvorD:GP",
@@ -24800,7 +24916,7 @@
             "damageType": "Custom",
             "character": "Attacker",
             "maxRoll": "Fixed",
-            "maxPercent": 20,
+            "maxPercent": 10,
             "roll": false
           }
         ],
@@ -25412,7 +25528,7 @@
         "activeInRaid": false,
         "hint": "Goblin Caves",
         "modifiers": {
-          "tes_decreaseFlatDamageWhileTargetHasMaxHP": 1
+          "bankSpace":1
         },
         "customDescription": "May the Goblin Army protect you from Assassins"
       },

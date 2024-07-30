@@ -66,50 +66,6 @@
                 </div>
             </div>
         </div>
-        <div style="background-color: #232a35!important;">
-            <h1
-                style="text-align: center; padding-top: 10px; color: #f5f5f5!important; font-family: 'The Nautigal', cursive; ">
-                Book of synergies</h1>
-            <div style="background-color: #232a35!important; color: #f5f5f5!important; padding: 10px; border: solid white; text-align: center;"
-                v-for="synergy in game.tes_itemSynergies">
-                <div v-for="item in synergy.items">
-                    <div>{{getLangString("ITEM_NAME_" + item.localID)}}</div>
-                    <img style="width: 64px; margin: 6px;" class="global-droptable-overview-image"
-                        v-bind:title="item.name" v-bind:src="item.media">
-                </div>
-                <div v-for="playerModifier in synergy.playerModifiers">
-                    <div>
-                        <div style="color: red;" v-if="playerModifier && playerModifier.isNegative">
-                            {{playerModifier.description}}
-                        </div>
-                        <div style="color: green;" v-else-if="playerModifier">
-                            {{playerModifier.description}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- <div style="background-color: #232a35!important;">
-            <h1
-                style="text-align: center; padding-top: 10px; color: #f5f5f5!important; font-family: 'The Nautigal', cursive;">
-                Book of Balance: Vol 1 - Weapons</h1>
-            <p style=" margin-bottom:0; text-align: center; padding-top: 10px; color: #f5f5f5!important;">Items are
-                rated with the players current modifiers and levels. So if you're level 1 in ranged, you can expect
-                ranged items to rank low.</p>
-            <p style=" margin-bottom:0; text-align: center; padding-top: 10px; color: #f5f5f5!important;">Red is worse
-                then a bronze dagger; Green is better then a God sword. [Kind of]</p>
-            <p style=" margin-bottom:0; text-align: center; padding-top: 10px; color: #f5f5f5!important;">Magic weapons
-                are calculated based on Fire Surge</p>
-            <p style=" margin-bottom:0; text-align: center; padding-top: 10px; color: #f5f5f5!important;">Ranged weapons
-                are calculated based on Dragon Arrows / Jade bolts</p>
-            <div style="background-color: #232a35!important; color: #f5f5f5!important; padding: 10px; border: solid white; text-align: center;"
-                v-for="item in game.tes_weapons">
-                <div
-                    v-bind:style="{ color: game.calcItemLevel(item) !== 'string' && game.calcItemLevel(item) < game.calcItemLevel(game.items.getObjectByID('melvorD:Bronze_Dagger')) ? 'red' : game.calcItemLevel(item) !== 'string' && game.calcItemLevel(item) > Math.floor(game.calcItemLevel(game.items.getObjectByID('melvorF:Ultima_Godsword'))) ? 'green' : '' }">
-                    {{getLangString("ITEM_NAME_" + item.localID)}}</div>
-            </div>
-        </div> -->
     </div>
     <script>
         const tracks = ["https://ia804700.us.archive.org/5/items/directsong_oblivion/01%20Reign%20of%20the%20Septims.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/02%20Through%20the%20Valleys.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/03%20Death%20Knell.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/04%20Harvest%20Dawn.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/05%20Wind%20from%20the%20Depths.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/06%20King%20and%20Country.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/07%20Fall%20of%20the%20Hammer.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/08%20Wings%20of%20Kynareth.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/09%20Alls%20Well.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/10%20Tension.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/11%20March%20of%20the%20Marauders.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/12%20Watchman%27s%20Ease.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/13%20Glory%20of%20Cyrodiil.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/14%20Defending%20the%20Gate.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/15%20Bloody%20Blades.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/16%20Minstrel%27s%20Lament.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/17%20Ancient%20Sorrow.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/18%20Auriel%27s%20Ascension.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/19%20Daedra%20in%20Flight.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/20%20Unmarked%20Stone.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/21%20Bloodlust.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/22%20Sunrise%20of%20Flutes.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/23%20Churl%27s%20Revenge.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/24%20Deep%20Waters.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/25%20Dusk%20at%20the%20Market.mp3", "https://ia804700.us.archive.org/5/items/directsong_oblivion/26%20Peace%20of%20Akatosh.mp3"]

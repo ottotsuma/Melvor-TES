@@ -8,12 +8,12 @@
         "name": "Fancy Skeleton Archer",
         "media": "assets/monsters/skeleton_Archer.png",
         "levels": {
-          "Attack": 1,
+          "Attack": 100,
           "Defence": 120,
           "Hitpoints": 120,
-          "Magic": 1,
+          "Magic": 100,
           "Ranged": 170,
-          "Strength": 1
+          "Strength": 100
         },
         "equipmentStats": [
           {
@@ -23,8 +23,12 @@
         ],
         "ignoreCompletion": false,
         "attackType": "ranged",
-        "specialAttacks": [],
-        "passives": [],
+        "specialAttacks": [
+          "melvorAoD:Killshot"
+        ],
+        "passives": [
+          "melvorAoD:WeakeningTouch"
+        ],
         "lootChance": 100,
         "lootTable": [
           {

@@ -944,7 +944,14 @@
         "passives": [],
         "specialAttacks": [],
         "lootChance": 100,
-        "lootTable": [],
+        "lootTable": [
+          {
+            "itemID":"melvorD:Bones",
+            "weight": 1,
+            "maxQuantity": 1,
+            "minQuantity": 1
+          }
+        ],
         "currencyDrops": [
           {
             "currencyID": "melvorD:GP",

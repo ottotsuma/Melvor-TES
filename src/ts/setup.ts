@@ -1,6 +1,7 @@
 // Changes to do:
 // "tes:Moth_Priest"
 //  get-childitem *.png | foreach { rename-item $_ $_.Name.Replace("-min", "") }
+
 // game.testForOffline(1)
 
 // game.items.registeredObjects.forEach(item => {
@@ -9,10 +10,6 @@
 //   }
 // })
 
-// Translate the HTML pages
-
-
-// import { Modifier } from 'typescript';
 import '../css/styles.css';
 import { languages } from './../language';
 import { TesTranslation } from './../language/translation'
@@ -76,39 +73,59 @@ export async function setup(ctx: Modding.ModContext) {
     // could color code negative and positive
     const showList = (itemID: string, backFunction: any, ...backArgs: any) => {
       const item = game.items.getObjectByID(itemID) as EquipmentItem;
-
+      const synergies = game.itemSynergies.get(item)
       let html = `<h5 class="font-w400 mb-1">${item.name}</h5>`;
       html += `<img src="${item.media}" style="max-width: 256px; max-height: 256px;"></img>`;
       html += '<p></p>';
-
-      game.allSynergies.forEach(synergy => {
-        if (synergy.items.includes(item)) {
+      if (synergies && synergies.length > 0) {
+        synergies.forEach(synergy => {
           html += `<div>${getLangString('equipped_with')}</div>`;
           synergy.items.forEach(i => {
             // @ts-ignore
-            html += `<div>${i.name}</div>`
+            html += `<div style="display: flex; justify-content: center;"><div>${i.name}</div> <img src="${i.media}" style="max-width: 25px; max-height: 25px;"></img></div>`
           })
           html += '<p></p>';
           html += `<div>${getLangString('gain_modifiers')}</div>`;
-          for (var modifierIndex in synergy.playerModifiers) {
-            // check if the property/key is defined in the object itself, not in parent
-            if (synergy.playerModifiers.hasOwnProperty(modifierIndex)) {
-              if (modifierIndex === 'allowUnholyPrayerUse') {
-                html += `<div>${getLangString('allowUnholyPrayerUse')}</div>`
-              } else {
-                for (let index = 0; index < synergy.playerModifiers.length; index++) {
-                  const mod = synergy.playerModifiers[index];
-                  const isNegative = mod.isNegative ? 'red' : 'green'
-                  const displayString = mod.getDescription().description
-                  html += `<div style="color: ${isNegative}">${displayString}</div>`
-                  html += '<p></p>';
-                }
-              }
+          if (synergy.playerModifiers) {
+            for (let index = 0; index < synergy.playerModifiers.length; index++) {
+              const mod = synergy.playerModifiers[index];
+              const isNegative = mod.isNegative ? 'red' : 'green'
+              const displayString = mod.getDescription().description
+              html += `<div style="color: ${isNegative}">${displayString}</div>`
+              html += '<p></p>';
+            }
+          }
+
+          // for (var modifierIndex in synergy.playerModifiers) {
+          //   // check if the property/key is defined in the object itself, not in parent
+          //   if (synergy.playerModifiers.hasOwnProperty(modifierIndex)) {
+          //     if (modifierIndex === 'allowUnholyPrayerUse') {
+          //       html += `<div>${getLangString('allowUnholyPrayerUse')}</div>`
+          //     } else {
+          //       for (let index = 0; index < synergy.playerModifiers.length; index++) {
+          //         const mod = synergy.playerModifiers[index];
+          //         const isNegative = mod.isNegative ? 'red' : 'green'
+          //         const displayString = mod.getDescription().description
+          //         html += `<div style="color: ${isNegative}">${displayString}</div>`
+          //         html += '<p></p>';
+          //       }
+          //     }
+          //   }
+          // }
+          if (synergy.combatEffects) {
+            for (let index = 0; index < synergy.combatEffects.length; index++) {
+              const combatEffect = synergy.combatEffects[index]
+              const displayString = combatEffect.getDescription()
+              const isNegative = combatEffect.isNegative ? 'red' : 'green'
+              // @ts-ignore
+              html += `<div style="color: ${isNegative}">${displayString.text}</div>`
+              html += '<p></p>';
             }
           }
           html += '<p></p>';
-        }
-      })
+        })
+      }
+
       // @ts-ignore
       if (game.calcItemLevel && typeof game.calcItemLevel(item) === 'number') {
         // @ts-ignore
@@ -253,25 +270,6 @@ export async function setup(ctx: Modding.ModContext) {
           }
           if (kcm) {
             const cmim = mod.api.customModifiersInMelvor;
-
-            // traitApplied: `traitApplied${typeName
-            // }`,
-            // damageDealt: `damageDealt${typeName
-            // }`,
-            // damageTaken: `damageTaken${typeName
-            // }`,
-            // maxHit: `maxHit${typeName
-            // }`,
-            // flatMaxHit: `flatMaxHit${typeName
-            // }`,
-            // flatMinHit: `flatMinHit${typeName
-            // }`,
-            // minHitBasedOnMaxHit: `minHitBasedOnMaxHit${typeName
-            // }`,
-            // accuracyRating: `accuracyRating${typeName
-            // }`,
-            // flatResistance: `flatResistance${typeName
-            // }`
             if (!cmim) {
               return;
             }
@@ -803,7 +801,7 @@ export async function setup(ctx: Modding.ModContext) {
               const a = Monster.modifiers.getValue('tes:tes_FlatDamageWhileTargetHasMaxHP', ModifierQuery.EMPTY);
               const b = Monster.modifiers.getValue('tes:tes_PercDamageWhileTargetHasMaxHP', ModifierQuery.EMPTY);
               if (!isNaN(a) && !isNaN(b)) {
-                tesDamage = tesDamage + a + (damage * b)
+                tesDamage = tesDamage + a + ((damage/100) * b)
               }
             }
             // If it's a dragon breath re-calc
@@ -860,6 +858,7 @@ export async function setup(ctx: Modding.ModContext) {
           return "There was an error with this item"
         }
       }
+      // ctx.patch(CombatManager, "onEnemyDeath")
       try {
         game.calcItemLevel = calcItemLevel
         ctx.patch(CombatManager, "onEnemyDeath").after(() => {
@@ -919,85 +918,14 @@ export async function setup(ctx: Modding.ModContext) {
         tes_errors.push('onEnemyDeath', error)
       }
       try {
-        const tesSynergiesForExport: any[] = []
-        const synergiesForExport: any[] = []
-        const found_items: any[] = []
-        const synergies_all_items_names: any[] = []
-        game.itemSynergies.forEach(synergies => {
-          if (synergies && synergies.length > 0) {
-            synergies.forEach(synergy => {
-              const found_items_names: any[] = []
-              synergy.items.forEach(item => {
-                // @ts-ignore
-                if (!synergies_all_items_names.includes(item?._namespace?.name + ":" + item?._localID)) synergies_all_items_names.push(item?._namespace?.name + ":" + item?._localID)
-                // @ts-ignore
-                if (item?._namespace?.name === "tes") {
-                  // @ts-ignore
-                  if (!found_items_names.includes(item.name) && synergy.playerModifiers) {
-                    // @ts-ignore
-                    // if (item?._namespace?.name === "tes") {
-                    // @ts-ignore
-                    found_items_names.push(item.name)
-                    // @ts-ignore
-                    if (!found_items.includes(item)) found_items.push(item)
-                    const playerModifiers: {
-                      description: string,
-                      isNegative: boolean
-                    }[] = []
-                    synergy.playerModifiers.forEach(modifier => {
-                      const desc = modifier.getDescription()
-                      playerModifiers.push({ description: desc.description, isNegative: desc.isNegative })
-                    })
-                    const sync = { items: synergy.items, playerModifiers: playerModifiers }
-                    // @ts-ignore
-                    if (!synergiesForExport.includes(synergy)) {
-                      tesSynergiesForExport.push(sync)
-                      synergiesForExport.push(synergy)
-                    }
-                    // }
-                  } // @ts-ignore
-                  else if (!found_items_names.includes(item.name)) {
-                     // @ts-ignore
-                    console.log(item.name, synergy)
-                    if (!found_items.includes(item)) found_items.push(item)
-                  }
-                }
-              })
-            })
-          }
-        })
-        // real item
-        // @ts-ignore
-        found_items.forEach(item => {
-          const tes_item = game.items.getObjectByID(item._namespace.name + ":" + item._localID)
-          if (tes_item._customDescription) {
-            tes_item._customDescription = tes_item._customDescription + getLangString('synergy_icon')
-          } else {
-            tes_item._customDescription = tes_item.description + getLangString('synergy_icon')
-          }
-          // const synergy_image = `<img class=\"skill-icon-xxs\" src=\"https://cdn2-main.melvor.net/assets/media/skills/summoning/synergy.svg\">`
-          // tes_item.name === tes_item.name + synergy_image
-        })
-        // @ts-ignore
-        game.allSynergies = synergiesForExport
-        // @ts-ignore
-        game.tes_itemSynergies = tesSynergiesForExport
-        // @ts-ignore
-        game.synergies_found_items = synergies_all_items_names
-      } catch (error) {
-        tes_errors.push('synergy error', error)
-      }
-      try {
-        // game.bank.selectedBankItem
-        // game.bank.selectItemOnClick
         ctx.patch(Bank, 'selectItemOnClick').after(() => {
           const selectedItem: BankItem = game.bank.selectedBankItem
           const synergiesButton = document.getElementById('synergiesButton')
           if (synergiesButton) {
             // @ts-ignore
-            if (game.synergies_found_items.includes(selectedItem.item._namespace.name + ':' + selectedItem.item._localID)) {
+            const synergies = game.itemSynergies.get(selectedItem.item)
+            if (synergies && synergies.length > 0 && selectedItem.item._namespace.name === 'tes') {
               synergiesButton.style.display = 'inline-block'
-              // const synergy_image = <img class="skill-icon-xxs" src="https://cdn2-main.melvor.net/assets/media/skills/summoning/synergy.svg">
             } else {
               synergiesButton.style.display = 'none'
             }
@@ -1063,13 +991,6 @@ export async function setup(ctx: Modding.ModContext) {
         "Events": true,
         "Event": true
       }
-      // const knownNamespaces = {
-      //     "tes": true,
-      //     "melvorF": true,
-      //     "melvorD": true,
-      //     "melvorTotH": true,
-      //     "melvorAoD": true
-      // }
       // Patching stuff spcific to the Character
       try {
         // Looping though all game items.
@@ -1157,6 +1078,13 @@ export async function setup(ctx: Modding.ModContext) {
                     ]
                   },
                 })
+                // const knownNamespaces = {
+                //     "tes": true,
+                //     "melvorF": true,
+                //     "melvorD": true,
+                //     "melvorTotH": true,
+                //     "melvorAoD": true
+                // }
                 // "gamemodeID": `${game.currentGamemode._namespace.name}:${game.currentGamemode._localID}`,
                 // General_Goods_Shop
                 // if (!knownNamespaces[item.namespace]) {
@@ -1742,36 +1670,3 @@ export async function setup(ctx: Modding.ModContext) {
   }
   game.tes_errors = tes_errors
 }
-
-// increasedSelfDamageBasedOnCurrentHitpoints
-// game.bank.selectedBankItem
-// game.bank.selectItemOnClick
-
-// function calcItemLevel(item) {
-//   const game = {}
-//   // item = game.items.getObjectByID('melvorD:Dragon_Dagger')
-//   // const target = game.monsters.getObjectByID('melvorD:Plant')
-//   const player = game.combat ? game.combat.player : {}
-//   // const effectiveSkillLevel = item.attackType === 'melee' ? player.levels.Attack : item.attackType === 'ranged' ? player.levels.Ranged : player.levels.Magic
-//   const effectiveSkillLevel = 120
-//   const accuracy = player.stats ? player.stats.accuracy : 43000
-//   const targetEvasion = item.attackType === 'melee' ? 220 : item.attackType === 'ranged' ? 640 : 640
-//   const chanceToHit = (1 - (targetEvasion / (2*accuracy)))*100
-//   const strengthBonus = item.attackType === 'melee' ? item.equipmentStats.find(stat => stat.key === 'meleeStrengthBonus')?.value : item.attackType === 'ranged' ? item.equipmentStats.find(stat => stat.key === 'rangedStrengthBonus')?.value : item.attackType === 'magic' ? item.equipmentStats.find(stat => stat.key === 'magicDamageBonus')?.value : 0
-//   const baseMaxHit = 10 * (2.2 + (effectiveSkillLevel/10) + ((effectiveSkillLevel+17)/640) * strengthBonus)
-//   const percentMaxHitModifer = player.modifiers ? player.modifiers.increasedMaxHitPercent : 0
-//   const flatDam = player.modifiers ? player.modifiers.increasedMaxHitFlat : 0
-//   const minToMaxPerc = player.modifiers ? player.modifiers.increasedMinHitBasedOnMaxHit : 0
-//   const maxHit = baseMaxHit * (1 + (percentMaxHitModifer/100)) + flatDam
-//   const minHit = Math.min(Math.max(1 + maxHit *minToMaxPerc + flatDam, 1), maxHit)
-//   const avgHit = ((maxHit+minHit)/2)* (1 - 0)
-//   const interval = item.equipmentStats.find(stat => stat.key === 'attackSpeed')?.value
-//   const dps = (avgHit/interval) * chanceToHit
-//   return dps
-// }
-
-// for (let index = 0; index < items.length; index++) {
-//   if(items[index].type === "Weapon"){
-//       console.log(calcItemLevel(items[index]))
-//   }
-// }
