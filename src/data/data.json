@@ -20623,7 +20623,7 @@
         "lootChance": 1,
         "lootTable": [
           {
-            "itemID":"melvorD:Bones",
+            "itemID": "melvorD:Bones",
             "weight": 1,
             "maxQuantity": 1,
             "minQuantity": 1
@@ -21472,7 +21472,7 @@
         "lootChance": 100,
         "lootTable": [
           {
-            "itemID":"melvorD:Bones",
+            "itemID": "melvorD:Bones",
             "weight": 1,
             "maxQuantity": 1,
             "minQuantity": 1
@@ -21781,7 +21781,7 @@
         "lootChance": 100,
         "lootTable": [
           {
-            "itemID":"melvorD:Bones",
+            "itemID": "melvorD:Bones",
             "weight": 1,
             "maxQuantity": 1,
             "minQuantity": 1
@@ -21851,7 +21851,7 @@
         "lootChance": 100,
         "lootTable": [
           {
-            "itemID":"melvorD:Bones",
+            "itemID": "melvorD:Bones",
             "weight": 1,
             "maxQuantity": 1,
             "minQuantity": 1
@@ -24206,7 +24206,7 @@
         "lootChance": 0,
         "lootTable": [
           {
-            "itemID":"melvorD:Bones",
+            "itemID": "melvorD:Bones",
             "weight": 1,
             "maxQuantity": 1,
             "minQuantity": 1
@@ -24258,7 +24258,7 @@
         "lootChance": 0,
         "lootTable": [
           {
-            "itemID":"melvorD:Bones",
+            "itemID": "melvorD:Bones",
             "weight": 1,
             "maxQuantity": 1,
             "minQuantity": 1
@@ -24310,7 +24310,7 @@
         "lootChance": 0,
         "lootTable": [
           {
-            "itemID":"melvorD:Bones",
+            "itemID": "melvorD:Bones",
             "weight": 1,
             "maxQuantity": 1,
             "minQuantity": 1
@@ -24356,7 +24356,7 @@
         "lootChance": 0,
         "lootTable": [
           {
-            "itemID":"melvorD:Bones",
+            "itemID": "melvorD:Bones",
             "weight": 1,
             "maxQuantity": 1,
             "minQuantity": 1
@@ -24402,7 +24402,7 @@
         "lootChance": 0,
         "lootTable": [
           {
-            "itemID":"melvorD:Bones",
+            "itemID": "melvorD:Bones",
             "weight": 1,
             "maxQuantity": 1,
             "minQuantity": 1
@@ -24448,7 +24448,7 @@
         "lootChance": 0,
         "lootTable": [
           {
-            "itemID":"melvorD:Bones",
+            "itemID": "melvorD:Bones",
             "weight": 1,
             "maxQuantity": 1,
             "minQuantity": 1
@@ -24494,7 +24494,7 @@
         "lootChance": 0,
         "lootTable": [
           {
-            "itemID":"melvorD:Bones",
+            "itemID": "melvorD:Bones",
             "weight": 1,
             "maxQuantity": 1,
             "minQuantity": 1
@@ -24540,7 +24540,7 @@
         "lootChance": 0,
         "lootTable": [
           {
-            "itemID":"melvorD:Bones",
+            "itemID": "melvorD:Bones",
             "weight": 1,
             "maxQuantity": 1,
             "minQuantity": 1
@@ -24586,7 +24586,7 @@
         "lootChance": 0,
         "lootTable": [
           {
-            "itemID":"melvorD:Bones",
+            "itemID": "melvorD:Bones",
             "weight": 1,
             "maxQuantity": 1,
             "minQuantity": 1
@@ -24633,7 +24633,7 @@
         "lootChance": 0,
         "lootTable": [
           {
-            "itemID":"melvorD:Bones",
+            "itemID": "melvorD:Bones",
             "weight": 1,
             "maxQuantity": 1,
             "minQuantity": 1
@@ -25528,7 +25528,7 @@
         "activeInRaid": false,
         "hint": "Goblin Caves",
         "modifiers": {
-          "bankSpace":1
+          "bankSpace": 1
         },
         "customDescription": "May the Goblin Army protect you from Assassins"
       },
