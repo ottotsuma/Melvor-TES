@@ -21128,7 +21128,7 @@
         "ignoreCompletion": false,
         "attackType": "ranged",
         "specialAttacks": [
-          "melvorAoD:Killshot"
+          "melvorD:EmeraldShots"
         ],
         "passives": [
           "tes:Assassin_Target"
@@ -28425,7 +28425,7 @@
             "name": "stacks",
             "combatEffects": [
               {
-                "effectID": "melvorAoD:Blind",
+                "effectID": "melvorD:Slow",
                 "chance": 40,
                 "appliesWhen": "HitByAttack",
                 "descriptionLang": "CUSTOM_APPLICATOR_BLIND_WHEN_HIT"
