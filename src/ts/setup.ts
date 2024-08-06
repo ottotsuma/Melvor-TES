@@ -435,7 +435,7 @@ export async function setup(ctx: Modding.ModContext) {
               "tes:Drascua",
               "tes:Hagraven",
 
-              "melvorD:WetMonster", "melvorD:SweatyMonster", "melvorD:MoistMonster", "melvorD:IceMonster", "melvorF:StoneSnake", "melvorF:Statue", "melvorF:GooMonster", "melvorF:GreenGooMonster", "melvorF:PurpleGooMonster", "melvorF:ScatteredGooMonster", "melvorF:LotsofEyes", "melvorF:ManyEyedMonster", "melvorF:StrangeEyedMonster", "melvorF:Eyes", "melvorF:SuperiorEyedMonster", "melvorF:EyeOfFear", "melvorF:SandBeast", "melvorF:RagingHornedElite", "melvorF:SeethingHornedElite", "melvorF:DarkHornedElite", "melvorF:FuriousHornedElite", "melvorTotH:LargeIceTroll", "melvorD:IceTroll", "melvorD:Ice", "melvorD:TheEye", "melvorD:ResurrectedEye", "melvorF:AirMonster", "melvorF:AirGuard"
+              "melvorD:WetMonster", "melvorD:SweatyMonster", "melvorD:MoistMonster", "melvorD:IceMonster", "melvorF:StoneSnake", "melvorF:Statue", "melvorF:GooMonster", "melvorF:GreenGooMonster", "melvorF:PurpleGooMonster", "melvorF:ScatteredGooMonster", "melvorF:LotsofEyes", "melvorF:ManyEyedMonster", "melvorF:StrangeEyedMonster", "melvorF:Eyes", "melvorF:SuperiorEyedMonster", "melvorF:EyeOfFear", "melvorF:SandBeast", "melvorF:RagingHornedElite", "melvorF:SeethingHornedElite", "melvorF:DarkHornedElite", "melvorF:FuriousHornedElite", "melvorD:IceTroll", "melvorD:Ice", "melvorD:TheEye", "melvorD:ResurrectedEye", "melvorF:AirMonster", "melvorF:AirGuard"
             ]
             const GoblinList = [
               "melvorD:Golbin",
@@ -475,7 +475,6 @@ export async function setup(ctx: Modding.ModContext) {
               "melvorF:EarthMonster",
               "melvorF:Ophidia",
               "melvorF:FireMonster",
-              "melvorTotH:IceHydra",
               "melvorF:Aeris",
               "melvorF:Voltaire",
               "melvorF:Aleron"
@@ -581,7 +580,6 @@ export async function setup(ctx: Modding.ModContext) {
             if (TothEntitlement) {
               UndeadList.push(
                 "tes:undead_Junior_Farmer",
-                "melvorF:ElderVampire",
                 "melvorTotH:CursedSkeletonWarrior",
                 "melvorTotH:CursedSpirit",
                 "melvorTotH:LadyDarkheart",
