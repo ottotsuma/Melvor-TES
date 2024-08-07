@@ -207,6 +207,7 @@
         "name": "Sithis's Touch",
         "customDescription": "Cause 600 damage, by passing damage reduction.",
         "modifiers": {
+
           "tes_increasedbypassDamageReduction": 600
         }
       },
@@ -7033,6 +7034,7 @@
         "sellsFor": 2300,
         "itemType": "Equipment",
         "modifiers": {
+          "cookingSuccessCap":1,
           "damageDealtToAllMonsters": 1
         },
         "equipmentStats": [
