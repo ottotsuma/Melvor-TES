@@ -73,7 +73,7 @@ export async function setup(ctx: Modding.ModContext) {
     // could color code negative and positive
     const showList = (itemID: string, backFunction: any, ...backArgs: any) => {
       const item = game.items.getObjectByID(itemID) as EquipmentItem;
-      const synergies = game.itemSynergies.get(item)
+      const synergies = item ? game.itemSynergies.get(item) : []
       let html = `<h5 class="font-w400 mb-1">${item.name}</h5>`;
       html += `<img src="${item.media}" style="max-width: 256px; max-height: 256px;"></img>`;
       html += '<p></p>';
