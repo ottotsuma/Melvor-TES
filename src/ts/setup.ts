@@ -10,6 +10,8 @@
 //   }
 // })
 
+// @OttoTsuma🐦 The Elder Scrolls throws a harmless error in the selectItemOnClick patch when clicking items with 'Toggle Sell Mode' enabled due to game.bank.selectedBankItem being undefined in this case.
+
 import '../css/styles.css';
 import { languages } from './../language';
 import { TesTranslation } from './../language/translation'
