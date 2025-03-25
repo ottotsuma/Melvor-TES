@@ -1,0 +1,362 @@
+{
+  "$schema": "https://melvoridle.com/assets/schema/gameData.json",
+  "namespace": "tes",
+  "data": {
+    "shopPurchases": [
+      {
+        "id": "Colovian_Signet_Ring_Shop",
+        "media": "assets/items/Black_Band.png",
+        "category": "melvorF:Township",
+        "contains": {
+          "items": [
+            {
+              "id": "tes:Colovian_Signet_Ring",
+              "quantity": 1
+            }
+          ],
+          "modifiers": {}
+        },
+        "cost": {
+          "items": [
+            {
+              "id": "tes:gold_coin",
+              "quantity": 10000
+            }
+          ]
+        },
+        "allowQuantityPurchase": false,
+        "unlockRequirements": [],
+        "purchaseRequirements": [],
+        "defaultBuyLimit": 1,
+        "buyLimitOverrides": [],
+        "showBuyLimit": false,
+        "customName": "Colovian Signet Ring"
+      }
+    ],
+    "shopDisplayOrder": [
+      {
+        "insertAt": "End",
+        "ids": [
+          "tes:Colovian_Signet_Ring_Shop"
+        ]
+      }
+    ],
+    "items": [
+      {
+        "id": "Colovian_Signet_Ring",
+        "name": "Colovian Signet Ring",
+        "category": "Combat",
+        "type": "Ring",
+        "media": "assets/items/Black_Band.png",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 690,
+        "itemType": "Equipment",
+        "modifiers": {},
+        "equipmentStats": [
+          {
+            "key": "resistance",
+            "damageType": "melvorItA:Abyssal",
+            "value": 8
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Ring"
+        ],
+        "equipRequirements": [],
+        "occupiesSlots": [],
+        "combatEffects": [
+          {
+            "effectID": "melvorItA:WitheredGuard",
+            "appliesWhen": "HitByFirstAttack",
+            "chance": 40
+          }
+        ]
+      },
+      {
+        "id": "Ring_of_Eidolons_Edge",
+        "name": "Ring of Eidolon's Edge",
+        "category": "Combat",
+        "type": "Ring",
+        "media": "assets/items/Ring_of_Eidolon's_Edge.webp",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 690,
+        "itemType": "Equipment",
+        "modifiers": {},
+        "equipmentStats": [
+          {
+            "key": "resistance",
+            "damageType": "melvorItA:Abyssal",
+            "value": 8
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Ring"
+        ],
+        "equipRequirements": [],
+        "occupiesSlots": [],
+        "combatEffects": [
+          {
+            "effectID": "melvorItA:Ablaze",
+            "appliesWhen": "HitWithAttack"
+          }
+        ]
+      },
+      {
+        "id": "crystal_armor",
+        "name": "Crystal Armor",
+        "category": "Combat",
+        "type": "Armour",
+        "media": "assets/items/crystal_armor.webp",
+        "ignoreCompletion": false,
+        "obtainFromItemLog": false,
+        "golbinRaidExclusive": false,
+        "sellsFor": 15000000,
+        "itemType": "Equipment",
+        "modifiers": {
+          "noCombatDropChance": 100
+        },
+        "equipmentStats": [
+          {
+            "key": "magicDefenceBonus",
+            "value": 400
+          },
+          {
+            "key": "rangedDefenceBonus",
+            "value": 400
+          },
+          {
+            "key": "meleeDefenceBonus",
+            "value": 400
+          },
+          {
+            "key": "resistance",
+            "damageType": "melvorF:Pure",
+            "value": 50
+          }
+        ],
+        "tier": "none",
+        "validSlots": [
+          "Platebody"
+        ],
+        "equipRequirements": [],
+        "occupiesSlots": [
+          "Boots",
+          "Gloves",
+          "Helmet",
+          "Platelegs"
+        ]
+      }
+    ],
+    "itemSynergies": [
+      {
+        "itemIDs": [
+          "tes:Daedric_Armor",
+          "tes:Daedric_Boots",
+          "tes:Daedric_Gauntlets",
+          "tes:Daedric_Greaves",
+          "tes:Daedric_Helmet"
+        ],
+        "combatEffects": [
+          {
+            "effectID": "melvorItA:KingsRage",
+            "appliesWhen": "WasAttacked",
+            "condition": {
+              "character": "Player",
+              "type": "Hitpoints",
+              "operator": "<",
+              "value": 100000
+            }
+          }
+        ]
+      },
+      {
+        "itemIDs": [
+          "tes:Cuirass_of_the_Crusader",
+          "tes:Boots_of_the_Crusader",
+          "tes:Helm_of_the_Crusader",
+          "tes:Gauntlets_of_the_Crusader",
+          "tes:Amulet_Of_Kings"
+        ],
+        "combatEffects": [
+          {
+            "effectID": "melvorItA:Sovereignty",
+            "appliesWhen": "WasAttacked",
+            "condition": {
+              "character": "Player",
+              "type": "Hitpoints",
+              "operator": "<",
+              "value": 100000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "modifications": {
+    "items": [
+      {
+        "id": "melvorItA:Resolute_Chest",
+        "dropTable": {
+          "add": [
+            {
+              "itemID": "tes:Ring_of_Eidolons_Edge",
+              "maxQuantity": 1,
+              "minQuantity": 1,
+              "weight": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "tes:Daedric_Boots",
+        "modifiers": {
+          "add": {
+            "abyssalSkillXP": [
+              {
+                "value": 5
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "tes:Daedric_Gauntlets",
+        "modifiers": {
+          "add": {
+            "abyssalSkillXP": [
+              {
+                "value": 5
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "tes:Daedric_Greaves",
+        "modifiers": {
+          "add": {
+            "abyssalSkillXP": [
+              {
+                "value": 5
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "tes:Daedric_Helmet",
+        "modifiers": {
+          "add": {
+            "abyssalSkillXP": [
+              {
+                "value": 5
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "tes:Daedric_Shield",
+        "modifiers": {
+          "add": {
+            "abyssalSkillXP": [
+              {
+                "value": 5
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "tes:Daedric_Armor",
+        "modifiers": {
+          "add": {
+            "abyssalSkillXP": [
+              {
+                "value": 5
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "tes:Staff_of_Worms",
+        "modifiers": {
+          "add": {
+            "abyssalSkillXP": [
+              {
+                "value": 5
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "tes:Amulet_Of_Kings",
+        "equipmentStats": {
+          "add": [
+            {
+              "key": "resistance",
+              "damageType": "melvorItA:Abyssal",
+              "value": 10
+            }
+          ]
+        }
+      },
+      {
+        "id": "tes:Gauntlets_of_the_Crusader",
+        "equipmentStats": {
+          "add": [
+            {
+              "key": "resistance",
+              "damageType": "melvorItA:Abyssal",
+              "value": 10
+            }
+          ]
+        }
+      },
+      {
+        "id": "tes:Helm_of_the_Crusader",
+        "equipmentStats": {
+          "add": [
+            {
+              "key": "resistance",
+              "damageType": "melvorItA:Abyssal",
+              "value": 10
+            }
+          ]
+        }
+      },
+      {
+        "id": "tes:Boots_of_the_Crusader",
+        "modifiers": {
+          "add": {
+            "abyssalSkillXP": [
+              {
+                "value": 5
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "tes:Cuirass_of_the_Crusader",
+        "equipmentStats": {
+          "add": [
+            {
+              "key": "resistance",
+              "damageType": "melvorItA:Abyssal",
+              "value": 10
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

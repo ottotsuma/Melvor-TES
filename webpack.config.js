@@ -25,6 +25,7 @@ module.exports = {
         { from: 'src/data/data.json', to: 'data.json' },
         { from: 'src/data/data-toth.json', to: 'data-toth.json' },
         { from: 'src/data/data-aod.json', to: 'data-aod.json' },
+        { from: 'src/data/data-ItA.json', to: 'data-ItA.json' },
         { from: 'src/data/data-bard.json', to: 'data-bard.json' },
         { from: 'src/data/custom-mods.json', to: 'custom-mods.json' },
         { from: 'src/data/profile.json', to: 'profile.json' },

@@ -182,6 +182,7 @@ export async function setup(ctx: Modding.ModContext) {
         // const profileSkill = mod.manager.getLoadedModList().includes("(Skill) Classes and Species")
         const TothEntitlement = cloudManager.hasTotHEntitlementAndIsEnabled
         const AoDEntitlement = cloudManager.hasAoDEntitlementAndIsEnabled
+        const ItAEntitlement = cloudManager.hasItAEntitlementAndIsEnabled
         const combatSim = mod.manager.getLoadedModList().includes("[Myth] Combat Simulator")
         if (combatSim) {
           mod.api.mythCombatSimulator?.registerNamespace('tes');
@@ -234,6 +235,15 @@ export async function setup(ctx: Modding.ModContext) {
               tes_errors.push('data-aod.json', error)
             }
           }
+          if (ItAEntitlement) {
+            try {
+              await ctx.gameData.addPackage('data-ItA.json');
+
+            } catch (error) {
+              tes_errors.push('data-ItA.json', error)
+            }
+          }
+
           // add items to bards college before mods load
           bards_college_items.push(game.items.getObjectByID(`tes:Sweetroll`))
           bards_college_items[0].baseChanceDenominator = "1000"
@@ -269,6 +279,14 @@ export async function setup(ctx: Modding.ModContext) {
             bards_college_items[6].baseChanceDenominator = "2500"
             bards_college_items.push(game.items.getObjectByID(`mythMusic:Polished_Sapphire_Gem`))
             bards_college_items[7].baseChanceDenominator = "2500"
+          }
+          if (ItAEntitlement) {
+            bards_college_items.push(game.items.getObjectByID(`tes:crystal_armor`))
+            bards_college_items[8].baseChanceDenominator = getLangString('bard_random_hard')
+            bards_college_items[8].chanceIncreaseInfo = getLangString('bard_chance_info')
+
+            // Ring_of_Eidolons_Edge
+            // Colovian_Signet_Ring
           }
           if (kcm) {
             const cmim = mod.api.customModifiersInMelvor;
@@ -801,7 +819,7 @@ export async function setup(ctx: Modding.ModContext) {
               const a = Monster.modifiers.getValue('tes:tes_FlatDamageWhileTargetHasMaxHP', ModifierQuery.EMPTY);
               const b = Monster.modifiers.getValue('tes:tes_PercDamageWhileTargetHasMaxHP', ModifierQuery.EMPTY);
               if (!isNaN(a) && !isNaN(b)) {
-                tesDamage = tesDamage + a + ((damage/100) * b)
+                tesDamage = tesDamage + a + ((damage / 100) * b)
               }
             }
             // If it's a dragon breath re-calc
@@ -871,6 +889,9 @@ export async function setup(ctx: Modding.ModContext) {
                 if (combatLevel > 200 &&
                   Math.random() < (combatLevel / 400) / 10000) {
                   const tes_items = ["tes:King_Olafs_Verse"]
+                  if (cloudManager.hasItAEntitlementAndIsEnabled) {
+                    tes_items.push("tes:crystal_armor")
+                  }
                   const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
                   const tes_item = game.items.getObjectByID(`${tes_itemId}`);
                   if (tes_item === undefined) {
