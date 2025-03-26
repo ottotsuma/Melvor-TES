@@ -335,14 +335,14 @@
       },
       {
         "id": "tes:Boots_of_the_Crusader",
-        "modifiers": {
-          "add": {
-            "abyssalSkillXP": [
-              {
-                "value": 5
-              }
-            ]
-          }
+        "equipmentStats": {
+          "add": [
+            {
+              "key": "resistance",
+              "damageType": "melvorItA:Abyssal",
+              "value": 10
+            }
+          ]
         }
       },
       {
