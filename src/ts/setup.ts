@@ -1,5 +1,12 @@
 // Changes to do:
 // "tes:Moth_Priest"
+// Standing stones
+// Currently only Khajiit and Argonian. The major TES races are missing — Nord, Imperial, Breton, Dunmer, Altmer, Bosmer, Orc. 
+// Horker Stew, Elsweyr Fondue, Venison Stew as higher-tier food items with unique modifiers rather than just healing.
+// Black Books as readable items with buffs
+// The existing shop properties like Priory of the Nine and Battlehorn Castle
+// A dedicated Alchemy category already exists. An Enchanting category using Soul Gems
+
 //  get-childitem *.png | foreach { rename-item $_ $_.Name.Replace("-min", "") }
 
 // game.testForOffline(1)
@@ -10,7 +17,6 @@
 //   }
 // })
 
-// @OttoTsuma🐦 The Elder Scrolls throws a harmless error in the selectItemOnClick patch when clicking items with 'Toggle Sell Mode' enabled due to game.bank.selectedBankItem being undefined in this case.
 
 import '../css/styles.css';
 import { languages } from './../language';
