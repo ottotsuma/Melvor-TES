@@ -196,7 +196,7 @@
         "id": "Skyrim_Grand_soul_gem",
         "media": "assets/items/Skyrim_Grand_soul_gem.png",
         "name": "Soul Gem",
-        "customDescription": "Soul Gems are naturally-occurring magic stones that house the souls of the dead.",
+        "customDescription": "Grand Soul Gems are naturally-occurring magic stones that house the the largest souls of the dead.",
         "category": "Combat",
         "type": "Misc",
         "ignoreCompletion": false,

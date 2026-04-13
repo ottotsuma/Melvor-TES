@@ -14145,8 +14145,8 @@
           },
           {
             "itemID": "tes:Flin",
-            "minQuantity": 20,
-            "maxQuantity": 1,
+            "minQuantity": 1,
+            "maxQuantity": 20,
             "weight": 50
           },
           {
@@ -14562,7 +14562,7 @@
         ],
         "itemType": "Equipment",
         "modifiers": {
-          "tes:tes_increasedDragonBreathDamageTaken": 20
+          "tes_increasedDragonBreathDamageTaken": 20
         },
         "customDescription": "High stats but takes more damage from dragon breath."
       },
@@ -14946,8 +14946,8 @@
           },
           {
             "itemID": "tes:Hagraven_Summon",
-            "minQuantity": 10,
-            "maxQuantity": 1,
+            "minQuantity": 1,
+            "maxQuantity": 10,
             "weight": 25
           },
           {
@@ -14964,8 +14964,8 @@
           },
           {
             "itemID": "tes:Goblin_Ear",
-            "minQuantity": 1000,
-            "maxQuantity": 50,
+            "minQuantity": 50,
+            "maxQuantity": 1000,
             "weight": 60
           },
           {
@@ -15375,8 +15375,8 @@
           },
           {
             "itemID": "tes:Blood_Pack",
-            "minQuantity": 100,
-            "maxQuantity": 1,
+            "minQuantity": 1,
+            "maxQuantity": 100,
             "weight": 80
           },
           {
@@ -15423,8 +15423,8 @@
           },
           {
             "itemID": "tes:ElsweyrSpicedTea",
-            "minQuantity": 100,
-            "maxQuantity": 1,
+            "minQuantity": 1,
+            "maxQuantity": 100,
             "weight": 75
           },
           {
@@ -15696,14 +15696,14 @@
           },
           {
             "itemID": "tes:WelkyndStone",
-            "minQuantity": 100,
-            "maxQuantity": 1,
+            "minQuantity": 1,
+            "maxQuantity": 100,
             "weight": 50
           },
           {
             "itemID": "tes:VarlaStone",
-            "minQuantity": 100,
-            "maxQuantity": 1,
+            "minQuantity": 1,
+            "maxQuantity": 100,
             "weight": 15
           },
           {
@@ -17517,8 +17517,7 @@
         ],
         "passives": [
           "tes:Magic_Nerf",
-          "tes:Goblin_Buff",
-          "tes:Magic_Nerf"
+          "tes:Goblin_Buff"
         ],
         "lootChance": 75,
         "lootTable": [

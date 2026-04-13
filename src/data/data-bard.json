@@ -20,7 +20,9 @@
                     ]
                 },
                 "modifiers": {
-                    "increasedMusicGP": 1
+                    "add": {
+                        "increasedMusicGP": 1
+                    }
                 }
             },
             {
@@ -40,7 +42,9 @@
                     ]
                 },
                 "modifiers": {
-                    "increasedMusicGP": 1
+                    "add": {
+                        "increasedMusicGP": 1
+                    }
                 }
             },
             {
@@ -60,7 +64,9 @@
                     ]
                 },
                 "modifiers": {
-                    "increasedMusicGP": 1
+                    "add": {
+                        "increasedMusicGP": 1
+                    }
                 }
             },
             {
@@ -75,7 +81,9 @@
                     ]
                 },
                 "modifiers": {
-                    "increasedMusicGP": 1
+                    "add": {
+                        "increasedMusicGP": 1
+                    }
                 }
             },
             {
@@ -90,7 +98,9 @@
                     ]
                 },
                 "modifiers": {
-                    "increasedMusicGP": 1
+                    "add": {
+                        "increasedMusicGP": 1
+                    }
                 }
             },
             {
@@ -105,7 +115,9 @@
                     ]
                 },
                 "modifiers": {
-                    "increasedMusicGP": 1
+                    "add": {
+                        "increasedMusicGP": 1
+                    }
                 }
             },
             {
@@ -120,13 +132,17 @@
                     ]
                 },
                 "modifiers": {
-                    "increasedMusicGP": 1
+                    "add": {
+                        "increasedMusicGP": 1
+                    }
                 }
             },
             {
                 "id": "tes:Crabbers_Charm",
                 "modifiers": {
-                    "increasedChanceToObtainShrimpWhileTrainingMusic": 1
+                    "add": {
+                        "increasedChanceToObtainShrimpWhileTrainingMusic": 1
+                    }
                 }
             }
         ],
@@ -202,7 +218,7 @@
                 "equipRequirements": [
                     {
                         "type": "SkillLevel",
-                        "skillID": "melvorD:Attack",
+                        "skillID": "melvorD:Magic",
                         "level": 50
                     },
                     {
@@ -262,7 +278,7 @@
                 "equipRequirements": [
                     {
                         "type": "SkillLevel",
-                        "skillID": "melvorD:Attack",
+                        "skillID": "melvorD:Ranged",
                         "level": 50
                     },
                     {

@@ -179,19 +179,19 @@ export async function setup(ctx: Modding.ModContext) {
       try {
         // Local variables
 
-        const mythLoaded = loadedMods.includes("[Myth] Music")
-        const kcm = loadedMods.includes('Custom Modifiers in Melvor')
-        // const profileSkill = loadedMods.includes("(Skill) Classes and Species")
+        const mythLoaded = loadedMods.has("[Myth] Music")
+        const kcm = loadedMods.has('Custom Modifiers in Melvor')
+        // const profileSkill = loadedMods.has("(Skill) Classes and Species")
         const TothEntitlement = cloudManager.hasTotHEntitlementAndIsEnabled
         const AoDEntitlement = cloudManager.hasAoDEntitlementAndIsEnabled
         const ItAEntitlement = cloudManager.hasItAEntitlementAndIsEnabled
-        const combatSim = loadedMods.includes("[Myth] Combat Simulator")
+        const combatSim = loadedMods.has("[Myth] Combat Simulator")
         if (combatSim) {
           mod.api.mythCombatSimulator?.registerNamespace('tes');
         }
-        // const Abyssal = loadedMods.includes('Abyssal Rift')
-        // const Pokeworld = loadedMods.includes('Pokeworld (Generation 1)')
-        // const Runescape = loadedMods.includes('Runescape Encounters in Melvor')
+        // const Abyssal = loadedMods.has('Abyssal Rift')
+        // const Pokeworld = loadedMods.has('Pokeworld (Generation 1)')
+        // const Runescape = loadedMods.has('Runescape Encounters in Melvor')
 
         // Translations
         try {
@@ -853,9 +853,9 @@ export async function setup(ctx: Modding.ModContext) {
 
     ctx.onCharacterLoaded(ctx => {
       // Local variables
-      const combatSim = loadedMods.includes("[Myth] Combat Simulator")
-      const mythLoaded = loadedMods.includes("[Myth] Music")
-      // const profileSkill = loadedMods.includes("(Skill) Classes and Species")
+      const combatSim = loadedMods.has("[Myth] Combat Simulator")
+      const mythLoaded = loadedMods.has("[Myth] Music")
+      // const profileSkill = loadedMods.has("(Skill) Classes and Species")
       // const TothEntitlement = cloudManager.hasTotHEntitlement
       // const AoDEntitlement = cloudManager.hasAoDEntitlement
 
@@ -898,8 +898,10 @@ export async function setup(ctx: Modding.ModContext) {
         game.calcItemLevel = calcItemLevel
         ctx.patch(CombatManager, "onEnemyDeath").after(() => {
           try {
+            const monster = game.combat.enemy.monster;
+            if (!monster) return;
+            const combatLevel = monster.combatLevel;
             if (!ctx.settings.section('tes').get('bard_drops')) {
-              const combatLevel = game.combat.enemy.monster.combatLevel
               if (combatLevel <= 20) return;
               if (combatLevel > 200 &&
                 Math.random() < (combatLevel / 400) / 10000) {
@@ -909,21 +911,21 @@ export async function setup(ctx: Modding.ModContext) {
             }
             // 1/10,000
             if (combatLevel < 200 && Math.random() < 100 / (10000 + combatLevel)) {
-              const pool = resolvedBardDrops.hard;
+              const pool = resolvedBardDrops.instruments;
               game.bank.addItem(pool[Math.floor(Math.random() * pool.length)], 1, true, true, false);
 
             }
             // Myth & 1/2,500
             if (mythLoaded && Math.random() < 100 / (2500 + combatLevel)) {
-              const pool = resolvedBardDrops.hard;
+              const pool = resolvedBardDrops.gems;
               game.bank.addItem(pool[Math.floor(Math.random() * pool.length)], 1, true, true, false);
 
             }
             // 1/1,000
             if (Math.random() < 100 / (1000 + combatLevel)) {
-              const pool = resolvedBardDrops.hard;
-              game.bank.addItem(pool[Math.floor(Math.random() * pool.length)], 1, true, true, false);
-
+              if (Math.random() < 100 / (1000 + combatLevel)) {
+                game.bank.addItem(resolvedBardDrops.sweetroll, 1, true, true, false);
+              }
             }
 
           } catch (error) {
@@ -935,12 +937,12 @@ export async function setup(ctx: Modding.ModContext) {
       }
       try {
         ctx.patch(Bank, 'selectItemOnClick').after(() => {
-          const selectedItem: BankItem = game.bank.selectedBankItem
+          const selectedItem = game.bank.selectedBankItem
           const synergiesButton = document.getElementById('synergiesButton')
           if (synergiesButton) {
             // @ts-ignore
             const synergies = game.itemSynergies.get(selectedItem.item)
-            if (synergies && synergies.length > 0 && selectedItem.item._namespace.name === 'tes') {
+            if (synergies && synergies.length > 0 && selectedItem && selectedItem.item._namespace.name === 'tes') {
               synergiesButton.style.display = 'inline-block'
             } else {
               synergiesButton.style.display = 'none'
@@ -1000,7 +1002,7 @@ export async function setup(ctx: Modding.ModContext) {
       const bannedNameSpace: any = {
         "tes": true
       }
-      const allowedNameSpaces = ["monad", "pokemon", "dnd", "tes", "melvorAoD", "melvorTotH", 'melvorAprilFools2024', 'melvorBirthday2023', 'melvorD', 'melvorBaseGame', 'melvorTrue', 'melvorF']
+      const allowedNameSpaces = new Set(["monad", "pokemon", "dnd", "tes", "melvorAoD", "melvorTotH", 'melvorAprilFools2024', 'melvorBirthday2023', 'melvorD', 'melvorBaseGame', 'melvorTrue', 'melvorF'])
       const categoryBan: any = {
         "Limes": true,
         "Lemon": true,
@@ -1163,13 +1165,17 @@ export async function setup(ctx: Modding.ModContext) {
         game.items.registeredObjects.forEach((item: AnyItem) => {
           try {
             if (!item) return;
-            if (combatSim && !allowedNameSpaces.includes(item.namespace)) return;
+            if (combatSim && !allowedNameSpaces.has(item.namespace)) return;
             if (bannedList[item.localID]) return;
             if (bannedNameSpace[item.namespace]) return;
             if (categoryBan[item.category]) return;
             // @ts-ignore
             if (item.swalData) return;
             if (item.type === "Special") return;
+            // @ts-ignore
+            if (item?.attackType) {
+              listOfAllWeapons.push(item);
+            }
             validItems.push(item);
           } catch (e) { tes_errors.push('item filter', e) }
         });
@@ -1184,7 +1190,8 @@ export async function setup(ctx: Modding.ModContext) {
         }
         // Now assign from khajiitPicked[0..4] instead of the cascading rollPercentage blocks
         const setKhajiitSlot = (item: AnyItem, multiplier = 1) => {
-          const isGear = ["Armour", "Weapon", "Magic_Armour", "Trimmed Armour", "Magic Armour"].includes(item.type);
+          const gearTypes = new Set(["Armour", "Weapon", "Magic_Armour", "Trimmed Armour", "Magic Armour"]);
+          const isGear = gearTypes.has(item.type);
           return {
             id: `${item.namespace}:${item.localID}`,
             price: item.sellsFor.quantity * 4,
@@ -1193,7 +1200,11 @@ export async function setup(ctx: Modding.ModContext) {
         };
         // replace your 5 Khajiit_Item_* variable blocks with this array
         const khajiitSlots = khajiitPicked.map(i => setKhajiitSlot(i));
-
+        if (khajiitSlots[0]) { Khajiit_Item_1 = khajiitSlots[0].id; Khajiit_Item_1_Price = khajiitSlots[0].price; Khajiit_Item_1_qty = khajiitSlots[0].qty; }
+        if (khajiitSlots[1]) { Khajiit_Item_2 = khajiitSlots[1].id; Khajiit_Item_2_Price = khajiitSlots[1].price; Khajiit_Item_2_qty = khajiitSlots[1].qty; }
+        if (khajiitSlots[2]) { Khajiit_Item_3 = khajiitSlots[2].id; Khajiit_Item_3_Price = khajiitSlots[2].price; Khajiit_Item_3_qty = khajiitSlots[2].qty; }
+        if (khajiitSlots[3]) { Khajiit_Item_4 = khajiitSlots[3].id; Khajiit_Item_4_Price = khajiitSlots[3].price; Khajiit_Item_4_qty = khajiitSlots[3].qty; }
+        if (khajiitSlots[4]) { Khajiit_Item_5 = khajiitSlots[4].id; Khajiit_Item_5_Price = khajiitSlots[4].price; Khajiit_Item_5_qty = khajiitSlots[4].qty; }
         // --- Build drop table in ONE package call with all adds batched ---
         const dropTableAdds = validItems.map(item => ({
           itemID: `${item.namespace}:${item.localID}`,
@@ -1210,7 +1221,6 @@ export async function setup(ctx: Modding.ModContext) {
           });
           // weapons list built in same pass above
         });
-        initialPackage.add();
         initialPackage.add();
         // @ts-ignore
         game.tes_weapons = listOfAllWeapons
@@ -1362,8 +1372,8 @@ export async function setup(ctx: Modding.ModContext) {
 
     ctx.onInterfaceReady((ctx) => {
       // Local variables
-      const mythLoaded = loadedMods.includes("[Myth] Music")
-      const dboxLoaded = loadedMods.includes('dbox')
+      const mythLoaded = loadedMods.has("[Myth] Music")
+      const dboxLoaded = loadedMods.has('dbox')
       // Looks like this function should just be UI components like dbox and templates.
       try {
         // khajiit_merchants
@@ -1584,21 +1594,22 @@ export async function setup(ctx: Modding.ModContext) {
           const tes_merchant_area = tes_melvorAreas[Math.floor(Math.random() * tes_melvorAreas.length)] + '-container';
           console.log('Merchant is at: ', tes_merchant_area)
 
+          const merchantContainer = document.getElementById(tes_merchant_area)!.firstElementChild!;
           if (rollPercentage(0.3)) {
-            document.getElementById(tes_merchant_area).firstElementChild.after(khajiit_merchant_ahkari_box.root);
+            merchantContainer.after(khajiit_merchant_ahkari_box.root);
           } else if (rollPercentage(0.5)) {
-            document.getElementById(tes_merchant_area).firstElementChild.after(khajiit_merchant_risaad_box.root);
+            merchantContainer.after(khajiit_merchant_risaad_box.root);
           } else {
-            document.getElementById(tes_merchant_area).firstElementChild.after(khajiit_merchant_atahbah_box.root);
+            merchantContainer.after(khajiit_merchant_atahbah_box.root);
           }
         }
         // end khajiit_merchants
 
         // Create HTML pages for items
         ui.createStatic('#modal-book--The_Black_Horse_Courier_Waterfront', document.body);
-        document.body.querySelector('.modal.The_Black_Horse_Courier_Waterfront').id = 'The_Black_Horse_Courier_Waterfront';
+        (document.body.querySelector('.modal.The_Black_Horse_Courier_Waterfront') as HTMLElement).id = 'The_Black_Horse_Courier_Waterfront';
         ui.createStatic('#modal-book--recommendation_letter', document.body);
-        document.body.querySelector('.modal.recommendation_letter').id = 'recommendation_letter';
+        (document.body.querySelector('.modal.recommendation_letter') as HTMLElement).id = 'recommendation_letter';
         // end HTML for items
 
         // Bards college
@@ -1608,7 +1619,7 @@ export async function setup(ctx: Modding.ModContext) {
             items: bards_college_items
           }
         }
-        const tes_contentContainerElement = document.getElementById('main-container');
+        const tes_contentContainerElement = document.getElementById('main-container')!;
         ui.create(Bards_College_Overview(), tes_contentContainerElement);
 
         if (dboxLoaded && mythLoaded) {
@@ -1739,10 +1750,10 @@ export async function setup(ctx: Modding.ModContext) {
               // Maybe make a "bards rank as the first reward"
             ]
           }, ctx);
-          document.getElementById('tes_Bards_College__global-droptable-overview-container').firstElementChild.after(Viarmo_box.root);
+          document.getElementById('tes_Bards_College__global-droptable-overview-container')!.firstElementChild!.after(Viarmo_box.root);
 
           ui.createStatic('#modal-book--King_Olafs_Verse', document.body);
-          document.body.querySelector('.modal.King_Olafs_Verse').id = 'King_Olafs_Verse';
+          (document.body.querySelector('.modal.King_Olafs_Verse') as HTMLElement)!.id = 'King_Olafs_Verse';
         }
         // End bards college
 

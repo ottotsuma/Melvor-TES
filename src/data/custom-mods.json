@@ -24,7 +24,9 @@
             {
                 "id": "woodland_weakness",
                 "name": "Woodland Creature",
-                "modifiers": {}
+                "modifiers": {
+                    "customModifiersInMelvor:damageTakenDragon": 100
+                }
             }
         ],
         "itemSynergies": [
@@ -360,14 +362,6 @@
                 "passives": {
                     "add": [
                         "tes:Death_Mark_10"
-                    ]
-                },
-                "equipmentStats": {
-                    "add": [
-                        {
-                            "key": "attackSpeed",
-                            "value": 2600
-                        }
                     ]
                 }
             },

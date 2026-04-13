@@ -799,7 +799,7 @@
         "attackType": "magic",
         "modifiers": {
           "flatMinHit": 20,
-          "flatMagicAttackBonus": 40
+          "magicAttackBonus": 40
         },
         "equipmentStats": [
           {
@@ -946,7 +946,7 @@
         "lootChance": 100,
         "lootTable": [
           {
-            "itemID":"melvorD:Bones",
+            "itemID": "melvorD:Bones",
             "weight": 1,
             "maxQuantity": 1,
             "minQuantity": 1
@@ -955,8 +955,8 @@
         "currencyDrops": [
           {
             "currencyID": "melvorD:GP",
-            "min": 50000,
-            "max": 1
+            "min": 1,
+            "max": 50000
           }
         ],
         "equipmentStats": [
@@ -1080,8 +1080,8 @@
         "currencyDrops": [
           {
             "currencyID": "melvorD:GP",
-            "min": 1000000,
-            "max": 1
+            "min": 1,
+            "max": 1000000
           }
         ],
         "equipmentStats": [

@@ -103,7 +103,8 @@
         "combatEffects": [
           {
             "effectID": "melvorItA:Ablaze",
-            "appliesWhen": "HitWithAttack"
+            "appliesWhen": "HitWithAttack",
+            "chance": 100
           }
         ]
       },
@@ -168,9 +169,9 @@
             "appliesWhen": "WasAttacked",
             "condition": {
               "character": "Player",
-              "type": "Hitpoints",
+              "type": "HitpointsPercent",
               "operator": "<",
-              "value": 100000
+              "value": 50
             }
           }
         ]
