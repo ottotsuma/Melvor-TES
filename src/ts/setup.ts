@@ -16,6 +16,7 @@ import '../css/styles.css';
 import { languages } from './../language';
 import { TesTranslation } from './../language/translation'
 export async function setup(ctx: Modding.ModContext) {
+  const loadedMods = new Set(mod.manager.getLoadedModList());
   const tes_errors = []
   try {
     function _try(func: Function, fallbackValue: any) {
@@ -177,19 +178,20 @@ export async function setup(ctx: Modding.ModContext) {
     ctx.onModsLoaded(async (ctx) => {
       try {
         // Local variables
-        const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
-        const kcm = mod.manager.getLoadedModList().includes('Custom Modifiers in Melvor')
-        // const profileSkill = mod.manager.getLoadedModList().includes("(Skill) Classes and Species")
+
+        const mythLoaded = loadedMods.includes("[Myth] Music")
+        const kcm = loadedMods.includes('Custom Modifiers in Melvor')
+        // const profileSkill = loadedMods.includes("(Skill) Classes and Species")
         const TothEntitlement = cloudManager.hasTotHEntitlementAndIsEnabled
         const AoDEntitlement = cloudManager.hasAoDEntitlementAndIsEnabled
         const ItAEntitlement = cloudManager.hasItAEntitlementAndIsEnabled
-        const combatSim = mod.manager.getLoadedModList().includes("[Myth] Combat Simulator")
+        const combatSim = loadedMods.includes("[Myth] Combat Simulator")
         if (combatSim) {
           mod.api.mythCombatSimulator?.registerNamespace('tes');
         }
-        // const Abyssal = mod.manager.getLoadedModList().includes('Abyssal Rift')
-        // const Pokeworld = mod.manager.getLoadedModList().includes('Pokeworld (Generation 1)')
-        // const Runescape = mod.manager.getLoadedModList().includes('Runescape Encounters in Melvor')
+        // const Abyssal = loadedMods.includes('Abyssal Rift')
+        // const Pokeworld = loadedMods.includes('Pokeworld (Generation 1)')
+        // const Runescape = loadedMods.includes('Runescape Encounters in Melvor')
 
         // Translations
         try {
@@ -851,9 +853,9 @@ export async function setup(ctx: Modding.ModContext) {
 
     ctx.onCharacterLoaded(ctx => {
       // Local variables
-      const combatSim = mod.manager.getLoadedModList().includes("[Myth] Combat Simulator")
-      const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
-      // const profileSkill = mod.manager.getLoadedModList().includes("(Skill) Classes and Species")
+      const combatSim = loadedMods.includes("[Myth] Combat Simulator")
+      const mythLoaded = loadedMods.includes("[Myth] Music")
+      // const profileSkill = loadedMods.includes("(Skill) Classes and Species")
       // const TothEntitlement = cloudManager.hasTotHEntitlement
       // const AoDEntitlement = cloudManager.hasAoDEntitlement
 
@@ -878,59 +880,52 @@ export async function setup(ctx: Modding.ModContext) {
       }
       // ctx.patch(CombatManager, "onEnemyDeath")
       try {
+        // In onCharacterLoaded, resolve once:
+        const bardDropItems = {
+          hard: ["tes:King_Olafs_Verse", ...(cloudManager.hasItAEntitlementAndIsEnabled ? ["tes:crystal_armor"] : [])],
+          instruments: ["tes:Bard_Drum", "tes:Bard_Flute", "tes:Bard_Lute"],
+          gems: mythLoaded ? ["mythMusic:Polished_Topaz_Gem", "mythMusic:Polished_Ruby_Gem", "mythMusic:Polished_Sapphire_Gem"] : [],
+          sweetroll: game.items.getObjectByID("tes:Sweetroll")!
+        };
+        // Resolve all to actual item objects up front:
+        const resolvedBardDrops = {
+          hard: bardDropItems.hard.map(id => game.items.getObjectByID(id)!).filter(Boolean),
+          instruments: bardDropItems.instruments.map(id => game.items.getObjectByID(id)!).filter(Boolean),
+          gems: bardDropItems.gems.map(id => game.items.getObjectByID(id)!).filter(Boolean),
+          sweetroll: bardDropItems.sweetroll
+        };
+
         game.calcItemLevel = calcItemLevel
         ctx.patch(CombatManager, "onEnemyDeath").after(() => {
           try {
             if (!ctx.settings.section('tes').get('bard_drops')) {
               const combatLevel = game.combat.enemy.monster.combatLevel
-              // Inverse: 1 / 10,000
-              // if (combatLevel > 200 && Math.random() < ((combatLevel * Math.random()) / 10000)) {
-              if (combatLevel > 20) {
-                if (combatLevel > 200 &&
-                  Math.random() < (combatLevel / 400) / 10000) {
-                  const tes_items = ["tes:King_Olafs_Verse"]
-                  if (cloudManager.hasItAEntitlementAndIsEnabled) {
-                    tes_items.push("tes:crystal_armor")
-                  }
-                  const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
-                  const tes_item = game.items.getObjectByID(`${tes_itemId}`);
-                  if (tes_item === undefined) {
-                    throw new Error(`Invalid item ID ${tes_itemId}`);
-                  }
-                  game.bank.addItem(tes_item, 1, true, true, false);
-                }
-                // 1/10,000
-                if (combatLevel < 200 && Math.random() < 100 / (10000 + combatLevel)) {
-                  const tes_items = ["tes:Bard_Drum", "tes:Bard_Flute", "tes:Bard_Lute"]
-                  const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
-                  const tes_item = game.items.getObjectByID(`${tes_itemId}`);
-                  if (tes_item === undefined) {
-                    throw new Error(`Invalid item ID ${tes_itemId}`);
-                  }
-                  game.bank.addItem(tes_item, 1, true, true, false);
-                }
-                // Myth & 1/2,500
-                if (mythLoaded && Math.random() < 100 / (2500 + combatLevel)) {
-                  const tes_items = ["mythMusic:Polished_Topaz_Gem", "mythMusic:Polished_Ruby_Gem", "mythMusic:Polished_Sapphire_Gem"]
-                  const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
-                  const tes_item = game.items.getObjectByID(`${tes_itemId}`);
-                  if (tes_item === undefined) {
-                    throw new Error(`Invalid item ID ${tes_itemId}`);
-                  }
-                  game.bank.addItem(tes_item, 1, true, true, false);
-                }
-                // 1/1,000
-                if (Math.random() < 100 / (1000 + combatLevel)) {
-                  const tes_items = ["tes:Sweetroll"]
-                  const tes_itemId = tes_items[Math.floor(Math.random() * tes_items.length)]
-                  const tes_item = game.items.getObjectByID(tes_itemId);
-                  if (tes_item === undefined) {
-                    throw new Error(`Invalid item ID ${tes_itemId}`);
-                  }
-                  game.bank.addItem(tes_item, 1, true, true, false);
-                }
+              if (combatLevel <= 20) return;
+              if (combatLevel > 200 &&
+                Math.random() < (combatLevel / 400) / 10000) {
+                const pool = resolvedBardDrops.hard;
+                game.bank.addItem(pool[Math.floor(Math.random() * pool.length)], 1, true, true, false);
               }
             }
+            // 1/10,000
+            if (combatLevel < 200 && Math.random() < 100 / (10000 + combatLevel)) {
+              const pool = resolvedBardDrops.hard;
+              game.bank.addItem(pool[Math.floor(Math.random() * pool.length)], 1, true, true, false);
+
+            }
+            // Myth & 1/2,500
+            if (mythLoaded && Math.random() < 100 / (2500 + combatLevel)) {
+              const pool = resolvedBardDrops.hard;
+              game.bank.addItem(pool[Math.floor(Math.random() * pool.length)], 1, true, true, false);
+
+            }
+            // 1/1,000
+            if (Math.random() < 100 / (1000 + combatLevel)) {
+              const pool = resolvedBardDrops.hard;
+              game.bank.addItem(pool[Math.floor(Math.random() * pool.length)], 1, true, true, false);
+
+            }
+
           } catch (error) {
             tes_errors.push('onEnemyDeath internal', error)
           }
@@ -1017,158 +1012,205 @@ export async function setup(ctx: Modding.ModContext) {
         // Looping though all game items.
         // const ShopList = []
         const listOfAllWeapons: AnyItem[] = []
-        const initialPackage = ctx.gameData.buildPackage(itemPackage => {
-          game.items.registeredObjects.forEach((item: AnyItem) => {
-            try {
-              if (item) {
-                if (combatSim && !allowedNameSpaces.includes(item.namespace)) {
-                  return;
-                }
-                // @ts-ignore
-                if (item?.attackType) {
-                  listOfAllWeapons.push(item)
-                }
-                // Skip the item if its localID is in the bannedList
-                if (bannedList[item.localID]) {
-                  return;
-                }
-                if (bannedNameSpace[item.namespace]) {
-                  return;
-                }
-                if (categoryBan[item.category]) {
-                  return;
-                }
-                // @ts-ignore
-                if (item.swalData) {
-                  return;
-                }
-                if (item.type === "Special") {
-                  return;
-                }
-                if (!Khajiit_Item_1 && rollPercentage(1)) {
-                  Khajiit_Item_1 = `${item.namespace}:${item.localID}`
-                  Khajiit_Item_1_Price = item.sellsFor.quantity * 4
-                  Khajiit_Item_1_qty = Math.floor(Math.random() * 100)
-                  if (Khajiit_Item_1_Price < 1000) { Khajiit_Item_1_qty = Math.floor(Math.random() * 10000) }
-                  if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour" || item.type === "Magic Armour") {
-                    Khajiit_Item_1_qty = 1
-                  }
-                } else if (!Khajiit_Item_2 && rollPercentage(0.5)) {
-                  Khajiit_Item_2 = `${item.namespace}:${item.localID}`
-                  Khajiit_Item_2_Price = item.sellsFor.quantity * 4
-                  Khajiit_Item_2_qty = Math.floor(Math.random() * 50)
-                  if (Khajiit_Item_2_Price < 1000) { Khajiit_Item_2_qty = Math.floor(Math.random() * 10000) }
-                  if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour" || item.type === "Magic Armour") {
-                    Khajiit_Item_2_qty = 1
-                  }
-                } else if (!Khajiit_Item_3 && rollPercentage(0.5)) {
-                  Khajiit_Item_3 = `${item.namespace}:${item.localID}`
-                  Khajiit_Item_3_Price = item.sellsFor.quantity * 4
-                  Khajiit_Item_3_qty = Math.floor(Math.random() * 10)
-                  if (Khajiit_Item_3_Price < 1000) { Khajiit_Item_3_qty = Math.floor(Math.random() * 10000) }
-                  if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour" || item.type === "Magic Armour") {
-                    Khajiit_Item_3_qty = 1
-                  }
-                } else if (!Khajiit_Item_4 && rollPercentage(0.5)) {
-                  Khajiit_Item_4 = `${item.namespace}:${item.localID}`
-                  Khajiit_Item_4_Price = item.sellsFor.quantity * 4
-                  Khajiit_Item_4_qty = Math.floor(Math.random() * 2)
-                  if (Khajiit_Item_4_Price < 1000) { Khajiit_Item_4_qty = Math.floor(Math.random() * 10000) }
-                  if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour" || item.type === "Magic Armour") {
-                    Khajiit_Item_4_qty = 1
-                  }
-                } else if (!Khajiit_Item_5 && rollPercentage(0.5)) {
-                  Khajiit_Item_5 = `${item.namespace}:${item.localID}`
-                  Khajiit_Item_5_Price = item.sellsFor.quantity * 4
-                  // Khajiit_Item_5_qty = Math.floor(Math.random() * 2)
-                  if (Khajiit_Item_5_Price < 1000) { Khajiit_Item_5_qty = Math.floor(Math.random() * 10000) }
-                  if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour" || item.type === "Magic Armour") {
-                    Khajiit_Item_5_qty = 1
-                  }
-                }
-                itemPackage.items.modify({
-                  id: "tes:Elder_Scrolls",
-                  dropTable: {
-                    add: [
-                      {
-                        itemID: `${item.namespace}:${item.localID}`,
-                        minQuantity: 1,
-                        maxQuantity: 1,
-                        weight: 1
-                      }
-                    ]
-                  },
-                })
-                // const knownNamespaces = {
-                //     "tes": true,
-                //     "melvorF": true,
-                //     "melvorD": true,
-                //     "melvorTotH": true,
-                //     "melvorAoD": true
-                // }
-                // "gamemodeID": `${game.currentGamemode._namespace.name}:${game.currentGamemode._localID}`,
-                // General_Goods_Shop
-                // if (!knownNamespaces[item.namespace]) {
-                //     itemPackage.shopPurchases.add({
-                //         "cost": {
-                //             "gp": {
-                //                 "cost": 0,
-                //                 "type": "Fixed"
-                //             },
-                //             "items": [
-                //                 {
-                //                     "id": "tes:Elder_Scrolls",
-                //                     "quantity": 1
-                //                 }
-                //             ],
-                //             "raidCoins": {
-                //                 "cost": 0,
-                //                 "type": "Fixed"
-                //             },
-                //             "slayerCoins": {
-                //                 "cost": 0,
-                //                 "type": "Fixed"
-                //             }
-                //         },
-                //         "id": `${item.localID}_Shop`,
-                //         "purchaseRequirements": [
-                //             {
-                //                 "dungeonID": "tes:Dragon_Break",
-                //                 "count": 1,
-                //                 "type": "DungeonCompletion"
-                //             }
-                //         ],
-                //         "media": "assets/icons/Cache.png",
-                //         "category": "tes:General_Goods_Shop",
-                //         "contains": {
-                //             "items": [
-                //                 {
-                //                     "id": `${item.namespace}:${item.localID}`,
-                //                     "quantity": 1
-                //                 }
-                //             ]
-                //         },
-                //         "allowQuantityPurchase": false,
-                //         "unlockRequirements": [],
-                //         "defaultBuyLimit": 1,
-                //         "buyLimitOverrides": [],
-                //         "showBuyLimit": false
-                //     })
-                //     ShopList.push(`tes:${item.localID}_Shop`)
-                // }
-              }
-            } catch (error) {
+        // const initialPackage = ctx.gameData.buildPackage(itemPackage => {
+        //   game.items.registeredObjects.forEach((item: AnyItem) => {
+        //     try {
+        //       if (item) {
+        //         if (combatSim && !allowedNameSpaces.includes(item.namespace)) {
+        //           return;
+        //         }
+        //         // @ts-ignore
+        //         if (item?.attackType) {
+        //           listOfAllWeapons.push(item)
+        //         }
+        //         // Skip the item if its localID is in the bannedList
+        //         if (bannedList[item.localID]) {
+        //           return;
+        //         }
+        //         if (bannedNameSpace[item.namespace]) {
+        //           return;
+        //         }
+        //         if (categoryBan[item.category]) {
+        //           return;
+        //         }
+        //         // @ts-ignore
+        //         if (item.swalData) {
+        //           return;
+        //         }
+        //         if (item.type === "Special") {
+        //           return;
+        //         }
+        //         if (!Khajiit_Item_1 && rollPercentage(1)) {
+        //           Khajiit_Item_1 = `${item.namespace}:${item.localID}`
+        //           Khajiit_Item_1_Price = item.sellsFor.quantity * 4
+        //           Khajiit_Item_1_qty = Math.floor(Math.random() * 100)
+        //           if (Khajiit_Item_1_Price < 1000) { Khajiit_Item_1_qty = Math.floor(Math.random() * 10000) }
+        //           if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour" || item.type === "Magic Armour") {
+        //             Khajiit_Item_1_qty = 1
+        //           }
+        //         } else if (!Khajiit_Item_2 && rollPercentage(0.5)) {
+        //           Khajiit_Item_2 = `${item.namespace}:${item.localID}`
+        //           Khajiit_Item_2_Price = item.sellsFor.quantity * 4
+        //           Khajiit_Item_2_qty = Math.floor(Math.random() * 50)
+        //           if (Khajiit_Item_2_Price < 1000) { Khajiit_Item_2_qty = Math.floor(Math.random() * 10000) }
+        //           if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour" || item.type === "Magic Armour") {
+        //             Khajiit_Item_2_qty = 1
+        //           }
+        //         } else if (!Khajiit_Item_3 && rollPercentage(0.5)) {
+        //           Khajiit_Item_3 = `${item.namespace}:${item.localID}`
+        //           Khajiit_Item_3_Price = item.sellsFor.quantity * 4
+        //           Khajiit_Item_3_qty = Math.floor(Math.random() * 10)
+        //           if (Khajiit_Item_3_Price < 1000) { Khajiit_Item_3_qty = Math.floor(Math.random() * 10000) }
+        //           if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour" || item.type === "Magic Armour") {
+        //             Khajiit_Item_3_qty = 1
+        //           }
+        //         } else if (!Khajiit_Item_4 && rollPercentage(0.5)) {
+        //           Khajiit_Item_4 = `${item.namespace}:${item.localID}`
+        //           Khajiit_Item_4_Price = item.sellsFor.quantity * 4
+        //           Khajiit_Item_4_qty = Math.floor(Math.random() * 2)
+        //           if (Khajiit_Item_4_Price < 1000) { Khajiit_Item_4_qty = Math.floor(Math.random() * 10000) }
+        //           if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour" || item.type === "Magic Armour") {
+        //             Khajiit_Item_4_qty = 1
+        //           }
+        //         } else if (!Khajiit_Item_5 && rollPercentage(0.5)) {
+        //           Khajiit_Item_5 = `${item.namespace}:${item.localID}`
+        //           Khajiit_Item_5_Price = item.sellsFor.quantity * 4
+        //           // Khajiit_Item_5_qty = Math.floor(Math.random() * 2)
+        //           if (Khajiit_Item_5_Price < 1000) { Khajiit_Item_5_qty = Math.floor(Math.random() * 10000) }
+        //           if (item.type === "Armour" || item.type === "Weapon" || item.type === "Magic_Armour" || item.type === "Trimmed Armour" || item.type === "Magic Armour") {
+        //             Khajiit_Item_5_qty = 1
+        //           }
+        //         }
+        //         itemPackage.items.modify({
+        //           id: "tes:Elder_Scrolls",
+        //           dropTable: {
+        //             add: [
+        //               {
+        //                 itemID: `${item.namespace}:${item.localID}`,
+        //                 minQuantity: 1,
+        //                 maxQuantity: 1,
+        //                 weight: 1
+        //               }
+        //             ]
+        //           },
+        //         })
+        //         // const knownNamespaces = {
+        //         //     "tes": true,
+        //         //     "melvorF": true,
+        //         //     "melvorD": true,
+        //         //     "melvorTotH": true,
+        //         //     "melvorAoD": true
+        //         // }
+        //         // "gamemodeID": `${game.currentGamemode._namespace.name}:${game.currentGamemode._localID}`,
+        //         // General_Goods_Shop
+        //         // if (!knownNamespaces[item.namespace]) {
+        //         //     itemPackage.shopPurchases.add({
+        //         //         "cost": {
+        //         //             "gp": {
+        //         //                 "cost": 0,
+        //         //                 "type": "Fixed"
+        //         //             },
+        //         //             "items": [
+        //         //                 {
+        //         //                     "id": "tes:Elder_Scrolls",
+        //         //                     "quantity": 1
+        //         //                 }
+        //         //             ],
+        //         //             "raidCoins": {
+        //         //                 "cost": 0,
+        //         //                 "type": "Fixed"
+        //         //             },
+        //         //             "slayerCoins": {
+        //         //                 "cost": 0,
+        //         //                 "type": "Fixed"
+        //         //             }
+        //         //         },
+        //         //         "id": `${item.localID}_Shop`,
+        //         //         "purchaseRequirements": [
+        //         //             {
+        //         //                 "dungeonID": "tes:Dragon_Break",
+        //         //                 "count": 1,
+        //         //                 "type": "DungeonCompletion"
+        //         //             }
+        //         //         ],
+        //         //         "media": "assets/icons/Cache.png",
+        //         //         "category": "tes:General_Goods_Shop",
+        //         //         "contains": {
+        //         //             "items": [
+        //         //                 {
+        //         //                     "id": `${item.namespace}:${item.localID}`,
+        //         //                     "quantity": 1
+        //         //                 }
+        //         //             ]
+        //         //         },
+        //         //         "allowQuantityPurchase": false,
+        //         //         "unlockRequirements": [],
+        //         //         "defaultBuyLimit": 1,
+        //         //         "buyLimitOverrides": [],
+        //         //         "showBuyLimit": false
+        //         //     })
+        //         //     ShopList.push(`tes:${item.localID}_Shop`)
+        //         // }
+        //       }
+        //     } catch (error) {
 
-              tes_errors.push('onCharacterLoaded initialPackage', error)
-            }
-          })
-          // itemPackage.shopDisplayOrder.add(
-          //     {
-          //         "insertAt": "Start",
-          //         "ids": ShopList
-          //     }
-          // )
+        //       tes_errors.push('onCharacterLoaded initialPackage', error)
+        //     }
+        //   })
+        // })
+        // --- Pre-collect valid items ONCE ---
+        const validItems: AnyItem[] = [];
+        game.items.registeredObjects.forEach((item: AnyItem) => {
+          try {
+            if (!item) return;
+            if (combatSim && !allowedNameSpaces.includes(item.namespace)) return;
+            if (bannedList[item.localID]) return;
+            if (bannedNameSpace[item.namespace]) return;
+            if (categoryBan[item.category]) return;
+            // @ts-ignore
+            if (item.swalData) return;
+            if (item.type === "Special") return;
+            validItems.push(item);
+          } catch (e) { tes_errors.push('item filter', e) }
         });
+
+        // --- Khajiit selection: pick 5 random items in ONE pass ---
+        // Fisher-Yates partial shuffle (much faster than rollPercentage cascade)
+        const khajiitPool = [...validItems];
+        const khajiitPicked: AnyItem[] = [];
+        for (let i = 0; i < 5 && khajiitPool.length > 0; i++) {
+          const idx = Math.floor(Math.random() * khajiitPool.length);
+          khajiitPicked.push(khajiitPool.splice(idx, 1)[0]);
+        }
+        // Now assign from khajiitPicked[0..4] instead of the cascading rollPercentage blocks
+        const setKhajiitSlot = (item: AnyItem, multiplier = 1) => {
+          const isGear = ["Armour", "Weapon", "Magic_Armour", "Trimmed Armour", "Magic Armour"].includes(item.type);
+          return {
+            id: `${item.namespace}:${item.localID}`,
+            price: item.sellsFor.quantity * 4,
+            qty: isGear ? 1 : Math.max(1, Math.floor(Math.random() * (item.sellsFor.quantity < 1000 ? 10000 : 100)) * multiplier)
+          };
+        };
+        // replace your 5 Khajiit_Item_* variable blocks with this array
+        const khajiitSlots = khajiitPicked.map(i => setKhajiitSlot(i));
+
+        // --- Build drop table in ONE package call with all adds batched ---
+        const dropTableAdds = validItems.map(item => ({
+          itemID: `${item.namespace}:${item.localID}`,
+          minQuantity: 1,
+          maxQuantity: 1,
+          weight: 1
+        }));
+
+        const initialPackage = ctx.gameData.buildPackage(pkg => {
+          // Single modify call with all drops at once (check if your API supports array bulk add)
+          pkg.items.modify({
+            id: "tes:Elder_Scrolls",
+            dropTable: { add: dropTableAdds }
+          });
+          // weapons list built in same pass above
+        });
+        initialPackage.add();
         initialPackage.add();
         // @ts-ignore
         game.tes_weapons = listOfAllWeapons
@@ -1196,96 +1238,122 @@ export async function setup(ctx: Modding.ModContext) {
         // })
 
         // looping though all game monsters
+        // game.monsters.forEach(monster => {
+        //   try {
+        //     if (monster && monster.localID && monster.namespace === "tes" && monster.localID === 'Bloody_Hand_Tribe_Goblin_Shaman') {
+        //       const killCount = game.stats.monsterKillCount(monster)
+        //       if (killCount > 0) {
+        //         let elem: any = document.getElementById("tutorial-tes:Cracked_Wood_Cave")
+        //         let name = ""
+        //         while (name != "COMBAT-AREA-MENU") {
+        //           name = elem.parentNode.nodeName
+        //           elem = elem.parentNode
+        //         }
+        //         elem.style.display = 'none'
+        //       }
+        //     }
+        //     if (monster && monster.localID && monster.namespace === "tes" && monster.localID === 'Dust_Eater_Clan_Goblin_Shaman') {
+        //       const killCount = game.stats.monsterKillCount(monster)
+        //       if (killCount > 0) {
+        //         let elem: any = document.getElementById("tutorial-tes:Barren_Mine")
+        //         let name = ""
+        //         while (name != "COMBAT-AREA-MENU") {
+        //           name = elem.parentNode.nodeName
+        //           elem = elem.parentNode
+        //         }
+        //         elem.style.display = 'none'
+        //       }
+        //     }
+        //     if (monster && monster.localID && monster.namespace === "tes" && monster.localID === 'Rock_Biter_Clan_Goblin_Shaman') {
+        //       const killCount = game.stats.monsterKillCount(monster)
+        //       if (killCount > 0) {
+        //         let elem: any = document.getElementById("tutorial-tes:Timberscar_Hollow")
+        //         let name = ""
+        //         while (name != "COMBAT-AREA-MENU") {
+        //           name = elem.parentNode.nodeName
+        //           elem = elem.parentNode
+        //         }
+        //         elem.style.display = 'none'
+        //       }
+        //     }
+        //     if (monster && monster.localID && monster.namespace === "tes" && monster.localID === 'Sharp_Tooth_Clan_Goblin_Shaman') {
+        //       const killCount = game.stats.monsterKillCount(monster)
+        //       if (killCount > 0) {
+        //         let elem: any = document.getElementById("tutorial-tes:Derelict_Mine")
+        //         let name = ""
+        //         while (name != "COMBAT-AREA-MENU") {
+        //           name = elem.parentNode.nodeName
+        //           elem = elem.parentNode
+        //         }
+        //         elem.style.display = 'none'
+        //       }
+        //     }
+        //     if (monster && monster.localID && monster.namespace === "tes" && monster.localID === 'Skull_Breaker_Clan_Goblin_Shaman') {
+        //       const killCount = game.stats.monsterKillCount(monster)
+        //       if (killCount > 0) {
+        //         let elem: any = document.getElementById("tutorial-tes:Wenderbek_Cave")
+        //         let name = ""
+        //         while (name != "COMBAT-AREA-MENU") {
+        //           name = elem.parentNode.nodeName
+        //           elem = elem.parentNode
+        //         }
+        //         elem.style.display = 'none'
+        //       }
+        //     }
+        //     if (monster && monster.localID && monster.namespace === "tes" && monster.localID === 'Three_Feather_Clan_Goblin_Shaman') {
+        //       const killCount = game.stats.monsterKillCount(monster)
+        //       if (killCount > 0) {
+        //         let elem: any = document.getElementById("tutorial-tes:Plundered_Mine")
+        //         let name = ""
+        //         while (name != "COMBAT-AREA-MENU") {
+        //           name = elem.parentNode.nodeName
+        //           elem = elem.parentNode
+        //         }
+        //         elem.style.display = 'none'
+        //       }
+        //     }
+        //     if (monster && monster.localID && monster.namespace === "tes" && monster.localID === 'White_Skin_Clan_Goblin_Shaman') {
+        //       const killCount = game.stats.monsterKillCount(monster)
+        //       if (killCount > 0) {
+        //         let elem: any = document.getElementById("tutorial-tes:Goblin_Jims_Cave")
+        //         let name = ""
+        //         while (name != "COMBAT-AREA-MENU") {
+        //           name = elem.parentNode.nodeName
+        //           elem = elem.parentNode
+        //         }
+        //         elem.style.display = 'none'
+        //       }
+        //     }
+        //   } catch (error) {
+        //     tes_errors.push('onCharacterLoaded game.monsters.forEach ', error)
+        //   }
+        // })
+        // Build a map of localID -> tutorial element ONCE, outside the forEach
+        const tutorialAreaMap: Record<string, string> = {
+          'Bloody_Hand_Tribe_Goblin_Shaman': 'tutorial-tes:Cracked_Wood_Cave',
+          'Dust_Eater_Clan_Goblin_Shaman': 'tutorial-tes:Barren_Mine',
+          'Rock_Biter_Clan_Goblin_Shaman': 'tutorial-tes:Timberscar_Hollow',
+          'Sharp_Tooth_Clan_Goblin_Shaman': 'tutorial-tes:Derelict_Mine',
+          'Skull_Breaker_Clan_Goblin_Shaman': 'tutorial-tes:Wenderbek_Cave',
+          'Three_Feather_Clan_Goblin_Shaman': 'tutorial-tes:Plundered_Mine',
+          'White_Skin_Clan_Goblin_Shaman': 'tutorial-tes:Goblin_Jims_Cave',
+        };
+
         game.monsters.forEach(monster => {
-          try {
-            if (monster && monster.localID && monster.namespace === "tes" && monster.localID === 'Bloody_Hand_Tribe_Goblin_Shaman') {
-              const killCount = game.stats.monsterKillCount(monster)
-              if (killCount > 0) {
-                let elem: any = document.getElementById("tutorial-tes:Cracked_Wood_Cave")
-                let name = ""
-                while (name != "COMBAT-AREA-MENU") {
-                  name = elem.parentNode.nodeName
-                  elem = elem.parentNode
-                }
-                elem.style.display = 'none'
+          if (monster?.namespace !== "tes") return; // early exit
+          const tutorialId = tutorialAreaMap[monster.localID];
+          if (!tutorialId) return;
+          if (game.stats.monsterKillCount(monster) > 0) {
+            try {
+              let elem: any = document.getElementById(tutorialId);
+              if (!elem) return;
+              while (elem && elem.nodeName !== "COMBAT-AREA-MENU") {
+                elem = elem.parentNode;
               }
-            }
-            if (monster && monster.localID && monster.namespace === "tes" && monster.localID === 'Dust_Eater_Clan_Goblin_Shaman') {
-              const killCount = game.stats.monsterKillCount(monster)
-              if (killCount > 0) {
-                let elem: any = document.getElementById("tutorial-tes:Barren_Mine")
-                let name = ""
-                while (name != "COMBAT-AREA-MENU") {
-                  name = elem.parentNode.nodeName
-                  elem = elem.parentNode
-                }
-                elem.style.display = 'none'
-              }
-            }
-            if (monster && monster.localID && monster.namespace === "tes" && monster.localID === 'Rock_Biter_Clan_Goblin_Shaman') {
-              const killCount = game.stats.monsterKillCount(monster)
-              if (killCount > 0) {
-                let elem: any = document.getElementById("tutorial-tes:Timberscar_Hollow")
-                let name = ""
-                while (name != "COMBAT-AREA-MENU") {
-                  name = elem.parentNode.nodeName
-                  elem = elem.parentNode
-                }
-                elem.style.display = 'none'
-              }
-            }
-            if (monster && monster.localID && monster.namespace === "tes" && monster.localID === 'Sharp_Tooth_Clan_Goblin_Shaman') {
-              const killCount = game.stats.monsterKillCount(monster)
-              if (killCount > 0) {
-                let elem: any = document.getElementById("tutorial-tes:Derelict_Mine")
-                let name = ""
-                while (name != "COMBAT-AREA-MENU") {
-                  name = elem.parentNode.nodeName
-                  elem = elem.parentNode
-                }
-                elem.style.display = 'none'
-              }
-            }
-            if (monster && monster.localID && monster.namespace === "tes" && monster.localID === 'Skull_Breaker_Clan_Goblin_Shaman') {
-              const killCount = game.stats.monsterKillCount(monster)
-              if (killCount > 0) {
-                let elem: any = document.getElementById("tutorial-tes:Wenderbek_Cave")
-                let name = ""
-                while (name != "COMBAT-AREA-MENU") {
-                  name = elem.parentNode.nodeName
-                  elem = elem.parentNode
-                }
-                elem.style.display = 'none'
-              }
-            }
-            if (monster && monster.localID && monster.namespace === "tes" && monster.localID === 'Three_Feather_Clan_Goblin_Shaman') {
-              const killCount = game.stats.monsterKillCount(monster)
-              if (killCount > 0) {
-                let elem: any = document.getElementById("tutorial-tes:Plundered_Mine")
-                let name = ""
-                while (name != "COMBAT-AREA-MENU") {
-                  name = elem.parentNode.nodeName
-                  elem = elem.parentNode
-                }
-                elem.style.display = 'none'
-              }
-            }
-            if (monster && monster.localID && monster.namespace === "tes" && monster.localID === 'White_Skin_Clan_Goblin_Shaman') {
-              const killCount = game.stats.monsterKillCount(monster)
-              if (killCount > 0) {
-                let elem: any = document.getElementById("tutorial-tes:Goblin_Jims_Cave")
-                let name = ""
-                while (name != "COMBAT-AREA-MENU") {
-                  name = elem.parentNode.nodeName
-                  elem = elem.parentNode
-                }
-                elem.style.display = 'none'
-              }
-            }
-          } catch (error) {
-            tes_errors.push('onCharacterLoaded game.monsters.forEach ', error)
+              if (elem) elem.style.display = 'none';
+            } catch (e) { tes_errors.push('tutorial hide', e) }
           }
-        })
+        });
         // end looping though all game monsters
       } catch (error) {
         tes_errors.push('onCharacterLoaded ', error)
@@ -1294,8 +1362,8 @@ export async function setup(ctx: Modding.ModContext) {
 
     ctx.onInterfaceReady((ctx) => {
       // Local variables
-      const mythLoaded = mod.manager.getLoadedModList().includes("[Myth] Music")
-      const dboxLoaded = mod.manager.getLoadedModList().includes('dbox')
+      const mythLoaded = loadedMods.includes("[Myth] Music")
+      const dboxLoaded = loadedMods.includes('dbox')
       // Looks like this function should just be UI components like dbox and templates.
       try {
         // khajiit_merchants
