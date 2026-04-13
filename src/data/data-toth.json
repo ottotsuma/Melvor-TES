@@ -799,7 +799,7 @@
         "attackType": "magic",
         "modifiers": {
           "flatMinHit": 20,
-          "magicAttackBonus": 40
+          "flatMagicAttackBonus": 40
         },
         "equipmentStats": [
           {
