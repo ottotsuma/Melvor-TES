@@ -187,7 +187,7 @@ export async function setup(ctx: Modding.ModContext) {
 
         const mythLoaded = loadedMods.has("[Myth] Music")
         const kcm = loadedMods.has('Custom Modifiers in Melvor')
-        const profileSkill = loadedMods.has("(Skill) Classes and Species")
+        // const profileSkill = loadedMods.has("(Skill) Classes and Species")
         const TothEntitlement = cloudManager.hasTotHEntitlementAndIsEnabled
         const AoDEntitlement = cloudManager.hasAoDEntitlementAndIsEnabled
         const ItAEntitlement = cloudManager.hasItAEntitlementAndIsEnabled
@@ -725,15 +725,15 @@ export async function setup(ctx: Modding.ModContext) {
             await ctx.gameData.addPackage('custom-mods.json');
           }
 
-          if (kcm && profileSkill) {
-            // add modifier package
-            try {
-              await ctx.gameData.addPackage('profile.json');
-            } catch (error) {
-              tes_errors.push('profile.json', error)
-            }
+          // if (kcm && profileSkill) {
+          //   // add modifier package
+          //   try {
+          //     await ctx.gameData.addPackage('profile.json');
+          //   } catch (error) {
+          //     tes_errors.push('profile.json', error)
+          //   }
 
-          }
+          // }
         } catch (error) {
           tes_errors.push('onModsLoaded packages', error)
         }
